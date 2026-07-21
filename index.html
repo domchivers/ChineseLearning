@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中文 Beginner A · Trainer</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c0392b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="中文 A">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+  :root {
+    --bg: #f6f2ea;
+    --panel: #fffdf8;
+    --ink: #2b2620;
+    --muted: #8a8072;
+    --line: #e7ded0;
+    --accent: #c0392b;      /* chinese red */
+    --accent-soft: #fae7e4;
+    --gold: #b8860b;
+    --accent-dark: #96291d;        /* 3D base of the path buttons */
+    --coin-halo: rgba(192,57,43,.34);   /* soft glow around the active coin */
+    --coin-todo: #e6e3de;          /* not-yet-started coins */
+    --coin-todo-dark: #cfccc5;
+    --grid: rgba(192,57,43,.38);   /* soft red copybook grid line */
+    --grid-soft: rgba(192,57,43,.16);
+    --good: #12806a;
+    --good-soft: #d3efe7;
+    --again: #b5453a;
+    --again-soft: #f4dcd8;
+    --easy: #2b6cb0;
+    --easy-soft: #d7e6f4;
+    --radius: 16px;
+    --shadow: 0 6px 24px rgba(60,45,25,.08), 0 1px 3px rgba(60,45,25,.06);
+    /* Path accents. These now follow the theme in both modes — there is no
+       painted scenery left for them to sit against. */
+    --g: #c0392b; --g-dark: #96291d; --g-soft: #fae7e4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111214; --panel: #1b1d20; --ink: #e8eaed; --muted: #9aa0a6; --line: #2d3035;
+      --accent: #e05a4a; --accent-soft: #3a201c; --gold: #d6a83a;
+      --accent-dark: #a83d31; --coin-halo: rgba(224,90,74,.38);
+      --g: #e05a4a; --g-dark: #a83d31; --g-soft: #3a201c;
+      --grid: rgba(224,90,74,.42); --grid-soft: rgba(224,90,74,.18);
+      --good: #4fc9a6; --good-soft: #12332b; --again: #e8887c; --again-soft: #3a2427;
+      --easy: #74b3ec; --easy-soft: #1e2e3f; --shadow: 0 6px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111214; --panel: #1b1d20; --ink: #e8eaed; --muted: #9aa0a6; --line: #2d3035;
+    --accent: #e05a4a; --accent-soft: #3a201c; --gold: #d6a83a;
+    --accent-dark: #a83d31; --coin-halo: rgba(224,90,74,.38); --coin-todo: #2a2d31; --coin-todo-dark: #1f2124;
+    --g: #e05a4a; --g-dark: #a83d31; --g-soft: #3a201c;
+    --grid: rgba(224,90,74,.42); --grid-soft: rgba(224,90,74,.18);
+    --good: #4fc9a6; --good-soft: #12332b; --again: #e8887c; --again-soft: #3a2427;
+    --easy: #74b3ec; --easy-soft: #1e2e3f; --shadow: 0 6px 24px rgba(0,0,0,.35);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;                 /* never scroll sideways on a phone */
+    -webkit-text-size-adjust: 100%;
+  }
+  button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .wrap {
+    max-width: 760px; margin: 0 auto;
+    padding: max(16px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right))
+             calc(48px + env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+  }
+  header.top {
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  header.top h1 { font-size: 1.4rem; margin: 0; letter-spacing: .5px; }
+  header.top .sub { color: var(--muted); font-size: .85rem; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+  }
+  h2 { font-size: 1.05rem; margin: 0 0 12px; }
+  .muted { color: var(--muted); }
+  button {
+    font: inherit; cursor: pointer; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink);
+    border-radius: 10px; padding: 10px 16px; transition: transform .05s ease, background .15s;
+  }
+  button:active { transform: translateY(1px); }
+  button.primary { background: var(--accent); color: #fff; border-color: transparent; }
+  button.ghost { background: transparent; }
+  button:disabled { opacity: .45; cursor: default; }
+
+  /* Home */
+  .lesson-list { display: grid; gap: 10px; margin: 14px 0 18px; }
+  .lesson-row {
+    display: flex; align-items: center; gap: 12px;
+    border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+    background: var(--panel); cursor: pointer; user-select: none;
+  }
+  .lesson-row input { width: 18px; height: 18px; accent-color: var(--accent); }
+  .lesson-row .name { flex: 1; font-weight: 600; }
+  .lesson-row .count { color: var(--muted); font-size: .85rem; }
+  .lesson-row .due { font-size: .78rem; color: var(--accent); font-weight: 600; }
+
+  .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  @media (max-width: 520px) { .modes { grid-template-columns: 1fr; } }
+  .mode-btn {
+    text-align: left; padding: 14px 16px; border-radius: 12px; display: flex; flex-direction: column; gap: 3px;
+  }
+  .mode-btn b { font-size: 1rem; }
+  .mode-btn span { color: var(--muted); font-size: .82rem; }
+
+  .focus-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+  .chip {
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: .85rem;
+    background: var(--panel); cursor: pointer; user-select: none;
+  }
+  .chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); font-weight: 600; }
+
+  /* Study card */
+  .stage { min-height: 340px; display: flex; flex-direction: column; }
+  .progress { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; margin-bottom: 16px; }
+  .progress > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+  .prompt-label { text-align: center; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: 1px; }
+  .face { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; padding: 10px; }
+  .hanzi { font-size: 4.6rem; line-height: 1.1; font-weight: 500; }
+  .hanzi.small { font-size: 3.2rem; }
+  .pinyin { font-size: 1.7rem; color: var(--gold); }
+  .en { font-size: 1.5rem; }
+  .pos { color: var(--muted); font-size: .95rem; font-style: italic; }
+  .divider { width: 60%; height: 1px; background: var(--line); margin: 6px 0; }
+  .speaker { font-size: 1.4rem; background: transparent; border: none; padding: 6px 10px; }
+
+  .controls { display: flex; gap: 10px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+  .grade { display: flex; gap: 8px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+  .grade button { min-width: 92px; }
+  .g-again { background: var(--again-soft); border-color: var(--again); color: var(--ink); }
+  .g-good  { background: var(--good-soft);  border-color: var(--good);  color: var(--ink); }
+  .g-easy  { background: var(--easy-soft);  border-color: var(--easy);  color: var(--ink); }
+  .hint-key { font-size: .72rem; color: var(--muted); }
+  .hint-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; min-height: 44px; justify-content: center; }
+  .hint-btn { background: transparent; border: 1px dashed var(--line); color: var(--muted); font-size: .8rem; padding: 5px 14px; border-radius: 999px; }
+  .hint-text { color: var(--gold); }
+  .aids-row { display: flex; align-items: center; gap: 12px; justify-content: center; margin-top: 6px; }
+
+  /* Speaking exercise */
+  .speak-btn { background: var(--accent); color: #fff; border: 0; border-radius: 14px;
+    padding: 13px 24px; font-weight: 800; font-size: 1rem; box-shadow: 0 4px 0 var(--accent-dark);
+    margin-top: 4px; }
+  .speak-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-dark); }
+  .speak-btn.listening { background: var(--again); box-shadow: 0 4px 0 #8f342b; animation: pulseMic 1s ease-in-out infinite; }
+  @keyframes pulseMic { 0%,100% { opacity: 1 } 50% { opacity: .72 } }
+  .speak-fb { min-height: 22px; margin-top: 8px; font-size: .92rem; }
+  .speak-fb .ok { color: var(--good); font-weight: 700; }
+  .speak-fb .bad { color: var(--again); font-weight: 700; }
+
+  /* Sentence builder (word tiles) */
+  .choices.sentence-mode { display: block; }
+  .sent-answer { min-height: 62px; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px;
+    padding: 8px 4px; margin-bottom: 16px; border-bottom: 2px dashed var(--line); }
+  .sent-answer.ok  { border-bottom-color: var(--good); }
+  .sent-answer.bad { border-bottom-color: var(--again); }
+  .sent-bank { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .tile { background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-bottom-width: 3px;
+    border-radius: 10px; padding: 8px 12px; font: inherit; cursor: pointer; line-height: 1.15;
+    display: flex; flex-direction: column; align-items: center; }
+  .tile .t-han { font-size: 1.3rem; }
+  .tile .t-py { font-size: .72rem; color: var(--muted); }
+  .tile:disabled { opacity: .55; cursor: default; }
+  .sent-correct { margin-top: 10px; color: var(--good); font-size: 1.05rem; }
+
+  /* Quiz */
+  .choices { display: grid; gap: 10px; margin-top: 16px; }
+  .choice { text-align: center; padding: 14px; font-size: 1.15rem; }
+  .choice.correct { background: var(--good-soft); border-color: var(--good); }
+  .choice.wrong { background: var(--again-soft); border-color: var(--again); }
+
+  /* Browse */
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; }
+  td.h { font-size: 1.5rem; }
+  td.p { color: var(--gold); white-space: nowrap; }
+
+  .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .topbar .title { font-weight: 700; flex: 1; }
+  .done { text-align: center; padding: 30px 10px; }
+  .done .big { font-size: 3rem; }
+  .stat { display: inline-block; margin: 0 10px; }
+  .stat b { font-size: 1.6rem; }
+  .row-between { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .link { background: none; border: none; color: var(--accent); padding: 4px; text-decoration: underline; }
+  .hidden { display: none !important; }
+
+  /* Converse (roleplay) */
+  .conv-bubbles { display: flex; flex-direction: column; gap: 12px; min-height: 180px; max-height: 52vh; overflow-y: auto; padding: 4px; }
+  .bubble { max-width: 82%; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); position: relative; }
+  .bubble.app { align-self: flex-start; background: var(--panel); border-bottom-left-radius: 5px; }
+  .bubble.you { align-self: flex-end; background: var(--accent-soft); border-color: var(--accent); border-bottom-right-radius: 5px; }
+  .bubble .b-han { font-size: 1.7rem; line-height: 1.25; }
+  .bubble .b-py { color: var(--gold); font-size: 1rem; }
+  .bubble .b-en { color: var(--muted); font-size: .92rem; }
+  .bubble .b-acts { display: flex; gap: 2px; margin-top: 4px; }
+  .bubble .speaker { font-size: 1.1rem; padding: 2px 6px; }
+  .conv-controls { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 14px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .your-goal { text-align: center; }
+  .your-goal .b-han { color: var(--accent); }
+  .conv-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .conv-feedback { font-size: .9rem; text-align: center; min-height: 1.2em; }
+  .conv-feedback .ok { color: var(--good); font-weight: 600; }
+  .conv-feedback .bad { color: var(--again); font-weight: 600; }
+  .mic-btn.listening { background: var(--again); border-color: transparent; color: #fff; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
+
+  /* Character / writing */
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(30,22,12,.55);
+    display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 50;
+  }
+
+  /* Account / cloud sync */
+  .acct { border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; margin: 4px 0 10px;
+    background: var(--bg); }
+  .acct.hidden { display: none; }
+  .acct-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .acct-head b { font-weight: 800; }
+  .acct-state { color: var(--muted); font-size: .78rem; }
+  .acct-why { color: var(--muted); font-size: .8rem; margin: 6px 0 10px; line-height: 1.4; }
+  .acct input { width: 100%; padding: 11px 12px; margin-bottom: 8px; border-radius: 10px;
+    border: 1px solid var(--line); background: var(--panel); color: var(--ink); font: inherit; }
+  .acct-btns { display: flex; gap: 8px; }
+  .acct-btns button { flex: 1; padding: 11px; font-weight: 700; }
+  .acct-msg { font-size: .8rem; margin: 8px 0 0; min-height: 1em; }
+  .acct-msg.err { color: var(--again); }
+  .acct-msg.ok { color: var(--good); }
+
+  /* Backup reminder — sits just under the HUD (JS positions it to the measured
+     HUD height), above the coins but below the nav. Dismissible, snoozes a week. */
+  .bk-nudge { position: absolute; left: 12px; right: 12px; z-index: 22;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 10px 12px; box-shadow: 0 6px 20px rgba(0,0,0,.28); }
+  .bk-nudge.hidden { display: none; }
+  .bk-txt { flex: 1; min-width: 0; line-height: 1.3; }
+  .bk-txt b { display: block; font-size: .92rem; }
+  .bk-txt small { display: block; color: var(--muted); font-size: .76rem; }
+  .bk-go { flex: none; background: var(--accent); color: #fff; border: 0;
+    border-radius: 999px; padding: 8px 15px; font-weight: 800; font-size: .84rem; }
+  .bk-x { flex: none; background: none; border: 0; color: var(--muted);
+    font-size: 1rem; padding: 4px 6px; line-height: 1; }
+  .bk-age { font-weight: 700; }
+  .bk-age.stale { color: var(--again); }
+
+  /* Sign-in gate */
+  .auth-card { justify-content: center; align-items: center; text-align: center; gap: 10px; }
+  .auth-card .ob-hero { width: 120px; }
+  .auth-card h2 { font-size: 1.4rem; margin: 2px 0 0; }
+  .auth-card > p { color: var(--muted); max-width: 300px; margin: 0; line-height: 1.45; font-size: .9rem; }
+  .gate-form { width: 100%; max-width: 320px; margin-top: 10px; }
+  .gate-form input { width: 100%; padding: 13px 14px; margin-bottom: 9px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--panel); color: var(--ink); font: inherit; }
+  .gate-form .primary { width: 100%; padding: 14px; font-weight: 800; font-size: 1rem; }
+  .gate-form .ghost { width: 100%; background: none; border: 0; color: var(--muted);
+    padding: 12px; font-size: .9rem; }
+
+  /* First-run onboarding */
+  .onboard { position: fixed; inset: 0; z-index: 300; background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    padding: max(20px, env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom)); }
+  .onboard.hidden { display: none; }
+  .ob-card { width: 100%; max-width: 420px; display: flex; flex-direction: column;
+    min-height: min(560px, 80vh); }
+  /* auto so a tall slide can never be clipped on a short screen */
+  .ob-slides { position: relative; flex: 1; overflow: auto; }
+  .ob-slide { position: absolute; inset: 0; display: none; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; gap: 12px; padding: 8px; }
+  .ob-slide.on { display: flex; animation: obIn .35s ease; }
+  @keyframes obIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .ob-hero { width: 150px; height: auto; filter: drop-shadow(0 10px 14px rgba(0,0,0,.28)); }
+  .ob-slide h2 { font-size: 1.5rem; margin: 4px 0 0; }
+  .ob-slide p { color: var(--muted); margin: 0; max-width: 320px; line-height: 1.5; }
+  .ob-list { list-style: none; padding: 0; margin: 6px 0 0; display: grid; gap: 16px; text-align: left; width: 100%; max-width: 320px; }
+  .ob-list li { display: flex; gap: 13px; align-items: flex-start; }
+  .ob-list li > span { color: var(--accent); flex: none; margin-top: 2px; }
+  .ob-list .ob-emoji { font-size: 20px; line-height: 1; }
+  .ob-list b { font-weight: 800; }
+  /* Stacked pace cards — the old segmented pill left slide 3 visually empty and
+     gave small tap targets on a phone. */
+  .ob-pace { display: grid; gap: 10px; width: 100%; max-width: 300px; margin-top: 4px; }
+  .ob-pace button { display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+    background: var(--panel); border: 2px solid var(--line); border-radius: 14px;
+    padding: 13px 16px; text-align: left; width: 100%; }
+  .ob-pace button b { font-size: 1rem; font-weight: 800; }
+  .ob-pace button span { color: var(--muted); font-size: .84rem; }
+  .ob-pace button.on { border-color: var(--accent); background: var(--accent-soft); }
+  .ob-pace button.on b { color: var(--accent); }
+  .ob-fine { color: var(--muted); font-size: .78rem; margin-top: 2px; }
+  .ob-dots { display: flex; gap: 8px; justify-content: center; padding: 16px 0; }
+  .ob-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); transition: all .2s; }
+  .ob-dots i.on { background: var(--accent); width: 22px; border-radius: 5px; }
+  /* Primary button is always full-width and centred; Back is a quiet link
+     beneath it. Side-by-side buttons pushed "Next" off-centre from the content. */
+  .ob-nav { display: flex; flex-direction: column; gap: 4px; }
+  .ob-nav .primary { width: 100%; padding: 14px; font-weight: 800; font-size: 1rem; }
+  .ob-nav .ghost { align-self: center; background: none; border: 0;
+    color: var(--muted); padding: 8px 16px; font-size: .92rem; }
+  .modal {
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 18px; width: 100%; max-width: 560px;
+    max-height: 90vh; overflow: auto;
+  }
+  .hz-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 8px 0 14px; }
+  .hz-cell { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .hz-box {
+    width: 160px; height: 160px; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--panel); position: relative;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 100% 50%, 50% 100%;
+  }
+  .hz-box::after {  /* diagonal cross like a 米字格 writing grid */
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(45deg, transparent calc(50% - .5px), var(--line) 50%, transparent calc(50% + .5px)),
+      linear-gradient(-45deg, transparent calc(50% - .5px), var(--line) 50%, transparent calc(50% + .5px));
+    opacity: .5;
+  }
+  .hz-cell .lbl { color: var(--gold); font-size: .95rem; min-height: 1.2em; }
+  .hz-write-target { width: 160px; height: 160px; }
+  .writing-inline { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .copybook { display: inline-block; position: relative; }
+  .write-pager { display: flex; align-items: center; gap: 6px; justify-content: center; margin: 2px 0; }
+  .write-pager .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .write-pager .dot.on { background: var(--accent); }
+  .write-head { display: flex; align-items: center; gap: 12px; width: 100%; }
+  .write-head .wh-txt { flex: 1; text-align: left; min-width: 0; }
+  /* Clean contiguous copybook grid (shared soft-red borders, faint dashed cross) */
+  .copybook.tight { border: 1.5px solid var(--grid); border-radius: 6px; overflow: hidden; }
+  .copybook.tight .writing-inline { gap: 0 !important; }
+  .copybook.tight .tzg-cell {
+    border: 0; box-shadow: inset -1px -1px 0 var(--grid-soft);
+    background-image:
+      repeating-linear-gradient(0deg, var(--grid-soft) 0 4px, transparent 4px 8px),
+      repeating-linear-gradient(90deg, var(--grid-soft) 0 4px, transparent 4px 8px);
+    background-position: center;
+    background-size: 1px 100%, 100% 1px;
+    background-repeat: no-repeat;
+  }
+  .copybook.tight .writing-inline:last-child .tzg-cell { box-shadow: inset -1px 0 0 var(--grid-soft); }
+  .copybook.tight .writing-inline .tzg-cell:last-child { box-shadow: inset 0 -1px 0 var(--grid-soft); }
+  .copybook.tight .writing-inline:last-child .tzg-cell:last-child { box-shadow: none; }
+
+  /* Writing sheet (字帖) */
+  .sheet-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .sheet-tab { border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; font-size: 1.6rem; background: var(--panel); cursor: pointer; line-height: 1; }
+  .sheet-tab.on { background: var(--accent-soft); border-color: var(--accent); }
+  .sheet-header { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+  .sheet-header .big-char { font-size: 3.4rem; line-height: 1; }
+  .sheet-header .meta { display: flex; flex-direction: column; gap: 2px; }
+  .sheet-header .meta .py { color: var(--gold); font-size: 1.3rem; }
+  .sheet-header .meta .en { font-size: 1.05rem; }
+  .sheet-header .meta .facts { color: var(--muted); font-size: .85rem; }
+  .sheet-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; justify-content: center; }
+  /* 田字格 cell: solid border + faint dashed cross */
+  .tzg-cell {
+    position: relative; border: 1.5px solid var(--accent); background: var(--panel);
+    background-image:
+      linear-gradient(var(--accent-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--accent-soft) 1px, transparent 1px);
+    background-position: center;
+    background-size: 100% 50%, 50% 100%;
+  }
+  .tzg-cell.ref { background-color: var(--accent-soft); }
+
+  /* Print copybook */
+  #printArea { color: #000; }
+  .print-title { font-size: 20pt; margin: 0 0 2mm; }
+  .print-sub { font-size: 11pt; color: #333; margin: 0 0 4mm; }
+  .print-row { display: flex; gap: 0; }
+  .print-cell {
+    width: 18mm; height: 18mm; border: 0.4mm solid #e2001a; box-sizing: border-box; position: relative;
+    background-image:
+      repeating-linear-gradient(0deg, #f3aeb4 0 1mm, transparent 1mm 2mm),
+      repeating-linear-gradient(90deg, #f3aeb4 0 1mm, transparent 1mm 2mm);
+    background-position: center;
+    background-size: 0.3mm 100%, 100% 0.3mm;
+    background-repeat: no-repeat;
+  }
+  .print-cell + .print-cell { border-left: 0; }
+  .print-row + .print-row .print-cell { border-top: 0; }
+  .print-cell svg { display: block; position: absolute; inset: 0; }
+  @media screen { #printArea { display: none; } }
+  @media print {
+    body { background: #fff; }
+    .wrap > section, .wrap > header, .modal-backdrop { display: none !important; }
+    #printArea { display: block !important; }
+    @page { margin: 12mm; }
+  }
+
+  /* Header actions */
+  .top-actions { margin-left: auto; display: flex; gap: 6px; }
+  .icon-btn { width: 38px; height: 38px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; padding: 0; }
+
+  /* Dashboard */
+  /* ---- Stats screen ---- */
+  .stats-hero { display: flex; align-items: center; justify-content: space-around; gap: 10px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+    padding: 16px 10px; box-shadow: var(--shadow); }
+  .sh-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .sh-big { display: flex; align-items: center; gap: 8px; line-height: 1; }
+  .sh-big b { font-size: 2.2rem; font-weight: 800; color: var(--accent); }
+  .sh-flame { font-size: 1.6rem; }
+  .sh-sub { color: var(--muted); font-size: .8rem; text-align: center; }
+  .sh-div { width: 1px; align-self: stretch; background: var(--line); }
+  .sec-title { font-size: .78rem; text-transform: uppercase; letter-spacing: .9px;
+    color: var(--muted); font-weight: 800; margin: 20px 0 8px; }
+  .practice-list { display: grid; gap: 8px; }
+  .practice-list button { display: flex; align-items: center; gap: 13px; width: 100%;
+    text-align: left; padding: 12px 14px; border-radius: 14px;
+    border: 1px solid var(--line); background: var(--panel); }
+  .practice-list .em { font-size: 1.35rem; flex: none; }
+  .practice-list .pl-txt { display: block; }
+  .practice-list .pl-txt b { display: block; font-weight: 800; font-size: .97rem; }
+  .practice-list .pl-txt span { color: var(--muted); font-size: .8rem; }
+  .stats-note { text-align: center; color: var(--muted); font-size: .85rem; margin: 12px 0 0; }
+  .stats-note.hidden { display: none; }
+  .bk-foot { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 18px; }
+  .bk-foot span { font-weight: 700; }
+  .bk-foot span.stale { color: var(--again); }
+  .goal-ring { flex: 0 0 auto; }
+  .goal-ring .g-num { font-size: 1.1rem; font-weight: 700; fill: var(--ink); }
+  .goal-ring .g-lbl { font-size: .5rem; fill: var(--muted); letter-spacing: .5px; }
+  .streak { display: flex; flex-direction: column; gap: 2px; }
+  .streak .big { font-size: 1.9rem; font-weight: 700; line-height: 1; }
+  .streak .big .flame { color: var(--accent); }
+  .streak .sub { color: var(--muted); font-size: .82rem; }
+  .stat-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .stat-tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 8px; text-align: center; }
+  .stat-tile b { font-size: 1.5rem; display: block; line-height: 1.1; }
+  .stat-tile.mastered b { color: var(--good); }
+  .stat-tile.learning b { color: var(--gold); }
+  .stat-tile span { color: var(--muted); font-size: .76rem; }
+  .start-btn { width: 100%; font-size: 1.05rem; padding: 16px; font-weight: 800; margin-top: 16px;
+    box-shadow: 0 4px 0 var(--accent-dark); }
+  .start-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-dark); }
+
+  /* Collapsible study settings */
+  details.panel { border: 1px solid var(--line); border-radius: 12px; margin-top: 14px; background: var(--panel); }
+  details.panel > summary { cursor: pointer; padding: 13px 16px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  details.panel > summary::-webkit-details-marker { display: none; }
+  details.panel > summary::after { content: "▾"; color: var(--muted); transition: transform .2s; }
+  details.panel[open] > summary::after { transform: rotate(180deg); }
+  details.panel .panel-body { padding: 0 16px 16px; }
+  .lesson-row .bar { flex: 0 0 54px; height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; }
+  .lesson-row .bar > i { display: block; height: 100%; background: var(--good); }
+
+  /* What to practise — presets + skill toggles */
+  .preset-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+  .preset-row .chip { font-weight: 500; }
+  .focus-toggles { display: flex; flex-direction: column; }
+  .focus-toggle { display: flex; align-items: center; gap: 12px; padding: 11px 4px; border-top: 1px solid var(--line); cursor: pointer; user-select: none; }
+  .focus-toggle:first-child { border-top: 0; }
+  .focus-toggle .ft-ic { width: 34px; height: 34px; border-radius: 9px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex: 0 0 auto; }
+  .focus-toggle .ft-txt { flex: 1; min-width: 0; }
+  .focus-toggle .ft-name { font-size: .95rem; }
+  .focus-toggle .ft-desc { color: var(--muted); font-size: .8rem; }
+  .focus-toggle:not(.on) .ft-ic { opacity: .5; }
+  .focus-toggle:not(.on) .ft-name { color: var(--muted); }
+  .switch { width: 44px; height: 26px; border-radius: 999px; flex: 0 0 auto; position: relative; background: var(--line); transition: background .15s; }
+  .switch.on { background: var(--accent); }
+  .switch > span { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: left .15s; box-shadow: 0 1px 2px rgba(0,0,0,.25); }
+  .switch.on > span { left: 21px; }
+
+  /* Settings rows */
+  .set-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .set-row:last-child { border-bottom: 0; }
+  .set-row .lbl { font-weight: 600; }
+  .set-row .desc { color: var(--muted); font-size: .8rem; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .seg button { border: 0; border-radius: 0; padding: 7px 13px; font-size: .85rem; background: transparent; }
+  .seg button.on { background: var(--accent); color: #fff; }
+  .goal-seg button { display: flex; flex-direction: column; align-items: center; line-height: 1.15;
+    padding: 6px 14px; font-weight: 700; }
+  .goal-seg button small { font-size: .72rem; font-weight: 800; opacity: .7; }
+  .goal-seg button.on small { opacity: .9; }
+  .danger-btn { background: var(--again-soft); border-color: var(--again); color: var(--ink); }
+
+  /* Toast */
+  #toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+    background: var(--ink); color: var(--bg); padding: 11px 18px; border-radius: 999px; font-size: .9rem;
+    box-shadow: var(--shadow); opacity: 0; transition: opacity .25s, transform .25s; pointer-events: none; z-index: 100; max-width: 88vw; text-align: center; }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+  .counter { color: var(--muted); font-size: .82rem; font-weight: 600; }
+  /* Mascot stage — placement dialled in with layout.html. The dragon and bubble
+     are a fixed-size arrangement centred in the stage (offsets measured constant
+     across phone/tablet/desktop), so calc(50% ± Npx) reproduces it at any width. */
+  /* No overflow clipping: each pose's artwork sits at a different height (some
+     reach the full 260px, and the celebrate pop scales up), so cropping cut them
+     off. The 60px of transparent PNG that now hangs below is pointer-events:none
+     so it can never block the buttons underneath. */
+  .mascot-prompt { position: relative; width: 100%; height: 260px; margin: 2px 0 6px; }
+  /* transform-origin right-bottom: the celebrate pop expands up-and-LEFT, away
+     from the bubble, instead of swinging his arms into it. z-index above the
+     bubble is insurance — if any future pose is wider, he overlaps it rather
+     than appearing chopped off. */
+  .quiz-dragon { position: absolute; width: 214px; left: calc(50% - 38px); top: 0;
+    transform: translateX(-50%); transform-origin: right bottom; pointer-events: none; z-index: 2;
+    filter: drop-shadow(0 7px 6px rgba(0,0,0,.2)); }
+  .quiz-dragon.react { animation: dragonPop .34s ease; }
+  /* Chat-style prompt bubble: soft-red rounded box, one squared corner toward
+     the dragon. No pointy tail — bulletproof at every size and theme. */
+  /* Left edge anchored just right of the dragon (short prompts still centre at
+     ~+72px like the mock); long prompts grow RIGHTWARD only, never into him. */
+  .q-bubble { position: absolute; left: calc(50% + 42px); top: 31%; transform: translateY(-50%);
+    background: var(--accent-soft); border-radius: 20px; border-bottom-left-radius: 6px;
+    padding: 14px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; align-items: center; gap: 6px;
+    min-width: 92px; max-width: min(260px, calc(50% - 50px)); }
+  .q-bubble .hanzi { font-size: 3rem; line-height: 1.1; color: var(--ink); }
+  .q-bubble .hanzi.small { font-size: 2.1rem; }
+  .q-bubble .en { font-size: 1.25rem; color: var(--ink); }
+  .q-bubble .pos { color: var(--muted); font-size: .9rem; }
+  .q-bubble .speaker { font-size: 1.5rem; color: var(--accent); }
+  /* keep the centring translate while the pop plays, or the dragon jumps */
+  @keyframes dragonPop { 0%{transform:translateX(-50%) scale(1)} 40%{transform:translateX(-50%) scale(1.18)} 100%{transform:translateX(-50%) scale(1)} }
+
+  /* ===== Path home (lesson journey) ===== */
+  /* Full-bleed: the path escapes the centred .wrap and fills the viewport. */
+  /* Full-bleed height. Use dvh directly rather than the JS-measured --app-vh:
+     on iOS standalone the visualViewport measure came back ~one safe-area short
+     of the physical screen, so the column ended up top-aligned with a gap at the
+     bottom. dvh tracks the real visible area and self-updates. */
+  body[data-view="path"] .wrap { max-width: none; padding: 0; overflow: hidden;
+    height: 100vh; height: 100dvh; position: relative; }
+  body[data-view="path"] header.top { display: none; }
+  #path { position: relative; height: 100%; overflow: hidden; }
+
+  /* One vertical column on every viewport. The old sideways-scrolling desktop
+     layout existed only to pan a painted scene; with a plain page there is
+     nothing to pan, and dropping it removes the transposed-axis maths (and the
+     whole class of mirrored-cross-axis bugs) with it. */
+  .path-scroll { position: absolute; inset: 0; overflow-x: hidden; overflow-y: auto;
+    background: var(--bg); -webkit-overflow-scrolling: touch; }
+  .pathwrap { position: relative; width: 100%; max-width: 620px; margin: 0 auto; }
+  #pathScene { display: none; }
+
+  /* HUD floats over the top of the column. Its own background is transparent —
+     the fade is a separate full-bleed layer (below) so the pills (which carry
+     their own background) stay crisp while scrolling content dissolves. */
+  .path-top { position: absolute; top: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; gap: 8px;
+    padding: calc(10px + env(safe-area-inset-top)) 14px 10px; font-size: 14px; }
+  /* Fades anchored to #path (the 100dvh box), NOT the viewport — `position:fixed`
+     latches onto the layout viewport, which on iOS is taller than the visible
+     area, floating the bottom chrome up. Absolute inside #path lands on the
+     visible edges, exactly like the (working) top HUD. */
+  /* Top fade: solid to 52px, gone by 115px. Above coins (z 2–3), below pills (z20). */
+  #path::before { content: ""; position: absolute; left: 0; right: 0; top: 0;
+    height: 115px;
+    background: linear-gradient(180deg, var(--bg) 0, var(--bg) 52px, transparent 115px);
+    pointer-events: none; z-index: 18; }
+  /* Bottom fade: solid to 7px, gone by 76px. Short — the home indicator isn't
+     persistently there. Above coins, below FAB (25) and nav (40). */
+  #path::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 76px;
+    background: linear-gradient(0deg, var(--bg) 0, var(--bg) 7px, transparent 76px);
+    pointer-events: none; z-index: 15; }
+  .path-top .st { display: flex; align-items: center; gap: 5px; font-weight: 800; color: var(--accent);
+    background: var(--panel); border: 2px solid var(--line); border-bottom-width: 3px;
+    border-radius: 999px; padding: 4px 12px; }
+  .path-top .st b { color: var(--accent); font-weight: 800; }
+  .path-top .icon-btn { margin-left: auto; color: var(--accent); background: var(--panel);
+    border: 2px solid var(--line); border-bottom-width: 3px; }
+  /* Daily-goal pill: a ring that fills through the day, then flips to a gold ✓. */
+  .path-top .st.goal { cursor: pointer; padding: 3px 11px 3px 6px; font: inherit; }
+  .path-top .st.goal .goalring { display: block; }
+  .path-top .st.goal #pathGoalArc { transition: stroke-dashoffset .5s ease; }
+  .path-top .st.goal.done { color: var(--good); border-color: var(--good); }
+  .path-top .st.goal.done b { color: var(--good); }
+  .path-top .st.goal.done #pathGoalArc { stroke: var(--good); }
+  .path-top .st.goal.done .goalring circle:first-child { stroke: var(--good-soft); }
+
+  /* Daily-goal celebration */
+  .goal-burst { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center;
+    background: rgba(0,0,0,.5); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+  .goal-burst.show { opacity: 1; pointer-events: auto; }
+  .gb-card { background: var(--panel); border: 1px solid var(--line); border-radius: 22px;
+    padding: 24px 30px; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,.4);
+    transform: scale(.8) translateY(10px); transition: transform .32s cubic-bezier(.2,1.3,.5,1); }
+  .goal-burst.show .gb-card { transform: scale(1) translateY(0); }
+  .gb-card img { width: 128px; display: block; margin: 0 auto 6px; }
+  .gb-title { font-size: 1.3rem; font-weight: 800; color: var(--accent); }
+  .gb-sub { margin-top: 4px; font-weight: 700; color: var(--ink); }
+
+  /* ---- lesson buttons ---- */
+  /* The node is centred with translate(-50%,-50%). The global
+     `button:active { transform: translateY(1px) }` has higher specificity and
+     would REPLACE that transform, flinging the button half its own size
+     down-right on press — so re-state the centring here and press the coin. */
+  .pnode { position: absolute; transform: translate(-50%,-50%); background: none; border: 0;
+    padding: 0; cursor: pointer; z-index: 3; }
+  .pnode:active { transform: translate(-50%,-50%); }
+  .pnode.locked { cursor: default; }
+  .pnode:focus { outline: none; }
+  .pnode:focus-visible .coin { box-shadow: 0 var(--lip) 0 var(--accent-dark),
+    0 0 0 4px var(--panel), 0 0 0 7px var(--accent); }
+
+  .coin { --lip: 7px; position: relative; border-radius: 50%; display: grid; place-items: center;
+    transition: transform .08s ease, box-shadow .08s ease; }
+  .coin.done, .coin.now { background: var(--accent); box-shadow: 0 var(--lip) 0 var(--accent-dark); }
+  .coin.todo { background: var(--coin-todo); box-shadow: 0 var(--lip) 0 var(--coin-todo-dark); }
+  .pnode:not(.locked):active .coin { transform: translateY(calc(var(--lip) - 2px));
+    box-shadow: 0 2px 0 var(--accent-dark); }
+  .coin .hero { font-size: 30px; font-weight: 700; color: #fff; line-height: 1; }
+  .coin.todo .ico { color: var(--muted); display: block; }
+  /* finished lessons get a tick badge so completion reads at a glance */
+  .coin .tick { position: absolute; right: -2px; bottom: 0; width: 26px; height: 26px;
+    border-radius: 50%; background: var(--panel); color: var(--accent);
+    display: grid; place-items: center; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
+  .coin .tick svg { width: 15px; height: 15px; }
+  /* gentle "you are here" halo on the current lesson */
+  .coin.now::before { content: ""; position: absolute; inset: -22px; border-radius: 50%;
+    background: radial-gradient(circle, var(--coin-halo), transparent 68%); pointer-events: none;
+    animation: coinPulse 2.2s ease-in-out infinite; will-change: transform, opacity; }
+  @keyframes coinPulse { 0%,100% { opacity:.55; transform: scale(.94) }
+                         50% { opacity:1; transform: scale(1.06) } }
+  /* -32px, not -40: the gap between coins is only `gap - size`, and a taller
+     offset pushes the bubble onto the button above. */
+  .coin .start { position: absolute; top: -32px; left: 50%; transform: translateX(-50%);
+    background: var(--panel); color: var(--accent); font-size: 12px; font-weight: 900; letter-spacing: .5px;
+    border: 2px solid var(--line); border-radius: 12px; padding: 5px 12px;
+    box-shadow: 0 3px 0 var(--line); white-space: nowrap;
+    z-index: 5; animation: bob 1.8s ease-in-out infinite; will-change: transform; }
+  .coin .start:after { content: ""; position: absolute; left: 50%; bottom: -6px;
+    transform: translateX(-50%) rotate(45deg); width: 9px; height: 9px; background: var(--panel);
+    border-right: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+  @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0) } 50% { transform: translateX(-50%) translateY(-3px) } }
+
+  .pchapter { position: absolute; transform: translate(-50%,-50%); z-index: 3; background: var(--accent);
+    color: #fff; border-radius: 14px; padding: 9px 16px; box-shadow: 0 4px 0 var(--accent-dark);
+    text-align: center; white-space: nowrap; }
+  .pchapter .u { font-size: 10px; opacity: .9; letter-spacing: 1.1px; font-weight: 700; }
+  .pchapter .t { font-size: 14px; font-weight: 800; }
+  .psprite { position: absolute; transform: translate(-50%,-50%); pointer-events: none;
+    z-index: 2; filter: drop-shadow(0 8px 8px rgba(0,0,0,.22)); }
+  /* mirror alternate mascots — keep the centring translate, add the flip */
+  .psprite.flip { transform: translate(-50%,-50%) scaleX(-1); }
+
+  @media (max-width: 699px) {
+    .pchapter { padding: 7px 12px; }
+    .pchapter .t { font-size: 13px; }
+  }
+
+  .bottomnav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--panel); border-top: 1px solid var(--line); display: none; justify-content: center; gap: 8px; padding: 8px 0 calc(8px + env(safe-area-inset-bottom)); z-index: 40; }
+  body[data-view="path"] .bottomnav, body[data-view="home"] .bottomnav { display: flex; }
+  body[data-view="home"] #home { padding-bottom: 76px; }
+  .ico { display: block; }
+  .path-top .st .ico, .bottomnav .ico { display: block; }
+  /* No background transition here. The global `button` rule transitions
+     background .15s; when the theme flips, the var() behind it changes
+     without the transition restarting, and Chrome keeps painting the old
+     colour until something else invalidates the element. */
+  .bottomnav button { border: 0; background: none; color: var(--muted); font-size: 21px; width: 58px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform .05s ease; }
+  .bottomnav button.on { color: #fff; background: var(--accent); }
+
+  /* Floating pill, themed. It used to be forced white because the path was a
+     bright outdoor scene; with a plain page that reads as a slab of the wrong
+     colour in dark mode. */
+  body[data-view="path"] .bottomnav {
+    position: absolute;   /* anchor to .wrap (100dvh), not the layout viewport */
+    left: 50%; right: auto; transform: translateX(-50%);
+    bottom: 14px;   /* from the true screen edge; the home indicator isn't reserved */
+    background: var(--panel); border: 2px solid var(--line); border-bottom-width: 4px;
+    border-radius: 18px; padding: 7px 9px; box-shadow: 0 8px 22px rgba(0,0,0,.28);
+  }
+  body[data-view="path"] .bottomnav button { color: var(--muted); font-size: 19px; }
+  /* needs the same path scope: the rule above outranks a bare `.bottomnav
+     button.on` on element count, and would keep the active icon grey. */
+  body[data-view="path"] .bottomnav button.on { color: #fff; background: var(--accent); }
+
+  /* Review call-to-action, floating above the bottom nav on the path */
+  .review-fab { position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: 92px; z-index: 25;   /* absolute in #path (100dvh); clears the nav pill */
+    display: flex; align-items: center; gap: 7px;
+    background: var(--g); color: #fff; border: 0; border-radius: 999px;
+    padding: 11px 20px; font-weight: 800; font-size: 14px; white-space: nowrap;
+    box-shadow: 0 5px 0 var(--g-dark), 0 10px 22px rgba(20,50,20,.32); cursor: pointer; }
+  .review-fab:active { transform: translateX(-50%) translateY(2px);
+    box-shadow: 0 3px 0 var(--g-dark), 0 6px 16px rgba(20,50,20,.3); }
+  .review-fab.caughtup { background: #fff; color: var(--g-dark); cursor: default;
+    box-shadow: 0 4px 0 var(--g-soft), 0 8px 18px rgba(20,50,20,.2); }
+
+  /* Phones do the least work: the looping path animations are decoration, and
+     they cost a repaint every frame while you scroll. */
+  @media (max-width: 699px) {
+    .coin.now::before { animation: none; opacity: .55; }
+    .coin .start { animation: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .coin.now::before, .coin .start, .speak-btn.listening, .mic-btn.listening { animation: none; }
+    .quiz-dragon.react { animation: none; }
+    .path-scroll { scroll-behavior: auto; }
+  }
+
+  /* Lesson sheet */
+  .lsheet-back { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: flex-end; justify-content: center; z-index: 60; }
+  .lsheet { position: relative; background: var(--panel); width: 100%; max-width: 460px; border-top-left-radius: 22px; border-top-right-radius: 22px; padding: 10px 18px calc(20px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,.2); animation: slideup .22s ease; }
+  .lsheet-mascot { position: absolute; top: -84px; right: 14px; width: 108px; pointer-events: none; filter: drop-shadow(0 6px 8px rgba(0,0,0,.28)); animation: mascotUp .3s ease .05s both; }
+  @keyframes mascotUp { from { transform: translateY(24px) scale(.9); opacity: 0 } to { transform: none; opacity: 1 } }
+  @keyframes slideup { from { transform: translateY(30px); opacity: .6 } to { transform: none; opacity: 1 } }
+  .lsheet .handle { width: 38px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 14px; }
+  .lhead { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .lcoin { width: 52px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; box-shadow: 0 5px 0 var(--accent-dark); flex: 0 0 auto; }
+  .lmeta { flex: 1; min-width: 0; }
+  .lmeta .k { font-size: 11px; color: var(--muted); letter-spacing: .5px; }
+  .lmeta .t { font-size: 16px; font-weight: 700; }
+  .lmeta .bar { height: 7px; border-radius: 4px; background: var(--line); overflow: hidden; margin: 3px 0 4px; }
+  .lmeta .bar > i { display: block; height: 100%; background: var(--good); }
+  .lmeta .m { font-size: 11px; color: var(--muted); }
+  .lstudy { width: 100%; background: var(--accent); color: #fff; border: 0; border-radius: 14px; padding: 14px; font-size: 16px; font-weight: 800; text-align: center; box-shadow: 0 5px 0 var(--accent-dark); margin: 6px 0 4px; cursor: pointer; }
+  .lstudy small { display: block; font-weight: 500; font-size: 11px; opacity: .9; }
+  .lsub { font-size: 11px; color: var(--muted); margin: 14px 2px 8px; letter-spacing: .3px; display: flex; align-items: center; gap: 6px; }
+  .lchips { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .lchip { display: flex; align-items: center; gap: 9px; border: 1.5px solid var(--line); border-radius: 12px; padding: 11px 12px; font-size: 13px; font-weight: 600; background: var(--panel); color: var(--ink); cursor: pointer; }
+  .lchip .em { font-size: 18px; }
+  .lchip.wide { grid-column: 1 / -1; }
+  .lchips.locked { opacity: .5; }
+  .lchips.locked .lchip { cursor: default; color: var(--muted); }
+  .lchip .lk { margin-left: auto; color: var(--muted); }
+
+  /* Phone-friendly tweaks */
+  @media (max-width: 560px) {
+    .card { padding: 15px 12px; border-radius: 13px; }
+    .stage { min-height: 300px; }
+    /* The dragon leaves a narrower bubble on a phone — ease the text down so
+       longer English prompts still read without shredding into single words. */
+    .q-bubble { padding: 12px 13px; }
+    .q-bubble .hanzi { font-size: 2.4rem; }
+    .q-bubble .hanzi.small { font-size: 1.8rem; }
+    .q-bubble .en { font-size: 1.02rem; }
+
+    /* Learning sessions fit the screen — no page scrolling to reach the buttons */
+    body[data-view="study"], body[data-view="quiz"], body[data-view="converse"] { overflow: hidden; }
+    body[data-view="study"] .wrap,
+    body[data-view="quiz"] .wrap,
+    body[data-view="converse"] .wrap {
+      height: 100vh; height: 100dvh;   /* dvh tracks the visible area; the old
+        JS --app-vh measured short on iOS standalone, leaving a gap at the bottom */
+      display: flex; flex-direction: column;
+      padding-top: max(8px, env(safe-area-inset-top));
+      padding-bottom: max(8px, env(safe-area-inset-bottom));
+    }
+    body[data-view="study"] header.top,
+    body[data-view="quiz"] header.top,
+    body[data-view="converse"] header.top { display: none; }
+    body[data-view="study"] #study,
+    body[data-view="quiz"] #quiz,
+    body[data-view="converse"] #converse { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+    body[data-view="study"] .stage,
+    body[data-view="quiz"] .stage { flex: 1; min-height: 0; }
+    body[data-view="study"] .face,
+    body[data-view="quiz"] .face { overflow-y: auto; min-height: 0; }
+    body[data-view="converse"] #converse .card { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+    body[data-view="converse"] .conv-bubbles { flex: 1; max-height: none; }
+    .topbar { margin-bottom: 10px; }
+    header.top { margin-bottom: 12px; }
+    header.top h1 { font-size: 1.15rem; }
+    .modes { grid-template-columns: 1fr; }
+    .hanzi { font-size: 3.6rem; }
+    .hanzi.small { font-size: 2.5rem; }
+    .pinyin { font-size: 1.45rem; }
+    .en { font-size: 1.25rem; }
+    .prompt-label { font-size: .72rem; }
+    .bubble { max-width: 88%; }
+    .bubble .b-han { font-size: 1.45rem; }
+    .sheet-header .big-char { transform: scale(.85); }
+    .modal { padding: 14px; }
+    button { padding: 9px 13px; }
+    .grade button { min-width: 78px; }
+    .topbar { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>中文 <span style="color:var(--accent)">Beginner A</span></h1>
+    <div class="top-actions">
+      <button class="icon-btn ghost" id="helpBtn" title="Help" aria-label="Help">?</button>
+      <button class="icon-btn ghost" id="settingsBtn" title="Settings" aria-label="Settings">⚙</button>
+    </div>
+  </header>
+
+  <!-- PATH (home / lesson journey) -->
+  <section id="path" class="hidden">
+    <div class="path-scroll" id="pathScroll">
+      <div class="pathwrap" id="pathList"><svg id="pathScene"></svg></div>
+    </div>
+    <button class="review-fab hidden" id="reviewFab"></button>
+    <div class="path-top">
+      <span class="st"><span data-icon="flame" data-size="17"></span> <b id="pathStreak">0</b></span>
+      <button class="st goal" id="pathGoal" aria-label="Daily goal — view progress">
+        <svg class="goalring" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="var(--line)" stroke-width="3.2"/>
+          <circle id="pathGoalArc" cx="12" cy="12" r="9" fill="none" stroke="var(--accent)"
+            stroke-width="3.2" stroke-linecap="round" transform="rotate(-90 12 12)"
+            stroke-dasharray="56.5" stroke-dashoffset="56.5"/>
+        </svg>
+        <b id="pathGoalTxt">0/20</b>
+      </button>
+      <button class="icon-btn ghost" id="pathSettings" aria-label="Settings"><span data-icon="gear" data-size="18"></span></button>
+    </div>
+    <div class="bk-nudge hidden" id="backupNudge" role="status">
+      <div class="bk-txt">
+        <b>Back up your progress</b>
+        <small id="bkNudgeSub">Your streak and history live only on this device.</small>
+      </div>
+      <button class="bk-go" id="bkNudgeExport">Export</button>
+      <button class="bk-x" id="bkNudgeClose" aria-label="Remind me later">✕</button>
+    </div>
+  </section>
+  <nav class="bottomnav">
+    <button data-nav="path" class="on" aria-label="Path"><span data-icon="lotus" data-size="21"></span></button>
+    <button data-nav="stats" aria-label="Progress"><span data-icon="chart" data-size="21"></span></button>
+    <button data-nav="settings" aria-label="Settings"><span data-icon="gear" data-size="21"></span></button>
+  </nav>
+
+  <!-- STATS / HOME (dashboard) -->
+  <section id="home" class="hidden">
+    <!-- Hero: the two numbers that actually motivate -->
+    <div class="stats-hero">
+      <div class="sh-item">
+        <div class="sh-big"><span class="sh-flame">🔥</span><b id="streakNum">0</b></div>
+        <div class="sh-sub" id="streakSub">day streak</div>
+      </div>
+      <div class="sh-div"></div>
+      <div class="sh-item">
+        <svg class="goal-ring" width="72" height="72" viewBox="0 0 72 72" id="goalRing" aria-hidden="true">
+          <circle cx="36" cy="36" r="30" fill="none" stroke="var(--line)" stroke-width="7"/>
+          <circle cx="36" cy="36" r="30" fill="none" stroke="var(--accent)" stroke-width="7"
+            stroke-linecap="round" transform="rotate(-90 36 36)" id="goalArc"
+            stroke-dasharray="188.5" stroke-dashoffset="188.5"/>
+          <text x="36" y="35" text-anchor="middle" class="g-num" id="goalNum">0</text>
+          <text x="36" y="47" text-anchor="middle" class="g-lbl" id="goalLbl">TODAY</text>
+        </svg>
+        <div class="sh-sub">today's goal</div>
+      </div>
+    </div>
+
+    <div class="stat-tiles">
+      <div class="stat-tile mastered"><b id="statMastered">0</b><span>mastered</span></div>
+      <div class="stat-tile learning"><b id="statLearning">0</b><span>learning</span></div>
+      <div class="stat-tile"><b id="statNew">0</b><span>to learn</span></div>
+    </div>
+    <p class="stats-note hidden" id="statsNote"></p>
+
+    <button class="primary start-btn" id="startBtn">Start studying →</button>
+
+    <h3 class="sec-title">Practice</h3>
+    <div class="practice-list">
+      <button data-mode="converse"><span class="em">🗣️</span>
+        <span class="pl-txt"><b>Converse</b><span>Work through a dialogue, line by line.</span></span></button>
+      <button data-mode="quiz"><span class="em">✅</span>
+        <span class="pl-txt"><b>Quiz</b><span>A quick multiple-choice run.</span></span></button>
+      <button data-mode="browse"><span class="em">📖</span>
+        <span class="pl-txt"><b>Browse</b><span>Every word, with stroke order.</span></span></button>
+    </div>
+
+    <details class="panel" id="studyPanel">
+      <summary>What to study <span class="muted" style="font-weight:400;font-size:.82rem" id="panelSummary"></span></summary>
+      <div class="panel-body">
+        <div class="row-between" style="margin-bottom:6px">
+          <span class="muted" style="font-size:.85rem">Lessons</span>
+          <button class="link" id="toggleAll">select all</button>
+        </div>
+        <div class="lesson-list" id="lessonList"></div>
+        <div class="row-between" style="margin:6px 0 8px">
+          <span class="muted" style="font-size:.85rem">What to practise</span>
+          <span class="muted" style="font-size:.76rem">study mixes whatever's on</span>
+        </div>
+        <div class="preset-row" id="focusPresets"></div>
+        <div class="focus-toggles" id="focusRow"></div>
+      </div>
+    </details>
+
+    <p class="bk-foot">Saved on this device only — <span id="backupFoot">never backed up</span>.</p>
+  </section>
+
+  <!-- STUDY -->
+  <section id="study" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="studyBack">← Home</button>
+      <span class="title" id="studyTitle">Study</span>
+      <span class="counter" id="studyCounter"></span>
+      <button class="link" id="studyShuffle">shuffle</button>
+    </div>
+    <div class="card stage">
+      <div class="progress"><i id="studyBar"></i></div>
+      <div class="prompt-label" id="promptLabel"></div>
+      <div class="face" id="studyFace"></div>
+      <div class="choices" id="studyChoices"></div>
+      <div id="studyReveal" class="controls hidden">
+        <button class="primary" id="studyNext">Next character →</button>
+      </div>
+      <div class="controls hidden" id="studyContinueWrap">
+        <button class="primary" id="studyContinue">Continue <span class="hint-key">(Space)</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="quizBack">← Home</button>
+      <span class="title" id="quizTitle">Quiz</span>
+    </div>
+    <div class="card stage">
+      <div class="progress"><i id="quizBar"></i></div>
+      <div class="prompt-label" id="quizPromptLabel"></div>
+      <div class="face" id="quizFace"></div>
+      <div class="choices" id="quizChoices"></div>
+      <div class="controls hidden" id="quizNextWrap">
+        <button class="primary" id="quizNext">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE -->
+  <section id="browse" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="browseBack">← Home</button>
+      <span class="title" id="browseTitle">Browse</span>
+    </div>
+    <div class="card">
+      <table>
+        <thead><tr><th>汉字</th><th>拼音</th><th>English</th><th></th></tr></thead>
+        <tbody id="browseBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DONE -->
+  <section id="done" class="hidden">
+    <div class="card done">
+      <img src="images/dragon-celebrate.png?v=112" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <h2 id="doneTitle">Session complete</h2>
+      <div id="doneStats" style="margin:14px 0"></div>
+      <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
+      <button class="primary hidden" id="doneAgain" style="margin-bottom:8px">Practice again</button>
+      <button class="ghost" id="doneHome">← Back to path</button>
+    </div>
+  </section>
+
+  <!-- WRITING SHEET -->
+  <section id="sheet" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="sheetBack">← Home</button>
+      <span class="title" id="sheetTitle">Writing sheet</span>
+      <button id="sheetReset" class="link">reset</button>
+      <button id="sheetPrint" class="primary">🖨 Print sheet</button>
+    </div>
+    <div id="sheetTabs" class="sheet-tabs"></div>
+    <div class="card">
+      <div id="sheetHeader" class="sheet-header"></div>
+      <p class="muted" id="sheetTip" style="font-size:.82rem;margin:2px 0 14px">
+        Write each box — correct strokes fill in red as you go. The first row shows a faint outline to trace; the rest are from memory. Tap the big character to watch the strokes. Use 🖨 to print a trace sheet for pen practice.
+      </p>
+      <div id="sheetGrid" class="sheet-grid"></div>
+    </div>
+  </section>
+
+  <!-- CONVERSE -->
+  <section id="converse" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="convBack">← Home</button>
+      <span class="title" id="convTitle">Converse</span>
+    </div>
+    <div class="focus-row" id="convPicker"></div>
+    <div class="card">
+      <div id="convBubbles" class="conv-bubbles"></div>
+      <div id="convControls" class="conv-controls"></div>
+    </div>
+  </section>
+
+  <!-- SETTINGS modal -->
+  <div id="settingsModal" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="topbar">
+        <span class="title">Settings</span>
+        <button class="ghost" id="settingsClose">Close ✕</button>
+      </div>
+
+      <!-- Account (hidden entirely until cloud sync is configured) -->
+      <div class="acct hidden" id="acctBox">
+        <div class="acct-head">
+          <b>Account</b>
+          <span class="acct-state" id="acctState">Not signed in</span>
+        </div>
+        <div id="acctSignedOut">
+          <p class="acct-why">Sign in to back up your progress and use it on another device.</p>
+          <input type="email" id="acctEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
+          <input type="password" id="acctPass" placeholder="Password" autocomplete="current-password">
+          <div class="acct-btns">
+            <button class="primary" id="acctSignIn">Sign in</button>
+            <button id="acctSignUp">Create account</button>
+          </div>
+          <p class="acct-msg" id="acctMsg"></p>
+        </div>
+        <div id="acctSignedIn" class="hidden">
+          <p class="acct-why" id="acctSyncLine">Synced.</p>
+          <div class="acct-btns">
+            <button class="primary" id="acctSyncNow">Sync now</button>
+            <button id="acctSignOut">Sign out</button>
+          </div>
+        </div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Appearance</div><div class="desc">Light, dark, or follow your device.</div></div>
+        <div class="seg" id="themeSeg">
+          <button data-theme="system">Auto</button>
+          <button data-theme="light">Light</button>
+          <button data-theme="dark">Dark</button>
+        </div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Audio speed</div><div class="desc">How fast words are spoken.</div></div>
+        <input type="range" id="rateRange" min="0.4" max="1" step="0.05" style="width:130px">
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Daily goal</div><div class="desc">Cards to reach each day to keep your streak.</div></div>
+        <div class="seg goal-seg" id="goalSeg">
+          <button data-goal="10">Casual<small>10</small></button>
+          <button data-goal="20">Regular<small>20</small></button>
+          <button data-goal="30">Serious<small>30</small></button>
+        </div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Sound effects</div><div class="desc">Chimes for correct, wrong, and finishing a lesson.</div></div>
+        <div class="switch" id="soundSwitch" role="switch" tabindex="0"><span></span></div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Stroke checking</div><div class="desc">Check each stroke as you write (off = free tracing).</div></div>
+        <div class="switch" id="checkSwitch" role="switch" tabindex="0"><span></span></div>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Backup progress</div>
+          <div class="desc">Save everything to a file. Progress lives only on this device —
+            <span id="backupAge" class="bk-age">never backed up</span>.</div></div>
+        <button id="exportBtn">Export</button>
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Restore backup</div><div class="desc">Replaces current progress with a saved file.</div></div>
+        <button id="importBtn">Import</button>
+        <input type="file" id="importFile" accept="application/json,.json" class="hidden">
+      </div>
+      <div class="set-row">
+        <div><div class="lbl">Reset progress</div><div class="desc">Clears memory for the selected lessons.</div></div>
+        <button class="danger-btn" id="resetBtn">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HELP modal -->
+  <div id="helpModal" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="topbar">
+        <span class="title">How it works</span>
+        <button class="ghost" id="helpClose">Close ✕</button>
+      </div>
+      <div style="font-size:.92rem; line-height:1.6">
+        <p style="margin:.2rem 0 .6rem"><b>Start studying</b> uses spaced repetition — it brings back words you find hard and spaces out ones you know. Grade each card <b>Again / Good / Easy</b>.</p>
+        <p style="margin:.6rem 0 .3rem"><b>Modes</b></p>
+        <ul style="margin:.2rem 0 .6rem; padding-left:1.2rem">
+          <li>🗣️ <b>Converse</b> — roleplay a dialogue; it speaks, you reply.</li>
+          <li>✅ <b>Quiz</b> — quick multiple-choice.</li>
+          <li>📖 <b>Browse</b> — every word, with audio and stroke order.</li>
+        </ul>
+        <p style="margin:.6rem 0 .3rem"><b>Buttons you'll see</b></p>
+        <ul style="margin:.2rem 0; padding-left:1.2rem">
+          <li>🔊 hear it &nbsp;·&nbsp; 🐢 hear it slowly</li>
+          <li>✍︎ stroke order &amp; writing practice (with a printable sheet)</li>
+          <li>🎤 say it and check your pronunciation (Chrome/Edge only)</li>
+          <li>👀 reveal the pinyin hint</li>
+        </ul>
+        <p class="muted" style="font-size:.82rem;margin-top:.6rem">On desktop: Space reveals, 1/2/3 grade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LESSON sheet (opens from a path node) -->
+  <div id="lessonSheet" class="lsheet-back hidden"></div>
+
+  <div id="toast"></div>
+
+  <!-- Printable copybook (hidden on screen, shown only when printing) -->
+  <div id="printArea" class="hidden"></div>
+</div>
+
+  <!-- CHARACTER / WRITING modal -->
+  <div id="charModal" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="topbar">
+        <span class="title" id="charModalTitle">Character</span>
+        <button class="ghost" id="charClose">Close ✕</button>
+      </div>
+      <div id="charTargets" class="hz-grid"></div>
+      <div class="controls">
+        <button class="primary" id="charAnimate">▶ Animate strokes</button>
+        <button id="charPractice">✍︎ Practice writing</button>
+        <button id="charSheet">📝 Writing sheet</button>
+      </div>
+      <p class="muted" id="charHint" style="text-align:center;font-size:.8rem;margin:10px 0 0"></p>
+    </div>
+  </div>
+
+  <!-- Sign-in gate. Shown only when cloud sync is configured AND there is no
+       cached session. A cached session always opens the app, even offline. -->
+  <div id="authGate" class="onboard hidden" aria-hidden="true">
+    <div class="ob-card auth-card">
+      <img src="images/dragon-waving.png?v=112" alt="" class="ob-hero">
+      <h2>中文 Beginner A</h2>
+      <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
+      <div class="gate-form">
+        <input type="email" id="gateEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
+        <input type="password" id="gatePass" placeholder="Password (6+ characters)" autocomplete="current-password">
+        <button class="primary" id="gatePrimary">Create account</button>
+        <button class="ghost" id="gateToggle">I already have an account</button>
+        <p class="acct-msg" id="gateMsg"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- First-run onboarding -->
+  <div id="onboard" class="onboard hidden" aria-hidden="true">
+    <div class="ob-card">
+      <div class="ob-slides" id="obSlides">
+        <section class="ob-slide">
+          <img src="images/dragon-waving.png?v=112" alt="" class="ob-hero">
+          <h2>欢迎！Welcome</h2>
+          <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
+        </section>
+        <section class="ob-slide">
+          <h2>How it works</h2>
+          <ul class="ob-list">
+            <li><span data-icon="lotus" data-size="22"></span><div><b>Follow the path</b><br>One lesson unlocks the next.</div></li>
+            <li><span data-icon="flame" data-size="22"></span><div><b>Build a streak</b><br>Hit your daily goal each day to keep it alive.</div></li>
+            <li><span class="ob-emoji">🗣️</span><div><b>All the skills</b><br>Read, listen, write and speak — mixed into every lesson.</div></li>
+          </ul>
+        </section>
+        <section class="ob-slide">
+          <h2>Pick your pace</h2>
+          <p>Hit this each day to keep your streak going.</p>
+          <div class="ob-pace" id="obGoalSeg">
+            <button data-goal="10"><b>Casual</b><span>10 words a day</span></button>
+            <button data-goal="20" class="on"><b>Regular</b><span>20 words a day</span></button>
+            <button data-goal="30"><b>Serious</b><span>30 words a day</span></button>
+          </div>
+          <small class="ob-fine">You can change this any time in Settings.</small>
+        </section>
+      </div>
+      <div class="ob-dots" id="obDots"></div>
+      <div class="ob-nav">
+        <button class="primary" id="obNext">Next</button>
+        <button class="ghost" id="obBack" style="display:none">Back</button>
+      </div>
+    </div>
+  </div>
+
+<script src="data.js?v=112"></script>
+<script src="hanzi-data.js?v=112"></script>
+<script src="vendor/hanzi-writer.min.js"></script>
+<script src="app.js?v=112"></script>
+<script>
+  // Register the offline service worker (only activates over HTTPS/localhost).
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  }
+</script>
+</body>
+</html>
