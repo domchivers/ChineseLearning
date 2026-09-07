@@ -798,6 +798,22 @@
     .grade button { min-width: 78px; }
     .topbar { gap: 8px; }
   }
+
+  /* "Meet the new words" — the teach-before-test preview */
+  .meet-intro { text-align: center; color: var(--muted); font-size: .9rem; margin: .2rem 0 .8rem; }
+  .meet-list { display: flex; flex-direction: column; gap: .5rem; width: 100%; max-width: 440px;
+    margin: 0 auto; overflow-y: auto; }
+  .meet-row { display: flex; align-items: center; gap: .75rem; padding: .5rem .7rem;
+    border-radius: 12px; background: var(--panel); border: 1px solid var(--line); }
+  .meet-hz { font-size: 1.7rem; font-weight: 700; line-height: 1.1; min-width: 2.2em; text-align: center; }
+  .meet-info { flex: 1; min-width: 0; text-align: left; }
+  .meet-py { font-size: 1rem; color: var(--ink); }
+  .meet-en { font-size: .84rem; color: var(--muted); }
+  .meet-row .speaker { flex: none; }
+  .study-start { display: block; margin: 1.1rem auto .2rem; padding: .75rem 1.6rem; border: none;
+    border-radius: 14px; background: var(--accent); color: #fff; font-size: 1rem; font-weight: 700;
+    cursor: pointer; box-shadow: 0 3px 0 var(--accent-dark); }
+  .study-start:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--accent-dark); }
 </style>
 </head>
 <body>

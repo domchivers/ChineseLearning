@@ -1558,9 +1558,61 @@
     sessionTotal = queue.length;
     $("#studyTitle").textContent = "Study";
     show("study");
-    nextStudyCard();
+    updateStudyProgress();
+    // Teach before test: if this session introduces words the learner has never
+    // seen, MEET them first (character + pinyin + meaning + audio) before any quiz.
+    const fresh = queue.filter(c => !srs[c.id]);
+    if (fresh.length) {
+      const order = new Map(CARDS.map((c, i) => [c.id, i]));
+      fresh.sort((a, b) => (order.get(a.id) ?? 0) - (order.get(b.id) ?? 0));
+      meetNewWords(fresh, () => nextStudyCard());
+    } else {
+      nextStudyCard();
+    }
   }
   function startStudy() { beginStudySession(buildStudyQueue()); }
+
+  // "Meet the new words" preview — shown once per session, before the first quiz
+  // card, whenever the session brings in words never studied before. Beginners
+  // get to SEE and HEAR a word before being asked to recall it.
+  function meetNewWords(cards, done) {
+    curCard = null; studyAnswered = true;
+    $("#promptLabel").textContent = "New words";
+    $("#studyChoices").classList.add("hidden");
+    $("#studyContinueWrap").classList.add("hidden");
+    $("#studyReveal").classList.add("hidden");
+    $("#studyNext").classList.add("hidden");
+    // Cap the preview so a large mixed session never dumps a wall of words to
+    // "meet" — you'll still meet the rest as they first come up in practice.
+    const MAX_MEET = 15;
+    const shown = cards.slice(0, MAX_MEET);
+    const more = cards.length - shown.length;
+    const face = $("#studyFace");
+    face.innerHTML = "";
+    face.style.justifyContent = "flex-start";
+    face.appendChild(el("div", { className: "meet-intro" },
+      shown.length === 1
+        ? "Here's a new word — tap 🔊 to hear it, then practise."
+        : `Here ${more > 0 ? "are your first" : "are these"} ${shown.length} new words — tap 🔊 to hear each` +
+          (more > 0 ? `, then practise (${more} more along the way).` : ", then practise.")));
+    const list = el("div", { className: "meet-list" });
+    shown.forEach(c => {
+      const row = el("div", { className: "meet-row" });
+      row.append(
+        el("div", { className: "meet-hz" }, c.hanzi),
+        el("div", { className: "meet-info" }, [
+          el("div", { className: "meet-py" }, c.pinyin),
+          el("div", { className: "meet-en" }, c.en)
+        ]),
+        speakerBtn(c.hanzi)
+      );
+      list.appendChild(row);
+    });
+    face.appendChild(list);
+    const start = el("button", { className: "study-start", type: "button" }, "Start practising →");
+    start.addEventListener("click", done);
+    face.appendChild(start);
+  }
 
   let curCard = null, curDir = null;
 
