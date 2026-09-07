@@ -1,7 +1,7 @@
 {
-  "name": "中文 Beginner A Trainer",
-  "short_name": "中文 A",
-  "description": "Chinese Beginner A — vocabulary, writing and speaking practice.",
+  "name": "步步 Bùbù · Learn Chinese",
+  "short_name": "步步 Bùbù",
+  "description": "Learn Chinese, step by step — vocabulary, writing and speaking practice.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
