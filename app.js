@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=132";
+  const ASSET_V = "?v=133";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -340,18 +340,37 @@
   }
 
   // ---- Text to speech ----
-  let zhVoice = null;
+  let zhVoice = null, voicesSeen = false;
+  const isZhVoice = v => {
+    const s = ((v.lang || "") + " " + (v.name || "")).toLowerCase();
+    return /(^|[^a-z])zh([^a-z]|$)|zh[-_]|cmn|chinese|mandarin|中文|普通话|國語|国语|台湾|táiwān/.test(s);
+  };
   function pickVoice() {
     const voices = speechSynthesis.getVoices();
-    zhVoice = voices.find(v => /zh(-|_)?CN/i.test(v.lang)) ||
-              voices.find(v => /^zh/i.test(v.lang)) || null;
+    if (!voices.length) return;              // not loaded yet — try again later
+    voicesSeen = true;
+    zhVoice =
+      voices.find(v => /^zh[-_]?cn/i.test(v.lang)) ||   // Mainland Mandarin, preferred
+      voices.find(v => /^(zh|cmn)/i.test(v.lang)) ||    // any Chinese by lang
+      voices.find(isZhVoice) || null;                   // fall back to name/lang text
   }
   if ("speechSynthesis" in window) {
     pickVoice();
     speechSynthesis.onvoiceschanged = pickVoice;
+    // Some engines (notably iOS Safari) populate voices late and may never fire
+    // voiceschanged — poll a few times so we don't miss the Chinese voice.
+    [150, 500, 1200, 2500].forEach(t => setTimeout(pickVoice, t));
+  }
+  function warnNoVoiceOnce() {
+    try {
+      if (localStorage.getItem("zhBeginnerA.noVoice.v1")) return;
+      localStorage.setItem("zhBeginnerA.noVoice.v1", "1");
+    } catch (e) {}
+    toast("No Chinese voice on this device, so audio is silent. Add one in your system's spoken-content / voice settings.");
   }
   function speak(text, opts = {}) {
     if (!("speechSynthesis" in window)) return;
+    if (!zhVoice) pickVoice();               // re-resolve at play time — voices may have loaded since boot
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "zh-CN";
@@ -359,6 +378,8 @@
     u.rate = opts.rate != null ? opts.rate : audioRate();
     if (opts.onEnd) u.onend = opts.onEnd;
     speechSynthesis.speak(u);
+    // Voices have loaded but none are Chinese → tell the user once why it's silent.
+    if (voicesSeen && !zhVoice) warnNoVoiceOnce();
   }
   function speakerBtn(text) {
     const b = el("button", { className: "speaker", title: "Play audio", type: "button" });
@@ -1093,9 +1114,10 @@
     $(".greet-h").textContent = `你好${name ? ", " + name : ""} 👋`;
     const streak = computeStreak(), goal = dailyGoal(), done = todayCount();
     const streakTxt = streak > 0 ? `${streak}-day streak` : "No streak yet";
+    const goalTxt = done >= goal ? `today's goal done ✓ (${done})` : `${done} of ${goal} words today`;
     $("#greetMeta").innerHTML =
       `<span class="fl">${svgUse("i-flame")}${streakTxt}</span>` +
-      `<span class="dot">·</span><span>${done} of ${goal} words today</span>`;
+      `<span class="dot">·</span><span>${goalTxt}</span>`;
 
     const cont = $("#homeContinue");
     const curId = currentLessonId();
@@ -1542,7 +1564,9 @@
   function openLessonSheet(id) {
     const lesson = LESSONS.find(l => l.id === id);
     const pct = lessonPct(id), total = lessonCardCount(id), mastered = lessonMastered(id);
-    const due = dueCountForLesson(id), studied = lessonStudied(id);
+    // A completed lesson counts as studied even if its SRS was cleared/imported,
+    // so a done coin never opens a "new lesson" sheet.
+    const due = dueCountForLesson(id), studied = lessonStudied(id) || lessonDone(id);
     const sheet = $("#lessonSheet");
     const chip = (icoId, label, focus, wide) => {
       const c = el("div", { className: "lchip" + (wide ? " wide" : "") }, [
@@ -1866,7 +1890,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=132", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=133", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1938,7 +1962,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=132" : "images/dragon-sad.png?v=132"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=133" : "images/dragon-sad.png?v=133"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2067,11 +2091,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=132"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=133"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=132"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=133"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2555,7 +2579,15 @@
     chip("✕ Clear", () => { pickSel.clear(); renderPicker(); });
 
     const q = pickFilter.trim().toLowerCase();
-    const match = c => !q || c.hanzi.includes(q) || c.pinyin.toLowerCase().includes(q) || c.en.toLowerCase().includes(q);
+    // Match pinyin WITHOUT tone marks and with spaces optional, so a beginner can
+    // type "ni hao" or "nihao" (not just "nǐ hǎo") and still find the word.
+    const qp = tonelessPinyin(q), qpNoSpace = qp.replace(/\s+/g, "");
+    const match = c => {
+      if (!q) return true;
+      if (c.hanzi.includes(q) || c.en.toLowerCase().includes(q)) return true;
+      const py = tonelessPinyin(c.pinyin).toLowerCase();
+      return py.includes(qp) || py.replace(/\s+/g, "").includes(qpNoSpace);
+    };
 
     const list = $("#pickList"); list.innerHTML = "";
     let curLesson = null, group = null;
@@ -2639,8 +2671,13 @@
   let matchQueue = [], matchFirst = null, matchLeft = 0, matchTotal = 0, matchDone = 0;
 
   function startMatch(cards) {
-    if (cards.length < 3) { toast("Pick at least 3 words to match."); return; }
-    matchQueue = shuffle(cards.slice());
+    // Two words that mean the same thing (中文 / 汉语 = "Chinese (language)") would
+    // make two indistinguishable meaning tiles and score a correct pairing as wrong.
+    // Keep one card per meaning so every tile is uniquely matchable.
+    const seenEn = new Set(), uniq = [];
+    shuffle(cards.slice()).forEach(c => { if (!seenEn.has(c.en)) { seenEn.add(c.en); uniq.push(c); } });
+    if (uniq.length < 3) { toast("Pick at least 3 words with different meanings to match."); return; }
+    matchQueue = uniq;
     matchTotal = matchQueue.length; matchDone = 0;
     show("match"); nextMatchRound();
   }
@@ -2815,7 +2852,7 @@
   $("#goalSeg").querySelectorAll("button").forEach(b =>
     b.addEventListener("click", () => {
       prefs.dailyGoal = +b.dataset.goal;
-      savePrefs(prefs); renderDashboard(); syncSettings();
+      savePrefs(prefs); renderDashboard(); renderHomeTop(); syncSettings();
     }));
   /* ---- Backup / restore --------------------------------------------------
      Everything lives in localStorage, so clearing site data, switching browser
