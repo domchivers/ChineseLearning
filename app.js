@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=128";
+  const ASSET_V = "?v=129";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -84,13 +84,13 @@
   }
 
   const FOCUSES = [
-    { key: "recognize", emoji: "👀", name: "Read characters",     desc: "See 汉字, recall the meaning" },
-    { key: "recall",    emoji: "🔤", name: "Recall from English", desc: "English → produce the 汉字" },
-    { key: "pinyin",    emoji: "🔡", name: "Pinyin",              desc: "Pick the correct pinyin — tones matter" },
-    { key: "listen",    emoji: "👂", name: "Listen",              desc: "Hear it, then pick what it means" },
-    { key: "write",     emoji: "✍️", name: "Write it",            desc: "Draw the character stroke by stroke" },
-    { key: "sentence",  emoji: "🧩", name: "Build sentences",     desc: "Tap word tiles to assemble a sentence" },
-    { key: "speak",     emoji: "🎤", name: "Speak it",            desc: "Say the word aloud and get it checked" }
+    { key: "recognize", ico: "i-eye",        name: "Read characters",     desc: "See 汉字, recall the meaning" },
+    { key: "recall",    ico: "i-type",       name: "Recall from English", desc: "English → produce the 汉字" },
+    { key: "pinyin",    ico: "i-languages",  name: "Pinyin",              desc: "Pick the correct pinyin — tones matter" },
+    { key: "listen",    ico: "i-headphones", name: "Listen",              desc: "Hear it, then pick what it means" },
+    { key: "write",     ico: "i-pencil",     name: "Write it",            desc: "Draw the character stroke by stroke" },
+    { key: "sentence",  ico: "i-blocks",     name: "Build sentences",     desc: "Tap word tiles to assemble a sentence" },
+    { key: "speak",     ico: "i-mic",        name: "Speak it",            desc: "Say the word aloud and get it checked" }
   ];
   const PRESETS = [
     { name: "Everything", keys: ["recognize", "recall", "pinyin", "listen", "write", "sentence", "speak"] },
@@ -218,6 +218,12 @@
     (Array.isArray(kids) ? kids : [kids]).forEach(k =>
       n.appendChild(typeof k === "string" ? document.createTextNode(k) : k));
     return n;
+  };
+  // A line-icon element from the sprite (returns the <svg> node).
+  const licon = (id, extra) => {
+    const t = document.createElement("template");
+    t.innerHTML = `<svg class="licon${extra ? " " + extra : ""}"><use href="#${id}"/></svg>`;
+    return t.content.firstChild;
   };
   function shuffle(arr) {
     const a = arr.slice();
@@ -421,7 +427,9 @@
   function pronunciationControl(hanzi) {
     const wrap = el("div", { className: "hint-wrap" });
     if (!canRecognize()) return wrap;    // gracefully absent where unsupported
-    const btn = el("button", { className: "hint-btn mic-btn", type: "button" }, "🎤 Say it & check");
+    const micLabel = `<svg class="licon licon-sm"><use href="#i-mic"/></svg> Say it &amp; check`;
+    const btn = el("button", { className: "hint-btn mic-btn", type: "button" });
+    btn.innerHTML = micLabel;
     const fb = el("div", { className: "conv-feedback", style: "font-size:.85rem" });
     btn.addEventListener("click", e => {
       e.stopPropagation();
@@ -434,7 +442,7 @@
             : `<span class="bad">Try again</span> — heard “${r.heard || "…"}”`;
         },
         onError: err => { fb.textContent = err === "not-allowed" ? "Allow mic access to use this." : "Didn't catch that — try again."; },
-        onEnd: () => { btn.disabled = false; btn.textContent = "🎤 Say it & check"; btn.classList.remove("listening"); }
+        onEnd: () => { btn.disabled = false; btn.innerHTML = micLabel; btn.classList.remove("listening"); }
       });
     });
     wrap.append(btn, fb);
@@ -453,7 +461,8 @@
       wrap.appendChild(el("span", { className: "pinyin hint-text" }, pinyin));
       return wrap;
     }
-    const btn = el("button", { className: "hint-btn", type: "button" }, "Show pinyin 👀");
+    const btn = el("button", { className: "hint-btn", type: "button" });
+    btn.innerHTML = `Show pinyin <svg class="licon licon-sm"><use href="#i-eye"/></svg>`;
     const txt = el("span", { className: "pinyin hint-text hidden" }, pinyin);
     btn.addEventListener("click", e => {
       e.stopPropagation();
@@ -868,7 +877,7 @@
     });
     if (!canRecognize())
       $("#convControls").appendChild(el("div", { className: "muted", style: "font-size:.8rem" },
-        "Tip: speaking-check (🎤) needs Chrome or Edge. You can still roleplay by tapping “I said it”."));
+        "Tip: the speaking-check needs Chrome or Edge. You can still roleplay by tapping “I said it”."));
   }
 
   function startConversation(d) {
@@ -931,7 +940,8 @@
     const advance = () => { addBubble(turn); convTurn++; stepConversation(); };
 
     const btns = el("div", { className: "conv-btns" });
-    const hear = el("button", { className: "ghost" }, "🔊 Hear it");
+    const hear = el("button", { className: "ghost" });
+    hear.innerHTML = `<svg class="licon licon-sm"><use href="#i-volume"/></svg> Hear it`;
     hear.addEventListener("click", () => speak(turn.hanzi));
     const showCh = el("button", { className: "ghost" }, "Show characters");
     showCh.addEventListener("click", () => chars.classList.remove("hidden"));
@@ -939,7 +949,9 @@
     btns.appendChild(showCh);
 
     if (canRecognize() && !turn.free) {
-      const mic = el("button", { className: "primary mic-btn" }, "🎤 Speak");
+      const micLbl = `<svg class="licon licon-sm"><use href="#i-mic"/></svg> Speak`;
+      const mic = el("button", { className: "primary mic-btn" });
+      mic.innerHTML = micLbl;
       mic.addEventListener("click", () => {
         feedback.textContent = "";
         mic.disabled = true; mic.textContent = "● Listening…"; mic.classList.add("listening");
@@ -955,7 +967,7 @@
           },
           onError: err => { feedback.textContent = err === "not-allowed"
             ? "Microphone blocked — allow mic access, or tap “I said it”." : "Didn't catch that — try again."; },
-          onEnd: () => { mic.disabled = false; mic.textContent = "🎤 Speak"; mic.classList.remove("listening"); }
+          onEnd: () => { mic.disabled = false; mic.innerHTML = micLbl; mic.classList.remove("listening"); }
         });
       });
       btns.appendChild(mic);
@@ -988,7 +1000,31 @@
     return CARDS.reduce((n, c) => n + (c.lessonId === lessonId && isMastered(srs[c.id]) ? 1 : 0), 0);
   }
 
+  // Progress screen: per-chapter mastery bars, to fill the page with something useful.
+  function renderProgressBreakdown() {
+    const box = $("#progBreak");
+    if (!box) return;
+    box.innerHTML = "";
+    let curUnit = null;
+    CHAPTERS.forEach(ch => {
+      if (ch.unit !== curUnit) {
+        curUnit = ch.unit;
+        box.appendChild(el("div", { className: "pb-unit" }, `Unit ${ch.unit}`));
+      }
+      let total = 0, mastered = 0;
+      ch.lessons.forEach(id => { total += lessonCardCount(id); mastered += lessonMastered(id); });
+      const pct = total ? Math.round(mastered / total * 100) : 0;
+      const row = el("div", { className: "pb-row" + (total && mastered === total ? " done" : "") }, [
+        el("div", { className: "pb-name" }, ch.title),
+        el("div", { className: "pb-count" }, `${mastered} / ${total}`),
+        el("div", { className: "pb-bar" }, el("i", { style: `width:${pct}%` }))
+      ]);
+      box.appendChild(row);
+    });
+  }
+
   function renderDashboard() {
+    renderProgressBreakdown();
     const st = progressStats(CARDS);
     $("#statMastered").textContent = st.mastered;
     $("#statLearning").textContent = st.learning;
@@ -1135,7 +1171,7 @@
     FOCUSES.forEach(f => {
       const on = selectedFocuses.has(f.key);
       const row = el("div", { className: "focus-toggle" + (on ? " on" : "") }, [
-        el("div", { className: "ft-ic" }, f.emoji),
+        el("div", { className: "ft-ic" }, licon(f.ico)),
         el("div", { className: "ft-txt" }, [
           el("div", { className: "ft-name" }, f.name),
           el("div", { className: "ft-desc" }, f.desc)
@@ -1496,9 +1532,9 @@
     const pct = lessonPct(id), total = lessonCardCount(id), mastered = lessonMastered(id);
     const due = dueCountForLesson(id), studied = lessonStudied(id);
     const sheet = $("#lessonSheet");
-    const chip = (emoji, label, focus, wide) => {
+    const chip = (icoId, label, focus, wide) => {
       const c = el("div", { className: "lchip" + (wide ? " wide" : "") }, [
-        el("span", { className: "em" }, emoji), document.createTextNode(" " + label)
+        el("span", { className: "em" }, licon(icoId, "licon-sm")), document.createTextNode(" " + label)
       ]);
       if (studied) c.addEventListener("click", () => { closeLessonSheet(); launchLesson(id, focus); });
       else c.appendChild(el("span", { className: "lk" }, icon("lock", 15)));
@@ -1522,7 +1558,7 @@
     const study = el("button", { className: "lstudy" });
     if (locked) {
       // A locked lesson can't be studied directly — offer to test out to reach it.
-      study.innerHTML = "🎯 Take the skip test<small>pass to unlock this — and everything before it</small>";
+      study.innerHTML = `<svg class="licon licon-sm"><use href="#i-target"/></svg> Take the skip test<small>pass to unlock this — and everything before it</small>`;
       study.addEventListener("click", () => { closeLessonSheet(); startPlacement(id); });
     } else {
       study.innerHTML = (studied ? "Study" : "Start studying") + "<small>mixed skills · spaced repetition</small>";
@@ -1530,7 +1566,7 @@
     }
     box.appendChild(study);
     if (LESSON_NOTES[id]) box.appendChild(el("div", { className: "lnote" }, [
-      el("div", { className: "lnote-t" }, "💡 " + LESSON_NOTES[id].title),
+      el("div", { className: "lnote-t" }, [licon("i-bulb", "licon-sm"), document.createTextNode(" " + LESSON_NOTES[id].title)]),
       el("div", { className: "lnote-b" }, LESSON_NOTES[id].body)
     ]));
     // Before a lesson is studied the focused-practice chips are all locked, so
@@ -1539,12 +1575,12 @@
     if (studied) {
       box.appendChild(el("div", { className: "lsub" }, [document.createTextNode("OR PRACTISE ONE SKILL")]));
       box.appendChild(el("div", { className: "lchips" }, [
-        chip("✍️", "Write", "write"),
-        chip("🔡", "Pinyin", "pinyin"),
-        chip("👂", "Listen", "listen"),
-        chip("🧩", "Sentences", "sentence"),
-        chip("✅", "Quiz", "quiz"),
-        chip("📖", "Browse the words", "browse", true)
+        chip("i-pencil", "Write", "write"),
+        chip("i-languages", "Pinyin", "pinyin"),
+        chip("i-headphones", "Listen", "listen"),
+        chip("i-blocks", "Sentences", "sentence"),
+        chip("i-check", "Quiz", "quiz"),
+        chip("i-book", "Browse the words", "browse", true)
       ]));
     } else {
       box.appendChild(el("div", { className: "lsub" },
@@ -1716,14 +1752,14 @@
     face.style.justifyContent = "flex-start";
     face.appendChild(el("div", { className: "meet-intro" },
       shown.length === 1
-        ? "Here's a new word — tap 🔊 to hear it, then practise."
-        : `Here ${more > 0 ? "are your first" : "are these"} ${shown.length} new words — tap 🔊 to hear each` +
+        ? "Here's a new word — tap the speaker to hear it, then practise."
+        : `Here ${more > 0 ? "are your first" : "are these"} ${shown.length} new words — tap each speaker to hear it` +
           (more > 0 ? `, then practise (${more} more along the way).` : ", then practise.")));
     // If every new word is from one lesson and it has a pattern note, teach it here.
     const lid = cards.length && cards.every(c => c.lessonId === cards[0].lessonId) ? cards[0].lessonId : null;
     const note = lid && LESSON_NOTES[lid];
     if (note) face.appendChild(el("div", { className: "lnote" }, [
-      el("div", { className: "lnote-t" }, "💡 " + note.title),
+      el("div", { className: "lnote-t" }, [licon("i-bulb", "licon-sm"), document.createTextNode(" " + note.title)]),
       el("div", { className: "lnote-b" }, note.body)
     ]));
     const list = el("div", { className: "meet-list" });
@@ -1813,7 +1849,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=128", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=129", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1885,7 +1921,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=128" : "images/dragon-sad.png?v=128"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=129" : "images/dragon-sad.png?v=129"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1966,7 +2002,8 @@
       face.appendChild(el("div", { className: "aids-row" }, pinyinHint(c.pinyin)));
     }
     if (dir === "pinyin") {
-      const tl = el("button", { className: "tones-link", type: "button" }, "🎵 What are tones?");
+      const tl = el("button", { className: "tones-link", type: "button" });
+      tl.innerHTML = `<svg class="licon licon-sm"><use href="#i-music"/></svg> What are tones?`;
       tl.addEventListener("click", openTones);
       face.appendChild(tl);
     }
@@ -2013,11 +2050,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=128"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=129"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=128"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=129"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2088,7 +2125,9 @@
         setWriteGate(true);
       };
       if (canRecognize()) {
-        const mic = el("button", { className: "speak-btn", type: "button" }, "🎤 Tap and say it");
+        const micLbl2 = `<svg class="licon licon-sm"><use href="#i-mic"/></svg> Tap and say it`;
+        const mic = el("button", { className: "speak-btn", type: "button" });
+        mic.innerHTML = micLbl2;
         let tries = 0;
         const MAX_TRIES = 2;   // recognition is stochastic — a second pass often lands
         mic.addEventListener("click", () => {
@@ -2119,7 +2158,7 @@
             // the recogniser can end without ever returning a result (short words,
             // background noise); always leave a visible prompt, never a dead button.
             onEnd: () => { if (!studyAnswered) {
-              mic.disabled = false; mic.textContent = "🎤 Tap and say it"; mic.classList.remove("listening");
+              mic.disabled = false; mic.innerHTML = micLbl2; mic.classList.remove("listening");
               if (!gotResult && !fb.textContent.trim())
                 fb.innerHTML = `<span class="muted">Didn't catch that — tap and try again.</span>`;
             } }
@@ -2142,7 +2181,8 @@
         // iOS Safari has no speech recognition: keep the practice, self-assessed.
         face.appendChild(el("div", { className: "muted", style: "font-size:.8rem" },
           "This browser can't check speech — say it aloud, then mark yourself."));
-        const said = el("button", { className: "speak-btn", type: "button" }, "🔊 I said it");
+        const said = el("button", { className: "speak-btn", type: "button" });
+        said.innerHTML = `<svg class="licon licon-sm"><use href="#i-volume"/></svg> I said it`;
         said.addEventListener("click", () => { if (!studyAnswered) settle(true, `<span class="ok">✓ Nice</span>`); });
         face.append(said, fb);
       }

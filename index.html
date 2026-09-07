@@ -438,6 +438,11 @@
   .licon-sm { width: 16px; height: 16px; }
   .licon-lg { width: 24px; height: 24px; }
   .bottomnav .licon { width: 22px; height: 22px; }
+  .icon-btn .licon { width: 20px; height: 20px; }
+  .focus-toggle .ft-ic .licon { width: 20px; height: 20px; color: var(--accent); }
+  .lchip .em { display: inline-flex; }
+  .lchip .em .licon { color: var(--accent); }
+  .tones-link .licon, .hint-btn .licon, .mic-btn .licon, .speak-btn .licon { vertical-align: -3px; }
 
   /* Home dashboard — greeting */
   .greet { margin: 2px 2px 0; }
@@ -486,6 +491,20 @@
 
   /* Progress screen */
   .prog-title { font-size: 1.45rem; font-weight: 800; margin: 4px 2px 16px; }
+  .prog-label { font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--muted); margin: 24px 2px 6px; }
+  .prog-break { display: flex; flex-direction: column; }
+  .pb-unit { font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--accent); margin: 14px 2px 4px; }
+  .pb-row { display: grid; grid-template-columns: 1fr auto; column-gap: 14px; row-gap: 7px;
+    align-items: center; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+  .pb-name { grid-column: 1; grid-row: 1; font-weight: 700; font-size: .92rem; }
+  .pb-count { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: .82rem;
+    color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pb-bar { grid-column: 1; grid-row: 2; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+  .pb-bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+  .pb-row.done .pb-bar i { background: var(--good); }
+  .pb-row.done .pb-count { color: var(--good); font-weight: 800; }
   .sh-flame-i { width: 26px; height: 26px; color: var(--accent); }
   .auth-tag { color: var(--muted); font-size: .9rem; margin: 2px 0 4px; }
   .stats-note { text-align: center; color: var(--muted); font-size: .85rem; margin: 12px 0 0; }
@@ -943,13 +962,24 @@
   <symbol id="i-volume" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
   <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/><path d="m15 5 4 4"/></symbol>
   <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-type" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></symbol>
+  <symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+  <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
+  <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
 </svg>
 <div class="wrap">
   <header class="top">
     <h1>步步 <span style="color:var(--accent)">Bùbù</span></h1>
     <div class="top-actions">
-      <button class="icon-btn ghost" id="helpBtn" title="Help" aria-label="Help">?</button>
-      <button class="icon-btn ghost" id="settingsBtn" title="Settings" aria-label="Settings">⚙</button>
+      <button class="icon-btn ghost" id="helpBtn" title="Help" aria-label="Help"><svg class="licon"><use href="#i-help"/></svg></button>
+      <button class="icon-btn ghost" id="settingsBtn" title="Settings" aria-label="Settings"><svg class="licon"><use href="#i-gear"/></svg></button>
     </div>
   </header>
 
@@ -1015,6 +1045,8 @@
       <div class="stat-tile"><b id="statNew">0</b><span>to learn</span></div>
     </div>
     <p class="stats-note hidden" id="statsNote"></p>
+    <div class="prog-label">Mastered by chapter</div>
+    <div class="prog-break" id="progBreak"></div>
   </section>
 
   <!-- HOME (dashboard — the landing screen) -->
@@ -1175,7 +1207,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=128" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=129" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1190,13 +1222,13 @@
       <button class="ghost" id="sheetBack">← Home</button>
       <span class="title" id="sheetTitle">Writing sheet</span>
       <button id="sheetReset" class="link">reset</button>
-      <button id="sheetPrint" class="primary">🖨 Print sheet</button>
+      <button id="sheetPrint" class="primary"><svg class="licon licon-sm"><use href="#i-printer"/></svg> Print sheet</button>
     </div>
     <div id="sheetTabs" class="sheet-tabs"></div>
     <div class="card">
       <div id="sheetHeader" class="sheet-header"></div>
       <p class="muted" id="sheetTip" style="font-size:.82rem;margin:2px 0 14px">
-        Write each box — correct strokes fill in red as you go. The first row shows a faint outline to trace; the rest are from memory. Tap the big character to watch the strokes. Use 🖨 to print a trace sheet for pen practice.
+        Write each box — correct strokes fill in red as you go. The first row shows a faint outline to trace; the rest are from memory. Tap the big character to watch the strokes. Use Print sheet for a paper trace copybook.
       </p>
       <div id="sheetGrid" class="sheet-grid"></div>
     </div>
@@ -1306,19 +1338,19 @@
       </div>
       <div style="font-size:.92rem; line-height:1.6">
         <p style="margin:.2rem 0 .6rem"><b>Start studying</b> uses spaced repetition — it brings back words you find hard and spaces out ones you know. Answer each card: get it right and it comes back less often; miss it and it returns soon.</p>
-        <p style="margin:.2rem 0 .7rem"><button class="ghost" id="tonesFromHelp" style="padding:.4rem .8rem;width:100%;text-align:left">🎵 New to Mandarin? Learn the four tones →</button></p>
+        <p style="margin:.2rem 0 .7rem"><button class="ghost" id="tonesFromHelp" style="padding:.4rem .8rem;width:100%;text-align:left"><svg class="licon licon-sm"><use href="#i-music"/></svg> New to Mandarin? Learn the four tones →</button></p>
         <p style="margin:.6rem 0 .3rem"><b>Modes</b></p>
         <ul style="margin:.2rem 0 .6rem; padding-left:1.2rem">
-          <li>🗣️ <b>Converse</b> — roleplay a dialogue; it speaks, you reply.</li>
-          <li>✅ <b>Quiz</b> — quick multiple-choice.</li>
-          <li>📖 <b>Browse</b> — every word, with audio and stroke order.</li>
+          <li><svg class="licon licon-sm"><use href="#i-chat"/></svg> <b>Converse</b> — roleplay a dialogue; it speaks, you reply.</li>
+          <li><svg class="licon licon-sm"><use href="#i-check"/></svg> <b>Quiz</b> — quick multiple-choice.</li>
+          <li><svg class="licon licon-sm"><use href="#i-book"/></svg> <b>Browse</b> — every word, with audio and stroke order.</li>
         </ul>
         <p style="margin:.6rem 0 .3rem"><b>Buttons you'll see</b></p>
         <ul style="margin:.2rem 0; padding-left:1.2rem">
-          <li>🔊 hear it &nbsp;·&nbsp; 🐢 hear it slowly</li>
-          <li>✍︎ stroke order &amp; writing practice (with a printable sheet)</li>
-          <li>🎤 say it and check your pronunciation (Chrome/Edge only)</li>
-          <li>👀 reveal the pinyin hint</li>
+          <li><svg class="licon licon-sm"><use href="#i-volume"/></svg> hear it &nbsp;·&nbsp; <svg class="licon licon-sm"><use href="#i-volume"/></svg> ½× hear it slowly</li>
+          <li><svg class="licon licon-sm"><use href="#i-pencil"/></svg> stroke order &amp; writing practice (with a printable sheet)</li>
+          <li><svg class="licon licon-sm"><use href="#i-mic"/></svg> say it and check your pronunciation (Chrome/Edge only)</li>
+          <li><svg class="licon licon-sm"><use href="#i-eye"/></svg> reveal the pinyin hint</li>
         </ul>
         <p class="muted" style="font-size:.82rem;margin-top:.6rem">On desktop: press <b>1–4</b> to pick an answer, <b>Space</b> or <b>Enter</b> to continue.</p>
       </div>
@@ -1333,7 +1365,7 @@
         <button class="ghost" id="tonesClose">Close ✕</button>
       </div>
       <div style="font-size:.92rem; line-height:1.55">
-        <p style="margin:.2rem 0 .7rem">Mandarin is <b>tonal</b>: the same syllable said with a different pitch is a different word. The mark over the vowel tells you the tone — it matters as much as the letters. Tap 🔊 to hear each.</p>
+        <p style="margin:.2rem 0 .7rem">Mandarin is <b>tonal</b>: the same syllable said with a different pitch is a different word. The mark over the vowel tells you the tone — it matters as much as the letters. Tap the speaker to hear each.</p>
         <div id="tonesRows"></div>
         <p style="margin:.8rem 0 .2rem"><b>Neutral tone</b> — no mark, said light and quick: <b>ma</b> 吗 (turns a sentence into a question).</p>
         <p class="muted" style="font-size:.84rem;margin-top:.7rem">Same letters, different tone = different meaning: <b>mǎi</b> 买 (buy) vs <b>mài</b> 卖 (sell).</p>
@@ -1360,8 +1392,8 @@
       <div id="charTargets" class="hz-grid"></div>
       <div class="controls">
         <button class="primary" id="charAnimate">▶ Animate strokes</button>
-        <button id="charPractice">✍︎ Practice writing</button>
-        <button id="charSheet">📝 Writing sheet</button>
+        <button id="charPractice"><svg class="licon licon-sm"><use href="#i-pencil"/></svg> Practice writing</button>
+        <button id="charSheet"><svg class="licon licon-sm"><use href="#i-book"/></svg> Writing sheet</button>
       </div>
       <p class="muted" id="charHint" style="text-align:center;font-size:.8rem;margin:10px 0 0"></p>
     </div>
@@ -1371,7 +1403,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=128" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=129" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1390,7 +1422,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=128" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=129" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1399,7 +1431,7 @@
           <ul class="ob-list">
             <li><span data-icon="lotus" data-size="22"></span><div><b>Follow the path</b><br>One lesson unlocks the next.</div></li>
             <li><span data-icon="flame" data-size="22"></span><div><b>Build a streak</b><br>Hit your daily goal each day to keep it alive.</div></li>
-            <li><span class="ob-emoji">🗣️</span><div><b>All the skills</b><br>Read, listen, write and speak — mixed into every lesson.</div></li>
+            <li><span class="ob-emoji"><svg class="licon" style="width:22px;height:22px"><use href="#i-mic"/></svg></span><div><b>All the skills</b><br>Read, listen, write and speak — mixed into every lesson.</div></li>
           </ul>
         </section>
         <section class="ob-slide">
@@ -1421,10 +1453,10 @@
     </div>
   </div>
 
-<script src="data.js?v=128"></script>
-<script src="hanzi-data.js?v=128"></script>
+<script src="data.js?v=129"></script>
+<script src="hanzi-data.js?v=129"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=128"></script>
+<script src="app.js?v=129"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
