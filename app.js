@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=122";
+  const ASSET_V = "?v=123";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1340,14 +1340,9 @@
       // current one, but everything ahead is locked.
       const btn = el("button", { className: "pnode" + (state === "todo" ? " locked" : "") });
       btn.appendChild(coinMarkup(it.lesson, state, c.size));
-      if (state === "todo") {
-        btn.addEventListener("click", () => {
-          const cur = LESSONS.find(l => l.id === curId);
-          toast(`Finish ${cur ? cur.title.replace(/^.*?· /, "") : "the current lesson"} first`);
-        });
-      } else {
-        btn.addEventListener("click", () => openLessonSheet(id));
-      }
+      // Every node opens its sheet. A locked node's sheet offers the skip test,
+      // so tapping ahead is a way to test out rather than a dead end.
+      btn.addEventListener("click", () => openLessonSheet(id));
       place(btn, x, yy);
 
       if (it.chapter) {                    // banner sits in the lead-in gap above
@@ -1450,9 +1445,16 @@
         el("div", { className: "m" }, studied ? `${mastered} / ${total} mastered${due ? ` · ${due} due` : ""}` : `new lesson · ${total} words`)
       ])
     ]));
+    const locked = !lessonDone(id) && id !== currentLessonId();
     const study = el("button", { className: "lstudy" });
-    study.innerHTML = (studied ? "Study" : "Start studying") + "<small>mixed skills · spaced repetition</small>";
-    study.addEventListener("click", () => { closeLessonSheet(); launchLesson(id, null); });
+    if (locked) {
+      // A locked lesson can't be studied directly — offer to test out to reach it.
+      study.innerHTML = "🎯 Take the skip test<small>pass to unlock this — and everything before it</small>";
+      study.addEventListener("click", () => { closeLessonSheet(); startPlacement(id); });
+    } else {
+      study.innerHTML = (studied ? "Study" : "Start studying") + "<small>mixed skills · spaced repetition</small>";
+      study.addEventListener("click", () => { closeLessonSheet(); launchLesson(id, null); });
+    }
     box.appendChild(study);
     if (LESSON_NOTES[id]) box.appendChild(el("div", { className: "lnote" }, [
       el("div", { className: "lnote-t" }, "💡 " + LESSON_NOTES[id].title),
@@ -1473,7 +1475,9 @@
       ]));
     } else {
       box.appendChild(el("div", { className: "lsub" },
-        [icon("lock", 15), document.createTextNode("Finish a Study round to unlock focused practice")]));
+        [icon("lock", 15), document.createTextNode(locked
+          ? "Reach this in order, or pass the skip test above"
+          : "Finish a Study round to unlock focused practice")]));
     }
     sheet.innerHTML = "";
     sheet.appendChild(box);
@@ -1731,7 +1735,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=122", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=123", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1803,7 +1807,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=122" : "images/dragon-sad.png?v=122"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=123" : "images/dragon-sad.png?v=123"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1931,11 +1935,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=122"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=123"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=122"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=123"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2232,22 +2236,86 @@
   /* ==================================================================== */
 
   let quizItems = [], quizIdx = 0, quizScore = 0;
+  // Placement / "skip test": pass a quick test to unlock lessons you already know.
+  let quizMode = "quiz";
+  let placeRange = [], placeTarget = null, placeScores = {}, placeCorrectCards = new Set();
+
+  // Build a skip test covering every not-yet-done lesson up to (and including)
+  // the target. Passing unlocks the longest run of lessons you're solid on.
+  function startPlacement(targetId) {
+    const order = LESSONS.map(l => l.id);
+    const ti = order.indexOf(targetId);
+    const range = [];
+    for (let i = 0; i <= ti; i++) if (!doneLessons.has(order[i])) range.push(order[i]);
+    if (!range.length) { toast("That's already unlocked."); return; }
+    const perLesson = Math.max(2, Math.min(5, Math.floor(20 / range.length)));
+    placeScores = {}; placeCorrectCards = new Set();
+    const items = [];
+    range.forEach(lid => {
+      placeScores[lid] = { ok: 0, total: 0 };
+      const cards = CARDS.filter(c => c.lessonId === lid);
+      shuffle(cards).slice(0, Math.min(perLesson, cards.length)).forEach(c => items.push(c));
+    });
+    quizItems = shuffle(items);
+    quizIdx = 0; quizScore = 0; quizMode = "placement";
+    placeRange = range; placeTarget = targetId;
+    scopeLessons = new Set(range);                     // distractors drawn from the tested range
+    scopeFocuses = new Set(["recognize", "recall"]);   // clean "do you know this word" tests
+    $("#quizTitle").textContent = `Skip test · ${quizItems.length} question${quizItems.length === 1 ? "" : "s"}`;
+    show("quiz");
+    renderQuiz();
+  }
+
+  function finishPlacement() {
+    quizMode = "quiz";
+    const PASS = 0.7;
+    const unlocked = [];
+    for (const lid of placeRange) {          // linear: stop at the first lesson you don't clear
+      const s = placeScores[lid] || { ok: 0, total: 0 };
+      if (s.total && s.ok / s.total >= PASS) unlocked.push(lid); else break;
+    }
+    unlocked.forEach(lid => doneLessons.add(lid));
+    if (unlocked.length) saveDone();
+    placeCorrectCards.forEach(id => {          // seed known words so they don't read as brand-new
+      const card = CARD_BY_ID[id];
+      if (card && unlocked.includes(card.lessonId) && !srs[id])
+        srs[id] = { ease: 2.4, interval: 3, due: NOW() + 3 * DAY, reps: 2, prod: true };
+    });
+    if (unlocked.length) saveSRS(srs);
+    scopeLessons = null; scopeFocuses = null;
+    const reachedTarget = unlocked.includes(placeTarget);
+    $("#doneTitle").textContent = !unlocked.length ? "Not yet 💪"
+      : reachedTarget ? "You tested out! 🎉" : "Skipped ahead 👍";
+    sfx(unlocked.length ? "complete" : "wrong");
+    $("#doneStats").innerHTML = "";
+    $("#doneStats").append(
+      statEl(`${quizScore}/${quizItems.length}`, "correct"),
+      statEl(unlocked.length, unlocked.length === 1 ? "lesson unlocked" : "lessons unlocked")
+    );
+    $("#doneNext").classList.add("hidden");
+    $("#doneAgain").classList.add("hidden");
+    show("done");
+    toast(!unlocked.length
+      ? "Keep studying from where you are — you'll get there."
+      : reachedTarget ? "Unlocked all the way to your target — nice!"
+      : "Unlocked what you're solid on — the rest needs a little more study.");
+  }
 
   function startQuiz() {
     const cards = activeCards();
     if (cards.length < 3) { toast("Pick more lessons — a quiz needs at least 3 words."); $("#studyPanel").open = true; return; }
     quizItems = shuffle(cards).slice(0, Math.min(20, cards.length));
-    quizIdx = 0; quizScore = 0;
+    quizIdx = 0; quizScore = 0; quizMode = "quiz";
     $("#quizTitle").textContent = `Quiz · ${quizItems.length} questions`;
     show("quiz");
     renderQuiz();
   }
 
   function renderQuiz() {
-    if (quizIdx >= quizItems.length) return finishQuiz();
+    if (quizIdx >= quizItems.length) return quizMode === "placement" ? finishPlacement() : finishQuiz();
     const c = quizItems[quizIdx];
-    // Direction: only from enabled focuses; "write" isn't a multiple-choice type.
-    let dirs = [...(scopeFocuses || selectedFocuses)].filter(k => k !== "write");
+    // Direction: only multiple-choice types (write/sentence/speak aren't MC).
+    let dirs = [...(scopeFocuses || selectedFocuses)].filter(k => k !== "write" && k !== "sentence" && k !== "speak");
     if (dirs.length === 0) dirs = ["recognize"];
     const dir = dirs[Math.floor(Math.random() * dirs.length)];
 
@@ -2255,8 +2323,13 @@
     buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), correct => {
       sfx(correct ? "correct" : "wrong");
       if (correct) quizScore++;
-      schedule(c.id, correct ? "good" : "again");
-      recordReview(1);
+      if (quizMode === "placement") {
+        const s = placeScores[c.lessonId] || (placeScores[c.lessonId] = { ok: 0, total: 0 });
+        s.total++; if (correct) { s.ok++; placeCorrectCards.add(c.id); }
+      } else {
+        schedule(c.id, correct ? "good" : "again");
+        recordReview(1);
+      }
       $("#quizNextWrap").classList.remove("hidden");
     });
     $("#quizNextWrap").classList.add("hidden");
