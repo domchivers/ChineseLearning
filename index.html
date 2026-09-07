@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="中文 A">
+<meta name="apple-mobile-web-app-title" content="Bùbù">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <style>
   :root {
@@ -544,9 +544,9 @@
   .set-row .desc { color: var(--muted); font-size: .8rem; }
   /* A control too wide to sit beside its label (the daily-goal presets) drops to
      its own full-width line instead of overflowing off the narrow phone screen. */
-  .set-row.stack { flex-direction: column; align-items: stretch; }
-  .set-row.stack .goal-seg { display: flex; width: 100%; }
-  .set-row.stack .goal-seg button { flex: 1; }
+  .set-row.stack { flex-direction: column; align-items: stretch; gap: 10px; }
+  .set-row.stack .seg { display: flex; width: 100%; }
+  .set-row.stack .seg button { flex: 1; }
   .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
   .seg button { border: 0; border-radius: 0; padding: 7px 13px; font-size: .85rem; background: transparent; }
   .seg button.on { background: var(--accent); color: #fff; }
@@ -1175,7 +1175,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=127" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=128" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1247,7 +1247,7 @@
           </div>
         </div>
       </div>
-      <div class="set-row">
+      <div class="set-row stack">
         <div><div class="lbl">Appearance</div><div class="desc">Light, dark, or follow your device.</div></div>
         <div class="seg" id="themeSeg">
           <button data-theme="system">Auto</button>
@@ -1371,7 +1371,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=127" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=128" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1390,7 +1390,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=127" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=128" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1421,10 +1421,10 @@
     </div>
   </div>
 
-<script src="data.js?v=127"></script>
-<script src="hanzi-data.js?v=127"></script>
+<script src="data.js?v=128"></script>
+<script src="hanzi-data.js?v=128"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=127"></script>
+<script src="app.js?v=128"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
