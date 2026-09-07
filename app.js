@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=125";
+  const ASSET_V = "?v=126";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -232,7 +232,7 @@
   }
 
   function show(sectionId) {
-    ["path", "home", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
+    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     document.body.dataset.view = sectionId;   // lets CSS give sessions a fixed-height layout
     window.scrollTo(0, 0);
@@ -1027,8 +1027,65 @@
     }
   }
 
+  // Eyebrow like "UNIT A · CHAPTER 2" for a lesson id.
+  function chapterLabelFor(id) {
+    const unitCh = {};
+    for (const ch of CHAPTERS) {
+      unitCh[ch.unit] = (unitCh[ch.unit] || 0) + 1;
+      if (ch.lessons.includes(id)) return `UNIT ${ch.unit} · CHAPTER ${unitCh[ch.unit]}`;
+    }
+    return "";
+  }
+  const svgUse = id => `<svg class="licon licon-sm"><use href="#${id}"/></svg>`;
+
+  // The Home landing: greeting, the Continue card, and the Review link.
+  function renderHomeTop() {
+    const streak = computeStreak(), goal = dailyGoal(), done = todayCount();
+    const streakTxt = streak > 0 ? `${streak}-day streak` : "No streak yet";
+    $("#greetMeta").innerHTML =
+      `<span class="fl">${svgUse("i-flame")}${streakTxt}</span>` +
+      `<span class="dot">·</span><span>${done} of ${goal} words today</span>`;
+
+    const cont = $("#homeContinue");
+    const curId = currentLessonId();
+    const allDone = LESSONS.every(l => doneLessons.has(l.id));
+    if (allDone) {
+      cont.innerHTML =
+        `<div class="eyebrow">COURSE COMPLETE 🎉</div>` +
+        `<div class="hc-title">You've finished every lesson</div>` +
+        `<div class="hc-en">Keep your words sharp with a review.</div>` +
+        `<div class="hc-row"><span></span><span class="hc-go">Review ${svgUse("i-arrow")}</span></div>`;
+      cont.onclick = () => startReview();
+    } else {
+      const l = LESSONS.find(x => x.id === curId);
+      const parts = l.title.split("·");
+      const after = (parts.length > 1 ? parts.slice(1).join("·") : parts[0]).trim();
+      const i = after.search(/[A-Za-z(]/);
+      const hz = i > 0 ? after.slice(0, i).trim() : after;
+      const en = i > 0 ? after.slice(i).replace(/^[(\s]+|[)\s]+$/g, "").trim() : "";
+      const total = lessonCardCount(curId);
+      const cleared = CARDS.filter(c => c.lessonId === curId && srs[c.id] && srs[c.id].reps >= 1).length;
+      const studied = lessonStudied(curId);
+      cont.innerHTML =
+        `<div class="eyebrow">${chapterLabelFor(curId)} · ${studied ? "CONTINUE" : "START"}</div>` +
+        `<div class="hc-title">${hz}</div>` +
+        (en ? `<div class="hc-en">${en}</div>` : "") +
+        `<div class="hc-bar"><i style="width:${total ? Math.round(cleared / total * 100) : 0}%"></i></div>` +
+        `<div class="hc-row"><span>${cleared} / ${total} words learned</span>` +
+        `<span class="hc-go">${studied ? "Continue" : "Start"} ${svgUse("i-arrow")}</span></div>`;
+      cont.onclick = () => launchLesson(curId, null);
+    }
+
+    const due = dueReviewCards().length, rev = $("#homeReview");
+    if (due) {
+      $("#homeReviewTxt").textContent = `${due} word${due === 1 ? "" : "s"} ready to review`;
+      rev.classList.remove("hidden");
+    } else rev.classList.add("hidden");
+  }
+
   function renderHome() {
     renderDashboard();
+    renderHomeTop();
 
     const list = $("#lessonList");
     list.innerHTML = "";
@@ -1122,9 +1179,9 @@
     else if (mode === "quiz") startQuiz();
     else if (mode === "browse") startBrowse();
   }
-  $("#startBtn").addEventListener("click", () => runMode("study"));
   document.querySelectorAll(".practice-list button").forEach(btn =>
     btn.addEventListener("click", () => runMode(btn.dataset.mode)));
+  $("#homeReview").addEventListener("click", () => startReview());
 
   function resetProgress() {
     const ids = new Set(activeCards().map(c => c.id));
@@ -1510,15 +1567,16 @@
       const nav = b.dataset.nav;
       if (nav === "settings") { syncSettings(); renderAccount(); openModal("settingsModal"); return; }
       document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x === b));
-      if (nav === "path") { renderPath(); show("path"); }
-      else if (nav === "stats") { renderHome(); show("home"); }
+      if (nav === "home") { renderHome(); show("home"); }
+      else if (nav === "path") { renderPath(); show("path"); }
+      else if (nav === "progress") { renderDashboard(); show("progress"); }
     }));
   $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) startReview(); });
   $("#pathSettings").addEventListener("click", () => { syncSettings(); renderAccount(); openModal("settingsModal"); });
-  // Tapping the daily-goal ring jumps to Stats, where the full ring + streak live.
+  // Tapping the daily-goal ring jumps to Progress, where the full ring + streak live.
   $("#pathGoal").addEventListener("click", () => {
-    document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x.dataset.nav === "stats"));
-    renderHome(); show("home");
+    document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x.dataset.nav === "progress"));
+    renderDashboard(); show("progress");
   });
 
   let queue = [];        // array of card objects
@@ -1746,7 +1804,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=125", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=126", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1818,7 +1876,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=125" : "images/dragon-sad.png?v=125"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=126" : "images/dragon-sad.png?v=126"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1946,11 +2004,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=125"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=126"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=125"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=126"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -3144,7 +3202,7 @@ This REPLACES the progress on this device.`)) return;
     const finish = () => {
       localStorage.setItem(LS_ONBOARDED, "1");
       ob.classList.add("hidden"); ob.setAttribute("aria-hidden", "true");
-      renderPath();                       // reflect the chosen goal on the HUD
+      renderPath(); renderHome();         // reflect the chosen goal on the HUD + Home
     };
     $("#obBack").addEventListener("click", () => { if (i > 0) { i--; paint(); } });
     $("#obNext").addEventListener("click", () => {
@@ -3159,7 +3217,8 @@ This REPLACES the progress on this device.`)) return;
   applyTheme();
   hydrateIcons();
   renderPath();
-  show("path");
+  renderHome();
+  show("home");                          // land on the Home dashboard
   renderAccount();
   if (cloudOn() && !signedIn()) {
     openAuthGate();                       // no session yet — must sign in

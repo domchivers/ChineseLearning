@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>中文 Beginner A · Trainer</title>
+<title>步步 Bùbù · Learn Chinese</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#c0392b">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -429,14 +429,62 @@
   .sh-div { width: 1px; align-self: stretch; background: var(--line); }
   .sec-title { font-size: .78rem; text-transform: uppercase; letter-spacing: .9px;
     color: var(--muted); font-weight: 800; margin: 20px 0 8px; }
-  .practice-list { display: grid; gap: 8px; }
-  .practice-list button { display: flex; align-items: center; gap: 13px; width: 100%;
-    text-align: left; padding: 12px 14px; border-radius: 14px;
-    border: 1px solid var(--line); background: var(--panel); }
-  .practice-list .em { font-size: 1.35rem; flex: none; }
-  .practice-list .pl-txt { display: block; }
-  .practice-list .pl-txt b { display: block; font-weight: 800; font-size: .97rem; }
+  /* line icons (Lucide sprite) */
+  .licon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; flex: none; }
+  .licon-sm { width: 16px; height: 16px; }
+  .licon-lg { width: 24px; height: 24px; }
+  .bottomnav .licon { width: 22px; height: 22px; }
+
+  /* Home dashboard — greeting */
+  .greet { margin: 2px 2px 0; }
+  .greet-h { font-size: 1.8rem; font-weight: 800; margin: 0; line-height: 1.05; }
+  .greet-meta { margin-top: 8px; color: var(--muted); font-size: .86rem; font-weight: 600;
+    display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+  .greet-meta .fl { color: var(--accent); display: inline-flex; align-items: center; gap: 5px; font-weight: 800; }
+  .greet-meta .dot { opacity: .5; }
+
+  /* Continue card — the one bold action */
+  .home-cont { display: block; width: 100%; text-align: left; color: #fff; cursor: pointer;
+    background: var(--accent); border: 0; border-radius: 22px; padding: 18px 18px 16px;
+    box-shadow: 0 12px 26px -12px var(--accent); margin-top: 20px; }
+  .home-cont .eyebrow { font-size: .64rem; font-weight: 800; letter-spacing: .14em; opacity: .82; }
+  .home-cont .hc-title { font-size: 1.5rem; font-weight: 800; margin: 6px 0 1px; line-height: 1.1; }
+  .home-cont .hc-en { font-size: .84rem; font-weight: 600; opacity: .9; }
+  .home-cont .hc-bar { height: 6px; border-radius: 99px; background: rgba(255,255,255,.3);
+    margin: 14px 0 9px; overflow: hidden; }
+  .home-cont .hc-bar i { display: block; height: 100%; background: #fff; border-radius: 99px; }
+  .home-cont .hc-row { display: flex; align-items: center; justify-content: space-between;
+    font-size: .8rem; font-weight: 700; }
+  .home-cont .hc-go { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; }
+  .home-cont:active { transform: translateY(1px); }
+
+  /* Review — a quiet link */
+  .home-review { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+    background: none; border: 0; color: var(--accent); font-weight: 800; font-size: .9rem;
+    cursor: pointer; padding: 0; margin: 16px 2px 0; }
+  .home-review.hidden { display: none; }
+
+  .home-label { font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--muted); margin: 24px 2px 10px; }
+
+  /* Practice modes — one calm grouped list */
+  .practice-list { background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
+    overflow: hidden; display: block; }
+  .practice-list button { display: flex; align-items: center; gap: 14px; width: 100%;
+    text-align: left; padding: 15px 16px; border: 0; border-radius: 0; background: transparent; }
+  .practice-list button + button { border-top: 1px solid var(--line); }
+  .practice-list button:hover { background: var(--bg); }
+  .practice-list .pl-ic { color: var(--accent); display: grid; place-items: center; width: 26px; flex: none; }
+  .practice-list .pl-txt { display: block; flex: 1; min-width: 0; }
+  .practice-list .pl-txt b { display: block; font-weight: 800; font-size: 1rem; }
   .practice-list .pl-txt span { color: var(--muted); font-size: .8rem; }
+  .practice-list .pl-chev { color: var(--muted); }
+
+  /* Progress screen */
+  .prog-title { font-size: 1.45rem; font-weight: 800; margin: 4px 2px 16px; }
+  .sh-flame-i { width: 26px; height: 26px; color: var(--accent); }
+  .auth-tag { color: var(--muted); font-size: .9rem; margin: 2px 0 4px; }
   .stats-note { text-align: center; color: var(--muted); font-size: .85rem; margin: 12px 0 0; }
   .stats-note.hidden { display: none; }
   .bk-foot { text-align: center; color: var(--muted); font-size: .78rem; margin-top: 18px; }
@@ -674,8 +722,8 @@
   }
 
   .bottomnav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--panel); border-top: 1px solid var(--line); display: none; justify-content: center; gap: 8px; padding: 8px 0 calc(8px + env(safe-area-inset-bottom)); z-index: 40; }
-  body[data-view="path"] .bottomnav, body[data-view="home"] .bottomnav { display: flex; }
-  body[data-view="home"] #home { padding-bottom: 76px; }
+  body[data-view="path"] .bottomnav, body[data-view="home"] .bottomnav, body[data-view="progress"] .bottomnav { display: flex; }
+  body[data-view="home"] #home, body[data-view="progress"] #progress { padding-bottom: 76px; }
   .ico { display: block; }
   .path-top .st .ico, .bottomnav .ico { display: block; }
   /* No background transition here. The global `button` rule transitions
@@ -886,9 +934,24 @@
 </style>
 </head>
 <body>
+<!-- line-icon sprite (Lucide, MIT) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
 <div class="wrap">
   <header class="top">
-    <h1>中文 <span style="color:var(--accent)">Beginner A</span></h1>
+    <h1>步步 <span style="color:var(--accent)">Bùbù</span></h1>
     <div class="top-actions">
       <button class="icon-btn ghost" id="helpBtn" title="Help" aria-label="Help">?</button>
       <button class="icon-btn ghost" id="settingsBtn" title="Settings" aria-label="Settings">⚙</button>
@@ -924,17 +987,18 @@
     </div>
   </section>
   <nav class="bottomnav">
-    <button data-nav="path" class="on" aria-label="Path"><span data-icon="lotus" data-size="21"></span></button>
-    <button data-nav="stats" aria-label="Progress"><span data-icon="chart" data-size="21"></span></button>
-    <button data-nav="settings" aria-label="Settings"><span data-icon="gear" data-size="21"></span></button>
+    <button data-nav="home" class="on" aria-label="Home"><svg class="licon"><use href="#i-home"/></svg></button>
+    <button data-nav="path" aria-label="Learn"><svg class="licon"><use href="#i-route"/></svg></button>
+    <button data-nav="progress" aria-label="Progress"><svg class="licon"><use href="#i-chart"/></svg></button>
+    <button data-nav="settings" aria-label="Settings"><svg class="licon"><use href="#i-gear"/></svg></button>
   </nav>
 
-  <!-- STATS / HOME (dashboard) -->
-  <section id="home" class="hidden">
-    <!-- Hero: the two numbers that actually motivate -->
+  <!-- PROGRESS (stats) -->
+  <section id="progress" class="hidden">
+    <h2 class="prog-title">Your progress</h2>
     <div class="stats-hero">
       <div class="sh-item">
-        <div class="sh-big"><span class="sh-flame">🔥</span><b id="streakNum">0</b></div>
+        <div class="sh-big"><svg class="licon sh-flame-i"><use href="#i-flame"/></svg><b id="streakNum">0</b></div>
         <div class="sh-sub" id="streakSub">day streak</div>
       </div>
       <div class="sh-div"></div>
@@ -950,26 +1014,43 @@
         <div class="sh-sub">today's goal</div>
       </div>
     </div>
-
     <div class="stat-tiles">
       <div class="stat-tile mastered"><b id="statMastered">0</b><span>mastered</span></div>
       <div class="stat-tile learning"><b id="statLearning">0</b><span>learning</span></div>
       <div class="stat-tile"><b id="statNew">0</b><span>to learn</span></div>
     </div>
     <p class="stats-note hidden" id="statsNote"></p>
+  </section>
 
-    <button class="primary start-btn" id="startBtn">Start studying →</button>
+  <!-- HOME (dashboard — the landing screen) -->
+  <section id="home" class="hidden">
+    <div class="greet">
+      <h2 class="greet-h">你好 👋</h2>
+      <div class="greet-meta" id="greetMeta"></div>
+    </div>
 
-    <h3 class="sec-title">Practice</h3>
+    <button class="home-cont" id="homeContinue"></button>
+
+    <button class="home-review hidden" id="homeReview">
+      <svg class="licon licon-sm"><use href="#i-refresh"/></svg>
+      <span id="homeReviewTxt">Review</span>
+      <svg class="licon licon-sm hr-arrow"><use href="#i-arrow"/></svg>
+    </button>
+
+    <div class="home-label">Practise</div>
     <div class="practice-list">
-      <button data-mode="pick"><span class="em">🎴</span>
-        <span class="pl-txt"><b>Pick &amp; practise</b><span>Choose any words — flashcards, matching or a quiz.</span></span></button>
-      <button data-mode="converse"><span class="em">🗣️</span>
-        <span class="pl-txt"><b>Converse</b><span>Work through a dialogue, line by line.</span></span></button>
-      <button data-mode="quiz"><span class="em">✅</span>
-        <span class="pl-txt"><b>Quiz</b><span>A quick multiple-choice run.</span></span></button>
-      <button data-mode="browse"><span class="em">📖</span>
-        <span class="pl-txt"><b>Browse</b><span>Every word, with stroke order.</span></span></button>
+      <button data-mode="pick"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-cards"/></svg></span>
+        <span class="pl-txt"><b>Pick &amp; practise</b><span>Flashcards, matching or a quiz</span></span>
+        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="converse"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-chat"/></svg></span>
+        <span class="pl-txt"><b>Converse</b><span>Roleplay a dialogue</span></span>
+        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="quiz"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-check"/></svg></span>
+        <span class="pl-txt"><b>Quiz</b><span>Quick multiple-choice</span></span>
+        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="browse"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-book"/></svg></span>
+        <span class="pl-txt"><b>Browse</b><span>Every word, with audio</span></span>
+        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
     </div>
 
     <details class="panel" id="studyPanel">
@@ -1099,7 +1180,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=125" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=126" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1295,8 +1376,9 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=125" alt="" class="ob-hero">
-      <h2>中文 Beginner A</h2>
+      <img src="images/dragon-waving.png?v=126" alt="" class="ob-hero">
+      <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
+      <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
       <div class="gate-form">
         <input type="email" id="gateEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
@@ -1313,7 +1395,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=125" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=126" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1344,10 +1426,10 @@
     </div>
   </div>
 
-<script src="data.js?v=125"></script>
-<script src="hanzi-data.js?v=125"></script>
+<script src="data.js?v=126"></script>
+<script src="hanzi-data.js?v=126"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=125"></script>
+<script src="app.js?v=126"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

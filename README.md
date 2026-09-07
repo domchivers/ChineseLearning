@@ -1,7 +1,7 @@
-# 中文 Beginner A — Trainer
+# 步步 Bùbù — Learn Chinese
 
-A small offline app for learning the characters, phrases and vocabulary from the
-*中文 Beginner A* textbook (JIC Language School).
+A small offline app for learning Chinese step by step — the characters, phrases
+and vocabulary from the *中文 Beginner A & B* textbooks (JIC Language School).
 
 ## How to open
 
