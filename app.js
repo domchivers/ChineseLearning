@@ -33,6 +33,7 @@
     });
   });
   const CARD_BY_ID = Object.fromEntries(CARDS.map(c => [c.id, c]));
+  const PINYIN_BY_HANZI = Object.fromEntries(CARDS.map(c => [c.hanzi, c.pinyin]));
   const lessonCardCount = id => CARDS.reduce((n, c) => n + (c.lessonId === id ? 1 : 0), 0);
 
   // ---- Focus directions ----
@@ -41,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=121";
+  const ASSET_V = "?v=122";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -438,9 +439,18 @@
     return wrap;
   }
 
-  // A "Show pinyin" control that stays hidden until you want the hint.
+  // Training wheels: show pinyin under characters by default (a beginner can't
+  // read bare 汉字). Turn it off in Settings for a tougher, pinyin-free test.
+  const showPinyin = () => prefs.showPinyin !== false;
+
+  // A pinyin aid. With "Show pinyin" on it's just visible; off, it hides behind
+  // a "Show pinyin 👀" button you tap to reveal.
   function pinyinHint(pinyin) {
     const wrap = el("div", { className: "hint-wrap" });
+    if (showPinyin()) {
+      wrap.appendChild(el("span", { className: "pinyin hint-text" }, pinyin));
+      return wrap;
+    }
     const btn = el("button", { className: "hint-btn", type: "button" }, "Show pinyin 👀");
     const txt = el("span", { className: "pinyin hint-text hidden" }, pinyin);
     btn.addEventListener("click", e => {
@@ -1721,7 +1731,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=121", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=122", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1793,7 +1803,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=121" : "images/dragon-sad.png?v=121"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=122" : "images/dragon-sad.png?v=122"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1868,7 +1878,9 @@
     }
     bubble.appendChild(promptNode);
     if (dir !== "pinyin") bubble.appendChild(speakerBtn(c.hanzi));
-    if (dir !== "pinyin" && dir !== "listen") {
+    // Recall shows pinyin on the option tiles instead (below), so its prompt
+    // pinyin hint would just give the answer away.
+    if (dir !== "pinyin" && dir !== "listen" && !(dir === "recall" && showPinyin())) {
       face.appendChild(el("div", { className: "aids-row" }, pinyinHint(c.pinyin)));
     }
     if (dir === "pinyin") {
@@ -1902,18 +1914,28 @@
     const options = shuffle([answerText, ...distractors]);
     choicesBox.innerHTML = "";
     choicesBox.dataset.answered = "";
+    // Recall options are bare characters a beginner can't read — show pinyin
+    // under each (when the aid is on) so the choice is legible, not a guess.
+    const withTilePinyin = dir === "recall" && showPinyin();
     options.forEach(opt => {
-      const btn = el("button", { className: "choice" }, opt);
+      const btn = el("button", { className: "choice" + (withTilePinyin ? " choice-py" : "") });
+      btn.dataset.val = opt;
+      if (withTilePinyin) {
+        btn.appendChild(el("span", { className: "c-han" }, opt));
+        if (PINYIN_BY_HANZI[opt]) btn.appendChild(el("span", { className: "c-py" }, PINYIN_BY_HANZI[opt]));
+      } else {
+        btn.textContent = opt;
+      }
       btn.addEventListener("click", () => {
         if (choicesBox.dataset.answered) return;
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=121"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=122"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
-          [...choicesBox.children].forEach(ch => { if (ch.textContent === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=121"; drg.classList.add("react"); }
+          [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
+          if (drg) { drg.src = "images/dragon-sad.png?v=122"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2319,6 +2341,7 @@
     $("#goalSeg").querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.goal === g));
     $("#checkSwitch").classList.toggle("on", prefs.checkStrokes !== false);
     $("#soundSwitch").classList.toggle("on", prefs.sound !== false);
+    $("#pinyinSwitch").classList.toggle("on", prefs.showPinyin !== false);
     const bk = $("#backupAge");
     if (bk) {
       bk.textContent = backupAgeText();
@@ -2334,6 +2357,12 @@
     savePrefs(prefs); syncSettings();
     if (prefs.sound) sfx("correct");   // little confirmation you can hear it
   }
+  function togglePinyin() {
+    prefs.showPinyin = prefs.showPinyin === false ? true : false;
+    savePrefs(prefs); syncSettings();
+  }
+  $("#pinyinSwitch").addEventListener("click", togglePinyin);
+  $("#pinyinSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); togglePinyin(); } });
   $("#checkSwitch").addEventListener("click", toggleCheck);
   $("#checkSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCheck(); } });
   $("#soundSwitch").addEventListener("click", toggleSound);
