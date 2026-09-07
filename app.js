@@ -10,11 +10,17 @@
   // ---- Build a flat list of cards with stable ids ----
   const LESSONS = VOCAB.lessons;
   const CARDS = [];
-  const seenHanzi = new Set();   // one card per unique word; first lesson wins
+  // One card per unique word; first lesson wins. Keyed on hanzi + meaning, so a
+  // character re-taught with a genuinely NEW meaning (e.g. 在 "at, in, on" in l3
+  // vs the progressive 在 "in the middle of doing" in b7) still earns its own
+  // card, while a plain repeat (same meaning) is shown only once.
+  const seenHanzi = new Set();
+  const normEn = s => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
   LESSONS.forEach(lesson => {
     lesson.words.forEach((w, i) => {
-      if (seenHanzi.has(w.hanzi)) return;
-      seenHanzi.add(w.hanzi);
+      const dedupKey = w.hanzi + "|" + normEn(w.en);
+      if (seenHanzi.has(dedupKey)) return;
+      seenHanzi.add(dedupKey);
       CARDS.push({
         id: `${lesson.id}:${i}`,
         lessonId: lesson.id,
@@ -35,7 +41,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=118";
+  const ASSET_V = "?v=119";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -79,7 +85,7 @@
   const FOCUSES = [
     { key: "recognize", emoji: "👀", name: "Read characters",     desc: "See 汉字, recall the meaning" },
     { key: "recall",    emoji: "🔤", name: "Recall from English", desc: "English → produce the 汉字" },
-    { key: "pinyin",    emoji: "🗣️", name: "Say it",              desc: "Read the pinyin and say it aloud" },
+    { key: "pinyin",    emoji: "🔡", name: "Pinyin",              desc: "Pick the correct pinyin — tones matter" },
     { key: "listen",    emoji: "👂", name: "Listen",              desc: "Hear it, then pick what it means" },
     { key: "write",     emoji: "✍️", name: "Write it",            desc: "Draw the character stroke by stroke" },
     { key: "sentence",  emoji: "🧩", name: "Build sentences",     desc: "Tap word tiles to assemble a sentence" },
@@ -1428,7 +1434,7 @@
       box.appendChild(el("div", { className: "lsub" }, [document.createTextNode("OR PRACTISE ONE SKILL")]));
       box.appendChild(el("div", { className: "lchips" }, [
         chip("✍️", "Write", "write"),
-        chip("🗣️", "Say it", "pinyin"),
+        chip("🔡", "Pinyin", "pinyin"),
         chip("👂", "Listen", "listen"),
         chip("🧩", "Sentences", "sentence"),
         chip("✅", "Quiz", "quiz"),
@@ -1618,7 +1624,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=118", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=119", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1690,7 +1696,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=118" : "images/dragon-sad.png?v=118"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=119" : "images/dragon-sad.png?v=119"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1742,11 +1748,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=118"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=119"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.textContent === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=118"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=119"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -1854,8 +1860,18 @@
             } }
           });
         });
+        // Not being able to use the mic isn't a wrong answer — reveal it and
+        // requeue it for later this session with no SRS penalty (parity with the
+        // self-assessed iOS path, which also never marks you wrong here).
         const skip = el("button", { className: "hint-btn", type: "button" }, "Can't speak now");
-        skip.addEventListener("click", () => { if (!studyAnswered) settle(false, `<span class="bad">Skipped</span> — it's <b>${c.hanzi}</b> (${c.pinyin}).`); });
+        skip.addEventListener("click", () => {
+          if (studyAnswered) return;
+          studyAnswered = true;
+          fb.innerHTML = `<span class="muted">No problem — it's <b>${c.hanzi}</b> (${c.pinyin}). We'll come back to it.</span>`;
+          queue.push(curCard);   // returns later this session, not counted wrong
+          updateStudyProgress();
+          setWriteGate(true);
+        });
         face.append(mic, fb, skip);
       } else {
         // iOS Safari has no speech recognition: keep the practice, self-assessed.

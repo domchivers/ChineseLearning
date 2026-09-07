@@ -34,7 +34,7 @@ window.VOCAB = {
         { hanzi: "请说",       pinyin: "qǐng shuō",       pos: "",     en: "please say" },
         { hanzi: "请问",       pinyin: "qǐng wèn",        pos: "",     en: "may I ask … please?" },
         { hanzi: "为什么",     pinyin: "wèi shén me",     pos: "",     en: "why?" },
-        { hanzi: "是/不是",    pinyin: "shì / bù shì",    pos: "",     en: "yes / no" },
+        { hanzi: "是/不是",    pinyin: "shì / bú shì",    pos: "",     en: "yes / no" },
         { hanzi: "对",         pinyin: "duì",             pos: "",     en: "correct / right" },
         { hanzi: "你明白了吗", pinyin: "nǐ míng bai le ma", pos: "",   en: "do you understand?" },
         { hanzi: "我明白了",   pinyin: "wǒ míng bai le",  pos: "",     en: "I understand." },
@@ -54,7 +54,7 @@ window.VOCAB = {
         { hanzi: "请",     pinyin: "qǐng",      pos: "",      en: "please" },
         { hanzi: "问",     pinyin: "wèn",       pos: "v.",    en: "to ask" },
         { hanzi: "什么",   pinyin: "shénme",    pos: "",      en: "what" },
-        { hanzi: "名字",   pinyin: "míng zì",   pos: "n.",    en: "name" },
+        { hanzi: "名字",   pinyin: "míng zi",   pos: "n.",    en: "name" },
         { hanzi: "很",     pinyin: "hěn",       pos: "adv.",  en: "very" },
         { hanzi: "高兴",   pinyin: "gāo xìng",  pos: "adj.",  en: "happy" },
         { hanzi: "认识",   pinyin: "rèn shi",   pos: "v.",    en: "to know (somebody)" },
@@ -62,7 +62,7 @@ window.VOCAB = {
         { hanzi: "吗",     pinyin: "ma",        pos: "",      en: "(turns a statement into a question)" },
         { hanzi: "呢",     pinyin: "ne",        pos: "",      en: "(used after a noun/pronoun to form an “And …?” question)" },
         { hanzi: "谢谢",   pinyin: "xiè xie",   pos: "",      en: "thank you" },
-        { hanzi: "不客气", pinyin: "bù kè qì",  pos: "",      en: "you are welcome" },
+        { hanzi: "不客气", pinyin: "bú kè qi",  pos: "",      en: "you are welcome" },
         { hanzi: "不",     pinyin: "bù",        pos: "",      en: "no, not" }
       ]
     },
@@ -70,10 +70,10 @@ window.VOCAB = {
       id: "l2",
       title: "Lesson 2 · 我来自中国 (I come from China)",
       words: [
-        { hanzi: "早上",     pinyin: "zǎo shàng",   pos: "n.", en: "morning" },
+        { hanzi: "早上",     pinyin: "zǎo shang",   pos: "n.", en: "morning" },
         { hanzi: "是",       pinyin: "shì",         pos: "",   en: "is / am / are; yes" },
         { hanzi: "的",       pinyin: "de",          pos: "",   en: "(possessive particle) ’s" },
-        { hanzi: "朋友",     pinyin: "péng yǒu",    pos: "n.", en: "friend" },
+        { hanzi: "朋友",     pinyin: "péng you",    pos: "n.", en: "friend" },
         { hanzi: "来自",     pinyin: "lái zì",      pos: "v.", en: "to come from" },
         { hanzi: "中国",     pinyin: "zhōng guó",   pos: "n.", en: "China" },
         { hanzi: "国",       pinyin: "guó",         pos: "n.", en: "country" },
@@ -157,7 +157,7 @@ window.VOCAB = {
         { hanzi: "电视",   pinyin: "diàn shì",  pos: "n.", en: "television" },
         { hanzi: "门",     pinyin: "mén",       pos: "n.", en: "door" },
         { hanzi: "椅子",   pinyin: "yǐ zi",     pos: "n.", en: "chair" },
-        { hanzi: "衣服",   pinyin: "yī fú",     pos: "n.", en: "clothes" },
+        { hanzi: "衣服",   pinyin: "yī fu",     pos: "n.", en: "clothes" },
         { hanzi: "米饭",   pinyin: "mǐ fàn",    pos: "n.", en: "(cooked) rice" },
         { hanzi: "水",     pinyin: "shuǐ",      pos: "n.", en: "water" },
         { hanzi: "咖啡",   pinyin: "kā fēi",    pos: "n.", en: "coffee" },
@@ -247,7 +247,7 @@ window.VOCAB = {
         { hanzi: "今天",   pinyin: "jīn tiān",    pos: "n.",   en: "today" },
         { hanzi: "天气",   pinyin: "tiān qì",     pos: "n.",   en: "weather" },
         { hanzi: "怎么样", pinyin: "zěn me yàng", pos: "adv.", en: "how is it?" },
-        { hanzi: "有意思", pinyin: "yǒu yì sī",   pos: "adj.", en: "interesting" },
+        { hanzi: "有意思", pinyin: "yǒu yì si",   pos: "adj.", en: "interesting" },
         { hanzi: "游泳",   pinyin: "yóu yǒng",    pos: "v.",   en: "to swim" },
         { hanzi: "时候",   pinyin: "shí hou",     pos: "n.",   en: "time, moment" },
         { hanzi: "现在",   pinyin: "xiàn zài",    pos: "n.",   en: "now" },
@@ -256,14 +256,14 @@ window.VOCAB = {
         { hanzi: "非常",   pinyin: "fēi cháng",   pos: "adv.", en: "very, extremely" },
         { hanzi: "打球",   pinyin: "dǎ qiú",      pos: "v.",   en: "to play ball (basketball, tennis…)" },
         { hanzi: "了",     pinyin: "le",          pos: "",     en: "(past-tense marker)" },
-        { hanzi: "太…了",  pinyin: "tài … le",    pos: "",     en: "too / so …" }
+        { hanzi: "太…了",  pinyin: "tài … le",    pos: "",     en: "so / too (+ adjective)" }
       ]
     },
     {
       id: "b2",
       title: "B2 · 请问现在是几点？What time is it?",
       words: [
-        { hanzi: "晚上",   pinyin: "wǎn shàng",   pos: "n.",   en: "evening, night" },
+        { hanzi: "晚上",   pinyin: "wǎn shang",   pos: "n.",   en: "evening, night" },
         { hanzi: "几点",   pinyin: "jǐ diǎn",     pos: "",     en: "what time?" },
         { hanzi: "到",     pinyin: "dào",         pos: "v.",   en: "to arrive; to, until" },
         { hanzi: "每天",   pinyin: "měi tiān",    pos: "n.",   en: "every day" },
@@ -286,7 +286,7 @@ window.VOCAB = {
         { hanzi: "里",     pinyin: "lǐ",          pos: "n.",   en: "inside" },
         { hanzi: "要",     pinyin: "yào",         pos: "v.",   en: "to want; will" },
         { hanzi: "买",     pinyin: "mǎi",         pos: "v.",   en: "to buy" },
-        { hanzi: "东西",   pinyin: "dōng xī",     pos: "n.",   en: "things, stuff" },
+        { hanzi: "东西",   pinyin: "dōng xi",     pos: "n.",   en: "things, stuff" },
         { hanzi: "还",     pinyin: "hái",         pos: "adv.", en: "also, still" },
         { hanzi: "杯",     pinyin: "bēi",         pos: "m.",   en: "(cup / glass of)" },
         { hanzi: "咖啡",   pinyin: "kā fēi",      pos: "n.",   en: "coffee" },
@@ -322,7 +322,7 @@ window.VOCAB = {
       title: "B5 · 房里有什么？In the room (measure words 3)",
       words: [
         { hanzi: "小鸟",   pinyin: "xiǎo niǎo",   pos: "n.",   en: "little bird" },
-        { hanzi: "眼睛",   pinyin: "yǎn jīng",    pos: "n.",   en: "eyes" },
+        { hanzi: "眼睛",   pinyin: "yǎn jing",    pos: "n.",   en: "eyes" },
         { hanzi: "张",     pinyin: "zhāng",       pos: "m.",   en: "(measure for flat things)" },
         { hanzi: "纸巾",   pinyin: "zhǐ jīn",     pos: "n.",   en: "tissue" },
         { hanzi: "机票",   pinyin: "jī piào",     pos: "n.",   en: "plane ticket" },
@@ -369,7 +369,7 @@ window.VOCAB = {
         { hanzi: "上午",   pinyin: "shàng wǔ",    pos: "n.",   en: "morning" },
         { hanzi: "同学",   pinyin: "tóng xué",    pos: "n.",   en: "classmate" },
         { hanzi: "学校",   pinyin: "xué xiào",    pos: "n.",   en: "school" },
-        { hanzi: "衣服",   pinyin: "yī fú",       pos: "n.",   en: "clothes" },
+        { hanzi: "衣服",   pinyin: "yī fu",       pos: "n.",   en: "clothes" },
         { hanzi: "商场",   pinyin: "shāng chǎng", pos: "n.",   en: "shopping mall" },
         { hanzi: "健身房", pinyin: "jiàn shēn fáng",pos: "n.", en: "gym" },
         { hanzi: "运动",   pinyin: "yùn dòng",    pos: "v.",   en: "to exercise" }
@@ -392,7 +392,7 @@ window.VOCAB = {
         { hanzi: "明年",   pinyin: "míng nián",   pos: "n.",   en: "next year" },
         { hanzi: "这周五", pinyin: "zhè zhōu wǔ", pos: "",     en: "this Friday" },
         { hanzi: "下周五", pinyin: "xià zhōu wǔ", pos: "",     en: "next Friday" },
-        { hanzi: "好朋友", pinyin: "hǎo péng yǒu",pos: "n.",   en: "good friend" }
+        { hanzi: "好朋友", pinyin: "hǎo péng you",pos: "n.",   en: "good friend" }
       ]
     }
   ]
