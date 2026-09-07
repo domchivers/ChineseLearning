@@ -35,7 +35,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=113";
+  const ASSET_V = "?v=117";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -358,17 +358,25 @@
   // ---- Speech recognition (you speak → it checks) ----
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   const canRecognize = () => !!SR;
-  function recognizeOnce({ onStart, onResult, onError, onEnd }) {
+  // onInterim(alts)  – live partial guesses while you're still speaking
+  // acceptEarly(alts) – return true to settle NOW without waiting for the engine
+  //                     to time out on silence (the main source of the lag)
+  function recognizeOnce({ onStart, onResult, onInterim, onError, onEnd, acceptEarly }) {
     if (!SR) { onError && onError("unsupported"); return null; }
     const rec = new SR();
     rec.lang = "zh-CN";
-    rec.interimResults = false;
-    rec.maxAlternatives = 8;   // more candidates = more chances the right one is in there
+    rec.interimResults = true;   // stream partial results — the exercise feels live, not frozen
+    rec.maxAlternatives = 8;     // more candidates = more chances the right one is in there
+    let delivered = false;
+    const altsOf = r => { const a = []; for (let i = 0; i < r.length; i++) a.push(r[i].transcript); return a; };
+    const deliver = alts => { if (delivered) return; delivered = true; onResult && onResult(alts); try { rec.stop(); } catch {} };
     rec.onstart = () => onStart && onStart();
     rec.onresult = e => {
-      const alts = [];
-      for (let i = 0; i < e.results[0].length; i++) alts.push(e.results[0][i].transcript);
-      onResult && onResult(alts);
+      const r = e.results[e.results.length - 1];
+      const alts = altsOf(r);
+      if (r.isFinal) return deliver(alts);
+      onInterim && onInterim(alts);
+      if (acceptEarly && acceptEarly(alts)) deliver(alts);   // heard it — don't make them wait
     };
     rec.onerror = e => onError && onError(e.error || "error");
     rec.onend = () => onEnd && onEnd();
@@ -1112,9 +1120,17 @@
   /*  PATH (lesson journey home)                                          */
   /* ==================================================================== */
 
+  // Chapters carry a `unit` so the path can group Beginner A (Unit A) and
+  // Beginner B (Unit B). New Unit B chapters are appended; their lessons unlock
+  // in order after Unit A, since currentLessonId walks LESSONS top to bottom.
   const CHAPTERS = [
-    { title: "Greetings & basics", lessons: ["useful", "l1", "l2", "l2-countries"] },
-    { title: "Work, things & numbers", lessons: ["l3", "l4", "l5", "numbers", "l6"] }
+    { unit: "A", title: "Greetings & basics", lessons: ["useful", "l1", "l2", "l2-countries"] },
+    { unit: "A", title: "Work, things & numbers", lessons: ["l3", "l4", "l5", "numbers", "l6"] },
+    { unit: "B", title: "How was the movie?", lessons: ["b1"] },
+    { unit: "B", title: "What time is it?", lessons: ["b2"] },
+    { unit: "B", title: "In the room — measure words", lessons: ["b3", "b4", "b5"] },
+    { unit: "B", title: "Birthdays & dates", lessons: ["b6"] },
+    { unit: "B", title: "Future plans", lessons: ["b7", "b8"] }
   ];
   // One mascot sprite per chapter; chapter N uses sprite N (wraps around).
   // The mascot cast — dragon, panda and ox. Sprites cycle through this list to
@@ -1222,12 +1238,18 @@
     const phone = pathIsPhone(), c = phone ? PATH_CFG.phone : PATH_CFG.desktop;
     const curId = currentLessonId();
 
-    // flatten chapters into an ordered list, remembering where each one starts
+    // flatten chapters into an ordered list, remembering where each one starts.
+    // The banner shows the unit + a chapter number counted WITHIN that unit.
     const items = [];
-    CHAPTERS.forEach((ch, ci) => ch.lessons.forEach((id, li) => {
-      const lesson = LESSONS.find(l => l.id === id);
-      if (lesson) items.push({ lesson, chapter: li === 0 ? { ci, title: ch.title } : null });
-    }));
+    const unitCh = {};
+    CHAPTERS.forEach((ch, ci) => {
+      unitCh[ch.unit] = (unitCh[ch.unit] || 0) + 1;
+      const chNo = unitCh[ch.unit];
+      ch.lessons.forEach((id, li) => {
+        const lesson = LESSONS.find(l => l.id === id);
+        if (lesson) items.push({ lesson, chapter: li === 0 ? { unit: ch.unit, chNo, title: ch.title } : null });
+      });
+    });
 
     [...wrap.querySelectorAll(".pnode,.pchapter,.psprite")].forEach(n => n.remove());
 
@@ -1299,7 +1321,7 @@
 
       if (it.chapter) {                    // banner sits in the lead-in gap above
         const hd = el("div", { className: "pchapter" }, [
-          el("div", { className: "u" }, `CHAPTER ${it.chapter.ci + 1}`),
+          el("div", { className: "u" }, `UNIT ${it.chapter.unit} · CHAPTER ${it.chapter.chNo}`),
           el("div", { className: "t" }, it.chapter.title)
         ]);
         // Centre it in the gap it opened. `btn` (the button this banner labels)
@@ -1598,7 +1620,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=113", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=117", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1670,7 +1692,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=113" : "images/dragon-sad.png?v=113"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=117" : "images/dragon-sad.png?v=117"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1722,11 +1744,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=113"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=117"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.textContent === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=113"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=117"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -1806,6 +1828,12 @@
           mic.disabled = true; mic.textContent = "● Listening…"; mic.classList.add("listening");
           fb.textContent = "";
           recognizeOnce({
+            // live partial text so it visibly responds while you're still talking
+            onInterim: alts => { if (!studyAnswered && alts[0])
+              fb.innerHTML = `<span class="muted">…${alts[0]}</span>`; },
+            // as soon as a partial already contains the word, accept — don't wait
+            // for the engine's end-of-speech silence timeout (the actual lag).
+            acceptEarly: alts => scoreSpeech(sayHanzi, alts, c.hanzi).level !== "no",
             onResult: alts => {
               gotResult = true; tries++;
               const r = scoreSpeech(sayHanzi, alts, c.hanzi);

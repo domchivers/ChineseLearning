@@ -233,6 +233,167 @@ window.VOCAB = {
         { hanzi: "打",     pinyin: "dǎ",      pos: "v.",    en: "to hit, play, make (a call)" },
         { hanzi: "来",     pinyin: "lái",     pos: "v.",    en: "to come" }
       ]
+    },
+
+    /* ==================== Beginner B (Unit B) ==================== */
+    /* JIC Chinese Beginner B. Transcribed from the textbook page scans; pinyin
+       follows the book. New lesson ids (b1…) appended at the end so existing
+       Beginner A card IDs (lessonId:index) stay stable. */
+    {
+      id: "b1",
+      title: "B1 · 昨天的电影怎么样？How was the movie?",
+      words: [
+        { hanzi: "昨天",   pinyin: "zuó tiān",    pos: "n.",   en: "yesterday" },
+        { hanzi: "今天",   pinyin: "jīn tiān",    pos: "n.",   en: "today" },
+        { hanzi: "天气",   pinyin: "tiān qì",     pos: "n.",   en: "weather" },
+        { hanzi: "怎么样", pinyin: "zěn me yàng", pos: "adv.", en: "how is it?" },
+        { hanzi: "有意思", pinyin: "yǒu yì sī",   pos: "adj.", en: "interesting" },
+        { hanzi: "游泳",   pinyin: "yóu yǒng",    pos: "v.",   en: "to swim" },
+        { hanzi: "时候",   pinyin: "shí hou",     pos: "n.",   en: "time, moment" },
+        { hanzi: "现在",   pinyin: "xiàn zài",    pos: "n.",   en: "now" },
+        { hanzi: "没问题", pinyin: "méi wèn tí",  pos: "",     en: "no problem" },
+        { hanzi: "得",     pinyin: "de",          pos: "",     en: "(descriptive complement)" },
+        { hanzi: "非常",   pinyin: "fēi cháng",   pos: "adv.", en: "very, extremely" },
+        { hanzi: "打球",   pinyin: "dǎ qiú",      pos: "v.",   en: "to play ball (basketball, tennis…)" },
+        { hanzi: "了",     pinyin: "le",          pos: "",     en: "(past-tense marker)" },
+        { hanzi: "太…了",  pinyin: "tài … le",    pos: "",     en: "too / so …" }
+      ]
+    },
+    {
+      id: "b2",
+      title: "B2 · 请问现在是几点？What time is it?",
+      words: [
+        { hanzi: "晚上",   pinyin: "wǎn shàng",   pos: "n.",   en: "evening, night" },
+        { hanzi: "几点",   pinyin: "jǐ diǎn",     pos: "",     en: "what time?" },
+        { hanzi: "到",     pinyin: "dào",         pos: "v.",   en: "to arrive; to, until" },
+        { hanzi: "每天",   pinyin: "měi tiān",    pos: "n.",   en: "every day" },
+        { hanzi: "几个",   pinyin: "jǐ gè",       pos: "",     en: "how many" },
+        { hanzi: "小时",   pinyin: "xiǎo shí",    pos: "n.",   en: "hour" },
+        { hanzi: "从",     pinyin: "cóng",        pos: "prep.",en: "from" },
+        { hanzi: "可以",   pinyin: "kě yǐ",       pos: "v.",   en: "can, may" },
+        { hanzi: "见",     pinyin: "jiàn",        pos: "v.",   en: "to see, to meet" },
+        { hanzi: "分",     pinyin: "fēn",         pos: "n.",   en: "minute" },
+        { hanzi: "半",     pinyin: "bàn",         pos: "n.",   en: "half" },
+        { hanzi: "刻",     pinyin: "kè",          pos: "n.",   en: "a quarter (15 min)" },
+        { hanzi: "分钟",   pinyin: "fēn zhōng",   pos: "n.",   en: "minute(s) (duration)" }
+      ]
+    },
+    {
+      id: "b3",
+      title: "B3 · 请问房里有什么？In the room (measure words 1)",
+      words: [
+        { hanzi: "房",     pinyin: "fáng",        pos: "n.",   en: "room" },
+        { hanzi: "里",     pinyin: "lǐ",          pos: "n.",   en: "inside" },
+        { hanzi: "要",     pinyin: "yào",         pos: "v.",   en: "to want; will" },
+        { hanzi: "买",     pinyin: "mǎi",         pos: "v.",   en: "to buy" },
+        { hanzi: "东西",   pinyin: "dōng xī",     pos: "n.",   en: "things, stuff" },
+        { hanzi: "还",     pinyin: "hái",         pos: "adv.", en: "also, still" },
+        { hanzi: "杯",     pinyin: "bēi",         pos: "m.",   en: "(cup / glass of)" },
+        { hanzi: "咖啡",   pinyin: "kā fēi",      pos: "n.",   en: "coffee" },
+        { hanzi: "绿茶",   pinyin: "lǜ chá",      pos: "n.",   en: "green tea" },
+        { hanzi: "冰水",   pinyin: "bīng shuǐ",   pos: "n.",   en: "ice water" },
+        { hanzi: "本",     pinyin: "běn",         pos: "m.",   en: "(measure for books)" },
+        { hanzi: "本子",   pinyin: "běn zi",      pos: "n.",   en: "notebook" },
+        { hanzi: "书",     pinyin: "shū",         pos: "n.",   en: "book" }
+      ]
+    },
+    {
+      id: "b4",
+      title: "B4 · 房里有什么？In the room (measure words 2)",
+      words: [
+        { hanzi: "词典",   pinyin: "cí diǎn",     pos: "n.",   en: "dictionary" },
+        { hanzi: "块",     pinyin: "kuài",        pos: "m.",   en: "(piece of); yuan" },
+        { hanzi: "蛋糕",   pinyin: "dàn gāo",     pos: "n.",   en: "cake" },
+        { hanzi: "面包",   pinyin: "miàn bāo",    pos: "n.",   en: "bread" },
+        { hanzi: "香皂",   pinyin: "xiāng zào",   pos: "n.",   en: "soap" },
+        { hanzi: "钱",     pinyin: "qián",        pos: "n.",   en: "money" },
+        { hanzi: "双",     pinyin: "shuāng",      pos: "m.",   en: "(pair of)" },
+        { hanzi: "鞋",     pinyin: "xié",         pos: "n.",   en: "shoes" },
+        { hanzi: "袜子",   pinyin: "wà zi",       pos: "n.",   en: "socks" },
+        { hanzi: "筷子",   pinyin: "kuài zi",     pos: "n.",   en: "chopsticks" },
+        { hanzi: "手套",   pinyin: "shǒu tào",    pos: "n.",   en: "gloves" },
+        { hanzi: "只",     pinyin: "zhī",         pos: "m.",   en: "(measure for animals)" },
+        { hanzi: "狗",     pinyin: "gǒu",         pos: "n.",   en: "dog" },
+        { hanzi: "猫",     pinyin: "māo",         pos: "n.",   en: "cat" }
+      ]
+    },
+    {
+      id: "b5",
+      title: "B5 · 房里有什么？In the room (measure words 3)",
+      words: [
+        { hanzi: "小鸟",   pinyin: "xiǎo niǎo",   pos: "n.",   en: "little bird" },
+        { hanzi: "眼睛",   pinyin: "yǎn jīng",    pos: "n.",   en: "eyes" },
+        { hanzi: "张",     pinyin: "zhāng",       pos: "m.",   en: "(measure for flat things)" },
+        { hanzi: "纸巾",   pinyin: "zhǐ jīn",     pos: "n.",   en: "tissue" },
+        { hanzi: "机票",   pinyin: "jī piào",     pos: "n.",   en: "plane ticket" },
+        { hanzi: "车票",   pinyin: "chē piào",    pos: "n.",   en: "bus / train ticket" },
+        { hanzi: "照片",   pinyin: "zhào piàn",   pos: "n.",   en: "photo" },
+        { hanzi: "个",     pinyin: "gè",          pos: "m.",   en: "(general measure word)" },
+        { hanzi: "柠檬",   pinyin: "níng méng",   pos: "n.",   en: "lemon" },
+        { hanzi: "苹果",   pinyin: "píng guǒ",    pos: "n.",   en: "apple" },
+        { hanzi: "香蕉",   pinyin: "xiāng jiāo",  pos: "n.",   en: "banana" },
+        { hanzi: "西瓜",   pinyin: "xī guā",      pos: "n.",   en: "watermelon" },
+        { hanzi: "鸡蛋",   pinyin: "jī dàn",      pos: "n.",   en: "egg" }
+      ]
+    },
+    {
+      id: "b6",
+      title: "B6 · 我的生日是八月二十一号 Birthdays & dates",
+      words: [
+        { hanzi: "生日",   pinyin: "shēng rì",       pos: "n.",   en: "birthday" },
+        { hanzi: "号",     pinyin: "hào",            pos: "n.",   en: "date; number" },
+        { hanzi: "祝",     pinyin: "zhù",            pos: "v.",   en: "to wish" },
+        { hanzi: "快乐",   pinyin: "kuài lè",        pos: "adj.", en: "happy" },
+        { hanzi: "开心",   pinyin: "kāi xīn",        pos: "adj.", en: "happy, glad" },
+        { hanzi: "聚会",   pinyin: "jù huì",         pos: "n.",   en: "party, gathering" },
+        { hanzi: "过",     pinyin: "guò",            pos: "v.",   en: "to celebrate, to spend" },
+        { hanzi: "长寿面", pinyin: "cháng shòu miàn",pos: "n.",   en: "longevity noodles" },
+        { hanzi: "月",     pinyin: "yuè",            pos: "n.",   en: "month" },
+        { hanzi: "星期",   pinyin: "xīng qī",        pos: "n.",   en: "week" },
+        { hanzi: "几月",   pinyin: "jǐ yuè",         pos: "",     en: "which month?" },
+        { hanzi: "几号",   pinyin: "jǐ hào",         pos: "",     en: "which date?" },
+        { hanzi: "星期几", pinyin: "xīng qī jǐ",     pos: "",     en: "which day of the week?" }
+      ]
+    },
+    {
+      id: "b7",
+      title: "B7 · 你明天要做什么？Future plans (1)",
+      words: [
+        { hanzi: "明天",   pinyin: "míng tiān",   pos: "n.",   en: "tomorrow" },
+        { hanzi: "在",     pinyin: "zài",         pos: "adv.", en: "(in the middle of doing)" },
+        { hanzi: "电视",   pinyin: "diàn shì",    pos: "n.",   en: "television" },
+        { hanzi: "没有",   pinyin: "méi yǒu",     pos: "v.",   en: "did not; to not have" },
+        { hanzi: "做",     pinyin: "zuò",         pos: "v.",   en: "to do, to make" },
+        { hanzi: "学习",   pinyin: "xué xí",      pos: "v.",   en: "to study" },
+        { hanzi: "汉语",   pinyin: "hàn yǔ",      pos: "n.",   en: "Chinese (language)" },
+        { hanzi: "上午",   pinyin: "shàng wǔ",    pos: "n.",   en: "morning" },
+        { hanzi: "同学",   pinyin: "tóng xué",    pos: "n.",   en: "classmate" },
+        { hanzi: "学校",   pinyin: "xué xiào",    pos: "n.",   en: "school" },
+        { hanzi: "衣服",   pinyin: "yī fú",       pos: "n.",   en: "clothes" },
+        { hanzi: "商场",   pinyin: "shāng chǎng", pos: "n.",   en: "shopping mall" },
+        { hanzi: "健身房", pinyin: "jiàn shēn fáng",pos: "n.", en: "gym" },
+        { hanzi: "运动",   pinyin: "yùn dòng",    pos: "v.",   en: "to exercise" }
+      ]
+    },
+    {
+      id: "b8",
+      title: "B8 · 你明天要做什么？Future plans (2)",
+      words: [
+        { hanzi: "同事",   pinyin: "tóng shì",    pos: "n.",   en: "colleague" },
+        { hanzi: "客户",   pinyin: "kè hù",       pos: "n.",   en: "customer, client" },
+        { hanzi: "开会",   pinyin: "kāi huì",     pos: "v.",   en: "to have a meeting" },
+        { hanzi: "唐人街", pinyin: "táng rén jiē",pos: "n.",   en: "Chinatown" },
+        { hanzi: "墨尔本", pinyin: "mò ěr běn",   pos: "n.",   en: "Melbourne" },
+        { hanzi: "西藏",   pinyin: "xī zàng",     pos: "n.",   en: "Tibet" },
+        { hanzi: "旅游",   pinyin: "lǚ yóu",      pos: "v.",   en: "to travel" },
+        { hanzi: "酒吧",   pinyin: "jiǔ bā",      pos: "n.",   en: "bar" },
+        { hanzi: "喝酒",   pinyin: "hē jiǔ",      pos: "v.",   en: "to drink (alcohol)" },
+        { hanzi: "吃饭",   pinyin: "chī fàn",     pos: "v.",   en: "to eat, to have a meal" },
+        { hanzi: "明年",   pinyin: "míng nián",   pos: "n.",   en: "next year" },
+        { hanzi: "这周五", pinyin: "zhè zhōu wǔ", pos: "",     en: "this Friday" },
+        { hanzi: "下周五", pinyin: "xià zhōu wǔ", pos: "",     en: "next Friday" },
+        { hanzi: "好朋友", pinyin: "hǎo péng yǒu",pos: "n.",   en: "good friend" }
+      ]
     }
   ]
 };
@@ -287,6 +448,104 @@ window.DIALOGUES = [
       { who: "app", hanzi: "太棒了！",         pinyin: "tài bàng le",           en: "That's great!" },
       { who: "you", hanzi: "我也喜欢听音乐。", pinyin: "wǒ yě xǐhuan tīng yīnyuè", en: "I also like listening to music.", free: true },
       { who: "app", hanzi: "我们一起学习吧！", pinyin: "wǒmen yìqǐ xuéxí ba",   en: "Let's study together!" }
+    ]
+  },
+
+  /* ---- Beginner B ---- */
+  {
+    id: "b-movie", title: "How was the movie?", lesson: "B1",
+    turns: [
+      { who: "app", hanzi: "昨天的电影怎么样？", pinyin: "zuótiān de diànyǐng zěnmeyàng", en: "How was the movie yesterday?" },
+      { who: "you", hanzi: "很有意思。今天天气很好，我们去喝咖啡，怎么样？", pinyin: "hěn yǒuyìsi, jīntiān tiānqì hěn hǎo, wǒmen qù hē kāfēi, zěnmeyàng", en: "Very interesting. The weather's nice today — shall we go for coffee?" },
+      { who: "app", hanzi: "好，什么时候去？", pinyin: "hǎo, shénme shíhou qù", en: "Sure — when shall we go?" },
+      { who: "you", hanzi: "现在去，好吗？",   pinyin: "xiànzài qù, hǎo ma",   en: "Let's go now, okay?" },
+      { who: "app", hanzi: "好，没问题。",     pinyin: "hǎo, méi wèntí",       en: "Okay, no problem." }
+    ]
+  },
+  {
+    id: "b-ball", title: "How did the game go?", lesson: "B1",
+    turns: [
+      { who: "app", hanzi: "昨天的咖啡喝得怎么样？", pinyin: "zuótiān de kāfēi hē de zěnmeyàng", en: "How was the coffee yesterday?" },
+      { who: "you", hanzi: "非常好。你昨天去打球了，对吗？", pinyin: "fēicháng hǎo, nǐ zuótiān qù dǎqiú le, duì ma", en: "Very good. You went to play ball yesterday, right?" },
+      { who: "app", hanzi: "对。我们在学校打球。", pinyin: "duì, wǒmen zài xuéxiào dǎqiú", en: "Yes. We played at school." },
+      { who: "you", hanzi: "打得怎么样？",         pinyin: "dǎ de zěnmeyàng",           en: "How did it go?" },
+      { who: "app", hanzi: "打得太有意思了。",     pinyin: "dǎ de tài yǒuyìsi le",      en: "It was so much fun." }
+    ]
+  },
+  {
+    id: "b-time", title: "What time is it?", lesson: "B2",
+    turns: [
+      { who: "app", hanzi: "今天晚上你去看电影吗？", pinyin: "jīntiān wǎnshàng nǐ qù kàn diànyǐng ma", en: "Are you going to see a movie tonight?" },
+      { who: "you", hanzi: "我们几点去？",           pinyin: "wǒmen jǐ diǎn qù",                      en: "What time shall we go?" },
+      { who: "app", hanzi: "我们八点到电影院。",     pinyin: "wǒmen bā diǎn dào diànyǐngyuàn",        en: "We'll get to the cinema at eight." },
+      { who: "you", hanzi: "请问现在是几点？",       pinyin: "qǐngwèn xiànzài shì jǐ diǎn",           en: "Excuse me, what time is it now?" },
+      { who: "app", hanzi: "现在是下午三点。",       pinyin: "xiànzài shì xiàwǔ sān diǎn",            en: "It's three in the afternoon." },
+      { who: "you", hanzi: "好，我们八点电影院见！", pinyin: "hǎo, wǒmen bā diǎn diànyǐngyuàn jiàn",  en: "Great — see you at the cinema at eight!" }
+    ]
+  },
+  {
+    id: "b-yoga", title: "Every day", lesson: "B2",
+    turns: [
+      { who: "app", hanzi: "你每天做瑜伽吗？",       pinyin: "nǐ měitiān zuò yújiā ma",     en: "Do you do yoga every day?" },
+      { who: "you", hanzi: "对，我每天做一个小时。", pinyin: "duì, wǒ měitiān zuò yí gè xiǎoshí", en: "Yes, I do it an hour every day." },
+      { who: "app", hanzi: "从几点到几点？",         pinyin: "cóng jǐ diǎn dào jǐ diǎn",    en: "From what time to what time?" },
+      { who: "you", hanzi: "从五点到六点。",         pinyin: "cóng wǔ diǎn dào liù diǎn",   en: "From five to six." },
+      { who: "app", hanzi: "晚上可以去看电影。",     pinyin: "wǎnshàng kěyǐ qù kàn diànyǐng", en: "Then we can go to a movie in the evening." }
+    ]
+  },
+  {
+    id: "b-room", title: "What's in the room?", lesson: "B3",
+    turns: [
+      { who: "app", hanzi: "请问房里有什么？",         pinyin: "qǐngwèn fáng lǐ yǒu shénme",           en: "What's in the room?" },
+      { who: "you", hanzi: "房里有一只小狗和五张照片。", pinyin: "fáng lǐ yǒu yì zhī xiǎogǒu hé wǔ zhāng zhàopiàn", en: "There's a little dog and five photos." },
+      { who: "app", hanzi: "桌子上有什么？",           pinyin: "zhuōzi shàng yǒu shénme",              en: "What's on the table?" },
+      { who: "you", hanzi: "有两本书和三块蛋糕。",     pinyin: "yǒu liǎng běn shū hé sān kuài dàngāo", en: "Two books and three pieces of cake." },
+      { who: "app", hanzi: "还有咖啡吗？",             pinyin: "hái yǒu kāfēi ma",                     en: "Is there coffee too?" },
+      { who: "you", hanzi: "有，还有一杯绿茶。",       pinyin: "yǒu, hái yǒu yì bēi lǜchá",            en: "Yes, and a cup of green tea." }
+    ]
+  },
+  {
+    id: "b-shop", title: "Going shopping", lesson: "B5",
+    turns: [
+      { who: "app", hanzi: "你今天下午忙吗？",         pinyin: "nǐ jīntiān xiàwǔ máng ma",            en: "Are you busy this afternoon?" },
+      { who: "you", hanzi: "不忙，我要去买东西。",     pinyin: "bù máng, wǒ yào qù mǎi dōngxi",       en: "Not busy — I'm going shopping." },
+      { who: "app", hanzi: "你要买什么？",             pinyin: "nǐ yào mǎi shénme",                   en: "What are you going to buy?" },
+      { who: "you", hanzi: "我要买一双鞋和两双袜子。", pinyin: "wǒ yào mǎi yì shuāng xié hé liǎng shuāng wàzi", en: "A pair of shoes and two pairs of socks." },
+      { who: "app", hanzi: "你还要买什么？",           pinyin: "nǐ hái yào mǎi shénme",               en: "What else?" },
+      { who: "you", hanzi: "我还要买两张机票。",       pinyin: "wǒ hái yào mǎi liǎng zhāng jīpiào",   en: "Two plane tickets as well." }
+    ]
+  },
+  {
+    id: "b-birthday", title: "Happy birthday", lesson: "B6",
+    turns: [
+      { who: "app", hanzi: "今天是你的生日，祝你生日快乐！", pinyin: "jīntiān shì nǐ de shēngrì, zhù nǐ shēngrì kuàilè", en: "Today is your birthday — happy birthday!" },
+      { who: "you", hanzi: "谢谢你来我的生日聚会。",     pinyin: "xièxie nǐ lái wǒ de shēngrì jùhuì",   en: "Thanks for coming to my birthday party." },
+      { who: "app", hanzi: "你们过生日吃什么？",         pinyin: "nǐmen guò shēngrì chī shénme",        en: "What do you eat for a birthday?" },
+      { who: "you", hanzi: "我们吃长寿面。",             pinyin: "wǒmen chī chángshòumiàn",             en: "We eat longevity noodles." },
+      { who: "app", hanzi: "你的生日是几月几号？",       pinyin: "nǐ de shēngrì shì jǐ yuè jǐ hào",     en: "What's the date of your birthday?" },
+      { who: "you", hanzi: "我的生日是八月二十一号。",   pinyin: "wǒ de shēngrì shì bā yuè èrshíyī hào", en: "My birthday is the 21st of August." }
+    ]
+  },
+  {
+    id: "b-plans", title: "What will you do tomorrow?", lesson: "B7",
+    turns: [
+      { who: "app", hanzi: "你昨天晚上八点在看电视吗？", pinyin: "nǐ zuótiān wǎnshàng bā diǎn zài kàn diànshì ma", en: "Were you watching TV at 8 last night?" },
+      { who: "you", hanzi: "我没有在看电视，我在喝咖啡。", pinyin: "wǒ méiyǒu zài kàn diànshì, wǒ zài hē kāfēi", en: "I wasn't watching TV, I was drinking coffee." },
+      { who: "app", hanzi: "你明天要做什么？",           pinyin: "nǐ míngtiān yào zuò shénme",          en: "What will you do tomorrow?" },
+      { who: "you", hanzi: "我明天要学习汉语。",         pinyin: "wǒ míngtiān yào xuéxí hànyǔ",         en: "Tomorrow I'll study Chinese." },
+      { who: "app", hanzi: "你明天晚上要看电视吗？",     pinyin: "nǐ míngtiān wǎnshàng yào kàn diànshì ma", en: "Will you watch TV tomorrow evening?" },
+      { who: "you", hanzi: "我明天不要看电视。",         pinyin: "wǒ míngtiān búyào kàn diànshì",       en: "I won't watch TV tomorrow." }
+    ]
+  },
+  {
+    id: "b-plans2", title: "Where will you go?", lesson: "B7",
+    turns: [
+      { who: "app", hanzi: "你明天上午要做什么？",     pinyin: "nǐ míngtiān shàngwǔ yào zuò shénme",  en: "What will you do tomorrow morning?" },
+      { who: "you", hanzi: "我要去学校学习。",         pinyin: "wǒ yào qù xuéxiào xuéxí",             en: "I'm going to school to study." },
+      { who: "app", hanzi: "你和谁去？",               pinyin: "nǐ hé shéi qù",                       en: "Who are you going with?" },
+      { who: "you", hanzi: "我和同学去。",             pinyin: "wǒ hé tóngxué qù",                    en: "With my classmates." },
+      { who: "app", hanzi: "下午呢？",                 pinyin: "xiàwǔ ne",                            en: "And in the afternoon?" },
+      { who: "you", hanzi: "下午我要去健身房运动。",   pinyin: "xiàwǔ wǒ yào qù jiànshēnfáng yùndòng", en: "In the afternoon I'll go to the gym to work out." }
     ]
   }
 ];
