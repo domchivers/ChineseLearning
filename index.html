@@ -1214,7 +1214,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=130" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=131" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1285,6 +1285,10 @@
             <button id="acctSignOut">Sign out</button>
           </div>
         </div>
+      </div>
+      <div class="set-row stack">
+        <div><div class="lbl">Your name</div><div class="desc">Shown in the greeting on the Home screen.</div></div>
+        <input type="text" id="nameInput" class="pick-search" placeholder="e.g. Dominic" autocomplete="off" maxlength="24" style="margin:0">
       </div>
       <div class="set-row stack">
         <div><div class="lbl">Appearance</div><div class="desc">Light, dark, or follow your device.</div></div>
@@ -1410,7 +1414,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=130" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=131" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1429,7 +1433,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=130" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=131" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1460,10 +1464,10 @@
     </div>
   </div>
 
-<script src="data.js?v=130"></script>
-<script src="hanzi-data.js?v=130"></script>
+<script src="data.js?v=131"></script>
+<script src="hanzi-data.js?v=131"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=130"></script>
+<script src="app.js?v=131"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

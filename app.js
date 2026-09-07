@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=130";
+  const ASSET_V = "?v=131";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1078,7 +1078,19 @@
   const svgUse = id => `<svg class="licon licon-sm"><use href="#${id}"/></svg>`;
 
   // The Home landing: greeting, the Continue card, and the Review link.
+  // A friendly name for the greeting: what you set in Settings, else a tidied-up
+  // version of your sign-in email, else nothing.
+  function displayName() {
+    if (prefs.name && prefs.name.trim()) return prefs.name.trim();
+    const e = (typeof userEmail === "function") ? userEmail() : "";
+    if (!e) return "";
+    const local = e.split("@")[0].split(/[._+-]/)[0].replace(/\d+/g, "");
+    return local ? local.charAt(0).toUpperCase() + local.slice(1) : "";
+  }
+
   function renderHomeTop() {
+    const name = displayName();
+    $(".greet-h").textContent = `你好${name ? ", " + name : ""} 👋`;
     const streak = computeStreak(), goal = dailyGoal(), done = todayCount();
     const streakTxt = streak > 0 ? `${streak}-day streak` : "No streak yet";
     $("#greetMeta").innerHTML =
@@ -1854,7 +1866,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=130", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=131", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1926,7 +1938,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=130" : "images/dragon-sad.png?v=130"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=131" : "images/dragon-sad.png?v=131"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2055,11 +2067,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=130"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=131"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=130"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=131"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2732,6 +2744,7 @@
     $("#checkSwitch").classList.toggle("on", prefs.checkStrokes !== false);
     $("#soundSwitch").classList.toggle("on", prefs.sound !== false);
     $("#pinyinSwitch").classList.toggle("on", prefs.showPinyin !== false);
+    if ($("#nameInput") && document.activeElement !== $("#nameInput")) $("#nameInput").value = prefs.name || "";
     const bk = $("#backupAge");
     if (bk) {
       bk.textContent = backupAgeText();
@@ -2753,6 +2766,9 @@
   }
   $("#pinyinSwitch").addEventListener("click", togglePinyin);
   $("#pinyinSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); togglePinyin(); } });
+  if ($("#nameInput")) $("#nameInput").addEventListener("input", e => {
+    prefs.name = e.target.value.slice(0, 24); savePrefs(prefs); renderHomeTop();
+  });
   $("#checkSwitch").addEventListener("click", toggleCheck);
   $("#checkSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCheck(); } });
   $("#soundSwitch").addEventListener("click", toggleSound);
