@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=126";
+  const ASSET_V = "?v=127";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -355,13 +355,15 @@
     speechSynthesis.speak(u);
   }
   function speakerBtn(text) {
-    const b = el("button", { className: "speaker", title: "Play audio", type: "button" }, "🔊");
+    const b = el("button", { className: "speaker", title: "Play audio", type: "button" });
+    b.innerHTML = `<svg class="licon licon-sm"><use href="#i-volume"/></svg>`;
     b.addEventListener("click", e => { e.stopPropagation(); speak(text); });
     return b;
   }
   // Slow (🐢) playback for careful listening.
   function slowSpeakerBtn(text) {
-    const b = el("button", { className: "speaker", title: "Play slowly", type: "button" }, "🐢");
+    const b = el("button", { className: "speaker speaker-slow", title: "Play slowly", type: "button" });
+    b.innerHTML = `<svg class="licon licon-sm"><use href="#i-volume"/></svg><span class="spd">½×</span>`;
     b.addEventListener("click", e => { e.stopPropagation(); speak(text, { rate: 0.5 }); });
     return b;
   }
@@ -559,7 +561,8 @@
   }
   // Small "strokes/write" button used in lists and cards.
   function strokeBtn(hanzi, pinyin) {
-    const b = el("button", { className: "speaker", title: "Stroke order & writing", type: "button" }, "✍︎");
+    const b = el("button", { className: "speaker", title: "Stroke order & writing", type: "button" });
+    b.innerHTML = `<svg class="licon licon-sm"><use href="#i-pencil"/></svg>`;
     b.addEventListener("click", e => { e.stopPropagation(); openCharModal(hanzi, pinyin); });
     return b;
   }
@@ -837,7 +840,7 @@
     window.print();
   }
 
-  $("#sheetBack").addEventListener("click", () => { renderPath(); show("path"); });
+  $("#sheetBack").addEventListener("click", () => { show("path"); renderPath(); });
   $("#sheetReset").addEventListener("click", renderSheetChar);
   $("#sheetPrint").addEventListener("click", printSheet);
 
@@ -966,7 +969,7 @@
     ctrl.appendChild(feedback);
   }
 
-  $("#convBack").addEventListener("click", () => { speechSynthesis.cancel(); renderPath(); show("path"); });
+  $("#convBack").addEventListener("click", () => { speechSynthesis.cancel(); show("path"); renderPath(); });
 
   /* ==================================================================== */
   /*  HOME                                                                */
@@ -1376,10 +1379,16 @@
     });
     wrap.style.height = (ys[ys.length - 1] + c.pad) + "px";
 
-    // renderPath runs at boot while #path is still hidden (width 0). Retry on a
-    // timer — NOT rAF, which is throttled to nothing in a background tab.
+    // A hidden #path has width 0 and can't be laid out. Only retry while the path
+    // is actually the visible view — otherwise a render kicked off while we're on
+    // another tab would storm retries and burn through pathTries, leaving the path
+    // blank on its first open (the "have to tap Learn twice" bug). Callers show
+    // the path FIRST, then render, so this measures a real width straight away.
     const W = wrap.clientWidth;
-    if (!W) { if (pathTries++ < 40) setTimeout(renderPath, 50); return; }
+    if (!W) {
+      if (document.body.dataset.view === "path" && pathTries++ < 40) setTimeout(renderPath, 50);
+      return;
+    }
     pathTries = 0;
 
     // The sine advances one step per BUTTON, so `per` is how many buttons make
@@ -1568,7 +1577,7 @@
       if (nav === "settings") { syncSettings(); renderAccount(); openModal("settingsModal"); return; }
       document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x === b));
       if (nav === "home") { renderHome(); show("home"); }
-      else if (nav === "path") { renderPath(); show("path"); }
+      else if (nav === "path") { show("path"); renderPath(); }
       else if (nav === "progress") { renderDashboard(); show("progress"); }
     }));
   $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) startReview(); });
@@ -1804,7 +1813,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=126", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=127", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1876,7 +1885,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=126" : "images/dragon-sad.png?v=126"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=127" : "images/dragon-sad.png?v=127"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2004,11 +2013,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=126"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=127"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=126"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=127"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2308,7 +2317,7 @@
     if (!studyAnswered) answerStudy(true);   // write mode: finishing the character = correct
     nextStudyCard();
   });
-  $("#studyBack").addEventListener("click", () => { renderPath(); show("path"); });
+  $("#studyBack").addEventListener("click", () => { show("path"); renderPath(); });
   $("#studyShuffle").addEventListener("click", () => { queue = shuffle(queue); nextStudyCard(); });
 
   /* ==================================================================== */
@@ -2417,7 +2426,7 @@
   }
 
   $("#quizNext").addEventListener("click", () => { quizIdx++; renderQuiz(); });
-  $("#quizBack").addEventListener("click", () => { renderPath(); show("path"); });
+  $("#quizBack").addEventListener("click", () => { show("path"); renderPath(); });
 
   function finishQuiz() {
     doneAction = null;
@@ -2460,7 +2469,7 @@
     $("#browseTitle").textContent = `Browse · ${activeCards().length} words`;
     show("browse");
   }
-  $("#browseBack").addEventListener("click", () => { renderPath(); show("path"); });
+  $("#browseBack").addEventListener("click", () => { show("path"); renderPath(); });
 
   /* ==================================================================== */
   /*  PICK & PRACTISE — choose any words, then flashcards / match / quiz  */
@@ -2620,7 +2629,7 @@
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(statEl(matchTotal, matchTotal === 1 ? "pair matched" : "pairs matched"));
     doneAction = () => startMatch(pickedCards());
-    $("#doneNext").textContent = "🔀 Again";
+    $("#doneNext").innerHTML = `<svg class="licon licon-sm"><use href="#i-shuffle"/></svg> Again`;
     delete $("#doneNext").dataset.next;
     $("#doneNext").classList.remove("hidden");
     $("#doneAgain").classList.add("hidden");
@@ -2651,7 +2660,7 @@
   // A one-shot action for the done screen's primary button (used by Matching's
   // "Again"); lesson flows leave it null and fall through to the dataset.next path.
   let doneAction = null;
-  $("#doneHome").addEventListener("click", () => { doneAction = null; renderPath(); show("path"); });
+  $("#doneHome").addEventListener("click", () => { doneAction = null; show("path"); renderPath(); });
   $("#doneNext").addEventListener("click", () => {
     if (doneAction) { const fn = doneAction; doneAction = null; $("#doneNext").classList.add("hidden"); fn(); return; }
     const id = $("#doneNext").dataset.next;
@@ -3216,9 +3225,8 @@ This REPLACES the progress on this device.`)) return;
   // ---- Boot ----
   applyTheme();
   hydrateIcons();
-  renderPath();
   renderHome();
-  show("home");                          // land on the Home dashboard
+  show("home");                          // land on the Home dashboard (path renders on first Learn tap)
   renderAccount();
   if (cloudOn() && !signedIn()) {
     openAuthGate();                       // no session yet — must sign in

@@ -140,7 +140,10 @@
   .en { font-size: 1.5rem; }
   .pos { color: var(--muted); font-size: .95rem; font-style: italic; }
   .divider { width: 60%; height: 1px; background: var(--line); margin: 6px 0; }
-  .speaker { font-size: 1.4rem; background: transparent; border: none; padding: 6px 10px; }
+  .speaker { background: transparent; border: none; padding: 6px 9px; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 3px; cursor: pointer; }
+  .speaker .licon { width: 20px; height: 20px; }
+  .speaker-slow .spd { font-size: .68rem; font-weight: 800; }
 
   .controls { display: flex; gap: 10px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
   .grade { display: flex; gap: 8px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
@@ -733,19 +736,8 @@
   .bottomnav button { border: 0; background: none; color: var(--muted); font-size: 21px; width: 58px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform .05s ease; }
   .bottomnav button.on { color: #fff; background: var(--accent); }
 
-  /* Floating pill, themed. It used to be forced white because the path was a
-     bright outdoor scene; with a plain page that reads as a slab of the wrong
-     colour in dark mode. */
-  body[data-view="path"] .bottomnav {
-    position: absolute;   /* anchor to .wrap (100dvh), not the layout viewport */
-    left: 50%; right: auto; transform: translateX(-50%);
-    bottom: 14px;   /* from the true screen edge; the home indicator isn't reserved */
-    background: var(--panel); border: 2px solid var(--line); border-bottom-width: 4px;
-    border-radius: 18px; padding: 7px 9px; box-shadow: 0 8px 22px rgba(0,0,0,.28);
-  }
-  body[data-view="path"] .bottomnav button { color: var(--muted); font-size: 19px; }
-  /* needs the same path scope: the rule above outranks a bare `.bottomnav
-     button.on` on element count, and would keep the active icon grey. */
+  /* The bottom nav stays identical across Home, Learn and Progress — it used to
+     become a floating pill on the path, which read as the bar "changing". */
   body[data-view="path"] .bottomnav button.on { color: #fff; background: var(--accent); }
 
   /* Review call-to-action, floating above the bottom nav on the path */
@@ -894,9 +886,9 @@
   .pk-en { color: var(--ink); font-size: .84rem; }
   .pick-actions { display: flex; gap: 8px; margin-top: 12px; }
   .pick-actions button { flex: 1; padding: .8rem .4rem; border-radius: 14px; border: none; cursor: pointer;
-    background: var(--accent); color: #fff; font-weight: 700; font-size: .92rem; box-shadow: 0 3px 0 var(--accent-dark); }
+    background: var(--accent); color: #fff; font-weight: 700; font-size: .92rem; box-shadow: 0 3px 0 var(--accent-dark);
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
   .pick-actions button:disabled { opacity: .4; box-shadow: none; cursor: default; }
-  .pick-actions .em { font-style: normal; }
 
   /* Flashcards */
   .flashcard { min-height: 260px; display: flex; align-items: center; justify-content: center;
@@ -948,6 +940,9 @@
   <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
   <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
   <symbol id="i-gear" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/><path d="m15 5 4 4"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></symbol>
 </svg>
 <div class="wrap">
   <header class="top">
@@ -1139,9 +1134,9 @@
       <div class="pick-list" id="pickList"></div>
     </div>
     <div class="pick-actions">
-      <button data-pmode="flash"><span class="em">🎴</span> Flashcards</button>
-      <button data-pmode="match"><span class="em">🔀</span> Matching</button>
-      <button data-pmode="quiz"><span class="em">✅</span> Quiz</button>
+      <button data-pmode="flash"><svg class="licon licon-sm"><use href="#i-cards"/></svg> Flashcards</button>
+      <button data-pmode="match"><svg class="licon licon-sm"><use href="#i-shuffle"/></svg> Matching</button>
+      <button data-pmode="quiz"><svg class="licon licon-sm"><use href="#i-check"/></svg> Quiz</button>
     </div>
   </section>
 
@@ -1180,7 +1175,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=126" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=127" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1376,7 +1371,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=126" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=127" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1395,7 +1390,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=126" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=127" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1426,10 +1421,10 @@
     </div>
   </div>
 
-<script src="data.js?v=126"></script>
-<script src="hanzi-data.js?v=126"></script>
+<script src="data.js?v=127"></script>
+<script src="hanzi-data.js?v=127"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=126"></script>
+<script src="app.js?v=127"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
