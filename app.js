@@ -35,7 +35,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=117";
+  const ASSET_V = "?v=118";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1126,11 +1126,9 @@
   const CHAPTERS = [
     { unit: "A", title: "Greetings & basics", lessons: ["useful", "l1", "l2", "l2-countries"] },
     { unit: "A", title: "Work, things & numbers", lessons: ["l3", "l4", "l5", "numbers", "l6"] },
-    { unit: "B", title: "How was the movie?", lessons: ["b1"] },
-    { unit: "B", title: "What time is it?", lessons: ["b2"] },
+    { unit: "B", title: "Talking about your day", lessons: ["b1", "b2"] },
     { unit: "B", title: "In the room — measure words", lessons: ["b3", "b4", "b5"] },
-    { unit: "B", title: "Birthdays & dates", lessons: ["b6"] },
-    { unit: "B", title: "Future plans", lessons: ["b7", "b8"] }
+    { unit: "B", title: "Dates & plans", lessons: ["b6", "b7", "b8"] }
   ];
   // One mascot sprite per chapter; chapter N uses sprite N (wraps around).
   // The mascot cast — dragon, panda and ox. Sprites cycle through this list to
@@ -1620,7 +1618,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=117", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=118", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1692,7 +1690,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=117" : "images/dragon-sad.png?v=117"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=118" : "images/dragon-sad.png?v=118"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1744,11 +1742,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=117"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=118"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.textContent === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=117"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=118"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
