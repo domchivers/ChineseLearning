@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=129";
+  const ASSET_V = "?v=130";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1588,6 +1588,11 @@
           ? "Reach this in order, or pass the skip test above"
           : "Finish a Study round to unlock focused practice")]));
     }
+    // Scroll the sheet's CONTENT (not the mascot) so a tall sheet — a lesson with
+    // a note plus six skill chips — never clips on a phone with a home indicator.
+    const inner = el("div", { className: "lsheet-inner" });
+    [...box.children].forEach(ch => { if (!ch.classList.contains("lsheet-mascot")) inner.appendChild(ch); });
+    box.appendChild(inner);
     sheet.innerHTML = "";
     sheet.appendChild(box);
     sheet.classList.remove("hidden");
@@ -1849,7 +1854,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=129", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=130", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1921,7 +1926,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=129" : "images/dragon-sad.png?v=129"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=130" : "images/dragon-sad.png?v=130"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2050,11 +2055,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=129"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=130"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=129"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=130"; drg.classList.add("react"); }
         }
         onResult(correct);
       });

@@ -645,8 +645,9 @@
      visible edges, exactly like the (working) top HUD. */
   /* Top fade: solid to 52px, gone by 115px. Above coins (z 2–3), below pills (z20). */
   #path::before { content: ""; position: absolute; left: 0; right: 0; top: 0;
-    height: 115px;
-    background: linear-gradient(180deg, var(--bg) 0, var(--bg) 52px, transparent 115px);
+    height: calc(124px + env(safe-area-inset-top));
+    background: linear-gradient(180deg, var(--bg) 0,
+      var(--bg) calc(60px + env(safe-area-inset-top)), transparent calc(124px + env(safe-area-inset-top)));
     pointer-events: none; z-index: 18; }
   /* Bottom fade: solid to 7px, gone by 76px. Short — the home indicator isn't
      persistently there. Above coins, below FAB (25) and nav (40). */
@@ -784,8 +785,14 @@
   }
 
   /* Lesson sheet */
-  .lsheet-back { position: fixed; inset: 0; background: rgba(0,0,0,.55); display: flex; align-items: flex-end; justify-content: center; z-index: 60; }
-  .lsheet { position: relative; background: var(--panel); width: 100%; max-width: 460px; border-top-left-radius: 22px; border-top-right-radius: 22px; padding: 10px 18px calc(20px + env(safe-area-inset-bottom)); box-shadow: 0 -8px 24px rgba(0,0,0,.2); animation: slideup .22s ease; }
+  /* height:100dvh (the VISIBLE viewport), not inset:0 — a fixed inset:0 latches
+     onto the taller layout viewport on iOS, floating a bottom-anchored sheet
+     below the visible edge and clipping its last row. */
+  .lsheet-back { position: fixed; top: 0; left: 0; right: 0; height: 100dvh; background: rgba(0,0,0,.55); display: flex; align-items: flex-end; justify-content: center; z-index: 60; }
+  .lsheet { position: relative; background: var(--panel); width: 100%; max-width: 460px; border-top-left-radius: 22px; border-top-right-radius: 22px; box-shadow: 0 -8px 24px rgba(0,0,0,.2); animation: slideup .22s ease; }
+  .lsheet-inner { max-height: calc(100dvh - 12px); overflow-y: auto; overscroll-behavior: contain;
+    border-top-left-radius: 22px; border-top-right-radius: 22px;
+    padding: 10px 18px calc(20px + env(safe-area-inset-bottom)); }
   .lsheet-mascot { position: absolute; top: -84px; right: 14px; width: 108px; pointer-events: none; filter: drop-shadow(0 6px 8px rgba(0,0,0,.28)); animation: mascotUp .3s ease .05s both; }
   @keyframes mascotUp { from { transform: translateY(24px) scale(.9); opacity: 0 } to { transform: none; opacity: 1 } }
   @keyframes slideup { from { transform: translateY(30px); opacity: .6 } to { transform: none; opacity: 1 } }
@@ -1207,7 +1214,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=129" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=130" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1403,7 +1410,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=129" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=130" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1422,7 +1429,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=129" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=130" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1453,10 +1460,10 @@
     </div>
   </div>
 
-<script src="data.js?v=129"></script>
-<script src="hanzi-data.js?v=129"></script>
+<script src="data.js?v=130"></script>
+<script src="hanzi-data.js?v=130"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=129"></script>
+<script src="app.js?v=130"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
