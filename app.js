@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=123";
+  const ASSET_V = "?v=124";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1193,6 +1193,12 @@
 
   const lessonPct = id => { const t = lessonCardCount(id); return t ? Math.round(lessonMastered(id) / t * 100) : 0; };
   const lessonStudied = id => CARDS.some(c => c.lessonId === id && srs[c.id]);
+  // Beyond this many due cards a lesson study is split into even batches.
+  const SESSION_CAP = 20;
+  // A lesson is complete once every one of its words has been answered correctly
+  // at least once (reps ≥ 1) — this is what lets big lessons finish across batches
+  // instead of on a single cleared round.
+  const lessonCleared = id => CARDS.filter(c => c.lessonId === id).every(c => srs[c.id] && srs[c.id].reps >= 1);
 
   /* ---- Review ------------------------------------------------------------
      The SRS was running but never surfaced: once a lesson was finished its
@@ -1587,7 +1593,11 @@
     const due = cards.filter(c => { const s = srs[c.id]; return !s || s.due <= NOW(); });
     // If nothing is due, review everything (a manual refresher session).
     const pool = due.length ? due : cards;
-    return shuffle(pool);
+    const q = shuffle(pool);
+    // Keep a round digestible: a long lesson (e.g. Numbers, 30) comes in even
+    // batches rather than one forced march. Split into halves, so there's never
+    // an awkward one-word leftover round; the rest is picked up next time.
+    return pool.length > SESSION_CAP ? q.slice(0, Math.ceil(pool.length / 2)) : q;
   }
 
   let sessionTotal = 0;
@@ -1735,7 +1745,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=123", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=124", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1807,7 +1817,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=123" : "images/dragon-sad.png?v=123"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=124" : "images/dragon-sad.png?v=124"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1935,11 +1945,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=123"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=124"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=123"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=124"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2193,16 +2203,22 @@
   }
 
   function finishStudy() {
-    // A round scoped to a single lesson completes it.
+    // A lesson completes once ALL its words are cleared — which can take a few
+    // batches for a big lesson, not just one round.
     let justFinished = null;
-    if (!reviewMode && scopeLessons && scopeLessons.size === 1 && clearedIds.size) {
-      const id = [...scopeLessons][0];
-      if (!doneLessons.has(id)) { doneLessons.add(id); saveDone(); justFinished = id; }
+    const scopedId = (!reviewMode && scopeLessons && scopeLessons.size === 1) ? [...scopeLessons][0] : null;
+    if (scopedId && !doneLessons.has(scopedId) && lessonCleared(scopedId)) {
+      doneLessons.add(scopedId); saveDone(); justFinished = scopedId;
     }
     const upNext = justFinished ? nextLessonId(justFinished) : null;
+    // Words still to clear in this lesson (a long lesson comes in batches).
+    const remaining = (scopedId && !justFinished)
+      ? CARDS.filter(c => c.lessonId === scopedId && !(srs[c.id] && srs[c.id].reps >= 1)).length
+      : 0;
 
     $("#doneTitle").textContent = reviewMode ? "Review complete 🎉"
-      : justFinished ? "Lesson complete 🎉" : "Session complete 🎉";
+      : justFinished ? "Lesson complete 🎉"
+      : remaining ? "Batch done 👏" : "Session complete 🎉";
     sfx("complete");
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(
@@ -2214,6 +2230,10 @@
       const l = LESSONS.find(x => x.id === upNext);
       nextBtn.textContent = `Next: ${l.title.replace(/^.*?· /, "")} →`;
       nextBtn.dataset.next = upNext;
+      nextBtn.classList.remove("hidden");
+    } else if (remaining) {
+      nextBtn.textContent = `Keep going — ${remaining} word${remaining === 1 ? "" : "s"} left →`;
+      nextBtn.dataset.next = scopedId;
       nextBtn.classList.remove("hidden");
     } else nextBtn.classList.add("hidden");
     $("#doneAgain").classList.remove("hidden");
