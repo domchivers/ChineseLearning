@@ -814,6 +814,16 @@
     border-radius: 14px; background: var(--accent); color: #fff; font-size: 1rem; font-weight: 700;
     cursor: pointer; box-shadow: 0 3px 0 var(--accent-dark); }
   .study-start:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--accent-dark); }
+
+  /* Tones primer */
+  .tone-row { display: flex; align-items: center; gap: .75rem; padding: .5rem .2rem;
+    border-bottom: 1px solid var(--line); }
+  .tone-badge { font-size: 1.5rem; font-weight: 700; min-width: 2.2em; text-align: center;
+    color: var(--accent); }
+  .tone-info { flex: 1; min-width: 0; }
+  .tones-link { display: inline-block; margin: .5rem auto 0; padding: .3rem .7rem; font-size: .82rem;
+    background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+  .tones-link:hover { color: var(--ink); }
 </style>
 </head>
 <body>
@@ -977,7 +987,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=119" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=120" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1104,6 +1114,7 @@
       </div>
       <div style="font-size:.92rem; line-height:1.6">
         <p style="margin:.2rem 0 .6rem"><b>Start studying</b> uses spaced repetition — it brings back words you find hard and spaces out ones you know. Answer each card: get it right and it comes back less often; miss it and it returns soon.</p>
+        <p style="margin:.2rem 0 .7rem"><button class="ghost" id="tonesFromHelp" style="padding:.4rem .8rem;width:100%;text-align:left">🎵 New to Mandarin? Learn the four tones →</button></p>
         <p style="margin:.6rem 0 .3rem"><b>Modes</b></p>
         <ul style="margin:.2rem 0 .6rem; padding-left:1.2rem">
           <li>🗣️ <b>Converse</b> — roleplay a dialogue; it speaks, you reply.</li>
@@ -1118,6 +1129,22 @@
           <li>👀 reveal the pinyin hint</li>
         </ul>
         <p class="muted" style="font-size:.82rem;margin-top:.6rem">On desktop: press <b>1–4</b> to pick an answer, <b>Space</b> or <b>Enter</b> to continue.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TONES primer -->
+  <div id="tonesModal" class="modal-backdrop hidden">
+    <div class="modal">
+      <div class="topbar">
+        <span class="title">The four tones</span>
+        <button class="ghost" id="tonesClose">Close ✕</button>
+      </div>
+      <div style="font-size:.92rem; line-height:1.55">
+        <p style="margin:.2rem 0 .7rem">Mandarin is <b>tonal</b>: the same syllable said with a different pitch is a different word. The mark over the vowel tells you the tone — it matters as much as the letters. Tap 🔊 to hear each.</p>
+        <div id="tonesRows"></div>
+        <p style="margin:.8rem 0 .2rem"><b>Neutral tone</b> — no mark, said light and quick: <b>ma</b> 吗 (turns a sentence into a question).</p>
+        <p class="muted" style="font-size:.84rem;margin-top:.7rem">Same letters, different tone = different meaning: <b>mǎi</b> 买 (buy) vs <b>mài</b> 卖 (sell).</p>
       </div>
     </div>
   </div>
@@ -1152,7 +1179,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=119" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=120" alt="" class="ob-hero">
       <h2>中文 Beginner A</h2>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
       <div class="gate-form">
@@ -1170,7 +1197,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=119" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=120" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1201,10 +1228,10 @@
     </div>
   </div>
 
-<script src="data.js?v=119"></script>
-<script src="hanzi-data.js?v=119"></script>
+<script src="data.js?v=120"></script>
+<script src="hanzi-data.js?v=120"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=119"></script>
+<script src="app.js?v=120"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

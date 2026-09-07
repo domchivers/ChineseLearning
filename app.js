@@ -41,7 +41,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=119";
+  const ASSET_V = "?v=120";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1676,7 +1676,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=119", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=120", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1748,7 +1748,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=119" : "images/dragon-sad.png?v=119"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=120" : "images/dragon-sad.png?v=120"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1759,6 +1759,38 @@
   // into `face` and answer buttons into `choicesBox`; the dragon reacts and the
   // correct answer is revealed on a wrong pick. Calls onResult(correct) once.
   // Shared by Study and Quiz.
+  // ---- Tone-aware distractors -----------------------------------------
+  // Same base letters, different tone marks — so the "pinyin" drill actually
+  // tests tone instead of letting you pick the answer by its consonants/vowels.
+  const TONE_VOWELS = {
+    a: ["ā", "á", "ǎ", "à"], e: ["ē", "é", "ě", "è"], i: ["ī", "í", "ǐ", "ì"],
+    o: ["ō", "ó", "ǒ", "ò"], u: ["ū", "ú", "ǔ", "ù"], "ü": ["ǖ", "ǘ", "ǚ", "ǜ"]
+  };
+  const TONE_DECODE = {};   // toned char -> [baseVowel, toneIndex 0..3]
+  Object.entries(TONE_VOWELS).forEach(([base, arr]) =>
+    arr.forEach((ch, i) => { TONE_DECODE[ch] = [base, i]; }));
+  const tonelessPinyin = py => [...(py || "")].map(ch => TONE_DECODE[ch] ? TONE_DECODE[ch][0] : ch).join("");
+  function toneVariants(py, n) {
+    const chars = [...py];
+    const marks = [];
+    chars.forEach((ch, i) => { if (TONE_DECODE[ch]) marks.push(i); });
+    if (!marks.length) return [];               // all-neutral word (ma, de…): can't retone
+    const out = new Set();
+    let guard = 0;
+    while (out.size < n && guard++ < 60) {
+      const arr = chars.slice();
+      const k = 1 + Math.floor(Math.random() * Math.min(2, marks.length));
+      shuffle(marks.slice()).slice(0, k).forEach(idx => {
+        const [base, tone] = TONE_DECODE[chars[idx]];
+        let t2 = tone; while (t2 === tone) t2 = Math.floor(Math.random() * 4);
+        arr[idx] = TONE_VOWELS[base][t2];
+      });
+      const v = arr.join("");
+      if (v !== py) out.add(v);
+    }
+    return [...out].slice(0, n);
+  }
+
   function buildChoiceExercise(face, choicesBox, c, dir, labelEl, onResult) {
     face.innerHTML = "";
     choicesBox.classList.remove("sentence-mode");
@@ -1772,6 +1804,13 @@
       labelEl.textContent = "Which pinyin is correct?";
       promptNode = el("div", { className: "hanzi" + (c.hanzi.length > 3 ? " small" : "") }, c.hanzi);
       answerText = c.pinyin; distractField = "pinyin";
+      // First time you meet the tone drill, introduce the tones themselves.
+      try {
+        if (!localStorage.getItem("zhBeginnerA.tonesSeen.v1")) {
+          localStorage.setItem("zhBeginnerA.tonesSeen.v1", "1");
+          setTimeout(openTones, 350);
+        }
+      } catch (e) {}
     } else if (dir === "listen") {
       labelEl.textContent = "What did you hear?";
       promptNode = el("div", { className: "hanzi" }, "🎧");
@@ -1787,9 +1826,34 @@
     if (dir !== "pinyin" && dir !== "listen") {
       face.appendChild(el("div", { className: "aids-row" }, pinyinHint(c.pinyin)));
     }
+    if (dir === "pinyin") {
+      const tl = el("button", { className: "tones-link", type: "button" }, "🎵 What are tones?");
+      tl.addEventListener("click", openTones);
+      face.appendChild(tl);
+    }
 
     const cards = activeCards();
-    const distractors = sample(cards.map(x => x[distractField]).filter(v => v !== answerText), 3);
+    let distractors;
+    if (dir === "pinyin") {
+      // Same syllables, different tones — a genuine tone-discrimination drill.
+      distractors = toneVariants(answerText, 3);
+      if (distractors.length < 3)
+        distractors = distractors.concat(sample(
+          [...new Set(cards.map(x => x.pinyin))].filter(v => v !== answerText && !distractors.includes(v)),
+          3 - distractors.length));
+    } else if (dir === "listen") {
+      // Prefer true tone minimal-pairs (same letters, different tones) when the
+      // vocab has any; otherwise fall back to random meanings.
+      const target = tonelessPinyin(c.pinyin);
+      const near = [...new Set(cards.filter(x => x.en !== answerText && tonelessPinyin(x.pinyin) === target).map(x => x.en))];
+      distractors = sample(near, 3);
+      if (distractors.length < 3)
+        distractors = distractors.concat(sample(
+          [...new Set(cards.map(x => x.en))].filter(v => v !== answerText && !distractors.includes(v)),
+          3 - distractors.length));
+    } else {
+      distractors = sample([...new Set(cards.map(x => x[distractField]))].filter(v => v !== answerText), 3);
+    }
     const options = shuffle([answerText, ...distractors]);
     choicesBox.innerHTML = "";
     choicesBox.dataset.answered = "";
@@ -1800,11 +1864,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=119"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=120"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.textContent === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=119"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=120"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2236,6 +2300,34 @@
   $("#helpClose").addEventListener("click", () => closeModal("helpModal"));
   $("#helpModal").addEventListener("click", e => { if (e.target.id === "helpModal") closeModal("helpModal"); });
 
+  // ---- Tones primer ----
+  const TONE_DEMO = [
+    { n: "1st tone", desc: "high and flat", py: "mā", hz: "妈", en: "mother" },
+    { n: "2nd tone", desc: "rising, like asking a question", py: "má", hz: "麻", en: "hemp" },
+    { n: "3rd tone", desc: "dips down low, then rises", py: "mǎ", hz: "马", en: "horse" },
+    { n: "4th tone", desc: "sharp and falling, like a command", py: "mà", hz: "骂", en: "to scold" }
+  ];
+  let tonesBuilt = false;
+  function buildTonesRows() {
+    const box = $("#tonesRows"); box.innerHTML = "";
+    TONE_DEMO.forEach(t => {
+      box.appendChild(el("div", { className: "tone-row" }, [
+        el("div", { className: "tone-badge" }, t.py),
+        el("div", { className: "tone-info" }, [
+          el("div", {}, [el("b", {}, t.n), document.createTextNode(` — ${t.hz} ${t.en}`)]),
+          el("div", { className: "muted", style: "font-size:.82rem" }, t.desc)
+        ]),
+        speakerBtn(t.hz)
+      ]));
+    });
+    tonesBuilt = true;
+  }
+  function openTones() { if (!tonesBuilt) buildTonesRows(); openModal("tonesModal"); }
+  $("#tonesClose").addEventListener("click", () => closeModal("tonesModal"));
+  $("#tonesModal").addEventListener("click", e => { if (e.target.id === "tonesModal") closeModal("tonesModal"); });
+  const helpTonesLink = $("#tonesFromHelp");
+  if (helpTonesLink) helpTonesLink.addEventListener("click", () => { closeModal("helpModal"); openTones(); });
+
   $("#themeSeg").querySelectorAll("button").forEach(b =>
     b.addEventListener("click", () => { prefs.theme = b.dataset.theme; savePrefs(prefs); applyTheme(); syncSettings(); }));
   $("#rateRange").addEventListener("input", e => { prefs.rate = parseFloat(e.target.value); savePrefs(prefs); });
@@ -2653,6 +2745,7 @@ This REPLACES the progress on this device.`)) return;
       if (!$("#lessonSheet").classList.contains("hidden")) { closeLessonSheet(); return; }
       if (!$("#settingsModal").classList.contains("hidden")) { closeModal("settingsModal"); return; }
       if (!$("#helpModal").classList.contains("hidden")) { closeModal("helpModal"); return; }
+      if (!$("#tonesModal").classList.contains("hidden")) { closeModal("tonesModal"); return; }
     }
     if (!$("#charModal").classList.contains("hidden")) {
       if (e.key === "Escape") closeCharModal();
