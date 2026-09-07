@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=124";
+  const ASSET_V = "?v=125";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -232,7 +232,7 @@
   }
 
   function show(sectionId) {
-    ["path", "home", "study", "quiz", "browse", "done", "sheet", "converse"].forEach(id =>
+    ["path", "home", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     document.body.dataset.view = sectionId;   // lets CSS give sessions a fixed-height layout
     window.scrollTo(0, 0);
@@ -1112,6 +1112,7 @@
   function runMode(mode) {
     scopeLessons = null; scopeFocuses = null;   // global (stats) study uses the full selection
     if (mode === "converse") { openConverse(); return; }   // doesn't need lessons
+    if (mode === "pick") { openPicker(); return; }         // choose your own words
     if (selectedLessons.size === 0) {
       toast("Pick at least one lesson — open “What to study”.");
       $("#studyPanel").open = true;
@@ -1745,7 +1746,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=124", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=125", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1817,7 +1818,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=124" : "images/dragon-sad.png?v=124"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=125" : "images/dragon-sad.png?v=125"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1945,11 +1946,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=124"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=125"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=124"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=125"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2203,6 +2204,7 @@
   }
 
   function finishStudy() {
+    doneAction = null;
     // A lesson completes once ALL its words are cleared — which can take a few
     // batches for a big lesson, not just one round.
     let justFinished = null;
@@ -2287,6 +2289,7 @@
   }
 
   function finishPlacement() {
+    doneAction = null;
     quizMode = "quiz";
     const PASS = 0.7;
     const unlocked = [];
@@ -2359,6 +2362,7 @@
   $("#quizBack").addEventListener("click", () => { renderPath(); show("path"); });
 
   function finishQuiz() {
+    doneAction = null;
     $("#doneTitle").textContent = "Quiz complete";
     sfx("complete");
     $("#doneStats").innerHTML = "";
@@ -2401,6 +2405,183 @@
   $("#browseBack").addEventListener("click", () => { renderPath(); show("path"); });
 
   /* ==================================================================== */
+  /*  PICK & PRACTISE — choose any words, then flashcards / match / quiz  */
+  /* ==================================================================== */
+
+  const pickSel = new Set();            // chosen card ids (kept across visits)
+  let pickFilter = "";
+
+  function openPicker() { renderPicker(); show("pick"); }
+
+  function pickedCards() { return CARDS.filter(c => pickSel.has(c.id)); }
+
+  function updatePickCount() {
+    const n = pickSel.size;
+    $("#pickCount").textContent = `${n} chosen`;
+    document.querySelectorAll(".pick-actions button").forEach(b => b.disabled = n < 1);
+  }
+
+  function renderPicker() {
+    // Preset chips
+    const presets = $("#pickPresets"); presets.innerHTML = "";
+    const chip = (label, fn) => { const b = el("button", { className: "pick-chip", type: "button" }, label); b.addEventListener("click", fn); presets.appendChild(b); };
+    chip("＋ Current lesson", () => { CARDS.filter(c => c.lessonId === currentLessonId()).forEach(c => pickSel.add(c.id)); renderPicker(); });
+    chip("＋ Still learning", () => { CARDS.forEach(c => { const s = srs[c.id]; if (s && !isMastered(s)) pickSel.add(c.id); }); renderPicker(); });
+    chip("＋ Due for review", () => { dueReviewCards().forEach(c => pickSel.add(c.id)); renderPicker(); });
+    chip("✕ Clear", () => { pickSel.clear(); renderPicker(); });
+
+    const q = pickFilter.trim().toLowerCase();
+    const match = c => !q || c.hanzi.includes(q) || c.pinyin.toLowerCase().includes(q) || c.en.toLowerCase().includes(q);
+
+    const list = $("#pickList"); list.innerHTML = "";
+    let curLesson = null, group = null;
+    CARDS.filter(match).forEach(c => {
+      if (c.lessonId !== curLesson) {
+        curLesson = c.lessonId;
+        const head = el("div", { className: "pick-lhead" });
+        const title = el("span", {}, c.lessonTitle.replace(/^.*?· /, ""));
+        const all = el("button", { className: "link", type: "button" }, "all");
+        all.addEventListener("click", () => {
+          const cards = CARDS.filter(x => x.lessonId === c.lessonId && match(x));
+          const every = cards.every(x => pickSel.has(x.id));
+          cards.forEach(x => every ? pickSel.delete(x.id) : pickSel.add(x.id));
+          renderPicker();
+        });
+        head.append(title, all);
+        list.appendChild(head);
+        group = null;
+      }
+      const row = el("label", { className: "pick-row" });
+      const cb = el("input", { type: "checkbox" });
+      cb.checked = pickSel.has(c.id);
+      cb.addEventListener("change", () => { cb.checked ? pickSel.add(c.id) : pickSel.delete(c.id); updatePickCount(); });
+      row.append(cb,
+        el("span", { className: "pk-han" }, c.hanzi),
+        el("span", { className: "pk-py" }, c.pinyin),
+        el("span", { className: "pk-en" }, c.en));
+      list.appendChild(row);
+    });
+    if (!list.children.length) list.appendChild(el("p", { className: "muted", style: "padding:10px" }, "No words match that search."));
+    updatePickCount();
+  }
+
+  $("#pickSearch").addEventListener("input", e => { pickFilter = e.target.value; renderPicker(); });
+  $("#pickBack").addEventListener("click", () => show("home"));
+  document.querySelectorAll(".pick-actions button").forEach(btn => btn.addEventListener("click", () => {
+    const cards = pickedCards();
+    if (!cards.length) { toast("Tick some words first."); return; }
+    const m = btn.dataset.pmode;
+    if (m === "flash") startFlash(cards);
+    else if (m === "match") startMatch(cards);
+    else if (m === "quiz") startQuizOn(cards);
+  }));
+
+  /* ---- Flashcards ---------------------------------------------------- */
+  let flashCards = [], flashIdx = 0;
+
+  function startFlash(cards) {
+    flashCards = shuffle(cards.slice()); flashIdx = 0;
+    show("flash"); renderFlash();
+  }
+  function renderFlash() {
+    const c = flashCards[flashIdx];
+    $("#flashCount").textContent = `${flashIdx + 1} / ${flashCards.length}`;
+    $("#flashBar").style.width = `${((flashIdx + 1) / flashCards.length) * 100}%`;
+    const card = $("#flashCard");
+    card.className = "flashcard";
+    card.innerHTML = "";
+    const front = el("div", { className: "fc-face fc-front" }, [
+      el("div", { className: "fc-han" + (cjkOnly(c.hanzi).length > 3 ? " small" : "") }, c.hanzi),
+      el("div", { className: "fc-tip muted" }, "tap to flip")
+    ]);
+    const back = el("div", { className: "fc-face fc-back" }, [
+      el("div", { className: "fc-py" }, c.pinyin),
+      el("div", { className: "fc-en" }, c.pos ? `${c.en} · ${c.pos}` : c.en)
+    ]);
+    const aids = el("div", { className: "fc-aids" }, [speakerBtn(c.hanzi), slowSpeakerBtn(c.hanzi)]);
+    if (HW_OK && cjkOnly(c.hanzi).length) aids.appendChild(strokeBtn(c.hanzi, c.pinyin));
+    back.appendChild(aids);
+    card.append(front, back);
+    card.onclick = e => { if (e.target.closest("button")) return; card.classList.toggle("flipped"); };
+  }
+  const flashStep = d => { flashIdx = (flashIdx + d + flashCards.length) % flashCards.length; renderFlash(); };
+  $("#flashPrev").addEventListener("click", () => flashStep(-1));
+  $("#flashNext").addEventListener("click", () => flashStep(1));
+  $("#flashFlip").addEventListener("click", () => $("#flashCard").classList.toggle("flipped"));
+  $("#flashShuffle").addEventListener("click", () => { flashCards = shuffle(flashCards); flashIdx = 0; renderFlash(); });
+  $("#flashBack").addEventListener("click", () => show("pick"));
+
+  /* ---- Matching game ------------------------------------------------- */
+  let matchQueue = [], matchFirst = null, matchLeft = 0, matchTotal = 0, matchDone = 0;
+
+  function startMatch(cards) {
+    if (cards.length < 3) { toast("Pick at least 3 words to match."); return; }
+    matchQueue = shuffle(cards.slice());
+    matchTotal = matchQueue.length; matchDone = 0;
+    show("match"); nextMatchRound();
+  }
+  function nextMatchRound() {
+    const round = matchQueue.splice(0, Math.min(6, matchQueue.length));
+    matchLeft = round.length; matchFirst = null;
+    const tiles = [];
+    round.forEach(c => { tiles.push({ id: c.id, kind: "han", text: c.hanzi }); tiles.push({ id: c.id, kind: "en", text: c.en }); });
+    const grid = $("#matchGrid"); grid.innerHTML = "";
+    shuffle(tiles).forEach(t => {
+      const b = el("button", { className: "match-tile " + (t.kind === "han" ? "mt-han" : "mt-en") }, t.text);
+      b.dataset.id = t.id; b.dataset.kind = t.kind;
+      b.addEventListener("click", () => onMatchTap(b));
+      grid.appendChild(b);
+    });
+    $("#matchCount").textContent = `${matchDone} / ${matchTotal}`;
+    $("#matchMsg").textContent = "Tap a character, then its meaning.";
+  }
+  function onMatchTap(b) {
+    if (b.classList.contains("matched") || b.classList.contains("miss")) return;
+    if (!matchFirst) { matchFirst = b; b.classList.add("sel"); return; }
+    if (b === matchFirst) { b.classList.remove("sel"); matchFirst = null; return; }
+    const a = matchFirst; matchFirst = null; a.classList.remove("sel");
+    if (a.dataset.id === b.dataset.id && a.dataset.kind !== b.dataset.kind) {
+      a.classList.add("matched"); b.classList.add("matched");
+      sfx("correct");
+      const card = CARD_BY_ID[a.dataset.id]; if (card) speak(card.hanzi);
+      matchLeft--; matchDone++;
+      $("#matchCount").textContent = `${matchDone} / ${matchTotal}`;
+      if (matchLeft === 0) {
+        if (matchQueue.length) { $("#matchMsg").textContent = "Nice — next set…"; setTimeout(nextMatchRound, 650); }
+        else finishMatch();
+      }
+    } else {
+      sfx("wrong");
+      a.classList.add("miss"); b.classList.add("miss");
+      setTimeout(() => { a.classList.remove("miss"); b.classList.remove("miss"); }, 450);
+    }
+  }
+  function finishMatch() {
+    $("#doneTitle").textContent = "Matching done 🎉";
+    sfx("complete");
+    $("#doneStats").innerHTML = "";
+    $("#doneStats").append(statEl(matchTotal, matchTotal === 1 ? "pair matched" : "pairs matched"));
+    doneAction = () => startMatch(pickedCards());
+    $("#doneNext").textContent = "🔀 Again";
+    delete $("#doneNext").dataset.next;
+    $("#doneNext").classList.remove("hidden");
+    $("#doneAgain").classList.add("hidden");
+    show("done");
+  }
+  $("#matchBack").addEventListener("click", () => show("pick"));
+
+  /* ---- Quiz over the picked words ------------------------------------ */
+  function startQuizOn(cards) {
+    if (cards.length < 3) { toast("Pick at least 3 words to quiz."); return; }
+    scopeLessons = new Set(cards.map(c => c.lessonId));        // plausible distractors
+    scopeFocuses = new Set(["recognize", "recall", "pinyin", "listen"]);
+    quizItems = shuffle(cards.slice()).slice(0, Math.min(20, cards.length));
+    quizIdx = 0; quizScore = 0; quizMode = "quiz";
+    $("#quizTitle").textContent = `Quiz · ${quizItems.length} questions`;
+    show("quiz"); renderQuiz();
+  }
+
+  /* ==================================================================== */
   /*  DONE / shared                                                       */
   /* ==================================================================== */
 
@@ -2409,8 +2590,12 @@
       el("b", {}, String(value)), el("div", { className: "muted" }, label)
     ]);
   }
-  $("#doneHome").addEventListener("click", () => { renderPath(); show("path"); });
+  // A one-shot action for the done screen's primary button (used by Matching's
+  // "Again"); lesson flows leave it null and fall through to the dataset.next path.
+  let doneAction = null;
+  $("#doneHome").addEventListener("click", () => { doneAction = null; renderPath(); show("path"); });
   $("#doneNext").addEventListener("click", () => {
+    if (doneAction) { const fn = doneAction; doneAction = null; $("#doneNext").classList.add("hidden"); fn(); return; }
     const id = $("#doneNext").dataset.next;
     if (id) { $("#doneNext").classList.add("hidden"); launchLesson(id, null); }
   });

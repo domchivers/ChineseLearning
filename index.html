@@ -828,6 +828,56 @@
     background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
   .tones-link:hover { color: var(--ink); }
 
+  /* Pick & practise */
+  .pick-search { width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line);
+    background: var(--bg); color: var(--ink); font-size: .95rem; margin-bottom: 8px; }
+  .pick-presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .pick-chip { padding: .3rem .7rem; font-size: .8rem; border-radius: 999px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink); cursor: pointer; }
+  .pick-chip:hover { background: var(--accent-soft); }
+  .pick-list { max-height: 52vh; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; }
+  .pick-lhead { position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 10px; background: var(--accent-soft); font-weight: 700; font-size: .82rem; }
+  .pick-row { display: grid; grid-template-columns: auto minmax(3.4em, max-content) 1fr 1.2fr; gap: 10px;
+    align-items: center; padding: 7px 10px; border-top: 1px solid var(--line); cursor: pointer; }
+  .pick-row input { width: 18px; height: 18px; accent-color: var(--accent); }
+  .pk-han { font-size: 1.05rem; font-weight: 600; white-space: nowrap; }
+  .pk-py { color: var(--muted); font-size: .84rem; }
+  .pk-en { color: var(--ink); font-size: .84rem; }
+  .pick-actions { display: flex; gap: 8px; margin-top: 12px; }
+  .pick-actions button { flex: 1; padding: .8rem .4rem; border-radius: 14px; border: none; cursor: pointer;
+    background: var(--accent); color: #fff; font-weight: 700; font-size: .92rem; box-shadow: 0 3px 0 var(--accent-dark); }
+  .pick-actions button:disabled { opacity: .4; box-shadow: none; cursor: default; }
+  .pick-actions .em { font-style: normal; }
+
+  /* Flashcards */
+  .flashcard { min-height: 260px; display: flex; align-items: center; justify-content: center;
+    border-radius: 18px; border: 1px solid var(--line); background: var(--panel); cursor: pointer;
+    margin: 10px 0; user-select: none; }
+  .fc-face { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px; text-align: center; }
+  .flashcard .fc-back { display: none; }
+  .flashcard.flipped .fc-front { display: none; }
+  .flashcard.flipped .fc-back { display: flex; }
+  .fc-han { font-size: 4rem; font-weight: 700; line-height: 1.05; }
+  .fc-han.small { font-size: 2.6rem; }
+  .fc-tip { font-size: .78rem; }
+  .fc-py { font-size: 1.7rem; }
+  .fc-en { font-size: 1.1rem; color: var(--muted); }
+  .fc-aids { display: flex; gap: 8px; margin-top: 6px; }
+  .flash-controls { display: flex; gap: 8px; justify-content: center; }
+  .flash-controls button { flex: 1; }
+
+  /* Matching game */
+  .match-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .match-tile { min-height: 64px; padding: 8px; border-radius: 12px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink); font-size: .9rem; cursor: pointer; transition: transform .08s, opacity .2s; }
+  .match-tile.mt-han { font-size: 1.35rem; font-weight: 700; }
+  .match-tile.sel { border-color: var(--accent); background: var(--accent-soft); }
+  .match-tile.matched { opacity: .28; pointer-events: none; border-style: dashed; }
+  .match-tile.miss { border-color: var(--again); background: var(--again-soft); animation: mtShake .25s; }
+  @keyframes mtShake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+  @media (min-width: 560px) { .match-grid { grid-template-columns: repeat(4, 1fr); } }
+
   /* Grammar / pattern note (meet screen + lesson sheet) */
   .lnote { width: 100%; max-width: 440px; margin: .1rem auto .7rem; padding: .6rem .8rem;
     border-radius: 12px; background: var(--accent-soft); border: 1px solid var(--line); text-align: left; }
@@ -912,6 +962,8 @@
 
     <h3 class="sec-title">Practice</h3>
     <div class="practice-list">
+      <button data-mode="pick"><span class="em">🎴</span>
+        <span class="pl-txt"><b>Pick &amp; practise</b><span>Choose any words — flashcards, matching or a quiz.</span></span></button>
       <button data-mode="converse"><span class="em">🗣️</span>
         <span class="pl-txt"><b>Converse</b><span>Work through a dialogue, line by line.</span></span></button>
       <button data-mode="quiz"><span class="em">✅</span>
@@ -993,10 +1045,61 @@
     </div>
   </section>
 
+  <!-- PICK & PRACTISE (word picker) -->
+  <section id="pick" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="pickBack">← Home</button>
+      <span class="title">Pick words</span>
+      <span class="counter" id="pickCount">0 chosen</span>
+    </div>
+    <div class="card">
+      <input id="pickSearch" class="pick-search" type="search" placeholder="Search 汉字, pinyin or meaning…" autocomplete="off">
+      <div class="pick-presets" id="pickPresets"></div>
+      <div class="pick-list" id="pickList"></div>
+    </div>
+    <div class="pick-actions">
+      <button data-pmode="flash"><span class="em">🎴</span> Flashcards</button>
+      <button data-pmode="match"><span class="em">🔀</span> Matching</button>
+      <button data-pmode="quiz"><span class="em">✅</span> Quiz</button>
+    </div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section id="flash" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="flashBack">← Back</button>
+      <span class="title">Flashcards</span>
+      <span class="counter" id="flashCount"></span>
+      <button class="link" id="flashShuffle">shuffle</button>
+    </div>
+    <div class="card stage">
+      <div class="progress"><i id="flashBar"></i></div>
+      <div class="flashcard" id="flashCard"></div>
+      <div class="flash-controls">
+        <button class="ghost" id="flashPrev">← Prev</button>
+        <button class="primary" id="flashFlip">Flip ⟲</button>
+        <button class="ghost" id="flashNext">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATCHING -->
+  <section id="match" class="hidden">
+    <div class="topbar">
+      <button class="ghost" id="matchBack">← Back</button>
+      <span class="title">Matching</span>
+      <span class="counter" id="matchCount"></span>
+    </div>
+    <div class="card">
+      <p class="muted" id="matchMsg" style="text-align:center;margin:2px 0 10px"></p>
+      <div class="match-grid" id="matchGrid"></div>
+    </div>
+  </section>
+
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=124" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=125" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1192,7 +1295,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=124" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=125" alt="" class="ob-hero">
       <h2>中文 Beginner A</h2>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
       <div class="gate-form">
@@ -1210,7 +1313,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=124" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=125" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1241,10 +1344,10 @@
     </div>
   </div>
 
-<script src="data.js?v=124"></script>
-<script src="hanzi-data.js?v=124"></script>
+<script src="data.js?v=125"></script>
+<script src="hanzi-data.js?v=125"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=124"></script>
+<script src="app.js?v=125"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
