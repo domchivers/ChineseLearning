@@ -41,7 +41,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=120";
+  const ASSET_V = "?v=121";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -161,12 +161,16 @@
 
   // ---- Progress stats over all cards ----
   const MASTER_INTERVAL = 7;   // days; a word is "mastered" once spaced this far
+  // Directions that count as PRODUCING the word (recalling/writing/saying it),
+  // not merely recognising it. A word must be produced at least once to master.
+  const PRODUCTION_DIRS = new Set(["recall", "write", "speak"]);
+  const isMastered = s => !!(s && s.interval >= MASTER_INTERVAL && s.prod);
   function progressStats(cardList) {
     let mastered = 0, learning = 0, fresh = 0;
     for (const c of cardList) {
       const s = srs[c.id];
       if (!s) fresh++;
-      else if (s.interval >= MASTER_INTERVAL) mastered++;
+      else if (isMastered(s)) mastered++;
       else learning++;
     }
     return { mastered, learning, fresh, total: cardList.length };
@@ -968,7 +972,7 @@
   }
 
   function lessonMastered(lessonId) {
-    return CARDS.reduce((n, c) => n + (c.lessonId === lessonId && srs[c.id] && srs[c.id].interval >= MASTER_INTERVAL ? 1 : 0), 0);
+    return CARDS.reduce((n, c) => n + (c.lessonId === lessonId && isMastered(srs[c.id]) ? 1 : 0), 0);
   }
 
   function renderDashboard() {
@@ -1136,6 +1140,19 @@
     { unit: "B", title: "In the room — measure words", lessons: ["b3", "b4", "b5"] },
     { unit: "B", title: "Dates & plans", lessons: ["b6", "b7", "b8"] }
   ];
+
+  // Short grammar/pattern notes, shown on the "meet the new words" screen and on
+  // the lesson sheet, for the lessons that introduce a pattern worth a sentence.
+  const LESSON_NOTES = {
+    l1: { title: "Yes/no questions with 吗", body: "Add 吗 to the end of a statement to ask it as a question: 你好 → 你好吗？(How are you?)" },
+    l3: { title: "Saying where — 在", body: "在 + a place = “at / in”: 我在公司 (I’m at the company), 他在学校 (he’s at school)." },
+    l6: { title: "What are you doing? — 在 + verb", body: "在 before a verb means it’s happening right now: 我在学习 (I’m studying)." },
+    b1: { title: "了 and 太…了", body: "了 marks something completed; 太…了 = “too / so …”: 太好了！(great!), 太贵了 (too expensive)." },
+    b2: { title: "Telling the time", body: "点 = o’clock, 分 = minutes, 半 = half, 刻 = quarter: 三点半 (3:30), 从五点到六点 (from 5 to 6)." },
+    b3: { title: "Counting: number + measure word + noun", body: "You can’t say 一书 — a measure word goes between: 一本书 (a book), 两杯水 (two cups of water)." },
+    b6: { title: "Dates: biggest unit first", body: "月 (month) → 号 (day) → 星期 (weekday): 八月二十一号星期二 (Tues 21 Aug)." },
+    b7: { title: "在 + verb, and 要 / 不要 + verb", body: "在 + verb = doing it now: 我在看电视. 要 + verb = will; 不要 + verb = won’t: 我要学习 / 我不要看电视." }
+  };
   // One mascot sprite per chapter; chapter N uses sprite N (wraps around).
   // The mascot cast — dragon, panda and ox. Sprites cycle through this list to
   // fill the wave's open pockets, so adding one here just appears on the path.
@@ -1427,6 +1444,10 @@
     study.innerHTML = (studied ? "Study" : "Start studying") + "<small>mixed skills · spaced repetition</small>";
     study.addEventListener("click", () => { closeLessonSheet(); launchLesson(id, null); });
     box.appendChild(study);
+    if (LESSON_NOTES[id]) box.appendChild(el("div", { className: "lnote" }, [
+      el("div", { className: "lnote-t" }, "💡 " + LESSON_NOTES[id].title),
+      el("div", { className: "lnote-b" }, LESSON_NOTES[id].body)
+    ]));
     // Before a lesson is studied the focused-practice chips are all locked, so
     // showing six greyed-out rows is just dead height — keep the sheet short and
     // only reveal them once they actually work.
@@ -1526,6 +1547,17 @@
     if (card && !(HW_OK && wordWritable(card.hanzi))) enabled = enabled.filter(k => k !== "write");
     // "sentence" only when this word actually appears in a dialogue sentence.
     if (card && !sentencesFor(card).length) enabled = enabled.filter(k => k !== "sentence");
+    // Ease beginners in: on a word you've never got right yet, hold back the
+    // demanding output skills (writing, speaking) in a MIXED session — you meet
+    // it through recognition first, and write/speak join in once it has landed.
+    // A single-skill practice (you chose "Write"/"Speak") is always honoured.
+    if (card && (scopeFocuses || selectedFocuses).size > 1) {
+      const reps = srs[card.id] ? srs[card.id].reps : 0;
+      if (reps < 1) {
+        const eased = enabled.filter(k => k !== "write" && k !== "speak");
+        if (eased.length) enabled = eased;
+      }
+    }
     if (enabled.length === 0) enabled = ["recognize"];
     return enabled[Math.floor(Math.random() * enabled.length)];
   }
@@ -1595,6 +1627,13 @@
         ? "Here's a new word — tap 🔊 to hear it, then practise."
         : `Here ${more > 0 ? "are your first" : "are these"} ${shown.length} new words — tap 🔊 to hear each` +
           (more > 0 ? `, then practise (${more} more along the way).` : ", then practise.")));
+    // If every new word is from one lesson and it has a pattern note, teach it here.
+    const lid = cards.length && cards.every(c => c.lessonId === cards[0].lessonId) ? cards[0].lessonId : null;
+    const note = lid && LESSON_NOTES[lid];
+    if (note) face.appendChild(el("div", { className: "lnote" }, [
+      el("div", { className: "lnote-t" }, "💡 " + note.title),
+      el("div", { className: "lnote-b" }, note.body)
+    ]));
     const list = el("div", { className: "meet-list" });
     shown.forEach(c => {
       const row = el("div", { className: "meet-row" });
@@ -1637,6 +1676,12 @@
     sfx(correct ? "correct" : "wrong");
     const wasNew = !srs[curCard.id];
     schedule(curCard.id, correct ? "good" : "again");
+    // "Mastered" requires you to have PRODUCED the word, not just recognised it:
+    // mark a production pass when you get a recall / write / speak card right.
+    if (correct && srs[curCard.id] && PRODUCTION_DIRS.has(curDir)) {
+      srs[curCard.id].prod = true;
+      saveSRS(srs);
+    }
     recordReview(1);
     studyStats.answered += 1;
     if (correct) {
@@ -1676,7 +1721,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=120", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=121", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1748,7 +1793,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=120" : "images/dragon-sad.png?v=120"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=121" : "images/dragon-sad.png?v=121"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -1864,11 +1909,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=120"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=121"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.textContent === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=120"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=121"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
