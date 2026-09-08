@@ -2,35 +2,35 @@
  * NOTE: browsers only register a service worker over HTTPS or localhost — over
  * a plain http:// LAN address it stays inactive (the app still works online).
  * Bump CACHE when you change app files so devices pick up the new version. */
-const CACHE = "zh-beginner-a-v140";
+const CACHE = "zh-beginner-a-v141";
 const ASSETS = [
   "./",
   "./index.html",
-  "./app.js?v=140",
-  "./data.js?v=140",
-  "./hanzi-data.js?v=140",
+  "./app.js?v=141",
+  "./data.js?v=141",
+  "./hanzi-data.js?v=141",
   "./vendor/hanzi-writer.min.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png",
-  "./images/dragon-teacher.png?v=140",
-  "./images/dragon-celebrate.png?v=140",
-  "./images/dragon-thinking.png?v=140",
-  "./images/dragon-sad.png?v=140",
-  "./images/dragon-idle.png?v=140",
-  "./images/dragon-waving.png?v=140",
-  "./images/sprite-reading.png?v=140",
-  "./images/sprite-ox-baozi.png?v=140",
-  "./images/sprite-panda-puzzled.png?v=140",
-  "./images/sprite-panda-baozi.png?v=140",
-  "./images/sprite-joy.png?v=140",
-  "./images/sprite-baozi.png?v=140",
-  "./images/sprite-puzzled.png?v=140",
-  "./sounds/correct.mp3?v=140",
-  "./sounds/wrong.mp3?v=140",
-  "./sounds/complete.mp3?v=140",
-  "./sounds/goal.mp3?v=140"
+  "./images/dragon-teacher.png?v=141",
+  "./images/dragon-celebrate.png?v=141",
+  "./images/dragon-thinking.png?v=141",
+  "./images/dragon-sad.png?v=141",
+  "./images/dragon-idle.png?v=141",
+  "./images/dragon-waving.png?v=141",
+  "./images/sprite-reading.png?v=141",
+  "./images/sprite-ox-baozi.png?v=141",
+  "./images/sprite-panda-puzzled.png?v=141",
+  "./images/sprite-panda-baozi.png?v=141",
+  "./images/sprite-joy.png?v=141",
+  "./images/sprite-baozi.png?v=141",
+  "./images/sprite-puzzled.png?v=141",
+  "./sounds/correct.mp3?v=141",
+  "./sounds/wrong.mp3?v=141",
+  "./sounds/complete.mp3?v=141",
+  "./sounds/goal.mp3?v=141"
 ];
 
 self.addEventListener("install", e => {
@@ -49,10 +49,12 @@ self.addEventListener("activate", e => {
   );
 });
 
-// The page itself (index.html / navigations) is fetched NETWORK-FIRST so a fresh
-// layout always wins when online; we fall back to the cached copy only offline.
-// Everything else (versioned scripts, images, vendor) is CACHE-FIRST for speed —
-// those change URL when their ?v= bumps, so stale versions can't stick.
+// The page itself (index.html / navigations) is STALE-WHILE-REVALIDATE: serve the
+// cached copy INSTANTLY (no black screen while a launch waits on the network, and
+// it opens the same way offline), then refresh the cache in the background so the
+// next launch picks up any new layout. The scripts/images it references are
+// versioned (?v=) and the SW skipWaiting()s, so a real update still lands next open.
+// Everything else (versioned scripts, images, vendor) is CACHE-FIRST for speed.
 function isPage(req) {
   if (req.mode === "navigate") return true;
   const p = new URL(req.url).pathname;
@@ -62,11 +64,14 @@ self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   if (isPage(e.request)) {
     e.respondWith(
-      fetch(e.request).then(resp => {
-        const copy = resp.clone();
-        caches.open(CACHE).then(c => c.put("./index.html", copy));
-        return resp;
-      }).catch(() => caches.match(e.request).then(c => c || caches.match("./index.html")))
+      caches.match("./index.html").then(cached => {
+        const fresh = fetch(e.request).then(resp => {
+          const copy = resp.clone();
+          caches.open(CACHE).then(c => c.put("./index.html", copy));
+          return resp;
+        }).catch(() => cached);
+        return cached || fresh;   // instant when cached; first-ever load waits on network
+      })
     );
     return;
   }

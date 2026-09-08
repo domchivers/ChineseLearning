@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=140";
+  const ASSET_V = "?v=141";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -278,15 +278,44 @@
   // tones for any file that hasn't loaded, so sound never silently disappears.
   let audioCtx = null;
   const soundOn = () => prefs.sound !== false;   // default on
+  let masterGain = null, audioWarmed = false;
   function ensureAudio() {
     if (!soundOn()) return null;
     if (!audioCtx) {
       const AC = window.AudioContext || window.webkitAudioContext;
       if (!AC) return null;
       audioCtx = new AC();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.value = 0.7;        // one knob to tame overall loudness
+      masterGain.connect(audioCtx.destination);
     }
     if (audioCtx.state === "suspended") audioCtx.resume();
     return audioCtx;
+  }
+  // On iOS the FIRST WebAudio output can jump in loud (ignoring the media volume)
+  // until the audio route settles — so spend that first sound on 120ms of silence.
+  function warmAudio() {
+    if (audioWarmed) return;
+    const ctx = ensureAudio(); if (!ctx || !masterGain) return;
+    audioWarmed = true;
+    try {
+      const buf = ctx.createBuffer(1, Math.max(1, Math.ceil(ctx.sampleRate * 0.12)), ctx.sampleRate);
+      const src = ctx.createBufferSource(); src.buffer = buf;
+      src.connect(masterGain); src.start();
+    } catch (e) {}
+  }
+  // Same story for the spoken voice: the first utterance on iOS activates the
+  // audio session and can blast in loud. Fire one silent utterance on unlock so
+  // the first word you actually hear plays at the settled volume.
+  let speechWarmed = false;
+  function warmSpeech() {
+    if (speechWarmed || !("speechSynthesis" in window)) return;
+    speechWarmed = true;
+    try {
+      const u = new SpeechSynthesisUtterance("​");   // zero-width space
+      u.volume = 0; u.rate = 2;
+      speechSynthesis.speak(u);
+    } catch (e) {}
   }
 
   const SFX_KINDS = ["correct", "wrong", "complete", "goal"];
@@ -304,9 +333,10 @@
         .catch(() => {});   // missing/undecodable → keeps the synth fallback
     });
   }
-  // iOS only unlocks WebAudio inside a user gesture — prime + preload on first tap.
+  // iOS only unlocks WebAudio inside a user gesture — prime + preload + warm the
+  // route on first tap, so the first real chime plays at a settled volume.
   ["pointerdown", "keydown"].forEach(ev =>
-    window.addEventListener(ev, () => { if (soundOn()) { ensureAudio(); loadSfx(); } }, { passive: true }));
+    window.addEventListener(ev, () => { if (soundOn()) { ensureAudio(); loadSfx(); warmAudio(); } warmSpeech(); }, { passive: true }));
 
   function tone(ctx, freq, start, dur, opts = {}) {
     const type = opts.type || "sine", gain = opts.gain == null ? 0.16 : opts.gain;
@@ -316,7 +346,7 @@
     g.gain.setValueAtTime(0.0001, t0);
     g.gain.linearRampToValueAtTime(gain, t0 + 0.012);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-    osc.connect(g).connect(ctx.destination);
+    osc.connect(g).connect(masterGain || ctx.destination);
     osc.start(t0); osc.stop(t0 + dur + 0.03);
   }
   function synthSfx(ctx, kind) {
@@ -332,8 +362,8 @@
     const buf = sfxBuffers[kind];
     if (buf) {
       const src = ctx.createBufferSource(), g = ctx.createGain();
-      src.buffer = buf; g.gain.value = 0.9;
-      src.connect(g).connect(ctx.destination); src.start();
+      src.buffer = buf; g.gain.value = 0.85;
+      src.connect(g).connect(masterGain || ctx.destination); src.start();
       return;
     }
     synthSfx(ctx, kind);
@@ -1952,7 +1982,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=140", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=141", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2024,7 +2054,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=140" : "images/dragon-sad.png?v=140"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=141" : "images/dragon-sad.png?v=141"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2153,11 +2183,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=140"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=141"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=140"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=141"; drg.classList.add("react"); }
         }
         onResult(correct);
       });

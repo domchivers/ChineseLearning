@@ -1,0 +1,30 @@
+name: Keep Supabase awake
+
+# Supabase free-tier projects pause after ~7 days with no activity, which is what
+# caused the "can't log in" failures. This pings the REST API a couple of times a
+# week so the database never goes idle long enough to be paused.
+#
+# The apikey below is the PUBLIC anon key — it is designed to be embedded in a
+# client and is already in app.js in this public repo, so it is safe here. It is
+# protected by row-level security; it grants no access to anyone's data.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1,4"   # 06:00 UTC every Monday and Thursday (~every 3–4 days)
+  workflow_dispatch: {}       # ...and a "Run workflow" button for manual pings
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the database
+        run: |
+          URL="https://cthoynfsgpqgthxpmngm.supabase.co"
+          KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN0aG95bmZzZ3BxZ3RoeHBtbmdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ2MDM3NDksImV4cCI6MjEwMDE3OTc0OX0.nj0EP_CL5wA61D9ebjTKIDwMLj3ou_2LtEVSN1Rsn1E"
+          code=$(curl -sS -o /dev/null -w "%{http_code}" \
+            "$URL/rest/v1/progress?select=user_id&limit=1" \
+            -H "apikey: $KEY" -H "Authorization: Bearer $KEY")
+          echo "Supabase responded with HTTP $code"
+          # Any HTTP response means the project is awake and reachable. A 000
+          # (no response / DNS failure) is the only real failure.
+          if [ "$code" = "000" ]; then echo "No response — project may be paused."; exit 1; fi
