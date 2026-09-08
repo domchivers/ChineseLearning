@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=138";
+  const ASSET_V = "?v=139";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -953,8 +953,14 @@
 
   function startConversation(d) {
     convDlg = d; convTurn = 0;
-    [...$("#convPicker").querySelectorAll(".chip")].forEach(c =>
-      c.classList.toggle("on", c.textContent.startsWith(d.title)));
+    const picker = $("#convPicker");
+    let onChip = null;
+    [...picker.querySelectorAll(".chip")].forEach(c => {
+      const on = c.textContent.startsWith(d.title);
+      c.classList.toggle("on", on); if (on) onChip = c;
+    });
+    // bring the chosen chip fully into view (never half-clipped at an edge)
+    if (onChip) picker.scrollTo({ left: Math.max(0, onChip.offsetLeft - 16), behavior: "smooth" });
     $("#convTitle").textContent = `Converse · ${d.title}`;
     $("#convBubbles").innerHTML = "";
     stepConversation();
@@ -1496,9 +1502,10 @@
     const BGAP = EDGE + 24;
     const bubbleFor = i => (items[i].lesson.id === curId ? BUBBLE : 0);
     const ys = [];
-    // Chapter 1's banner gets BGAP above (measured from the HUD) and BGAP below,
-    // so the top of the path is balanced just like every later chapter.
-    let y = HUD_H + 2 * BGAP + BANNER_H + bubbleFor(0) + c.size / 2;
+    // Chapter 1's banner sits nearer the HUD than later banners do — there's no
+    // preceding coin to breathe from, so the full 2×BGAP void just read as dead
+    // space at the very top. One BGAP splits evenly above/below it instead.
+    let y = HUD_H + BGAP + BANNER_H + bubbleFor(0) + c.size / 2;
     items.forEach((it, i) => {
       if (it.chapter && i > 0) y += 2 * BGAP - EDGE + BANNER_H + bubbleFor(i);
       ys.push(y); y += c.gap;
@@ -1946,7 +1953,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=138", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=139", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2018,7 +2025,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=138" : "images/dragon-sad.png?v=138"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=139" : "images/dragon-sad.png?v=139"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2147,11 +2154,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=138"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=139"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=138"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=139"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
