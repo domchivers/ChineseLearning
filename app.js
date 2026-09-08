@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=141";
+  const ASSET_V = "?v=142";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -557,6 +557,7 @@
   // A pinyin aid. With "Show pinyin" on it's just visible; off, it hides behind
   // a "Show pinyin 👀" button you tap to reveal.
   function pinyinHint(pinyin) {
+    pinyin = prettyPinyin(pinyin);
     const wrap = el("div", { className: "hint-wrap" });
     if (showPinyin()) {
       wrap.appendChild(el("span", { className: "pinyin hint-text" }, pinyin));
@@ -895,13 +896,13 @@
     const bigW = makeWriter(big, ch, { width: 96, height: 96, showCharacter: true });
     big.addEventListener("click", () => bigW.animateCharacter());
     const meta = el("div", { className: "meta" }, [
-      el("div", { className: "py" }, sheetWord.pinyin),
+      el("div", { className: "py" }, prettyPinyin(sheetWord.pinyin)),
       el("div", { className: "en" }, sheetWord.en),
       el("div", { className: "facts" }, `笔画 (strokes): ${strokes}`)
     ]);
     if (examples.length)
       meta.appendChild(el("div", { className: "facts" },
-        "组词: " + examples.map(e => `${e.hanzi} (${e.pinyin})`).join("，")));
+        "组词: " + examples.map(e => `${e.hanzi} (${prettyPinyin(e.pinyin)})`).join("，")));
     header.appendChild(meta);
 
     // Validated 田字格 grid: draw each box and correct strokes fill in red.
@@ -921,7 +922,7 @@
     area.innerHTML = "";
     const strokes = (HANZI[ch] && HANZI[ch].strokes.length) || "?";
     area.appendChild(el("h1", { className: "print-title" },
-      `${ch}   ${sheetWord.pinyin}`));
+      `${ch}   ${prettyPinyin(sheetWord.pinyin)}`));
     area.appendChild(el("div", { className: "print-sub" },
       `${sheetWord.en}   ·   笔画 (strokes): ${strokes}`));
 
@@ -998,7 +999,7 @@
   function addBubble(turn) {
     const b = el("div", { className: "bubble " + turn.who }, [
       el("div", { className: "b-han" }, turn.hanzi),
-      el("div", { className: "b-py" }, turn.pinyin),
+      el("div", { className: "b-py" }, prettyPinyin(turn.pinyin)),
       el("div", { className: "b-en" }, turn.en)
     ]);
     const acts = el("div", { className: "b-acts" }, [speakerBtn(turn.hanzi), slowSpeakerBtn(turn.hanzi)]);
@@ -1035,7 +1036,7 @@
     ctrl.innerHTML = "";
     const goal = el("div", { className: "your-goal" }, [
       el("div", { className: "muted", style: "font-size:.78rem;letter-spacing:1px" }, "YOUR TURN — SAY:"),
-      el("div", { className: "b-py", style: "font-size:1.25rem" }, turn.pinyin),
+      el("div", { className: "b-py", style: "font-size:1.25rem" }, prettyPinyin(turn.pinyin)),
       el("div", { className: "b-en" }, turn.en)
     ]);
     const chars = el("div", { className: "b-han hidden", style: "font-size:1.6rem;margin-top:4px" }, turn.hanzi);
@@ -1901,7 +1902,7 @@
       row.append(
         el("div", { className: "meet-hz" }, c.hanzi),
         el("div", { className: "meet-info" }, [
-          el("div", { className: "meet-py" }, c.pinyin),
+          el("div", { className: "meet-py" }, prettyPinyin(c.pinyin)),
           el("div", { className: "meet-en" }, c.en)
         ]),
         speakerBtn(c.hanzi)
@@ -1982,7 +1983,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=141", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=142", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2035,7 +2036,7 @@
       t.dataset.val = item.val;
       if (item.pinyin) {
         t.appendChild(el("span", { className: "t-han" }, item.hanzi));
-        t.appendChild(el("span", { className: "t-py" }, item.pinyin));
+        t.appendChild(el("span", { className: "t-py" }, prettyPinyin(item.pinyin)));
       } else t.textContent = item.text;
       t.addEventListener("click", () => {
         if (studyAnswered) return;
@@ -2054,7 +2055,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=141" : "images/dragon-sad.png?v=141"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=142" : "images/dragon-sad.png?v=142"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2076,6 +2077,54 @@
   Object.entries(TONE_VOWELS).forEach(([base, arr]) =>
     arr.forEach((ch, i) => { TONE_DECODE[ch] = [base, i]; }));
   const tonelessPinyin = py => [...(py || "")].map(ch => TONE_DECODE[ch] ? TONE_DECODE[ch][0] : ch).join("");
+
+  // ---- Readable pinyin ---------------------------------------------------
+  // The data joins syllables within a word ("láizì") — standard orthography, and
+  // it drives the word-level sentence tiles. But joined compounds are hard for a
+  // beginner to read, so for DISPLAY we split them back into syllables ("lái zì").
+  // Display-only: the data (and the tile grouping) is never touched. Validated to
+  // round-trip exactly on every pinyin string in the app; anything it can't
+  // segment is left exactly as-is.
+  const PY_SYL = (() => {
+    const initials = ["","b","p","m","f","d","t","n","l","g","k","h","j","q","x","zh","ch","sh","r","z","c","s","y","w"];
+    const finals = ["a","o","e","ê","ai","ei","ao","ou","an","en","ang","eng","ong","er",
+      "i","ia","ie","iao","iu","ian","in","iang","ing","iong",
+      "u","ua","uo","uai","ui","uan","un","uang","ueng",
+      "ü","üe","üan","ün","v","ve","van","vn"];
+    const set = new Set();
+    for (const ini of initials) for (const fin of finals) set.add(ini + fin);
+    ["a","o","e","ê","ai","ei","ao","ou","an","en","ang","eng","er","yi","wu","yu","ye","yue","yuan","yun","yin","ying",
+     "n","ng","m","hm","hng","lo","yo","ju","qu","xu","jue","xue","que","juan","xuan","quan","jun","xun","qun",
+     "nü","nüe","lü","lüe","nv","nve","lv","lve"].forEach(s => set.add(s));
+    return set;
+  })();
+  const PY_TONE_BASE = { "ā":"a","á":"a","ǎ":"a","à":"a","ē":"e","é":"e","ě":"e","è":"e",
+    "ī":"i","í":"i","ǐ":"i","ì":"i","ō":"o","ó":"o","ǒ":"o","ò":"o","ū":"u","ú":"u","ǔ":"u","ù":"u",
+    "ǖ":"ü","ǘ":"ü","ǚ":"ü","ǜ":"ü","ń":"n","ň":"n","ǹ":"n" };
+  function splitPySyllables(run) {
+    const base = [...run].map(ch => PY_TONE_BASE[ch] || ch).join("").toLowerCase();
+    const n = base.length, cuts = [0];
+    let i = 0;
+    while (i < n) {
+      let matched = 0;
+      for (let len = Math.min(6, n - i); len >= 1; len--) {
+        if (PY_SYL.has(base.slice(i, i + len))) { matched = len; break; }
+      }
+      if (!matched) return null;              // can't segment — caller keeps original
+      i += matched; cuts.push(i);
+    }
+    const chars = [...run], parts = [];
+    for (let k = 0; k < cuts.length - 1; k++) parts.push(chars.slice(cuts[k], cuts[k + 1]).join(""));
+    return parts;
+  }
+  function prettyPinyin(s) {
+    if (!s) return s;
+    return String(s).replace(/[A-Za-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]+/g, run => {
+      if (/^[A-Z]/.test(run)) return run;      // proper nouns (Dàwèi) — leave alone
+      const parts = splitPySyllables(run);
+      return parts ? parts.join(" ") : run;
+    });
+  }
   function toneVariants(py, n) {
     const chars = [...py];
     const marks = [];
@@ -2174,20 +2223,21 @@
       btn.dataset.val = opt;
       if (withTilePinyin) {
         btn.appendChild(el("span", { className: "c-han" }, opt));
-        if (PINYIN_BY_HANZI[opt]) btn.appendChild(el("span", { className: "c-py" }, PINYIN_BY_HANZI[opt]));
+        if (PINYIN_BY_HANZI[opt]) btn.appendChild(el("span", { className: "c-py" }, prettyPinyin(PINYIN_BY_HANZI[opt])));
       } else {
-        btn.textContent = opt;
+        // display prettified for the pinyin drill; the match still uses dataset.val
+        btn.textContent = dir === "pinyin" ? prettyPinyin(opt) : opt;
       }
       btn.addEventListener("click", () => {
         if (choicesBox.dataset.answered) return;
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=141"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=142"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=141"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=142"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2222,7 +2272,7 @@
       else {
         // desktop keeps the fuller prompt above the grid
         face.appendChild(el("div", { className: "en" }, c.en));
-        face.appendChild(el("div", { className: "pinyin" }, c.pinyin));
+        face.appendChild(el("div", { className: "pinyin" }, prettyPinyin(c.pinyin)));
         face.appendChild(aidsRow(c, { speaker: true }));
         renderWriteDesktop(face, chars, checkOn);
       }
@@ -2245,7 +2295,7 @@
       const bubble = mascotSpeech(face);
       bubble.appendChild(el("div", { className: "hanzi" + (sayHanzi.length > 3 ? " small" : "") }, sayHanzi));
       bubble.appendChild(speakerBtn(sayHanzi));
-      face.appendChild(el("div", { className: "pinyin" }, sayPinyin));
+      face.appendChild(el("div", { className: "pinyin" }, prettyPinyin(sayPinyin)));
       face.appendChild(el("div", { className: "muted" }, sayEn));
       if (phrase) face.appendChild(el("div", { className: "muted", style: "font-size:.78rem" },
         `practising ${c.hanzi} — ${c.pinyin}`));
@@ -2399,7 +2449,7 @@
       const header = el("div", { className: "write-head" });
       if (hasStrokes(ch)) header.appendChild(refAnimBox(ch, 50));
       header.appendChild(el("div", { className: "wh-txt" }, [
-        el("div", { className: "pinyin", style: "font-size:1.15rem;line-height:1.15" }, c.pinyin),
+        el("div", { className: "pinyin", style: "font-size:1.15rem;line-height:1.15" }, prettyPinyin(c.pinyin)),
         el("div", { className: "muted", style: "font-size:.9rem" }, c.en + (N > 1 ? `  ·  ${writeCharIdx + 1}/${N}` : ""))
       ]));
       header.appendChild(speakerBtn(c.hanzi));
@@ -2633,7 +2683,7 @@
       if (HW_OK && cjkOnly(c.hanzi).length) actions.appendChild(strokeBtn(c.hanzi, c.pinyin));
       const tr = el("tr", {}, [
         el("td", { className: "h" }, c.hanzi),
-        el("td", { className: "p" }, c.pinyin),
+        el("td", { className: "p" }, prettyPinyin(c.pinyin)),
         el("td", {}, c.pos ? `${c.en}  ·  ${c.pos}` : c.en),
         actions
       ]);
@@ -2710,7 +2760,7 @@
       cb.addEventListener("change", () => { cb.checked ? pickSel.add(c.id) : pickSel.delete(c.id); updatePickCount(); });
       row.append(cb,
         el("span", { className: "pk-han" }, c.hanzi),
-        el("span", { className: "pk-py" }, c.pinyin),
+        el("span", { className: "pk-py" }, prettyPinyin(c.pinyin)),
         el("span", { className: "pk-en" }, c.en));
       group.appendChild(row);
     });
@@ -2748,7 +2798,7 @@
       el("div", { className: "fc-tip muted" }, "tap to flip")
     ]);
     const back = el("div", { className: "fc-face fc-back" }, [
-      el("div", { className: "fc-py" }, c.pinyin),
+      el("div", { className: "fc-py" }, prettyPinyin(c.pinyin)),
       el("div", { className: "fc-en" }, c.pos ? `${c.en} · ${c.pos}` : c.en)
     ]);
     const aids = el("div", { className: "fc-aids" }, [speakerBtn(c.hanzi), slowSpeakerBtn(c.hanzi)]);
