@@ -202,7 +202,7 @@
   table { width: 100%; border-collapse: collapse; margin-top: 8px; }
   th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; }
-  td.h { font-size: 1.5rem; }
+  td.h { font-size: 1.5rem; white-space: nowrap; }  /* keep 对不起/没关系 on one line, not one glyph per row */
   td.p { color: var(--gold); white-space: nowrap; }
 
   .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
@@ -844,7 +844,9 @@
         JS --app-vh measured short on iOS standalone, leaving a gap at the bottom */
       display: flex; flex-direction: column;
       padding-top: max(8px, env(safe-area-inset-top));
-      padding-bottom: max(8px, env(safe-area-inset-bottom));
+      /* a little breathing room so the last row of choices / Next never sits flush
+         to the edge on phones without a home-indicator inset */
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
     }
     body[data-view="study"] header.top,
     body[data-view="quiz"] header.top,
@@ -1222,7 +1224,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=134" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=135" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1422,7 +1424,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=134" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=135" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1442,7 +1444,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=134" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=135" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1473,10 +1475,10 @@
     </div>
   </div>
 
-<script src="data.js?v=134"></script>
-<script src="hanzi-data.js?v=134"></script>
+<script src="data.js?v=135"></script>
+<script src="hanzi-data.js?v=135"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=134"></script>
+<script src="app.js?v=135"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
