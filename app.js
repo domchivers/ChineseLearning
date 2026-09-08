@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=135";
+  const ASSET_V = "?v=136";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -345,14 +345,31 @@
     const s = ((v.lang || "") + " " + (v.name || "")).toLowerCase();
     return /(^|[^a-z])zh([^a-z]|$)|zh[-_]|cmn|chinese|mandarin|中文|普通话|國語|国语|台湾|táiwān/.test(s);
   };
+  // Rank a Chinese voice for naturalness. Default system voices ("compact" on
+  // iOS, "eSpeak" on Android) sound robotic; the Siri / Enhanced / Premium /
+  // network voices sound close to human. Score so the best available one wins.
+  function voiceQuality(v) {
+    const s = ((v.name || "") + " " + (v.voiceURI || "")).toLowerCase();
+    let q = 0;
+    if (/^zh[-_]?cn/i.test(v.lang)) q += 3;             // Mainland Mandarin dialect
+    else if (/^(zh|cmn)/i.test(v.lang)) q += 1;
+    if (/siri/.test(s)) q += 10;                        // iOS Siri voices — best
+    if (/(premium|enhanced|neural|natural|网络|wǎngluò)/.test(s)) q += 8;
+    if (/google/.test(s)) q += 6;                       // Android/Chrome network voice
+    if (v.localService === false) q += 2;               // network (usually higher quality)
+    if (/(compact|espeak|微软|中英文)/.test(s)) q -= 2;   // known low-fi engines
+    // named Chinese voices, roughly better than the bare compact default
+    if (/(tingting|ting-ting|婷婷|meijia|美佳|sinji|語嫣|yu-shu|yushu|li-mu|panpan)/.test(s)) q += 4;
+    return q;
+  }
   function pickVoice() {
     const voices = speechSynthesis.getVoices();
     if (!voices.length) return;              // not loaded yet — try again later
     voicesSeen = true;
-    zhVoice =
-      voices.find(v => /^zh[-_]?cn/i.test(v.lang)) ||   // Mainland Mandarin, preferred
-      voices.find(v => /^(zh|cmn)/i.test(v.lang)) ||    // any Chinese by lang
-      voices.find(isZhVoice) || null;                   // fall back to name/lang text
+    const zh = voices.filter(v => /^(zh|cmn)/i.test(v.lang) || isZhVoice(v));
+    if (!zh.length) { zhVoice = null; return; }
+    zh.sort((a, b) => voiceQuality(b) - voiceQuality(a));   // best first
+    zhVoice = zh[0];
   }
   if ("speechSynthesis" in window) {
     pickVoice();
@@ -368,6 +385,19 @@
     } catch (e) {}
     toast("No Chinese voice on this device, so audio is silent. Add one in your system's spoken-content / voice settings.");
   }
+  // The best iOS voices must be downloaded by the user — suggest it once, the
+  // first time we're stuck on a low-quality (robotic) voice.
+  function suggestBetterVoiceOnce() {
+    try {
+      if (localStorage.getItem("zhBeginnerA.voiceTip.v1")) return;
+      if (!zhVoice || voiceQuality(zhVoice) >= 8) return;   // already on a good one
+      localStorage.setItem("zhBeginnerA.voiceTip.v1", "1");
+    } catch (e) { return; }
+    const ios = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    toast(ios
+      ? "Tip: for a far more natural voice, go to Settings → Accessibility → Spoken Content → Voices → Chinese and download an “Enhanced” voice."
+      : "Tip: install a higher-quality Chinese text-to-speech voice in your system settings for a more natural voice.");
+  }
   function speak(text, opts = {}) {
     if (!("speechSynthesis" in window)) return;
     if (!zhVoice) pickVoice();               // re-resolve at play time — voices may have loaded since boot
@@ -376,10 +406,12 @@
     u.lang = "zh-CN";
     if (zhVoice) u.voice = zhVoice;
     u.rate = opts.rate != null ? opts.rate : audioRate();
+    u.pitch = opts.pitch != null ? opts.pitch : 1;
     if (opts.onEnd) u.onend = opts.onEnd;
     speechSynthesis.speak(u);
     // Voices have loaded but none are Chinese → tell the user once why it's silent.
     if (voicesSeen && !zhVoice) warnNoVoiceOnce();
+    else if (zhVoice) suggestBetterVoiceOnce();
   }
   function speakerBtn(text) {
     const b = el("button", { className: "speaker", title: "Play audio", type: "button" });
@@ -398,6 +430,21 @@
   // ---- Speech recognition (you speak → it checks) ----
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   const canRecognize = () => !!SR;
+
+  // Ask for the mic ONCE when a roleplay starts, rather than letting each Speak
+  // turn trigger its own prompt. We grab the stream just to force the single
+  // permission grant, then stop the tracks immediately so there's no lingering
+  // "mic in use" indicator — the grant itself sticks for the rest of the page
+  // session (and, when the app is added to the Home Screen, across launches).
+  let micPrimed = false, micPriming = false;
+  function primeMic() {
+    if (micPrimed || micPriming || !canRecognize()) return;
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+    micPriming = true;
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(s => { try { s.getTracks().forEach(t => t.stop()); } catch (e) {} micPrimed = true; micPriming = false; })
+      .catch(() => { micPriming = false; });   // denied/failed → a later Speak tap can re-ask
+  }
   // onInterim(alts)  – live partial guesses while you're still speaking
   // acceptEarly(alts) – return true to settle NOW without waiting for the engine
   //                     to time out on silence (the main source of the lag)
@@ -902,6 +949,7 @@
   }
 
   function startConversation(d) {
+    if (canRecognize()) primeMic();     // one mic prompt for the whole roleplay
     convDlg = d; convTurn = 0;
     [...$("#convPicker").querySelectorAll(".chip")].forEach(c =>
       c.classList.toggle("on", c.textContent.startsWith(d.title)));
@@ -977,6 +1025,11 @@
         feedback.textContent = "";
         mic.disabled = true; mic.textContent = "● Listening…"; mic.classList.add("listening");
         recognizeOnce({
+          // Show what it's hearing live, and settle the instant the line lands —
+          // otherwise it waits for the engine to time out on silence, which is
+          // the delay you feel after you've finished speaking.
+          onInterim: alts => { if (alts[0]) feedback.innerHTML = `<span class="muted">heard: ${alts[0]}…</span>`; },
+          acceptEarly: alts => scoreSpeech(turn.hanzi, alts).level !== "no",
           onResult: alts => {
             const r = scoreSpeech(turn.hanzi, alts);
             if (r.level === "exact" || r.level === "close") {
@@ -1890,7 +1943,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=135", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=136", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -1962,7 +2015,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=135" : "images/dragon-sad.png?v=135"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=136" : "images/dragon-sad.png?v=136"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2091,11 +2144,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=135"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=136"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=135"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=136"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2166,6 +2219,7 @@
         setWriteGate(true);
       };
       if (canRecognize()) {
+        primeMic();                     // grab the mic grant as the card appears
         const micLbl2 = `<svg class="licon licon-sm"><use href="#i-mic"/></svg> Tap and say it`;
         const mic = el("button", { className: "speak-btn", type: "button" });
         mic.innerHTML = micLbl2;
