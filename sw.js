@@ -2,35 +2,35 @@
  * NOTE: browsers only register a service worker over HTTPS or localhost — over
  * a plain http:// LAN address it stays inactive (the app still works online).
  * Bump CACHE when you change app files so devices pick up the new version. */
-const CACHE = "zh-beginner-a-v147";
+const CACHE = "zh-beginner-a-v148";
 const ASSETS = [
   "./",
   "./index.html",
-  "./app.js?v=147",
-  "./data.js?v=147",
-  "./hanzi-data.js?v=147",
+  "./app.js?v=148",
+  "./data.js?v=148",
+  "./hanzi-data.js?v=148",
   "./vendor/hanzi-writer.min.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png",
-  "./images/dragon-teacher.png?v=147",
-  "./images/dragon-celebrate.png?v=147",
-  "./images/dragon-thinking.png?v=147",
-  "./images/dragon-sad.png?v=147",
-  "./images/dragon-idle.png?v=147",
-  "./images/dragon-waving.png?v=147",
-  "./images/sprite-reading.png?v=147",
-  "./images/sprite-ox-baozi.png?v=147",
-  "./images/sprite-panda-puzzled.png?v=147",
-  "./images/sprite-panda-baozi.png?v=147",
-  "./images/sprite-joy.png?v=147",
-  "./images/sprite-baozi.png?v=147",
-  "./images/sprite-puzzled.png?v=147",
-  "./sounds/correct.mp3?v=147",
-  "./sounds/wrong.mp3?v=147",
-  "./sounds/complete.mp3?v=147",
-  "./sounds/goal.mp3?v=147"
+  "./images/dragon-teacher.png?v=148",
+  "./images/dragon-celebrate.png?v=148",
+  "./images/dragon-thinking.png?v=148",
+  "./images/dragon-sad.png?v=148",
+  "./images/dragon-idle.png?v=148",
+  "./images/dragon-waving.png?v=148",
+  "./images/sprite-reading.png?v=148",
+  "./images/sprite-ox-baozi.png?v=148",
+  "./images/sprite-panda-puzzled.png?v=148",
+  "./images/sprite-panda-baozi.png?v=148",
+  "./images/sprite-joy.png?v=148",
+  "./images/sprite-baozi.png?v=148",
+  "./images/sprite-puzzled.png?v=148",
+  "./sounds/correct.mp3?v=148",
+  "./sounds/wrong.mp3?v=148",
+  "./sounds/complete.mp3?v=148",
+  "./sounds/goal.mp3?v=148"
 ];
 
 self.addEventListener("install", e => {
@@ -49,12 +49,13 @@ self.addEventListener("activate", e => {
   );
 });
 
-// The page itself (index.html / navigations) is STALE-WHILE-REVALIDATE: serve the
-// cached copy INSTANTLY (no black screen while a launch waits on the network, and
-// it opens the same way offline), then refresh the cache in the background so the
-// next launch picks up any new layout. The scripts/images it references are
-// versioned (?v=) and the SW skipWaiting()s, so a real update still lands next open.
-// Everything else (versioned scripts, images, vendor) is CACHE-FIRST for speed.
+// The page (index.html / navigations) is NETWORK-FIRST WITH A TIMEOUT: when online
+// it fetches fresh, so an update lands on the FIRST open (stale-while-revalidate
+// made updates take two opens, which left the phone perpetually a version behind).
+// But it waits at most PAGE_TIMEOUT — on a slow/offline launch it falls back to the
+// cached page fast, so there's no long black screen. Versioned assets below are
+// cache-first for speed; they change URL on a ?v= bump so they can't go stale.
+const PAGE_TIMEOUT = 2500;
 function isPage(req) {
   if (req.mode === "navigate") return true;
   const p = new URL(req.url).pathname;
@@ -63,16 +64,20 @@ function isPage(req) {
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
   if (isPage(e.request)) {
-    e.respondWith(
-      caches.match("./index.html").then(cached => {
-        const fresh = fetch(e.request).then(resp => {
-          const copy = resp.clone();
-          caches.open(CACHE).then(c => c.put("./index.html", copy));
-          return resp;
-        }).catch(() => cached);
-        return cached || fresh;   // instant when cached; first-ever load waits on network
-      })
-    );
+    e.respondWith(new Promise(resolve => {
+      let settled = false;
+      const settle = r => { if (!settled && r) { settled = true; resolve(r); } };
+      // fast fallback: if the network hasn't answered by the timeout, use cache
+      const timer = setTimeout(() => caches.match("./index.html").then(settle), PAGE_TIMEOUT);
+      fetch(e.request).then(resp => {
+        clearTimeout(timer);
+        caches.open(CACHE).then(c => c.put("./index.html", resp.clone()));
+        settle(resp);
+      }).catch(() => {
+        clearTimeout(timer);
+        caches.match("./index.html").then(c => settle(c || Response.error()));
+      });
+    }));
     return;
   }
   e.respondWith(
