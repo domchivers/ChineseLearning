@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=145";
+  const ASSET_V = "?v=146";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -1685,6 +1685,20 @@
       sp.style.width = w + "px";
       place(sp, mx, ys[i] + c.svert);
     }
+
+    // Land the path on your CURRENT lesson every render, so it opens where you
+    // are — and, crucially, at a deterministic scroll position. Leaving the inner
+    // scroll wherever it happened to be is what showed up as the whole path
+    // "pushed up" after finishing a session.
+    const scroller = $("#pathScroll");
+    const curIdx = items.findIndex(it => it.lesson.id === curId);
+    if (scroller && curIdx >= 0) {
+      const curY = ys[curIdx];
+      requestAnimationFrame(() => {
+        const max = Math.max(0, wrap.offsetHeight - scroller.clientHeight);
+        scroller.scrollTop = Math.min(max, Math.max(0, curY - scroller.clientHeight * 0.5));
+      });
+    }
   }
   // Re-lay when the window changes shape (positions are measured, not static).
   let pathResizeTimer = null;
@@ -2041,7 +2055,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=145", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=146", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2076,6 +2090,7 @@
       labelEl.textContent = "Translate this sentence";
       bubble.appendChild(el("div", { className: "hanzi" + (sent.hanzi.length > 3 ? " small" : "") }, sent.hanzi));
       bubble.appendChild(speakerBtn(sent.hanzi));
+      bubble.appendChild(pinyinHint(sent.pinyin));   // a pinyin reading aid (respects the Show-pinyin setting)
       target = enWords(sent.en);
       tiles = target.map(w => ({ val: w, text: w }));
       answerDisplay = sent.en;
@@ -2111,9 +2126,14 @@
       const correct = got.length === target.length && got.every((v, i) => v === target[i]);
       answer.classList.add(correct ? "ok" : "bad");
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
-      if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
+      if (!correct) {
+        const corr = el("div", { className: "sent-correct" }, answerDisplay);
+        // when the answer is Chinese, show pinyin under it so you can read the reveal
+        if (en2cn) corr.appendChild(el("div", { className: "sent-correct-py" }, prettyPinyin(sent.pinyin)));
+        face.appendChild(corr);
+      }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=145" : "images/dragon-sad.png?v=145"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=146" : "images/dragon-sad.png?v=146"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2294,11 +2314,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=145"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=146"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=145"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=146"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
