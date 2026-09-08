@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=153";
+  const ASSET_V = "?v=154";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -299,10 +299,24 @@
       masterGain = audioCtx.createGain();
       masterGain.gain.value = 0.7;        // one knob to tame overall loudness
       masterGain.connect(audioCtx.destination);
+      // Keep the context AWAKE with a silent loop. iOS suspends an idle context
+      // between sounds, and resume() is async — so every chime was waiting on it
+      // (that's the "delayed" correct/wrong sound). A looping silent source stops
+      // the auto-suspend, so sfx() finds the context running and plays instantly.
+      try {
+        const keep = audioCtx.createBufferSource();
+        keep.buffer = audioCtx.createBuffer(1, audioCtx.sampleRate, audioCtx.sampleRate); // 1s of silence
+        keep.loop = true; keep.connect(audioCtx.destination); keep.start();
+      } catch (e) {}
     }
     if (audioCtx.state === "suspended") audioCtx.resume();
     return audioCtx;
   }
+  // Coming back from the background re-suspends the context; resume it as soon
+  // as the app is visible again so the first tap's chime doesn't pay the wait.
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && audioCtx && audioCtx.state === "suspended") audioCtx.resume();
+  });
   // On iOS the FIRST WebAudio output can jump in loud (ignoring the media volume)
   // until the audio route settles — so spend that first sound on 120ms of silence.
   function warmAudio() {
@@ -367,9 +381,16 @@
     else if (kind === "goal") { [523, 659, 784, 1047, 1319].forEach((f, i) => tone(ctx, f, i * 0.1, 0.3, { gain: 0.18 })); }
     else if (kind === "tap") { tone(ctx, 430, 0, 0.05, { gain: 0.07 }); }
   }
+  let lastGoalAt = 0;
   function sfx(kind) {
     const ctx = ensureAudio();
     if (!ctx) return;
+    // The daily-goal fanfare fires on the answer that crosses the goal. When that
+    // answer is also a lesson's last card, the done screen's "complete" chime
+    // would land on top of it — two fanfares at once. The goal fanfare already IS
+    // the celebration, so let "complete" yield to it.
+    if (kind === "goal") lastGoalAt = Date.now();
+    else if (kind === "complete" && Date.now() - lastGoalAt < 1500) return;
     const play = () => {
       const buf = sfxBuffers[kind];
       if (buf) {
@@ -2075,7 +2096,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=153", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=154", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2153,7 +2174,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=153" : "images/dragon-sad.png?v=153"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=154" : "images/dragon-sad.png?v=154"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2337,11 +2358,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=153"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=154"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=153"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=154"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
