@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=136";
+  const ASSET_V = "?v=137";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -362,13 +362,22 @@
     if (/(tingting|ting-ting|婷婷|meijia|美佳|sinji|語嫣|yu-shu|yushu|li-mu|panpan)/.test(s)) q += 4;
     return q;
   }
+  function zhVoices() {
+    const voices = speechSynthesis.getVoices();
+    return voices.filter(v => /^(zh|cmn)/i.test(v.lang) || isZhVoice(v));
+  }
   function pickVoice() {
     const voices = speechSynthesis.getVoices();
     if (!voices.length) return;              // not loaded yet — try again later
     voicesSeen = true;
-    const zh = voices.filter(v => /^(zh|cmn)/i.test(v.lang) || isZhVoice(v));
+    const zh = zhVoices();
     if (!zh.length) { zhVoice = null; return; }
-    zh.sort((a, b) => voiceQuality(b) - voiceQuality(a));   // best first
+    // An explicit choice from Settings wins, if it's still installed.
+    if (prefs.voiceURI) {
+      const chosen = zh.find(v => v.voiceURI === prefs.voiceURI);
+      if (chosen) { zhVoice = chosen; return; }
+    }
+    zh.sort((a, b) => voiceQuality(b) - voiceQuality(a));   // else the best available
     zhVoice = zh[0];
   }
   if ("speechSynthesis" in window) {
@@ -430,21 +439,6 @@
   // ---- Speech recognition (you speak → it checks) ----
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   const canRecognize = () => !!SR;
-
-  // Ask for the mic ONCE when a roleplay starts, rather than letting each Speak
-  // turn trigger its own prompt. We grab the stream just to force the single
-  // permission grant, then stop the tracks immediately so there's no lingering
-  // "mic in use" indicator — the grant itself sticks for the rest of the page
-  // session (and, when the app is added to the Home Screen, across launches).
-  let micPrimed = false, micPriming = false;
-  function primeMic() {
-    if (micPrimed || micPriming || !canRecognize()) return;
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
-    micPriming = true;
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(s => { try { s.getTracks().forEach(t => t.stop()); } catch (e) {} micPrimed = true; micPriming = false; })
-      .catch(() => { micPriming = false; });   // denied/failed → a later Speak tap can re-ask
-  }
   // onInterim(alts)  – live partial guesses while you're still speaking
   // acceptEarly(alts) – return true to settle NOW without waiting for the engine
   //                     to time out on silence (the main source of the lag)
@@ -949,7 +943,6 @@
   }
 
   function startConversation(d) {
-    if (canRecognize()) primeMic();     // one mic prompt for the whole roleplay
     convDlg = d; convTurn = 0;
     [...$("#convPicker").querySelectorAll(".chip")].forEach(c =>
       c.classList.toggle("on", c.textContent.startsWith(d.title)));
@@ -1943,7 +1936,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=136", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=137", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2015,7 +2008,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=136" : "images/dragon-sad.png?v=136"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=137" : "images/dragon-sad.png?v=137"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2144,11 +2137,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=136"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=137"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=136"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=137"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2219,7 +2212,6 @@
         setWriteGate(true);
       };
       if (canRecognize()) {
-        primeMic();                     // grab the mic grant as the card appears
         const micLbl2 = `<svg class="licon licon-sm"><use href="#i-mic"/></svg> Tap and say it`;
         const mic = el("button", { className: "speak-btn", type: "button" });
         mic.innerHTML = micLbl2;
@@ -2830,6 +2822,7 @@
     const theme = prefs.theme || "system";
     $("#themeSeg").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.theme === theme));
     $("#rateRange").value = audioRate();
+    if (typeof syncVoicePicker === "function") syncVoicePicker();
     const g = dailyGoal();
     $("#goalSeg").querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.goal === g));
     $("#checkSwitch").classList.toggle("on", prefs.checkStrokes !== false);
@@ -2903,6 +2896,43 @@
     b.addEventListener("click", () => { prefs.theme = b.dataset.theme; savePrefs(prefs); applyTheme(); syncSettings(); }));
   $("#rateRange").addEventListener("input", e => { prefs.rate = parseFloat(e.target.value); savePrefs(prefs); });
   $("#rateRange").addEventListener("change", e => speak("你好", { rate: parseFloat(e.target.value) }));
+
+  // ---- Chinese-voice picker ----
+  // Lists the Chinese voices actually installed on THIS device so you can see
+  // what you've got and choose one. If there's only the default (robotic) voice,
+  // the note explains how to get a better one — no app can install voices.
+  function voiceLabel(v) {
+    let n = (v.name || v.voiceURI || "Voice").replace(/\s*\((enhanced|premium)\)/i, "");
+    const q = voiceQuality(v);
+    if (/siri/i.test(v.name + v.voiceURI)) n += " · Siri";
+    else if (q >= 8) n += " · enhanced";
+    return n;
+  }
+  function syncVoicePicker() {
+    const sel = $("#voiceSel"); if (!sel) return;
+    const list = zhVoices().slice().sort((a, b) => voiceQuality(b) - voiceQuality(a));
+    sel.innerHTML = "";
+    sel.appendChild(el("option", { value: "" }, "Auto — best available"));
+    list.forEach(v => sel.appendChild(el("option", { value: v.voiceURI }, voiceLabel(v))));
+    sel.value = prefs.voiceURI && list.some(v => v.voiceURI === prefs.voiceURI) ? prefs.voiceURI : "";
+    const note = $("#voiceNote");
+    if (note) {
+      if (!list.length) note.textContent = "No Chinese voice found on this device.";
+      else if (list.length === 1) note.innerHTML = /iPad|iPhone|iPod/.test(navigator.userAgent)
+        ? "Only one voice installed (it sounds robotic). For a natural voice: iOS <b>Settings → Accessibility → Spoken Content → Voices → Chinese</b>, then download an <b>Enhanced</b> voice and pick it here."
+        : "Only one Chinese voice is installed. Add a higher-quality one in your system's speech settings.";
+      else note.textContent = "";
+    }
+  }
+  $("#voiceSel").addEventListener("change", e => {
+    prefs.voiceURI = e.target.value || null;
+    savePrefs(prefs); pickVoice();
+    speak("你好，我叫步步");   // hear the chosen voice immediately
+  });
+  $("#voiceTest").addEventListener("click", () => speak("你好，很高兴认识你"));
+  // Voices often arrive after boot (esp. iOS) — refresh the list when they land.
+  if ("speechSynthesis" in window)
+    speechSynthesis.onvoiceschanged = () => { pickVoice(); syncVoicePicker(); };
   $("#goalSeg").querySelectorAll("button").forEach(b =>
     b.addEventListener("click", () => {
       prefs.dailyGoal = +b.dataset.goal;
