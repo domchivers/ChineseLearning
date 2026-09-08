@@ -203,12 +203,17 @@
   .choice.correct { background: var(--good-soft); border-color: var(--good); }
   .choice.wrong { background: var(--again-soft); border-color: var(--again); }
 
-  /* Browse */
-  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  /* Browse. The table must fit the viewport width — otherwise it overflows and
+     the page can be panned/pinch-zoomed sideways with the 汉字 column off-screen.
+     Only 汉字 stays on one line (so 对不起 doesn't break per glyph); pinyin and
+     English wrap, so auto-layout shrinks the table to fit any phone. */
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; table-layout: fixed; }
+  th, td { text-align: left; padding: 9px 6px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
   th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; }
-  td.h { font-size: 1.5rem; white-space: nowrap; }  /* keep 对不起/没关系 on one line, not one glyph per row */
-  td.p { color: var(--gold); white-space: nowrap; }
+  th:first-child, td.h { width: 5.2rem; }       /* rem (not em): 3-char words fit one line, longer phrases wrap */
+  th:last-child { width: 2.6rem; }              /* the 🔊 / ✍︎ action column */
+  td.h { font-size: 1.35rem; line-height: 1.2; }  /* NO nowrap: 对不起 fits, 你明白了吗 wraps, neither overflows */
+  td.p { color: var(--gold); }                  /* wraps if needed, so it never forces overflow */
 
   .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
   .topbar .title { font-weight: 700; flex: 1; }
@@ -1255,7 +1260,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=151" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=152" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1468,7 +1473,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=151" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=152" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1488,7 +1493,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=151" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=152" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1519,10 +1524,10 @@
     </div>
   </div>
 
-<script src="data.js?v=151"></script>
-<script src="hanzi-data.js?v=151"></script>
+<script src="data.js?v=152"></script>
+<script src="hanzi-data.js?v=152"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=151"></script>
+<script src="app.js?v=152"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
