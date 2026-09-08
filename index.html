@@ -642,6 +642,11 @@
      bottom. dvh tracks the real visible area and self-updates. */
   body[data-view="path"] .wrap { max-width: none; padding: 0; overflow: hidden;
     height: 100vh; height: 100dvh; position: relative; }
+  /* On the full-height views the inner containers own the scrolling, so the page
+     body must never scroll — otherwise a residual window scroll after a session
+     leaves the whole UI pushed up. (Home/Progress still scroll the body.) */
+  body[data-view="path"], body[data-view="study"], body[data-view="quiz"],
+  body[data-view="converse"] { overflow: hidden; overscroll-behavior: none; }
   body[data-view="path"] header.top { display: none; }
   #path { position: relative; height: 100%; overflow: hidden; }
 
@@ -1250,7 +1255,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=150" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=151" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1463,7 +1468,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=150" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=151" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1483,7 +1488,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=150" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=151" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1514,10 +1519,10 @@
     </div>
   </div>
 
-<script src="data.js?v=150"></script>
-<script src="hanzi-data.js?v=150"></script>
+<script src="data.js?v=151"></script>
+<script src="hanzi-data.js?v=151"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=150"></script>
+<script src="app.js?v=151"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=150";
+  const ASSET_V = "?v=151";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -243,7 +243,12 @@
     ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     document.body.dataset.view = sectionId;   // lets CSS give sessions a fixed-height layout
+    // Reset the WINDOW scroll, twice: iOS can leave the page scrolled down after a
+    // full-height session, and a single scrollTo runs before the new view's height
+    // is applied, so it doesn't "take" — leaving the whole UI pushed up. The rAF
+    // pass repeats it once layout has settled.
     window.scrollTo(0, 0);
+    requestAnimationFrame(() => window.scrollTo(0, 0));
   }
 
   // Gentle inline message instead of a browser alert().
@@ -361,14 +366,20 @@
   function sfx(kind) {
     const ctx = ensureAudio();
     if (!ctx) return;
-    const buf = sfxBuffers[kind];
-    if (buf) {
-      const src = ctx.createBufferSource(), g = ctx.createGain();
-      src.buffer = buf; g.gain.value = 0.85;
-      src.connect(g).connect(masterGain || ctx.destination); src.start();
-      return;
-    }
-    synthSfx(ctx, kind);
+    const play = () => {
+      const buf = sfxBuffers[kind];
+      if (buf) {
+        const src = ctx.createBufferSource(), g = ctx.createGain();
+        src.buffer = buf; g.gain.value = 0.85;
+        src.connect(g).connect(masterGain || ctx.destination);
+        try { src.start(); } catch (e) {}
+      } else synthSfx(ctx, kind);
+    };
+    // iOS suspends the audio context after inactivity / backgrounding. resume() is
+    // async, so starting a sound before it resolves plays SILENTLY — which is why
+    // the correct/wrong chime only fired sometimes. Resume first, THEN play.
+    if (ctx.state === "suspended") ctx.resume().then(play).catch(play);
+    else play();
   }
 
   // ---- Text to speech ----
@@ -2063,7 +2074,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=150", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=151", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2141,7 +2152,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=150" : "images/dragon-sad.png?v=150"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=151" : "images/dragon-sad.png?v=151"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2325,11 +2336,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=150"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=151"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=150"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=151"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
