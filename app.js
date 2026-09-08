@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=144";
+  const ASSET_V = "?v=145";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -441,18 +441,29 @@
   function speak(text, opts = {}) {
     if (!("speechSynthesis" in window)) return;
     if (!zhVoice) pickVoice();               // re-resolve at play time — voices may have loaded since boot
-    speechSynthesis.cancel();
+    const ss = speechSynthesis;
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "zh-CN";
     if (zhVoice) u.voice = zhVoice;
     u.rate = opts.rate != null ? opts.rate : audioRate();
     u.pitch = opts.pitch != null ? opts.pitch : 1;
     if (opts.onEnd) u.onend = opts.onEnd;
-    speechSynthesis.speak(u);
+    try { ss.resume(); } catch (e) {}        // iOS can leave the synth paused/stuck — unstick it
+    ss.cancel();                             // stop anything mid-utterance
+    // iOS/Safari drops an utterance queued in the SAME tick as cancel(); deferring
+    // one tick (and resuming again) makes playback reliable, incl. the listen card.
+    setTimeout(() => { try { ss.resume(); ss.speak(u); } catch (e) {} }, 0);
+    // If the voice list hasn't populated yet (common on a cold iOS launch), the
+    // utterance can fall silent — re-fire once the voices arrive.
+    if (!voicesSeen && !speakRetried) {
+      speakRetried = true;
+      setTimeout(() => { pickVoice(); if (voicesSeen) speak(text, opts); }, 500);
+    }
     // Voices have loaded but none are Chinese → tell the user once why it's silent.
     if (voicesSeen && !zhVoice) warnNoVoiceOnce();
     else if (zhVoice) suggestBetterVoiceOnce();
   }
+  let speakRetried = false;
   function speakerBtn(text) {
     const b = el("button", { className: "speaker", title: "Play audio", type: "button" });
     b.innerHTML = `<svg class="licon licon-sm"><use href="#i-volume"/></svg>`;
@@ -2030,7 +2041,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=144", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=145", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2102,7 +2113,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=144" : "images/dragon-sad.png?v=144"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=145" : "images/dragon-sad.png?v=145"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2215,9 +2226,12 @@
       } catch (e) {}
     } else if (dir === "listen") {
       labelEl.textContent = "What did you hear?";
-      promptNode = el("div", { className: "hanzi" }, "🎧");
+      // Tappable, so a missed auto-play (voice still loading, synth stuck) is always
+      // recoverable — tap the headphones to hear it again.
+      promptNode = el("button", { className: "hanzi listen-replay", type: "button", title: "Play again" }, "🎧");
+      promptNode.addEventListener("click", () => speak(c.hanzi));
       answerText = c.en; distractField = "en";
-      speak(c.hanzi);
+      setTimeout(() => speak(c.hanzi), 60);   // let the card mount, then play
     } else {
       labelEl.textContent = "What does this mean?";
       promptNode = el("div", { className: "hanzi" + (c.hanzi.length > 3 ? " small" : "") }, c.hanzi);
@@ -2280,11 +2294,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=144"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=145"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=144"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=145"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
