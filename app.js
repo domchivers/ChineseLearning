@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=143";
+  const ASSET_V = "?v=144";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -184,6 +184,7 @@
       s.reps = 0;
       s.interval = 0;
       s.ease = Math.max(1.6, s.ease - 0.2);
+      s.lapses = (s.lapses || 0) + 1;   // how often you've missed it — powers "trouble words"
       s.due = NOW() + 60 * 1000; // ~1 min: comes back this session
     } else {
       const bump = grade === "easy" ? 0.15 : 0;
@@ -1246,6 +1247,12 @@
       $("#homeReviewTxt").textContent = `${due} word${due === 1 ? "" : "s"} ready to review`;
       rev.classList.remove("hidden");
     } else rev.classList.add("hidden");
+
+    const trouble = troubleCards().length, tr = $("#homeTrouble");
+    if (trouble) {
+      $("#homeTroubleTxt").textContent = `${trouble} trouble word${trouble === 1 ? "" : "s"} to drill`;
+      tr.classList.remove("hidden");
+    } else tr.classList.add("hidden");
   }
 
   function renderHome() {
@@ -1343,10 +1350,12 @@
     if (mode === "study") startStudy();
     else if (mode === "quiz") startQuiz();
     else if (mode === "browse") startBrowse();
+    else if (mode === "listen") startListening();
   }
   document.querySelectorAll(".practice-list button").forEach(btn =>
     btn.addEventListener("click", () => runMode(btn.dataset.mode)));
   $("#homeReview").addEventListener("click", () => startReview());
+  $("#homeTrouble").addEventListener("click", () => startTrouble());
 
   function resetProgress() {
     const ids = new Set(activeCards().map(c => c.id));
@@ -1449,6 +1458,44 @@
     scopeFocuses = new Set(selectedFocuses);
     beginStudySession(shuffle(cards).slice(0, 20));
     $("#studyTitle").textContent = "Review";
+  }
+
+  // The words you personally keep missing. Ease only ever drops when you tap
+  // "again", so ease < the 2.4 start means it's tripped you up; lapses (how many
+  // times) refines the order. Only words you've actually reached count.
+  function troubleCards() {
+    return CARDS.filter(c => {
+      const s = srs[c.id];
+      if (!s || !s.reps && !s.lapses) return false;
+      if (!doneLessons.has(c.lessonId) && c.lessonId !== firstUnfinishedId()) return false;
+      return (s.lapses || 0) > 0 || s.ease < 2.4;
+    }).sort((a, b) => {
+      const sa = srs[a.id], sb = srs[b.id];
+      return (sb.lapses || 0) - (sa.lapses || 0) || sa.ease - sb.ease;   // most-missed first
+    });
+  }
+  function startTrouble() {
+    const cards = troubleCards();
+    if (!cards.length) { toast("No trouble words yet — nothing you're stuck on. Nice!"); return; }
+    reviewMode = true;
+    scopeLessons = new Set(cards.map(c => c.lessonId));   // plausible distractors
+    scopeFocuses = new Set(selectedFocuses);
+    beginStudySession(cards.slice(0, 20));                // already hardest-first
+    $("#studyTitle").textContent = "Trouble words";
+  }
+
+  // A listening-first session: audio plays and you answer from what you hear,
+  // before reading anything. Reuses the existing "listen" card direction.
+  function startListening() {
+    reviewMode = false;
+    scopeLessons = null;
+    const cards = activeCards();                          // the words from your selected lessons
+    const studied = cards.filter(c => srs[c.id]);        // you can only recognise words you've met
+    const pool = studied.length ? studied : cards;
+    if (!pool.length) { toast("Pick at least one lesson — open “What to study”."); $("#studyPanel").open = true; return; }
+    scopeFocuses = new Set(["listen"]);
+    beginStudySession(shuffle(pool).slice(0, 20));
+    $("#studyTitle").textContent = "Listening";
   }
 
   function currentLessonId() {
@@ -1983,7 +2030,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=143", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=144", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2055,7 +2102,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=143" : "images/dragon-sad.png?v=143"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=144" : "images/dragon-sad.png?v=144"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2233,11 +2280,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=143"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=144"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=143"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=144"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
