@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=146";
+  const ASSET_V = "?v=147";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -485,12 +485,16 @@
   // acceptEarly(alts) – return true to settle NOW without waiting for the engine
   //                     to time out on silence (the main source of the lag)
   function recognizeOnce({ onStart, onResult, onInterim, onError, onEnd, acceptEarly }) {
-    if (!SR) { onError && onError("unsupported"); return null; }
+    if (!SR) { onError && onError("unsupported"); onEnd && onEnd(); return null; }
     const rec = new SR();
     rec.lang = "zh-CN";
     rec.interimResults = true;   // stream partial results — the exercise feels live, not frozen
     rec.maxAlternatives = 8;     // more candidates = more chances the right one is in there
-    let delivered = false;
+    let delivered = false, ended = false, watchdog = null;
+    // onEnd must fire EXACTLY once, no matter how recognition terminates — a normal
+    // end, an error, a failed start, or the engine simply hanging. Callers re-enable
+    // the mic button in onEnd, so if it never fired the button stuck on "Listening…".
+    const done = () => { if (ended) return; ended = true; if (watchdog) clearTimeout(watchdog); onEnd && onEnd(); };
     const altsOf = r => { const a = []; for (let i = 0; i < r.length; i++) a.push(r[i].transcript); return a; };
     const deliver = alts => { if (delivered) return; delivered = true; onResult && onResult(alts); try { rec.stop(); } catch {} };
     rec.onstart = () => onStart && onStart();
@@ -501,9 +505,12 @@
       onInterim && onInterim(alts);
       if (acceptEarly && acceptEarly(alts)) deliver(alts);   // heard it — don't make them wait
     };
-    rec.onerror = e => onError && onError(e.error || "error");
-    rec.onend = () => onEnd && onEnd();
-    try { rec.start(); } catch { onError && onError("start-failed"); }
+    rec.onerror = e => { onError && onError(e.error || "error"); done(); };
+    rec.onend = () => done();
+    try { rec.start(); } catch (e) { onError && onError("start-failed"); done(); return null; }
+    // Watchdog: some engines (mobile Safari especially) can stall with neither a
+    // result nor an end event — force a reset so you can just tap and try again.
+    watchdog = setTimeout(() => { try { rec.abort(); } catch (e) {} done(); }, 12000);
     return rec;
   }
   const cleanHan = s => (s || "").replace(/[，。！？、,.!?\s·…"'“”]/g, "");
@@ -2055,7 +2062,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=146", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=147", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2133,7 +2140,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=146" : "images/dragon-sad.png?v=146"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=147" : "images/dragon-sad.png?v=147"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2314,11 +2321,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=146"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=147"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=146"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=147"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
