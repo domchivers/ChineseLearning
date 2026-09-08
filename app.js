@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=152";
+  const ASSET_V = "?v=153";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -243,6 +243,10 @@
     ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     document.body.dataset.view = sectionId;   // lets CSS give sessions a fixed-height layout
+    // Keep the bottom-nav highlight in sync with the view HERE. It used to be set
+    // only in the nav's own click handler, so every programmatic navigation
+    // (finish a session → "Back to path") left it stale: Path showing, Home lit.
+    document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x.dataset.nav === sectionId));
     // Reset the WINDOW scroll, twice: iOS can leave the page scrolled down after a
     // full-height session, and a single scrollTo runs before the new view's height
     // is applied, so it doesn't "take" — leaving the whole UI pushed up. The rAF
@@ -1836,7 +1840,7 @@
     b.addEventListener("click", () => {
       const nav = b.dataset.nav;
       if (nav === "settings") { syncSettings(); renderAccount(); openModal("settingsModal"); return; }
-      document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x === b));
+      // (highlight is synced by show() itself)
       if (nav === "home") { renderHome(); show("home"); }
       else if (nav === "path") { show("path"); renderPath(); }
       else if (nav === "progress") { renderDashboard(); show("progress"); }
@@ -1844,10 +1848,7 @@
   $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) startReview(); });
   $("#pathSettings").addEventListener("click", () => { syncSettings(); renderAccount(); openModal("settingsModal"); });
   // Tapping the daily-goal ring jumps to Progress, where the full ring + streak live.
-  $("#pathGoal").addEventListener("click", () => {
-    document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x.dataset.nav === "progress"));
-    renderDashboard(); show("progress");
-  });
+  $("#pathGoal").addEventListener("click", () => { renderDashboard(); show("progress"); });
 
   let queue = [];        // array of card objects
   let studyStats = { reviewed: 0, again: 0 };
@@ -2074,7 +2075,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=152", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=153", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2152,7 +2153,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=152" : "images/dragon-sad.png?v=152"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=153" : "images/dragon-sad.png?v=153"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2336,11 +2337,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=152"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=153"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=152"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=153"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
