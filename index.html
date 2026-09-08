@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#c0392b">
@@ -68,6 +68,7 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;                 /* never scroll sideways on a phone */
+    touch-action: manipulation;         /* no double-tap zoom (pan/scroll still work) */
     -webkit-text-size-adjust: 100%;
   }
   button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
@@ -122,6 +123,11 @@
   .mode-btn span { color: var(--muted); font-size: .82rem; }
 
   .focus-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+  /* The Converse dialogue picker is a single horizontal-scroll row, not a tall
+     wrapping block that pushes the conversation off the bottom of the screen. */
+  #convPicker { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; flex: none;
+    -webkit-overflow-scrolling: touch; padding-bottom: 4px; scrollbar-width: thin; }
+  #convPicker .chip { flex: none; white-space: nowrap; }
   .chip {
     border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; font-size: .85rem;
     background: var(--panel); cursor: pointer; user-select: none;
@@ -762,7 +768,9 @@
 
   /* Review call-to-action, floating above the bottom nav on the path */
   .review-fab { position: absolute; left: 50%; transform: translateX(-50%);
-    bottom: 92px; z-index: 25;   /* absolute in #path (100dvh); clears the nav pill */
+    /* clear the bottom nav + the home-indicator inset (which makes the nav taller
+       on a real phone); a flat 92px was cut off once the inset was added */
+    bottom: calc(84px + env(safe-area-inset-bottom)); z-index: 25;
     display: flex; align-items: center; gap: 7px;
     background: var(--g); color: #fff; border: 0; border-radius: 999px;
     padding: 11px 20px; font-weight: 800; font-size: 14px; white-space: nowrap;
@@ -1214,7 +1222,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=133" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=134" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1414,7 +1422,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=133" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=134" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1434,7 +1442,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=133" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=134" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1465,10 +1473,10 @@
     </div>
   </div>
 
-<script src="data.js?v=133"></script>
-<script src="hanzi-data.js?v=133"></script>
+<script src="data.js?v=134"></script>
+<script src="hanzi-data.js?v=134"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=133"></script>
+<script src="app.js?v=134"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
