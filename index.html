@@ -242,7 +242,10 @@
   /* Character / writing */
   .modal-backdrop {
     position: fixed; inset: 0; background: rgba(30,22,12,.55);
-    display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 50;
+    display: flex; align-items: center; justify-content: center; z-index: 50;
+    /* clear the status bar / Dynamic Island and the home indicator so a tall
+       modal (Settings) never tucks its header under the notch */
+    padding: calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
   }
 
   /* Account / cloud sync */
@@ -334,7 +337,9 @@
   .modal {
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
     box-shadow: var(--shadow); padding: 18px; width: 100%; max-width: 560px;
-    max-height: 90vh; overflow: auto;
+    /* fill the safe-area-padded backdrop rather than 90vh, so it can't spill past
+       the notch at the top when the content is tall */
+    max-height: 100%; overflow: auto;
   }
   .hz-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 8px 0 14px; }
   .hz-cell { display: flex; flex-direction: column; align-items: center; gap: 6px; }
@@ -653,11 +658,13 @@
      latches onto the layout viewport, which on iOS is taller than the visible
      area, floating the bottom chrome up. Absolute inside #path lands on the
      visible edges, exactly like the (working) top HUD. */
-  /* Top fade: solid to 52px, gone by 115px. Above coins (z 2–3), below pills (z20). */
+  /* Top fade: sits right around the HUD pills (solid to ~46px, gone by ~82px) so
+     the first chapter banner, which now rides higher, reads at full strength
+     instead of dimmed under a long fade. Above coins (z 2–3), below pills (z20). */
   #path::before { content: ""; position: absolute; left: 0; right: 0; top: 0;
-    height: calc(124px + env(safe-area-inset-top));
+    height: calc(78px + env(safe-area-inset-top));
     background: linear-gradient(180deg, var(--bg) 0,
-      var(--bg) calc(60px + env(safe-area-inset-top)), transparent calc(124px + env(safe-area-inset-top)));
+      var(--bg) calc(42px + env(safe-area-inset-top)), transparent calc(78px + env(safe-area-inset-top)));
     pointer-events: none; z-index: 18; }
   /* Bottom fade: solid to 7px, gone by 76px. Short — the home indicator isn't
      persistently there. Above coins, below FAB (25) and nav (40). */
@@ -1228,7 +1235,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=139" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=140" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1261,6 +1268,7 @@
       <button class="ghost" id="convBack">← Home</button>
       <span class="title" id="convTitle">Converse</span>
     </div>
+    <div class="muted" style="font-size:.85rem;margin:2px 0 4px">Pick a conversation to roleplay:</div>
     <div class="focus-row" id="convPicker"></div>
     <div class="card">
       <div id="convBubbles" class="conv-bubbles"></div>
@@ -1436,7 +1444,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=139" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=140" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1456,7 +1464,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=139" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=140" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1487,10 +1495,10 @@
     </div>
   </div>
 
-<script src="data.js?v=139"></script>
-<script src="hanzi-data.js?v=139"></script>
+<script src="data.js?v=140"></script>
+<script src="hanzi-data.js?v=140"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=139"></script>
+<script src="app.js?v=140"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

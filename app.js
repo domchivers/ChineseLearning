@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=139";
+  const ASSET_V = "?v=140";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -936,11 +936,10 @@
     $("#convTitle").textContent = "Converse";
     $("#convBubbles").innerHTML = "";
     $("#convControls").innerHTML = "";
-    // Dialogue picker
+    // Dialogue picker. The label lives OUTSIDE the horizontal-scroll row — inside
+    // it, the edge-fade mask clipped "…to roleplay:".
     const picker = $("#convPicker");
     picker.innerHTML = "";
-    picker.appendChild(el("div", { className: "muted", style: "width:100%;font-size:.85rem;margin-bottom:2px" },
-      "Pick a conversation to roleplay:"));
     DIALOGUES.forEach(d => {
       const b = el("button", { className: "chip" }, `${d.title}  ·  ${d.lesson}`);
       b.addEventListener("click", () => startConversation(d));
@@ -1953,7 +1952,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=139", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=140", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2025,7 +2024,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=139" : "images/dragon-sad.png?v=139"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=140" : "images/dragon-sad.png?v=140"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2154,11 +2153,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=139"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=140"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=139"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=140"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2657,6 +2656,11 @@
     CARDS.filter(match).forEach(c => {
       if (c.lessonId !== curLesson) {
         curLesson = c.lessonId;
+        // Each lesson is its own block so its sticky header stays pinned only
+        // WHILE that block is on screen — flat siblings all pin at top:0 at once
+        // and pile up (a tall 2-line header peeking under the next single one,
+        // and stacked headers hiding the top rows' 汉字).
+        group = el("div", { className: "pick-group" });
         const head = el("div", { className: "pick-lhead" });
         const title = el("span", {}, c.lessonTitle.replace(/^.*?· /, ""));
         const all = el("button", { className: "link", type: "button" }, "all");
@@ -2667,8 +2671,8 @@
           renderPicker();
         });
         head.append(title, all);
-        list.appendChild(head);
-        group = null;
+        group.appendChild(head);
+        list.appendChild(group);
       }
       const row = el("label", { className: "pick-row" });
       const cb = el("input", { type: "checkbox" });
@@ -2678,7 +2682,7 @@
         el("span", { className: "pk-han" }, c.hanzi),
         el("span", { className: "pk-py" }, c.pinyin),
         el("span", { className: "pk-en" }, c.en));
-      list.appendChild(row);
+      group.appendChild(row);
     });
     if (!list.children.length) list.appendChild(el("p", { className: "muted", style: "padding:10px" }, "No words match that search."));
     updatePickCount();
