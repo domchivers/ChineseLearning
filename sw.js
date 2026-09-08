@@ -2,35 +2,35 @@
  * NOTE: browsers only register a service worker over HTTPS or localhost — over
  * a plain http:// LAN address it stays inactive (the app still works online).
  * Bump CACHE when you change app files so devices pick up the new version. */
-const CACHE = "zh-beginner-a-v154";
+const CACHE = "zh-beginner-a-v155";
 const ASSETS = [
   "./",
   "./index.html",
-  "./app.js?v=154",
-  "./data.js?v=154",
-  "./hanzi-data.js?v=154",
+  "./app.js?v=155",
+  "./data.js?v=155",
+  "./hanzi-data.js?v=155",
   "./vendor/hanzi-writer.min.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png",
-  "./images/dragon-teacher.png?v=154",
-  "./images/dragon-celebrate.png?v=154",
-  "./images/dragon-thinking.png?v=154",
-  "./images/dragon-sad.png?v=154",
-  "./images/dragon-idle.png?v=154",
-  "./images/dragon-waving.png?v=154",
-  "./images/sprite-reading.png?v=154",
-  "./images/sprite-ox-baozi.png?v=154",
-  "./images/sprite-panda-puzzled.png?v=154",
-  "./images/sprite-panda-baozi.png?v=154",
-  "./images/sprite-joy.png?v=154",
-  "./images/sprite-baozi.png?v=154",
-  "./images/sprite-puzzled.png?v=154",
-  "./sounds/correct.mp3?v=154",
-  "./sounds/wrong.mp3?v=154",
-  "./sounds/complete.mp3?v=154",
-  "./sounds/goal.mp3?v=154"
+  "./images/dragon-teacher.png?v=155",
+  "./images/dragon-celebrate.png?v=155",
+  "./images/dragon-thinking.png?v=155",
+  "./images/dragon-sad.png?v=155",
+  "./images/dragon-idle.png?v=155",
+  "./images/dragon-waving.png?v=155",
+  "./images/sprite-reading.png?v=155",
+  "./images/sprite-ox-baozi.png?v=155",
+  "./images/sprite-panda-puzzled.png?v=155",
+  "./images/sprite-panda-baozi.png?v=155",
+  "./images/sprite-joy.png?v=155",
+  "./images/sprite-baozi.png?v=155",
+  "./images/sprite-puzzled.png?v=155",
+  "./sounds/correct.mp3?v=155",
+  "./sounds/wrong.mp3?v=155",
+  "./sounds/complete.mp3?v=155",
+  "./sounds/goal.mp3?v=155"
 ];
 
 self.addEventListener("install", e => {
@@ -69,7 +69,10 @@ self.addEventListener("fetch", e => {
       const settle = r => { if (!settled && r) { settled = true; resolve(r); } };
       // fast fallback: if the network hasn't answered by the timeout, use cache
       const timer = setTimeout(() => caches.match("./index.html").then(settle), PAGE_TIMEOUT);
-      fetch(e.request).then(resp => {
+      // cache:'reload' — go to the NETWORK, not the browser's HTTP cache. GitHub
+      // Pages caches index.html for 10 min, so a plain fetch() could return a
+      // stale page even when online, defeating network-first.
+      fetch(new Request(e.request, { cache: "reload" })).then(resp => {
         clearTimeout(timer);
         caches.open(CACHE).then(c => c.put("./index.html", resp.clone()));
         settle(resp);

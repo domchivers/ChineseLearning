@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=154";
+  const ASSET_V = "?v=155";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -242,17 +242,19 @@
   function show(sectionId) {
     ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
+    // Reset the window scroll BEFORE the new view applies its body scroll-lock.
+    // The done screen is normal flow, so scrolling down to "Back to path" scrolls
+    // the BODY; the path then locks body overflow. On iOS a body that's scrolled
+    // and THEN locked keeps its offset and can't be scrolled back — the whole UI
+    // sits pushed up. So reset first (on every scrolling element) while the body
+    // is still scrollable, then lock; the rAF pass repeats it once layout settles.
+    const resetScroll = () => { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; };
+    resetScroll();
     document.body.dataset.view = sectionId;   // lets CSS give sessions a fixed-height layout
-    // Keep the bottom-nav highlight in sync with the view HERE. It used to be set
-    // only in the nav's own click handler, so every programmatic navigation
-    // (finish a session → "Back to path") left it stale: Path showing, Home lit.
+    // Keep the bottom-nav highlight in sync with the view HERE (a stale one left
+    // Path showing with Home lit after a session).
     document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x.dataset.nav === sectionId));
-    // Reset the WINDOW scroll, twice: iOS can leave the page scrolled down after a
-    // full-height session, and a single scrollTo runs before the new view's height
-    // is applied, so it doesn't "take" — leaving the whole UI pushed up. The rAF
-    // pass repeats it once layout has settled.
-    window.scrollTo(0, 0);
-    requestAnimationFrame(() => window.scrollTo(0, 0));
+    requestAnimationFrame(resetScroll);
   }
 
   // Gentle inline message instead of a browser alert().
@@ -2096,7 +2098,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=154", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=155", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2174,7 +2176,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=154" : "images/dragon-sad.png?v=154"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=155" : "images/dragon-sad.png?v=155"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2358,11 +2360,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=154"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=155"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=154"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=155"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
