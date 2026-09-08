@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=149";
+  const ASSET_V = "?v=150";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2063,7 +2063,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=149", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=150", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2141,7 +2141,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=149" : "images/dragon-sad.png?v=149"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=150" : "images/dragon-sad.png?v=150"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2266,6 +2266,9 @@
       answerText = c.en; distractField = "en";
     }
     bubble.appendChild(promptNode);
+    // The pinyin drill tests the pinyin, so it can't show the answer — but a bare
+    // character is a blind guess, so give the English meaning as context.
+    if (dir === "pinyin") bubble.appendChild(el("div", { className: "en", style: "font-size:1rem;margin-top:2px" }, c.en));
     if (dir !== "pinyin") bubble.appendChild(speakerBtn(c.hanzi));
     // Recall shows pinyin on the option tiles instead (below), so its prompt
     // pinyin hint would just give the answer away.
@@ -2322,11 +2325,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=149"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=150"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=149"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=150"; drg.classList.add("react"); }
         }
         onResult(correct);
       });

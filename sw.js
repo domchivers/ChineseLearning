@@ -2,35 +2,35 @@
  * NOTE: browsers only register a service worker over HTTPS or localhost — over
  * a plain http:// LAN address it stays inactive (the app still works online).
  * Bump CACHE when you change app files so devices pick up the new version. */
-const CACHE = "zh-beginner-a-v149";
+const CACHE = "zh-beginner-a-v150";
 const ASSETS = [
   "./",
   "./index.html",
-  "./app.js?v=149",
-  "./data.js?v=149",
-  "./hanzi-data.js?v=149",
+  "./app.js?v=150",
+  "./data.js?v=150",
+  "./hanzi-data.js?v=150",
   "./vendor/hanzi-writer.min.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png",
-  "./images/dragon-teacher.png?v=149",
-  "./images/dragon-celebrate.png?v=149",
-  "./images/dragon-thinking.png?v=149",
-  "./images/dragon-sad.png?v=149",
-  "./images/dragon-idle.png?v=149",
-  "./images/dragon-waving.png?v=149",
-  "./images/sprite-reading.png?v=149",
-  "./images/sprite-ox-baozi.png?v=149",
-  "./images/sprite-panda-puzzled.png?v=149",
-  "./images/sprite-panda-baozi.png?v=149",
-  "./images/sprite-joy.png?v=149",
-  "./images/sprite-baozi.png?v=149",
-  "./images/sprite-puzzled.png?v=149",
-  "./sounds/correct.mp3?v=149",
-  "./sounds/wrong.mp3?v=149",
-  "./sounds/complete.mp3?v=149",
-  "./sounds/goal.mp3?v=149"
+  "./images/dragon-teacher.png?v=150",
+  "./images/dragon-celebrate.png?v=150",
+  "./images/dragon-thinking.png?v=150",
+  "./images/dragon-sad.png?v=150",
+  "./images/dragon-idle.png?v=150",
+  "./images/dragon-waving.png?v=150",
+  "./images/sprite-reading.png?v=150",
+  "./images/sprite-ox-baozi.png?v=150",
+  "./images/sprite-panda-puzzled.png?v=150",
+  "./images/sprite-panda-baozi.png?v=150",
+  "./images/sprite-joy.png?v=150",
+  "./images/sprite-baozi.png?v=150",
+  "./images/sprite-puzzled.png?v=150",
+  "./sounds/correct.mp3?v=150",
+  "./sounds/wrong.mp3?v=150",
+  "./sounds/complete.mp3?v=150",
+  "./sounds/goal.mp3?v=150"
 ];
 
 self.addEventListener("install", e => {
