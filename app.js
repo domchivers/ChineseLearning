@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=137";
+  const ASSET_V = "?v=138";
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
     (_, i) => `<g transform="rotate(${i * 360 / n} 12 12)">${inner}</g>`).join("");
@@ -465,6 +465,15 @@
     return rec;
   }
   const cleanHan = s => (s || "").replace(/[，。！？、,.!?\s·…"'“”]/g, "");
+  // For acceptEarly: has a live partial ALREADY contained the whole target? Only
+  // then have you actually finished the line — a prefix ("你好…" of "你好吗") must
+  // NOT settle, or the mic cuts you off mid-sentence. (scoreSpeech scores a prefix
+  // at .95 via exp.includes(t), which is what made early-accept too eager.)
+  function saidWhole(expectedHanzi, alts) {
+    const exp = cleanHan(expectedHanzi);
+    if (!exp) return false;
+    return alts.some(a => { const t = cleanHan(a); return t && t.includes(exp); });
+  }
   // `keyword` is the word actually being practised. The recogniser often mangles
   // part of a phrase while still nailing the target word — hearing the keyword
   // back is a pass even if the rest of the transcript drifts.
@@ -1022,7 +1031,8 @@
           // otherwise it waits for the engine to time out on silence, which is
           // the delay you feel after you've finished speaking.
           onInterim: alts => { if (alts[0]) feedback.innerHTML = `<span class="muted">heard: ${alts[0]}…</span>`; },
-          acceptEarly: alts => scoreSpeech(turn.hanzi, alts).level !== "no",
+          // settle only once you've said the WHOLE line — never mid-sentence
+          acceptEarly: alts => saidWhole(turn.hanzi, alts),
           onResult: alts => {
             const r = scoreSpeech(turn.hanzi, alts);
             if (r.level === "exact" || r.level === "close") {
@@ -1936,7 +1946,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=137", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=138", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2008,7 +2018,7 @@
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       if (!correct) face.appendChild(el("div", { className: "sent-correct" }, answerDisplay));
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=137" : "images/dragon-sad.png?v=137"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=138" : "images/dragon-sad.png?v=138"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2137,11 +2147,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=137"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=138"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=137"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=138"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2226,9 +2236,9 @@
             // live partial text so it visibly responds while you're still talking
             onInterim: alts => { if (!studyAnswered && alts[0])
               fb.innerHTML = `<span class="muted">…${alts[0]}</span>`; },
-            // as soon as a partial already contains the word, accept — don't wait
-            // for the engine's end-of-speech silence timeout (the actual lag).
-            acceptEarly: alts => scoreSpeech(sayHanzi, alts, c.hanzi).level !== "no",
+            // accept once a partial contains the whole phrase — don't wait for the
+            // silence timeout, but don't cut off a prefix mid-phrase either.
+            acceptEarly: alts => saidWhole(sayHanzi, alts),
             onResult: alts => {
               gotResult = true; tries++;
               const r = scoreSpeech(sayHanzi, alts, c.hanzi);
