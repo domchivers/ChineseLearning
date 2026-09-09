@@ -373,9 +373,9 @@
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
 
   /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
-  :root { --welcome-art: url("images/welcome-light.webp?v=157"); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=157"); } }
-  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=157"); }
+  :root { --welcome-art: url("images/welcome-light.webp?v=158"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=158"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=158"); }
   .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
     flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
   .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
@@ -532,23 +532,21 @@
 
   /* Streak card */
   .streak-card { margin-top: 16px; background: var(--panel); border: 1px solid var(--line);
-    border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px 12px; }
-  .sc-main { display: flex; align-items: center; gap: 12px; min-height: 64px; }
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px 12px; position: relative; overflow: hidden; }
+  /* Row is tall enough for the bubble to sit above the panda, as in the mock: the
+     bubble hugs the top-right corner and the panda rests on the divider beneath it. */
+  .sc-main { display: flex; align-items: center; gap: 12px; min-height: 88px; padding-right: 120px; }
   .sc-flame { width: 44px; height: 44px; border-radius: 14px; background: var(--t-red);
     color: var(--t-red-ink); display: grid; place-items: center; flex: none; }
   .sc-flame .licon { width: 26px; height: 26px; stroke-width: 2.2; }
-  .sc-num { display: flex; flex-direction: column; line-height: 1; }
+  .sc-num { display: flex; flex-direction: column; line-height: 1; flex: none; }
   .sc-num b { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -.02em; }
-  .sc-num span { color: var(--muted); font-size: .84rem; font-weight: 700; margin-top: 3px; }
-  .streak-card { position: relative; overflow: hidden; }
-  /* head + waving paw, cut at the chest so the divider line reads as a ledge */
-  .sc-peek { position: absolute; right: 12px; top: 6px; height: 84px; width: auto; pointer-events: none; }
-  .sc-num { flex: none; }
-  .sc-num span { white-space: nowrap; }
-  .sc-bubble { margin-left: auto; margin-right: 96px; background: var(--accent-soft); color: var(--accent);
+  .sc-num span { color: var(--muted); font-size: .84rem; font-weight: 700; margin-top: 3px; white-space: nowrap; }
+  .sc-bubble { position: absolute; top: 12px; right: 14px; background: var(--accent-soft); color: var(--accent);
     font-weight: 800; font-size: .78rem; padding: 6px 10px; border-radius: 14px; border-bottom-right-radius: 4px;
-    white-space: nowrap; align-self: flex-start; margin-top: 6px; }
-  @media (max-width: 360px) { .sc-bubble { display: none; } }
+    white-space: nowrap; max-width: calc(100% - 170px); overflow: hidden; text-overflow: ellipsis; }
+  /* head + waving paw, cut at the chest; bottom edge lands exactly on the divider */
+  .sc-peek { position: absolute; right: 10px; top: 44px; height: 70px; width: auto; pointer-events: none; }
   .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 12px;
     padding-top: 12px; border-top: 1px solid var(--line); }
   .week .wd { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: .68rem;
@@ -1224,7 +1222,7 @@
         <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span></div>
         <span class="sc-bubble" id="scBubble">Let's start!</span>
       </div>
-      <img src="images/panda-peek.png?v=157" alt="" class="sc-peek">
+      <img src="images/panda-peek.png?v=158" alt="" class="sc-peek">
       <div class="week" id="weekStrip"></div>
     </div>
 
@@ -1386,7 +1384,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/panda-celebrate.png?v=157" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/panda-celebrate.png?v=158" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1629,7 +1627,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/panda-waving.png?v=157" alt="" class="ob-hero">
+          <img src="images/panda-waving.png?v=158" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1660,10 +1658,10 @@
     </div>
   </div>
 
-<script src="data.js?v=157"></script>
-<script src="hanzi-data.js?v=157"></script>
+<script src="data.js?v=158"></script>
+<script src="hanzi-data.js?v=158"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=157"></script>
+<script src="app.js?v=158"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

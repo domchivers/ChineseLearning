@@ -2,37 +2,37 @@
  * NOTE: browsers only register a service worker over HTTPS or localhost — over
  * a plain http:// LAN address it stays inactive (the app still works online).
  * Bump CACHE when you change app files so devices pick up the new version. */
-const CACHE = "zh-beginner-a-v157";
+const CACHE = "zh-beginner-a-v158";
 const ASSETS = [
   "./",
   "./index.html",
-  "./app.js?v=157",
-  "./data.js?v=157",
-  "./hanzi-data.js?v=157",
+  "./app.js?v=158",
+  "./data.js?v=158",
+  "./hanzi-data.js?v=158",
   "./vendor/hanzi-writer.min.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png",
-  "./images/panda-teacher.png?v=157",
-  "./images/panda-celebrate.png?v=157",
-  "./images/panda-sad.png?v=157",
-  "./images/panda-idle.png?v=157",
-  "./images/panda-waving.png?v=157",
-  "./images/panda-peek.png?v=157",
-  "./images/sprite-reading.png?v=157",
-  "./images/sprite-baozi.png?v=157",
-  "./images/sprite-writing.png?v=157",
-  "./images/sprite-listening.png?v=157",
-  "./images/sprite-puzzled.png?v=157",
-  "./images/sprite-sleeping.png?v=157",
-  "./images/welcome-light.webp?v=157",
-  "./images/welcome-dark.webp?v=157",
+  "./images/panda-teacher.png?v=158",
+  "./images/panda-celebrate.png?v=158",
+  "./images/panda-sad.png?v=158",
+  "./images/panda-idle.png?v=158",
+  "./images/panda-waving.png?v=158",
+  "./images/panda-peek.png?v=158",
+  "./images/sprite-reading.png?v=158",
+  "./images/sprite-baozi.png?v=158",
+  "./images/sprite-writing.png?v=158",
+  "./images/sprite-listening.png?v=158",
+  "./images/sprite-puzzled.png?v=158",
+  "./images/sprite-sleeping.png?v=158",
+  "./images/welcome-light.webp?v=158",
+  "./images/welcome-dark.webp?v=158",
   "./vendor/fonts/nunito-latin.woff2",
-  "./sounds/correct.mp3?v=157",
-  "./sounds/wrong.mp3?v=157",
-  "./sounds/complete.mp3?v=157",
-  "./sounds/goal.mp3?v=157"
+  "./sounds/correct.mp3?v=158",
+  "./sounds/wrong.mp3?v=158",
+  "./sounds/complete.mp3?v=158",
+  "./sounds/goal.mp3?v=158"
 ];
 
 self.addEventListener("install", e => {
