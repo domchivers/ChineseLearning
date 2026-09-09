@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=160";
+  const ASSET_V = "?v=161";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1278,7 +1278,7 @@
       if (goalMetOn(key)) cls.push("met");
       if (d.getTime() === today.getTime()) cls.push("today");
       if (d > today) cls.push("future");
-      const ring = el("i"); ring.innerHTML = svgUse("i-check");
+      const ring = el("i"); ring.innerHTML = svgUse("i-tick");
       strip.appendChild(el("div", { className: cls.join(" ") }, [ring, el("span", {}, names[i])]));
     }
   }
@@ -1289,7 +1289,8 @@
     const streak = computeStreak(), goal = dailyGoal(), done = todayCount();
     $("#scNum").textContent = streak;
     $("#scSub").textContent = streak === 1 ? "day streak" : "day streak";
-    $("#scBubble").textContent = done >= goal ? "Goal done! 🎉" : done > 0 ? `${goal - done} more today`
+    // Kept short: the bubble shares the row with the panda on a narrow phone.
+    $("#scBubble").textContent = done >= goal ? "Done! 🎉" : done > 0 ? `${goal - done} to go`
       : streak > 0 ? "Keep going!" : "Let's start!";
     renderWeekStrip();
 
@@ -2138,7 +2139,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=160", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=161", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2216,7 +2217,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=160" : "images/panda-sad.png?v=160"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=161" : "images/panda-sad.png?v=161"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2400,11 +2401,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=160"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=161"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=160"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=161"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
