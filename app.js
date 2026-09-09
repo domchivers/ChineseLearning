@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=159";
+  const ASSET_V = "?v=160";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2138,7 +2138,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=159", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=160", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2216,7 +2216,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=159" : "images/panda-sad.png?v=159"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=160" : "images/panda-sad.png?v=160"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2400,11 +2400,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=159"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=160"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=159"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=160"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
