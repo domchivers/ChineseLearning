@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
-<link rel="manifest" href="manifest.webmanifest?v=164">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=164">
+<link rel="manifest" href="manifest.webmanifest?v=165">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=165">
 <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="步步 Bùbù">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=164">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=165">
 <style>
   /* Nunito (variable weight, latin) is vendored so the app stays offline.
      CJK glyphs fall through to the system font, which is what we want. */
@@ -375,9 +375,9 @@
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
 
   /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
-  :root { --welcome-art: url("images/welcome-light.webp?v=164"); --cont-art: url("images/card-light.webp?v=164"); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=164"); --cont-art: url("images/card-dark.webp?v=164"); } }
-  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=164"); --cont-art: url("images/card-dark.webp?v=164"); }
+  :root { --welcome-art: url("images/welcome-light.webp?v=165"); --cont-art: url("images/card-light.webp?v=165"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=165"); --cont-art: url("images/card-dark.webp?v=165"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=165"); --cont-art: url("images/card-dark.webp?v=165"); }
   .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
     flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
   .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
@@ -536,9 +536,9 @@
   .streak-stack { margin-top: 16px; display: grid; gap: 8px; }
   .streak-card, .week-card { background: var(--panel); border: 1px solid var(--line);
     border-radius: var(--radius); box-shadow: var(--shadow); }
-  /* Tall enough for the whole mascot: its flat chest-cut edge lands on the
-     card's bottom border rather than the face being clipped by it. */
-  .streak-card { position: relative; overflow: hidden; min-height: 110px;
+  /* Tall enough for the bubble to sit clear ABOVE the mascot rather than on its
+     face, with the mascot's flat chest-cut edge landing on the bottom border. */
+  .streak-card { position: relative; overflow: hidden; min-height: 134px;
     display: flex; align-items: center; gap: 13px; padding: 14px 16px; }
   .flame-ic { width: 42px; height: 42px; flex: none; stroke: none; }
   .sc-num { display: flex; flex-direction: column; line-height: 1; flex: none; }
@@ -552,7 +552,7 @@
     white-space: nowrap; max-width: calc(100% - 150px); overflow: hidden; text-overflow: ellipsis; }
   .sc-bubble::after { content: ""; position: absolute; left: 15px; bottom: -5px;
     border: 6px solid transparent; border-top-color: var(--accent-soft); border-bottom: 0; }
-  .sc-peek { position: absolute; right: 6px; bottom: 0; height: 90px; width: auto; pointer-events: none; }
+  .sc-peek { position: absolute; right: 6px; bottom: 0; height: 84px; width: auto; pointer-events: none; }
   @media (max-width: 370px) { .sc-bubble { display: none; } }
 
   /* Week strip — filled circle + plain tick on the days the goal was met */
@@ -1244,7 +1244,7 @@
         <svg class="flame-ic"><use href="#i-flame-solid"/></svg>
         <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span></div>
         <span class="sc-bubble" id="scBubble">Let's start!</span>
-        <img src="images/panda-peek.png?v=164" alt="" class="sc-peek">
+        <img src="images/panda-peek.png?v=165" alt="" class="sc-peek">
       </div>
       <div class="week-card"><div class="week" id="weekStrip"></div></div>
     </div>
@@ -1407,7 +1407,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/panda-celebrate.png?v=164" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/panda-celebrate.png?v=165" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1650,7 +1650,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/panda-waving.png?v=164" alt="" class="ob-hero">
+          <img src="images/panda-waving.png?v=165" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1681,10 +1681,10 @@
     </div>
   </div>
 
-<script src="data.js?v=164"></script>
-<script src="hanzi-data.js?v=164"></script>
+<script src="data.js?v=165"></script>
+<script src="hanzi-data.js?v=165"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=164"></script>
+<script src="app.js?v=165"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
