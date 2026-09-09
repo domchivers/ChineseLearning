@@ -5,66 +5,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#c0392b">
+<meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="步步 Bùbù">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <style>
+  /* Nunito (variable weight, latin) is vendored so the app stays offline.
+     CJK glyphs fall through to the system font, which is what we want. */
+  @font-face { font-family: "Nunito"; src: url("vendor/fonts/nunito-latin.woff2") format("woff2");
+    font-weight: 200 1000; font-style: normal; font-display: swap; }
+
+  /* ---- Theme: cream + jade by day, navy + periwinkle by night ----
+     Sampled from reference/Light_Theme.png and reference/Dark_Theme.png. Every
+     colour in the app routes through these variables; --on-accent is the text
+     colour that sits on --accent (white in light, navy in dark, as in the mock). */
   :root {
-    --bg: #f6f2ea;
-    --panel: #fffdf8;
-    --ink: #2b2620;
-    --muted: #8a8072;
-    --line: #e7ded0;
-    --accent: #c0392b;      /* chinese red */
-    --accent-soft: #fae7e4;
-    --gold: #b8860b;
-    --accent-dark: #96291d;        /* 3D base of the path buttons */
-    --coin-halo: rgba(192,57,43,.34);   /* soft glow around the active coin */
-    --coin-todo: #e6e3de;          /* not-yet-started coins */
-    --coin-todo-dark: #cfccc5;
-    --grid: rgba(192,57,43,.38);   /* soft red copybook grid line */
-    --grid-soft: rgba(192,57,43,.16);
-    --good: #12806a;
-    --good-soft: #d3efe7;
-    --again: #b5453a;
-    --again-soft: #f4dcd8;
-    --easy: #2b6cb0;
-    --easy-soft: #d7e6f4;
-    --radius: 16px;
-    --shadow: 0 6px 24px rgba(60,45,25,.08), 0 1px 3px rgba(60,45,25,.06);
-    /* Path accents. These now follow the theme in both modes — there is no
-       painted scenery left for them to sit against. */
-    --g: #c0392b; --g-dark: #96291d; --g-soft: #fae7e4;
+    --bg: #faf7f1;
+    --panel: #ffffff;
+    --ink: #172530;
+    --muted: #66768a;
+    --line: #e8e6df;
+    --accent: #2b776d;             /* jade */
+    --accent-soft: #d9ece5;
+    --accent-dark: #1d645c;        /* 3D base of the path buttons */
+    --on-accent: #ffffff;
+    --gold: #b7822e;               /* pinyin */
+    --coin-halo: rgba(43,119,109,.34);
+    --coin-todo: #e6e6e0;          /* not-yet-started coins */
+    --coin-todo-dark: #cfd0c9;
+    --grid: rgba(43,119,109,.38);  /* copybook grid line */
+    --grid-soft: rgba(43,119,109,.16);
+    --good: #1f8a6d;
+    --good-soft: #daf1e3;
+    --again: #d9695a;
+    --again-soft: #fde7e5;
+    --easy: #3b82c4;
+    --easy-soft: #dcf0fe;
+    /* Practice tiles — pastel fill + saturated icon, one pair per skill */
+    --t-red: #fde7e5;    --t-red-ink: #e0574a;
+    --t-blue: #dcf0fe;   --t-blue-ink: #3b82f6;
+    --t-green: #daf1d3;  --t-green-ink: #0f8a68;
+    --t-yellow: #feebbb; --t-yellow-ink: #dd8512;
+    --t-purple: #ece6fb; --t-purple-ink: #7c5cd6;
+    --t-teal: #d8f0ef;   --t-teal-ink: #2a8b90;
+    --radius: 20px;
+    --shadow: 0 6px 24px rgba(30,40,50,.06), 0 1px 3px rgba(30,40,50,.05);
+    /* Path accents follow the theme accent */
+    --g: #2b776d; --g-dark: #1d645c; --g-soft: #d9ece5;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #111214; --panel: #1b1d20; --ink: #e8eaed; --muted: #9aa0a6; --line: #2d3035;
-      --accent: #e05a4a; --accent-soft: #3a201c; --gold: #d6a83a;
-      --accent-dark: #a83d31; --coin-halo: rgba(224,90,74,.38);
-      --g: #e05a4a; --g-dark: #a83d31; --g-soft: #3a201c;
-      --grid: rgba(224,90,74,.42); --grid-soft: rgba(224,90,74,.18);
-      --good: #4fc9a6; --good-soft: #12332b; --again: #e8887c; --again-soft: #3a2427;
-      --easy: #74b3ec; --easy-soft: #1e2e3f; --shadow: 0 6px 24px rgba(0,0,0,.35);
+      --bg: #0a1420; --panel: #121f2d; --ink: #f1f5f9; --muted: #8a9db3; --line: #1f2f42;
+      --accent: #6c9dfc; --accent-soft: #182b48; --accent-dark: #4f7fdc; --on-accent: #0b1626; --gold: #f0b95a;
+      --coin-halo: rgba(108,157,252,.38); --coin-todo: #1c2a3b; --coin-todo-dark: #15212f;
+      --g: #6c9dfc; --g-dark: #4f7fdc; --g-soft: #182b48;
+      --grid: rgba(108,157,252,.42); --grid-soft: rgba(108,157,252,.18);
+      --good: #4ce1ad; --good-soft: #112a2d; --again: #f08a7a; --again-soft: #2b2230;
+      --easy: #74b3ec; --easy-soft: #122136;
+      --t-red: #26232f;    --t-red-ink: #ff8a7a;
+      --t-blue: #122136;   --t-blue-ink: #6c9dfc;
+      --t-green: #112a2d;  --t-green-ink: #4ce1ad;
+      --t-yellow: #2a2b23; --t-yellow-ink: #f5b03d;
+      --t-purple: #201f36; --t-purple-ink: #a78bfa;
+      --t-teal: #10282c;   --t-teal-ink: #4fc9c4;
+      --shadow: 0 6px 24px rgba(0,0,0,.35);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #111214; --panel: #1b1d20; --ink: #e8eaed; --muted: #9aa0a6; --line: #2d3035;
-    --accent: #e05a4a; --accent-soft: #3a201c; --gold: #d6a83a;
-    --accent-dark: #a83d31; --coin-halo: rgba(224,90,74,.38); --coin-todo: #2a2d31; --coin-todo-dark: #1f2124;
-    --g: #e05a4a; --g-dark: #a83d31; --g-soft: #3a201c;
-    --grid: rgba(224,90,74,.42); --grid-soft: rgba(224,90,74,.18);
-    --good: #4fc9a6; --good-soft: #12332b; --again: #e8887c; --again-soft: #3a2427;
-    --easy: #74b3ec; --easy-soft: #1e2e3f; --shadow: 0 6px 24px rgba(0,0,0,.35);
+    --bg: #0a1420; --panel: #121f2d; --ink: #f1f5f9; --muted: #8a9db3; --line: #1f2f42;
+    --accent: #6c9dfc; --accent-soft: #182b48; --accent-dark: #4f7fdc; --on-accent: #0b1626; --gold: #f0b95a;
+    --coin-halo: rgba(108,157,252,.38); --coin-todo: #1c2a3b; --coin-todo-dark: #15212f;
+    --g: #6c9dfc; --g-dark: #4f7fdc; --g-soft: #182b48;
+    --grid: rgba(108,157,252,.42); --grid-soft: rgba(108,157,252,.18);
+    --good: #4ce1ad; --good-soft: #112a2d; --again: #f08a7a; --again-soft: #2b2230;
+    --easy: #74b3ec; --easy-soft: #122136;
+    --t-red: #26232f;    --t-red-ink: #ff8a7a;
+    --t-blue: #122136;   --t-blue-ink: #6c9dfc;
+    --t-green: #112a2d;  --t-green-ink: #4ce1ad;
+    --t-yellow: #2a2b23; --t-yellow-ink: #f5b03d;
+    --t-purple: #201f36; --t-purple-ink: #a78bfa;
+    --t-teal: #10282c;   --t-teal-ink: #4fc9c4;
+    --shadow: 0 6px 24px rgba(0,0,0,.35);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;                 /* never scroll sideways on a phone */
@@ -95,10 +126,10 @@
   button {
     font: inherit; cursor: pointer; border: 1px solid var(--line);
     background: var(--panel); color: var(--ink);
-    border-radius: 10px; padding: 10px 16px; transition: transform .05s ease, background .15s;
+    border-radius: 14px; padding: 10px 16px; font-weight: 700; transition: transform .05s ease;
   }
   button:active { transform: translateY(1px); }
-  button.primary { background: var(--accent); color: #fff; border-color: transparent; }
+  button.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; border-radius: 999px; font-weight: 800; }
   button.ghost { background: transparent; }
   button:disabled { opacity: .45; cursor: default; }
 
@@ -168,7 +199,7 @@
   .aids-row { display: flex; align-items: center; gap: 12px; justify-content: center; margin-top: 6px; }
 
   /* Speaking exercise */
-  .speak-btn { background: var(--accent); color: #fff; border: 0; border-radius: 14px;
+  .speak-btn { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 14px;
     padding: 13px 24px; font-weight: 800; font-size: 1rem; box-shadow: 0 4px 0 var(--accent-dark);
     margin-top: 4px; }
   .speak-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-dark); }
@@ -280,7 +311,7 @@
   .bk-txt { flex: 1; min-width: 0; line-height: 1.3; }
   .bk-txt b { display: block; font-size: .92rem; }
   .bk-txt small { display: block; color: var(--muted); font-size: .76rem; }
-  .bk-go { flex: none; background: var(--accent); color: #fff; border: 0;
+  .bk-go { flex: none; background: var(--accent); color: var(--on-accent); border: 0;
     border-radius: 999px; padding: 8px 15px; font-weight: 800; font-size: .84rem; }
   .bk-x { flex: none; background: none; border: 0; color: var(--muted);
     font-size: 1rem; padding: 4px 6px; line-height: 1; }
@@ -467,25 +498,60 @@
 
   /* Home dashboard — greeting */
   .greet { margin: 2px 2px 0; }
-  .greet-h { font-size: 1.8rem; font-weight: 800; margin: 0; line-height: 1.05; }
-  .greet-meta { margin-top: 8px; color: var(--muted); font-size: .86rem; font-weight: 600;
-    display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
-  .greet-meta .fl { color: var(--accent); display: inline-flex; align-items: center; gap: 5px; font-weight: 800; }
-  .greet-meta .dot { opacity: .5; }
+  .greet-h { font-size: 1.75rem; font-weight: 800; margin: 0; line-height: 1.1; letter-spacing: -.01em; }
+  .greet-sub { margin: 4px 0 0; color: var(--muted); font-size: .95rem; font-weight: 600; }
 
-  /* Continue card — the one bold action */
-  .home-cont { display: block; width: 100%; text-align: left; color: #fff; cursor: pointer;
-    background: var(--accent); border: 0; border-radius: 22px; padding: 18px 18px 16px;
-    box-shadow: 0 12px 26px -12px var(--accent); margin-top: 20px; }
-  .home-cont .eyebrow { font-size: .64rem; font-weight: 800; letter-spacing: .14em; opacity: .82; }
-  .home-cont .hc-title { font-size: 1.5rem; font-weight: 800; margin: 6px 0 1px; line-height: 1.1; }
-  .home-cont .hc-en { font-size: .84rem; font-weight: 600; opacity: .9; }
-  .home-cont .hc-bar { height: 6px; border-radius: 99px; background: rgba(255,255,255,.3);
-    margin: 14px 0 9px; overflow: hidden; }
-  .home-cont .hc-bar i { display: block; height: 100%; background: #fff; border-radius: 99px; }
+  /* Streak card */
+  .streak-card { margin-top: 16px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px 12px; }
+  .sc-main { display: flex; align-items: center; gap: 12px; min-height: 64px; }
+  .sc-flame { width: 44px; height: 44px; border-radius: 14px; background: var(--t-red);
+    color: var(--t-red-ink); display: grid; place-items: center; flex: none; }
+  .sc-flame .licon { width: 26px; height: 26px; stroke-width: 2.2; }
+  .sc-num { display: flex; flex-direction: column; line-height: 1; }
+  .sc-num b { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -.02em; }
+  .sc-num span { color: var(--muted); font-size: .84rem; font-weight: 700; margin-top: 3px; }
+  .sc-mascot { margin-left: auto; position: relative; height: 64px; width: 164px; flex: none; }
+  .sc-mascot img { position: absolute; right: 0; bottom: -12px; height: 92px; width: auto;
+    pointer-events: none; }
+  .sc-bubble { position: absolute; right: 64px; top: 2px; background: var(--accent-soft); color: var(--accent);
+    font-weight: 800; font-size: .78rem; padding: 6px 10px; border-radius: 14px; border-bottom-right-radius: 4px;
+    white-space: nowrap; }
+  @media (max-width: 360px) { .sc-mascot { width: 130px; } .sc-bubble { font-size: .72rem; } }
+  .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 12px;
+    padding-top: 12px; border-top: 1px solid var(--line); }
+  .week .wd { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: .68rem;
+    font-weight: 700; color: var(--muted); }
+  .week .wd i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--line);
+    display: grid; place-items: center; color: var(--on-accent); }
+  .week .wd i .licon { width: 14px; height: 14px; stroke-width: 3; display: none; }
+  .week .wd.met i { background: var(--accent); border-color: var(--accent); }
+  .week .wd.met i .licon { display: block; }
+  .week .wd.today { color: var(--accent); }
+  .week .wd.today:not(.met) i { border-color: var(--accent); border-style: dashed; }
+  .week .wd.future { opacity: .55; }
+
+  /* Continue card — the one bold action, now a panel with the lesson's hero glyph */
+  .home-label-btn { display: flex; align-items: center; justify-content: space-between; width: 100%;
+    background: none; border: 0; padding: 0; cursor: pointer; color: var(--ink); }
+  .home-label-btn .licon { color: var(--muted); }
+  .home-cont { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; color: var(--ink); cursor: pointer;
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 16px 14px;
+    box-shadow: var(--shadow); margin-top: 10px; }
+  .home-cont .hc-body { flex: 1; min-width: 0; }
+  .home-cont .eyebrow { font-size: .78rem; font-weight: 700; color: var(--muted); }
+  .home-cont .hc-title { font-size: 1.3rem; font-weight: 800; margin: 3px 0 1px; line-height: 1.15; }
+  .home-cont .hc-en { font-size: .84rem; font-weight: 600; color: var(--muted); }
+  .home-cont .hc-bar { height: 8px; border-radius: 99px; background: var(--line);
+    margin: 12px 0 7px; overflow: hidden; }
+  .home-cont .hc-bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
   .home-cont .hc-row { display: flex; align-items: center; justify-content: space-between;
-    font-size: .8rem; font-weight: 700; }
-  .home-cont .hc-go { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; }
+    font-size: .8rem; font-weight: 700; color: var(--muted); }
+  .home-cont .hc-go { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: var(--accent); }
+  .home-cont .hc-art { flex: none; width: 74px; height: 62px; border-radius: 22px; border-bottom-left-radius: 6px;
+    background: var(--t-red); color: var(--t-red-ink); display: grid; place-items: center;
+    font-size: 1.7rem; font-weight: 700; line-height: 1; }
+  .home-cont .hc-art.done { background: var(--accent-soft); color: var(--accent); }
   .home-cont:active { transform: translateY(1px); }
 
   /* Review — a quiet link */
@@ -498,21 +564,27 @@
   .listen-replay { background: none; border: 0; padding: 0; cursor: pointer; line-height: 1; }
   .listen-replay:active { transform: translateY(1px); }
 
-  .home-label { font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
-    color: var(--muted); margin: 24px 2px 10px; }
+  .home-label { font-size: 1.05rem; font-weight: 800; color: var(--ink); margin: 24px 2px 10px; }
 
-  /* Practice modes — one calm grouped list */
-  .practice-list { background: var(--panel); border: 1px solid var(--line); border-radius: 18px;
-    overflow: hidden; display: block; }
-  .practice-list button { display: flex; align-items: center; gap: 14px; width: 100%;
-    text-align: left; padding: 15px 16px; border: 0; border-radius: 0; background: transparent; }
-  .practice-list button + button { border-top: 1px solid var(--line); }
-  .practice-list button:hover { background: var(--bg); }
-  .practice-list .pl-ic { color: var(--accent); display: grid; place-items: center; width: 26px; flex: none; }
-  .practice-list .pl-txt { display: block; flex: 1; min-width: 0; }
-  .practice-list .pl-txt b { display: block; font-weight: 800; font-size: 1rem; }
-  .practice-list .pl-txt span { color: var(--muted); font-size: .8rem; }
-  .practice-list .pl-chev { color: var(--muted); }
+  /* Practice tiles — a 2-column grid of pastel cards, one colour per skill */
+  .practice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pt { display: flex; align-items: center; gap: 10px; text-align: left; padding: 12px 10px 12px 12px;
+    border: 0; border-radius: 18px; background: var(--pt-bg); color: var(--ink); min-height: 66px; }
+  .pt .pt-ic { color: var(--pt-ink); display: grid; place-items: center; flex: none; }
+  .pt .pt-ic .licon { width: 26px; height: 26px; stroke-width: 2.2; }
+  .pt .pt-txt { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.2; }
+  .pt .pt-txt b { font-weight: 800; font-size: .95rem; }
+  .pt .pt-txt span { color: var(--muted); font-size: .68rem; font-weight: 600; margin-top: 2px; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; }
+  .pt .pt-chev { color: var(--pt-ink); flex: none; }
+  @media (max-width: 430px) { .pt .pt-chev { display: none; } .pt { padding: 12px 10px; gap: 9px; } }
+  .pt-red    { --pt-bg: var(--t-red);    --pt-ink: var(--t-red-ink); }
+  .pt-blue   { --pt-bg: var(--t-blue);   --pt-ink: var(--t-blue-ink); }
+  .pt-green  { --pt-bg: var(--t-green);  --pt-ink: var(--t-green-ink); }
+  .pt-yellow { --pt-bg: var(--t-yellow); --pt-ink: var(--t-yellow-ink); }
+  .pt-purple { --pt-bg: var(--t-purple); --pt-ink: var(--t-purple-ink); }
+  .pt-teal   { --pt-bg: var(--t-teal);   --pt-ink: var(--t-teal-ink); }
+  @media (max-width: 340px) { .practice-grid { grid-template-columns: 1fr; } }
 
   /* Progress screen */
   .prog-title { font-size: 1.45rem; font-weight: 800; margin: 4px 2px 16px; }
@@ -593,7 +665,7 @@
   .set-row.stack .seg button { flex: 1; }
   .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
   .seg button { border: 0; border-radius: 0; padding: 7px 13px; font-size: .85rem; background: transparent; }
-  .seg button.on { background: var(--accent); color: #fff; }
+  .seg button.on { background: var(--accent); color: var(--on-accent); }
   .goal-seg button { display: flex; flex-direction: column; align-items: center; line-height: 1.15;
     padding: 6px 14px; font-weight: 700; }
   .goal-seg button small { font-size: .72rem; font-weight: 800; opacity: .7; }
@@ -737,7 +809,7 @@
   .coin.todo { background: var(--coin-todo); box-shadow: 0 var(--lip) 0 var(--coin-todo-dark); }
   .pnode:not(.locked):active .coin { transform: translateY(calc(var(--lip) - 2px));
     box-shadow: 0 2px 0 var(--accent-dark); }
-  .coin .hero { font-size: 30px; font-weight: 700; color: #fff; line-height: 1; }
+  .coin .hero { font-size: 30px; font-weight: 700; color: var(--on-accent); line-height: 1; }
   .coin.todo .ico { color: var(--muted); display: block; }
   /* finished lessons get a tick badge so completion reads at a glance */
   .coin .tick { position: absolute; right: -2px; bottom: 0; width: 26px; height: 26px;
@@ -763,7 +835,7 @@
   @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0) } 50% { transform: translateX(-50%) translateY(-3px) } }
 
   .pchapter { position: absolute; transform: translate(-50%,-50%); z-index: 3; background: var(--accent);
-    color: #fff; border-radius: 14px; padding: 9px 16px; box-shadow: 0 4px 0 var(--accent-dark);
+    color: var(--on-accent); border-radius: 14px; padding: 9px 16px; box-shadow: 0 4px 0 var(--accent-dark);
     text-align: center; white-space: nowrap; }
   .pchapter .u { font-size: 10px; opacity: .9; letter-spacing: 1.1px; font-weight: 700; }
   .pchapter .t { font-size: 14px; font-weight: 800; }
@@ -777,21 +849,26 @@
     .pchapter .t { font-size: 13px; }
   }
 
-  .bottomnav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--panel); border-top: 1px solid var(--line); display: none; justify-content: center; gap: 8px; padding: 8px 0 calc(8px + env(safe-area-inset-bottom)); z-index: 40; }
+  .bottomnav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--panel); border-top: 1px solid var(--line); display: none; justify-content: space-evenly; gap: 4px; padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); z-index: 40; }
   body[data-view="path"] .bottomnav, body[data-view="home"] .bottomnav, body[data-view="progress"] .bottomnav { display: flex; }
-  body[data-view="home"] #home, body[data-view="progress"] #progress { padding-bottom: 76px; }
+  body[data-view="home"] #home, body[data-view="progress"] #progress { padding-bottom: 86px; }
   .ico { display: block; }
   .path-top .st .ico, .bottomnav .ico { display: block; }
   /* No background transition here. The global `button` rule transitions
      background .15s; when the theme flips, the var() behind it changes
      without the transition restarting, and Chrome keeps painting the old
      colour until something else invalidates the element. */
-  .bottomnav button { border: 0; background: none; color: var(--muted); font-size: 21px; width: 58px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: transform .05s ease; }
-  .bottomnav button.on { color: #fff; background: var(--accent); }
+  /* Icon + label, active item tinted the accent (no filled pill), as in the mock. */
+  .bottomnav button { border: 0; background: none; color: var(--muted); width: 72px; height: 50px; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 0;
+    font-size: .68rem; font-weight: 700; letter-spacing: .01em; transition: transform .05s ease; }
+  .bottomnav button.on { color: var(--accent); background: none; }
+  .bottomnav .licon { width: 24px; height: 24px; }
+  .bottomnav button.on .licon { stroke-width: 2.4; }
 
   /* The bottom nav stays identical across Home, Learn and Progress — it used to
      become a floating pill on the path, which read as the bar "changing". */
-  body[data-view="path"] .bottomnav button.on { color: #fff; background: var(--accent); }
+  body[data-view="path"] .bottomnav button.on { color: var(--accent); background: none; }
 
   /* Review call-to-action, floating above the bottom nav on the path */
   .review-fab { position: absolute; left: 50%; transform: translateX(-50%);
@@ -799,7 +876,7 @@
        on a real phone); a flat 92px was cut off once the inset was added */
     bottom: calc(84px + env(safe-area-inset-bottom)); z-index: 25;
     display: flex; align-items: center; gap: 7px;
-    background: var(--g); color: #fff; border: 0; border-radius: 999px;
+    background: var(--g); color: var(--on-accent); border: 0; border-radius: 999px;
     padding: 11px 20px; font-weight: 800; font-size: 14px; white-space: nowrap;
     box-shadow: 0 5px 0 var(--g-dark), 0 10px 22px rgba(20,50,20,.32); cursor: pointer; }
   .review-fab:active { transform: translateX(-50%) translateY(2px);
@@ -833,14 +910,14 @@
   @keyframes slideup { from { transform: translateY(30px); opacity: .6 } to { transform: none; opacity: 1 } }
   .lsheet .handle { width: 38px; height: 5px; border-radius: 3px; background: var(--line); margin: 0 auto 14px; }
   .lhead { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .lcoin { width: 52px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; box-shadow: 0 5px 0 var(--accent-dark); flex: 0 0 auto; }
+  .lcoin { width: 52px; height: 44px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; box-shadow: 0 5px 0 var(--accent-dark); flex: 0 0 auto; }
   .lmeta { flex: 1; min-width: 0; }
   .lmeta .k { font-size: 11px; color: var(--muted); letter-spacing: .5px; }
   .lmeta .t { font-size: 16px; font-weight: 700; }
   .lmeta .bar { height: 7px; border-radius: 4px; background: var(--line); overflow: hidden; margin: 3px 0 4px; }
   .lmeta .bar > i { display: block; height: 100%; background: var(--good); }
   .lmeta .m { font-size: 11px; color: var(--muted); }
-  .lstudy { width: 100%; background: var(--accent); color: #fff; border: 0; border-radius: 14px; padding: 14px; font-size: 16px; font-weight: 800; text-align: center; box-shadow: 0 5px 0 var(--accent-dark); margin: 6px 0 4px; cursor: pointer; }
+  .lstudy { width: 100%; background: var(--accent); color: var(--on-accent); border: 0; border-radius: 14px; padding: 14px; font-size: 16px; font-weight: 800; text-align: center; box-shadow: 0 5px 0 var(--accent-dark); margin: 6px 0 4px; cursor: pointer; }
   .lstudy small { display: block; font-weight: 500; font-size: 11px; opacity: .9; }
   .lsub { font-size: 11px; color: var(--muted); margin: 14px 2px 8px; letter-spacing: .3px; display: flex; align-items: center; gap: 6px; }
   .lchips { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
@@ -926,7 +1003,7 @@
   .meet-en { font-size: .84rem; color: var(--muted); }
   .meet-row .speaker { flex: none; }
   .study-start { display: block; margin: 1.1rem auto .2rem; padding: .75rem 1.6rem; border: none;
-    border-radius: 14px; background: var(--accent); color: #fff; font-size: 1rem; font-weight: 700;
+    border-radius: 14px; background: var(--accent); color: var(--on-accent); font-size: 1rem; font-weight: 700;
     cursor: pointer; box-shadow: 0 3px 0 var(--accent-dark); }
   .study-start:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--accent-dark); }
 
@@ -958,7 +1035,7 @@
   .pk-en { color: var(--ink); font-size: .84rem; }
   .pick-actions { display: flex; gap: 8px; margin-top: 12px; }
   .pick-actions button { flex: 1; padding: .8rem .4rem; border-radius: 14px; border: none; cursor: pointer;
-    background: var(--accent); color: #fff; font-weight: 700; font-size: .92rem; box-shadow: 0 3px 0 var(--accent-dark);
+    background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: .92rem; box-shadow: 0 3px 0 var(--accent-dark);
     display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
   .pick-actions button:disabled { opacity: .4; box-shadow: none; cursor: default; }
 
@@ -1065,10 +1142,10 @@
     </div>
   </section>
   <nav class="bottomnav">
-    <button data-nav="home" class="on" aria-label="Home"><svg class="licon"><use href="#i-home"/></svg></button>
-    <button data-nav="path" aria-label="Learn"><svg class="licon"><use href="#i-route"/></svg></button>
-    <button data-nav="progress" aria-label="Progress"><svg class="licon"><use href="#i-chart"/></svg></button>
-    <button data-nav="settings" aria-label="Settings"><svg class="licon"><use href="#i-gear"/></svg></button>
+    <button data-nav="home" class="on" aria-label="Home"><svg class="licon"><use href="#i-home"/></svg><span>Home</span></button>
+    <button data-nav="path" aria-label="Learn"><svg class="licon"><use href="#i-route"/></svg><span>Learn</span></button>
+    <button data-nav="progress" aria-label="Progress"><svg class="licon"><use href="#i-chart"/></svg><span>Progress</span></button>
+    <button data-nav="settings" aria-label="Settings"><svg class="licon"><use href="#i-gear"/></svg><span>Settings</span></button>
   </nav>
 
   <!-- PROGRESS (stats) -->
@@ -1105,10 +1182,24 @@
   <!-- HOME (dashboard — the landing screen) -->
   <section id="home" class="hidden">
     <div class="greet">
-      <h2 class="greet-h">你好 👋</h2>
-      <div class="greet-meta" id="greetMeta"></div>
+      <h2 class="greet-h" id="greetH">Good morning!</h2>
+      <p class="greet-sub">A little progress goes a long way.</p>
     </div>
 
+    <!-- Streak card: flame + count, the mascot peeking in, then this week's days -->
+    <div class="streak-card">
+      <div class="sc-main">
+        <div class="sc-flame"><svg class="licon"><use href="#i-flame"/></svg></div>
+        <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span></div>
+        <div class="sc-mascot">
+          <span class="sc-bubble" id="scBubble">Let's start!</span>
+          <img src="images/dragon-waving.png?v=156" alt="" id="scMascot">
+        </div>
+      </div>
+      <div class="week" id="weekStrip"></div>
+    </div>
+
+    <button class="home-label home-label-btn" id="homeContLabel">Continue learning <svg class="licon licon-sm"><use href="#i-chevron"/></svg></button>
     <button class="home-cont" id="homeContinue"></button>
 
     <button class="home-review hidden" id="homeReview">
@@ -1123,23 +1214,20 @@
       <svg class="licon licon-sm hr-arrow"><use href="#i-arrow"/></svg>
     </button>
 
-    <div class="home-label">Practise</div>
-    <div class="practice-list">
-      <button data-mode="pick"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-cards"/></svg></span>
-        <span class="pl-txt"><b>Pick &amp; practise</b><span>Flashcards, matching or a quiz</span></span>
-        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
-      <button data-mode="converse"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-chat"/></svg></span>
-        <span class="pl-txt"><b>Converse</b><span>Roleplay a dialogue</span></span>
-        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
-      <button data-mode="quiz"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-check"/></svg></span>
-        <span class="pl-txt"><b>Quiz</b><span>Quick multiple-choice</span></span>
-        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
-      <button data-mode="listen"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-headphones"/></svg></span>
-        <span class="pl-txt"><b>Listening practice</b><span>Train your ear — audio first</span></span>
-        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
-      <button data-mode="browse"><span class="pl-ic"><svg class="licon licon-lg"><use href="#i-book"/></svg></span>
-        <span class="pl-txt"><b>Browse</b><span>Every word, with audio</span></span>
-        <svg class="licon licon-sm pl-chev"><use href="#i-chevron"/></svg></button>
+    <div class="home-label">Practice</div>
+    <div class="practice-grid practice-list">
+      <button data-mode="listen" class="pt pt-red"><span class="pt-ic"><svg class="licon"><use href="#i-headphones"/></svg></span>
+        <span class="pt-txt"><b>Listening</b><span>Train your ear</span></span><svg class="licon licon-sm pt-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="pick" class="pt pt-blue"><span class="pt-ic"><svg class="licon"><use href="#i-cards"/></svg></span>
+        <span class="pt-txt"><b>Vocabulary</b><span>Build your words</span></span><svg class="licon licon-sm pt-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="converse" class="pt pt-green"><span class="pt-ic"><svg class="licon"><use href="#i-mic"/></svg></span>
+        <span class="pt-txt"><b>Speaking</b><span>Practice out loud</span></span><svg class="licon licon-sm pt-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="write" class="pt pt-yellow"><span class="pt-ic"><svg class="licon"><use href="#i-pencil"/></svg></span>
+        <span class="pt-txt"><b>Writing</b><span>Master the strokes</span></span><svg class="licon licon-sm pt-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="quiz" class="pt pt-purple"><span class="pt-ic"><svg class="licon"><use href="#i-check"/></svg></span>
+        <span class="pt-txt"><b>Quiz</b><span>Multiple choice</span></span><svg class="licon licon-sm pt-chev"><use href="#i-chevron"/></svg></button>
+      <button data-mode="browse" class="pt pt-teal"><span class="pt-ic"><svg class="licon"><use href="#i-book"/></svg></span>
+        <span class="pt-txt"><b>Browse</b><span>All words, with audio</span></span><svg class="licon licon-sm pt-chev"><use href="#i-chevron"/></svg></button>
     </div>
 
     <details class="panel" id="studyPanel">
@@ -1269,7 +1357,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=155" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/dragon-celebrate.png?v=156" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1482,7 +1570,7 @@
        cached session. A cached session always opens the app, even offline. -->
   <div id="authGate" class="onboard hidden" aria-hidden="true">
     <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=155" alt="" class="ob-hero">
+      <img src="images/dragon-waving.png?v=156" alt="" class="ob-hero">
       <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
       <p class="auth-tag">Learn Chinese, step by step</p>
       <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
@@ -1502,7 +1590,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=155" alt="" class="ob-hero">
+          <img src="images/dragon-waving.png?v=156" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1533,10 +1621,10 @@
     </div>
   </div>
 
-<script src="data.js?v=155"></script>
-<script src="hanzi-data.js?v=155"></script>
+<script src="data.js?v=156"></script>
+<script src="hanzi-data.js?v=156"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=155"></script>
+<script src="app.js?v=156"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=155";
+  const ASSET_V = "?v=156";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -655,8 +655,8 @@
       strokeAnimationSpeed: 1.2,
       delayBetweenStrokes: 180,
       strokeColor: getComputedStyle(document.body).getPropertyValue("--ink").trim() || "#2b2620",
-      radicalColor: getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#c0392b",
-      drawingColor: getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#c0392b",
+      radicalColor: getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d",
+      drawingColor: getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d",
       charDataLoader: (c, onComplete) => onComplete(HANZI[c])
     }, opts));
   }
@@ -681,7 +681,7 @@
     } else {
       $("#charAnimate").classList.remove("hidden");
       $("#charPractice").classList.remove("hidden");
-      const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#c0392b";
+      const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d";
       chars.forEach(ch => {
         const box = el("div", { className: "hz-box" });
         const lbl = el("div", { className: "lbl" });
@@ -801,7 +801,7 @@
     const ctx = canvas.getContext("2d");
     ctx.scale(dpr, dpr);
     ctx.lineCap = "round"; ctx.lineJoin = "round";
-    const color = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#c0392b";
+    const color = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d";
     const lw = Math.max(3, cell * 0.06);   // ~25% thinner than before
     ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = lw;
 
@@ -866,7 +866,7 @@
   // register and a hint flashes after 2 misses. Top row shows a faint outline
   // to trace; lower rows are from memory.
   function buildCheckGrid(host, chars, { rows, cols, cell, tight = false, onAllDone = null }) {
-    const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#c0392b";
+    const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d";
     // drawingWidth is in the 1024-unit glyph space, so scale it up for small
     // cells to keep the pen ~7px on screen regardless of box size.
     const pen = Math.round(7 * 1024 / cell);
@@ -1259,25 +1259,51 @@
     return local ? local.charAt(0).toUpperCase() + local.slice(1) : "";
   }
 
+  // Time-of-day greeting, as in the mock ("Good morning!"), with the name if we have one.
+  function greetingWord() {
+    const h = new Date().getHours();
+    return h < 5 ? "Good night" : h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
+  }
+  // This week's seven days, Monday first. Done = the daily goal was met that day.
+  function renderWeekStrip() {
+    const strip = $("#weekStrip"); if (!strip) return;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const monday = new Date(today); monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
+    const names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    strip.innerHTML = "";
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(monday); d.setDate(monday.getDate() + i);
+      const key = dateStr(d);
+      const cls = ["wd"];
+      if (goalMetOn(key)) cls.push("met");
+      if (d.getTime() === today.getTime()) cls.push("today");
+      if (d > today) cls.push("future");
+      const ring = el("i"); ring.innerHTML = svgUse("i-check");
+      strip.appendChild(el("div", { className: cls.join(" ") }, [ring, el("span", {}, names[i])]));
+    }
+  }
+
   function renderHomeTop() {
     const name = displayName();
-    $(".greet-h").textContent = `你好${name ? ", " + name : ""} 👋`;
+    $("#greetH").textContent = `${greetingWord()}${name ? ", " + name : ""}!`;
     const streak = computeStreak(), goal = dailyGoal(), done = todayCount();
-    const streakTxt = streak > 0 ? `${streak}-day streak` : "No streak yet";
-    const goalTxt = done >= goal ? `today's goal done ✓ (${done})` : `${done} of ${goal} words today`;
-    $("#greetMeta").innerHTML =
-      `<span class="fl">${svgUse("i-flame")}${streakTxt}</span>` +
-      `<span class="dot">·</span><span>${goalTxt}</span>`;
+    $("#scNum").textContent = streak;
+    $("#scSub").textContent = streak === 1 ? "day streak" : "day streak";
+    $("#scBubble").textContent = done >= goal ? "Goal done! 🎉" : done > 0 ? `${goal - done} more today`
+      : streak > 0 ? "Keep going!" : "Let's start!";
+    $("#scMascot").src = `images/${done >= goal ? "dragon-celebrate" : streak > 0 ? "dragon-waving" : "dragon-idle"}.png${ASSET_V}`;
+    renderWeekStrip();
 
     const cont = $("#homeContinue");
     const curId = currentLessonId();
     const allDone = LESSONS.every(l => doneLessons.has(l.id));
     if (allDone) {
       cont.innerHTML =
-        `<div class="eyebrow">COURSE COMPLETE 🎉</div>` +
+        `<div class="hc-body"><div class="eyebrow">Course complete 🎉</div>` +
         `<div class="hc-title">You've finished every lesson</div>` +
         `<div class="hc-en">Keep your words sharp with a review.</div>` +
-        `<div class="hc-row"><span></span><span class="hc-go">Review ${svgUse("i-arrow")}</span></div>`;
+        `<div class="hc-row"><span></span><span class="hc-go">Review ${svgUse("i-arrow")}</span></div></div>` +
+        `<div class="hc-art done">${svgUse("i-check")}</div>`;
       cont.onclick = () => startReview();
     } else {
       const l = LESSONS.find(x => x.id === curId);
@@ -1290,12 +1316,13 @@
       const cleared = CARDS.filter(c => c.lessonId === curId && srs[c.id] && srs[c.id].reps >= 1).length;
       const studied = lessonStudied(curId);
       cont.innerHTML =
-        `<div class="eyebrow">${chapterLabelFor(curId)} · ${studied ? "CONTINUE" : "START"}</div>` +
+        `<div class="hc-body"><div class="eyebrow">${chapterLabelFor(curId)}</div>` +
         `<div class="hc-title">${hz}</div>` +
         (en ? `<div class="hc-en">${en}</div>` : "") +
         `<div class="hc-bar"><i style="width:${total ? Math.round(cleared / total * 100) : 0}%"></i></div>` +
         `<div class="hc-row"><span>${cleared} / ${total} words learned</span>` +
-        `<span class="hc-go">${studied ? "Continue" : "Start"} ${svgUse("i-arrow")}</span></div>`;
+        `<span class="hc-go">${studied ? "Continue" : "Start"} ${svgUse("i-arrow")}</span></div></div>` +
+        `<div class="hc-art">${lessonHero(l)}</div>`;
       cont.onclick = () => launchLesson(curId, null);
     }
 
@@ -1408,9 +1435,25 @@
     else if (mode === "quiz") startQuiz();
     else if (mode === "browse") startBrowse();
     else if (mode === "listen") startListening();
+    else if (mode === "write") startWriting();
+  }
+  // Writing practice: stroke-by-stroke drills over the words you've met that have
+  // stroke data. Mirrors startListening so the two tiles behave alike.
+  function startWriting() {
+    reviewMode = false;
+    scopeLessons = null;
+    if (!HW_OK) { toast("Writing practice needs the stroke engine, which didn't load."); return; }
+    const cards = activeCards().filter(c => wordWritable(c.hanzi));
+    const studied = cards.filter(c => srs[c.id]);
+    const pool = studied.length ? studied : cards;
+    if (!pool.length) { toast("Pick at least one lesson — open “What to study”."); $("#studyPanel").open = true; return; }
+    scopeFocuses = new Set(["write"]);
+    beginStudySession(shuffle(pool).slice(0, 12));
+    $("#studyTitle").textContent = "Writing";
   }
   document.querySelectorAll(".practice-list button").forEach(btn =>
     btn.addEventListener("click", () => runMode(btn.dataset.mode)));
+  $("#homeContLabel").addEventListener("click", () => { show("path"); renderPath(); });
   $("#homeReview").addEventListener("click", () => startReview());
   $("#homeTrouble").addEventListener("click", () => startTrouble());
 
@@ -2098,7 +2141,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=155", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=156", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2176,7 +2219,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=155" : "images/dragon-sad.png?v=155"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=156" : "images/dragon-sad.png?v=156"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2360,11 +2403,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=155"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=156"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=155"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/dragon-sad.png?v=156"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2518,7 +2561,7 @@
 
   // Animated red stroke-order reference box for one character (loops, tap-replay).
   function refAnimBox(ch, size) {
-    const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#c0392b";
+    const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d";
     const box = el("div", { className: "tzg-cell", style: "cursor:pointer" });
     box.style.width = box.style.height = size + "px";
     const w = makeWriter(box, ch, { width: size, height: size, showCharacter: true, strokeColor: accent });
