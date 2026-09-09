@@ -4,14 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="manifest" href="manifest.webmanifest?v=158">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=158">
 <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="步步 Bùbù">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=158">
 <style>
   /* Nunito (variable weight, latin) is vendored so the app stays offline.
      CJK glyphs fall through to the system font, which is what we want. */
@@ -373,9 +374,9 @@
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
 
   /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
-  :root { --welcome-art: url("images/welcome-light.webp?v=158"); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=158"); } }
-  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=158"); }
+  :root { --welcome-art: url("images/welcome-light.webp?v=158"); --cont-art: url("images/cont-light.webp?v=158"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=158"); --cont-art: url("images/cont-dark.webp?v=158"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=158"); --cont-art: url("images/cont-dark.webp?v=158"); }
   .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
     flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
   .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
@@ -566,21 +567,27 @@
   .home-label-btn .licon { color: var(--muted); }
   .home-cont { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; color: var(--ink); cursor: pointer;
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 16px 14px;
-    box-shadow: var(--shadow); margin-top: 10px; }
-  .home-cont .hc-body { flex: 1; min-width: 0; }
+    box-shadow: var(--shadow); margin-top: 10px; position: relative; overflow: hidden; }
+  /* Scenery on the right (the pagoda from the welcome scene), fading into the panel */
+  .home-cont::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 64%;
+    background: var(--cont-art) right center / cover no-repeat; pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.6) 42%, #000 68%);
+    mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.6) 42%, #000 68%); }
+  /* Capped so a long lesson title wraps rather than running into the scenery. */
+  .home-cont .hc-body { flex: 1; min-width: 0; max-width: 66%; position: relative; z-index: 1; }
   .home-cont .eyebrow { font-size: .78rem; font-weight: 700; color: var(--muted); }
-  .home-cont .hc-title { font-size: 1.3rem; font-weight: 800; margin: 3px 0 1px; line-height: 1.15; }
+  .home-cont .hc-title { font-size: 1.3rem; font-weight: 800; margin: 3px 0 1px; line-height: 1.15;
+    text-shadow: 0 1px 0 var(--panel), 0 0 12px var(--panel); }
   .home-cont .hc-en { font-size: .84rem; font-weight: 600; color: var(--muted); }
   .home-cont .hc-bar { height: 8px; border-radius: 99px; background: var(--line);
     margin: 12px 0 7px; overflow: hidden; }
   .home-cont .hc-bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
-  .home-cont .hc-row { display: flex; align-items: center; justify-content: space-between;
-    font-size: .8rem; font-weight: 700; color: var(--muted); }
-  .home-cont .hc-go { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: var(--accent); }
-  .home-cont .hc-art { flex: none; width: 74px; height: 62px; border-radius: 22px; border-bottom-left-radius: 6px;
-    background: var(--t-red); color: var(--t-red-ink); display: grid; place-items: center;
-    font-size: 1.7rem; font-weight: 700; line-height: 1; }
-  .home-cont .hc-art.done { background: var(--accent-soft); color: var(--accent); }
+  .home-cont .hc-row { font-size: .8rem; font-weight: 700; color: var(--muted); }
+  /* The round "go" button, as in the mock */
+  .home-cont .hc-go { flex: none; position: relative; z-index: 1; width: 46px; height: 46px; border-radius: 50%;
+    background: var(--accent); color: var(--on-accent); display: grid; place-items: center; align-self: flex-end;
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,.45); }
+  .home-cont .hc-go .licon { width: 22px; height: 22px; stroke-width: 2.6; }
   .home-cont:active { transform: translateY(1px); }
 
   /* Review — a quiet link */

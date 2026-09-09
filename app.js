@@ -1301,8 +1301,8 @@
         `<div class="hc-body"><div class="eyebrow">Course complete 🎉</div>` +
         `<div class="hc-title">You've finished every lesson</div>` +
         `<div class="hc-en">Keep your words sharp with a review.</div>` +
-        `<div class="hc-row"><span></span><span class="hc-go">Review ${svgUse("i-arrow")}</span></div></div>` +
-        `<div class="hc-art done">${svgUse("i-check")}</div>`;
+        `<div class="hc-row">Review your words</div></div>` +
+        `<span class="hc-go">${svgUse("i-check")}</span>`;
       cont.onclick = () => startReview();
     } else {
       const l = LESSONS.find(x => x.id === curId);
@@ -1319,9 +1319,8 @@
         `<div class="hc-title">${hz}</div>` +
         (en ? `<div class="hc-en">${en}</div>` : "") +
         `<div class="hc-bar"><i style="width:${total ? Math.round(cleared / total * 100) : 0}%"></i></div>` +
-        `<div class="hc-row"><span>${cleared} / ${total} words learned</span>` +
-        `<span class="hc-go">${studied ? "Continue" : "Start"} ${svgUse("i-arrow")}</span></div></div>` +
-        `<div class="hc-art">${lessonHero(l)}</div>`;
+        `<div class="hc-row">${cleared} / ${total} words learned</div></div>` +
+        `<span class="hc-go" aria-label="${studied ? "Continue" : "Start"}">${svgUse("i-chevron")}</span>`;
       cont.onclick = () => launchLesson(curId, null);
     }
 
