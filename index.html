@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
-<link rel="manifest" href="manifest.webmanifest?v=158">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=158">
+<link rel="manifest" href="manifest.webmanifest?v=159">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=159">
 <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="步步 Bùbù">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=158">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=159">
 <style>
   /* Nunito (variable weight, latin) is vendored so the app stays offline.
      CJK glyphs fall through to the system font, which is what we want. */
@@ -374,9 +374,9 @@
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
 
   /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
-  :root { --welcome-art: url("images/welcome-light.webp?v=158"); --cont-art: url("images/cont-light.webp?v=158"); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=158"); --cont-art: url("images/cont-dark.webp?v=158"); } }
-  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=158"); --cont-art: url("images/cont-dark.webp?v=158"); }
+  :root { --welcome-art: url("images/welcome-light.webp?v=159"); --cont-art: url("images/cont-light.webp?v=159"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=159"); --cont-art: url("images/card-dark.webp?v=159"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=159"); --cont-art: url("images/card-dark.webp?v=159"); }
   .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
     flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
   .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
@@ -569,10 +569,10 @@
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 16px 14px;
     box-shadow: var(--shadow); margin-top: 10px; position: relative; overflow: hidden; }
   /* Scenery on the right (the pagoda from the welcome scene), fading into the panel */
-  .home-cont::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 64%;
-    background: var(--cont-art) right center / cover no-repeat; pointer-events: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.6) 42%, #000 68%);
-    mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.6) 42%, #000 68%); }
+  .home-cont::before { content: ""; position: absolute; top: -6px; right: -14px; bottom: -6px; width: 62%;
+    background: var(--cont-art) right center / contain no-repeat; pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 26%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 26%); }
   /* Capped so a long lesson title wraps rather than running into the scenery. */
   .home-cont .hc-body { flex: 1; min-width: 0; max-width: 66%; position: relative; z-index: 1; }
   .home-cont .eyebrow { font-size: .78rem; font-weight: 700; color: var(--muted); }
@@ -1229,7 +1229,7 @@
         <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span></div>
         <span class="sc-bubble" id="scBubble">Let's start!</span>
       </div>
-      <img src="images/panda-peek.png?v=158" alt="" class="sc-peek">
+      <img src="images/panda-peek.png?v=159" alt="" class="sc-peek">
       <div class="week" id="weekStrip"></div>
     </div>
 
@@ -1391,7 +1391,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/panda-celebrate.png?v=158" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/panda-celebrate.png?v=159" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1634,7 +1634,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/panda-waving.png?v=158" alt="" class="ob-hero">
+          <img src="images/panda-waving.png?v=159" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1665,10 +1665,10 @@
     </div>
   </div>
 
-<script src="data.js?v=158"></script>
-<script src="hanzi-data.js?v=158"></script>
+<script src="data.js?v=159"></script>
+<script src="hanzi-data.js?v=159"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=158"></script>
+<script src="app.js?v=159"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {
