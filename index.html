@@ -371,6 +371,35 @@
   .ob-nav .primary { width: 100%; padding: 14px; font-weight: 800; font-size: 1rem; }
   .ob-nav .ghost { align-self: center; background: none; border: 0;
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
+
+  /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
+  :root { --welcome-art: url("images/welcome-light.webp?v=157"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=157"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=157"); }
+  .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
+    flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
+  .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
+  .splash-hanzi { font-size: clamp(3.2rem, 14vw, 4.6rem); font-weight: 800; line-height: 1; letter-spacing: .04em; }
+  .splash-name { font-size: clamp(1.6rem, 7vw, 2.2rem); font-weight: 800; line-height: 1.1; margin-top: 4px; }
+  .splash-tag { color: var(--muted); font-size: 1.1rem; font-weight: 600; line-height: 1.35; margin: 12px 0 0; }
+  .splash-bottom { padding: 0 22px calc(22px + env(safe-area-inset-bottom)); display: flex; flex-direction: column;
+    align-items: center; gap: 10px; max-width: 460px; width: 100%; margin: 0 auto; }
+  .splash-cta { width: 100%; padding: 16px; font-size: 1.05rem; display: inline-flex; align-items: center;
+    justify-content: center; gap: 8px; box-shadow: 0 10px 24px -10px rgba(0,0,0,.45); }
+  .splash-alt { margin: 0; font-size: .9rem; font-weight: 600; color: var(--ink);
+    background: color-mix(in srgb, var(--bg) 78%, transparent); padding: 6px 14px; border-radius: 999px; }
+  .link-btn { background: none; border: 0; padding: 0; color: var(--accent); font: inherit; font-weight: 800; }
+  /* the account form, a sheet that slides up over the scene */
+  .gate-sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--panel);
+    border-radius: 26px 26px 0 0; padding: 16px 20px calc(20px + env(safe-area-inset-bottom));
+    box-shadow: 0 -12px 40px rgba(0,0,0,.25); transform: translateY(105%); transition: transform .3s ease;
+    max-width: 520px; margin: 0 auto; }
+  .onboard.form-open .gate-sheet { transform: none; }
+  .onboard.form-open .splash-bottom { visibility: hidden; }
+  .gate-sheet-head { display: flex; align-items: center; justify-content: space-between; }
+  .gate-sheet-head b { font-size: 1.15rem; font-weight: 800; }
+  .gate-sheet .muted { margin: 4px 0 12px; font-size: .9rem; }
+  .gate-sheet .gate-form { max-width: none; margin-top: 0; }
   .modal {
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
     box-shadow: var(--shadow); padding: 18px; width: 100%; max-width: 560px;
@@ -511,13 +540,15 @@
   .sc-num { display: flex; flex-direction: column; line-height: 1; }
   .sc-num b { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -.02em; }
   .sc-num span { color: var(--muted); font-size: .84rem; font-weight: 700; margin-top: 3px; }
-  .sc-mascot { margin-left: auto; position: relative; height: 64px; width: 164px; flex: none; }
-  .sc-mascot img { position: absolute; right: 0; bottom: -12px; height: 92px; width: auto;
-    pointer-events: none; }
-  .sc-bubble { position: absolute; right: 64px; top: 2px; background: var(--accent-soft); color: var(--accent);
+  .streak-card { position: relative; overflow: hidden; }
+  /* head + waving paw, cut at the chest so the divider line reads as a ledge */
+  .sc-peek { position: absolute; right: 12px; top: 6px; height: 84px; width: auto; pointer-events: none; }
+  .sc-num { flex: none; }
+  .sc-num span { white-space: nowrap; }
+  .sc-bubble { margin-left: auto; margin-right: 96px; background: var(--accent-soft); color: var(--accent);
     font-weight: 800; font-size: .78rem; padding: 6px 10px; border-radius: 14px; border-bottom-right-radius: 4px;
-    white-space: nowrap; }
-  @media (max-width: 360px) { .sc-mascot { width: 130px; } .sc-bubble { font-size: .72rem; } }
+    white-space: nowrap; align-self: flex-start; margin-top: 6px; }
+  @media (max-width: 360px) { .sc-bubble { display: none; } }
   .week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 12px;
     padding-top: 12px; border-top: 1px solid var(--line); }
   .week .wd { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: .68rem;
@@ -1191,11 +1222,9 @@
       <div class="sc-main">
         <div class="sc-flame"><svg class="licon"><use href="#i-flame"/></svg></div>
         <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span></div>
-        <div class="sc-mascot">
-          <span class="sc-bubble" id="scBubble">Let's start!</span>
-          <img src="images/dragon-waving.png?v=156" alt="" id="scMascot">
-        </div>
+        <span class="sc-bubble" id="scBubble">Let's start!</span>
       </div>
+      <img src="images/panda-peek.png?v=157" alt="" class="sc-peek">
       <div class="week" id="weekStrip"></div>
     </div>
 
@@ -1357,7 +1386,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/dragon-celebrate.png?v=156" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/panda-celebrate.png?v=157" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1568,19 +1597,29 @@
 
   <!-- Sign-in gate. Shown only when cloud sync is configured AND there is no
        cached session. A cached session always opens the app, even offline. -->
-  <div id="authGate" class="onboard hidden" aria-hidden="true">
-    <div class="ob-card auth-card">
-      <img src="images/dragon-waving.png?v=156" alt="" class="ob-hero">
-      <h2>步步 <span style="color:var(--accent)">Bùbù</span></h2>
-      <p class="auth-tag">Learn Chinese, step by step</p>
-      <p id="gateIntro">Create an account so your progress is saved and follows you to any device.</p>
+  <div id="authGate" class="onboard splash hidden" aria-hidden="true">
+    <div class="splash-top">
+      <div class="splash-hanzi">步步</div>
+      <div class="splash-name">Bùbù</div>
+      <p class="splash-tag">Learn Chinese,<br>step by step.</p>
+    </div>
+    <div class="splash-bottom">
+      <button class="primary splash-cta" id="gateSkip">Get started <svg class="licon licon-sm"><use href="#i-arrow"/></svg></button>
+      <p class="splash-alt">Already have an account? <button class="link-btn" id="gateShowForm">Sign in</button></p>
+    </div>
+    <!-- The account form slides up over the scene when "Sign in" is tapped -->
+    <div class="gate-sheet" id="gateSheet">
+      <div class="gate-sheet-head">
+        <b id="gateIntroTitle">Welcome back</b>
+        <button class="ghost icon-btn" id="gateSheetClose" aria-label="Close">✕</button>
+      </div>
+      <p id="gateIntro" class="muted">Sign in to pick up where you left off.</p>
       <div class="gate-form">
         <input type="email" id="gateEmail" placeholder="you@example.com" autocomplete="email" inputmode="email">
         <input type="password" id="gatePass" placeholder="Password (6+ characters)" autocomplete="current-password">
-        <button class="primary" id="gatePrimary">Create account</button>
-        <button class="ghost" id="gateToggle">I already have an account</button>
+        <button class="primary" id="gatePrimary">Sign in</button>
+        <button class="ghost" id="gateToggle">Create an account instead</button>
         <p class="acct-msg" id="gateMsg"></p>
-        <button class="ghost" id="gateSkip" style="margin-top:4px;text-decoration:underline">Just use it on this device →</button>
       </div>
     </div>
   </div>
@@ -1590,7 +1629,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/dragon-waving.png?v=156" alt="" class="ob-hero">
+          <img src="images/panda-waving.png?v=157" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1621,10 +1660,10 @@
     </div>
   </div>
 
-<script src="data.js?v=156"></script>
-<script src="hanzi-data.js?v=156"></script>
+<script src="data.js?v=157"></script>
+<script src="hanzi-data.js?v=157"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=156"></script>
+<script src="app.js?v=157"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

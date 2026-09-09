@@ -19,7 +19,7 @@ works offline except that some browsers mute the audio on `file://` pages.
    address to use on your phone (e.g. `http://192.168.1.103:8000/index.html`).
    The first time, Windows may ask to allow Python through the firewall — click **Allow**.
 2. On the iPhone/iPad (**same Wi-Fi**), open that address in **Safari**.
-3. Tap **Share → Add to Home Screen** to get the 中 app icon; it opens full-screen
+3. Tap **Share → Add to Home Screen** to get the panda app icon; it opens full-screen
    like a normal app.
 
 Notes:

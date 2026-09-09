@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=156";
+  const ASSET_V = "?v=157";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -273,7 +273,7 @@
     const o = el("div", { className: "goal-burst" });
     o.innerHTML =
       `<div class="gb-card">
-         <img src="images/dragon-celebrate.png${ASSET_V}" alt="">
+         <img src="images/panda-celebrate.png${ASSET_V}" alt="">
          <div class="gb-title">Daily goal reached!</div>
          <div class="gb-sub">🔥 ${streak} day${streak === 1 ? "" : "s"} in a row</div>
        </div>`;
@@ -1291,7 +1291,6 @@
     $("#scSub").textContent = streak === 1 ? "day streak" : "day streak";
     $("#scBubble").textContent = done >= goal ? "Goal done! 🎉" : done > 0 ? `${goal - done} more today`
       : streak > 0 ? "Keep going!" : "Let's start!";
-    $("#scMascot").src = `images/${done >= goal ? "dragon-celebrate" : streak > 0 ? "dragon-waving" : "dragon-idle"}.png${ASSET_V}`;
     renderWeekStrip();
 
     const cont = $("#homeContinue");
@@ -1496,13 +1495,12 @@
     b7: { title: "在 + verb, and 要 / 不要 + verb", body: "在 + verb = doing it now: 我在看电视. 要 + verb = will; 不要 + verb = won’t: 我要学习 / 我不要看电视." }
   };
   // One mascot sprite per chapter; chapter N uses sprite N (wraps around).
-  // The mascot cast — dragon, panda and ox. Sprites cycle through this list to
-  // fill the wave's open pockets, so adding one here just appears on the path.
-  // All are normalised to a 460x460 canvas at the same dragon height, so a
-  // single CSS width renders them at matching size.
+  // The panda in six scenes. Sprites cycle through this list to fill the wave's
+  // open pockets, so adding one here just appears on the path. All sit on a
+  // 690x690 canvas at the same height, so a single CSS width renders them alike.
   const CHAPTER_SPRITES = [
-    "sprite-reading.png", "sprite-panda-baozi.png", "sprite-joy.png", "sprite-ox-baozi.png",
-    "sprite-puzzled.png", "sprite-baozi.png", "sprite-panda-puzzled.png"
+    "sprite-reading.png", "sprite-baozi.png", "sprite-writing.png", "sprite-listening.png",
+    "sprite-puzzled.png", "sprite-sleeping.png"
   ];
   const lessonHero = lesson => (cjkOnly(lesson.words[0].hanzi)[0] || "字");
   /* ---- Lesson completion -------------------------------------------------
@@ -1832,7 +1830,7 @@
     };
     const box = el("div", { className: "lsheet" });
     box.addEventListener("click", e => e.stopPropagation());
-    const pose = pct >= 100 ? "dragon-celebrate" : studied ? "dragon-idle" : "dragon-waving";
+    const pose = pct >= 100 ? "panda-celebrate" : studied ? "panda-idle" : "panda-waving";
     box.appendChild(el("img", { className: "lsheet-mascot", src: `images/${pose}.png${ASSET_V}`, alt: "" }));
     box.appendChild(el("div", { className: "handle" }));
     box.appendChild(el("div", { className: "lhead" }, [
@@ -2141,7 +2139,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/dragon-teacher.png?v=156", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=157", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2219,7 +2217,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/dragon-celebrate.png?v=156" : "images/dragon-sad.png?v=156"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=157" : "images/panda-sad.png?v=157"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2403,11 +2401,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/dragon-celebrate.png?v=156"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=157"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/dragon-sad.png?v=156"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=157"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2473,7 +2471,7 @@
       const settle = (correct, html) => {
         fb.innerHTML = html;
         const drg = face.querySelector(".quiz-dragon");
-        if (drg) { drg.src = `images/${correct ? "dragon-celebrate" : "dragon-sad"}.png${ASSET_V}`; drg.classList.add("react"); }
+        if (drg) { drg.src = `images/${correct ? "panda-celebrate" : "panda-sad"}.png${ASSET_V}`; drg.classList.add("react"); }
         answerStudy(correct);
         setWriteGate(true);
       };
@@ -3496,8 +3494,9 @@ This REPLACES the progress on this device.`)) return;
   function paintGate() {
     const signup = gateMode === "signup";
     $("#gateIntro").textContent = signup
-      ? "Create an account so your progress is saved and follows you to any device."
-      : "Welcome back — sign in to pick up where you left off.";
+      ? "Your progress is saved to the cloud and follows you to any device."
+      : "Sign in to pick up where you left off.";
+    $("#gateIntroTitle").textContent = signup ? "Create your account" : "Welcome back";
     $("#gatePrimary").textContent = signup ? "Create account" : "Sign in";
     $("#gateToggle").textContent = signup ? "I already have an account" : "Create an account instead";
     $("#gatePass").setAttribute("autocomplete", signup ? "new-password" : "current-password");
@@ -3514,6 +3513,13 @@ This REPLACES the progress on this device.`)) return;
     if (!localStorage.getItem(LS_ONBOARDED)) runOnboarding();
   }
   if ($("#gatePrimary")) {
+    // Splash → "Sign in" slides the account form up over the scene.
+    $("#gateShowForm").addEventListener("click", () => {
+      gateMode = "signin"; paintGate();
+      $("#authGate").classList.add("form-open");
+      setTimeout(() => $("#gateEmail").focus(), 50);
+    });
+    $("#gateSheetClose").addEventListener("click", () => $("#authGate").classList.remove("form-open"));
     $("#gateToggle").addEventListener("click", () => {
       gateMode = gateMode === "signup" ? "signin" : "signup"; paintGate();
     });

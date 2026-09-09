@@ -2,35 +2,37 @@
  * NOTE: browsers only register a service worker over HTTPS or localhost — over
  * a plain http:// LAN address it stays inactive (the app still works online).
  * Bump CACHE when you change app files so devices pick up the new version. */
-const CACHE = "zh-beginner-a-v156";
+const CACHE = "zh-beginner-a-v157";
 const ASSETS = [
   "./",
   "./index.html",
-  "./app.js?v=156",
-  "./data.js?v=156",
-  "./hanzi-data.js?v=156",
+  "./app.js?v=157",
+  "./data.js?v=157",
+  "./hanzi-data.js?v=157",
   "./vendor/hanzi-writer.min.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png",
-  "./images/dragon-teacher.png?v=156",
-  "./images/dragon-celebrate.png?v=156",
-  "./images/dragon-thinking.png?v=156",
-  "./images/dragon-sad.png?v=156",
-  "./images/dragon-idle.png?v=156",
-  "./images/dragon-waving.png?v=156",
-  "./images/sprite-reading.png?v=156",
-  "./images/sprite-ox-baozi.png?v=156",
-  "./images/sprite-panda-puzzled.png?v=156",
-  "./images/sprite-panda-baozi.png?v=156",
-  "./images/sprite-joy.png?v=156",
-  "./images/sprite-baozi.png?v=156",
-  "./images/sprite-puzzled.png?v=156",
-  "./sounds/correct.mp3?v=156",
-  "./sounds/wrong.mp3?v=156",
-  "./sounds/complete.mp3?v=156",
-  "./sounds/goal.mp3?v=156"
+  "./images/panda-teacher.png?v=157",
+  "./images/panda-celebrate.png?v=157",
+  "./images/panda-sad.png?v=157",
+  "./images/panda-idle.png?v=157",
+  "./images/panda-waving.png?v=157",
+  "./images/panda-peek.png?v=157",
+  "./images/sprite-reading.png?v=157",
+  "./images/sprite-baozi.png?v=157",
+  "./images/sprite-writing.png?v=157",
+  "./images/sprite-listening.png?v=157",
+  "./images/sprite-puzzled.png?v=157",
+  "./images/sprite-sleeping.png?v=157",
+  "./images/welcome-light.webp?v=157",
+  "./images/welcome-dark.webp?v=157",
+  "./vendor/fonts/nunito-latin.woff2",
+  "./sounds/correct.mp3?v=157",
+  "./sounds/wrong.mp3?v=157",
+  "./sounds/complete.mp3?v=157",
+  "./sounds/goal.mp3?v=157"
 ];
 
 self.addEventListener("install", e => {
