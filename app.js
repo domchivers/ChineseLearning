@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=169";
+  const ASSET_V = "?v=170";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1505,7 +1505,19 @@
   // Where the lamplight sits inside each night cluster, measured from the art.
   const PATH_LIGHTS = {
     "cluster-left-bamboo": { x: 17.1, y: 69.9 },
-    "cluster-right-temple": { x: 73.1, y: 35.8 }
+    "cluster-right-temple": { x: 73.1, y: 35.8 },
+    "land-0": { x: 65.0, y: 46.7 },
+    "land-1": { x: 36.3, y: 52.4 },
+    "land-2": { x: 51.9, y: 60.7 },
+    "land-3": { x: 49.8, y: 72.7 },
+    "land-4": { x: 53.1, y: 63.1 },
+    "land-5": { x: 59.2, y: 67.3 },
+    "land-6": { x: 47.6, y: 64.9 },
+    "land-7": { x: 62.4, y: 61.0 },
+    "land-8": { x: 41.6, y: 67.2 },
+    "land-9": { x: 62.0, y: 48.3 },
+    "land-10": { x: 53.2, y: 63.4 },
+    "land-11": { x: 58.3, y: 35.5 }
   };
   // Scenery clusters, alternating down the path and mirrored so a short list of
   // pieces does not read as a repeating tile.
@@ -1516,12 +1528,85 @@
   const BAND_TOP = 200;              // where the first lesson sat in the composer
   const BAND_H = 844;                // the screen the arrangement was composed on
   const PATH_TEMPLATE = [
-    { art: "cluster-right-temple", x: 69, y: 35.6, w: 65, ar: 0.738 },
-    { art: "cluster-left-bamboo", x: 26.7, y: 98.2, w: 66, ar: 1.689 },
-    { art: "cluster-right-bamboo", x: 98, y: 112, w: 44, ar: 1.470 }
+    { art: "cluster-right-temple", x: 69, y: 35.6, w: 65, ar: 0.738, family: "landmark" },
+    { art: "cluster-left-bamboo", x: 26.7, y: 98.2, w: 66, ar: 1.689, family: "left" },
+    { art: "cluster-right-bamboo", x: 98, y: 112, w: 44, ar: 1.470, family: "right" }
   ];
+  /* Every piece of scenery: how wide it is drawn (percent of the screen), its
+     height over its width, and the side it was drawn for. The first band uses
+     the template's own pieces; later bands rotate through each slot's family
+     so the path does not repeat. The foliage was drawn with a flat left edge,
+     so it is flipped when it sits on the right. */
+  const ART = {
+    "cluster-right-temple": { w: 65, ar: 0.738, side: "right" },
+    "cluster-left-bamboo": { w: 66, ar: 1.689, side: "left" },
+    "cluster-right-bamboo": { w: 44, ar: 1.470, side: "right" },
+    "land-0": { w: 60, ar: 0.686, side: "any" },
+    "land-1": { w: 60, ar: 0.656, side: "any" },
+    "land-2": { w: 60, ar: 0.943, side: "any" },
+    "land-3": { w: 60, ar: 0.732, side: "any" },
+    "land-4": { w: 60, ar: 0.688, side: "any" },
+    "land-5": { w: 60, ar: 0.641, side: "any" },
+    "land-6": { w: 60, ar: 0.574, side: "any" },
+    "land-7": { w: 60, ar: 0.735, side: "any" },
+    "land-8": { w: 60, ar: 0.611, side: "any" },
+    "land-9": { w: 60, ar: 0.588, side: "any" },
+    "land-10": { w: 60, ar: 0.609, side: "any" },
+    "land-11": { w: 60, ar: 0.846, side: "any" },
+    "fol-0": { w: 50, ar: 1.639, side: "left" },
+    "fol-1": { w: 50, ar: 1.354, side: "left" },
+    "fol-2": { w: 50, ar: 1.525, side: "left" },
+    "fol-3": { w: 50, ar: 1.561, side: "left" },
+    "fol-4": { w: 50, ar: 1.396, side: "left" },
+    "fol-5": { w: 50, ar: 1.478, side: "left" },
+    "fol-6": { w: 50, ar: 1.138, side: "left" },
+    "fol-7": { w: 50, ar: 1.284, side: "left" },
+    "fol-8": { w: 50, ar: 1.366, side: "left" },
+    "fol-9": { w: 50, ar: 1.316, side: "left" },
+    "fol-10": { w: 50, ar: 1.265, side: "left" },
+    "fol-11": { w: 50, ar: 1.071, side: "left" }
+  };
+  const FAMILIES = {
+    landmark: ["cluster-right-temple", ...Array.from({ length: 12 }, (_, i) => "land-" + i)],
+    left: ["cluster-left-bamboo", ...Array.from({ length: 12 }, (_, i) => "fol-" + i)],
+    right: ["cluster-right-bamboo", ...Array.from({ length: 12 }, (_, i) => "fol-" + i)]
+  };
   // Where the mascot stands relative to the lesson you are on.
   const PANDA = { x: 79.2, y: 50.8, w: 22, flip: true, ar: 831 / 614 };
+  /* Where each piece is actually painted: ten strips top to bottom, each the
+     opaque extent as a fraction of the width. Measured from the artwork.
+     Collisions are judged on these, so foliage can lean towards the path the
+     way it was composed without its empty corners counting against it. */
+  const SLABS = {
+    "land-0": [[0.662, 0.986], [0.593, 0.998], [0.493, 1.0], [0.288, 0.998], [0.238, 0.998], [0.195, 0.998], [0.057, 0.99], [0.0, 0.993], [0.038, 0.99], [0.364, 0.995]],
+    "land-1": [[0.579, 0.797], [0.138, 0.894], [0.174, 0.95], [0.188, 1.0], [0.241, 1.0], [0.085, 0.941], [0.026, 0.932], [0.003, 0.924], [0.0, 0.938], [0.006, 1.0]],
+    "land-2": [[0.516, 0.544], [0.459, 0.594], [0.324, 0.871], [0.305, 0.953], [0.201, 0.981], [0.135, 0.984], [0.094, 1.0], [0.05, 0.997], [0.016, 0.978], [0.0, 0.981]],
+    "land-3": [[0.535, 0.797], [0.47, 0.919], [0.408, 0.93], [0.135, 0.973], [0.051, 0.973], [0.008, 0.968], [0.011, 0.986], [0.005, 1.0], [0.0, 0.981], [0.041, 0.87]],
+    "land-4": [[0.593, 0.834], [0.169, 0.871], [0.132, 0.914], [0.063, 0.957], [0.014, 0.963], [0.0, 1.0], [0.011, 1.0], [0.034, 0.943], [0.003, 0.954], [0.009, 0.957]],
+    "land-5": [[0.466, 0.721], [0.404, 0.932], [0.347, 0.944], [0.288, 0.988], [0.169, 0.988], [0.101, 0.973], [0.033, 0.994], [0.009, 1.0], [0.009, 1.0], [0.0, 0.991]],
+    "land-6": [[0.4, 0.598], [0.35, 0.64], [0.131, 0.845], [0.074, 0.879], [0.05, 0.905], [0.052, 0.983], [0.043, 1.0], [0.06, 0.969], [0.024, 0.981], [0.0, 0.981]],
+    "land-7": [[0.437, 0.951], [0.369, 0.955], [0.314, 0.997], [0.265, 1.0], [0.181, 1.0], [0.068, 0.984], [0.019, 0.99], [0.0, 0.99], [0.049, 1.0], [0.239, 1.0]],
+    "land-8": [[0.602, 0.802], [0.189, 0.838], [0.139, 0.938], [0.062, 0.973], [0.041, 1.0], [0.009, 1.0], [0.012, 0.997], [0.05, 1.0], [0.015, 0.982], [0.0, 0.962]],
+    "land-9": [[0.572, 0.837], [0.514, 0.89], [0.457, 0.976], [0.304, 0.979], [0.249, 0.992], [0.15, 0.997], [0.079, 0.995], [0.063, 0.995], [0.029, 1.0], [0.0, 1.0]],
+    "land-10": [[0.631, 0.834], [0.575, 0.91], [0.343, 0.966], [0.211, 0.982], [0.142, 1.0], [0.058, 0.995], [0.021, 0.96], [0.0, 0.958], [0.011, 0.968], [0.011, 0.968]],
+    "land-11": [[0.595, 0.649], [0.441, 0.799], [0.441, 0.799], [0.462, 0.776], [0.495, 0.957], [0.254, 1.0], [0.197, 0.987], [0.087, 0.96], [0.04, 0.957], [0.0, 0.977]],
+    "fol-0": [[0.147, 0.504], [0.032, 0.575], [0.012, 0.603], [0.067, 0.591], [0.036, 0.675], [0.032, 0.659], [0.024, 0.544], [0.0, 0.679], [0.004, 0.893], [0.02, 1.0]],
+    "fol-1": [[0.09, 0.455], [0.0, 0.601], [0.007, 0.675], [0.03, 0.795], [0.03, 0.836], [0.022, 0.53], [0.026, 0.575], [0.0, 0.743], [0.007, 0.922], [0.026, 1.0]],
+    "fol-2": [[0.047, 0.381], [0.008, 0.568], [0.008, 0.716], [0.013, 0.822], [0.013, 0.809], [0.008, 0.653], [0.008, 0.602], [0.0, 0.699], [0.0, 0.869], [0.008, 1.0]],
+    "fol-3": [[0.285, 0.526], [0.004, 0.51], [0.008, 0.783], [0.012, 0.715], [0.012, 0.814], [0.008, 0.842], [0.012, 0.672], [0.008, 0.798], [0.0, 0.949], [0.012, 1.0]],
+    "fol-4": [[0.088, 0.508], [0.038, 0.658], [0.008, 0.754], [0.008, 0.781], [0.008, 0.677], [0.008, 0.662], [0.008, 0.646], [0.008, 0.838], [0.0, 0.946], [0.004, 1.0]],
+    "fol-5": [[0.077, 0.486], [0.024, 0.478], [0.004, 0.494], [0.004, 0.567], [0.008, 0.603], [0.004, 0.603], [0.004, 0.603], [0.004, 0.773], [0.0, 0.935], [0.004, 1.0]],
+    "fol-6": [[0.0, 0.174], [0.004, 0.352], [0.004, 0.545], [0.004, 0.573], [0.0, 0.668], [0.0, 0.708], [0.004, 0.719], [0.004, 0.854], [0.0, 0.957], [0.004, 1.0]],
+    "fol-7": [[0.044, 0.424], [0.004, 0.48], [0.016, 0.476], [0.0, 0.708], [0.0, 0.732], [0.004, 0.632], [0.004, 0.72], [0.004, 0.832], [0.0, 0.932], [0.0, 1.0]],
+    "fol-8": [[0.156, 0.393], [0.0, 0.342], [0.004, 0.331], [0.012, 0.576], [0.016, 0.638], [0.016, 0.665], [0.016, 0.739], [0.016, 0.809], [0.0, 0.934], [0.012, 1.0]],
+    "fol-9": [[0.008, 0.464], [0.034, 0.525], [0.004, 0.574], [0.004, 0.567], [0.008, 0.654], [0.008, 0.669], [0.004, 0.608], [0.0, 0.787], [0.008, 0.989], [0.0, 1.0]],
+    "fol-10": [[0.112, 0.346], [0.035, 0.485], [0.0, 0.538], [0.008, 0.596], [0.004, 0.681], [0.008, 0.673], [0.008, 0.696], [0.008, 0.842], [0.0, 0.938], [0.004, 1.0]],
+    "fol-11": [[0.124, 0.442], [0.004, 0.416], [0.004, 0.625], [0.004, 0.655], [0.004, 0.648], [0.004, 0.73], [0.004, 0.787], [0.004, 0.876], [0.0, 0.989], [0.004, 1.0]],
+    "cluster-left-bamboo": [[0.0, 0.306], [0.0, 0.346], [0.0, 0.352], [0.0, 0.427], [0.0, 0.499], [0.0, 0.596], [0.0, 0.598], [0.0, 0.605], [0.0, 0.932], [0.0, 1.0]],
+    "cluster-right-temple": [[0.735, 1.0], [0.641, 1.0], [0.423, 1.0], [0.332, 1.0], [0.278, 1.0], [0.185, 1.0], [0.06, 1.0], [0.0, 1.0], [0.149, 1.0], [0.48, 1.0]],
+    "cluster-right-bamboo": [[0.718, 0.989], [0.668, 1.0], [0.618, 1.0], [0.638, 1.0], [0.707, 1.0], [0.627, 1.0], [0.618, 1.0], [0.449, 1.0], [0.38, 1.0], [0.0, 1.0]],
+    "panda-walking": [[0.143, 0.893], [0.117, 0.926], [0.131, 0.986], [0.119, 0.995], [0.048, 0.969], [0.0, 0.995], [0.0, 1.0], [0.067, 0.8], [0.045, 0.94], [0.048, 0.94]]
+  };
   const lessonHero = lesson => (cjkOnly(lesson.words[0].hanzi)[0] || "字");
   /* ---- Lesson completion -------------------------------------------------
      Separate from mastery. A word is "mastered" only once its SRS interval
@@ -1695,7 +1780,8 @@
     const hudEl = document.querySelector(".path-top");
     const HUD_H = (hudEl && hudEl.offsetHeight) || 62;
     const EDGE = Math.max(22, c.gap - c.size);   // normal coin-to-coin edge gap
-    const BANNER_H = 104;                 // the header block; placement re-centres on the real height
+    const BANNER_H = 72;                  // the header block; placement re-centres on the real height
+    const HGAP = 36;                      // extra room a header gets, over the normal stone gap
     // A chapter banner gets a roomier gap than the coins do, the SAME above and
     // below — and, crucially, banner→coin stays this size even when that coin is
     // the current lesson, because bubbleFor() reserves the START bubble's height
@@ -1707,9 +1793,9 @@
     // Chapter 1's banner sits nearer the HUD than later banners do — there's no
     // preceding coin to breathe from, so the full 2×BGAP void just read as dead
     // space at the very top. One BGAP splits evenly above/below it instead.
-    let y = HUD_H + BGAP / 2 + BANNER_H + bubbleFor(0) + c.size / 2;
+    let y = HUD_H + 16 + BANNER_H + bubbleFor(0) + c.size / 2;
     items.forEach((it, i) => {
-      if (it.chapter && i > 0) y += 2 * BGAP - EDGE + BANNER_H + bubbleFor(i);
+      if (it.chapter && i > 0) y += HGAP + BANNER_H + bubbleFor(i);
       ys.push(y); y += c.gap;
     });
     wrap.style.height = (ys[ys.length - 1] + c.pad) + "px";
@@ -1762,8 +1848,12 @@
                y: ys[i] + (ys[i + 1] - ys[i]) * u };
     };
 
+    // A header takes the side of the path the stones around it leave free.
+    // The first one sits on the left, under the HUD, as the design has it.
+    const headerRight = i => i > 0 && (nodeX(i - 1) + nodeX(i)) / 2 < W / 2;
+
     // Everything scenery has to keep out of: the stones, and the chapter
-    // headers, whose text occupies the left of the page.
+    // headers, each on its own side of the page.
     const obstacles = [];
     for (let i = 0; i < ys.length; i++) {
       obstacles.push({
@@ -1774,20 +1864,10 @@
       const top = ys[i] - c.size / 2 - bubbleFor(i);
       const prev = i === 0 ? HUD_H : ys[i - 1] + c.size / 2;
       const mid = (prev + top) / 2;
-      obstacles.push({ header: true, x0: 0, x1: W * 0.64, y0: mid - BANNER_H / 2, y1: mid + BANNER_H / 2 });
+      const right = headerRight(i);
+      obstacles.push({ header: true, x0: right ? W * .38 : 0, x1: right ? W : W * .62,
+                       y0: mid - BANNER_H / 2, y1: mid + BANNER_H / 2 });
     }
-    const clearOf = (x, yTop, yBot, w, fromLeft, margin) => {
-      let limit = fromLeft ? -Infinity : Infinity;
-      for (const b of obstacles) {
-        if (b.y1 < yTop || b.y0 > yBot) continue;            // not alongside it
-        limit = fromLeft ? Math.max(limit, b.x0) : Math.min(limit, b.x1);
-      }
-      if (!isFinite(limit)) return x;
-      // x is the centre; keep the inner edge outside everything it passes.
-      return fromLeft ? Math.min(x, limit - margin - w / 2)
-                      : Math.max(x, limit + margin + w / 2);
-    };
-
     // Ground under each stone, so it reads as resting on cleared earth.
     items.forEach((it, i) => {
       const w = c.size * STONE_RATIO * SC.patchW;
@@ -1829,73 +1909,149 @@
       place(pb, bx, by);
     }
 
-    /* Nothing may run into a lesson stone. A piece is pushed further off its
-       own edge until its inner side clears every stone it passes, which is why
-       the middle of the path stays readable however the wave lands. */
-    /* A piece goes on whichever side of the path leaves it most on screen.
-       Both the composed position and its mirror are tried, and the one that
-       needs the smaller push to clear the stones wins. Alternate bands prefer
-       the mirror when it is a tie, so a run of open bands still varies. */
-    const bestSide = (xComposed, yTop, yBot, w, margin, preferMirror) => {
-      const cands = preferMirror ? [W - xComposed, xComposed] : [xComposed, W - xComposed];
-      let best = null;
-      for (const x0 of cands) {
-        const fromLeft = x0 < W / 2;
-        const x = clearOf(x0, yTop, yBot, w, fromLeft, margin);
-        const push = Math.abs(x - x0);
-        if (!best || push < best.push) best = { x, push, mirrored: x0 !== xComposed, fromLeft };
-      }
-      return best;
-    };
-
-    /* The composed band, repeated down the path. Anchoring each repeat to the
-       lesson that opens it keeps the scenery in step with the stones however
-       long a chapter is. Alternate repeats mirror, so three pieces do not read
-       as a tile. */
+    /* ---- Scenery placement. Every band starts from the composed template.
+       Collisions are judged on where a piece is painted (SLABS), not on its
+       bounding box. A piece that would run into a stone, a header or another
+       piece slides up or down the path to the nearest clear stretch; failing
+       that it tries the mirrored side; failing that it is left out. Nothing
+       goes under the HUD, and nothing goes below the last stone. */
     const bandScale = c.gap / 143;                  // the spacing it was composed at
-    for (let b = 0; b * BAND_LESSONS < items.length; b++) {
-      const first = b * BAND_LESSONS;
-      const anchor = ys[first] - BAND_TOP * bandScale;
-      const preferMirror = b % 2 === 1;
-      PATH_TEMPLATE.forEach(spec => {
-        const cw = W * spec.w / 100, ch = cw * spec.ar;
-        const yBase = anchor + BAND_H * spec.y / 100 * bandScale;
-        const pick = bestSide(W * spec.x / 100, yBase - ch, yBase, cw, c.size * .18, preferMirror);
-        const cl = el("div", { className: "pcluster" + (pick.mirrored ? " flip" : "") +
-          (PATH_LIGHTS[spec.art] ? "" : " nolight") });
-        cl.style.width = cw + "px";
-        cl.style.height = ch + "px";
-        cl.style.backgroundImage = `var(--${spec.art})`;
-        const lit = PATH_LIGHTS[spec.art];
-        if (lit) {
-          // The glow's box is 170% wide and 190% tall of the piece (see the CSS
-          // inset), so the light's position has to be mapped into that box.
-          const lx = pick.mirrored ? 100 - lit.x : lit.x;
-          cl.style.setProperty("--lx", ((35 + lx) / 170 * 100).toFixed(1) + "%");
-          cl.style.setProperty("--ly", ((45 + lit.y) / 190 * 100).toFixed(1) + "%");
-        }
-        place(cl, pick.x, yBase);
+    const pathTop = HUD_H + 8;
+    const pathEnd = ys[ys.length - 1] + c.size * .9;
+    const taken = [];                               // strips scenery already paints
+    const overlap = (a, b, pad) =>
+      a.x0 < b.x1 + pad && a.x1 > b.x0 - pad && a.y0 < b.y1 + pad && a.y1 > b.y0 - pad;
+    const strips = (art, x0, y0, w, h, mirrored) => {
+      const out = [], sl = SLABS[art];
+      sl.forEach((sb, r) => {
+        if (!sb) return;
+        const l = mirrored ? 1 - sb[1] : sb[0], rr = mirrored ? 1 - sb[0] : sb[1];
+        out.push({ x0: x0 + l * w, x1: x0 + rr * w,
+                   y0: y0 + h * r / sl.length, y1: y0 + h * (r + 1) / sl.length });
       });
-    }
+      return out;
+    };
+    /* The template was composed with foliage touching the stones, so stones
+       get no margin (the alpha cut when the strips were measured is margin
+       enough); header text and other scenery get a little. */
+    const PAD = { stone: 0, header: 4, scenery: 4 };
+    // `asComposed` is for the first band, laid out exactly as the template
+    // was approved: its pieces were composed against each other, so only the
+    // stones and headers can turn one away.
+    const fits = (art, x0, y0, w, h, mirrored, asComposed) => {
+      if (y0 < pathTop || y0 + h > pathEnd) return false;
+      const st = strips(art, x0, y0, w, h, mirrored);
+      for (const sp of st) {
+        for (const o of obstacles) if (overlap(sp, o, o.header ? PAD.header : PAD.stone)) return false;
+        if (!asComposed) for (const t of taken) if (overlap(sp, t, PAD.scenery)) return false;
+      }
+      return true;
+    };
+    // The composed spot first, then step away from it down and up the path.
+    const settle = (art, cx, base, w, h, mirrored, reach, asComposed) => {
+      for (let d = 0; d <= reach; d += 12) {
+        for (const sgn of (d ? [1, -1] : [1])) {
+          const y0 = base - h + sgn * d;
+          if (fits(art, cx - w / 2, y0, w, h, mirrored, asComposed)) return y0 + h;
+        }
+      }
+      return null;
+    };
+    const claim = (art, cx, base, w, h, mirrored) =>
+      taken.push(...strips(art, cx - w / 2, base - h, w, h, mirrored));
 
-    // The mascot, where the template put it in each band. It mirrors with the
-    // band, is kept clear of the stones like the planting, and unlike the
-    // planting must stay fully on screen.
-    for (let b = 0; b * BAND_LESSONS < items.length; b++) {
-      const first = b * BAND_LESSONS;
-      const anchor = ys[first] - BAND_TOP * bandScale;
+    // The mascot stands on a little patch of the same ground as the stones,
+    // and faces the path.
+    const addPanda = (cx, base) => {
       const pw = W * PANDA.w / 100, ph = pw * PANDA.ar;
-      const yBase = anchor + BAND_H * PANDA.y / 100 * bandScale;
-      if (yBase > ys[ys.length - 1] + c.size) break;          // past the last stone
-      const pick = bestSide(W * PANDA.x / 100, yBase - ph, yBase, pw, c.size * .12, b % 2 === 1);
-      const px = Math.max(pw * .5, Math.min(W - pw * .5, pick.x));
-      // facing: the art walks to the right; on the right-hand side it turns back
-      const faceLeft = (PANDA.flip !== pick.mirrored);
-      const sp = el("div", { className: "psprite" + (faceLeft ? " flip" : "") });
+      const gw = pw * .82, gh = gw * .38;
+      const g = el("div", { className: "pground g2" });
+      g.style.width = gw + "px";
+      g.style.height = gh + "px";
+      place(g, cx, base - gh * .62 + gh / 2);
+      const sp = el("div", { className: "psprite" + (cx > W / 2 ? " flip" : "") });
       sp.style.backgroundImage = "var(--panda-walk)";
       sp.style.width = pw + "px";
       sp.style.height = ph + "px";
-      place(sp, px, yBase - ph / 2);
+      place(sp, cx, base - ph / 2);
+      claim("panda-walking", cx, base, pw, ph, cx > W / 2);
+    };
+
+    for (let b = 0; b * BAND_LESSONS < items.length; b++) {
+      const first = b * BAND_LESSONS;
+      const anchor = ys[first] - BAND_TOP * bandScale;
+      const bandH = BAND_H * bandScale;
+
+      // The mascot goes first: it matters more than the planting. As composed
+      // if that is clear, otherwise beside one of the band's stones, on the
+      // open side, about a stone's width away from it.
+      const pw = W * PANDA.w / 100, ph = pw * PANDA.ar;
+      const tx = W * PANDA.x / 100, tb = anchor + BAND_H * PANDA.y / 100 * bandScale;
+      const ty = settle("panda-walking", tx, tb, pw, ph, tx > W / 2, b === 0 ? 0 : c.gap * .5, b === 0)
+              ?? settle("panda-walking", tx, tb, pw, ph, tx > W / 2, c.gap * .5);
+      if (ty !== null) addPanda(tx, ty);
+      else for (const k of [1, 3, 0, 2, 4]) {
+        const i = first + k;
+        if (i >= items.length) continue;
+        const side = nodeX(i) < W / 2 ? 1 : -1;
+        const edge = nodeX(i) + side * c.size * STONE_RATIO / 2;
+        let cx = edge + side * (c.size * .9 + pw / 2);
+        cx = Math.max(pw / 2 + 4, Math.min(W - pw / 2 - 4, cx));
+        if (Math.abs(cx - edge) - pw / 2 < c.size * .4) continue;      // too tight a fit
+        const yb = settle("panda-walking", cx, ys[i] + c.size * 1.16, pw, ph, cx > W / 2, c.gap * .35);
+        if (yb !== null) { addPanda(cx, yb); break; }
+      }
+
+      PATH_TEMPLATE.forEach((spec, k) => {
+        const base = anchor + BAND_H * spec.y / 100 * bandScale;
+        // The first band is the template as composed; after that each slot
+        // rotates through its family, the two foliage slots out of step so a
+        // band never shows the same piece twice.
+        const fam = FAMILIES[spec.family];
+        const art = b === 0 ? spec.art : fam[(b * 5 + k * 7) % fam.length];
+        const a = ART[art];
+        const slotRight = spec.x > 50;
+        // Full size on the composed side, then mirrored, then a little smaller,
+        // anywhere in the band. Off the edge as composed: the pieces were
+        // drawn to bleed, and moving them inward is what causes the clutter.
+        let cw, ch, cx, mirrored, flipped, y = null;
+        if (b === 0) {                              // exactly as composed, if the stones allow
+          cw = W * a.w / 100; ch = cw * a.ar; cx = W * spec.x / 100;
+          mirrored = false; flipped = false;
+          y = settle(art, cx, base, cw, ch, false, 0, true);
+        }
+        if (y === null) for (const scale of [1, .85, .72]) {
+          cw = W * a.w / 100 * scale; ch = cw * a.ar;
+          for (mirrored of [false, true]) {
+            // The slot's outer edge stays where it was composed, so any piece
+            // in it keeps the same overhang off the side of the screen.
+            const full = W * spec.w / 100, x0 = W * spec.x / 100;
+            const outer = slotRight ? x0 + full / 2 - cw / 2 : x0 - full / 2 + cw / 2;
+            cx = mirrored ? W - outer : outer;
+            const onRight = slotRight !== mirrored;
+            flipped = a.side === "any" ? mirrored : (onRight !== (a.side === "right"));
+            y = settle(art, cx, base, cw, ch, flipped, bandH * .6);
+            if (y !== null) break;
+          }
+          if (y !== null) break;
+        }
+        if (y === null) return;                     // no room for it in this band
+        const cl = el("div", { className: "pcluster" + (flipped ? " flip" : "") +
+          (PATH_LIGHTS[art] ? "" : " nolight") });
+        cl.style.width = cw + "px";
+        cl.style.height = ch + "px";
+        cl.style.backgroundImage = `var(--${art})`;
+        const lit = PATH_LIGHTS[art];
+        if (lit) {
+          // The glow's box is 170% wide and 190% tall of the piece (see the CSS
+          // inset), so the light's position has to be mapped into that box.
+          const lx = flipped ? 100 - lit.x : lit.x;
+          cl.style.setProperty("--lx", ((35 + lx) / 170 * 100).toFixed(1) + "%");
+          cl.style.setProperty("--ly", ((45 + lit.y) / 190 * 100).toFixed(1) + "%");
+        }
+        place(cl, cx, y);
+        claim(art, cx, y, cw, ch, flipped);
+      });
     }
 
     items.forEach((it, i) => {
@@ -1931,7 +2087,9 @@
         }
         const topOfNext = yy - c.size / 2 - overhang;
         const bottomOfPrev = i === 0 ? HUD_H : ys[i - 1] + c.size / 2;
-        hd.style.left = "0"; hd.style.top = ((bottomOfPrev + topOfNext) / 2) + "px";
+        if (headerRight(i)) { hd.classList.add("right"); hd.style.right = "0"; }
+        else hd.style.left = "0";
+        hd.style.top = ((bottomOfPrev + topOfNext) / 2) + "px";
         wrap.appendChild(hd);
       }
     });
@@ -1984,11 +2142,6 @@
     const hero = el("div", { className: "hero" }, lessonHero(lesson));
     hero.style.fontSize = (size * HERO.size / 74).toFixed(1) + "px";
     node.appendChild(hero);
-    if (state === "todo") {
-      const lk = el("div", { className: "plock" });
-      lk.appendChild(icon("lock", Math.round(size * 0.26)));
-      node.appendChild(lk);
-    }
     if (state === "now") node.appendChild(el("div", { className: "start" }, "START"));
     return node;
   }
@@ -2320,7 +2473,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=169", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=170", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2398,7 +2551,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=169" : "images/panda-sad.png?v=169"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=170" : "images/panda-sad.png?v=170"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2582,11 +2735,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=169"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=170"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=169"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=170"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
