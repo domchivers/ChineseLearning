@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=168";
+  const ASSET_V = "?v=169";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1628,8 +1628,8 @@
      pathmock2.html — each orientation needs its own, because the cross-axis is
      ~800px tall on desktop but only ~400px wide on a phone.                */
   const PATH_CFG = {
-    desktop: { size: 84, gap: 132, wave: 118, per: 8, pad: 180, sprite: 140, sgap: 80, svert: 0 },
-    phone:   { size: 74, gap: 143, wave: 106, per: 8, pad: 170, sprite: 124, sgap: 70, svert: 0 }
+    desktop: { size: 84, gap: 132, wave: 118, per: 8, phase: 6, pad: 180, sprite: 140, sgap: 80, svert: 0 },
+    phone:   { size: 74, gap: 143, wave: 106, per: 8, phase: 6, pad: 170, sprite: 124, sgap: 70, svert: 0 }
   };
   const pathIsPhone = () => window.matchMedia("(max-width: 699px)").matches;
   let pathTries = 0;
@@ -1707,7 +1707,7 @@
     // Chapter 1's banner sits nearer the HUD than later banners do — there's no
     // preceding coin to breathe from, so the full 2×BGAP void just read as dead
     // space at the very top. One BGAP splits evenly above/below it instead.
-    let y = HUD_H + BGAP + BANNER_H + bubbleFor(0) + c.size / 2;
+    let y = HUD_H + BGAP / 2 + BANNER_H + bubbleFor(0) + c.size / 2;
     items.forEach((it, i) => {
       if (it.chapter && i > 0) y += 2 * BGAP - EDGE + BANNER_H + bubbleFor(i);
       ys.push(y); y += c.gap;
@@ -1735,7 +1735,7 @@
     if (k < 1e-6) k = 1;                  // every button on a zero crossing: straight column
     const half = c.size / 2 + 8;
     const nodeX = i => Math.max(half, Math.min(W - half,
-      W / 2 + c.wave * Math.sin(i * 2 * Math.PI / c.per) / k));
+      W / 2 + c.wave * Math.sin((i + (c.phase || 0)) * 2 * Math.PI / c.per) / k));
 
     const place = (node, x, yy) => {
       node.style.left = x + "px"; node.style.top = yy + "px"; wrap.appendChild(node);
@@ -1762,6 +1762,32 @@
                y: ys[i] + (ys[i + 1] - ys[i]) * u };
     };
 
+    // Everything scenery has to keep out of: the stones, and the chapter
+    // headers, whose text occupies the left of the page.
+    const obstacles = [];
+    for (let i = 0; i < ys.length; i++) {
+      obstacles.push({
+        x0: nodeX(i) - c.size * STONE_RATIO / 2, x1: nodeX(i) + c.size * STONE_RATIO / 2,
+        y0: ys[i] - c.size / 2, y1: ys[i] + c.size / 2
+      });
+      if (!items[i].chapter) continue;
+      const top = ys[i] - c.size / 2 - bubbleFor(i);
+      const prev = i === 0 ? HUD_H : ys[i - 1] + c.size / 2;
+      const mid = (prev + top) / 2;
+      obstacles.push({ header: true, x0: 0, x1: W * 0.64, y0: mid - BANNER_H / 2, y1: mid + BANNER_H / 2 });
+    }
+    const clearOf = (x, yTop, yBot, w, fromLeft, margin) => {
+      let limit = fromLeft ? -Infinity : Infinity;
+      for (const b of obstacles) {
+        if (b.y1 < yTop || b.y0 > yBot) continue;            // not alongside it
+        limit = fromLeft ? Math.max(limit, b.x0) : Math.min(limit, b.x1);
+      }
+      if (!isFinite(limit)) return x;
+      // x is the centre; keep the inner edge outside everything it passes.
+      return fromLeft ? Math.min(x, limit - margin - w / 2)
+                      : Math.max(x, limit + margin + w / 2);
+    };
+
     // Ground under each stone, so it reads as resting on cleared earth.
     items.forEach((it, i) => {
       const w = c.size * STONE_RATIO * SC.patchW;
@@ -1785,11 +1811,16 @@
       const off = SC.pebWander * unit * noise(n * 1.7);
       const w = SC.pebSize * unit * (1 + SC.pebVar * noise(n * 4.3));
       const bx = p.x - dy / len * off, by = p.y + dx / len * off;
-      // Anything landing inside a stone's footprint is dropped, not drawn.
+      // Anything landing inside a stone, or under a header, is dropped, not drawn.
       let hidden = false;
-      for (let i = 0; i < ys.length; i++) {
+      for (let i = 0; i < ys.length && !hidden; i++) {
         const ex = (bx - nodeX(i)) / (halfW + w / 2), ey = (by - ys[i]) / (halfH + w / 2);
-        if (ex * ex + ey * ey < 1) { hidden = true; break; }
+        if (ex * ex + ey * ey < 1) hidden = true;
+      }
+      for (const b of obstacles) {
+        if (b.header && bx > b.x0 - w && bx < b.x1 + w && by > b.y0 - w && by < b.y1 + w) {
+          hidden = true; break;
+        }
       }
       if (hidden) continue;
       const pb = el("div", { className: "ppebble" });
@@ -1801,30 +1832,20 @@
     /* Nothing may run into a lesson stone. A piece is pushed further off its
        own edge until its inner side clears every stone it passes, which is why
        the middle of the path stays readable however the wave lands. */
-    // Everything scenery has to keep out of: the stones, and the chapter
-    // headers, whose text occupies the left of the page.
-    const obstacles = [];
-    for (let i = 0; i < ys.length; i++) {
-      obstacles.push({
-        x0: nodeX(i) - c.size * STONE_RATIO / 2, x1: nodeX(i) + c.size * STONE_RATIO / 2,
-        y0: ys[i] - c.size / 2, y1: ys[i] + c.size / 2
-      });
-      if (!items[i].chapter) continue;
-      const top = ys[i] - c.size / 2 - bubbleFor(i);
-      const prev = i === 0 ? HUD_H : ys[i - 1] + c.size / 2;
-      const mid = (prev + top) / 2;
-      obstacles.push({ x0: 0, x1: W * 0.64, y0: mid - BANNER_H / 2, y1: mid + BANNER_H / 2 });
-    }
-    const clearOf = (x, yTop, yBot, w, fromLeft, margin) => {
-      let limit = fromLeft ? -Infinity : Infinity;
-      for (const b of obstacles) {
-        if (b.y1 < yTop || b.y0 > yBot) continue;            // not alongside it
-        limit = fromLeft ? Math.max(limit, b.x0) : Math.min(limit, b.x1);
+    /* A piece goes on whichever side of the path leaves it most on screen.
+       Both the composed position and its mirror are tried, and the one that
+       needs the smaller push to clear the stones wins. Alternate bands prefer
+       the mirror when it is a tie, so a run of open bands still varies. */
+    const bestSide = (xComposed, yTop, yBot, w, margin, preferMirror) => {
+      const cands = preferMirror ? [W - xComposed, xComposed] : [xComposed, W - xComposed];
+      let best = null;
+      for (const x0 of cands) {
+        const fromLeft = x0 < W / 2;
+        const x = clearOf(x0, yTop, yBot, w, fromLeft, margin);
+        const push = Math.abs(x - x0);
+        if (!best || push < best.push) best = { x, push, mirrored: x0 !== xComposed, fromLeft };
       }
-      if (!isFinite(limit)) return x;
-      // x is the centre; keep the inner edge outside everything it passes.
-      return fromLeft ? Math.min(x, limit - margin - w / 2)
-                      : Math.max(x, limit + margin + w / 2);
+      return best;
     };
 
     /* The composed band, repeated down the path. Anchoring each repeat to the
@@ -1835,46 +1856,46 @@
     for (let b = 0; b * BAND_LESSONS < items.length; b++) {
       const first = b * BAND_LESSONS;
       const anchor = ys[first] - BAND_TOP * bandScale;
-      const mirror = b % 2 === 1;
+      const preferMirror = b % 2 === 1;
       PATH_TEMPLATE.forEach(spec => {
-        const cw = W * spec.w / 100;
-        const cl = el("div", { className: "pcluster" + (mirror ? " flip" : "") +
+        const cw = W * spec.w / 100, ch = cw * spec.ar;
+        const yBase = anchor + BAND_H * spec.y / 100 * bandScale;
+        const pick = bestSide(W * spec.x / 100, yBase - ch, yBase, cw, c.size * .18, preferMirror);
+        const cl = el("div", { className: "pcluster" + (pick.mirrored ? " flip" : "") +
           (PATH_LIGHTS[spec.art] ? "" : " nolight") });
         cl.style.width = cw + "px";
-        cl.style.height = (cw * spec.ar) + "px";
+        cl.style.height = ch + "px";
         cl.style.backgroundImage = `var(--${spec.art})`;
         const lit = PATH_LIGHTS[spec.art];
         if (lit) {
-          cl.style.setProperty("--lx", (mirror ? 100 - lit.x : lit.x) + "%");
-          cl.style.setProperty("--ly", lit.y + "%");
+          // The glow's box is 170% wide and 190% tall of the piece (see the CSS
+          // inset), so the light's position has to be mapped into that box.
+          const lx = pick.mirrored ? 100 - lit.x : lit.x;
+          cl.style.setProperty("--lx", ((35 + lx) / 170 * 100).toFixed(1) + "%");
+          cl.style.setProperty("--ly", ((45 + lit.y) / 190 * 100).toFixed(1) + "%");
         }
-        const yBase = anchor + BAND_H * spec.y / 100 * bandScale;
-        const ch = cw * spec.ar;
-        let x = mirror ? W - W * spec.x / 100 : W * spec.x / 100;
-        // Which edge this piece belongs to, once mirroring is taken into account.
-        const fromLeft = x < W / 2;
-        x = clearOf(x, yBase - ch, yBase, cw, fromLeft, c.size * .18);
-        place(cl, x, yBase);
+        place(cl, pick.x, yBase);
       });
     }
 
-    // The mascot walks beside the lesson you are on, once, rather than
-    // reappearing in every bay down the path.
-    const curNode = items.findIndex(it => it.lesson.id === curId);
-    if (curNode >= 0) {
-      const pw = W * PANDA.w / 100;
-      const onLeft = nodeX(curNode) > W / 2;         // stand in the open side
-      const sp = el("div", { className: "psprite" + (onLeft ? "" : " flip") });
+    // The mascot, where the template put it in each band. It mirrors with the
+    // band, is kept clear of the stones like the planting, and unlike the
+    // planting must stay fully on screen.
+    for (let b = 0; b * BAND_LESSONS < items.length; b++) {
+      const first = b * BAND_LESSONS;
+      const anchor = ys[first] - BAND_TOP * bandScale;
+      const pw = W * PANDA.w / 100, ph = pw * PANDA.ar;
+      const yBase = anchor + BAND_H * PANDA.y / 100 * bandScale;
+      if (yBase > ys[ys.length - 1] + c.size) break;          // past the last stone
+      const pick = bestSide(W * PANDA.x / 100, yBase - ph, yBase, pw, c.size * .12, b % 2 === 1);
+      const px = Math.max(pw * .5, Math.min(W - pw * .5, pick.x));
+      // facing: the art walks to the right; on the right-hand side it turns back
+      const faceLeft = (PANDA.flip !== pick.mirrored);
+      const sp = el("div", { className: "psprite" + (faceLeft ? " flip" : "") });
       sp.style.backgroundImage = "var(--panda-walk)";
       sp.style.width = pw + "px";
-      sp.style.height = (pw * PANDA.ar) + "px";
-      const ph = pw * PANDA.ar;
-      const py = ys[curNode] - c.size * .1;
-      let px = onLeft ? nodeX(curNode) - c.size * STONE_RATIO / 2 - pw * .55
-                      : nodeX(curNode) + c.size * STONE_RATIO / 2 + pw * .55;
-      px = clearOf(px, py - ph / 2, py + ph / 2, pw, onLeft, c.size * .12);
-      // Unlike the planting, the mascot must stay fully on screen.
-      place(sp, Math.max(pw * .5, Math.min(W - pw * .5, px)), py);
+      sp.style.height = ph + "px";
+      place(sp, px, yBase - ph / 2);
     }
 
     items.forEach((it, i) => {
@@ -2299,7 +2320,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=168", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=169", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2377,7 +2398,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=168" : "images/panda-sad.png?v=168"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=169" : "images/panda-sad.png?v=169"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2561,11 +2582,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=168"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=169"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=168"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=169"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
