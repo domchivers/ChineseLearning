@@ -4,20 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
-<link rel="manifest" href="manifest.webmanifest?v=165">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=165">
+<link rel="manifest" href="manifest.webmanifest?v=166">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=166">
 <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="步步 Bùbù">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=165">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=166">
 <style>
   /* Nunito (variable weight, latin) is vendored so the app stays offline.
      CJK glyphs fall through to the system font, which is what we want. */
   @font-face { font-family: "Nunito"; src: url("vendor/fonts/nunito-latin.woff2") format("woff2");
     font-weight: 200 1000; font-style: normal; font-display: swap; }
+  /* Long Cang, subset to the 267 characters in the course so it stays offline. */
+  @font-face { font-family: "Long Cang"; src: url("vendor/fonts/longcang-subset.woff2") format("woff2");
+    font-weight: 400; font-style: normal; font-display: swap; }
 
   /* ---- Theme: cream + jade by day, navy + periwinkle by night ----
      Sampled from reference/Light_Theme.png and reference/Dark_Theme.png. Every
@@ -57,6 +60,28 @@
     --shadow: 0 6px 24px rgba(30,40,50,.06), 0 1px 3px rgba(30,40,50,.05);
     /* Path accents follow the theme accent */
     --g: #2b776d; --g-dark: #1d645c; --g-soft: #d9ece5;
+    /* Path scenery. Ground is the cleared earth the stones sit on. */
+    --ground: #e6dcc6; --ground-alpha: .41; --glow-alpha: 0;
+    --stone-shadow: rgba(60,50,35,.20);
+    --st-done-0: url("images/path/stone-light-done-0.webp?v=166");
+    --st-done-1: url("images/path/stone-light-done-1.webp?v=166");
+    --st-done-2: url("images/path/stone-light-done-2.webp?v=166");
+    --st-done-3: url("images/path/stone-light-done-3.webp?v=166");
+    --st-done-4: url("images/path/stone-light-done-4.webp?v=166");
+    --st-now-0: url("images/path/stone-light-now-0.webp?v=166");
+    --st-now-1: url("images/path/stone-light-now-1.webp?v=166");
+    --st-now-2: url("images/path/stone-light-now-2.webp?v=166");
+    --st-now-3: url("images/path/stone-light-now-3.webp?v=166");
+    --st-now-4: url("images/path/stone-light-now-4.webp?v=166");
+    --st-locked-0: url("images/path/stone-light-locked-0.webp?v=166");
+    --st-locked-1: url("images/path/stone-light-locked-1.webp?v=166");
+    --st-locked-2: url("images/path/stone-light-locked-2.webp?v=166");
+    --st-locked-3: url("images/path/stone-light-locked-3.webp?v=166");
+    --st-locked-4: url("images/path/stone-light-locked-4.webp?v=166");
+    --cluster-left-bamboo: url("images/path/cluster-left-bamboo-light.webp?v=166");
+    --cluster-right-bamboo: url("images/path/cluster-right-bamboo-light.webp?v=166");
+    --cluster-right-temple: url("images/path/cluster-right-temple-light.webp?v=166");
+    --panda-walk: url("images/path/panda-walking-light.webp?v=166");
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -65,6 +90,28 @@
       --coin-halo: rgba(108,157,252,.38); --coin-todo: #1c2a3b; --coin-todo-dark: #15212f;
       --g: #6c9dfc; --g-dark: #4f7fdc; --g-soft: #182b48;
       --grid: rgba(108,157,252,.42); --grid-soft: rgba(108,157,252,.18);
+      --ground: #24384f; --ground-alpha: .24; --glow-alpha: .5;
+    --stone-shadow: rgba(0,0,0,.55);
+      --stone-shadow: rgba(0,0,0,.55);
+      --st-done-0: url("images/path/stone-dark-done-0.webp?v=166");
+      --st-done-1: url("images/path/stone-dark-done-1.webp?v=166");
+      --st-done-2: url("images/path/stone-dark-done-2.webp?v=166");
+      --st-done-3: url("images/path/stone-dark-done-3.webp?v=166");
+      --st-done-4: url("images/path/stone-dark-done-4.webp?v=166");
+      --st-now-0: url("images/path/stone-dark-now-0.webp?v=166");
+      --st-now-1: url("images/path/stone-dark-now-1.webp?v=166");
+      --st-now-2: url("images/path/stone-dark-now-2.webp?v=166");
+      --st-now-3: url("images/path/stone-dark-now-3.webp?v=166");
+      --st-now-4: url("images/path/stone-dark-now-4.webp?v=166");
+      --st-locked-0: url("images/path/stone-dark-locked-0.webp?v=166");
+      --st-locked-1: url("images/path/stone-dark-locked-1.webp?v=166");
+      --st-locked-2: url("images/path/stone-dark-locked-2.webp?v=166");
+      --st-locked-3: url("images/path/stone-dark-locked-3.webp?v=166");
+      --st-locked-4: url("images/path/stone-dark-locked-4.webp?v=166");
+      --cluster-left-bamboo: url("images/path/cluster-left-bamboo-dark.webp?v=166");
+      --cluster-right-bamboo: url("images/path/cluster-right-bamboo-dark.webp?v=166");
+      --cluster-right-temple: url("images/path/cluster-right-temple-dark.webp?v=166");
+      --panda-walk: url("images/path/panda-walking-dark.webp?v=166");
       --good: #4ce1ad; --on-good: #0b1626; --good-soft: #112a2d; --again: #f08a7a; --again-soft: #2b2230;
       --easy: #74b3ec; --easy-soft: #122136;
       --t-red: #26232f;    --t-red-ink: #ff8a7a;
@@ -82,6 +129,26 @@
     --coin-halo: rgba(108,157,252,.38); --coin-todo: #1c2a3b; --coin-todo-dark: #15212f;
     --g: #6c9dfc; --g-dark: #4f7fdc; --g-soft: #182b48;
     --grid: rgba(108,157,252,.42); --grid-soft: rgba(108,157,252,.18);
+    --ground: #24384f; --ground-alpha: .24; --glow-alpha: .5;
+    --st-done-0: url("images/path/stone-dark-done-0.webp?v=166");
+    --st-done-1: url("images/path/stone-dark-done-1.webp?v=166");
+    --st-done-2: url("images/path/stone-dark-done-2.webp?v=166");
+    --st-done-3: url("images/path/stone-dark-done-3.webp?v=166");
+    --st-done-4: url("images/path/stone-dark-done-4.webp?v=166");
+    --st-now-0: url("images/path/stone-dark-now-0.webp?v=166");
+    --st-now-1: url("images/path/stone-dark-now-1.webp?v=166");
+    --st-now-2: url("images/path/stone-dark-now-2.webp?v=166");
+    --st-now-3: url("images/path/stone-dark-now-3.webp?v=166");
+    --st-now-4: url("images/path/stone-dark-now-4.webp?v=166");
+    --st-locked-0: url("images/path/stone-dark-locked-0.webp?v=166");
+    --st-locked-1: url("images/path/stone-dark-locked-1.webp?v=166");
+    --st-locked-2: url("images/path/stone-dark-locked-2.webp?v=166");
+    --st-locked-3: url("images/path/stone-dark-locked-3.webp?v=166");
+    --st-locked-4: url("images/path/stone-dark-locked-4.webp?v=166");
+    --cluster-left-bamboo: url("images/path/cluster-left-bamboo-dark.webp?v=166");
+    --cluster-right-bamboo: url("images/path/cluster-right-bamboo-dark.webp?v=166");
+    --cluster-right-temple: url("images/path/cluster-right-temple-dark.webp?v=166");
+    --panda-walk: url("images/path/panda-walking-dark.webp?v=166");
     --good: #4ce1ad; --on-good: #0b1626; --good-soft: #112a2d; --again: #f08a7a; --again-soft: #2b2230;
     --easy: #74b3ec; --easy-soft: #122136;
     --t-red: #26232f;    --t-red-ink: #ff8a7a;
@@ -375,9 +442,9 @@
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
 
   /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
-  :root { --welcome-art: url("images/welcome-light.webp?v=165"); --cont-art: url("images/card-light.webp?v=165"); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=165"); --cont-art: url("images/card-dark.webp?v=165"); } }
-  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=165"); --cont-art: url("images/card-dark.webp?v=165"); }
+  :root { --welcome-art: url("images/welcome-light.webp?v=166"); --cont-art: url("images/card-light.webp?v=166"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=166"); --cont-art: url("images/card-dark.webp?v=166"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=166"); --cont-art: url("images/card-dark.webp?v=166"); }
   .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
     flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
   .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
@@ -849,22 +916,54 @@
 
   /* flex, NOT grid: place-items:center on a fixed-height grid was seating the
      hanzi ~8px below centre in completed coins. flex centres it exactly. */
-  .coin { --lip: 7px; position: relative; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform .08s ease, box-shadow .08s ease; }
-  .coin.done, .coin.now { background: var(--accent); box-shadow: 0 var(--lip) 0 var(--accent-dark); }
-  .coin.todo { background: var(--coin-todo); box-shadow: 0 var(--lip) 0 var(--coin-todo-dark); }
-  .pnode:not(.locked):active .coin { transform: translateY(calc(var(--lip) - 2px));
-    box-shadow: 0 2px 0 var(--accent-dark); }
-  .coin .hero { font-size: 30px; font-weight: 700; color: var(--on-accent); line-height: 1; }
-  .coin.todo .ico { color: var(--muted); display: block; }
-  /* finished lessons get a tick badge so completion reads at a glance */
-  .coin .tick { position: absolute; right: -2px; bottom: 0; width: 26px; height: 26px;
-    border-radius: 50%; background: var(--panel); color: var(--accent);
-    display: grid; place-items: center; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
-  .coin .tick svg { width: 15px; height: 15px; }
+  /* ---- Path scenery: the ground the stones sit on, the trail between them,
+     and the planting down the edges. All of it sits behind the lesson buttons. */
+  .pground, .ppebble, .pcluster { position: absolute; pointer-events: none; }
+  .pground { transform: translate(-50%, -50%); background: var(--ground);
+    opacity: var(--ground-alpha); }
+  .pground.g0 { border-radius: 62% 38% 55% 45% / 48% 62% 38% 52%; }
+  .pground.g1 { border-radius: 38% 62% 42% 58% / 60% 40% 60% 40%; }
+  .pground.g2 { border-radius: 55% 45% 66% 34% / 40% 58% 42% 60%; }
+  .pground.g3 { border-radius: 45% 55% 36% 64% / 63% 42% 58% 37%; }
+  .ppebble { transform: translate(-50%, -50%);
+    background: var(--st-locked-4) center / 100% 100% no-repeat; }
+  .pcluster { transform: translate(-50%, -100%); background-size: 100% auto;
+    background-repeat: no-repeat; }
+  .pcluster.flip { transform: translate(-50%, -100%) scaleX(-1); }
+  /* At night the lit windows and lanterns throw light into the air around them.
+     The gradient sits where the light actually is in each piece. No blend mode:
+     the transform on .pcluster isolates it, so a blend would only mix with the
+     piece's own transparent box and paint a visible rectangle. Over a near-black
+     ground a warm translucent gradient reads as glow on its own. */
+  .pcluster::after { content: ""; position: absolute; inset: -45% -35%;
+    opacity: var(--glow-alpha); pointer-events: none;
+    background: radial-gradient(closest-side circle at var(--lx) var(--ly),
+      rgba(255,186,110,.40) 0, rgba(255,178,92,.16) 34%, rgba(255,178,92,0) 70%); }
+  .pcluster.nolight::after { display: none; }
+
+  /* Lesson stones. Five outlines cycle by lesson so no two neighbours match,
+     and the artwork carries its own shading, so there is no CSS lip any more. */
+  .coin { position: relative; display: grid; place-items: center;
+    background: var(--stone) center / 100% 100% no-repeat;
+    /* A contact shadow that follows the stone's own outline. Without it the
+       darker stones sink into the night background. */
+    filter: drop-shadow(0 3px 4px var(--stone-shadow));
+    transition: transform .08s ease; }
+  .pnode:not(.locked):active .coin { transform: translateY(2px); }
+  .coin .hero { position: absolute; font-family: "Long Cang", "Nunito", system-ui, sans-serif;
+    font-weight: 400; line-height: 1; color: var(--on-accent);
+    transform: translateY(var(--hero-dy));
+    text-shadow: 0 calc(-1 * var(--hero-d)) 0 rgba(0,0,0,.34),
+                 0 var(--hero-d) 0 rgba(255,255,255,.22); }
+  .coin.todo .hero { color: var(--accent); }
+  .coin.todo .ico { color: var(--muted); display: block; opacity: .8; }
+  /* A small padlock sits beside the character rather than replacing it, so a
+     locked lesson still shows which character it teaches. The stone's colour
+     already says finished, current or locked, so there is no tick badge. */
+  .plock { position: absolute; right: 11%; bottom: 12%; color: var(--muted); opacity: .8;
+    display: grid; place-items: center; }
   /* gentle "you are here" halo on the current lesson */
-  .coin.now::before { content: ""; position: absolute; inset: -22px; border-radius: 50%;
+  .coin.now::before { content: ""; position: absolute; inset: -26px -34px; border-radius: 50%; z-index: -1;
     background: radial-gradient(circle, var(--coin-halo), transparent 68%); pointer-events: none;
     animation: coinPulse 2.2s ease-in-out infinite; will-change: transform, opacity; }
   @keyframes coinPulse { 0%,100% { opacity:.55; transform: scale(.94) }
@@ -887,6 +986,7 @@
   .pchapter .u { font-size: 10px; opacity: .9; letter-spacing: 1.1px; font-weight: 700; }
   .pchapter .t { font-size: 14px; font-weight: 800; }
   .psprite { position: absolute; transform: translate(-50%,-50%); pointer-events: none;
+    background: center / 100% 100% no-repeat;
     z-index: 2; filter: drop-shadow(0 8px 8px rgba(0,0,0,.22)); }
   /* mirror alternate mascots — keep the centring translate, add the flip */
   .psprite.flip { transform: translate(-50%,-50%) scaleX(-1); }
@@ -1244,7 +1344,7 @@
         <svg class="flame-ic"><use href="#i-flame-solid"/></svg>
         <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span></div>
         <span class="sc-bubble" id="scBubble">Let's start!</span>
-        <img src="images/panda-peek.png?v=165" alt="" class="sc-peek">
+        <img src="images/panda-peek.png?v=166" alt="" class="sc-peek">
       </div>
       <div class="week-card"><div class="week" id="weekStrip"></div></div>
     </div>
@@ -1407,7 +1507,7 @@
   <!-- DONE -->
   <section id="done" class="hidden">
     <div class="card done">
-      <img src="images/panda-celebrate.png?v=165" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+      <img src="images/panda-celebrate.png?v=166" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
       <h2 id="doneTitle">Session complete</h2>
       <div id="doneStats" style="margin:14px 0"></div>
       <button class="primary hidden" id="doneNext" style="margin-bottom:8px"></button>
@@ -1650,7 +1750,7 @@
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/panda-waving.png?v=165" alt="" class="ob-hero">
+          <img src="images/panda-waving.png?v=166" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -1681,10 +1781,10 @@
     </div>
   </div>
 
-<script src="data.js?v=165"></script>
-<script src="hanzi-data.js?v=165"></script>
+<script src="data.js?v=166"></script>
+<script src="hanzi-data.js?v=166"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="app.js?v=165"></script>
+<script src="app.js?v=166"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   if ("serviceWorker" in navigator) {

@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=165";
+  const ASSET_V = "?v=166";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1502,6 +1502,22 @@
     "sprite-reading.png", "sprite-baozi.png", "sprite-writing.png", "sprite-listening.png",
     "sprite-puzzled.png", "sprite-sleeping.png"
   ];
+  // Where the lamplight sits inside each night cluster, measured from the art.
+  const PATH_LIGHTS = {
+    "cluster-left-bamboo": { x: 17.1, y: 69.9 },
+    "cluster-right-temple": { x: 73.1, y: 35.8 }
+  };
+  // Scenery clusters, alternating down the path and mirrored so a short list of
+  // pieces does not read as a repeating tile.
+  // `ar` is each piece's height over its width, so the box matches its artwork.
+  const PATH_CLUSTERS = [
+    { art: "cluster-right-temple", side: 1, w: 0.65, ar: 0.738 },
+    { art: "cluster-left-bamboo", side: -1, w: 0.66, ar: 1.689 },
+    { art: "cluster-right-bamboo", side: 1, w: 0.44, ar: 1.470 },
+    { art: "cluster-left-bamboo", side: -1, w: 0.52, ar: 1.689 },
+    { art: "cluster-right-temple", side: 1, w: 0.50, ar: 0.738 },
+    { art: "cluster-right-bamboo", side: -1, w: 0.48, ar: 1.470 }
+  ];
   const lessonHero = lesson => (cjkOnly(lesson.words[0].hanzi)[0] || "字");
   /* ---- Lesson completion -------------------------------------------------
      Separate from mastery. A word is "mastered" only once its SRS interval
@@ -1714,6 +1730,84 @@
       node.style.left = x + "px"; node.style.top = yy + "px"; wrap.appendChild(node);
     };
 
+    /* ---- Scenery. Settled in the path composer and expressed here against the
+       same 74px stone the editor used, so the numbers carry straight over. */
+    const SC = { patchW: 1.20, patchSquash: .66,
+                 pebEvery: 9.2, pebSize: 11, pebVar: .63, pebWander: 31, pebClear: 4,
+                 clusterEvery: 6 };
+    const unit = c.size / 74;                       // editor units to real pixels
+    const noise = n => {
+      const v = Math.sin(n * 12.9898) * 43758.5453;
+      return (v - Math.floor(v)) * 2 - 1;
+    };
+
+    // A smooth walk down the whole path, used to thread the pebbles.
+    const curve = t => {
+      const f = t * (ys.length - 1);
+      const i = Math.max(0, Math.min(ys.length - 2, Math.floor(f)));
+      let u = f - i;
+      u = u * u * (3 - 2 * u);
+      return { x: nodeX(i) + (nodeX(i + 1) - nodeX(i)) * u,
+               y: ys[i] + (ys[i + 1] - ys[i]) * u };
+    };
+
+    // Ground under each stone, so it reads as resting on cleared earth.
+    items.forEach((it, i) => {
+      const w = c.size * STONE_RATIO * SC.patchW;
+      const g = el("div", { className: "pground g" + (i % 4) });
+      g.style.width = w + "px";
+      g.style.height = (w * SC.patchSquash) + "px";
+      place(g, nodeX(i), ys[i] + c.size * .14);
+    });
+
+    // The pebble trail. Density is fixed, so a long chapter gets more of them
+    // rather than the same number stretched further apart.
+    const span = ys[ys.length - 1] - ys[0];
+    const pebbles = Math.max(0, Math.round(span / (SC.pebEvery * unit)));
+    const halfW = c.size * STONE_RATIO / 2 + SC.pebClear * unit;
+    const halfH = c.size / 2 + SC.pebClear * unit;
+    for (let n = 1; n <= pebbles; n++) {
+      const t = n / (pebbles + 1);
+      const p = curve(t), q = curve(Math.min(1, t + 0.002));
+      const dx = q.x - p.x, dy = q.y - p.y;
+      const len = Math.hypot(dx, dy) || 1;
+      const off = SC.pebWander * unit * noise(n * 1.7);
+      const w = SC.pebSize * unit * (1 + SC.pebVar * noise(n * 4.3));
+      const bx = p.x - dy / len * off, by = p.y + dx / len * off;
+      // Anything landing inside a stone's footprint is dropped, not drawn.
+      let hidden = false;
+      for (let i = 0; i < ys.length; i++) {
+        const ex = (bx - nodeX(i)) / (halfW + w / 2), ey = (by - ys[i]) / (halfH + w / 2);
+        if (ex * ex + ey * ey < 1) { hidden = true; break; }
+      }
+      if (hidden) continue;
+      const pb = el("div", { className: "ppebble" });
+      pb.style.width = Math.max(3, w) + "px";
+      pb.style.height = Math.max(2, w * .62) + "px";
+      place(pb, bx, by);
+    }
+
+    // Planting down the edges, alternating sides and mirroring so a short list
+    // of pieces never reads as a repeating tile.
+    for (let i = SC.clusterEvery - 1, ci = 0; i < items.length; i += SC.clusterEvery, ci++) {
+      const spec = PATH_CLUSTERS[ci % PATH_CLUSTERS.length];
+      const flip = ci % 3 === 2;
+      const side = flip ? -spec.side : spec.side;
+      const cw = W * spec.w;
+      const cl = el("div", { className: "pcluster" + (flip ? " flip" : "") +
+        (PATH_LIGHTS[spec.art] ? "" : " nolight") });
+      cl.style.width = cw + "px";
+      cl.style.height = (cw * spec.ar) + "px";
+      cl.style.backgroundImage = `var(--${spec.art})`;
+      const lit = PATH_LIGHTS[spec.art];
+      if (lit) {
+        cl.style.setProperty("--lx", lit.x + "%");
+        cl.style.setProperty("--ly", lit.y + "%");
+      }
+      // Hug the edge and let it bleed off, which is what keeps the middle clear.
+      place(cl, side > 0 ? W - cw * .28 : cw * .28, ys[i] + c.size * 1.1);
+    }
+
     items.forEach((it, i) => {
       const yy = ys[i], x = nodeX(i), id = it.lesson.id;
       const state = lessonDone(id) ? "done" : (id === curId ? "now" : "todo");
@@ -1767,9 +1861,10 @@
       const idx = si++;
       // Mirror alternate mascots so they don't all face the same way down the
       // path — the .flip class keeps the centring transform and adds scaleX(-1).
-      const sp = el("img", { className: "psprite" + (idx % 2 ? " flip" : ""), alt: "",
-        src: `images/${CHAPTER_SPRITES[idx % CHAPTER_SPRITES.length]}${ASSET_V}` });
+      const sp = el("div", { className: "psprite" + (idx % 2 ? " flip" : "") });
+      sp.style.backgroundImage = "var(--panda-walk)";
       sp.style.width = w + "px";
+      sp.style.height = Math.round(w * 831 / 614) + "px";
       place(sp, mx, ys[i] + c.svert);
     }
 
@@ -1795,18 +1890,36 @@
     pathResizeTimer = setTimeout(renderPath, 120);
   });
 
-  // Lesson buttons: the hero character rides the coin, a tick badge marks a
-  // finished lesson, and anything not yet unlocked shows a padlock.
+  // Character size and nudge, settled in the stone editor against a 74px stone.
+  const HERO = { size: 35, dy: -7.5 };
+  const STONE_RATIO = 1.62;          // the stone artwork is wider than it is tall
+
+  // Which of the five stone outlines a lesson gets. Hashing the id keeps it
+  // stable, so a lesson always sits on the same stone.
+  const stoneShape = id => {
+    let h = 0;
+    for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+    return h % 5;
+  };
+
+  // Lesson stones: the character is carved into the stone, and the stone's own
+  // colour says whether the lesson is finished, current or still locked.
   function coinMarkup(lesson, state, size) {
     const node = el("div", { className: "coin " + state });
-    node.style.width = size + "px";
+    const art = state === "todo" ? "locked" : state;
+    node.style.width = Math.round(size * STONE_RATIO) + "px";
     node.style.height = size + "px";
-    if (state === "todo") node.appendChild(icon("lock", Math.round(size * 0.40)));
-    else node.appendChild(el("div", { className: "hero" }, lessonHero(lesson)));
-    if (state === "done") {
-      const t = el("div", { className: "tick" });
-      t.appendChild(icon("check", 15));
-      node.appendChild(t);
+    node.style.setProperty("--stone", `var(--st-${art}-${stoneShape(lesson.id)})`);
+    node.style.setProperty("--hero-dy", (size * HERO.dy / 74).toFixed(2) + "px");
+    node.style.setProperty("--hero-d", (size * HERO.size / 74 * 0.05).toFixed(2) + "px");
+
+    const hero = el("div", { className: "hero" }, lessonHero(lesson));
+    hero.style.fontSize = (size * HERO.size / 74).toFixed(1) + "px";
+    node.appendChild(hero);
+    if (state === "todo") {
+      const lk = el("div", { className: "plock" });
+      lk.appendChild(icon("lock", Math.round(size * 0.26)));
+      node.appendChild(lk);
     }
     if (state === "now") node.appendChild(el("div", { className: "start" }, "START"));
     return node;
@@ -2139,7 +2252,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=165", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=166", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2217,7 +2330,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=165" : "images/panda-sad.png?v=165"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=166" : "images/panda-sad.png?v=166"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2401,11 +2514,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=165"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=166"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=165"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=166"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
