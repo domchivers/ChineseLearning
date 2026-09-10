@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=167";
+  const ASSET_V = "?v=168";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1672,7 +1672,14 @@
       const chNo = unitCh[ch.unit];
       ch.lessons.forEach((id, li) => {
         const lesson = LESSONS.find(l => l.id === id);
-        if (lesson) items.push({ lesson, chapter: li === 0 ? { unit: ch.unit, chNo, title: ch.title } : null });
+        if (lesson) items.push({
+          lesson,
+          chapter: li === 0 ? {
+            unit: ch.unit, chNo, title: ch.title,
+            total: ch.lessons.length,
+            done: ch.lessons.filter(x => doneLessons.has(x)).length
+          } : null
+        });
       });
     });
 
@@ -1688,7 +1695,7 @@
     const hudEl = document.querySelector(".path-top");
     const HUD_H = (hudEl && hudEl.offsetHeight) || 62;
     const EDGE = Math.max(22, c.gap - c.size);   // normal coin-to-coin edge gap
-    const BANNER_H = 52;                  // approx; placement re-centres on the real height
+    const BANNER_H = 104;                 // the header block; placement re-centres on the real height
     // A chapter banner gets a roomier gap than the coins do, the SAME above and
     // below — and, crucially, banner→coin stays this size even when that coin is
     // the current lesson, because bubbleFor() reserves the START bubble's height
@@ -1791,6 +1798,35 @@
       place(pb, bx, by);
     }
 
+    /* Nothing may run into a lesson stone. A piece is pushed further off its
+       own edge until its inner side clears every stone it passes, which is why
+       the middle of the path stays readable however the wave lands. */
+    // Everything scenery has to keep out of: the stones, and the chapter
+    // headers, whose text occupies the left of the page.
+    const obstacles = [];
+    for (let i = 0; i < ys.length; i++) {
+      obstacles.push({
+        x0: nodeX(i) - c.size * STONE_RATIO / 2, x1: nodeX(i) + c.size * STONE_RATIO / 2,
+        y0: ys[i] - c.size / 2, y1: ys[i] + c.size / 2
+      });
+      if (!items[i].chapter) continue;
+      const top = ys[i] - c.size / 2 - bubbleFor(i);
+      const prev = i === 0 ? HUD_H : ys[i - 1] + c.size / 2;
+      const mid = (prev + top) / 2;
+      obstacles.push({ x0: 0, x1: W * 0.64, y0: mid - BANNER_H / 2, y1: mid + BANNER_H / 2 });
+    }
+    const clearOf = (x, yTop, yBot, w, fromLeft, margin) => {
+      let limit = fromLeft ? -Infinity : Infinity;
+      for (const b of obstacles) {
+        if (b.y1 < yTop || b.y0 > yBot) continue;            // not alongside it
+        limit = fromLeft ? Math.max(limit, b.x0) : Math.min(limit, b.x1);
+      }
+      if (!isFinite(limit)) return x;
+      // x is the centre; keep the inner edge outside everything it passes.
+      return fromLeft ? Math.min(x, limit - margin - w / 2)
+                      : Math.max(x, limit + margin + w / 2);
+    };
+
     /* The composed band, repeated down the path. Anchoring each repeat to the
        lesson that opens it keeps the scenery in step with the stones however
        long a chapter is. Alternate repeats mirror, so three pieces do not read
@@ -1812,8 +1848,13 @@
           cl.style.setProperty("--lx", (mirror ? 100 - lit.x : lit.x) + "%");
           cl.style.setProperty("--ly", lit.y + "%");
         }
-        const x = mirror ? W - W * spec.x / 100 : W * spec.x / 100;
-        place(cl, x, anchor + BAND_H * spec.y / 100 * bandScale);
+        const yBase = anchor + BAND_H * spec.y / 100 * bandScale;
+        const ch = cw * spec.ar;
+        let x = mirror ? W - W * spec.x / 100 : W * spec.x / 100;
+        // Which edge this piece belongs to, once mirroring is taken into account.
+        const fromLeft = x < W / 2;
+        x = clearOf(x, yBase - ch, yBase, cw, fromLeft, c.size * .18);
+        place(cl, x, yBase);
       });
     }
 
@@ -1827,9 +1868,13 @@
       sp.style.backgroundImage = "var(--panda-walk)";
       sp.style.width = pw + "px";
       sp.style.height = (pw * PANDA.ar) + "px";
-      const px = onLeft ? nodeX(curNode) - c.size * STONE_RATIO / 2 - pw * .55
-                        : nodeX(curNode) + c.size * STONE_RATIO / 2 + pw * .55;
-      place(sp, Math.max(pw * .4, Math.min(W - pw * .4, px)), ys[curNode] - c.size * .1);
+      const ph = pw * PANDA.ar;
+      const py = ys[curNode] - c.size * .1;
+      let px = onLeft ? nodeX(curNode) - c.size * STONE_RATIO / 2 - pw * .55
+                      : nodeX(curNode) + c.size * STONE_RATIO / 2 + pw * .55;
+      px = clearOf(px, py - ph / 2, py + ph / 2, pw, onLeft, c.size * .12);
+      // Unlike the planting, the mascot must stay fully on screen.
+      place(sp, Math.max(pw * .5, Math.min(W - pw * .5, px)), py);
     }
 
     items.forEach((it, i) => {
@@ -1845,9 +1890,12 @@
       place(btn, x, yy);
 
       if (it.chapter) {                    // banner sits in the lead-in gap above
+        const pct = it.chapter.total ? Math.round(it.chapter.done / it.chapter.total * 100) : 0;
         const hd = el("div", { className: "pchapter" }, [
           el("div", { className: "u" }, `UNIT ${it.chapter.unit} · CHAPTER ${it.chapter.chNo}`),
-          el("div", { className: "t" }, it.chapter.title)
+          el("div", { className: "t" }, it.chapter.title),
+          el("div", { className: "bar" }, el("i", { style: `width:${pct}%` })),
+          el("div", { className: "n" }, `${it.chapter.done} / ${it.chapter.total} lessons`)
         ]);
         // Centre it in the gap it opened. `btn` (the button this banner labels)
         // is already in the DOM, so measure the START bubble's REAL overhang
@@ -1862,7 +1910,8 @@
         }
         const topOfNext = yy - c.size / 2 - overhang;
         const bottomOfPrev = i === 0 ? HUD_H : ys[i - 1] + c.size / 2;
-        place(hd, W / 2, (bottomOfPrev + topOfNext) / 2);
+        hd.style.left = "0"; hd.style.top = ((bottomOfPrev + topOfNext) / 2) + "px";
+        wrap.appendChild(hd);
       }
     });
 
@@ -2250,7 +2299,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=167", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=168", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2328,7 +2377,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=167" : "images/panda-sad.png?v=167"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=168" : "images/panda-sad.png?v=168"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2512,11 +2561,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=167"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=168"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=167"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=168"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
