@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=171";
+  const ASSET_V = "?v=172";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1505,7 +1505,8 @@
   // Where the lamplight sits inside each night cluster, measured from the art.
   const PATH_LIGHTS = {
     "cluster-left-bamboo": { x: 17.1, y: 69.9 },
-    "cluster-right-temple": { x: 73.1, y: 35.8 }
+    "cluster-right-temple": { x: 73.1, y: 35.8 },
+    "land-pagoda": { x: 56.0, y: 59.7 }
   };
   // Scenery clusters, alternating down the path and mirrored so a short list of
   // pieces does not read as a repeating tile.
@@ -1656,7 +1657,7 @@
     "panda-walking": [[0.143, 0.893], [0.117, 0.926], [0.131, 0.986], [0.119, 0.995], [0.048, 0.969], [0.0, 0.995], [0.0, 1.0], [0.067, 0.8], [0.045, 0.94], [0.048, 0.94]],
     "fol-bamboo": [[0.081, 0.433], [0.0, 0.473], [0.0, 0.544], [0.0, 0.528], [0.0, 0.576], [0.0, 0.57], [0.0, 0.5], [0.0, 0.746], [0.0, 0.878], [0.0, 1.0]],
     "fol-pine": [[0.011, 0.375], [0.0, 0.569], [0.0, 0.618], [0.0, 0.759], [0.0, 0.768], [0.0, 0.506], [0.0, 0.536], [0.0, 0.718], [0.0, 0.943], [0.0, 1.0]],
-    "fol-blossom": [[0.072, 0.361], [0.0, 0.6], [0.0, 0.778], [0.0, 0.837], [0.0, 0.814], [0.0, 0.7], [0.0, 0.618], [0.0, 0.78], [0.0, 0.917], [0.0, 1.0]],
+    "fol-blossom": [[0.066, 0.37], [0.0, 0.6], [0.0, 0.779], [0.0, 0.837], [0.0, 0.731], [0.0, 0.691], [0.0, 0.608], [0.0, 0.779], [0.0, 0.918], [0.0, 1.0]],
     "fol-banana": [[0.235, 0.434], [0.014, 0.418], [0.014, 0.676], [0.0, 0.646], [0.0, 0.716], [0.0, 0.717], [0.0, 0.58], [0.0, 0.747], [0.0, 0.899], [0.0, 1.0]],
     "land-torii": [[0.587, 0.791], [0.161, 0.919], [0.175, 0.948], [0.209, 1.0], [0.213, 0.999], [0.097, 0.937], [0.046, 0.93], [0.016, 0.924], [0.012, 0.94], [0.0, 0.94]],
     "land-pagoda": [[0.551, 0.581], [0.49, 0.639], [0.38, 0.885], [0.359, 0.944], [0.215, 0.981], [0.159, 0.989], [0.115, 1.0], [0.06, 0.988], [0.021, 0.993], [0.0, 0.994]],
@@ -2593,7 +2594,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=171", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=172", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2671,7 +2672,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=171" : "images/panda-sad.png?v=171"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=172" : "images/panda-sad.png?v=172"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2855,11 +2856,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=171"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=172"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=171"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=172"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
