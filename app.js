@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=170";
+  const ASSET_V = "?v=171";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1505,19 +1505,7 @@
   // Where the lamplight sits inside each night cluster, measured from the art.
   const PATH_LIGHTS = {
     "cluster-left-bamboo": { x: 17.1, y: 69.9 },
-    "cluster-right-temple": { x: 73.1, y: 35.8 },
-    "land-0": { x: 65.0, y: 46.7 },
-    "land-1": { x: 36.3, y: 52.4 },
-    "land-2": { x: 51.9, y: 60.7 },
-    "land-3": { x: 49.8, y: 72.7 },
-    "land-4": { x: 53.1, y: 63.1 },
-    "land-5": { x: 59.2, y: 67.3 },
-    "land-6": { x: 47.6, y: 64.9 },
-    "land-7": { x: 62.4, y: 61.0 },
-    "land-8": { x: 41.6, y: 67.2 },
-    "land-9": { x: 62.0, y: 48.3 },
-    "land-10": { x: 53.2, y: 63.4 },
-    "land-11": { x: 58.3, y: 35.5 }
+    "cluster-right-temple": { x: 73.1, y: 35.8 }
   };
   // Scenery clusters, alternating down the path and mirrored so a short list of
   // pieces does not read as a repeating tile.
@@ -1541,36 +1529,120 @@
     "cluster-right-temple": { w: 65, ar: 0.738, side: "right" },
     "cluster-left-bamboo": { w: 66, ar: 1.689, side: "left" },
     "cluster-right-bamboo": { w: 44, ar: 1.470, side: "right" },
-    "land-0": { w: 60, ar: 0.686, side: "any" },
-    "land-1": { w: 60, ar: 0.656, side: "any" },
-    "land-2": { w: 60, ar: 0.943, side: "any" },
-    "land-3": { w: 60, ar: 0.732, side: "any" },
-    "land-4": { w: 60, ar: 0.688, side: "any" },
-    "land-5": { w: 60, ar: 0.641, side: "any" },
-    "land-6": { w: 60, ar: 0.574, side: "any" },
-    "land-7": { w: 60, ar: 0.735, side: "any" },
-    "land-8": { w: 60, ar: 0.611, side: "any" },
-    "land-9": { w: 60, ar: 0.588, side: "any" },
-    "land-10": { w: 60, ar: 0.609, side: "any" },
-    "land-11": { w: 60, ar: 0.846, side: "any" },
-    "fol-0": { w: 50, ar: 1.639, side: "left" },
-    "fol-1": { w: 50, ar: 1.354, side: "left" },
-    "fol-2": { w: 50, ar: 1.525, side: "left" },
-    "fol-3": { w: 50, ar: 1.561, side: "left" },
-    "fol-4": { w: 50, ar: 1.396, side: "left" },
-    "fol-5": { w: 50, ar: 1.478, side: "left" },
-    "fol-6": { w: 50, ar: 1.138, side: "left" },
-    "fol-7": { w: 50, ar: 1.284, side: "left" },
-    "fol-8": { w: 50, ar: 1.366, side: "left" },
-    "fol-9": { w: 50, ar: 1.316, side: "left" },
-    "fol-10": { w: 50, ar: 1.265, side: "left" },
-    "fol-11": { w: 50, ar: 1.071, side: "left" }
+    "panda-walking": { w: 22, ar: 1.352, side: "any" },
+    "fol-bamboo": { w: 60, ar: 1.532, side: "left" },
+    "fol-pine": { w: 60, ar: 1.349, side: "left" },
+    "fol-blossom": { w: 60, ar: 1.489, side: "left" },
+    "fol-banana": { w: 60, ar: 1.439, side: "left" },
+    "land-torii": { w: 65, ar: 0.624, side: "any" },
+    "land-pagoda": { w: 65, ar: 0.841, side: "any" },
+    "land-pavilion": { w: 65, ar: 0.711, side: "any" },
+    "land-house": { w: 65, ar: 0.617, side: "any" },
+    "fol-oak": { w: 60, ar: 1.31, side: "left" },
+    "land-bridge": { w: 65, ar: 0.58, side: "any" },
+    "land-waterfall": { w: 65, ar: 0.688, side: "any" },
+    "grass-1": { w: 13, ar: 0.962, side: "any" },
+    "grass-2": { w: 13, ar: 0.642, side: "any" },
+    "grass-3": { w: 13, ar: 0.809, side: "any" },
+    "land-cliff": { w: 65, ar: 0.895, side: "left" },
+    "panda-celebrate": { w: 22, ar: 1.143, side: "any" },
+    "panda-idle": { w: 22, ar: 1.531, side: "any" },
+    "panda-peek": { w: 22, ar: 0.703, side: "any" },
+    "panda-sad": { w: 22, ar: 1.079, side: "any" },
+    "panda-teacher": { w: 22, ar: 1.202, side: "any" },
+    "panda-waving": { w: 22, ar: 1.321, side: "any" },
+    "panda-reading": { w: 22, ar: 1.349, side: "any" },
+    "panda-baozi": { w: 22, ar: 1.267, side: "any" },
+    "panda-writing": { w: 22, ar: 0.978, side: "any" },
+    "panda-listening": { w: 22, ar: 1.125, side: "any" },
+    "panda-puzzled": { w: 22, ar: 1.297, side: "any" },
+    "panda-sleeping": { w: 22, ar: 0.845, side: "any" }
   };
   const FAMILIES = {
-    landmark: ["cluster-right-temple", ...Array.from({ length: 12 }, (_, i) => "land-" + i)],
-    left: ["cluster-left-bamboo", ...Array.from({ length: 12 }, (_, i) => "fol-" + i)],
-    right: ["cluster-right-bamboo", ...Array.from({ length: 12 }, (_, i) => "fol-" + i)]
+    landmark: ["cluster-right-temple", "land-torii", "land-pagoda", "land-pavilion", "land-house", "land-bridge", "land-waterfall", "land-cliff"],
+    left: ["cluster-left-bamboo", "fol-bamboo", "fol-pine", "fol-blossom", "fol-banana", "fol-oak"],
+    right: ["cluster-right-bamboo", "fol-bamboo", "fol-pine", "fol-blossom", "fol-banana", "fol-oak"]
   };
+  /* The path as composed by hand in the path editor, phone edition. Each
+     piece is placed against a lesson's stone (dx, dy from the stone's centre
+     to the piece's centre-bottom, w as a share of the screen width), so it
+     follows that stone when a START bubble or a new chapter shifts the path.
+     Headers may be sent to a chosen side. Stones past the last composed one
+     fall back to the automatic bands below. */
+  const PATH_LAYOUT = {
+    version: 1,
+    phone: true,
+    headers: {
+        "b1": "right",
+        "l3": "right",
+        "b3": "left"
+    },
+    pieces: [
+        {
+            "art": "cluster-right-temple",
+            "stone": "l1",
+            "dx": 145.1,
+            "dy": -38.5,
+            "w": 65,
+            "flip": false,
+            "behind": true
+        },
+        {
+            "art": "panda-walking",
+            "stone": "l2",
+            "dx": 114.9,
+            "dy": -38.2,
+            "w": 22,
+            "flip": true,
+            "behind": false
+        },
+        {
+            "art": "cluster-left-bamboo",
+            "stone": "l3",
+            "dx": -196.9,
+            "dy": -51.2,
+            "w": 66,
+            "flip": false,
+            "behind": true
+        },
+        {
+            "art": "panda-sleeping",
+            "stone": "l4",
+            "dx": -172.8,
+            "dy": 44.3,
+            "w": 36,
+            "flip": false,
+            "behind": false
+        },
+        {
+            "art": "land-pagoda",
+            "stone": "l6",
+            "dx": 245,
+            "dy": 63.6,
+            "w": 84.5,
+            "flip": false,
+            "behind": true
+        },
+        {
+            "art": "fol-blossom",
+            "stone": "b5",
+            "dx": -185.8,
+            "dy": 78.2,
+            "w": 63,
+            "flip": false,
+            "behind": true
+        },
+        {
+            "art": "panda-writing",
+            "stone": "b8",
+            "dx": 201.2,
+            "dy": -40,
+            "w": 36,
+            "flip": false,
+            "behind": false
+        }
+    ]
+};
   // Where the mascot stands relative to the lesson you are on.
   const PANDA = { x: 79.2, y: 50.8, w: 22, flip: true, ar: 831 / 614 };
   /* Where each piece is actually painted: ten strips top to bottom, each the
@@ -1578,34 +1650,37 @@
      Collisions are judged on these, so foliage can lean towards the path the
      way it was composed without its empty corners counting against it. */
   const SLABS = {
-    "land-0": [[0.662, 0.986], [0.593, 0.998], [0.493, 1.0], [0.288, 0.998], [0.238, 0.998], [0.195, 0.998], [0.057, 0.99], [0.0, 0.993], [0.038, 0.99], [0.364, 0.995]],
-    "land-1": [[0.579, 0.797], [0.138, 0.894], [0.174, 0.95], [0.188, 1.0], [0.241, 1.0], [0.085, 0.941], [0.026, 0.932], [0.003, 0.924], [0.0, 0.938], [0.006, 1.0]],
-    "land-2": [[0.516, 0.544], [0.459, 0.594], [0.324, 0.871], [0.305, 0.953], [0.201, 0.981], [0.135, 0.984], [0.094, 1.0], [0.05, 0.997], [0.016, 0.978], [0.0, 0.981]],
-    "land-3": [[0.535, 0.797], [0.47, 0.919], [0.408, 0.93], [0.135, 0.973], [0.051, 0.973], [0.008, 0.968], [0.011, 0.986], [0.005, 1.0], [0.0, 0.981], [0.041, 0.87]],
-    "land-4": [[0.593, 0.834], [0.169, 0.871], [0.132, 0.914], [0.063, 0.957], [0.014, 0.963], [0.0, 1.0], [0.011, 1.0], [0.034, 0.943], [0.003, 0.954], [0.009, 0.957]],
-    "land-5": [[0.466, 0.721], [0.404, 0.932], [0.347, 0.944], [0.288, 0.988], [0.169, 0.988], [0.101, 0.973], [0.033, 0.994], [0.009, 1.0], [0.009, 1.0], [0.0, 0.991]],
-    "land-6": [[0.4, 0.598], [0.35, 0.64], [0.131, 0.845], [0.074, 0.879], [0.05, 0.905], [0.052, 0.983], [0.043, 1.0], [0.06, 0.969], [0.024, 0.981], [0.0, 0.981]],
-    "land-7": [[0.437, 0.951], [0.369, 0.955], [0.314, 0.997], [0.265, 1.0], [0.181, 1.0], [0.068, 0.984], [0.019, 0.99], [0.0, 0.99], [0.049, 1.0], [0.239, 1.0]],
-    "land-8": [[0.602, 0.802], [0.189, 0.838], [0.139, 0.938], [0.062, 0.973], [0.041, 1.0], [0.009, 1.0], [0.012, 0.997], [0.05, 1.0], [0.015, 0.982], [0.0, 0.962]],
-    "land-9": [[0.572, 0.837], [0.514, 0.89], [0.457, 0.976], [0.304, 0.979], [0.249, 0.992], [0.15, 0.997], [0.079, 0.995], [0.063, 0.995], [0.029, 1.0], [0.0, 1.0]],
-    "land-10": [[0.631, 0.834], [0.575, 0.91], [0.343, 0.966], [0.211, 0.982], [0.142, 1.0], [0.058, 0.995], [0.021, 0.96], [0.0, 0.958], [0.011, 0.968], [0.011, 0.968]],
-    "land-11": [[0.595, 0.649], [0.441, 0.799], [0.441, 0.799], [0.462, 0.776], [0.495, 0.957], [0.254, 1.0], [0.197, 0.987], [0.087, 0.96], [0.04, 0.957], [0.0, 0.977]],
-    "fol-0": [[0.147, 0.504], [0.032, 0.575], [0.012, 0.603], [0.067, 0.591], [0.036, 0.675], [0.032, 0.659], [0.024, 0.544], [0.0, 0.679], [0.004, 0.893], [0.02, 1.0]],
-    "fol-1": [[0.09, 0.455], [0.0, 0.601], [0.007, 0.675], [0.03, 0.795], [0.03, 0.836], [0.022, 0.53], [0.026, 0.575], [0.0, 0.743], [0.007, 0.922], [0.026, 1.0]],
-    "fol-2": [[0.047, 0.381], [0.008, 0.568], [0.008, 0.716], [0.013, 0.822], [0.013, 0.809], [0.008, 0.653], [0.008, 0.602], [0.0, 0.699], [0.0, 0.869], [0.008, 1.0]],
-    "fol-3": [[0.285, 0.526], [0.004, 0.51], [0.008, 0.783], [0.012, 0.715], [0.012, 0.814], [0.008, 0.842], [0.012, 0.672], [0.008, 0.798], [0.0, 0.949], [0.012, 1.0]],
-    "fol-4": [[0.088, 0.508], [0.038, 0.658], [0.008, 0.754], [0.008, 0.781], [0.008, 0.677], [0.008, 0.662], [0.008, 0.646], [0.008, 0.838], [0.0, 0.946], [0.004, 1.0]],
-    "fol-5": [[0.077, 0.486], [0.024, 0.478], [0.004, 0.494], [0.004, 0.567], [0.008, 0.603], [0.004, 0.603], [0.004, 0.603], [0.004, 0.773], [0.0, 0.935], [0.004, 1.0]],
-    "fol-6": [[0.0, 0.174], [0.004, 0.352], [0.004, 0.545], [0.004, 0.573], [0.0, 0.668], [0.0, 0.708], [0.004, 0.719], [0.004, 0.854], [0.0, 0.957], [0.004, 1.0]],
-    "fol-7": [[0.044, 0.424], [0.004, 0.48], [0.016, 0.476], [0.0, 0.708], [0.0, 0.732], [0.004, 0.632], [0.004, 0.72], [0.004, 0.832], [0.0, 0.932], [0.0, 1.0]],
-    "fol-8": [[0.156, 0.393], [0.0, 0.342], [0.004, 0.331], [0.012, 0.576], [0.016, 0.638], [0.016, 0.665], [0.016, 0.739], [0.016, 0.809], [0.0, 0.934], [0.012, 1.0]],
-    "fol-9": [[0.008, 0.464], [0.034, 0.525], [0.004, 0.574], [0.004, 0.567], [0.008, 0.654], [0.008, 0.669], [0.004, 0.608], [0.0, 0.787], [0.008, 0.989], [0.0, 1.0]],
-    "fol-10": [[0.112, 0.346], [0.035, 0.485], [0.0, 0.538], [0.008, 0.596], [0.004, 0.681], [0.008, 0.673], [0.008, 0.696], [0.008, 0.842], [0.0, 0.938], [0.004, 1.0]],
-    "fol-11": [[0.124, 0.442], [0.004, 0.416], [0.004, 0.625], [0.004, 0.655], [0.004, 0.648], [0.004, 0.73], [0.004, 0.787], [0.004, 0.876], [0.0, 0.989], [0.004, 1.0]],
     "cluster-left-bamboo": [[0.0, 0.306], [0.0, 0.346], [0.0, 0.352], [0.0, 0.427], [0.0, 0.499], [0.0, 0.596], [0.0, 0.598], [0.0, 0.605], [0.0, 0.932], [0.0, 1.0]],
     "cluster-right-temple": [[0.735, 1.0], [0.641, 1.0], [0.423, 1.0], [0.332, 1.0], [0.278, 1.0], [0.185, 1.0], [0.06, 1.0], [0.0, 1.0], [0.149, 1.0], [0.48, 1.0]],
     "cluster-right-bamboo": [[0.718, 0.989], [0.668, 1.0], [0.618, 1.0], [0.638, 1.0], [0.707, 1.0], [0.627, 1.0], [0.618, 1.0], [0.449, 1.0], [0.38, 1.0], [0.0, 1.0]],
-    "panda-walking": [[0.143, 0.893], [0.117, 0.926], [0.131, 0.986], [0.119, 0.995], [0.048, 0.969], [0.0, 0.995], [0.0, 1.0], [0.067, 0.8], [0.045, 0.94], [0.048, 0.94]]
+    "panda-walking": [[0.143, 0.893], [0.117, 0.926], [0.131, 0.986], [0.119, 0.995], [0.048, 0.969], [0.0, 0.995], [0.0, 1.0], [0.067, 0.8], [0.045, 0.94], [0.048, 0.94]],
+    "fol-bamboo": [[0.081, 0.433], [0.0, 0.473], [0.0, 0.544], [0.0, 0.528], [0.0, 0.576], [0.0, 0.57], [0.0, 0.5], [0.0, 0.746], [0.0, 0.878], [0.0, 1.0]],
+    "fol-pine": [[0.011, 0.375], [0.0, 0.569], [0.0, 0.618], [0.0, 0.759], [0.0, 0.768], [0.0, 0.506], [0.0, 0.536], [0.0, 0.718], [0.0, 0.943], [0.0, 1.0]],
+    "fol-blossom": [[0.072, 0.361], [0.0, 0.6], [0.0, 0.778], [0.0, 0.837], [0.0, 0.814], [0.0, 0.7], [0.0, 0.618], [0.0, 0.78], [0.0, 0.917], [0.0, 1.0]],
+    "fol-banana": [[0.235, 0.434], [0.014, 0.418], [0.014, 0.676], [0.0, 0.646], [0.0, 0.716], [0.0, 0.717], [0.0, 0.58], [0.0, 0.747], [0.0, 0.899], [0.0, 1.0]],
+    "land-torii": [[0.587, 0.791], [0.161, 0.919], [0.175, 0.948], [0.209, 1.0], [0.213, 0.999], [0.097, 0.937], [0.046, 0.93], [0.016, 0.924], [0.012, 0.94], [0.0, 0.94]],
+    "land-pagoda": [[0.551, 0.581], [0.49, 0.639], [0.38, 0.885], [0.359, 0.944], [0.215, 0.981], [0.159, 0.989], [0.115, 1.0], [0.06, 0.988], [0.021, 0.993], [0.0, 0.994]],
+    "land-pavilion": [[0.545, 0.795], [0.478, 0.918], [0.415, 0.926], [0.129, 0.964], [0.051, 0.958], [0.018, 0.958], [0.022, 0.976], [0.009, 1.0], [0.0, 0.98], [0.056, 0.873]],
+    "land-house": [[0.577, 0.798], [0.172, 0.833], [0.149, 0.864], [0.078, 0.924], [0.046, 0.969], [0.033, 1.0], [0.044, 0.998], [0.04, 0.977], [0.0, 0.995], [0.002, 0.995]],
+    "fol-oak": [[0.052, 0.425], [0.0, 0.625], [0.016, 0.675], [0.0, 0.782], [0.0, 0.796], [0.0, 0.501], [0.0, 0.552], [0.0, 0.696], [0.0, 0.937], [0.0, 1.0]],
+    "land-bridge": [[0.478, 0.821], [0.419, 0.931], [0.365, 0.959], [0.311, 0.976], [0.165, 0.968], [0.105, 0.986], [0.041, 0.988], [0.001, 0.999], [0.0, 0.997], [0.009, 0.893]],
+    "land-waterfall": [[0.452, 0.964], [0.341, 1.0], [0.294, 1.0], [0.296, 1.0], [0.261, 1.0], [0.167, 1.0], [0.11, 1.0], [0.046, 1.0], [0.0, 1.0], [0.269, 1.0]],
+    "grass-1": [[0.167, 0.309], [0.189, 0.394], [0.215, 0.454], [0.0, 0.994], [0.022, 0.984], [0.102, 0.904], [0.169, 0.843], [0.032, 1.0], [0.084, 0.976], [0.163, 0.845]],
+    "grass-2": [[0.194, 0.305], [0.224, 0.364], [0.25, 0.732], [0.271, 0.702], [0.29, 0.663], [0.0, 0.632], [0.054, 1.0], [0.091, 0.897], [0.076, 0.792], [0.151, 0.729]],
+    "grass-3": [[0.168, 0.344], [0.213, 0.434], [0.255, 0.934], [0.29, 0.922], [0.317, 0.863], [0.078, 0.818], [0.0, 0.785], [0.137, 1.0], [0.164, 0.92], [0.228, 0.858]],
+    "land-cliff": [[0.0, 0.287], [0.0, 0.367], [0.0, 0.372], [0.0, 0.405], [0.0, 0.537], [0.0, 0.588], [0.0, 0.683], [0.0, 0.758], [0.0, 0.915], [0.0, 1.0]],
+    "panda-celebrate": [[0.17, 0.952], [0.059, 0.947], [0.061, 1.0], [0.065, 0.984], [0.0, 0.972], [0.089, 0.986], [0.212, 0.851], [0.218, 0.838], [0.242, 0.79], [0.291, 0.505]],
+    "panda-idle": [[0.077, 0.914], [0.077, 0.912], [0.107, 0.893], [0.107, 0.893], [0.118, 0.954], [0.035, 0.998], [0.0, 1.0], [0.002, 0.979], [0.167, 0.824], [0.139, 0.856]],
+    "panda-peek": [[0.139, 0.728], [0.06, 0.734], [0.052, 0.728], [0.056, 0.954], [0.11, 0.998], [0.1, 1.0], [0.1, 0.996], [0.102, 0.975], [0.023, 0.942], [0.0, 0.888]],
+    "panda-sad": [[0.188, 0.816], [0.107, 0.897], [0.109, 0.897], [0.135, 0.84], [0.137, 0.893], [0.176, 0.911], [0.145, 0.927], [0.014, 0.99], [0.0, 1.0], [0.012, 0.986]],
+    "panda-teacher": [[0.036, 0.62], [0.008, 0.994], [0.026, 1.0], [0.073, 0.923], [0.032, 0.899], [0.006, 0.824], [0.0, 0.691], [0.032, 0.691], [0.119, 0.683], [0.081, 0.733]],
+    "panda-waving": [[0.087, 0.741], [0.077, 0.939], [0.123, 1.0], [0.123, 0.998], [0.032, 0.956], [0.004, 0.838], [0.0, 0.78], [0.046, 0.78], [0.182, 0.78], [0.152, 0.808]],
+    "panda-reading": [[0.054, 0.892], [0.052, 0.89], [0.11, 0.871], [0.104, 0.876], [0.116, 0.959], [0.035, 0.985], [0.0, 1.0], [0.002, 0.985], [0.015, 0.988], [0.033, 0.969]],
+    "panda-baozi": [[0.088, 0.865], [0.066, 0.865], [0.088, 0.864], [0.125, 0.869], [0.131, 0.891], [0.133, 0.943], [0.103, 0.969], [0.045, 0.969], [0.0, 1.0], [0.002, 0.994]],
+    "panda-writing": [[0.277, 0.805], [0.277, 0.818], [0.248, 0.8], [0.248, 0.777], [0.209, 0.838], [0.186, 0.891], [0.098, 0.918], [0.002, 0.998], [0.0, 1.0], [0.035, 0.968]],
+    "panda-listening": [[0.05, 0.721], [0.029, 0.891], [0.09, 1.0], [0.003, 0.967], [0.0, 0.888], [0.01, 0.913], [0.093, 0.922], [0.01, 0.933], [0.002, 0.927], [0.026, 0.843]],
+    "panda-puzzled": [[0.331, 1.0], [0.036, 0.96], [0.036, 0.882], [0.002, 0.806], [0.0, 0.832], [0.034, 0.876], [0.192, 0.896], [0.184, 0.89], [0.188, 0.776], [0.152, 0.824]],
+    "panda-sleeping": [[0.288, 0.583], [0.091, 0.655], [0.0, 0.9], [0.086, 0.886], [0.083, 0.809], [0.134, 0.878], [0.122, 0.905], [0.063, 0.935], [0.043, 0.992], [0.097, 1.0]]
   };
   const lessonHero = lesson => (cjkOnly(lesson.words[0].hanzi)[0] || "字");
   /* ---- Lesson completion -------------------------------------------------
@@ -1850,7 +1925,11 @@
 
     // A header takes the side of the path the stones around it leave free.
     // The first one sits on the left, under the HUD, as the design has it.
-    const headerRight = i => i > 0 && (nodeX(i - 1) + nodeX(i)) / 2 < W / 2;
+    const headerRight = i => {
+      const chosen = PATH_LAYOUT.headers[items[i].lesson.id];
+      if (chosen) return chosen === "right";
+      return i > 0 && (nodeX(i - 1) + nodeX(i)) / 2 < W / 2;
+    };
 
     // Everything scenery has to keep out of: the stones, and the chapter
     // headers, each on its own side of the page.
@@ -1977,8 +2056,49 @@
       claim("panda-walking", cx, base, pw, ph, cx > W / 2);
     };
 
+    /* ---- The hand-composed layout, drawn exactly as placed. It was composed
+       at 390 wide: sideways offsets scale with the screen, vertical ones do
+       not, because the stone spacing is fixed in pixels. */
+    const kx = W / 390;
+    let composedUntil = -1;
+    PATH_LAYOUT.pieces.forEach(p => {
+      const i = items.findIndex(it => it.lesson.id === p.stone);
+      const a = ART[p.art];
+      if (i < 0 || !a) return;
+      composedUntil = Math.max(composedUntil, i);
+      const cx = nodeX(i) + p.dx * kx, base = ys[i] + p.dy;
+      const w = W * p.w / 100, h = w * a.ar;
+      if (/^panda/.test(p.art)) {
+        const gw = w * .82, gh = gw * .38;
+        const g = el("div", { className: "pground g2" });
+        g.style.width = gw + "px";
+        g.style.height = gh + "px";
+        place(g, cx, base - gh * .62 + gh / 2);
+        const sp = el("div", { className: "psprite" + (p.flip ? " flip" : "") });
+        sp.style.backgroundImage = `var(--${p.art === "panda-walking" ? "panda-walk" : p.art})`;
+        sp.style.width = w + "px";
+        sp.style.height = h + "px";
+        place(sp, cx, base - h / 2);
+      } else {
+        const cl = el("div", { className: "pcluster" + (p.flip ? " flip" : "") + (p.behind ? "" : " front") +
+          (PATH_LIGHTS[p.art] ? "" : " nolight") });
+        cl.style.width = w + "px";
+        cl.style.height = h + "px";
+        cl.style.backgroundImage = `var(--${p.art})`;
+        const lit = PATH_LIGHTS[p.art];
+        if (lit) {
+          const lx = p.flip ? 100 - lit.x : lit.x;
+          cl.style.setProperty("--lx", ((35 + lx) / 170 * 100).toFixed(1) + "%");
+          cl.style.setProperty("--ly", ((45 + lit.y) / 190 * 100).toFixed(1) + "%");
+        }
+        place(cl, cx, base);
+      }
+      claim(p.art, cx, base, w, h, p.flip);
+    });
+
     for (let b = 0; b * BAND_LESSONS < items.length; b++) {
       const first = b * BAND_LESSONS;
+      if (first <= composedUntil) continue;             // composed by hand: leave it be
       const anchor = ys[first] - BAND_TOP * bandScale;
       const bandH = BAND_H * bandScale;
 
@@ -2473,7 +2593,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=170", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=171", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2551,7 +2671,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=170" : "images/panda-sad.png?v=170"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=171" : "images/panda-sad.png?v=171"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2735,11 +2855,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=170"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=171"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=170"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=171"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
