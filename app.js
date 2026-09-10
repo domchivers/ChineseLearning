@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=166";
+  const ASSET_V = "?v=167";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1509,15 +1509,19 @@
   };
   // Scenery clusters, alternating down the path and mirrored so a short list of
   // pieces does not read as a repeating tile.
-  // `ar` is each piece's height over its width, so the box matches its artwork.
-  const PATH_CLUSTERS = [
-    { art: "cluster-right-temple", side: 1, w: 0.65, ar: 0.738 },
-    { art: "cluster-left-bamboo", side: -1, w: 0.66, ar: 1.689 },
-    { art: "cluster-right-bamboo", side: 1, w: 0.44, ar: 1.470 },
-    { art: "cluster-left-bamboo", side: -1, w: 0.52, ar: 1.689 },
-    { art: "cluster-right-temple", side: 1, w: 0.50, ar: 0.738 },
-    { art: "cluster-right-bamboo", side: -1, w: 0.48, ar: 1.470 }
+  /* The arrangement settled in the path composer, as percentages of a 390x844
+     screen. `ar` is each piece's height over its width. `y` is the base of the
+     piece. This band covers five lessons and repeats down the path. */
+  const BAND_LESSONS = 5;
+  const BAND_TOP = 200;              // where the first lesson sat in the composer
+  const BAND_H = 844;                // the screen the arrangement was composed on
+  const PATH_TEMPLATE = [
+    { art: "cluster-right-temple", x: 69, y: 35.6, w: 65, ar: 0.738 },
+    { art: "cluster-left-bamboo", x: 26.7, y: 98.2, w: 66, ar: 1.689 },
+    { art: "cluster-right-bamboo", x: 98, y: 112, w: 44, ar: 1.470 }
   ];
+  // Where the mascot stands relative to the lesson you are on.
+  const PANDA = { x: 79.2, y: 50.8, w: 22, flip: true, ar: 831 / 614 };
   const lessonHero = lesson => (cjkOnly(lesson.words[0].hanzi)[0] || "字");
   /* ---- Lesson completion -------------------------------------------------
      Separate from mastery. A word is "mastered" only once its SRS interval
@@ -1625,7 +1629,7 @@
      ~800px tall on desktop but only ~400px wide on a phone.                */
   const PATH_CFG = {
     desktop: { size: 84, gap: 132, wave: 118, per: 8, pad: 180, sprite: 140, sgap: 80, svert: 0 },
-    phone:   { size: 74, gap: 116, wave: 82,  per: 8, pad: 170, sprite: 124, sgap: 70, svert: 0 }
+    phone:   { size: 74, gap: 143, wave: 106, per: 8, pad: 170, sprite: 124, sgap: 70, svert: 0 }
   };
   const pathIsPhone = () => window.matchMedia("(max-width: 699px)").matches;
   let pathTries = 0;
@@ -1787,25 +1791,45 @@
       place(pb, bx, by);
     }
 
-    // Planting down the edges, alternating sides and mirroring so a short list
-    // of pieces never reads as a repeating tile.
-    for (let i = SC.clusterEvery - 1, ci = 0; i < items.length; i += SC.clusterEvery, ci++) {
-      const spec = PATH_CLUSTERS[ci % PATH_CLUSTERS.length];
-      const flip = ci % 3 === 2;
-      const side = flip ? -spec.side : spec.side;
-      const cw = W * spec.w;
-      const cl = el("div", { className: "pcluster" + (flip ? " flip" : "") +
-        (PATH_LIGHTS[spec.art] ? "" : " nolight") });
-      cl.style.width = cw + "px";
-      cl.style.height = (cw * spec.ar) + "px";
-      cl.style.backgroundImage = `var(--${spec.art})`;
-      const lit = PATH_LIGHTS[spec.art];
-      if (lit) {
-        cl.style.setProperty("--lx", lit.x + "%");
-        cl.style.setProperty("--ly", lit.y + "%");
-      }
-      // Hug the edge and let it bleed off, which is what keeps the middle clear.
-      place(cl, side > 0 ? W - cw * .28 : cw * .28, ys[i] + c.size * 1.1);
+    /* The composed band, repeated down the path. Anchoring each repeat to the
+       lesson that opens it keeps the scenery in step with the stones however
+       long a chapter is. Alternate repeats mirror, so three pieces do not read
+       as a tile. */
+    const bandScale = c.gap / 143;                  // the spacing it was composed at
+    for (let b = 0; b * BAND_LESSONS < items.length; b++) {
+      const first = b * BAND_LESSONS;
+      const anchor = ys[first] - BAND_TOP * bandScale;
+      const mirror = b % 2 === 1;
+      PATH_TEMPLATE.forEach(spec => {
+        const cw = W * spec.w / 100;
+        const cl = el("div", { className: "pcluster" + (mirror ? " flip" : "") +
+          (PATH_LIGHTS[spec.art] ? "" : " nolight") });
+        cl.style.width = cw + "px";
+        cl.style.height = (cw * spec.ar) + "px";
+        cl.style.backgroundImage = `var(--${spec.art})`;
+        const lit = PATH_LIGHTS[spec.art];
+        if (lit) {
+          cl.style.setProperty("--lx", (mirror ? 100 - lit.x : lit.x) + "%");
+          cl.style.setProperty("--ly", lit.y + "%");
+        }
+        const x = mirror ? W - W * spec.x / 100 : W * spec.x / 100;
+        place(cl, x, anchor + BAND_H * spec.y / 100 * bandScale);
+      });
+    }
+
+    // The mascot walks beside the lesson you are on, once, rather than
+    // reappearing in every bay down the path.
+    const curNode = items.findIndex(it => it.lesson.id === curId);
+    if (curNode >= 0) {
+      const pw = W * PANDA.w / 100;
+      const onLeft = nodeX(curNode) > W / 2;         // stand in the open side
+      const sp = el("div", { className: "psprite" + (onLeft ? "" : " flip") });
+      sp.style.backgroundImage = "var(--panda-walk)";
+      sp.style.width = pw + "px";
+      sp.style.height = (pw * PANDA.ar) + "px";
+      const px = onLeft ? nodeX(curNode) - c.size * STONE_RATIO / 2 - pw * .55
+                        : nodeX(curNode) + c.size * STONE_RATIO / 2 + pw * .55;
+      place(sp, Math.max(pw * .4, Math.min(W - pw * .4, px)), ys[curNode] - c.size * .1);
     }
 
     items.forEach((it, i) => {
@@ -1841,32 +1865,6 @@
         place(hd, W / 2, (bottomOfPrev + topOfNext) / 2);
       }
     });
-
-    /* Mascots sit in the arches of the wave. Where the sine reaches an extreme
-       the buttons crowd to one side, opening a wide bay on the other — that bay
-       is the only place a sprite fits without crowding a button. So look for the
-       local peaks of the curve rather than stepping every Nth lesson. */
-    const reach = i => Math.sin(i * 2 * Math.PI / c.per) / k;
-    let si = 0;
-    for (let i = 1; i < items.length - 1; i++) {
-      if (items[i].chapter) continue;
-      const r = reach(i);
-      if (Math.abs(r) < 0.9) continue;                       // not near an extreme
-      if (Math.abs(r) < Math.abs(reach(i - 1))) continue;     // not the deepest
-      if (Math.abs(r) < Math.abs(reach(i + 1))) continue;
-      const x = nodeX(i), w = c.sprite;
-      const side = r > 0 ? -1 : 1;                           // into the open bay
-      const mx = x + side * (c.size / 2 + w / 2 + c.sgap);
-      if (mx - w / 2 < 4 || mx + w / 2 > W - 4) continue;
-      const idx = si++;
-      // Mirror alternate mascots so they don't all face the same way down the
-      // path — the .flip class keeps the centring transform and adds scaleX(-1).
-      const sp = el("div", { className: "psprite" + (idx % 2 ? " flip" : "") });
-      sp.style.backgroundImage = "var(--panda-walk)";
-      sp.style.width = w + "px";
-      sp.style.height = Math.round(w * 831 / 614) + "px";
-      place(sp, mx, ys[i] + c.svert);
-    }
 
     // Land the path on your CURRENT lesson every render, so it opens where you
     // are — and, crucially, at a deterministic scroll position. Leaving the inner
@@ -2252,7 +2250,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=166", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=167", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2330,7 +2328,7 @@
         face.appendChild(corr);
       }
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=166" : "images/panda-sad.png?v=166"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=167" : "images/panda-sad.png?v=167"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2514,11 +2512,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=166"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=167"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=166"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/panda-sad.png?v=167"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
