@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=177";
+  const ASSET_V = "?v=178";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2405,8 +2405,47 @@
   const SENTENCES = [];
   (window.DIALOGUES || []).forEach(d => (d.turns || []).forEach(t => {
     const words = segmentSentence(t.hanzi, t.pinyin);
-    if (words) SENTENCES.push({ hanzi: t.hanzi, pinyin: t.pinyin, en: t.en, words });
+    if (words) SENTENCES.push({ hanzi: t.hanzi, pinyin: t.pinyin, en: t.en, words, alt: t.alt || [] });
   }));
+
+  /* ---- Other word orders that are also right ---------------------------
+     Chinese lets a time word sit before or after the subject (明天我要… and
+     我明天要… are both fine), so a sentence built the other way round must not
+     be marked wrong. Each sentence yields every order it accepts: the stored
+     one, the subject/time swap when it opens that way, and any alternatives
+     written into the dialogue data as `alt` (which must use the same words). */
+  const SUBJECTS = new Set(["我", "你", "他", "她", "它", "我们", "你们", "他们", "她们", "咱们", "您"]);
+  const isTimeWord = w => /^(今|明|昨|后|前)(天|年)$/.test(w) || /^(早|晚|上|中|下)(上|午)$/.test(w)
+    || /^(星期|周)/.test(w) || ["现在", "周末", "每天", "每年", "平时", "以后", "以前", "刚才"].includes(w);
+  function acceptedOrders(sent) {
+    const base = sent.words.map(w => w.hanzi);
+    const orders = [base];
+    const add = seq => { if (!orders.some(o => o.join("") === seq.join(""))) orders.push(seq); };
+    const [a, b] = base;
+    if (base.length > 2 && ((SUBJECTS.has(a) && isTimeWord(b)) || (isTimeWord(a) && SUBJECTS.has(b))))
+      add([b, a, ...base.slice(2)]);
+    // Alternatives from the data: split each on the sentence's own words.
+    const vocab = [...new Set(base)].sort((x, y) => y.length - x.length);
+    (sent.alt || []).forEach(h => {
+      const chars = [...h].filter(c => CJK_ONE.test(c)).join("");
+      const seq = [];
+      let i = 0;
+      while (i < chars.length) {
+        const w = vocab.find(v => chars.startsWith(v, i));
+        if (!w) return;
+        seq.push(w); i += w.length;
+      }
+      if (seq.length === base.length && [...seq].sort().join() === [...base].sort().join()) add(seq);
+    });
+    return orders;
+  }
+  // The stored pinyin, re-ordered to follow a different word order.
+  function pinyinFor(sent, order) {
+    const py = {};
+    sent.words.forEach(w => { py[w.hanzi] = w.pinyin; });
+    return order.map(w => py[w] || "").join(" ");
+  }
+  const tailPunct = h => (/[。？！]$/.test(h) ? h.slice(-1) : "");
   const enWords = s => s.replace(/[.!?,;:]+/g, "").split(/\s+/).filter(Boolean);
   const sentencesFor = card => SENTENCES.filter(s => s.hanzi.includes(card.hanzi));
 
@@ -2595,7 +2634,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=177", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=178", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2715,7 +2754,11 @@
 
     studyCheckFn = () => {
       const got = placed().map(t => t.dataset.val);
-      const correct = got.length === target.length && got.every((v, i) => v === target[i]);
+      const same = (x, y) => x.length === y.length && x.every((v, i) => v === y[i]);
+      // Building the Chinese: any accepted word order counts, not only the stored one.
+      const orders = en2cn ? acceptedOrders(sent) : [target];
+      const hit = orders.find(o => same(got, o));
+      const correct = !!hit;
       answer.classList.add(correct ? "ok" : "bad");
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
       // Feedback sits under the bank, never on the mascot.
@@ -2727,13 +2770,23 @@
         body.appendChild(el("div", { className: "fb-a" }, answerDisplay));
         if (en2cn) body.appendChild(el("div", { className: "fb-py" }, prettyPinyin(sent.pinyin)));
       }
+      // Show the other orders that would also have been right, so a swap
+      // learnt one way is seen the other way too.
+      const shown = !en2cn ? [] : correct ? orders.filter(o => o !== hit) : orders.slice(1);
+      if (shown.length) {
+        body.appendChild(el("div", { className: "fb-also" }, correct ? "Also correct:" : "Also accepted:"));
+        shown.forEach(o => {
+          body.appendChild(el("div", { className: "fb-a" }, o.join("") + tailPunct(sent.hanzi)));
+          body.appendChild(el("div", { className: "fb-py" }, prettyPinyin(pinyinFor(sent, o))));
+        });
+      }
       fb.appendChild(body);
       // The result rides with the Continue button, pinned at the bottom, so it
       // is always in view however long the word bank is.
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=177" : "images/path/panda-sad.webp?v=177"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=178" : "images/path/panda-sad.webp?v=178"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2917,11 +2970,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=177"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=178"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=177"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=178"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
