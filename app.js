@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=175";
+  const ASSET_V = "?v=176";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1506,7 +1506,8 @@
   const PATH_LIGHTS = {
     "cluster-left-bamboo": { x: 17.1, y: 69.9 },
     "cluster-right-temple": { x: 73.1, y: 35.8 },
-    "land-pagoda": { x: 56.0, y: 59.7 }
+    "land-pagoda": { x: 56.0, y: 59.7 },
+    "fol-blossom": { x: 67.4, y: 49.6 }
   };
   // Scenery clusters, alternating down the path and mirrored so a short list of
   // pieces does not read as a repeating tile.
@@ -2594,7 +2595,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=175", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=176", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2726,7 +2727,7 @@
       fb.appendChild(body);
       host.appendChild(fb);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=175" : "images/path/panda-sad.webp?v=175"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=176" : "images/path/panda-sad.webp?v=176"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2910,11 +2911,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=175"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=176"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=175"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=176"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
