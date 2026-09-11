@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=178";
+  const ASSET_V = "?v=179";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2230,6 +2230,22 @@
       });
     }
   }
+  // Home scenery parallax: the top layer climbs at a third of the scroll, the
+  // foliage stays put, so the page appears to slide in front of the view.
+  (() => {
+    const top = document.getElementById("homeBgTop");
+    if (!top) return;
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let queued = false;
+    const settle = () => {
+      queued = false;
+      if (document.body.dataset.view !== "home" || calm.matches) { top.style.transform = ""; return; }
+      top.style.transform = `translate3d(0, ${(-window.scrollY * 0.35).toFixed(1)}px, 0)`;
+    };
+    window.addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(settle); } }, { passive: true });
+    settle();
+  })();
+
   // Re-lay when the window changes shape (positions are measured, not static).
   let pathResizeTimer = null;
   window.addEventListener("resize", () => {
@@ -2634,7 +2650,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=178", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=179", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2786,7 +2802,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=178" : "images/path/panda-sad.webp?v=178"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=179" : "images/path/panda-sad.webp?v=179"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2970,11 +2986,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=178"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=179"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=178"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=179"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
