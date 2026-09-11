@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=176";
+  const ASSET_V = "?v=177";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2595,7 +2595,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=176", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=177", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2693,7 +2693,10 @@
       t.addEventListener("click", () => {
         if (studyAnswered) return;
         if (t.parentElement === slot) {
-          slot.style.width = t.offsetWidth + "px"; slot.style.height = t.offsetHeight + "px";
+          // The ghost takes the tile's painted size, read from the slot itself
+          // (which is exactly the tile) so no pressed or stretched state leaks in.
+          const r = slot.getBoundingClientRect();
+          slot.style.width = r.width.toFixed(1) + "px"; slot.style.height = r.height.toFixed(1) + "px";
           slot.classList.add("empty");
           const cell = el("div", { className: "cell" });
           answer.appendChild(cell);
@@ -2725,9 +2728,12 @@
         if (en2cn) body.appendChild(el("div", { className: "fb-py" }, prettyPinyin(sent.pinyin)));
       }
       fb.appendChild(body);
-      host.appendChild(fb);
+      // The result rides with the Continue button, pinned at the bottom, so it
+      // is always in view however long the word bank is.
+      const wrapEl = $("#studyContinueWrap");
+      wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=176" : "images/path/panda-sad.webp?v=176"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=177" : "images/path/panda-sad.webp?v=177"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2911,11 +2917,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=176"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=177"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=176"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=177"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2932,6 +2938,7 @@
     // Reset all pinned controls; each mode re-shows what it needs.
     $("#studyContinueWrap").classList.add("hidden");
     $("#studyContinueWrap").classList.remove("wide");
+    $("#studyContinueWrap").querySelectorAll(".sent-fb").forEach(n => n.remove());
     face.classList.remove("sent");
     $("#studyReveal").classList.add("hidden");
     $("#studyNext").classList.add("hidden");
