@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=173";
+  const ASSET_V = "?v=174";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2594,7 +2594,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/panda-teacher.png?v=173", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=174", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2611,11 +2611,14 @@
     // (e.g. 再见！→ "Goodbye!"); fall back to building the Chinese instead.
     const en2cn = enWords(sent.en).length < 2 || Math.random() < 0.5;
     face.innerHTML = "";
+    face.classList.add("sent");
     host.innerHTML = "";
     host.classList.add("sentence-mode");
+    $("#studyContinueWrap").classList.add("wide");
     const bubble = mascotSpeech(face);
 
     let target, tiles, answerDisplay;
+    bubble.classList.add("sent");
     if (en2cn) {
       labelEl.textContent = "Build the Chinese";
       bubble.appendChild(el("div", { className: "en" }, sent.en));
@@ -2627,9 +2630,21 @@
       sample(pool, 3).forEach(w => tiles.push({ val: w.hanzi, hanzi: w.hanzi, pinyin: w.pinyin }));
     } else {
       labelEl.textContent = "Translate this sentence";
-      bubble.appendChild(el("div", { className: "hanzi" + (sent.hanzi.length > 3 ? " small" : "") }, sent.hanzi));
+      // The sentence reads across the bubble, each word with its pinyin above.
+      // With pinyin turned off the readings stay hidden until the bubble is tapped.
       bubble.appendChild(speakerBtn(sent.hanzi));
-      bubble.appendChild(pinyinHint(sent.pinyin));   // a pinyin reading aid (respects the Show-pinyin setting)
+      sent.words.forEach(w => bubble.appendChild(el("span", { className: "sw" }, [
+        el("span", { className: "py" }, prettyPinyin(w.pinyin)),
+        el("span", { className: "hz" }, w.hanzi)
+      ])));
+      const tail = sent.hanzi.slice(-1);
+      if (/[。？！，、]/.test(tail)) bubble.appendChild(el("span", { className: "sw punct" }, [
+        el("span", { className: "py" }, ""), el("span", { className: "hz" }, tail)
+      ]));
+      if (!showPinyin()) {
+        bubble.classList.add("nopy");
+        bubble.addEventListener("click", () => bubble.classList.remove("nopy"), { once: true });
+      }
       target = enWords(sent.en);
       tiles = target.map(w => ({ val: w, text: w }));
       answerDisplay = sent.en;
@@ -2638,11 +2653,32 @@
       sample([...new Set(pool)], 3).forEach(w => tiles.push({ val: w, text: w }));
     }
 
-    const answer = el("div", { className: "sent-answer" });
+    const answer = el("div", { className: "sent-answer " + (en2cn ? "han" : "txt") });
     const bank = el("div", { className: "sent-bank" });
     host.append(answer, bank);
 
-    const refreshGate = () => setWriteGate(answer.children.length > 0);
+    // A tile slides from where it was to where it lands; its bank slot stays
+    // behind as a ghost so nothing else shuffles about.
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const glide = (tile, to) => {
+      const a = tile.getBoundingClientRect();
+      to.appendChild(tile);
+      if (calm) return;
+      const b = tile.getBoundingClientRect();
+      const dx = a.left - b.left, dy = a.top - b.top;
+      if (!dx && !dy) return;
+      // Start it where it was, force that to lay out, then let it travel. A
+      // forced reflow rather than a frame callback, so a hidden tab (which
+      // never gets frames) still ends with the tile where it belongs.
+      tile.style.transition = "none";
+      tile.style.transform = `translate(${dx}px, ${dy}px)`;
+      void tile.offsetWidth;
+      tile.style.transition = "transform .22s cubic-bezier(.2,.8,.3,1)";
+      tile.style.transform = "";
+      tile.addEventListener("transitionend", () => { tile.style.transition = ""; }, { once: true });
+    };
+    const placed = () => [...answer.querySelectorAll(".tile")];
+    const refreshGate = () => setWriteGate(placed().length > 0);
     shuffle(tiles).forEach(item => {
       const t = el("button", { className: "tile" });
       t.dataset.val = item.val;
@@ -2650,29 +2686,47 @@
         t.appendChild(el("span", { className: "t-han" }, item.hanzi));
         t.appendChild(el("span", { className: "t-py" }, prettyPinyin(item.pinyin)));
       } else t.textContent = item.text;
+      const slot = el("div", { className: "slot" });
+      slot.appendChild(t);
+      bank.appendChild(slot);
       t.addEventListener("click", () => {
         if (studyAnswered) return;
-        (t.parentElement === bank ? answer : bank).appendChild(t);
+        if (t.parentElement === slot) {
+          slot.style.width = t.offsetWidth + "px"; slot.style.height = t.offsetHeight + "px";
+          slot.classList.add("empty");
+          const cell = el("div", { className: "cell" });
+          answer.appendChild(cell);
+          glide(t, cell);
+        } else {
+          const cell = t.parentElement;
+          slot.classList.remove("empty");
+          glide(t, slot);
+          cell.remove();
+        }
         refreshGate();
       });
-      bank.appendChild(t);
     });
     refreshGate();
     setContinueLabel("Check");
 
     studyCheckFn = () => {
-      const got = [...answer.children].map(t => t.dataset.val);
+      const got = placed().map(t => t.dataset.val);
       const correct = got.length === target.length && got.every((v, i) => v === target[i]);
       answer.classList.add(correct ? "ok" : "bad");
       host.querySelectorAll(".tile").forEach(t => t.disabled = true);
+      // Feedback sits under the bank, never on the mascot.
+      const fb = el("div", { className: "sent-fb " + (correct ? "ok" : "bad") });
+      fb.innerHTML = `<svg class="licon"><use href="#${correct ? "i-tick" : "i-x"}"/></svg>`;
+      const body = el("div");
+      body.appendChild(el("div", { className: "fb-t" }, correct ? "Nicely done!" : "Correct solution:"));
       if (!correct) {
-        const corr = el("div", { className: "sent-correct" }, answerDisplay);
-        // when the answer is Chinese, show pinyin under it so you can read the reveal
-        if (en2cn) corr.appendChild(el("div", { className: "sent-correct-py" }, prettyPinyin(sent.pinyin)));
-        face.appendChild(corr);
+        body.appendChild(el("div", { className: "fb-a" }, answerDisplay));
+        if (en2cn) body.appendChild(el("div", { className: "fb-py" }, prettyPinyin(sent.pinyin)));
       }
+      fb.appendChild(body);
+      host.appendChild(fb);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/panda-celebrate.png?v=173" : "images/panda-sad.png?v=173"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=174" : "images/path/panda-sad.webp?v=174"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2856,11 +2910,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/panda-celebrate.png?v=173"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=174"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/panda-sad.png?v=173"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=174"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -2876,6 +2930,8 @@
                                        // write grid, stacking two exercises on one page.
     // Reset all pinned controls; each mode re-shows what it needs.
     $("#studyContinueWrap").classList.add("hidden");
+    $("#studyContinueWrap").classList.remove("wide");
+    face.classList.remove("sent");
     $("#studyReveal").classList.add("hidden");
     $("#studyNext").classList.add("hidden");
     setWriteGate(true);   // only write/sentence modes lock these
