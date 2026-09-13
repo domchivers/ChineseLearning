@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=196";
+  const ASSET_V = "?v=197";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1267,70 +1267,99 @@
     });
   }
 
+  /* ---- Achievements ------------------------------------------------------
+     Derived from what is already tracked, so nothing new to save except the
+     day each was first seen (kept in the activity log, for ordering). */
+  const learnedCount = () => CARDS.filter(c => srs[c.id] && srs[c.id].reps >= 1).length;
+  // Built when asked for: the chapter table is defined further down the file.
+  const achievementDefs = () => [
+    { id: "streak-7", icon: "i-flame-solid", tint: "red", title: "7-day streak", sub: "Keep it going!", test: () => computeStreak() >= 7 },
+    { id: "streak-30", icon: "i-flame-solid", tint: "red", title: "30-day streak", sub: "A whole month", test: () => computeStreak() >= 30 },
+    { id: "words-50", icon: "i-seed", tint: "green", title: "First words", sub: "Learned 50 words", test: () => learnedCount() >= 50 },
+    { id: "words-200", icon: "i-seed", tint: "green", title: "Growing", sub: "Learned 200 words", test: () => learnedCount() >= 200 },
+    { id: "lessons-10", icon: "i-flag", tint: "teal", title: "On a roll", sub: "10 lessons", test: () => doneLessons.size >= 10 },
+    { id: "level-5", icon: "i-crown", tint: "gold", title: "Level 5", sub: "1,000 XP", test: () => levelInfo().level >= 5 },
+    { id: "level-10", icon: "i-crown", tint: "gold", title: "Level 10", sub: "5,500 XP", test: () => levelInfo().level >= 10 },
+    ...CHAPTERS.map((ch, i) => ({ id: "chapter-" + i, icon: "i-book", tint: "blue", title: `Chapter ${i + 1} complete`, sub: ch.title,
+      test: () => ch.lessons.every(id => doneLessons.has(id)) }))
+  ];
+  let ACHIEVEMENTS = null;
+  let achShowAll = false;
+  function renderAchievements() {
+    const row = $("#achRow"); if (!row) return;
+    if (!ACHIEVEMENTS) ACHIEVEMENTS = achievementDefs();
+    activity.achv = activity.achv || {};
+    let changed = false;
+    ACHIEVEMENTS.forEach(d => { if (!activity.achv[d.id] && d.test()) { activity.achv[d.id] = todayStr(); changed = true; } });
+    if (changed) { localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); queueSync(); }
+    const earned = ACHIEVEMENTS.filter(d => activity.achv[d.id]).sort((x, y) => activity.achv[y.id].localeCompare(activity.achv[x.id]));
+    const locked = ACHIEVEMENTS.filter(d => !activity.achv[d.id]);
+    const list = achShowAll ? [...earned, ...locked] : [...earned, ...locked].slice(0, 4);
+    row.classList.toggle("all", achShowAll);
+    row.innerHTML = "";
+    list.forEach(d => {
+      const t = el("div", { className: "ach" + (activity.achv[d.id] ? "" : " locked") });
+      t.innerHTML = `<div class="ai ${d.tint}">${svgUse(d.icon)}</div><b>${d.title}</b><span>${d.sub}</span>`;
+      row.appendChild(t);
+    });
+    $("#achAll").textContent = achShowAll ? "Show fewer" : "See all ›";
+  }
+
+  // The learning-path card: the chapter you are in, and how far through it.
+  function renderProfilePath() {
+    const card = $("#profPath"); if (!card) return;
+    const curId = currentLessonId();
+    const ci = CHAPTERS.findIndex(ch => ch.lessons.includes(curId));
+    const ch = CHAPTERS[ci >= 0 ? ci : CHAPTERS.length - 1];
+    const done = ch.lessons.filter(id => doneLessons.has(id)).length, total = ch.lessons.length;
+    const unitCh = CHAPTERS.slice(0, (ci >= 0 ? ci : CHAPTERS.length - 1) + 1).filter(c => c.unit === ch.unit).length;
+    card.innerHTML =
+      `<div class="hc-body"><div class="eyebrow">Learning path</div>` +
+      `<div class="hc-title">Unit ${ch.unit} · Chapter ${unitCh}</div><div class="hc-en">${ch.title}</div>` +
+      `<div class="hc-bar"><i style="width:${Math.round(done / total * 100)}%"></i></div>` +
+      `<div class="hc-row">${done} / ${total} lessons</div></div>` +
+      `<span class="hc-go" aria-label="Open the path">${svgUse("i-chevron")}</span>`;
+    card.onclick = () => { show("path"); renderPath(); };
+  }
+
+  function renderXpWeek() {
+    const wk = $("#xpWeek"); if (!wk) return;
+    wk.innerHTML = "";
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const monday = new Date(today); monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
+    const vals = [];
+    for (let i = 0; i < 7; i++) { const d = new Date(monday); d.setDate(monday.getDate() + i); vals.push(xpOn(dateStr(d))); }
+    const max = Math.max(20, ...vals);
+    const names = ["M", "T", "W", "T", "F", "S", "S"];
+    vals.forEach((v, i) => {
+      const d = new Date(monday); d.setDate(monday.getDate() + i);
+      wk.appendChild(el("div", { className: "xw" + (d.getTime() === today.getTime() ? " today" : "") + (d > today ? " future" : "") }, [
+        el("b", {}, v ? String(v) : ""), el("i", { style: `height:${Math.max(4, Math.round(v / max * 100))}%` }), el("span", {}, names[i])
+      ]));
+    });
+  }
+
   function renderDashboard() {
     renderProgressBreakdown();
-    const st = progressStats(CARDS);
-    $("#statMastered").textContent = st.mastered;
-    $("#statLearning").textContent = st.learning;
-    $("#statNew").textContent = st.fresh;
     const streak = computeStreak(), out = outSince();
     $("#streakNum").textContent = out ? out.lost : streak;
-    $("#streakSub").textContent = out ? "went out yesterday" : streak === 0 ? "start a streak today!" : `day${streak === 1 ? "" : "s"} in a row`;
-    $(".stats-hero").classList.toggle("out", !!out);
+    $("#streakSub").textContent = out ? "Went out" : "Day streak";
+    $(".prof-stats").classList.toggle("out", !!out);
     const rl = $("#relightBtn");
-    if (rl) { rl.classList.toggle("hidden", !out); rl.disabled = embers() < 1; rl.textContent = embers() < 1 ? "No embers" : "Relight the fire"; }
+    rl.classList.toggle("hidden", !out); rl.disabled = embers() < 1; rl.textContent = embers() < 1 ? "No embers to relight" : "Relight the fire";
     $("#emberNum").textContent = embers();
     $("#emberSub").textContent = embers() === 1 ? "ember" : "embers";
     const lv = levelInfo();
     $("#profName").textContent = displayName() || "Learner";
-    $("#profLevel").textContent = `Level ${lv.level}`;
-    $("#profXp").textContent = `${lv.total} XP · ${lv.next} to level ${lv.level + 1}`;
-    $("#xpBar").style.width = `${Math.round(lv.into / lv.span * 100)}%`;
-    // this week's XP, Monday to Sunday
-    const wk = $("#xpWeek");
-    if (wk) {
-      wk.innerHTML = "";
-      const today = new Date(); today.setHours(0, 0, 0, 0);
-      const monday = new Date(today); monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
-      const vals = [];
-      for (let i = 0; i < 7; i++) { const d = new Date(monday); d.setDate(monday.getDate() + i); vals.push(xpOn(dateStr(d))); }
-      const max = Math.max(20, ...vals);
-      const names = ["M", "T", "W", "T", "F", "S", "S"];
-      vals.forEach((v, i) => {
-        const d = new Date(monday); d.setDate(monday.getDate() + i);
-        const col = el("div", { className: "xw" + (d.getTime() === today.getTime() ? " today" : "") + (d > today ? " future" : "") }, [
-          el("b", {}, v ? String(v) : ""), el("i", { style: `height:${Math.max(4, Math.round(v / max * 100))}%` }), el("span", {}, names[i])
-        ]);
-        wk.appendChild(col);
-      });
-    }
-    // Goal ring
-    const goal = dailyGoal(), done = todayCount();
-    const frac = Math.max(0, Math.min(1, goal ? done / goal : 0));
-    const circ = 2 * Math.PI * 30;
-    const arc = $("#goalArc");
-    arc.setAttribute("stroke-dasharray", circ.toFixed(1));
-    arc.setAttribute("stroke-dashoffset", (circ * (1 - frac)).toFixed(1));
-    arc.setAttribute("stroke", frac >= 1 ? "var(--good)" : "var(--accent)");
-    $("#goalNum").textContent = done;
-    $("#goalLbl").textContent = frac >= 1 ? "DONE ✓" : `/ ${goal}`;
+    $("#profXpTotal").textContent = lv.total.toLocaleString();
+    $("#profLessons").textContent = doneLessons.size;
+    $("#profLevelNum").textContent = lv.level;
+    $("#profXp").textContent = `${lv.next} XP to level ${lv.level + 1}`;
+    renderProfilePath(); renderAchievements(); renderXpWeek();
     // Panel summary
     const nL = selectedLessons.size, nF = selectedFocuses.size;
-    $("#panelSummary").textContent =
+    if ($("#panelSummary")) $("#panelSummary").textContent =
       `· ${nL === LESSONS.length ? "all lessons" : nL + " lesson" + (nL === 1 ? "" : "s")}, ${nF} focus${nF === 1 ? "" : "es"}`;
-
-    // A wall of zeros says nothing useful — say something human instead, and
-    // celebrate the state where there's genuinely nothing left to review.
-    const note = $("#backupFoot") && $("#statsNote");
-    if (note) {
-      const dueNow = dueReviewCards().length;
-      let msg = "";
-      if (!st.mastered && !st.learning) msg = "Nothing studied yet — your first lesson is waiting.";
-      else if (frac >= 1 && !dueNow) msg = "Daily goal hit and nothing due. Rest easy.";
-      else if (!dueNow) msg = "Nothing due for review right now — you're ahead.";
-      note.textContent = msg;
-      note.classList.toggle("hidden", !msg);
-    }
     const foot = $("#backupFoot");
     if (foot) {
       foot.textContent = backupAgeText();
@@ -1338,7 +1367,6 @@
     }
   }
 
-  // Eyebrow like "UNIT A · CHAPTER 2" for a lesson id.
   function chapterLabelFor(id) {
     const unitCh = {};
     for (const ch of CHAPTERS) {
@@ -1567,6 +1595,9 @@
   $("#homeContLabel").addEventListener("click", () => { show("path"); renderPath(); });
   $("#scBubble").addEventListener("click", () => { if (outSince()) askRelight(); });
   $("#relightBtn") && $("#relightBtn").addEventListener("click", askRelight);
+  $("#achAll").addEventListener("click", () => { achShowAll = !achShowAll; renderAchievements(); });
+  $("#profSettings").addEventListener("click", () => document.querySelector(".bottomnav [data-nav=settings]").click());
+  $("#editAvatar").addEventListener("click", () => toast("The avatar builder is on its way."));
   $("#homeReview").addEventListener("click", () => { returnView = "home"; startReview(); });
   $("#homeTrouble").addEventListener("click", () => { returnView = "home"; startTrouble(); });
 
@@ -2773,7 +2804,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=196", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=197", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2976,7 +3007,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=196" : "images/path/panda-sad.webp?v=196"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=197" : "images/path/panda-sad.webp?v=197"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3161,11 +3192,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=196"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=197"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=196"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=197"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
