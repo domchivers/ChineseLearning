@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=193";
+  const ASSET_V = "?v=194";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -275,7 +275,7 @@
       `<div class="gb-card">
          <img src="images/panda-celebrate.png${ASSET_V}" alt="">
          <div class="gb-title">Daily goal reached!</div>
-         <div class="gb-sub">🔥 ${streak} day${streak === 1 ? "" : "s"} in a row</div>
+         <div class="gb-sub"><svg class="licon licon-sm flame"><use href="#i-flame-solid"/></svg> ${streak} day${streak === 1 ? "" : "s"} in a row</div>
        </div>`;
     document.body.appendChild(o);
     const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
@@ -715,7 +715,7 @@
   function practiceAll(writers, hintEl) {
     let i = 0;
     const runOne = () => {
-      if (i >= writers.length) { if (hintEl) hintEl.textContent = "Done! ✔ Well written."; return; }
+      if (i >= writers.length) { if (hintEl) hintEl.textContent = "Done. Well written."; return; }
       const { w, lbl } = writers[i];
       if (lbl) lbl.textContent = "your turn…";
       if (hintEl) hintEl.textContent = `Draw character ${i + 1} of ${writers.length}. A hint appears after a couple of misses.`;
@@ -1072,7 +1072,7 @@
     const ctrl = $("#convControls");
     ctrl.innerHTML = "";
     if (!convDlg || convTurn >= convDlg.turns.length) {
-      ctrl.appendChild(el("div", { className: "muted", style: "text-align:center" }, "🎉 End of conversation."));
+      ctrl.appendChild(el("div", { className: "muted", style: "text-align:center" }, "End of conversation."));
       const again = el("button", { className: "primary" }, "↻ Start over");
       again.addEventListener("click", () => startConversation(convDlg));
       ctrl.appendChild(again);
@@ -1225,7 +1225,7 @@
       const dueNow = dueReviewCards().length;
       let msg = "";
       if (!st.mastered && !st.learning) msg = "Nothing studied yet — your first lesson is waiting.";
-      else if (frac >= 1 && !dueNow) msg = "Daily goal hit and nothing due. Rest easy 🎉";
+      else if (frac >= 1 && !dueNow) msg = "Daily goal hit and nothing due. Rest easy.";
       else if (!dueNow) msg = "Nothing due for review right now — you're ahead.";
       note.textContent = msg;
       note.classList.toggle("hidden", !msg);
@@ -1290,7 +1290,7 @@
     $("#scNum").textContent = streak;
     $("#scSub").textContent = streak === 1 ? "day streak" : "day streak";
     // Kept short: the bubble shares the row with the panda on a narrow phone.
-    $("#scBubble").textContent = done >= goal ? "Done! 🎉" : done > 0 ? `${goal - done} to go`
+    $("#scBubble").textContent = done >= goal ? "Done!" : done > 0 ? `${goal - done} to go`
       : streak > 0 ? "Keep going!" : "Let's start!";
     renderWeekStrip();
 
@@ -1299,7 +1299,7 @@
     const allDone = LESSONS.every(l => doneLessons.has(l.id));
     if (allDone) {
       cont.innerHTML =
-        `<div class="hc-body"><div class="eyebrow">Course complete 🎉</div>` +
+        `<div class="hc-body"><div class="eyebrow">Course complete</div>` +
         `<div class="hc-title">You've finished every lesson</div>` +
         `<div class="hc-en">Keep your words sharp with a review.</div>` +
         `<div class="hc-row">Review your words</div></div>` +
@@ -1816,7 +1816,7 @@
       fab.appendChild(document.createTextNode(` Review ${due} word${due === 1 ? "" : "s"}`));
       fab.classList.remove("hidden", "caughtup");
     } else if (allDone) {
-      fab.appendChild(document.createTextNode("🎉 Course complete — all caught up"));
+      fab.appendChild(document.createTextNode("Course complete — all caught up"));
       fab.classList.remove("hidden");
       fab.classList.add("caughtup");
     } else fab.classList.add("hidden");
@@ -2655,7 +2655,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=193", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=194", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2721,9 +2721,7 @@
     // A tile slides from where it was to where it lands; its bank slot stays
     // behind as a ghost so nothing else shuffles about.
     const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const glide = (tile, to) => {
-      const a = tile.getBoundingClientRect();
-      to.appendChild(tile);
+    const settleFrom = (tile, a) => {
       if (calm) return;
       const b = tile.getBoundingClientRect();
       const dx = a.left - b.left, dy = a.top - b.top;
@@ -2738,6 +2736,7 @@
       tile.style.transform = "";
       tile.addEventListener("transitionend", () => { tile.style.transition = ""; }, { once: true });
     };
+    const glide = (tile, to) => { const a = tile.getBoundingClientRect(); to.appendChild(tile); settleFrom(tile, a); };
     const placed = () => [...answer.querySelectorAll(".tile")];
     const refreshGate = () => setWriteGate(placed().length > 0);
     shuffle(tiles).forEach(item => {
@@ -2750,25 +2749,77 @@
       const slot = el("div", { className: "slot" });
       slot.appendChild(t);
       bank.appendChild(slot);
-      t.addEventListener("click", () => {
-        if (studyAnswered) return;
+      // The ghost takes the tile's painted size, read from the slot itself
+      // (which is exactly the tile) so no pressed or stretched state leaks in.
+      const ghost = () => {
+        const r = slot.getBoundingClientRect();
+        slot.style.width = r.width.toFixed(1) + "px"; slot.style.height = r.height.toFixed(1) + "px";
+        slot.classList.add("empty");
+      };
+      const toBank = (animate) => {
+        const cell = t.parentElement;
+        slot.classList.remove("empty");
+        if (animate) glide(t, slot); else slot.appendChild(t);
+        if (cell !== slot) cell.remove();
+      };
+      // A tap moves the tile between the bank and the end of the answer.
+      const toggle = () => {
         if (t.parentElement === slot) {
-          // The ghost takes the tile's painted size, read from the slot itself
-          // (which is exactly the tile) so no pressed or stretched state leaks in.
-          const r = slot.getBoundingClientRect();
-          slot.style.width = r.width.toFixed(1) + "px"; slot.style.height = r.height.toFixed(1) + "px";
-          slot.classList.add("empty");
+          ghost();
           const cell = el("div", { className: "cell" });
           answer.appendChild(cell);
           glide(t, cell);
-        } else {
-          const cell = t.parentElement;
-          slot.classList.remove("empty");
-          glide(t, slot);
-          cell.remove();
-        }
+        } else toBank(true);
         refreshGate();
+      };
+      // A drag carries the tile, and its place among the answer's tiles follows
+      // the finger, so the order can be fixed without taking tiles out again.
+      let press = null;
+      t.addEventListener("pointerdown", ev => {
+        if (studyAnswered || t.disabled) return;
+        const r = t.getBoundingClientRect();
+        press = { x: ev.clientX, y: ev.clientY, offX: ev.clientX - r.left, offY: ev.clientY - r.top, moved: false };
+        try { t.setPointerCapture(ev.pointerId); } catch (e) {}
       });
+      t.addEventListener("pointermove", ev => {
+        if (!press) return;
+        if (!press.moved) {
+          if (Math.hypot(ev.clientX - press.x, ev.clientY - press.y) < 6) return;
+          press.moved = true;
+          t.classList.add("lift");
+          if (t.parentElement === slot) {                 // lifted out of the bank
+            ghost();
+            const cell = el("div", { className: "cell" });
+            answer.appendChild(cell); cell.appendChild(t);
+          }
+        }
+        const cell = t.parentElement;
+        let before = null;
+        for (const c of answer.querySelectorAll(".cell")) {
+          if (c === cell) continue;
+          const r = c.getBoundingClientRect();
+          if (ev.clientY < r.top || (ev.clientY <= r.bottom && ev.clientX < r.left + r.width / 2)) { before = c; break; }
+        }
+        if (before ? cell.nextElementSibling !== before : answer.lastElementChild !== cell) answer.insertBefore(cell, before);
+        const r = cell.getBoundingClientRect();
+        t.style.transition = "none";
+        t.style.transform = `translate(${(ev.clientX - press.offX - r.left).toFixed(1)}px, ${(ev.clientY - press.offY - r.top).toFixed(1)}px)`;
+      });
+      const release = ev => {
+        if (!press) return;
+        const p = press; press = null;
+        t.classList.remove("lift");
+        if (!p.moved) { toggle(); return; }
+        // Where it was let go: below the answer's lines means back to the bank.
+        const was = t.getBoundingClientRect();
+        t.style.transform = ""; t.style.transition = "";
+        const a = answer.getBoundingClientRect();
+        if (ev.type === "pointercancel" || ev.clientY > a.bottom + 24) toBank(false);
+        settleFrom(t, was);
+        refreshGate();
+      };
+      t.addEventListener("pointerup", release);
+      t.addEventListener("pointercancel", release);
     });
     refreshGate();
     setContinueLabel("Check");
@@ -2807,7 +2858,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=193" : "images/path/panda-sad.webp?v=193"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=194" : "images/path/panda-sad.webp?v=194"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -2922,7 +2973,8 @@
       labelEl.textContent = "What did you hear?";
       // Tappable, so a missed auto-play (voice still loading, synth stuck) is always
       // recoverable — tap the headphones to hear it again.
-      promptNode = el("button", { className: "hanzi listen-replay", type: "button", title: "Play again" }, "🎧");
+      promptNode = el("button", { className: "listen-replay", type: "button", title: "Play again" });
+      promptNode.innerHTML = '<svg class="licon"><use href="#i-headphones"/></svg>';
       promptNode.addEventListener("click", () => speak(c.hanzi));
       answerText = c.en; distractField = "en";
       setTimeout(() => speak(c.hanzi), 60);   // let the card mount, then play
@@ -2991,11 +3043,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=193"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=194"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=193"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=194"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -3269,14 +3321,14 @@
       ? CARDS.filter(c => c.lessonId === scopedId && !(srs[c.id] && srs[c.id].reps >= 1)).length
       : 0;
 
-    $("#doneTitle").textContent = reviewMode ? "Review complete 🎉"
-      : justFinished ? "Lesson complete 🎉"
-      : remaining ? "Batch done 👏" : "Session complete 🎉";
+    $("#doneTitle").textContent = reviewMode ? "Review complete"
+      : justFinished ? "Lesson complete"
+      : remaining ? "Batch done" : "Session complete";
     sfx("complete");
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(
       statEl(clearedIds.size, clearedIds.size === 1 ? "word cleared" : "words cleared"),
-      statEl(`🔥 ${computeStreak()}`, "day streak")
+      statEl(`<svg class="licon licon-sm flame"><use href="#i-flame-solid"/></svg> ${computeStreak()}`, "day streak")
     );
     const nextBtn = $("#doneNext");
     if (upNext) {
@@ -3358,8 +3410,8 @@
     if (unlocked.length) saveSRS(srs);
     scopeLessons = null; scopeFocuses = null;
     const reachedTarget = unlocked.includes(placeTarget);
-    $("#doneTitle").textContent = !unlocked.length ? "Not yet 💪"
-      : reachedTarget ? "You tested out! 🎉" : "Skipped ahead 👍";
+    $("#doneTitle").textContent = !unlocked.length ? "Not yet"
+      : reachedTarget ? "You tested out!" : "Skipped ahead";
     sfx(unlocked.length ? "complete" : "wrong");
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(
@@ -3626,7 +3678,7 @@
     }
   }
   function finishMatch() {
-    $("#doneTitle").textContent = "Matching done 🎉";
+    $("#doneTitle").textContent = "Matching done";
     sfx("complete");
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(statEl(matchTotal, matchTotal === 1 ? "pair matched" : "pairs matched"));
@@ -3655,9 +3707,9 @@
   /* ==================================================================== */
 
   function statEl(value, label) {
-    return el("span", { className: "stat" }, [
-      el("b", {}, String(value)), el("div", { className: "muted" }, label)
-    ]);
+    const b = el("b");
+    if (typeof value === "string" && value.startsWith("<")) b.innerHTML = value; else b.textContent = String(value);
+    return el("span", { className: "stat" }, [b, el("div", { className: "muted" }, label)]);
   }
   // A one-shot action for the done screen's primary button (used by Matching's
   // "Again"); lesson flows leave it null and fall through to the dataset.next path.
