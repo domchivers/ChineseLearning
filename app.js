@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=194";
+  const ASSET_V = "?v=195";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -251,6 +251,7 @@
     const resetScroll = () => { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; };
     resetScroll();
     document.body.dataset.view = sectionId;   // lets CSS give sessions a fixed-height layout
+    if (sectionId === "done") $("#doneHome").textContent = returnView === "home" ? "← Back to home" : "← Back to path";
     // Keep the bottom-nav highlight in sync with the view HERE (a stale one left
     // Path showing with Home lit after a session).
     document.querySelectorAll(".bottomnav button").forEach(x => x.classList.toggle("on", x.dataset.nav === sectionId));
@@ -1152,7 +1153,7 @@
     ctrl.appendChild(feedback);
   }
 
-  $("#convBack").addEventListener("click", () => { speechSynthesis.cancel(); show("path"); renderPath(); });
+  $("#convBack").addEventListener("click", () => { speechSynthesis.cancel(); goBack(); });
 
   /* ==================================================================== */
   /*  HOME                                                                */
@@ -1421,7 +1422,15 @@
     renderHome();
   });
 
+  // A session returns to wherever it was started from: the home page's practice
+  // tiles and links, or the lesson path. Every Back and Done button goes there.
+  let returnView = "path";
+  function goBack() {
+    if (returnView === "home") { renderHome(); show("home"); }
+    else { show("path"); renderPath(); }
+  }
   function runMode(mode) {
+    returnView = "home";
     scopeLessons = null; scopeFocuses = null;   // global (stats) study uses the full selection
     if (mode === "converse") { openConverse(); return; }   // doesn't need lessons
     if (mode === "pick") { openPicker(); return; }         // choose your own words
@@ -1453,8 +1462,8 @@
   document.querySelectorAll(".practice-list button").forEach(btn =>
     btn.addEventListener("click", () => runMode(btn.dataset.mode)));
   $("#homeContLabel").addEventListener("click", () => { show("path"); renderPath(); });
-  $("#homeReview").addEventListener("click", () => startReview());
-  $("#homeTrouble").addEventListener("click", () => startTrouble());
+  $("#homeReview").addEventListener("click", () => { returnView = "home"; startReview(); });
+  $("#homeTrouble").addEventListener("click", () => { returnView = "home"; startTrouble(); });
 
   function resetProgress() {
     const ids = new Set(activeCards().map(c => c.id));
@@ -2291,6 +2300,7 @@
 
 
   function openLessonSheet(id) {
+    returnView = "path";
     const lesson = LESSONS.find(l => l.id === id);
     const pct = lessonPct(id), total = lessonCardCount(id), mastered = lessonMastered(id);
     // A completed lesson counts as studied even if its SRS was cleared/imported,
@@ -2367,6 +2377,7 @@
 
   // Launch a lesson in the chosen way (null focus = mixed study).
   function launchLesson(id, focus) {
+    returnView = "path";
     if (!lessonDone(id) && id !== currentLessonId()) return;   // locked — play in order
     reviewMode = false;
     scopeLessons = new Set([id]);
@@ -2386,7 +2397,7 @@
       else if (nav === "path") { show("path"); renderPath(); }
       else if (nav === "progress") { renderDashboard(); show("progress"); }
     }));
-  $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) startReview(); });
+  $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) { returnView = "path"; startReview(); } });
   $("#pathSettings").addEventListener("click", () => { syncSettings(); renderAccount(); openModal("settingsModal"); });
   // Tapping the daily-goal ring jumps to Progress, where the full ring + streak live.
   $("#pathGoal").addEventListener("click", () => { renderDashboard(); show("progress"); });
@@ -2655,7 +2666,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=194", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=195", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -2858,7 +2869,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=194" : "images/path/panda-sad.webp?v=194"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=195" : "images/path/panda-sad.webp?v=195"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3043,11 +3054,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=194"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=195"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=194"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=195"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -3353,7 +3364,7 @@
     if (!studyAnswered) answerStudy(true);   // write mode: finishing the character = correct
     nextStudyCard();
   });
-  $("#studyBack").addEventListener("click", () => { show("path"); renderPath(); });
+  $("#studyBack").addEventListener("click", () => { goBack(); });
   $("#studyShuffle").addEventListener("click", () => { queue = shuffle(queue); nextStudyCard(); });
 
   /* ==================================================================== */
@@ -3462,7 +3473,7 @@
   }
 
   $("#quizNext").addEventListener("click", () => { quizIdx++; renderQuiz(); });
-  $("#quizBack").addEventListener("click", () => { show("path"); renderPath(); });
+  $("#quizBack").addEventListener("click", () => { goBack(); });
 
   function finishQuiz() {
     doneAction = null;
@@ -3505,7 +3516,7 @@
     $("#browseTitle").textContent = `Browse · ${activeCards().length} words`;
     show("browse");
   }
-  $("#browseBack").addEventListener("click", () => { show("path"); renderPath(); });
+  $("#browseBack").addEventListener("click", () => { goBack(); });
 
   /* ==================================================================== */
   /*  PICK & PRACTISE — choose any words, then flashcards / match / quiz  */
@@ -3714,7 +3725,7 @@
   // A one-shot action for the done screen's primary button (used by Matching's
   // "Again"); lesson flows leave it null and fall through to the dataset.next path.
   let doneAction = null;
-  $("#doneHome").addEventListener("click", () => { doneAction = null; show("path"); renderPath(); });
+  $("#doneHome").addEventListener("click", () => { doneAction = null; goBack(); });
   $("#doneNext").addEventListener("click", () => {
     if (doneAction) { const fn = doneAction; doneAction = null; $("#doneNext").classList.add("hidden"); fn(); return; }
     const id = $("#doneNext").dataset.next;
