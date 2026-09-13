@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=197";
+  const ASSET_V = "?v=198";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -312,7 +312,7 @@
   }
 
   function show(sectionId) {
-    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match"].forEach(id =>
+    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     // Reset the window scroll BEFORE the new view applies its body scroll-lock.
     // The done screen is normal flow, so scrolling down to "Back to path" scrolls
@@ -1267,6 +1267,107 @@
     });
   }
 
+  /* ---- Avatar --------------------------------------------------------------
+     Layers cut from one base character, all on the same 512-square canvas, so
+     they stack with no positioning. Hair is drawn once in brown and skin in
+     the lightest tone; other colours come from recolouring by luminance, so
+     the shading survives. Back-to-front: back hair, body, head, front hair
+     (clothes, faces and accessories slot in here as their layers arrive). */
+  const AV = {
+    skinBase: [248, 208, 184], hairBase: [112, 72, 48],
+    skins: ["#f8d0b8", "#f1c39c", "#d9a07a", "#b97a52", "#8a5232", "#5b3622"],
+    hairColors: ["#2a211e", "#4b3126", "#704830", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
+    hairs: [["none", "None"], ["short", "Short"], ["messy", "Messy"], ["bob", "Bob"], ["long", "Long"], ["bun", "Bun"], ["curly", "Curly"], ["pigtails", "Pigtails"], ["wavy", "Wavy"]]
+  };
+  const avatarDefault = () => ({ skin: 0, hair: "short", hairColor: "#704830" });
+  const avatarCfg = () => Object.assign(avatarDefault(), prefs.avatar || {});
+  const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const avImgs = {}, avTints = {};
+  function avImg(name) {
+    return avImgs[name] || (avImgs[name] = new Promise(res => {
+      const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = `images/avatar/${name}.webp${ASSET_V}`;
+    }));
+  }
+  // Only the peachy pixels of the base are skin: the tee, shorts, shoes, eyes
+  // and mouth keep their colours when the tone changes.
+  const skinPixel = (r, g, b) => r > 150 && r - g >= 25 && g >= b && r - b >= 40;
+  function tinted(key, img, ref, target, mask) {
+    const k = key + "|" + target;
+    if (avTints[k]) return avTints[k];
+    const c = document.createElement("canvas"); c.width = img.width; c.height = img.height;
+    const x = c.getContext("2d"); x.drawImage(img, 0, 0);
+    const d = x.getImageData(0, 0, c.width, c.height), p = d.data;
+    const rl = 0.299 * ref[0] + 0.587 * ref[1] + 0.114 * ref[2], t = hexRgb(target);
+    for (let i = 0; i < p.length; i += 4) {
+      if (p[i + 3] < 8) continue;
+      const r = p[i], g = p[i + 1], b = p[i + 2];
+      if (mask && !mask(r, g, b)) continue;
+      const l = (0.299 * r + 0.587 * g + 0.114 * b) / rl;
+      p[i] = Math.min(255, t[0] * l); p[i + 1] = Math.min(255, t[1] * l); p[i + 2] = Math.min(255, t[2] * l);
+    }
+    x.putImageData(d, 0, 0);
+    return (avTints[k] = c);
+  }
+  // Draw an avatar into a canvas. `crop` is the part of the layer canvas to
+  // show, as fractions [x, y, w, h]; the head alone is about [.2, .02, .6, .6].
+  async function drawAvatar(canvas, cfg, opts = {}) {
+    if (!canvas) return;
+    const size = opts.size || 512, crop = opts.crop || [0, 0, 1, 1];
+    canvas.width = Math.round(size * crop[2] / Math.max(crop[2], crop[3])); canvas.height = Math.round(size * crop[3] / Math.max(crop[2], crop[3]));
+    const order = [];
+    if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-back`, "hair"]);
+    order.push(["base-body", "skin"], ["base-head", "skin"]);
+    if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-front`, "hair"]);
+    const imgs = await Promise.all(order.map(o => avImg(o[0])));
+    const x = canvas.getContext("2d"); x.clearRect(0, 0, canvas.width, canvas.height);
+    imgs.forEach((img, i) => {
+      if (!img) return;
+      const [name, kind] = order[i];
+      let src = img;
+      if (kind === "hair") src = tinted(name, img, AV.hairBase, cfg.hairColor);
+      else if (kind === "skin" && cfg.skin) src = tinted(name, img, AV.skinBase, AV.skins[cfg.skin], skinPixel);
+      x.drawImage(src, crop[0] * img.width, crop[1] * img.height, crop[2] * img.width, crop[3] * img.height, 0, 0, canvas.width, canvas.height);
+    });
+  }
+
+  // ---- the builder screen ----
+  let avCat = "hair";
+  const AV_CATS = [["skin", "Skin"], ["hair", "Hair"], ["hairColor", "Hair colour"]];
+  function renderAvatarBuilder() {
+    const cfg = avatarCfg();
+    drawAvatar($("#avPreview"), cfg, { size: 640 });
+    const cats = $("#avCats"); cats.innerHTML = "";
+    AV_CATS.forEach(([k, label]) => {
+      const b = el("button", { className: "chip" + (avCat === k ? " on" : ""), type: "button" }, label);
+      b.addEventListener("click", () => { avCat = k; renderAvatarBuilder(); });
+      cats.appendChild(b);
+    });
+    const box = $("#avOpts"); box.innerHTML = "";
+    const pick = patch => { prefs.avatar = Object.assign(avatarCfg(), patch); savePrefs(prefs); renderAvatarBuilder(); };
+    if (avCat === "skin") {
+      box.className = "av-opts swatches";
+      AV.skins.forEach((c, i) => {
+        const b = el("button", { className: "swatch" + (cfg.skin === i ? " on" : ""), type: "button", title: `Skin tone ${i + 1}` });
+        b.style.background = c; b.addEventListener("click", () => pick({ skin: i })); box.appendChild(b);
+      });
+    } else if (avCat === "hairColor") {
+      box.className = "av-opts swatches";
+      AV.hairColors.forEach(c => {
+        const b = el("button", { className: "swatch" + (cfg.hairColor === c ? " on" : ""), type: "button" });
+        b.style.background = c; b.addEventListener("click", () => pick({ hairColor: c })); box.appendChild(b);
+      });
+    } else {
+      box.className = "av-opts tiles";
+      AV.hairs.forEach(([id, label]) => {
+        const b = el("button", { className: "av-tile" + (cfg.hair === id ? " on" : ""), type: "button" });
+        const c = el("canvas"); b.append(c, el("span", {}, label));
+        drawAvatar(c, Object.assign({}, cfg, { hair: id }), { size: 160, crop: [.2, .02, .6, .6] });
+        b.addEventListener("click", () => pick({ hair: id })); box.appendChild(b);
+      });
+    }
+  }
+  $("#avBack").addEventListener("click", () => { renderDashboard(); show("progress"); });
+
   /* ---- Achievements ------------------------------------------------------
      Derived from what is already tracked, so nothing new to save except the
      day each was first seen (kept in the activity log, for ordering). */
@@ -1355,6 +1456,7 @@
     $("#profLessons").textContent = doneLessons.size;
     $("#profLevelNum").textContent = lv.level;
     $("#profXp").textContent = `${lv.next} XP to level ${lv.level + 1}`;
+    drawAvatar($("#profAvatar"), avatarCfg(), { size: 768 });
     renderProfilePath(); renderAchievements(); renderXpWeek();
     // Panel summary
     const nL = selectedLessons.size, nF = selectedFocuses.size;
@@ -1597,7 +1699,7 @@
   $("#relightBtn") && $("#relightBtn").addEventListener("click", askRelight);
   $("#achAll").addEventListener("click", () => { achShowAll = !achShowAll; renderAchievements(); });
   $("#profSettings").addEventListener("click", () => document.querySelector(".bottomnav [data-nav=settings]").click());
-  $("#editAvatar").addEventListener("click", () => toast("The avatar builder is on its way."));
+  $("#editAvatar").addEventListener("click", () => { show("avatar"); renderAvatarBuilder(); });
   $("#homeReview").addEventListener("click", () => { returnView = "home"; startReview(); });
   $("#homeTrouble").addEventListener("click", () => { returnView = "home"; startTrouble(); });
 
@@ -2804,7 +2906,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=197", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=198", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3007,7 +3109,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=197" : "images/path/panda-sad.webp?v=197"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=198" : "images/path/panda-sad.webp?v=198"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3192,11 +3294,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=197"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=198"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=197"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=198"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
