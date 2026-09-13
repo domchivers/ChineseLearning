@@ -1275,7 +1275,7 @@
      (clothes, faces and accessories slot in here as their layers arrive). */
   const AV = {
     skinBase: [248, 208, 184], hairBase: [112, 72, 48],
-    // true once base-skin-1..6.webp exist: skin then swaps the base instead of tinting it
+    // true once head-skin-N and body-skin-N exist: skin then swaps those instead of tinting the cut base
     skinFiles: false,
     skins: ["#f8d0b8", "#f1c39c", "#d9a07a", "#b97a52", "#8a5232", "#5b3622"],
     hairColors: ["#2a211e", "#4b3126", "#704830", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
@@ -1328,7 +1328,7 @@
     canvas.width = Math.round(size * crop[2] / Math.max(crop[2], crop[3])); canvas.height = Math.round(size * crop[3] / Math.max(crop[2], crop[3]));
     const order = [];
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-back`, "hair"]);
-    if (AV.skinFiles) order.push([`base-skin-${(cfg.skin || 0) + 1}`, "base"]);
+    if (AV.skinFiles) order.push([`body-skin-${(cfg.skin || 0) + 1}`, "base"], [`head-skin-${(cfg.skin || 0) + 1}`, "base"]);
     else order.push(["base-body", "skin"], ["base-head", "skin"]);
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-front`, "hair"]);
     const imgs = await Promise.all(order.map(o => avImg(o[0])));
