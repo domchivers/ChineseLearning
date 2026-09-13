@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=198";
+  const ASSET_V = "?v=199";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1288,22 +1288,32 @@
       const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = `images/avatar/${name}.webp${ASSET_V}`;
     }));
   }
-  // Only the peachy pixels of the base are skin: the tee, shorts, shoes, eyes
-  // and mouth keep their colours when the tone changes.
-  const skinPixel = (r, g, b) => r > 150 && r - g >= 25 && g >= b && r - b >= 40;
-  function tinted(key, img, ref, target, mask) {
+  // How much of a pixel is skin: peach hue with some saturation gets the full
+  // tint, the cream tee, dark shorts, eyes and mouth none, and the blended
+  // pixels along the edges a share in between, so no pale outline is left.
+  const skinWeight = (r, g, b) => {
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), sat = mx ? (mx - mn) / mx : 0;
+    if (mx < 120 || r < g || g < b) return 0;
+    const peach = Math.min(1, Math.max(0, (r - g - 8) / 20)) * Math.min(1, Math.max(0, (sat - 0.07) / 0.1));
+    return peach;
+  };
+  function tinted(key, img, ref, target, weight, maxLift) {
     const k = key + "|" + target;
     if (avTints[k]) return avTints[k];
     const c = document.createElement("canvas"); c.width = img.width; c.height = img.height;
     const x = c.getContext("2d"); x.drawImage(img, 0, 0);
     const d = x.getImageData(0, 0, c.width, c.height), p = d.data;
-    const rl = 0.299 * ref[0] + 0.587 * ref[1] + 0.114 * ref[2], t = hexRgb(target);
+    const rl = 0.299 * ref[0] + 0.587 * ref[1] + 0.114 * ref[2], t = hexRgb(target), lift = maxLift || 1.35;
     for (let i = 0; i < p.length; i += 4) {
       if (p[i + 3] < 8) continue;
       const r = p[i], g = p[i + 1], b = p[i + 2];
-      if (mask && !mask(r, g, b)) continue;
-      const l = (0.299 * r + 0.587 * g + 0.114 * b) / rl;
-      p[i] = Math.min(255, t[0] * l); p[i + 1] = Math.min(255, t[1] * l); p[i + 2] = Math.min(255, t[2] * l);
+      const w = weight ? weight(r, g, b) : 1;
+      if (w <= 0) continue;
+      // shading relative to the reference colour, capped so edge blends do not blow out to white
+      const l = Math.min(lift, (0.299 * r + 0.587 * g + 0.114 * b) / rl);
+      p[i] = r + (Math.min(255, t[0] * l) - r) * w;
+      p[i + 1] = g + (Math.min(255, t[1] * l) - g) * w;
+      p[i + 2] = b + (Math.min(255, t[2] * l) - b) * w;
     }
     x.putImageData(d, 0, 0);
     return (avTints[k] = c);
@@ -1324,8 +1334,8 @@
       if (!img) return;
       const [name, kind] = order[i];
       let src = img;
-      if (kind === "hair") src = tinted(name, img, AV.hairBase, cfg.hairColor);
-      else if (kind === "skin" && cfg.skin) src = tinted(name, img, AV.skinBase, AV.skins[cfg.skin], skinPixel);
+      if (kind === "hair") src = tinted(name, img, AV.hairBase, cfg.hairColor, null, 1.35);
+      else if (kind === "skin" && cfg.skin) src = tinted(name, img, AV.skinBase, AV.skins[cfg.skin], skinWeight, 1.15);
       x.drawImage(src, crop[0] * img.width, crop[1] * img.height, crop[2] * img.width, crop[3] * img.height, 0, 0, canvas.width, canvas.height);
     });
   }
@@ -2906,7 +2916,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=198", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=199", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3109,7 +3119,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=198" : "images/path/panda-sad.webp?v=198"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=199" : "images/path/panda-sad.webp?v=199"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3294,11 +3304,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=198"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=199"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=198"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=199"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
