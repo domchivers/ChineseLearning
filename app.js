@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=199";
+  const ASSET_V = "?v=200";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1268,20 +1268,18 @@
   }
 
   /* ---- Avatar --------------------------------------------------------------
-     Layers cut from one base character, all on the same 512-square canvas, so
-     they stack with no positioning. Hair is drawn once in brown and skin in
-     the lightest tone; other colours come from recolouring by luminance, so
-     the shading survives. Back-to-front: back hair, body, head, front hair
-     (clothes, faces and accessories slot in here as their layers arrive). */
+     Every layer was generated alone, in place, on the same square canvas, so
+     they stack with no positioning. Skin is a head and a body per tone; hair
+     is drawn once in brown and recoloured by luminance, so the shading
+     survives. Back-to-front: back hair, body, head, eyes, mouth, front hair
+     (clothes and accessories slot in as their layers arrive). */
   const AV = {
-    skinBase: [248, 208, 184], hairBase: [112, 72, 48],
-    // true once head-skin-N and body-skin-N exist: skin then swaps those instead of tinting the cut base
-    skinFiles: false,
-    skins: ["#f8d0b8", "#f1c39c", "#d9a07a", "#b97a52", "#8a5232", "#5b3622"],
-    hairColors: ["#2a211e", "#4b3126", "#704830", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
+    hairBase: [120, 84, 40],
+    skins: ["#fde2c4", "#fddeaf", "#dba667", "#b87a42", "#85512c", "#6f4022"],
+    hairColors: ["#2a211e", "#4b3126", "#785428", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
     hairs: [["none", "None"], ["short", "Short"], ["messy", "Messy"], ["bob", "Bob"], ["long", "Long"], ["bun", "Bun"], ["curly", "Curly"], ["pigtails", "Pigtails"], ["wavy", "Wavy"]]
   };
-  const avatarDefault = () => ({ skin: 0, hair: "short", hairColor: "#704830" });
+  const avatarDefault = () => ({ skin: 0, hair: "short", hairColor: "#785428", eyes: "dot", mouth: "smile" });
   const avatarCfg = () => Object.assign(avatarDefault(), prefs.avatar || {});
   const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
   const avImgs = {}, avTints = {};
@@ -1290,15 +1288,6 @@
       const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = `images/avatar/${name}.webp${ASSET_V}`;
     }));
   }
-  // How much of a pixel is skin: peach hue with some saturation gets the full
-  // tint, the cream tee, dark shorts, eyes and mouth none, and the blended
-  // pixels along the edges a share in between, so no pale outline is left.
-  const skinWeight = (r, g, b) => {
-    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), sat = mx ? (mx - mn) / mx : 0;
-    if (mx < 120 || r < g || g < b) return 0;
-    const peach = Math.min(1, Math.max(0, (r - g - 8) / 20)) * Math.min(1, Math.max(0, (sat - 0.07) / 0.1));
-    return peach;
-  };
   function tinted(key, img, ref, target, weight, maxLift) {
     const k = key + "|" + target;
     if (avTints[k]) return avTints[k];
@@ -1328,8 +1317,8 @@
     canvas.width = Math.round(size * crop[2] / Math.max(crop[2], crop[3])); canvas.height = Math.round(size * crop[3] / Math.max(crop[2], crop[3]));
     const order = [];
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-back`, "hair"]);
-    if (AV.skinFiles) order.push([`body-skin-${(cfg.skin || 0) + 1}`, "base"], [`head-skin-${(cfg.skin || 0) + 1}`, "base"]);
-    else order.push(["base-body", "skin"], ["base-head", "skin"]);
+    const tone = (cfg.skin || 0) + 1;
+    order.push([`body-skin-${tone}`, "base"], [`head-skin-${tone}`, "base"], [`eyes-${cfg.eyes || "dot"}`, "base"], [`mouth-${cfg.mouth || "smile"}`, "base"]);
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-front`, "hair"]);
     const imgs = await Promise.all(order.map(o => avImg(o[0])));
     const x = canvas.getContext("2d"); x.clearRect(0, 0, canvas.width, canvas.height);
@@ -1338,7 +1327,6 @@
       const [name, kind] = order[i];
       let src = img;
       if (kind === "hair") src = tinted(name, img, AV.hairBase, cfg.hairColor, null, 1.35);
-      else if (kind === "skin" && cfg.skin) src = tinted(name, img, AV.skinBase, AV.skins[cfg.skin], skinWeight, 1.15);
       x.drawImage(src, crop[0] * img.width, crop[1] * img.height, crop[2] * img.width, crop[3] * img.height, 0, 0, canvas.width, canvas.height);
     });
   }
@@ -2919,7 +2907,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=199", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=200", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3122,7 +3110,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=199" : "images/path/panda-sad.webp?v=199"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=200" : "images/path/panda-sad.webp?v=200"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3307,11 +3295,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=199"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=200"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=199"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=200"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
