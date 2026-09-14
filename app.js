@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=210";
+  const ASSET_V = "?v=211";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -152,11 +152,27 @@
      Two bars, both in XP. LIT_XP keeps the streak alive: one finished session
      or a handful of right answers. The daily goal is the bigger, optional
      target with its own bonus and celebration. */
-  const XP = { correct: 2, session: 10, lesson: 25, goal: 15 };
+  const XP = { correct: 2, combo: 3, perfect: 5, session: 10, lesson: 25, goal: 15 };
   const LIT_XP = 10;
-  let sessionXP = 0;
+  const COMBO_AT = 5;                 // from the fifth right answer in a row, each is worth XP.combo
+  const BOOST_MS = 15 * 60 * 1000;    // finishing a lesson doubles XP for a quarter of an hour
+  let sessionXP = 0, combo = 0;
+  const boostLeft = () => Math.max(0, (activity.boostUntil || 0) - Date.now());
+  const boostOn = () => boostLeft() > 0;
+  function startBoost() {
+    activity.boostUntil = Date.now() + BOOST_MS;
+    localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+    renderBoost();
+  }
+  // The right-answer reward: more on a combo, doubled during a boost.
+  function answerXP(correct) {
+    if (!correct) { combo = 0; renderCombo(); return; }
+    combo++; renderCombo();
+    earnXP(combo >= COMBO_AT ? XP.combo : XP.correct);
+  }
   function earnXP(n) {
     if (!n) return;
+    if (boostOn()) n *= 2;
     const t = todayStr();
     activity.xpDays = activity.xpDays || {};
     const before = activity.xpDays[t] || 0, after = before + n;
@@ -1634,6 +1650,32 @@
     card.onclick = () => { show("path"); renderPath(); };
   }
 
+  // This month as a grid: lit days filled, goal days gold, relit days marked
+  // with an ember, plus the longest streak ever recorded.
+  function renderStreakCal() {
+    const cal = $("#streakCal"); if (!cal) return;
+    const now = new Date(), y = now.getFullYear(), m = now.getMonth();
+    const first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate();
+    const today = todayStr();
+    $("#calTitle").textContent = first.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+    const best = Math.max(activity.best || 0, computeStreak());
+    $("#calBest").textContent = `Longest ${best} day${best === 1 ? "" : "s"}`;
+    cal.innerHTML = "";
+    ["M", "T", "W", "T", "F", "S", "S"].forEach(n => cal.appendChild(el("span", { className: "cal-h" }, n)));
+    for (let i = 0; i < (first.getDay() + 6) % 7; i++) cal.appendChild(el("span"));
+    for (let d = 1; d <= days; d++) {
+      const key = dateStr(new Date(y, m, d));
+      const cls = ["cal-d"];
+      if (litOn(key)) cls.push("lit");
+      if (goalMetOn(key)) cls.push("goal");
+      if (activity.relit && activity.relit[key]) cls.push("relit");
+      if (key === today) cls.push("today");
+      if (key > today) cls.push("future");
+      const c = el("span", { className: cls.join(" ") }, String(d));
+      if (cls.includes("relit")) c.innerHTML = svgUse("i-ember");
+      cal.appendChild(c);
+    }
+  }
   function renderXpWeek() {
     const wk = $("#xpWeek"); if (!wk) return;
     wk.innerHTML = "";
@@ -1668,7 +1710,7 @@
     $("#profLevelNum").textContent = lv.level;
     $("#profXp").textContent = `${lv.next} XP to level ${lv.level + 1}`;
     drawAvatar($("#profAvatar"), avatarCfg(), { size: 768 });
-    renderProfilePath(); renderAchievements(); renderXpWeek();
+    renderProfilePath(); renderAchievements(); renderXpWeek(); renderStreakCal();
     // Panel summary
     const nL = selectedLessons.size, nF = selectedFocuses.size;
     if ($("#panelSummary")) $("#panelSummary").textContent =
@@ -1741,6 +1783,7 @@
       : streak > 0 ? "Keep it lit!" : "Let's start!";
     renderWeekStrip();
     renderQuests();
+    renderBoost();
 
     const cont = $("#homeContinue");
     const curId = currentLessonId();
@@ -2984,10 +3027,11 @@
     queue = shuffle(cards.slice());
     clearedIds = new Set();
     studyStats = { answered: 0, again: 0, learned: 0 };
-    sessionXP = 0;
+    sessionXP = 0; combo = 0;
     sessionTotal = queue.length;
     $("#studyTitle").textContent = "Study";
     show("study");
+    renderCombo(); renderBoost();
     updateStudyProgress();
     // Teach before test: if this session introduces words the learner has never
     // seen, MEET them first (character + pinyin + meaning + audio) before any quiz.
@@ -3065,6 +3109,34 @@
     $("#studyBar").style.width = `${(clearedIds.size / Math.max(sessionTotal, 1)) * 100}%`;
     $("#studyCounter").textContent = `${clearedIds.size} / ${sessionTotal}`;
   }
+  // The combo chip in the study and quiz bars: appears from three in a row,
+  // and turns gold once each answer is worth more.
+  function renderCombo() {
+    document.querySelectorAll(".combo-chip").forEach(ch => {
+      ch.classList.toggle("hidden", combo < 3);
+      ch.classList.toggle("hot", combo >= COMBO_AT);
+      ch.innerHTML = `${svgUse("i-flame-solid")}<b>${combo}</b>`;
+    });
+  }
+  // Double-XP: a pill on the home screen and in the study bars while it runs.
+  let boostTimer = null;
+  function renderBoost() {
+    const left = boostLeft(), on = left > 0;
+    const mm = Math.floor(left / 60000), ss = Math.floor((left % 60000) / 1000);
+    document.querySelectorAll(".boost-pill").forEach(p => {
+      p.classList.toggle("hidden", !on);
+      p.innerHTML = on ? `<b>2×</b> XP · ${mm}:${String(ss).padStart(2, "0")}` : "";
+    });
+    clearTimeout(boostTimer);
+    if (on) boostTimer = setTimeout(renderBoost, 1000);
+  }
+  function renderDoneNotes(perfect, lesson) {
+    const box = $("#doneNotes"); if (!box) return;
+    box.innerHTML = "";
+    if (perfect) box.appendChild(el("div", { className: "done-note gold" }, `Perfect! No mistakes, +${XP.perfect} XP`));
+    if (lesson) box.appendChild(el("div", { className: "done-note boost" }, `Lesson done: double XP for the next 15 minutes`));
+    else if (boostOn()) box.appendChild(el("div", { className: "done-note boost" }, `Double XP is on`));
+  }
 
   // Record the outcome of the current card: correct = cleared & advances the SRS;
   // wrong = shown the answer, SRS reset, and requeued to come back later this session.
@@ -3081,7 +3153,7 @@
       saveSRS(srs);
     }
     recordReview(1);
-    if (correct) earnXP(XP.correct);
+    answerXP(correct);
     questEvent(curDir, correct);
     studyStats.answered += 1;
     if (correct) {
@@ -3121,7 +3193,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=210", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=211", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3324,7 +3396,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=210" : "images/path/panda-sad.webp?v=210"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=211" : "images/path/panda-sad.webp?v=211"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3509,11 +3581,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=210"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=211"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=210"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=211"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -3793,12 +3865,16 @@
       : remaining ? "Batch done" : "Session complete";
     sfx("complete");
     earnXP(justFinished ? XP.lesson : XP.session);
+    const perfect = studyStats.again === 0 && studyStats.answered >= 5;
+    if (perfect) earnXP(XP.perfect);
+    if (justFinished) startBoost();
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(
       statEl(clearedIds.size, clearedIds.size === 1 ? "word cleared" : "words cleared"),
       statEl(`+${sessionXP}`, "XP earned"),
       statEl(`<svg class="licon licon-sm flame"><use href="#i-flame-solid"/></svg> ${computeStreak()}`, "day streak")
     );
+    renderDoneNotes(perfect, justFinished);
     const nextBtn = $("#doneNext");
     if (upNext) {
       const l = LESSONS.find(x => x.id === upNext);
@@ -3900,7 +3976,7 @@
     const cards = activeCards();
     if (cards.length < 3) { toast("Pick more lessons — a quiz needs at least 3 words."); $("#studyPanel").open = true; return; }
     quizItems = shuffle(cards).slice(0, Math.min(20, cards.length));
-    quizIdx = 0; quizScore = 0; quizMode = "quiz";
+    quizIdx = 0; quizScore = 0; quizMode = "quiz"; combo = 0; sessionXP = 0;
     $("#quizTitle").textContent = `Quiz · ${quizItems.length} questions`;
     show("quiz");
     renderQuiz();
@@ -3917,7 +3993,8 @@
     $("#quizBar").style.width = `${(quizIdx / quizItems.length) * 100}%`;
     buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), correct => {
       sfx(correct ? "correct" : "wrong");
-      if (correct) { quizScore++; earnXP(XP.correct); }
+      if (correct) quizScore++;
+      answerXP(correct);
       questEvent(dir, correct);
       if (quizMode === "placement") {
         const s = placeScores[c.lessonId] || (placeScores[c.lessonId] = { ok: 0, total: 0 });
@@ -3936,15 +4013,20 @@
 
   function finishQuiz() {
     doneAction = null;
-    questEvent("session", true, { perfect: quizItems.length >= 5 && quizScore === quizItems.length });
+    const perfect = quizItems.length >= 5 && quizScore === quizItems.length;
+    questEvent("session", true, { perfect });
     $("#doneTitle").textContent = "Quiz complete";
     sfx("complete");
+    earnXP(XP.session);
+    if (perfect) earnXP(XP.perfect);
     $("#doneStats").innerHTML = "";
     const pct = Math.round((quizScore / quizItems.length) * 100);
     $("#doneStats").append(
       statEl(`${quizScore}/${quizItems.length}`, "correct"),
-      statEl(`${pct}%`, "score")
+      statEl(`${pct}%`, "score"),
+      statEl(`+${sessionXP}`, "XP earned")
     );
+    renderDoneNotes(perfect, false);
     $("#doneAgain").classList.add("hidden");   // redo is a Study feature
     show("done");
   }
@@ -4168,7 +4250,7 @@
     scopeLessons = new Set(cards.map(c => c.lessonId));        // plausible distractors
     scopeFocuses = new Set(["recognize", "recall", "pinyin", "listen"]);
     quizItems = shuffle(cards.slice()).slice(0, Math.min(20, cards.length));
-    quizIdx = 0; quizScore = 0; quizMode = "quiz";
+    quizIdx = 0; quizScore = 0; quizMode = "quiz"; combo = 0; sessionXP = 0;
     $("#quizTitle").textContent = `Quiz · ${quizItems.length} questions`;
     show("quiz"); renderQuiz();
   }
@@ -4538,10 +4620,11 @@ This REPLACES the progress on this device.`)) return;
     const questMonths = Object.assign({}, ab.questMonths || {});
     for (const [m, n] of Object.entries(aa.questMonths || {})) questMonths[m] = Math.max(n || 0, questMonths[m] || 0);
     const chests = Math.max(aa.chests || 0, ab.chests || 0);
+    const boostUntil = Math.max(aa.boostUntil || 0, ab.boostUntil || 0);
     // today's quests: keep whichever side has claimed more of them
     const qa = aa.quests, qb = ab.quests, nd = q => (q && q.done ? Object.keys(q.done).length : -1);
     const quests = (qa && qb && qa.date === qb.date) ? (nd(qa) >= nd(qb) ? qa : qb) : ((qa && qa.date) >= (qb && qb.date || "") ? qa : qb);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests }));
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
@@ -4849,7 +4932,7 @@ This REPLACES the progress on this device.`)) return;
   show("home");                          // land on the Home dashboard (path renders on first Learn tap)
   setTimeout(() => askRelight(true), 600);   // a streak that went out yesterday can be relit right here
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest };
+  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP };
   renderAccount();
   if (cloudOn() && !signedIn() && !localStorage.getItem(LS_SKIPAUTH)) {
     openAuthGate();                       // no session yet — offer sign-in (skippable)
