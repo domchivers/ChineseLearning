@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=209";
+  const ASSET_V = "?v=210";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -172,6 +172,7 @@
     queueSync();
     if (crossed) { earnXP(XP.goal); celebrateGoal(); if ($(".streak-card")) renderHomeTop(); }
     if (lit) streakExtended(crossed ? 3000 : 0);
+    checkQuests();
   }
 
   /* ---- Streak moments ----------------------------------------------------
@@ -198,6 +199,129 @@
       else toast(s === 1 ? "Fire lit! Day 1 of your streak." : `Fire lit! ${s}-day streak.` + (ember ? " You earned an ember." : ""));
       if ($(".streak-card")) renderHomeTop();
     }, delay);
+  }
+
+  /* ---- Daily quests ------------------------------------------------------
+     Three small targets a day, drawn from a pool by the date so every device
+     agrees on them: one XP quest, one about how you practised, one about a
+     skill you have turned on. Finishing all three opens a chest of bonus XP,
+     and every fifth chest holds an ember. Quests count toward a monthly
+     badge. Progress is read from the day's counters, so nothing is stored
+     but the day's picks and what was already claimed. */
+  const QUESTS = {
+    xp30:      { title: "Earn 30 XP",                     icon: "i-star",       target: 30, prog: () => todayXP() },
+    xp50:      { title: "Earn 50 XP",                     icon: "i-star",       target: 50, prog: () => todayXP() },
+    combo5:    { title: "Get 5 right in a row",           icon: "i-target",     target: 5,  prog: () => qcToday().comboMax || 0 },
+    combo10:   { title: "Get 10 right in a row",          icon: "i-target",     target: 10, prog: () => qcToday().comboMax || 0 },
+    review15:  { title: "Review 15 words",                icon: "i-cards",      target: 15, prog: () => todayCount() },
+    review30:  { title: "Review 30 words",                icon: "i-cards",      target: 30, prog: () => todayCount() },
+    lesson1:   { title: "Finish a lesson",                icon: "i-flag",       target: 1,  prog: () => qcToday().lessons || 0 },
+    session2:  { title: "Finish 2 sessions",              icon: "i-check",      target: 2,  prog: () => qcToday().sessions || 0 },
+    perfect1:  { title: "Finish a session with no mistakes", icon: "i-crown",   target: 1,  prog: () => qcToday().perfect || 0 },
+    listen5:   { title: "Get 5 listening exercises right", icon: "i-headphones", target: 5, prog: () => qcToday().listen || 0, dir: "listen" },
+    write3:    { title: "Write 3 characters",             icon: "i-pencil",     target: 3,  prog: () => qcToday().write || 0, dir: "write" },
+    speak3:    { title: "Say 3 words aloud",              icon: "i-mic",        target: 3,  prog: () => qcToday().speak || 0, dir: "speak" },
+    sentence2: { title: "Build 2 sentences",              icon: "i-chat",       target: 2,  prog: () => qcToday().sentence || 0, dir: "sentence" }
+  };
+  const QUEST_SETS = [["xp30", "xp50"], ["combo5", "combo10", "review15", "review30", "lesson1", "session2", "perfect1"], ["listen5", "write3", "speak3", "sentence2"]];
+  const CHEST_XP = 20;
+  // today's counters: right-answer combo, sessions, lessons, perfect runs, and per-skill tallies
+  function qcToday() {
+    const t = todayStr();
+    activity.qc = activity.qc || {};
+    if (!activity.qc[t]) activity.qc = { [t]: {} };            // yesterday's counters are no longer needed
+    return activity.qc[t];
+  }
+  function seededPick(list, seed) {
+    let h = 2166136261;
+    for (const ch of seed) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; }
+    return list[h % list.length];
+  }
+  function todayQuests() {
+    const t = todayStr();
+    if (!activity.quests || activity.quests.date !== t) {
+      const skills = QUEST_SETS[2].filter(id => selectedFocuses.has(QUESTS[id].dir) && (id !== "write3" || HW_OK));
+      const second = seededPick(QUEST_SETS[1], t + "b");
+      const third = skills.length ? seededPick(skills, t + "c") : seededPick(QUEST_SETS[1].filter(x => x !== second), t + "c");
+      activity.quests = { date: t, ids: [seededPick(QUEST_SETS[0], t + "a"), second, third], done: {}, chest: false };
+      localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+    }
+    return activity.quests;
+  }
+  // Called after every answer and every finished session or quiz.
+  function questEvent(kind, correct, extra = {}) {
+    const c = qcToday();
+    if (kind === "session") {
+      c.sessions = (c.sessions || 0) + 1;
+      if (extra.lesson) c.lessons = (c.lessons || 0) + 1;
+      if (extra.perfect) c.perfect = (c.perfect || 0) + 1;
+    } else {
+      c.combo = correct ? (c.combo || 0) + 1 : 0;
+      if (c.combo > (c.comboMax || 0)) c.comboMax = c.combo;
+      if (correct && ["listen", "write", "speak", "sentence"].includes(kind)) c[kind] = (c[kind] || 0) + 1;
+    }
+    localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+    checkQuests();
+  }
+  function checkQuests() {
+    const q = todayQuests();
+    let newly = [];
+    q.ids.forEach(id => {
+      if (q.done[id]) return;
+      if (QUESTS[id].prog() >= QUESTS[id].target) { q.done[id] = true; newly.push(id); }
+    });
+    if (!newly.length) return;
+    const m = todayStr().slice(0, 7);
+    activity.questMonths = activity.questMonths || {};
+    activity.questMonths[m] = (activity.questMonths[m] || 0) + newly.length;
+    const all = q.ids.every(id => q.done[id]);
+    let ember = false;
+    if (all && !q.chest) {
+      q.chest = true;
+      activity.chests = (activity.chests || 0) + 1;
+      if (activity.chests % 5 === 0 && embers() < 3) { activity.embers = embers() + 1; ember = true; }
+    }
+    localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+    queueSync();
+    if (all) { earnXP(CHEST_XP); setTimeout(() => celebrateChest(ember), 400); }
+    else newly.forEach((id, i) => setTimeout(() => toast(`Quest done: ${QUESTS[id].title}`), 300 + i * 1500));
+    if ($("#questRows")) renderQuests();
+  }
+  function celebrateChest(ember) {
+    const o = el("div", { className: "goal-burst chest-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <img src="images/panda-celebrate.png${ASSET_V}" alt="">
+         <div class="gb-title">All quests done!</div>
+         <div class="gb-sub">+${CHEST_XP} XP from the chest</div>
+         ${ember ? `<div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> and an ember</div>` : ""}
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    setTimeout(close, 3200);
+    o.addEventListener("click", close);
+    sfx("goal");
+  }
+  function renderQuests() {
+    const rows = $("#questRows"); if (!rows) return;
+    const q = todayQuests();
+    rows.innerHTML = "";
+    let done = 0;
+    q.ids.forEach(id => {
+      const d = QUESTS[id], n = Math.min(d.target, d.prog()), ok = !!q.done[id];
+      if (ok) done++;
+      const it = el("div", { className: "q-item" + (ok ? " ok" : "") });   // not "done": that class styles the session-complete screen
+      it.innerHTML = `<div class="qi-ico">${svgUse(ok ? "i-tick" : d.icon)}</div>
+        <div class="qi-body"><b>${d.title}</b><div class="qi-bar"><i style="width:${Math.round((ok ? 1 : n / d.target) * 100)}%"></i></div></div>
+        <span class="qi-n">${ok ? "Done" : `${n}/${d.target}`}</span>`;
+      rows.appendChild(it);
+    });
+    const chest = $("#qcChest");
+    chest.textContent = done === 3 ? (q.chest ? "Chest opened" : "3/3") : `${done}/3`;
+    chest.classList.toggle("full", done === 3);
+    const m = (activity.questMonths || {})[todayStr().slice(0, 7)] || 0;
+    $("#qcMonth").textContent = m >= 20 ? `${m} quests this month · badge earned` : `${m} of 20 quests this month for the badge`;
   }
   const xpTotal = () => Object.values(activity.xpDays || {}).reduce((s, n) => s + (n || 0), 0);
   const xpOn = key => (activity.xpDays || {})[key] || 0;
@@ -1466,6 +1590,8 @@
     { id: "lessons-10", icon: "i-flag", tint: "teal", title: "On a roll", sub: "10 lessons", test: () => doneLessons.size >= 10 },
     { id: "level-5", icon: "i-crown", tint: "gold", title: "Level 5", sub: "1,000 XP", test: () => levelInfo().level >= 5 },
     { id: "level-10", icon: "i-crown", tint: "gold", title: "Level 10", sub: "5,500 XP", test: () => levelInfo().level >= 10 },
+    { id: "quests-20", icon: "i-target", tint: "teal", title: "Quest month", sub: "20 quests in a month", test: () => Object.values(activity.questMonths || {}).some(n => n >= 20) },
+    { id: "chests-10", icon: "i-target", tint: "gold", title: "Treasure hunter", sub: "10 chests opened", test: () => (activity.chests || 0) >= 10 },
     ...CHAPTERS.map((ch, i) => ({ id: "chapter-" + i, icon: "i-book", tint: "blue", title: `Chapter ${i + 1} complete`, sub: ch.title,
       test: () => ch.lessons.every(id => doneLessons.has(id)) }))
   ];
@@ -1614,6 +1740,7 @@
     $("#scBubble").textContent = out ? (embers() ? "Relight it?" : "Went out") : xp >= goal ? "Goal done!" : lit ? `${goal - xp} XP to goal`
       : streak > 0 ? "Keep it lit!" : "Let's start!";
     renderWeekStrip();
+    renderQuests();
 
     const cont = $("#homeContinue");
     const curId = currentLessonId();
@@ -2955,6 +3082,7 @@
     }
     recordReview(1);
     if (correct) earnXP(XP.correct);
+    questEvent(curDir, correct);
     studyStats.answered += 1;
     if (correct) {
       if (!clearedIds.has(curCard.id)) { clearedIds.add(curCard.id); if (wasNew) studyStats.learned += 1; }
@@ -2993,7 +3121,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=209", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=210", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3196,7 +3324,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=209" : "images/path/panda-sad.webp?v=209"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=210" : "images/path/panda-sad.webp?v=210"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3381,11 +3509,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=209"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=210"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=209"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=210"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -3654,6 +3782,7 @@
       doneLessons.add(scopedId); saveDone(); justFinished = scopedId;
     }
     const upNext = justFinished ? nextLessonId(justFinished) : null;
+    questEvent("session", true, { lesson: !!justFinished, perfect: studyStats.again === 0 && studyStats.answered >= 5 });
     // Words still to clear in this lesson (a long lesson comes in batches).
     const remaining = (scopedId && !justFinished)
       ? CARDS.filter(c => c.lessonId === scopedId && !(srs[c.id] && srs[c.id].reps >= 1)).length
@@ -3789,6 +3918,7 @@
     buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), correct => {
       sfx(correct ? "correct" : "wrong");
       if (correct) { quizScore++; earnXP(XP.correct); }
+      questEvent(dir, correct);
       if (quizMode === "placement") {
         const s = placeScores[c.lessonId] || (placeScores[c.lessonId] = { ok: 0, total: 0 });
         s.total++; if (correct) { s.ok++; placeCorrectCards.add(c.id); }
@@ -3806,6 +3936,7 @@
 
   function finishQuiz() {
     doneAction = null;
+    questEvent("session", true, { perfect: quizItems.length >= 5 && quizScore === quizItems.length });
     $("#doneTitle").textContent = "Quiz complete";
     sfx("complete");
     $("#doneStats").innerHTML = "";
@@ -4404,7 +4535,13 @@ This REPLACES the progress on this device.`)) return;
     const emb = Math.max(typeof aa.embers === "number" ? aa.embers : 1, typeof ab.embers === "number" ? ab.embers : 1);
     const emberFor = Object.assign({}, ab.emberFor || {}, aa.emberFor || {});
     const best = Math.max(aa.best || 0, ab.best || 0);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best }));
+    const questMonths = Object.assign({}, ab.questMonths || {});
+    for (const [m, n] of Object.entries(aa.questMonths || {})) questMonths[m] = Math.max(n || 0, questMonths[m] || 0);
+    const chests = Math.max(aa.chests || 0, ab.chests || 0);
+    // today's quests: keep whichever side has claimed more of them
+    const qa = aa.quests, qb = ab.quests, nd = q => (q && q.done ? Object.keys(q.done).length : -1);
+    const quests = (qa && qb && qa.date === qb.date) ? (nd(qa) >= nd(qb) ? qa : qb) : ((qa && qa.date) >= (qb && qb.date || "") ? qa : qb);
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
@@ -4712,7 +4849,7 @@ This REPLACES the progress on this device.`)) return;
   show("home");                          // land on the Home dashboard (path renders on first Learn tap)
   setTimeout(() => askRelight(true), 600);   // a streak that went out yesterday can be relit right here
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak };
+  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest };
   renderAccount();
   if (cloudOn() && !signedIn() && !localStorage.getItem(LS_SKIPAUTH)) {
     openAuthGate();                       // no session yet — offer sign-in (skippable)
