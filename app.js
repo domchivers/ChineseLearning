@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=208";
+  const ASSET_V = "?v=209";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -127,6 +127,8 @@
     else document.documentElement.setAttribute("data-theme", t);
   }
   const audioRate = () => (typeof prefs.rate === "number" ? prefs.rate : 0.85);
+  // The daily goal is XP now (10 / 20 / 30 / 50). Older prefs held a card count
+  // with the same three numbers, so they carry across unchanged.
   const dailyGoal = () => (typeof prefs.dailyGoal === "number" ? prefs.dailyGoal : 20);
 
   // ---- Activity log (streak + daily goal) ----
@@ -134,43 +136,68 @@
   let activity = loadActivity();
   const dateStr = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   const todayStr = () => dateStr(new Date());
+  // Cards reviewed per day. Kept for the stats; the streak and the goal run on XP.
   function recordReview(n = 1) {
     queueSync();
     const t = todayStr();
-    const before = activity.days[t] || 0;
-    const after = before + n;
-    activity.days[t] = after;
-    const goal = dailyGoal();
-    // Fire the celebration exactly once, the moment today's count crosses the goal.
-    const crossed = before < goal && after >= goal && activity.celebrated !== t;
-    if (crossed) activity.celebrated = t;
+    activity.days[t] = (activity.days[t] || 0) + n;
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
-    if (crossed) {
-      earnXP(XP.goal);
-      const s = computeStreak();
-      if (s > 0 && s % 5 === 0 && activity.emberDay !== t) {
-        activity.embers = Math.min(3, embers() + 1); activity.emberDay = t;
-        localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
-        setTimeout(() => toast(`${s}-day streak: you earned an ember.`), 1600);
-      }
-      celebrateGoal();
-    }
   }
   /* ---- XP and levels ----------------------------------------------------
      Every right answer earns XP, sessions and finished lessons earn more, and
      hitting the daily goal adds a bonus. Earned per day (so it merges across
      devices like the activity count does); the total is the sum. Levels get
-     further apart as they go: reaching level L+1 takes 50·L·(L+1) XP in all. */
+     further apart as they go: reaching level L+1 takes 50·L·(L+1) XP in all.
+
+     Two bars, both in XP. LIT_XP keeps the streak alive: one finished session
+     or a handful of right answers. The daily goal is the bigger, optional
+     target with its own bonus and celebration. */
   const XP = { correct: 2, session: 10, lesson: 25, goal: 15 };
+  const LIT_XP = 10;
   let sessionXP = 0;
   function earnXP(n) {
     if (!n) return;
     const t = todayStr();
     activity.xpDays = activity.xpDays || {};
-    activity.xpDays[t] = (activity.xpDays[t] || 0) + n;
+    const before = activity.xpDays[t] || 0, after = before + n;
+    activity.xpDays[t] = after;
     sessionXP += n;
+    const goal = dailyGoal();
+    // each moment fires exactly once, the instant the day's XP crosses the line
+    const lit = before < LIT_XP && after >= LIT_XP && activity.litDay !== t;
+    const crossed = before < goal && after >= goal && activity.celebrated !== t;
+    if (lit) activity.litDay = t;
+    if (crossed) activity.celebrated = t;
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
     queueSync();
+    if (crossed) { earnXP(XP.goal); celebrateGoal(); if ($(".streak-card")) renderHomeTop(); }
+    if (lit) streakExtended(crossed ? 3000 : 0);
+  }
+
+  /* ---- Streak moments ----------------------------------------------------
+     The day the fire is lit, the streak grows by one. Milestones get a full
+     screen; other days a line. Embers arrive at their own milestones, once
+     per streak, so a streak that restarts can earn them again. */
+  const MILESTONES = [3, 7, 14, 30, 50, 100, 200, 365];
+  const EMBER_AT = [3, 7, 14, 30, 60, 100];
+  function streakExtended(delay = 0) {
+    const s = computeStreak();
+    const start = dayKeyOffset(1 - s);                       // the day this streak began
+    activity.emberFor = activity.emberFor || {};
+    let ember = false;
+    for (const m of EMBER_AT) {
+      if (s < m || (activity.emberFor[m] && activity.emberFor[m] >= start)) continue;
+      activity.emberFor[m] = todayStr();
+      if (embers() < 3) { activity.embers = embers() + 1; ember = true; }
+    }
+    if (s > (activity.best || 0)) activity.best = s;
+    localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+    queueSync();
+    setTimeout(() => {
+      if (MILESTONES.includes(s)) celebrateMilestone(s, ember);
+      else toast(s === 1 ? "Fire lit! Day 1 of your streak." : `Fire lit! ${s}-day streak.` + (ember ? " You earned an ember." : ""));
+      if ($(".streak-card")) renderHomeTop();
+    }, delay);
   }
   const xpTotal = () => Object.values(activity.xpDays || {}).reduce((s, n) => s + (n || 0), 0);
   const xpOn = key => (activity.xpDays || {})[key] || 0;
@@ -185,19 +212,18 @@
   /* ---- Embers: relighting a streak that went out --------------------------
      Miss a day and the fire goes out. An ember relights it: the missed day is
      marked as covered and the streak carries on. You start with one, and earn
-     another each time the streak reaches a multiple of five days (three at
-     most). Only the most recent single missed day can be relit, and only until
-     the end of the day after it. */
+     more at streak milestones (three at most). Only the most recent single
+     missed day can be relit, and only until the end of the day after it. */
   const embers = () => (typeof activity.embers === "number" ? activity.embers : 1);
   const dayKeyOffset = n => { const d = new Date(); d.setDate(d.getDate() + n); return dateStr(d); };
   // The date the fire went out, if it can still be relit: yesterday was missed
   // and the day before was met. Today's own miss is not a miss until midnight.
   function outSince() {
     const y = dayKeyOffset(-1);
-    if (goalMetOn(y)) return null;
+    if (litOn(y)) return null;
     let d = new Date(); d.setDate(d.getDate() - 2);
     let run = 0;
-    while (goalMetOn(dateStr(d))) { run++; d.setDate(d.getDate() - 1); }
+    while (litOn(dateStr(d))) { run++; d.setDate(d.getDate() - 1); }
     return run > 0 ? { date: y, lost: run } : null;
   }
   function relight() {
@@ -210,28 +236,50 @@
     queueSync();
     return true;
   }
-  function askRelight() {
+  // The relight moment: a card with the number of days at stake and one tap
+  // to spend an ember. Offered once per lost day when the app opens, and on
+  // demand from the streak card and the profile.
+  function askRelight(auto = false) {
     const out = outSince();
     if (!out) return;
     const n = embers();
-    if (n < 1) { toast("No embers left. Keep a streak going five days to earn one."); return; }
-    if (!confirm(`Your ${out.lost}-day streak went out yesterday. Use an ember to relight it? You have ${n}.`)) return;
-    if (relight()) { sfx("complete"); toast("Relit! Your streak carries on."); renderHomeTop(); renderWeekStrip(); if (typeof renderDashboard === "function") renderDashboard(); }
+    if (n < 1) { if (!auto) toast("No embers left. Reach 3, 7, 14 or 30 days to earn one."); return; }
+    if (auto) { if (activity.relightAsked === out.date) return; activity.relightAsked = out.date; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); }
+    const o = el("div", { className: "goal-burst relight-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <svg class="gb-flame out"><use href="#i-flame-solid"/></svg>
+         <div class="gb-title">Your fire went out</div>
+         <div class="gb-sub">${out.lost}-day streak. Use an ember to relight it?</div>
+         <div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> You have ${n} ember${n === 1 ? "" : "s"}</div>
+         <div class="gb-actions"><button class="primary" id="rlYes">Relight the fire</button><button class="ghost" id="rlNo">Let it go</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    o.querySelector("#rlNo").addEventListener("click", close);
+    o.querySelector("#rlYes").addEventListener("click", () => {
+      close();
+      if (relight()) { sfx("complete"); toast(`Relit! ${computeStreak()}-day streak carries on.`); renderHomeTop(); if (typeof renderDashboard === "function") renderDashboard(); }
+    });
   }
 
-  // The streak now means what the user thinks it means: consecutive days the
-  // DAILY GOAL was met, not just days with any activity. Today counts only once
-  // its goal is reached; until then the streak shows the run through yesterday.
-  const goalMetOn = key => (activity.days[key] || 0) >= dailyGoal() || !!(activity.relit && activity.relit[key]);
+  // A day is LIT once it has LIT_XP (one finished session) or was relit. The
+  // streak is the run of lit days ending today or yesterday. The daily goal is
+  // the separate XP target. Days from before XP existed count if they met the
+  // old card goal, so nobody's streak resets on the change.
+  const litOn = key => xpOn(key) >= LIT_XP || !!(activity.relit && activity.relit[key]) || (activity.days[key] || 0) >= 20;
+  const goalMetOn = key => xpOn(key) >= dailyGoal();
   function computeStreak() {
     let d = new Date();
-    if (!goalMetOn(dateStr(d))) d.setDate(d.getDate() - 1);
+    if (!litOn(dateStr(d))) d.setDate(d.getDate() - 1);
     let streak = 0;
-    while (goalMetOn(dateStr(d))) { streak++; d.setDate(d.getDate() - 1); }
+    while (litOn(dateStr(d))) { streak++; d.setDate(d.getDate() - 1); }
     return streak;
   }
   const todayCount = () => activity.days[todayStr()] || 0;
-  const goalDone = () => todayCount() >= dailyGoal();
+  const todayXP = () => xpOn(todayStr());
+  const goalDone = () => todayXP() >= dailyGoal();
 
   // ---- Progress stats over all cards ----
   const MASTER_INTERVAL = 7;   // days; a word is "mastered" once spaced this far
@@ -340,21 +388,40 @@
     toastTimer = setTimeout(() => t.classList.remove("show"), 2400);
   }
 
-  // Full-screen moment when the daily goal is reached — the streak's payoff.
+  // Full-screen moment when the daily goal is reached.
   function celebrateGoal() {
-    const streak = computeStreak();
     const o = el("div", { className: "goal-burst" });
     o.innerHTML =
       `<div class="gb-card">
          <img src="images/panda-celebrate.png${ASSET_V}" alt="">
          <div class="gb-title">Daily goal reached!</div>
-         <div class="gb-sub"><svg class="licon licon-sm flame"><use href="#i-flame-solid"/></svg> ${streak} day${streak === 1 ? "" : "s"} in a row</div>
+         <div class="gb-sub">+${XP.goal} XP bonus</div>
        </div>`;
     document.body.appendChild(o);
     const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
     setTimeout(() => o.classList.add("show"), 20);
     setTimeout(close, 2800);
     o.addEventListener("click", close);
+    sfx("goal");
+  }
+  // Full-screen moment at a streak milestone.
+  const MILESTONE_WORDS = { 3: "Three days. It's a habit now.", 7: "A whole week on fire.", 14: "Two weeks. Unstoppable.", 30: "A month. Seriously impressive.",
+    50: "Fifty days of Chinese.", 100: "One hundred days.", 200: "Two hundred days.", 365: "A full year. 太厉害了!" };
+  function celebrateMilestone(s, ember) {
+    const o = el("div", { className: "goal-burst milestone-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <svg class="gb-flame"><use href="#i-flame-solid"/></svg>
+         <div class="gb-big">${s}</div>
+         <div class="gb-title">day streak!</div>
+         <div class="gb-sub">${MILESTONE_WORDS[s] || "Keep the fire lit."}</div>
+         ${ember ? `<div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> You earned an ember</div>` : ""}
+         <div class="gb-actions"><button class="primary" id="msOk">Keep going</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    o.querySelector("#msOk").addEventListener("click", close);
     sfx("goal");
   }
 
@@ -1513,7 +1580,7 @@
     const h = new Date().getHours();
     return h < 5 ? "Good night" : h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
   }
-  // This week's seven days, Monday first. Done = the daily goal was met that day.
+  // This week's seven days, Monday first. Filled = the fire was lit that day; gold = the goal was met too.
   function renderWeekStrip() {
     const strip = $("#weekStrip"); if (!strip) return;
     const today = new Date(); today.setHours(0, 0, 0, 0);
@@ -1524,7 +1591,8 @@
       const d = new Date(monday); d.setDate(monday.getDate() + i);
       const key = dateStr(d);
       const cls = ["wd"];
-      if (goalMetOn(key)) cls.push("met");
+      if (litOn(key)) cls.push("met");
+      if (goalMetOn(key)) cls.push("goal");
       if (d.getTime() === today.getTime()) cls.push("today");
       if (d > today) cls.push("future");
       const ring = el("i"); ring.innerHTML = svgUse("i-tick");
@@ -1535,15 +1603,16 @@
   function renderHomeTop() {
     const name = displayName();
     $("#greetH").textContent = `${greetingWord()}${name ? ", " + name : ""}!`;
-    const streak = computeStreak(), goal = dailyGoal(), done = todayCount();
+    const streak = computeStreak(), goal = dailyGoal(), xp = todayXP(), lit = litOn(todayStr());
     const out = outSince();
     $(".streak-card").classList.toggle("out", !!out);
+    $(".streak-card").classList.toggle("lit", lit && !out);
     $("#scNum").textContent = out ? out.lost : streak;
-    $("#scSub").textContent = streak === 1 ? "day streak" : "day streak";
+    $("#scSub").textContent = "day streak";
     // Kept short: the bubble shares the row with the panda on a narrow phone.
     $("#scBubble").classList.toggle("relight", !!out);
-    $("#scBubble").textContent = out ? (embers() ? "Relight it?" : "Went out") : done >= goal ? "Done!" : done > 0 ? `${goal - done} to go`
-      : streak > 0 ? "Keep going!" : "Let's start!";
+    $("#scBubble").textContent = out ? (embers() ? "Relight it?" : "Went out") : xp >= goal ? "Goal done!" : lit ? `${goal - xp} XP to goal`
+      : streak > 0 ? "Keep it lit!" : "Let's start!";
     renderWeekStrip();
 
     const cont = $("#homeContinue");
@@ -2064,7 +2133,7 @@
   function renderPath() {
     $("#pathStreak").textContent = computeStreak();
     // Daily-goal ring in the HUD: fills through the day, flips to a gold ✓ when met.
-    const goal = dailyGoal(), done = todayCount(), met = done >= goal;
+    const goal = dailyGoal(), done = todayXP(), met = done >= goal;
     const frac = Math.max(0, Math.min(1, goal ? done / goal : 0));
     const arc = $("#pathGoalArc"), circ = 2 * Math.PI * 9;
     arc.setAttribute("stroke-dasharray", circ.toFixed(1));
@@ -2924,7 +2993,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=208", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=209", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3127,7 +3196,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=208" : "images/path/panda-sad.webp?v=208"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=209" : "images/path/panda-sad.webp?v=209"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3312,11 +3381,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=208"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=209"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=208"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=209"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -4333,7 +4402,9 @@ This REPLACES the progress on this device.`)) return;
     for (const [d, n] of Object.entries(aa.xpDays || {})) xpDays[d] = Math.max(n || 0, xpDays[d] || 0);
     const relit = Object.assign({}, ab.relit || {}, aa.relit || {});
     const emb = Math.max(typeof aa.embers === "number" ? aa.embers : 1, typeof ab.embers === "number" ? ab.embers : 1);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb }));
+    const emberFor = Object.assign({}, ab.emberFor || {}, aa.emberFor || {});
+    const best = Math.max(aa.best || 0, ab.best || 0);
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
@@ -4639,6 +4710,9 @@ This REPLACES the progress on this device.`)) return;
   hydrateIcons();
   renderHome();
   show("home");                          // land on the Home dashboard (path renders on first Learn tap)
+  setTimeout(() => askRelight(true), 600);   // a streak that went out yesterday can be relit right here
+  // local development only: poke the streak moments from the console
+  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak };
   renderAccount();
   if (cloudOn() && !signedIn() && !localStorage.getItem(LS_SKIPAUTH)) {
     openAuthGate();                       // no session yet — offer sign-in (skippable)
