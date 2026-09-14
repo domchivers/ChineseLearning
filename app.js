@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=213";
+  const ASSET_V = "?v=214";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -336,8 +336,10 @@
     const chest = $("#qcChest");
     chest.textContent = done === 3 ? (q.chest ? "Chest opened" : "3/3") : `${done}/3`;
     chest.classList.toggle("full", done === 3);
-    const m = (activity.questMonths || {})[todayStr().slice(0, 7)] || 0;
-    $("#qcMonth").textContent = m >= 20 ? `${m} quests this month · badge earned` : `${m} of 20 quests this month for the badge`;
+    // once the chest is open the card folds to its header line
+    const opened = done === 3 && q.chest;
+    rows.closest(".quest-card").classList.toggle("opened", opened);
+    rows.classList.toggle("hidden", opened);
   }
   const xpTotal = () => Object.values(activity.xpDays || {}).reduce((s, n) => s + (n || 0), 0);
   const xpOn = key => (activity.xpDays || {})[key] || 0;
@@ -1604,6 +1606,11 @@
     }
   }
   $("#avBack").addEventListener("click", () => { renderDashboard(); show("progress"); });
+  $("#actSeg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    $("#actSeg").querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
+    $("#actMonth").classList.toggle("hidden", b.dataset.act !== "month");
+    $("#actWeek").classList.toggle("hidden", b.dataset.act !== "week");
+  }));
 
   /* ---- Achievements ------------------------------------------------------
      Derived from what is already tracked, so nothing new to save except the
@@ -1720,7 +1727,7 @@
     $("#profXpTotal").textContent = lv.total.toLocaleString();
     $("#profLessons").textContent = doneLessons.size;
     $("#profLevelNum").textContent = lv.level;
-    $("#profXp").textContent = `${lv.next} XP to level ${lv.level + 1}`;
+    $("#profXp").textContent = `Level ${lv.level} · ${lv.next} XP to go`;
     drawAvatar($("#profAvatar"), avatarCfg(), { size: 768 });
     renderProfilePath(); renderAchievements(); renderXpWeek(); renderStreakCal();
     // Panel summary
@@ -3205,7 +3212,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=213", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=214", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3408,7 +3415,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=213" : "images/path/panda-sad.webp?v=213"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=214" : "images/path/panda-sad.webp?v=214"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3593,11 +3600,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=213"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=214"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=213"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=214"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -4943,6 +4950,12 @@ This REPLACES the progress on this device.`)) return;
   renderHome();
   show("home");                          // land on the Home dashboard (path renders on first Learn tap)
   setTimeout(() => askRelight(true), 600);   // a streak that went out yesterday can be relit right here
+  // local development only: open straight onto a view (?view=progress) for screenshots
+  if (location.hostname === "localhost") {
+    const v = new URLSearchParams(location.search).get("view");
+    if (v === "progress") { renderDashboard(); show("progress"); }
+    else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
+  }
   // local development only: poke the streak moments from the console
   if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP };
   renderAccount();

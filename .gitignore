@@ -9,3 +9,5 @@ desktop.ini
 *.log
 *.tmp
 node_modules/
+dev-seed.html
+dev-frame.html
