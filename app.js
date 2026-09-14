@@ -5063,6 +5063,7 @@ This REPLACES the progress on this device.`)) return;
   if (location.hostname === "localhost") {
     const v = new URLSearchParams(location.search).get("view");
     if (v === "progress") { renderDashboard(); show("progress"); }
+    else if (v === "path") { renderPath(); show("path"); }
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
