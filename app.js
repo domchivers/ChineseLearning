@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=211";
+  const ASSET_V = "?v=212";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1481,19 +1481,24 @@
      survives. Back-to-front: back hair, body, head, eyes, mouth, front hair
      (clothes and accessories slot in as their layers arrive). */
   const AV = {
-    hairBase: [120, 84, 40],
-    skins: ["#fde2c4", "#fddeaf", "#dba667", "#b87a42", "#85512c", "#6f4022"],
-    hairColors: ["#2a211e", "#4b3126", "#785428", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
-    hairs: [["none", "None"], ["short", "Short"], ["messy", "Messy"], ["bob", "Bob"], ["long", "Long"], ["bun", "Bun"], ["curly", "Curly"], ["pigtails", "Pigtails"], ["wavy", "Wavy"]],
-    eyes: [["bright", "Bright"], ["happy", "Happy"], ["wink", "Wink"]],
-    brows: [["none", "None"], ["soft", "Soft"], ["raised", "Raised"], ["flat", "Flat"]],
-    mouths: [["smile", "Smile"], ["open", "Open"], ["cat", "Cat"]]
+    tones: [["light", "#fde0c0"], ["warm", "#fbd2a5"], ["tan", "#f2b872"], ["brown", "#d99f66"], ["deep", "#b5703f"], ["dark", "#995e35"]],
+    hairBase: [71, 53, 39],
+    hairColors: ["#2a211e", "#473527", "#785428", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
+    hairs: [["none", "None"], ["tousled", "Tousled"], ["bob", "Bob"], ["waves", "Waves"], ["curls", "Curls"], ["bun", "Bun"], ["pigtails", "Pigtails"]],
+    eyes: [["open", "Open"], ["happy", "Happy"], ["wink", "Wink"], ["squeezed", "Squeezed"]],
+    brows: [["none", "None"], ["relaxed", "Relaxed"], ["raised", "Raised"], ["concerned", "Concerned"]],
+    mouths: [["smile", "Smile"], ["open", "Open"], ["neutral", "Neutral"]],
+    tops: [["hoodie", "Hoodie"], ["jacket", "Jacket"]],
+    bottoms: [["shorts", "Shorts"], ["trousers", "Trousers"], ["skirt", "Skirt"]],
+    shoes: [["cream", "Cream"], ["charcoal", "Charcoal"]]
   };
-  const avatarDefault = () => ({ skin: 0, hair: "short", hairColor: "#785428", eyes: "bright", brows: "none", mouth: "smile" });
+  const avatarDefault = () => ({ tone: "light", hair: "tousled", hairColor: "#473527", eyes: "open", brows: "relaxed", mouth: "smile", top: "hoodie", bottom: "shorts", shoes: "cream" });
+  const AV_LISTS = { hair: AV.hairs, eyes: AV.eyes, brows: AV.brows, mouth: AV.mouths, top: AV.tops, bottom: AV.bottoms, shoes: AV.shoes };
   // a saved choice that no longer has a layer falls back to the first option
   const avatarCfg = () => {
     const c = Object.assign(avatarDefault(), prefs.avatar || {});
-    for (const [k, list] of [["hair", AV.hairs], ["eyes", AV.eyes], ["brows", AV.brows], ["mouth", AV.mouths]]) if (!list.some(o => o[0] === c[k])) c[k] = list[0][0];
+    for (const [k, list] of Object.entries(AV_LISTS)) if (!list.some(o => o[0] === c[k])) c[k] = list[0][0];
+    if (!AV.tones.some(t => t[0] === c.tone)) c.tone = "light";
     return c;
   };
   const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
@@ -1530,13 +1535,14 @@
     if (!canvas) return;
     const size = opts.size || 512, crop = opts.crop || [0, 0, 1, 1];
     canvas.width = Math.round(size * crop[2] / Math.max(crop[2], crop[3])); canvas.height = Math.round(size * crop[3] / Math.max(crop[2], crop[3]));
-    const order = [];
-    if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-back`, "hair"]);
-    const tone = (cfg.skin || 0) + 1;
-    order.push([`body-skin-${tone}`, "base"], [`head-skin-${tone}`, "base"], [`eyes-${cfg.eyes}`, "base"]);
+    const t = cfg.tone, order = [];
+    // trousers fall over the shoes; shorts and a skirt sit under them
+    const bottom = [`bottom-${cfg.bottom}-${t}`, "base"], shoes = [`shoes-${cfg.shoes}`, "base"];
+    order.push(...(cfg.bottom === "trousers" ? [shoes, bottom] : [bottom, shoes]));
+    order.push([`top-${cfg.top}-${t}`, "base"], [`head-${t}`, "base"], [`eyes-${cfg.eyes}`, "base"]);
     if (cfg.brows !== "none") order.push([`brows-${cfg.brows}`, "base"]);
     order.push([`mouth-${cfg.mouth}`, "base"]);
-    if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-front`, "hair"]);
+    if (cfg.hair !== "none") order.push([`hair-${cfg.hair}`, "hair"]);
     const imgs = await Promise.all(order.map(o => avImg(o[0])));
     // compose at the layers' own size, then scale once: scaling each layer on
     // its own softens every cut edge and lets the layer beneath show through
@@ -1555,8 +1561,10 @@
 
   // ---- the builder screen ----
   let avCat = "hair";
-  const AV_CATS = [["skin", "Skin"], ["hair", "Hair"], ["hairColor", "Hair colour"], ["eyes", "Eyes"], ["brows", "Brows"], ["mouth", "Mouth"]];
-  const AV_LISTS = { hair: AV.hairs, eyes: AV.eyes, brows: AV.brows, mouth: AV.mouths };
+  const AV_CATS = [["skin", "Skin"], ["hair", "Hair"], ["hairColor", "Hair colour"], ["eyes", "Eyes"], ["brows", "Brows"], ["mouth", "Mouth"], ["top", "Tops"], ["bottom", "Bottoms"], ["shoes", "Shoes"]];
+  // what each tile shows, as a fraction of the canvas [x, y, w, h]
+  const AV_CROPS = { hair: [.2, 0, .6, .6], eyes: [.29, .19, .42, .42], brows: [.29, .19, .42, .42], mouth: [.29, .19, .42, .42],
+    top: [.2, .42, .6, .42], bottom: [.2, .58, .6, .42], shoes: [.25, .7, .5, .3] };
   function renderAvatarBuilder() {
     const cfg = avatarCfg();
     drawAvatar($("#avPreview"), cfg, { size: 640 });
@@ -1570,9 +1578,9 @@
     const pick = patch => { prefs.avatar = Object.assign(avatarCfg(), patch); savePrefs(prefs); renderAvatarBuilder(); };
     if (avCat === "skin") {
       box.className = "av-opts swatches";
-      AV.skins.forEach((c, i) => {
-        const b = el("button", { className: "swatch" + (cfg.skin === i ? " on" : ""), type: "button", title: `Skin tone ${i + 1}` });
-        b.style.background = c; b.addEventListener("click", () => pick({ skin: i })); box.appendChild(b);
+      AV.tones.forEach(([id, c]) => {
+        const b = el("button", { className: "swatch" + (cfg.tone === id ? " on" : ""), type: "button", title: id });
+        b.style.background = c; b.addEventListener("click", () => pick({ tone: id })); box.appendChild(b);
       });
     } else if (avCat === "hairColor") {
       box.className = "av-opts swatches";
@@ -1582,7 +1590,7 @@
       });
     } else {
       box.className = "av-opts tiles";
-      const crop = avCat === "hair" ? [.2, .02, .6, .6] : [.27, .12, .46, .46];   // faces zoom in closer
+      const crop = AV_CROPS[avCat];
       AV_LISTS[avCat].forEach(([id, label]) => {
         const b = el("button", { className: "av-tile" + (cfg[avCat] === id ? " on" : ""), type: "button" });
         const c = el("canvas"); b.append(c, el("span", {}, label));
@@ -3193,7 +3201,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=211", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=212", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3396,7 +3404,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=211" : "images/path/panda-sad.webp?v=211"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=212" : "images/path/panda-sad.webp?v=212"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3581,11 +3589,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=211"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=212"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=211"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=212"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
