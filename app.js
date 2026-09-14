@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=202";
+  const ASSET_V = "?v=203";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1331,15 +1331,20 @@
     order.push([`mouth-${cfg.mouth}`, "base"]);
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-front`, "hair"]);
     const imgs = await Promise.all(order.map(o => avImg(o[0])));
-    const x = canvas.getContext("2d"); x.clearRect(0, 0, canvas.width, canvas.height);
+    // compose at the layers' own size, then scale once: scaling each layer on
+    // its own softens every cut edge and lets the layer beneath show through
+    const first = imgs.find(Boolean); if (!first) return;
+    const full = avStage; full.width = first.width; full.height = first.height;
+    const fx = full.getContext("2d"); fx.clearRect(0, 0, full.width, full.height);
     imgs.forEach((img, i) => {
       if (!img) return;
       const [name, kind] = order[i];
-      let src = img;
-      if (kind === "hair") src = tinted(name, img, AV.hairBase, cfg.hairColor, null, 1.35);
-      x.drawImage(src, crop[0] * img.width, crop[1] * img.height, crop[2] * img.width, crop[3] * img.height, 0, 0, canvas.width, canvas.height);
+      fx.drawImage(kind === "hair" ? tinted(name, img, AV.hairBase, cfg.hairColor, null, 1.35) : img, 0, 0);
     });
+    const x = canvas.getContext("2d"); x.clearRect(0, 0, canvas.width, canvas.height);
+    x.drawImage(full, crop[0] * full.width, crop[1] * full.height, crop[2] * full.width, crop[3] * full.height, 0, 0, canvas.width, canvas.height);
   }
+  const avStage = document.createElement("canvas");
 
   // ---- the builder screen ----
   let avCat = "hair";
@@ -2919,7 +2924,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=202", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=203", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3122,7 +3127,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=202" : "images/path/panda-sad.webp?v=202"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=203" : "images/path/panda-sad.webp?v=203"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3307,11 +3312,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=202"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=203"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=202"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=203"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
