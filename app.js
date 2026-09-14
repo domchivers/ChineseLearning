@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=201";
+  const ASSET_V = "?v=202";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1277,10 +1277,18 @@
     hairBase: [120, 84, 40],
     skins: ["#fde2c4", "#fddeaf", "#dba667", "#b87a42", "#85512c", "#6f4022"],
     hairColors: ["#2a211e", "#4b3126", "#785428", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
-    hairs: [["none", "None"], ["short", "Short"], ["messy", "Messy"], ["bob", "Bob"], ["long", "Long"], ["bun", "Bun"], ["curly", "Curly"], ["pigtails", "Pigtails"], ["wavy", "Wavy"]]
+    hairs: [["none", "None"], ["short", "Short"], ["messy", "Messy"], ["bob", "Bob"], ["long", "Long"], ["bun", "Bun"], ["curly", "Curly"], ["pigtails", "Pigtails"], ["wavy", "Wavy"]],
+    eyes: [["bright", "Bright"], ["happy", "Happy"], ["wink", "Wink"]],
+    brows: [["none", "None"], ["soft", "Soft"], ["raised", "Raised"], ["flat", "Flat"]],
+    mouths: [["smile", "Smile"], ["open", "Open"], ["cat", "Cat"]]
   };
-  const avatarDefault = () => ({ skin: 0, hair: "short", hairColor: "#785428", eyes: "dot", mouth: "smile" });
-  const avatarCfg = () => Object.assign(avatarDefault(), prefs.avatar || {});
+  const avatarDefault = () => ({ skin: 0, hair: "short", hairColor: "#785428", eyes: "bright", brows: "none", mouth: "smile" });
+  // a saved choice that no longer has a layer falls back to the first option
+  const avatarCfg = () => {
+    const c = Object.assign(avatarDefault(), prefs.avatar || {});
+    for (const [k, list] of [["hair", AV.hairs], ["eyes", AV.eyes], ["brows", AV.brows], ["mouth", AV.mouths]]) if (!list.some(o => o[0] === c[k])) c[k] = list[0][0];
+    return c;
+  };
   const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
   const avImgs = {}, avTints = {};
   function avImg(name) {
@@ -1318,7 +1326,9 @@
     const order = [];
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-back`, "hair"]);
     const tone = (cfg.skin || 0) + 1;
-    order.push([`body-skin-${tone}`, "base"], [`head-skin-${tone}`, "base"], [`eyes-${cfg.eyes || "dot"}`, "base"], [`mouth-${cfg.mouth || "smile"}`, "base"]);
+    order.push([`body-skin-${tone}`, "base"], [`head-skin-${tone}`, "base"], [`eyes-${cfg.eyes}`, "base"]);
+    if (cfg.brows !== "none") order.push([`brows-${cfg.brows}`, "base"]);
+    order.push([`mouth-${cfg.mouth}`, "base"]);
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}-front`, "hair"]);
     const imgs = await Promise.all(order.map(o => avImg(o[0])));
     const x = canvas.getContext("2d"); x.clearRect(0, 0, canvas.width, canvas.height);
@@ -1333,7 +1343,8 @@
 
   // ---- the builder screen ----
   let avCat = "hair";
-  const AV_CATS = [["skin", "Skin"], ["hair", "Hair"], ["hairColor", "Hair colour"]];
+  const AV_CATS = [["skin", "Skin"], ["hair", "Hair"], ["hairColor", "Hair colour"], ["eyes", "Eyes"], ["brows", "Brows"], ["mouth", "Mouth"]];
+  const AV_LISTS = { hair: AV.hairs, eyes: AV.eyes, brows: AV.brows, mouth: AV.mouths };
   function renderAvatarBuilder() {
     const cfg = avatarCfg();
     drawAvatar($("#avPreview"), cfg, { size: 640 });
@@ -1359,11 +1370,12 @@
       });
     } else {
       box.className = "av-opts tiles";
-      AV.hairs.forEach(([id, label]) => {
-        const b = el("button", { className: "av-tile" + (cfg.hair === id ? " on" : ""), type: "button" });
+      const crop = avCat === "hair" ? [.2, .02, .6, .6] : [.27, .12, .46, .46];   // faces zoom in closer
+      AV_LISTS[avCat].forEach(([id, label]) => {
+        const b = el("button", { className: "av-tile" + (cfg[avCat] === id ? " on" : ""), type: "button" });
         const c = el("canvas"); b.append(c, el("span", {}, label));
-        drawAvatar(c, Object.assign({}, cfg, { hair: id }), { size: 160, crop: [.2, .02, .6, .6] });
-        b.addEventListener("click", () => pick({ hair: id })); box.appendChild(b);
+        drawAvatar(c, Object.assign({}, cfg, { [avCat]: id }), { size: 160, crop });
+        b.addEventListener("click", () => pick({ [avCat]: id })); box.appendChild(b);
       });
     }
   }
@@ -2907,7 +2919,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=201", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=202", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3110,7 +3122,7 @@
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=201" : "images/path/panda-sad.webp?v=201"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=202" : "images/path/panda-sad.webp?v=202"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3295,11 +3307,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=201"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=202"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=201"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=202"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
