@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=214";
+  const ASSET_V = "?v=215";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -322,6 +322,10 @@
   function renderQuests() {
     const rows = $("#questRows"); if (!rows) return;
     const q = todayQuests();
+    const done = questRowsInto(rows, q);
+    renderQuestsHeader(rows, q, done);
+  }
+  function questRowsInto(rows, q) {
     rows.innerHTML = "";
     let done = 0;
     q.ids.forEach(id => {
@@ -333,6 +337,9 @@
         <span class="qi-n">${ok ? "Done" : `${n}/${d.target}`}</span>`;
       rows.appendChild(it);
     });
+    return done;
+  }
+  function renderQuestsHeader(rows, q, done) {
     const chest = $("#qcChest");
     chest.textContent = done === 3 ? (q.chest ? "Chest opened" : "3/3") : `${done}/3`;
     chest.classList.toggle("full", done === 3);
@@ -1768,8 +1775,8 @@
     return h < 5 ? "Good night" : h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
   }
   // This week's seven days, Monday first. Filled = the fire was lit that day; gold = the goal was met too.
-  function renderWeekStrip() {
-    const strip = $("#weekStrip"); if (!strip) return;
+  function renderWeekStrip(strip = $("#weekStrip")) {
+    if (!strip) return;
     const today = new Date(); today.setHours(0, 0, 0, 0);
     const monday = new Date(today); monday.setDate(today.getDate() - ((today.getDay() + 6) % 7));
     const names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -2230,6 +2237,7 @@
   const lessonStudied = id => CARDS.some(c => c.lessonId === id && srs[c.id]);
   // Beyond this many due cards a lesson study is split into even batches.
   const SESSION_CAP = 20;
+  const SESSION_LEN = 12;     // words per session
   // A lesson is complete once every one of its words has been answered correctly
   // at least once (reps ≥ 1) — this is what lets big lessons finish across batches
   // instead of on a single cleared round.
@@ -3014,8 +3022,11 @@
       }
     }
     if (enabled.length === 0) enabled = ["recognize"];
-    return enabled[Math.floor(Math.random() * enabled.length)];
+    // vary the exercise type: never the same one twice running when there is a choice
+    if (enabled.length > 1 && lastDir) { const alt = enabled.filter(k => k !== lastDir); if (alt.length) enabled = alt; }
+    return (lastDir = enabled[Math.floor(Math.random() * enabled.length)]);
   }
+  let lastDir = null, sessionStart = 0;
 
   function buildStudyQueue() {
     const focusSet = scopeFocuses || selectedFocuses;
@@ -3029,10 +3040,11 @@
     // If nothing is due, review everything (a manual refresher session).
     const pool = due.length ? due : cards;
     const q = shuffle(pool);
-    // Keep a round digestible: a long lesson (e.g. Numbers, 30) comes in even
-    // batches rather than one forced march. Split into halves, so there's never
-    // an awkward one-word leftover round; the rest is picked up next time.
-    return pool.length > SESSION_CAP ? q.slice(0, Math.ceil(pool.length / 2)) : q;
+    // A session is short and fixed: about a dozen words, three minutes. A
+    // bigger pool comes in even batches (15 words is 8 then 7, never 12 then
+    // 3); the rest is picked up next time.
+    const n = pool.length > SESSION_LEN ? Math.ceil(pool.length / Math.ceil(pool.length / SESSION_LEN)) : pool.length;
+    return q.slice(0, n);
   }
 
   let sessionTotal = 0;
@@ -3046,7 +3058,7 @@
     queue = shuffle(cards.slice());
     clearedIds = new Set();
     studyStats = { answered: 0, again: 0, learned: 0 };
-    sessionXP = 0; combo = 0;
+    sessionXP = 0; combo = 0; lastDir = null; sessionStart = Date.now();
     sessionTotal = queue.length;
     $("#studyTitle").textContent = "Study";
     show("study");
@@ -3124,10 +3136,21 @@
     renderStudyCard();
   }
 
+  let lastCleared = 0;
   function updateStudyProgress() {
     $("#studyBar").style.width = `${(clearedIds.size / Math.max(sessionTotal, 1)) * 100}%`;
     $("#studyCounter").textContent = `${clearedIds.size} / ${sessionTotal}`;
+    if (clearedIds.size > lastCleared) pulseBar($("#studyBar"));
+    lastCleared = clearedIds.size;
   }
+  // A light sweeps along the bar each time it grows.
+  function pulseBar(bar) {
+    const p = bar && bar.parentElement; if (!p) return;
+    p.classList.remove("pulse"); void p.offsetWidth; p.classList.add("pulse");
+  }
+  // Short taps on the phone: one for right, a double for wrong. Silently
+  // ignored where the browser has no vibration (iOS Safari).
+  function buzz(correct) { try { if (navigator.vibrate) navigator.vibrate(correct ? 25 : [45, 40, 45]); } catch (e) {} }
   // The combo chip in the study and quiz bars: appears from three in a row,
   // and turns gold once each answer is worth more.
   function renderCombo() {
@@ -3135,6 +3158,7 @@
       ch.classList.toggle("hidden", combo < 3);
       ch.classList.toggle("hot", combo >= COMBO_AT);
       ch.innerHTML = `${svgUse("i-flame-solid")}<b>${combo}</b>`;
+      ch.classList.remove("bump"); void ch.offsetWidth; ch.classList.add("bump");
     });
   }
   // Double-XP: a pill on the home screen and in the study bars while it runs.
@@ -3162,7 +3186,7 @@
   function answerStudy(correct) {
     if (studyAnswered) return;
     studyAnswered = true;
-    sfx(correct ? "correct" : "wrong");
+    sfx(correct ? "correct" : "wrong"); buzz(correct);
     const wasNew = !srs[curCard.id];
     schedule(curCard.id, correct ? "good" : "again");
     // "Mastered" requires you to have PRODUCED the word, not just recognised it:
@@ -3212,7 +3236,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=214", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=215", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3414,8 +3438,9 @@
       // is always in view however long the word bank is.
       const wrapEl = $("#studyContinueWrap");
       wrapEl.insertBefore(fb, wrapEl.firstChild);
+      wrapEl.classList.add(correct ? "ok" : "bad");
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=214" : "images/path/panda-sad.webp?v=214"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=215" : "images/path/panda-sad.webp?v=215"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3600,11 +3625,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=214"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=215"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=214"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=215"; drg.classList.add("react"); }
         }
         onResult(correct);
       });
@@ -3621,7 +3646,7 @@
     // Reset all pinned controls; each mode re-shows what it needs.
     $("#studyContinueWrap").classList.add("hidden");
     $("#studyContinueWrap").classList.remove("wide");
-    $("#studyContinueWrap").querySelectorAll(".sent-fb").forEach(n => n.remove());
+    clearFeedback($("#studyContinueWrap"));
     face.classList.remove("sent");
     $("#studyReveal").classList.add("hidden");
     $("#studyNext").classList.add("hidden");
@@ -3675,6 +3700,7 @@
         const drg = face.querySelector(".quiz-dragon");
         if (drg) { drg.src = `images/${correct ? "panda-celebrate" : "panda-sad"}.png${ASSET_V}`; drg.classList.add("react"); }
         answerStudy(correct);
+        $("#studyContinueWrap").classList.add(correct ? "ok" : "bad");
         setWriteGate(true);
       };
       if (canRecognize()) {
@@ -3753,6 +3779,7 @@
       choices.classList.remove("hidden");
       buildChoiceExercise(face, choices, c, curDir, $("#promptLabel"), correct => {
         answerStudy(correct);
+        feedbackBanner($("#studyContinueWrap"), correct, c, curDir);
         $("#studyContinueWrap").classList.remove("hidden");
       });
     }
@@ -3863,6 +3890,83 @@
     renderPage();
   }
 
+  /* ---- Feedback banner -----------------------------------------------
+     The same treatment on every exercise: a banner slides up beside the
+     Continue button, green with a word of praise or red with the right
+     answer, and the button takes the colour. */
+  const PRAISE = ["Nice!", "Great job!", "Excellent!", "Spot on!", "太棒了!", "对了!"];
+  function feedbackBanner(wrapEl, correct, c, dir) {
+    if (!wrapEl) return;
+    clearFeedback(wrapEl);
+    const fb = el("div", { className: "sent-fb " + (correct ? "ok" : "bad") });
+    fb.innerHTML = `<svg class="licon"><use href="#${correct ? "i-tick" : "i-x"}"/></svg>`;
+    const body = el("div");
+    body.appendChild(el("div", { className: "fb-t" }, correct ? PRAISE[Math.floor(Math.random() * PRAISE.length)] : "Correct answer:"));
+    // what to show: the whole word, with the part they were asked for first
+    const line = dir === "recognize" ? `${c.en}` : dir === "pinyin" ? prettyPinyin(c.pinyin) : c.hanzi;
+    body.appendChild(el("div", { className: "fb-a" }, line));
+    body.appendChild(el("div", { className: "fb-py" }, [c.hanzi, prettyPinyin(c.pinyin), c.en].filter(x => x !== line).join(" · ")));
+    fb.appendChild(body);
+    wrapEl.insertBefore(fb, wrapEl.firstChild);
+    wrapEl.classList.add(correct ? "ok" : "bad");
+  }
+  function clearFeedback(wrapEl) {
+    if (!wrapEl) return;
+    wrapEl.querySelectorAll(".sent-fb").forEach(n => n.remove());
+    wrapEl.classList.remove("ok", "bad");
+  }
+
+  /* ---- Session complete, in stages -------------------------------------
+     Three tiles that count up, then the streak with this week's days, then
+     today's quests. One Continue button walks through them. */
+  const fmtTime = s => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  let doneStage = 0, doneStageCount = 1;
+  function tick(node, to, render) {
+    const t0 = performance.now(), dur = 700;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      node.textContent = render(Math.round(to * e));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  function startDoneSequence(tiles) {
+    $("#doneStats").classList.add("hidden");
+    const box = $("#doneTiles"); box.classList.remove("hidden"); box.innerHTML = "";
+    tiles.forEach((t, i) => {
+      const d = el("div", { className: "dt " + t.cls });
+      const b = el("b", {}, "0"), s = el("span", {}, t.label);
+      d.append(s, b); box.appendChild(d);
+      setTimeout(() => { d.classList.add("in"); tick(b, t.value, v => `${t.prefix || ""}${t.fmt ? t.fmt(v) : v}${t.suffix || ""}`); }, 200 + i * 220);
+    });
+    // stage two: the streak
+    const s = computeStreak(), lit = litOn(todayStr());
+    $("#doneStreak").textContent = s;
+    $("#doneStreakMsg").textContent = lit ? (s === 1 ? "Fire lit. Come back tomorrow to make it two." : "Fire lit for today. Keep it going tomorrow.") : "Finish a session to light today's fire.";
+    $(".done-stage.s2").classList.toggle("lit", lit);
+    renderWeekStrip($("#doneWeek"));
+    // stage three: the quests
+    const q = todayQuests(), done = questRowsInto($("#doneQuests"), q);
+    $("#doneQuestSub").textContent = done === 3 ? "All three done. Chest opened!" : `${done} of 3 done today`;
+    doneStageCount = 3;
+    showDoneStage(0);
+  }
+  function doneSimple() {
+    $("#doneStats").classList.remove("hidden");
+    $("#doneTiles").classList.add("hidden");
+    $("#doneNotes").innerHTML = "";
+    doneStageCount = 1;
+    showDoneStage(0);
+  }
+  function showDoneStage(i) {
+    doneStage = i;
+    document.querySelectorAll(".done-stage").forEach((st, k) => st.classList.toggle("hidden", k !== i));
+    const last = i >= doneStageCount - 1;
+    $("#doneContinue").classList.toggle("hidden", last);
+    $(".done-final").classList.toggle("hidden", !last);
+    if (i === 1) sfx("goal");
+  }
+
   function finishStudy() {
     doneAction = null;
     // A lesson completes once ALL its words are cleared — which can take a few
@@ -3887,12 +3991,12 @@
     const perfect = studyStats.again === 0 && studyStats.answered >= 5;
     if (perfect) earnXP(XP.perfect);
     if (justFinished) startBoost();
-    $("#doneStats").innerHTML = "";
-    $("#doneStats").append(
-      statEl(clearedIds.size, clearedIds.size === 1 ? "word cleared" : "words cleared"),
-      statEl(`+${sessionXP}`, "XP earned"),
-      statEl(`<svg class="licon licon-sm flame"><use href="#i-flame-solid"/></svg> ${computeStreak()}`, "day streak")
-    );
+    const acc = studyStats.answered ? Math.round((studyStats.answered - studyStats.again) / studyStats.answered * 100) : 100;
+    startDoneSequence([
+      { value: sessionXP, label: "XP", prefix: "+", cls: "xp" },
+      { value: Math.round((Date.now() - sessionStart) / 1000), label: "Time", fmt: fmtTime, cls: "time" },
+      { value: acc, label: "Accuracy", suffix: "%", cls: "acc" }
+    ]);
     renderDoneNotes(perfect, justFinished);
     const nextBtn = $("#doneNext");
     if (upNext) {
@@ -3910,6 +4014,7 @@
     show("done");
   }
 
+  $("#doneContinue").addEventListener("click", () => showDoneStage(doneStage + 1));
   $("#studyNext").addEventListener("click", () => { if (writeNextFn) writeNextFn(); });
   $("#studyContinue").addEventListener("click", () => {
     // Sentence mode: first press checks the answer, second advances.
@@ -3974,6 +4079,7 @@
     if (unlocked.length) saveSRS(srs);
     scopeLessons = null; scopeFocuses = null;
     const reachedTarget = unlocked.includes(placeTarget);
+    doneSimple();
     $("#doneTitle").textContent = !unlocked.length ? "Not yet"
       : reachedTarget ? "You tested out!" : "Skipped ahead";
     sfx(unlocked.length ? "complete" : "wrong");
@@ -3995,7 +4101,7 @@
     const cards = activeCards();
     if (cards.length < 3) { toast("Pick more lessons — a quiz needs at least 3 words."); $("#studyPanel").open = true; return; }
     quizItems = shuffle(cards).slice(0, Math.min(20, cards.length));
-    quizIdx = 0; quizScore = 0; quizMode = "quiz"; combo = 0; sessionXP = 0;
+    quizIdx = 0; quizScore = 0; quizMode = "quiz"; combo = 0; sessionXP = 0; sessionStart = Date.now();
     $("#quizTitle").textContent = `Quiz · ${quizItems.length} questions`;
     show("quiz");
     renderQuiz();
@@ -4004,6 +4110,8 @@
   function renderQuiz() {
     if (quizIdx >= quizItems.length) return quizMode === "placement" ? finishPlacement() : finishQuiz();
     const c = quizItems[quizIdx];
+    clearFeedback($("#quizNextWrap"));
+    pulseBar($("#quizBar"));
     // Direction: only multiple-choice types (write/sentence/speak aren't MC).
     let dirs = [...(scopeFocuses || selectedFocuses)].filter(k => k !== "write" && k !== "sentence" && k !== "speak");
     if (dirs.length === 0) dirs = ["recognize"];
@@ -4011,7 +4119,8 @@
 
     $("#quizBar").style.width = `${(quizIdx / quizItems.length) * 100}%`;
     buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), correct => {
-      sfx(correct ? "correct" : "wrong");
+      sfx(correct ? "correct" : "wrong"); buzz(correct);
+      feedbackBanner($("#quizNextWrap"), correct, c, dir);
       if (correct) quizScore++;
       answerXP(correct);
       questEvent(dir, correct);
@@ -4038,13 +4147,12 @@
     sfx("complete");
     earnXP(XP.session);
     if (perfect) earnXP(XP.perfect);
-    $("#doneStats").innerHTML = "";
     const pct = Math.round((quizScore / quizItems.length) * 100);
-    $("#doneStats").append(
-      statEl(`${quizScore}/${quizItems.length}`, "correct"),
-      statEl(`${pct}%`, "score"),
-      statEl(`+${sessionXP}`, "XP earned")
-    );
+    startDoneSequence([
+      { value: sessionXP, label: "XP", prefix: "+", cls: "xp" },
+      { value: Math.round((Date.now() - sessionStart) / 1000), label: "Time", fmt: fmtTime, cls: "time" },
+      { value: pct, label: "Accuracy", suffix: "%", cls: "acc" }
+    ]);
     renderDoneNotes(perfect, false);
     $("#doneAgain").classList.add("hidden");   // redo is a Study feature
     show("done");
@@ -4250,6 +4358,7 @@
     }
   }
   function finishMatch() {
+    doneSimple();
     $("#doneTitle").textContent = "Matching done";
     sfx("complete");
     $("#doneStats").innerHTML = "";
@@ -4269,7 +4378,7 @@
     scopeLessons = new Set(cards.map(c => c.lessonId));        // plausible distractors
     scopeFocuses = new Set(["recognize", "recall", "pinyin", "listen"]);
     quizItems = shuffle(cards.slice()).slice(0, Math.min(20, cards.length));
-    quizIdx = 0; quizScore = 0; quizMode = "quiz"; combo = 0; sessionXP = 0;
+    quizIdx = 0; quizScore = 0; quizMode = "quiz"; combo = 0; sessionXP = 0; sessionStart = Date.now();
     $("#quizTitle").textContent = `Quiz · ${quizItems.length} questions`;
     show("quiz"); renderQuiz();
   }
@@ -4957,7 +5066,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP };
+  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard };
   renderAccount();
   if (cloudOn() && !signedIn() && !localStorage.getItem(LS_SKIPAUTH)) {
     openAuthGate();                       // no session yet — offer sign-in (skippable)
