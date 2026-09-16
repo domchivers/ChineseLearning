@@ -1,0 +1,2525 @@
+{
+  "format": "lossless WebP; visible pixels and alpha verified",
+  "files": {
+    "images/avatar-catalogue/a824c3a24cd00b44c1dd.webp": {
+      "source": "layers/outfit/hoodie_trousers.png",
+      "sha256": "a824c3a24cd00b44c1dd46e79194da9726635dcb26bbe577ee08f3ead6c81c55"
+    },
+    "images/avatar-catalogue/a8403bb7c177b08f9f35.webp": {
+      "source": "layers/outfit/jacket.png",
+      "sha256": "a8403bb7c177b08f9f35e2370e3e09c82294a52a14b8b90d9157b1900ff7567b"
+    },
+    "images/avatar-catalogue/eb9b15a61f537e536bcb.webp": {
+      "source": "layers/outfit/shorts.png",
+      "sha256": "eb9b15a61f537e536bcb4b7ab35c2efd3fff6e69893c6f217e61765d1c41a470"
+    },
+    "images/avatar-catalogue/42e795c99c9519d9487e.webp": {
+      "source": "layers/outfit/skirt.png",
+      "sha256": "42e795c99c9519d9487e042d2e7f50e3612d966f694dad1c6206d78a31f87415"
+    },
+    "images/avatar-catalogue/366dbda29226dd7c4808.webp": {
+      "source": "layers/outfit/shoes.png",
+      "sha256": "366dbda29226dd7c4808217680053b32b7d8a66da971a73cffb6897cd72f576d"
+    },
+    "images/avatar-catalogue/597f16c95631190dca7c.webp": {
+      "source": "layers/outfit/teal_tan.png",
+      "sha256": "597f16c95631190dca7c9685fdfbddb4c43028c8b673610c90973d2183061549"
+    },
+    "images/avatar-catalogue/80fb6197027756fd5081.webp": {
+      "source": "layers/outfit/blue_charcoal.png",
+      "sha256": "80fb6197027756fd5081ab64ae8e39ee5cb8684d9a21b6f33469e3f62090e2f7"
+    },
+    "images/avatar-catalogue/22b5810159d741880550.webp": {
+      "source": "layers/outfit/striped_blue.png",
+      "sha256": "22b5810159d741880550b7acf4d111d9b2641469da10d988a803931930208b6d"
+    },
+    "images/avatar-catalogue/a3df2b998340fa76f88f.webp": {
+      "source": "layers/outfit/dark_hoodie.png",
+      "sha256": "a3df2b998340fa76f88fc8263100188a17129dbb79c4ef07a84ab591f51043f7"
+    },
+    "images/avatar-catalogue/b271b52f03ecc1666721.webp": {
+      "source": "layers/outfit/coral_sweatshirt.png",
+      "sha256": "b271b52f03ecc1666721972f1c6192bed7c9b56b5aae29b75ea08464a316386b"
+    },
+    "images/avatar-catalogue/ecb7b0d818fe1a18b1e1.webp": {
+      "source": "layers/outfit/cream_cardigan.png",
+      "sha256": "ecb7b0d818fe1a18b1e173cdbc3a5008b61c9bc0b2d82f3f0f733e822c07fac4"
+    },
+    "images/avatar-catalogue/296119aef37763e930ea.webp": {
+      "source": "layers/outfit/tan_shorts.png",
+      "sha256": "296119aef37763e930eace228da1a5bd889aea68a5db54b706105f410546b822"
+    },
+    "images/avatar-catalogue/73dea3a1decd378318fc.webp": {
+      "source": "layers/outfit/dark_trousers.png",
+      "sha256": "73dea3a1decd378318fc82f91d193d57cad2ba132b44d52c7735e1eadb0f3f7b"
+    },
+    "images/avatar-catalogue/05832ab952c90dd25eb0.webp": {
+      "source": "layers/outfit/cream_skirt.png",
+      "sha256": "05832ab952c90dd25eb0b976e7c71b3f48bf44a1caafcea3b751d7bf73b2e175"
+    },
+    "images/avatar-catalogue/de741561729d100923a9.webp": {
+      "source": "layers/outfit/brown_shoes.png",
+      "sha256": "de741561729d100923a9ccaaa913e68664b32886d493055a395bf1ce7777feef"
+    },
+    "images/avatar-catalogue/c1ab30d44b2ef1a9317f.webp": {
+      "source": "layers/hair/tousled.png",
+      "sha256": "c1ab30d44b2ef1a9317fbb749e71676b15380cc8d02c0d64b33893a2070f1676"
+    },
+    "images/avatar-catalogue/28489fe77ff682a47ea2.webp": {
+      "source": "layers/hair/bob.png",
+      "sha256": "28489fe77ff682a47ea2ccd2857e92b15c85617d91d3bb2e872a8048ff9ad773"
+    },
+    "images/avatar-catalogue/e314e753f0b467c6e263.webp": {
+      "source": "layers/hair/waves.png",
+      "sha256": "e314e753f0b467c6e263bf651aa27496e8732b93f56eb35f741b82ff6d6c67ab"
+    },
+    "images/avatar-catalogue/7621b79d38dc9ca74751.webp": {
+      "source": "layers/hair/curls.png",
+      "sha256": "7621b79d38dc9ca747518c91cfb03ddc3b4130bf55dfb012f2df11ef9eff6e09"
+    },
+    "images/avatar-catalogue/d78b0715aadb50b7f381.webp": {
+      "source": "layers/hair/bun.png",
+      "sha256": "d78b0715aadb50b7f381493e9284558a0de79fee9603286df0d56c49ee337b93"
+    },
+    "images/avatar-catalogue/2e765b013e30a4d9c8ca.webp": {
+      "source": "layers/hair/pigtails.png",
+      "sha256": "2e765b013e30a4d9c8ca87a6b1720a018354206d0729d562b529bf5bb8eaa009"
+    },
+    "images/avatar-catalogue/d3db329f1d7aefe6c95a.webp": {
+      "source": "layers/eyes/open.png",
+      "sha256": "d3db329f1d7aefe6c95a599988513ca0a43ffe30eecce85776fed006def68a9e"
+    },
+    "images/avatar-catalogue/8f10eb010f20a1976364.webp": {
+      "source": "layers/eyes/happy.png",
+      "sha256": "8f10eb010f20a19763640552eb77b6d3cb2df376b9486f0bbdbc8cc68f91194d"
+    },
+    "images/avatar-catalogue/88d7d932fa1f51452167.webp": {
+      "source": "layers/eyes/wink.png",
+      "sha256": "88d7d932fa1f514521679a28cf38746cc7a5c7c5bfa93af779e9175ab991ad21"
+    },
+    "images/avatar-catalogue/f7f47cd1d216039f45ea.webp": {
+      "source": "layers/eyes/squeezed.png",
+      "sha256": "f7f47cd1d216039f45ea03126e3104ff7c2b51d9eb13d3fa640ee49160ba8850"
+    },
+    "images/avatar-catalogue/265149d454822c2c8087.webp": {
+      "source": "layers/brows/none.png",
+      "sha256": "265149d454822c2c808720c61f5a4317c0bfda56fc96598ea7b19b6ea52c5dd1"
+    },
+    "images/avatar-catalogue/830d0f6c279fb349c29c.webp": {
+      "source": "layers/brows/relaxed.png",
+      "sha256": "830d0f6c279fb349c29c6eb6cf77de00d592d0adc0438e2225b4ae714851265a"
+    },
+    "images/avatar-catalogue/f98019959e72bfa4a2f3.webp": {
+      "source": "layers/brows/raised.png",
+      "sha256": "f98019959e72bfa4a2f3aa29be034a3bee190ccbc3a2a8198aafca9a8c717641"
+    },
+    "images/avatar-catalogue/010e3afc84638ed581e0.webp": {
+      "source": "layers/brows/concerned.png",
+      "sha256": "010e3afc84638ed581e0f12c081876b6429e0f51c1905d0259b38022bdfb1222"
+    },
+    "images/avatar-catalogue/1108c1d4c2285201c571.webp": {
+      "source": "layers/mouth/smile.png",
+      "sha256": "1108c1d4c2285201c5715f825be6cb9d59901f1a52981ef2ae0c696fbf57ebb4"
+    },
+    "images/avatar-catalogue/68bea6c364a5883068dd.webp": {
+      "source": "layers/mouth/open.png",
+      "sha256": "68bea6c364a5883068dd02b2bf2ed80ea8a010356ddb86f9484318b193588f58"
+    },
+    "images/avatar-catalogue/e943a9cefbda57491205.webp": {
+      "source": "layers/mouth/neutral.png",
+      "sha256": "e943a9cefbda57491205b30bbafd9dc2205451604f9680f256f14bf90fac4c75"
+    },
+    "images/avatar-catalogue/e025fece4a14dd297b47.webp": {
+      "source": "light/scarf/hoodie_trousers.png",
+      "sha256": "e025fece4a14dd297b477f3302d549acb15658314d4a39de5786146a8a9ebb64"
+    },
+    "images/avatar-catalogue/10d8b033328ded35cbfe.webp": {
+      "source": "light/scarf/jacket.png",
+      "sha256": "10d8b033328ded35cbfef29562d779a6e7c9715bd90967ee27b163f471a3ad17"
+    },
+    "images/avatar-catalogue/51f1d5517b75a597f885.webp": {
+      "source": "light/scarf/shorts.png",
+      "sha256": "51f1d5517b75a597f885b67dc564c2059ef2440566b538bdee16a37cf96e6a85"
+    },
+    "images/avatar-catalogue/52392bfe59ebc8fbbcb9.webp": {
+      "source": "light/scarf/skirt.png",
+      "sha256": "52392bfe59ebc8fbbcb9c64db2789117e9f033fb4c484ddd06e84c3f0447dd8a"
+    },
+    "images/avatar-catalogue/4e61540c333e101139ff.webp": {
+      "source": "light/scarf/shoes.png",
+      "sha256": "4e61540c333e101139ff436557e34f5b6ce68f9fa2038d5313cb9a922a11f971"
+    },
+    "images/avatar-catalogue/53f056ca41cc34a753ca.webp": {
+      "source": "light/scarf/teal_tan.png",
+      "sha256": "53f056ca41cc34a753ca7e180832a68324044c77e55c7c4aa51b9c8066c7f926"
+    },
+    "images/avatar-catalogue/e053bf812b6afdd4fdb5.webp": {
+      "source": "light/scarf/blue_charcoal.png",
+      "sha256": "e053bf812b6afdd4fdb52d42c3355278551758353d9768216c7983df02eba31e"
+    },
+    "images/avatar-catalogue/9cf279e58f272df26111.webp": {
+      "source": "light/scarf/striped_blue.png",
+      "sha256": "9cf279e58f272df261110cdcfed1192331d7dde408c8ab62626291cadd01f3d2"
+    },
+    "images/avatar-catalogue/82efec18d359d2ce3e32.webp": {
+      "source": "light/scarf/dark_hoodie.png",
+      "sha256": "82efec18d359d2ce3e32165539af2912c29c098d90b230c47fc07f51e4732121"
+    },
+    "images/avatar-catalogue/1f5e2b98e0199c7a408e.webp": {
+      "source": "light/scarf/coral_sweatshirt.png",
+      "sha256": "1f5e2b98e0199c7a408e4ebfc48049fba78dd61e0723b8ddc3332eb82879d1cc"
+    },
+    "images/avatar-catalogue/782fc890421ea1455242.webp": {
+      "source": "light/scarf/cream_cardigan.png",
+      "sha256": "782fc890421ea1455242a874f86cba222b91ff26ace5b4a71a7d01fc3e27728d"
+    },
+    "images/avatar-catalogue/1a3cde774f13cccbcd90.webp": {
+      "source": "light/scarf/tan_shorts.png",
+      "sha256": "1a3cde774f13cccbcd90ea52eab5c39a8dec33cf75e6b3c953ecbeafb96f58a8"
+    },
+    "images/avatar-catalogue/961e687307911153411d.webp": {
+      "source": "light/scarf/dark_trousers.png",
+      "sha256": "961e687307911153411dbfadf71320414dfb306baecf18effc7c1cb80ff04644"
+    },
+    "images/avatar-catalogue/d8774595bb3c25a5c666.webp": {
+      "source": "light/scarf/cream_skirt.png",
+      "sha256": "d8774595bb3c25a5c666af741a652651e37ce4bc4e7ecfe24508426c639af64f"
+    },
+    "images/avatar-catalogue/eb703ef269880189a3b3.webp": {
+      "source": "light/scarf/brown_shoes.png",
+      "sha256": "eb703ef269880189a3b344d51d4fd748c21e120108baf58e78046b4682a9e799"
+    },
+    "images/avatar-catalogue/e6849fe51c7876813019.webp": {
+      "source": "light/backpack/hoodie_trousers.png",
+      "sha256": "e6849fe51c787681301960b8b33dd493ba3156ec789374a60308b80f95b1e8ee"
+    },
+    "images/avatar-catalogue/970f9ca1a6cb2426ce57.webp": {
+      "source": "light/backpack/jacket.png",
+      "sha256": "970f9ca1a6cb2426ce577cb372db39b7b747631212476a7e638e67dc7daceb92"
+    },
+    "images/avatar-catalogue/cc6c1a1a83378a599540.webp": {
+      "source": "light/backpack/shorts.png",
+      "sha256": "cc6c1a1a83378a59954036a1b6316c8eaae8b6f0561a105e5debff394b9f4404"
+    },
+    "images/avatar-catalogue/0444706d1b3decfbe838.webp": {
+      "source": "light/backpack/skirt.png",
+      "sha256": "0444706d1b3decfbe8389a17c6a3b3f2982426ef90328c0543f174fca4546e7d"
+    },
+    "images/avatar-catalogue/d7790b02399d597b270a.webp": {
+      "source": "light/backpack/shoes.png",
+      "sha256": "d7790b02399d597b270a7cbadb5ae4df0840ed0522873431a25c89c20cd10ceb"
+    },
+    "images/avatar-catalogue/bfe8bd1bdecbe54bfe51.webp": {
+      "source": "light/backpack/teal_tan.png",
+      "sha256": "bfe8bd1bdecbe54bfe51f59ae0cdc8e18ce4704aa6ec735ef28f263e44a97270"
+    },
+    "images/avatar-catalogue/9687b6da7af681f9a2c7.webp": {
+      "source": "light/backpack/blue_charcoal.png",
+      "sha256": "9687b6da7af681f9a2c7a81261aaa687ba81925291616ff345b6b4ccc0665ac6"
+    },
+    "images/avatar-catalogue/2dc759528109fbb7d3de.webp": {
+      "source": "light/backpack/striped_blue.png",
+      "sha256": "2dc759528109fbb7d3de4911dac7e933a0cc856801fda4883536aaf9b4c9d938"
+    },
+    "images/avatar-catalogue/64bcda600a1a99dfaeb6.webp": {
+      "source": "light/backpack/dark_hoodie.png",
+      "sha256": "64bcda600a1a99dfaeb64612fa4cac0893bfae5013d567b94632a0dc4163020c"
+    },
+    "images/avatar-catalogue/f7494e24e18b60832e75.webp": {
+      "source": "light/backpack/coral_sweatshirt.png",
+      "sha256": "f7494e24e18b60832e75050967ebceaf9a23f301a3ae54f4162a10e3044720d9"
+    },
+    "images/avatar-catalogue/0d8809b79e26d92be147.webp": {
+      "source": "light/backpack/cream_cardigan.png",
+      "sha256": "0d8809b79e26d92be14727a4f40f9c8b36b8c970fe7a400329508175f9619a25"
+    },
+    "images/avatar-catalogue/ef4198032c347f2e1717.webp": {
+      "source": "light/backpack/tan_shorts.png",
+      "sha256": "ef4198032c347f2e1717062989c9e52f6ed95b29a7d89ebeac69549f3f2e5d2c"
+    },
+    "images/avatar-catalogue/315df537290f67752cef.webp": {
+      "source": "light/backpack/dark_trousers.png",
+      "sha256": "315df537290f67752cefc37e0aee01a3c932bdf6309cc016bf2e8980c3ebe216"
+    },
+    "images/avatar-catalogue/8a38a63ce8993471da76.webp": {
+      "source": "light/backpack/cream_skirt.png",
+      "sha256": "8a38a63ce8993471da764a8d3387a45b052d08e79cbad4675a50cd92b8829fd7"
+    },
+    "images/avatar-catalogue/44803b22775e75519bbc.webp": {
+      "source": "light/backpack/brown_shoes.png",
+      "sha256": "44803b22775e75519bbc79e7981e79bbbdb6bff2bbd33589e16a77202206a08a"
+    },
+    "images/avatar-catalogue/cc0e716bf244976cbcf1.webp": {
+      "source": "light/crossbody/hoodie_trousers.png",
+      "sha256": "cc0e716bf244976cbcf1d5dc0152f1d54973449655e9ec9ff2efeb45f2c14f82"
+    },
+    "images/avatar-catalogue/b30697c65de10434dcc4.webp": {
+      "source": "light/crossbody/jacket.png",
+      "sha256": "b30697c65de10434dcc43b265e8af5958888cd77bebbb31685cbab84fd62d85b"
+    },
+    "images/avatar-catalogue/2180444c981ec180787c.webp": {
+      "source": "light/crossbody/shorts.png",
+      "sha256": "2180444c981ec180787c4d0699346c0864a4a76f3a87de4f4108bfd434ede729"
+    },
+    "images/avatar-catalogue/d71a6465ba1bec620b37.webp": {
+      "source": "light/crossbody/skirt.png",
+      "sha256": "d71a6465ba1bec620b3704be9bae8500393a37069aea95db698d2736fdea2a74"
+    },
+    "images/avatar-catalogue/62b66d854c42d4101abe.webp": {
+      "source": "light/crossbody/shoes.png",
+      "sha256": "62b66d854c42d4101abe6b0d5951477bbb06051a1b2f72926d915267c2e417db"
+    },
+    "images/avatar-catalogue/348791ab7da5306a063f.webp": {
+      "source": "light/crossbody/teal_tan.png",
+      "sha256": "348791ab7da5306a063fc0a82168f997cc3b85dca4a9fcb2297c87e10ff3f2e5"
+    },
+    "images/avatar-catalogue/04caa102056667b75ea8.webp": {
+      "source": "light/crossbody/blue_charcoal.png",
+      "sha256": "04caa102056667b75ea857a657ea935229492f9146df1b07be97bf40f82cb204"
+    },
+    "images/avatar-catalogue/06e8f2374960f195f755.webp": {
+      "source": "light-detail-fixes/crossbody-striped-blue/character.png",
+      "sha256": "06e8f2374960f195f755773348a9f654f84aabf52c62f2f58cbf690f77d77b5f"
+    },
+    "images/avatar-catalogue/2d6b637e4f40d05922f6.webp": {
+      "source": "light/crossbody/dark_hoodie.png",
+      "sha256": "2d6b637e4f40d05922f6e72c0750c8e4afe0e1cfe6f5fc54a7c9b06e662d2adc"
+    },
+    "images/avatar-catalogue/abcc34a433a54164ac55.webp": {
+      "source": "light/crossbody/coral_sweatshirt.png",
+      "sha256": "abcc34a433a54164ac556fd21f576a01f11a5745d000476ea77a89d684ff38c4"
+    },
+    "images/avatar-catalogue/a1720d20b63f83302384.webp": {
+      "source": "light/crossbody/cream_cardigan.png",
+      "sha256": "a1720d20b63f833023841aa8204a9023d4f21eb2225b2a16e8ecc85966c916c2"
+    },
+    "images/avatar-catalogue/7ac7d20c35c70e78c853.webp": {
+      "source": "light/crossbody/tan_shorts.png",
+      "sha256": "7ac7d20c35c70e78c853c08efba32c6af0cb70d336a3f01bc272e4f19ed080e2"
+    },
+    "images/avatar-catalogue/31cbab8f2da0d43dc959.webp": {
+      "source": "light/crossbody/dark_trousers.png",
+      "sha256": "31cbab8f2da0d43dc9590f97381cdb40f22ef9179545163c30672921b4a8bee1"
+    },
+    "images/avatar-catalogue/28a73109adb432619b3f.webp": {
+      "source": "light/crossbody/cream_skirt.png",
+      "sha256": "28a73109adb432619b3f493357cb7e7f54e2ae0e111565a5ccb31ba143432e8e"
+    },
+    "images/avatar-catalogue/fec45a71b821bcf8319e.webp": {
+      "source": "light/crossbody/brown_shoes.png",
+      "sha256": "fec45a71b821bcf8319edd67f6e79fc49490ec63600ebee63d893756ffb89f4b"
+    },
+    "images/avatar-catalogue/3fb764e4f97f75a8d70f.webp": {
+      "source": "light/cap_glasses/tousled.png",
+      "sha256": "3fb764e4f97f75a8d70f145c26d2ed762c2ad9fb148c66618ac59feb7b06d5bc"
+    },
+    "images/avatar-catalogue/3a92dd5d7cfd78e31981.webp": {
+      "source": "light/cap_glasses/bob.png",
+      "sha256": "3a92dd5d7cfd78e319815f96a09d311983de0c78f88660790d0d80dbe0d3dc8a"
+    },
+    "images/avatar-catalogue/75bd7cd5fc5e170b9442.webp": {
+      "source": "light/cap_glasses/waves.png",
+      "sha256": "75bd7cd5fc5e170b9442d7e36c3b8ef75cff9f3e3d1896aa73649709ccf092ad"
+    },
+    "images/avatar-catalogue/d31adcdb2b1449013315.webp": {
+      "source": "light/cap_glasses/curls.png",
+      "sha256": "d31adcdb2b14490133154532c49f2927cb8e7dcdcc2284556719f0013ea96de5"
+    },
+    "images/avatar-catalogue/5a08f3e44197d00cf90b.webp": {
+      "source": "light/cap_glasses/bun.png",
+      "sha256": "5a08f3e44197d00cf90bf2b2c37a64d86930900d827c1450eb54845c3a7cd929"
+    },
+    "images/avatar-catalogue/913b8f0fae67e78c5546.webp": {
+      "source": "light/cap_glasses/pigtails.png",
+      "sha256": "913b8f0fae67e78c554698458000b8a9245b55435e5cfd907481af6edcac98a4"
+    },
+    "images/avatar-catalogue/1a80a410ecb125f96bff.webp": {
+      "source": "light/headphones/tousled.png",
+      "sha256": "1a80a410ecb125f96bff72aaf7fb1a93043b895615d4ac7cf645cc391428321c"
+    },
+    "images/avatar-catalogue/5221c62c9f80efadc580.webp": {
+      "source": "light/headphones/bob.png",
+      "sha256": "5221c62c9f80efadc58082f38d21731d4efe6f8574f92e6096517020600c5042"
+    },
+    "images/avatar-catalogue/e31d02f4c0a2f19eab2f.webp": {
+      "source": "light/headphones/waves.png",
+      "sha256": "e31d02f4c0a2f19eab2f896828d0cb5439472d273fe7680edfaadd61ba765c17"
+    },
+    "images/avatar-catalogue/e95334a060ac8947ef84.webp": {
+      "source": "light/headphones/curls.png",
+      "sha256": "e95334a060ac8947ef8440353fbe8b5e682e73becc3cb768577172e1e861526f"
+    },
+    "images/avatar-catalogue/266161ef9cb1a6feecb2.webp": {
+      "source": "light/headphones/bun.png",
+      "sha256": "266161ef9cb1a6feecb2b785339742d336efc311adf953dd57a8e281f0c57d2b"
+    },
+    "images/avatar-catalogue/e7f1512b7cd3719994aa.webp": {
+      "source": "light/headphones/pigtails.png",
+      "sha256": "e7f1512b7cd3719994aa1e1d3ce7178a6af793e1e22b6ffff8c0b3183fdd2d39"
+    },
+    "images/avatar-catalogue/266c012672bfe4d023eb.webp": {
+      "source": "light/bucket/tousled.png",
+      "sha256": "266c012672bfe4d023ebf6c56b8e69447d161de3328743a4646edb3c6512e8af"
+    },
+    "images/avatar-catalogue/3832aa1710788cbc090f.webp": {
+      "source": "light-detail-fixes/bucket-bob/character.png",
+      "sha256": "3832aa1710788cbc090f0a46050160e251ed56074b8b506eb93aa9d1812254ad"
+    },
+    "images/avatar-catalogue/03b7c8d3c4e29d57ca68.webp": {
+      "source": "light/bucket/waves.png",
+      "sha256": "03b7c8d3c4e29d57ca6800332f4b192f87d7871a54b845bbad807f46dc6c4e2e"
+    },
+    "images/avatar-catalogue/1e684d7c624e71c08d9a.webp": {
+      "source": "light/bucket/curls.png",
+      "sha256": "1e684d7c624e71c08d9aa614365cf690561bf0d34d4948540a846c3f9fc375ef"
+    },
+    "images/avatar-catalogue/c778424446e9475c5736.webp": {
+      "source": "light/bucket/bun.png",
+      "sha256": "c778424446e9475c57362db8b56c39d97c587cd53e60b4f06dee95c437112fb1"
+    },
+    "images/avatar-catalogue/133671f99b7a5f81c34a.webp": {
+      "source": "light/bucket/pigtails.png",
+      "sha256": "133671f99b7a5f81c34ab39a6ed05de0662dafd61155faa0c44e6c26fa63a1b1"
+    },
+    "images/avatar-catalogue/ef662153435818bd852d.webp": {
+      "source": "light/beanie/tousled.png",
+      "sha256": "ef662153435818bd852df3f455fa36bdb25ff3170531c8e3c9194eacf597a9ce"
+    },
+    "images/avatar-catalogue/308d345f6363537e98a6.webp": {
+      "source": "light/beanie/bob.png",
+      "sha256": "308d345f6363537e98a6e992c68b4e0cdb02af1046a685174110abe61d662671"
+    },
+    "images/avatar-catalogue/9f85628c67e434f273ec.webp": {
+      "source": "light/beanie/waves.png",
+      "sha256": "9f85628c67e434f273ecfc2c77a1798596b8a21c76e1e46ab230a4252578271b"
+    },
+    "images/avatar-catalogue/5ece184e475560e6a9ea.webp": {
+      "source": "light/beanie/curls.png",
+      "sha256": "5ece184e475560e6a9ea598f3d18e2322df7bbb4149ede0310d1192c9455f0a5"
+    },
+    "images/avatar-catalogue/0c3b42cf3b00707ad6df.webp": {
+      "source": "light/beanie/bun.png",
+      "sha256": "0c3b42cf3b00707ad6df18cb4f3ac7c2e4f3a1a14aec933b8a192d644fd29659"
+    },
+    "images/avatar-catalogue/21eae2a24ee4a231b3ae.webp": {
+      "source": "light/beanie/pigtails.png",
+      "sha256": "21eae2a24ee4a231b3ae2c8b148e768e567013e96fc4939a6b8ba8c6420d8912"
+    },
+    "images/avatar-catalogue/2aeaaee97d2483340343.webp": {
+      "source": "light/sunhat/tousled.png",
+      "sha256": "2aeaaee97d24833403439a40008ddfb4fa434f0c6a3cbcf8d61ed46db031deb8"
+    },
+    "images/avatar-catalogue/b4d47b9308badbf547a4.webp": {
+      "source": "light/sunhat/bob.png",
+      "sha256": "b4d47b9308badbf547a42cf663e594ea842e416eff59227fa5be886771d48e5c"
+    },
+    "images/avatar-catalogue/9a8e0ba6600936c6f1a4.webp": {
+      "source": "light/sunhat/waves.png",
+      "sha256": "9a8e0ba6600936c6f1a45071bc64774dd44b8beb563c92425ea47f511a5da7c6"
+    },
+    "images/avatar-catalogue/74bde6baa72c236ee4be.webp": {
+      "source": "light/sunhat/curls.png",
+      "sha256": "74bde6baa72c236ee4becc5d3da590ede24acdda55a33a323fafd45a50900d47"
+    },
+    "images/avatar-catalogue/58dfba8e08fd912d970b.webp": {
+      "source": "light/sunhat/bun.png",
+      "sha256": "58dfba8e08fd912d970b5d243de097d33f7248f5afb609e9e0b5ef9154639c2f"
+    },
+    "images/avatar-catalogue/89e5480c77eca905eda9.webp": {
+      "source": "light/sunhat/pigtails.png",
+      "sha256": "89e5480c77eca905eda9f4e870a4fcc25db03ab2cffab7dc618e23e815a14c27"
+    },
+    "images/avatar-catalogue/a56b1917a2ed9189db9c.webp": {
+      "source": "light/green_cap/tousled.png",
+      "sha256": "a56b1917a2ed9189db9c04e1a2ed3bcde00c8babb9eff03fb4b9d510584197b0"
+    },
+    "images/avatar-catalogue/cbc671b2cfe0f4402742.webp": {
+      "source": "light/green_cap/bob.png",
+      "sha256": "cbc671b2cfe0f440274287f39805c9cfaf9f6a882c26e30df3b8d591fe8a7f5c"
+    },
+    "images/avatar-catalogue/ff7dab6b766e6e5f51af.webp": {
+      "source": "light/green_cap/waves.png",
+      "sha256": "ff7dab6b766e6e5f51af9c9cfd06d0740bdd676aec50e95b97b34d304412ef65"
+    },
+    "images/avatar-catalogue/b794ddff19b74aec3584.webp": {
+      "source": "light/green_cap/curls.png",
+      "sha256": "b794ddff19b74aec35848cbc5523a6d73d39f691b0eb6f12e4e36e54b77a4108"
+    },
+    "images/avatar-catalogue/ea2a4caa6d3c5209d6a7.webp": {
+      "source": "light/green_cap/bun.png",
+      "sha256": "ea2a4caa6d3c5209d6a7d09bdd191f91bedc72f4e9410e6a7b240500dc6eb322"
+    },
+    "images/avatar-catalogue/e3a74c9be124947d48e9.webp": {
+      "source": "light/green_cap/pigtails.png",
+      "sha256": "e3a74c9be124947d48e9c7db3c3669cd3a715f84f1a91e3a32226f9bb6697edf"
+    },
+    "images/avatar-catalogue/34768494f5a8ba45635c.webp": {
+      "source": "light/brown_cap/tousled.png",
+      "sha256": "34768494f5a8ba45635c3aa3b622770dfec5652112edcb4775a023245cbbe7fe"
+    },
+    "images/avatar-catalogue/85d1a390c50a5ec6011a.webp": {
+      "source": "light/brown_cap/bob.png",
+      "sha256": "85d1a390c50a5ec6011a2dddb573d6e61cf88951e9ca85a076f67ed98cf9115e"
+    },
+    "images/avatar-catalogue/2f173ce0f2683a4c4cac.webp": {
+      "source": "light/brown_cap/waves.png",
+      "sha256": "2f173ce0f2683a4c4cac8ca00bbd37ea1be423dc7f96eb18776bf4a5ea9728d1"
+    },
+    "images/avatar-catalogue/16ebb74be63016daec9d.webp": {
+      "source": "light/brown_cap/curls.png",
+      "sha256": "16ebb74be63016daec9d39e74ec7f73feb74712a36037bf2fccda2a32b8aff44"
+    },
+    "images/avatar-catalogue/2bf4b703029a0ef899cb.webp": {
+      "source": "light/brown_cap/bun.png",
+      "sha256": "2bf4b703029a0ef899cb087369d3763746705492957042883b41cf6a8508e987"
+    },
+    "images/avatar-catalogue/e41fdd52c5d631953f34.webp": {
+      "source": "light/brown_cap/pigtails.png",
+      "sha256": "e41fdd52c5d631953f34f07f758f20f50cca80acebcfc10785d99da7ee92596e"
+    },
+    "images/avatar-catalogue/84dfd70bf46a41e6d570.webp": {
+      "source": "tones/light.png",
+      "sha256": "84dfd70bf46a41e6d570abf9f5b43a3bcd60e483603012eac41fb861bf6dfd71"
+    },
+    "images/avatar-catalogue/aa26538052eee9c419b7.webp": {
+      "source": "tones/warm.png",
+      "sha256": "aa26538052eee9c419b756c8c25fb6685d619d73250681caac983f708d87e47e"
+    },
+    "images/avatar-catalogue/4d9b7ceb2085d289a54a.webp": {
+      "source": "tones/tan.png",
+      "sha256": "4d9b7ceb2085d289a54a3b3f92a753b043f0257e4c2903fccf43edac64a62591"
+    },
+    "images/avatar-catalogue/b0bf267ddaad33f2d05f.webp": {
+      "source": "tones/brown.png",
+      "sha256": "b0bf267ddaad33f2d05ffcc0963ede2c8bb4fc044b055de7ca7f6f5528677cea"
+    },
+    "images/avatar-catalogue/e1116b1a35cbcddcfe66.webp": {
+      "source": "tones/deep.png",
+      "sha256": "e1116b1a35cbcddcfe66be97c3eb67a9565de117303faffa15755aa1354f96c2"
+    },
+    "images/avatar-catalogue/d3104fc915ce96845f13.webp": {
+      "source": "tones/dark.png",
+      "sha256": "d3104fc915ce96845f1346dccca3a7e046312dacac9e4f739f79878a92ec3420"
+    },
+    "images/avatar-catalogue/f3be30f9064b92e89bd4.webp": {
+      "source": "generated/scarf__hoodie_trousers__warm/character.png",
+      "sha256": "f3be30f9064b92e89bd4d92cb552cdf7137cc4cb91976d0324a9fbf88fe54130"
+    },
+    "images/avatar-catalogue/0b16667a5a29abb080be.webp": {
+      "source": "generated/scarf__hoodie_trousers__tan/character.png",
+      "sha256": "0b16667a5a29abb080bef4af372897f039e7649573ead577f70afd2a01359796"
+    },
+    "images/avatar-catalogue/234c74d81630d2384463.webp": {
+      "source": "generated/scarf__hoodie_trousers__brown/character.png",
+      "sha256": "234c74d81630d23844639970ca2e249fa678cd959e66eeb01c347306de00947d"
+    },
+    "images/avatar-catalogue/7a60038a395c835f6d20.webp": {
+      "source": "generated/scarf__hoodie_trousers__deep/character.png",
+      "sha256": "7a60038a395c835f6d202316f32d525671b18be290a35d438f1d980a97a5fad6"
+    },
+    "images/avatar-catalogue/f452c4858f49f85b7274.webp": {
+      "source": "generated/scarf__hoodie_trousers__dark/character.png",
+      "sha256": "f452c4858f49f85b7274d4bc4edc631916cd2f4524e331e336c4284faa18ae77"
+    },
+    "images/avatar-catalogue/0f9f2d90e3bfd8732843.webp": {
+      "source": "generated/scarf__jacket__warm/character.png",
+      "sha256": "0f9f2d90e3bfd8732843a0168aaa5edb53cec32ae0efba13b5cd6839e7e3e5df"
+    },
+    "images/avatar-catalogue/bd29a529de682c6ad932.webp": {
+      "source": "generated/scarf__jacket__tan/character.png",
+      "sha256": "bd29a529de682c6ad93245ddba31a4591fd1e41df873377c688dfcfc7912c9c9"
+    },
+    "images/avatar-catalogue/79072eea84ea42041dc1.webp": {
+      "source": "generated/scarf__jacket__brown/character.png",
+      "sha256": "79072eea84ea42041dc166d314b87805223ea5827cc727c954d94e9bc28356b6"
+    },
+    "images/avatar-catalogue/fdb0b79d358cb823f16a.webp": {
+      "source": "generated/scarf__jacket__deep/character.png",
+      "sha256": "fdb0b79d358cb823f16ab7551dd405bd9edb1c67d4a7c37d1caf38128a094ba3"
+    },
+    "images/avatar-catalogue/66a090dd25b24c7af2a9.webp": {
+      "source": "generated/scarf__jacket__dark/character.png",
+      "sha256": "66a090dd25b24c7af2a9fd8e9752dd5d9d21ba2bd3f059c9453e3ebd3bb94c29"
+    },
+    "images/avatar-catalogue/511ca56ee937ac47aa13.webp": {
+      "source": "generated/scarf__shorts__warm/character.png",
+      "sha256": "511ca56ee937ac47aa131e647ba964c793070e84d3cb05b3b0bfbf1a4df7569d"
+    },
+    "images/avatar-catalogue/34dcddca5d395683e80a.webp": {
+      "source": "generated/scarf__shorts__tan/character.png",
+      "sha256": "34dcddca5d395683e80ae9b0ef1d33e910e233c87b0ea1e5842ecbfcc2b9979c"
+    },
+    "images/avatar-catalogue/b18c37c157ee35961770.webp": {
+      "source": "generated/scarf__shorts__brown/character.png",
+      "sha256": "b18c37c157ee35961770a6dd5a3f81d0e3af4adf5f84472fd2e95aa401625bf3"
+    },
+    "images/avatar-catalogue/91f4a3fe127803c4e866.webp": {
+      "source": "generated/scarf__shorts__deep/character.png",
+      "sha256": "91f4a3fe127803c4e866e39d84a1764368fe0a655632ee9119c1b3fe48301a49"
+    },
+    "images/avatar-catalogue/65338712ea3a9242538e.webp": {
+      "source": "generated/scarf__shorts__dark/character.png",
+      "sha256": "65338712ea3a9242538ef2a0564c4b62fe279f4927160959766e826d9e0f2b1d"
+    },
+    "images/avatar-catalogue/d0c5214cae4a6f8daba7.webp": {
+      "source": "generated/scarf__skirt__warm/character.png",
+      "sha256": "d0c5214cae4a6f8daba7b8b20e35322f8044cd07ebf95a4c153350b387b83756"
+    },
+    "images/avatar-catalogue/6e3e120747584c0faeb1.webp": {
+      "source": "generated/scarf__skirt__tan/character.png",
+      "sha256": "6e3e120747584c0faeb19c6dd8f8ae09aeab1cfc4958fe6d075f8ebd0e2e5060"
+    },
+    "images/avatar-catalogue/4864152ee32ddb391e95.webp": {
+      "source": "generated/scarf__skirt__brown/character.png",
+      "sha256": "4864152ee32ddb391e95dd820529c233c4705731b200353e9f939169bf76f20b"
+    },
+    "images/avatar-catalogue/c9d7ee299be5bbc02203.webp": {
+      "source": "generated/scarf__skirt__deep/character.png",
+      "sha256": "c9d7ee299be5bbc022034975bf4838b2530531ea6f178b9f7e73b5225a646291"
+    },
+    "images/avatar-catalogue/a490eba3e6f3ced7d5ca.webp": {
+      "source": "generated/scarf__skirt__dark/character.png",
+      "sha256": "a490eba3e6f3ced7d5ca934ef27c673382ecf523b0290a40b5c9cfc161147ae7"
+    },
+    "images/avatar-catalogue/3959af5ebf7739299bf6.webp": {
+      "source": "generated/scarf__shoes__warm/character.png",
+      "sha256": "3959af5ebf7739299bf6cd76c3cdb78012f02dfce1ea17bc75e167f030b0240e"
+    },
+    "images/avatar-catalogue/115e1f4651a51d6af963.webp": {
+      "source": "generated/scarf__shoes__tan/character.png",
+      "sha256": "115e1f4651a51d6af9635db6892d7509a761b16051488c2f315b368070ff785c"
+    },
+    "images/avatar-catalogue/2db3437b8a291a096e79.webp": {
+      "source": "generated/scarf__shoes__brown/character.png",
+      "sha256": "2db3437b8a291a096e7987c9146c9fb39670807df6d4eb7c8b2dc17114161967"
+    },
+    "images/avatar-catalogue/0aeaf94755a539e76d90.webp": {
+      "source": "generated/scarf__shoes__deep/character.png",
+      "sha256": "0aeaf94755a539e76d90ba95bed191fa52c07685fff76e72ef1f5d36e53376cd"
+    },
+    "images/avatar-catalogue/2bbf72339e90b43df6e3.webp": {
+      "source": "generated/scarf__shoes__dark/character.png",
+      "sha256": "2bbf72339e90b43df6e314ce4b58a805824d0e0b5c9ead33129a0dc643ff6473"
+    },
+    "images/avatar-catalogue/5ad8d55569232a02cc1b.webp": {
+      "source": "generated/scarf__teal_tan__warm/character.png",
+      "sha256": "5ad8d55569232a02cc1b08d9339ce4f7dbd4620c58fcd192ce35c25ca508fe7f"
+    },
+    "images/avatar-catalogue/1418fcd52a6778132c4b.webp": {
+      "source": "generated/scarf__teal_tan__tan/character.png",
+      "sha256": "1418fcd52a6778132c4bfafe4a79fae7cb95ec5e784cb30687fb491d6643b53a"
+    },
+    "images/avatar-catalogue/5ad442f8db4b49f54543.webp": {
+      "source": "generated/scarf__teal_tan__brown/character.png",
+      "sha256": "5ad442f8db4b49f545434b94cb3e9b1d3f8a046cf539c1ffa93ff42dc4c15a98"
+    },
+    "images/avatar-catalogue/918273982fa3f06b8ea7.webp": {
+      "source": "generated/scarf__teal_tan__deep/character.png",
+      "sha256": "918273982fa3f06b8ea726764286d88c2e5e3b144aa0f4e54a5d585971afdf10"
+    },
+    "images/avatar-catalogue/be73b0f3f9cb5cb75015.webp": {
+      "source": "generated/scarf__teal_tan__dark/character.png",
+      "sha256": "be73b0f3f9cb5cb75015396da0863874cc0f10c6362dfe66cab31b80b8338d73"
+    },
+    "images/avatar-catalogue/40630b29504941907743.webp": {
+      "source": "generated/scarf__striped_blue__warm/character.png",
+      "sha256": "40630b295049419077439a125f85b401ad40ceebb5a62a0d920b277705803849"
+    },
+    "images/avatar-catalogue/14df636508410f62d6e8.webp": {
+      "source": "generated/scarf__striped_blue__tan/character.png",
+      "sha256": "14df636508410f62d6e89039c8beb5548b36c73dc84dd58f035c63c417f98423"
+    },
+    "images/avatar-catalogue/9cee6348ac44e059229d.webp": {
+      "source": "generated/scarf__striped_blue__brown/character.png",
+      "sha256": "9cee6348ac44e059229d61bf00bfaf0912b5557e3fcb0a7e85c7457d561d8014"
+    },
+    "images/avatar-catalogue/ac978eb74103916d3cf0.webp": {
+      "source": "generated/scarf__striped_blue__deep/character.png",
+      "sha256": "ac978eb74103916d3cf08195360b21f738997cc27972dec659b4b142e84bf233"
+    },
+    "images/avatar-catalogue/3b0b2b085399322b524f.webp": {
+      "source": "generated/scarf__striped_blue__dark/character.png",
+      "sha256": "3b0b2b085399322b524f830839eed5c4778cbfa69a45ff7a0c77a6e16ce0891f"
+    },
+    "images/avatar-catalogue/51f492fcc4668e070147.webp": {
+      "source": "generated/scarf__dark_hoodie__warm/character.png",
+      "sha256": "51f492fcc4668e070147780ebf9a77cf1d55bd4c700aab9d310b491e60d11839"
+    },
+    "images/avatar-catalogue/b58b42bb238f532b2abd.webp": {
+      "source": "generated/scarf__dark_hoodie__tan/character.png",
+      "sha256": "b58b42bb238f532b2abdf397e0e47ab5f8f0abd0dd572d0ac8f33d8df5531e90"
+    },
+    "images/avatar-catalogue/f4a51166cb839f3715d0.webp": {
+      "source": "generated/scarf__dark_hoodie__brown/character.png",
+      "sha256": "f4a51166cb839f3715d0760208156cec97cfdfa8c4be9eec5a5a8377adba485b"
+    },
+    "images/avatar-catalogue/4c64a210862581028d2d.webp": {
+      "source": "generated/scarf__dark_hoodie__deep/character.png",
+      "sha256": "4c64a210862581028d2dc54134e3084df5716fc3b04de47970249bfda550f764"
+    },
+    "images/avatar-catalogue/08ae1db74a9fed66dc3a.webp": {
+      "source": "generated/scarf__dark_hoodie__dark/character.png",
+      "sha256": "08ae1db74a9fed66dc3a98d26a2fd873edab27641dfd9926aae4b5744af6b6ea"
+    },
+    "images/avatar-catalogue/482c1c274bb8d31fee96.webp": {
+      "source": "generated/scarf__coral_sweatshirt__warm/character.png",
+      "sha256": "482c1c274bb8d31fee96f68bd332d702cac1ed8e6e58622833b54739344863c4"
+    },
+    "images/avatar-catalogue/62ac8a438e919cdd355b.webp": {
+      "source": "generated/scarf__coral_sweatshirt__tan/character.png",
+      "sha256": "62ac8a438e919cdd355b3a578a3e6f23aa94b15abdecd9c995b887769f51c0e2"
+    },
+    "images/avatar-catalogue/4ba5cdd5820164822850.webp": {
+      "source": "generated/scarf__coral_sweatshirt__brown/character.png",
+      "sha256": "4ba5cdd58201648228508369788b8862fdbb019bfedd8c75286d1fd1fc870b71"
+    },
+    "images/avatar-catalogue/fa309b44a2e70168f2b5.webp": {
+      "source": "generated/scarf__coral_sweatshirt__deep/character.png",
+      "sha256": "fa309b44a2e70168f2b58b97e7d3dc1c48a8f5d74fbf1c8a7aeb056b37b28a90"
+    },
+    "images/avatar-catalogue/8aef560f530c0ba84aa4.webp": {
+      "source": "generated/scarf__coral_sweatshirt__dark/character.png",
+      "sha256": "8aef560f530c0ba84aa4d253942446ad0c67c3434d1fa69906395214bef11367"
+    },
+    "images/avatar-catalogue/6ccf6bb3f78b402ff3f2.webp": {
+      "source": "generated/scarf__blue_charcoal__warm/character.png",
+      "sha256": "6ccf6bb3f78b402ff3f2c1da29b4bda673641426f9b883653a251cdccebbd7cf"
+    },
+    "images/avatar-catalogue/eb5643b3a4a255b94745.webp": {
+      "source": "generated/scarf__blue_charcoal__tan/character.png",
+      "sha256": "eb5643b3a4a255b947457cdb27ec7bf0b8a8499ce38649c85e9195147641247b"
+    },
+    "images/avatar-catalogue/66545557410261d5229e.webp": {
+      "source": "generated/scarf__blue_charcoal__brown/character.png",
+      "sha256": "66545557410261d5229ecdc21ab1b331408a47de57257df611f1625775db62d1"
+    },
+    "images/avatar-catalogue/e2029e2b741588859863.webp": {
+      "source": "generated/scarf__blue_charcoal__deep/character.png",
+      "sha256": "e2029e2b74158885986358a71f98f6ab0e280c82f4f02b6052e1141a218da11f"
+    },
+    "images/avatar-catalogue/0074f9a3a1685918692d.webp": {
+      "source": "generated/scarf__blue_charcoal__dark/character.png",
+      "sha256": "0074f9a3a1685918692de521d9da3ee4fc03aec56720bec33b3357f666019ddd"
+    },
+    "images/avatar-catalogue/36cc4f6d632991769ef3.webp": {
+      "source": "generated/scarf__cream_cardigan__warm/character.png",
+      "sha256": "36cc4f6d632991769ef3ff8fc60e0aa1c7f031b0a500dba249d08b52251570c6"
+    },
+    "images/avatar-catalogue/22ac85f91cda29578e4b.webp": {
+      "source": "generated/scarf__cream_cardigan__tan/character.png",
+      "sha256": "22ac85f91cda29578e4b0766bbb8bf93e30b9337576a7cedc96aa2c47d6327c2"
+    },
+    "images/avatar-catalogue/40a94a0086f953720fb9.webp": {
+      "source": "generated/scarf__cream_cardigan__brown/character.png",
+      "sha256": "40a94a0086f953720fb9f68466b8812ca844655e189ce3cfbdfbbc8d8e03537f"
+    },
+    "images/avatar-catalogue/7526c225d6d905d0fde7.webp": {
+      "source": "generated/scarf__cream_cardigan__deep/character.png",
+      "sha256": "7526c225d6d905d0fde7b325c35d12b995547f462d2d4a578bc61e08a8c73296"
+    },
+    "images/avatar-catalogue/269888d8e57e6b71b9c8.webp": {
+      "source": "generated/scarf__cream_cardigan__dark/character.png",
+      "sha256": "269888d8e57e6b71b9c88e883ba085656674f51d849b0dde1a0945ddd393a208"
+    },
+    "images/avatar-catalogue/e710ad4c018c27f1b662.webp": {
+      "source": "generated/scarf__tan_shorts__warm/character.png",
+      "sha256": "e710ad4c018c27f1b66227d3218ebcf92d38c46d1babe1246e72f7e2c26da0a1"
+    },
+    "images/avatar-catalogue/3a49407d9da80463fa23.webp": {
+      "source": "generated/scarf__tan_shorts__tan/character.png",
+      "sha256": "3a49407d9da80463fa2350896ee00ee45e8095835d412779714ad0f4668b5087"
+    },
+    "images/avatar-catalogue/25ff0dfb976eaa834c80.webp": {
+      "source": "generated/scarf__tan_shorts__brown/character.png",
+      "sha256": "25ff0dfb976eaa834c802f713d2d6f6ee47dfc2ad8e9f305e072215e95cb702c"
+    },
+    "images/avatar-catalogue/66bade94542e6b531ece.webp": {
+      "source": "generated/scarf__tan_shorts__deep/character.png",
+      "sha256": "66bade94542e6b531eced1219b8ac95d2467422dbffdc24c870e398bf650432d"
+    },
+    "images/avatar-catalogue/f7e735ba7c416673cf5f.webp": {
+      "source": "generated/scarf__tan_shorts__dark/character.png",
+      "sha256": "f7e735ba7c416673cf5f200e22419bf181eec8cfef08ce29b8b7807304ee1286"
+    },
+    "images/avatar-catalogue/e7144c12af0ec7912bda.webp": {
+      "source": "generated/scarf__dark_trousers__warm/character.png",
+      "sha256": "e7144c12af0ec7912bda7afe5658b95feaef18f559463e0e689f18a00667fdb7"
+    },
+    "images/avatar-catalogue/7e4dfce31ce2b609f551.webp": {
+      "source": "generated/scarf__dark_trousers__tan/character.png",
+      "sha256": "7e4dfce31ce2b609f551f0bb00d70933784c72fbf522d210a581649d08586254"
+    },
+    "images/avatar-catalogue/8a42fbdd314f05a2f30f.webp": {
+      "source": "generated/scarf__dark_trousers__brown/character.png",
+      "sha256": "8a42fbdd314f05a2f30f35ce2fc054025c13b004783bf6792f5aff4cbff24afb"
+    },
+    "images/avatar-catalogue/d6e55cd28738797ddb9b.webp": {
+      "source": "generated/scarf__dark_trousers__deep/character.png",
+      "sha256": "d6e55cd28738797ddb9bd944dc0495fdde642ce64b2f2a156d0f921830247a74"
+    },
+    "images/avatar-catalogue/587c1cecc95f7a88ea97.webp": {
+      "source": "generated/scarf__dark_trousers__dark/character.png",
+      "sha256": "587c1cecc95f7a88ea97891cdde2286454f8513ffecb0c8a7f97deedd69b553e"
+    },
+    "images/avatar-catalogue/bcdc2887465cff899aea.webp": {
+      "source": "generated/scarf__cream_skirt__warm/character.png",
+      "sha256": "bcdc2887465cff899aeae4117239fadfa786b7ea7dfea21199574d210a5d9b9d"
+    },
+    "images/avatar-catalogue/4a9eb2c76e13d55a6365.webp": {
+      "source": "generated/scarf__cream_skirt__tan/character.png",
+      "sha256": "4a9eb2c76e13d55a6365fffa108c59ece24654515d6d1440932da3847bbe2d09"
+    },
+    "images/avatar-catalogue/81435eaa592c64425c58.webp": {
+      "source": "generated/scarf__cream_skirt__brown/character.png",
+      "sha256": "81435eaa592c64425c58b978b26d4bfd21eb8fa6b04c6256eb7f160683394816"
+    },
+    "images/avatar-catalogue/d2224741269489ce04d4.webp": {
+      "source": "generated/scarf__cream_skirt__deep/character.png",
+      "sha256": "d2224741269489ce04d4f77a0ee888eaee60fc9ad791fa1e4f2351b61dc4705e"
+    },
+    "images/avatar-catalogue/1167303be4a98cc9dd18.webp": {
+      "source": "generated/scarf__cream_skirt__dark/character.png",
+      "sha256": "1167303be4a98cc9dd18c2df66f2867dded589e3fbf54621349bf399f52002ae"
+    },
+    "images/avatar-catalogue/2e3438b0e80985fe69db.webp": {
+      "source": "generated/scarf__brown_shoes__warm/character.png",
+      "sha256": "2e3438b0e80985fe69db5e40deab6099d6e3f944ac28fb8335afa5d72256c6b8"
+    },
+    "images/avatar-catalogue/45e146e686e5ee23c2e7.webp": {
+      "source": "generated/scarf__brown_shoes__tan/character.png",
+      "sha256": "45e146e686e5ee23c2e7177e8c5d03f9667aa2958fb8967975724e61808e34f8"
+    },
+    "images/avatar-catalogue/c5ae901a289ad42cbffa.webp": {
+      "source": "generated/scarf__brown_shoes__brown/character.png",
+      "sha256": "c5ae901a289ad42cbffa092da69d13a32b08e27172251d05529872920962fcc9"
+    },
+    "images/avatar-catalogue/5ec20b2d045b14afa89e.webp": {
+      "source": "generated/scarf__brown_shoes__deep/character.png",
+      "sha256": "5ec20b2d045b14afa89eb60a810a52aa94f6116f21d57220ca5f8db60c04617a"
+    },
+    "images/avatar-catalogue/fced0edf903c25483ce9.webp": {
+      "source": "generated/scarf__brown_shoes__dark/character.png",
+      "sha256": "fced0edf903c25483ce9a179b578257166a1cff1568bbdd9c110708b117a19b8"
+    },
+    "images/avatar-catalogue/d4224f5f3eecb114cb21.webp": {
+      "source": "generated/backpack__hoodie_trousers__warm/character.png",
+      "sha256": "d4224f5f3eecb114cb21777ca11c83e0e4fd6c046a2c43ca0cf774716676d3c8"
+    },
+    "images/avatar-catalogue/3f763155dd376b8c0109.webp": {
+      "source": "generated/backpack__hoodie_trousers__tan/character.png",
+      "sha256": "3f763155dd376b8c0109e6c7af1a74e1b6db9e519b938318a0a6842f0e1fa024"
+    },
+    "images/avatar-catalogue/e6065df1a6014ca71393.webp": {
+      "source": "generated/backpack__hoodie_trousers__brown/character.png",
+      "sha256": "e6065df1a6014ca71393c2ea71ca6f64d89ad5c961dd2079ecb691bea5708fd3"
+    },
+    "images/avatar-catalogue/b49ef63837953d60bb9b.webp": {
+      "source": "generated/backpack__hoodie_trousers__deep/character.png",
+      "sha256": "b49ef63837953d60bb9b5d44e765ac75cf59ba3f52a77b96e85d2dae6c4710d6"
+    },
+    "images/avatar-catalogue/5950860cdd9aab324540.webp": {
+      "source": "generated/backpack__hoodie_trousers__dark/character.png",
+      "sha256": "5950860cdd9aab3245403a70fd0cf1237c7e0e1523f4d6470ad92ed76530b3b1"
+    },
+    "images/avatar-catalogue/4856c3ac4cf30f3b3108.webp": {
+      "source": "generated/backpack__jacket__warm/character.png",
+      "sha256": "4856c3ac4cf30f3b31086b40090faa97a5d83429e6d1d24fb4a836e28b799503"
+    },
+    "images/avatar-catalogue/114aeb291ca84c2e79c5.webp": {
+      "source": "generated/backpack__jacket__tan/character.png",
+      "sha256": "114aeb291ca84c2e79c596a7419184514f51ad748a3b8ebd8c343e9abd1654a6"
+    },
+    "images/avatar-catalogue/113dc7f8ebea9827370d.webp": {
+      "source": "generated/backpack__jacket__brown/character.png",
+      "sha256": "113dc7f8ebea9827370d86a7281df4f614eeb9669a5f63d4867efeb1ba9a3898"
+    },
+    "images/avatar-catalogue/db3791467bf6b0a8c3b6.webp": {
+      "source": "generated/backpack__jacket__deep/character.png",
+      "sha256": "db3791467bf6b0a8c3b6f637a3cdb55fe3903965c3f3151587364c38cefea12c"
+    },
+    "images/avatar-catalogue/5e2c4c0da03d853ed812.webp": {
+      "source": "generated/backpack__jacket__dark/character.png",
+      "sha256": "5e2c4c0da03d853ed8127824e155bbc4370d717527a7d4bc814f65d712334562"
+    },
+    "images/avatar-catalogue/224fb10a57386e90627b.webp": {
+      "source": "generated/backpack__shorts__warm/character.png",
+      "sha256": "224fb10a57386e90627bdb6e1f553abdc32948d363111a4a413637f45a655442"
+    },
+    "images/avatar-catalogue/86133ca976af4eb8b949.webp": {
+      "source": "generated/backpack__shorts__tan/character.png",
+      "sha256": "86133ca976af4eb8b94970545193d4cda02692cf4ad6f3a151b16e8ece646040"
+    },
+    "images/avatar-catalogue/82de54e3277916843487.webp": {
+      "source": "generated/backpack__shorts__brown/character.png",
+      "sha256": "82de54e327791684348710849f8e36c69434dc739bba755d9ee15740fdcdf9e8"
+    },
+    "images/avatar-catalogue/c812c8e2146fcf031faf.webp": {
+      "source": "generated/backpack__shorts__deep/character.png",
+      "sha256": "c812c8e2146fcf031fafd2a8eb5c3966af30387b97068dec31fdf693d00cf52e"
+    },
+    "images/avatar-catalogue/cf3953302d0e3d953548.webp": {
+      "source": "generated/backpack__shorts__dark/character.png",
+      "sha256": "cf3953302d0e3d953548e5a575420e9847d4f12d4ea881ef61ea9a6fa553588c"
+    },
+    "images/avatar-catalogue/3cf5c392aac2039630bc.webp": {
+      "source": "generated/backpack__skirt__warm/character.png",
+      "sha256": "3cf5c392aac2039630bc7a319a139848106548724f025c43a73a3d738080d8d8"
+    },
+    "images/avatar-catalogue/865bd385455c0fafddc1.webp": {
+      "source": "generated/backpack__skirt__tan/character.png",
+      "sha256": "865bd385455c0fafddc177cc9c0cfc690498181b9e12f0f5a516f5c34d6d6683"
+    },
+    "images/avatar-catalogue/6902e428bfd250b4a0ec.webp": {
+      "source": "generated/backpack__skirt__brown/character.png",
+      "sha256": "6902e428bfd250b4a0ecd959121c8a6b894cabcec0cc5ad3eab5ccd14d5beebf"
+    },
+    "images/avatar-catalogue/907cc6211cc95947b187.webp": {
+      "source": "generated/backpack__skirt__deep/character.png",
+      "sha256": "907cc6211cc95947b1874111e58fbdd62f7aa9d78f25e10706abd7d71c9046ae"
+    },
+    "images/avatar-catalogue/8c51ea8ed855206906de.webp": {
+      "source": "generated/backpack__skirt__dark/character.png",
+      "sha256": "8c51ea8ed855206906de5a99f36661ea87a1349d5e2289f67d2c6453c23f17cb"
+    },
+    "images/avatar-catalogue/8448c4c7b2e7776b82a9.webp": {
+      "source": "generated/backpack__shoes__warm/character.png",
+      "sha256": "8448c4c7b2e7776b82a96002c805fb09714e5ccd1e4517cc26752556165735dc"
+    },
+    "images/avatar-catalogue/36715ba3838173149922.webp": {
+      "source": "generated/backpack__shoes__tan/character.png",
+      "sha256": "36715ba38381731499220ae78c62b82762cc83622e9b834c269e36393bc632c2"
+    },
+    "images/avatar-catalogue/9c72314cb27e48f61968.webp": {
+      "source": "generated/backpack__shoes__brown/character.png",
+      "sha256": "9c72314cb27e48f6196857356dc62b1288a604cf1132e95e1ea598ee78135656"
+    },
+    "images/avatar-catalogue/f1356ce0ef23f04790fe.webp": {
+      "source": "generated/backpack__shoes__deep/character.png",
+      "sha256": "f1356ce0ef23f04790fe5733c578e75c79af9669b493dd429b85dd3415df7e54"
+    },
+    "images/avatar-catalogue/9501ec1e14dfa0311218.webp": {
+      "source": "generated/backpack__shoes__dark/character.png",
+      "sha256": "9501ec1e14dfa03112187d9e1e967f38c561fd87f4de872ec0194ee7411f721d"
+    },
+    "images/avatar-catalogue/a2d3b95fe9cf222fc8b2.webp": {
+      "source": "generated/backpack__teal_tan__warm/character.png",
+      "sha256": "a2d3b95fe9cf222fc8b2706c75125306f1ba4444657664826ca331f8a4a0bbcb"
+    },
+    "images/avatar-catalogue/1d4d629c9635b4480b47.webp": {
+      "source": "generated/backpack__teal_tan__tan/character.png",
+      "sha256": "1d4d629c9635b4480b473ba13783df41e4db42d76927b84d57c972a208d6e00a"
+    },
+    "images/avatar-catalogue/0ae31bdaf9b2304f0292.webp": {
+      "source": "generated/backpack__teal_tan__brown/character.png",
+      "sha256": "0ae31bdaf9b2304f029228e90268b26e897891659af1cbd961d2204116f6d615"
+    },
+    "images/avatar-catalogue/8bcc79fb359173341d82.webp": {
+      "source": "generated/backpack__teal_tan__deep/character.png",
+      "sha256": "8bcc79fb359173341d8202a92af66feab015626d115e3dc23e25655efe649d9c"
+    },
+    "images/avatar-catalogue/c9a9af1428fb2cfb0f5b.webp": {
+      "source": "generated/backpack__teal_tan__dark/character.png",
+      "sha256": "c9a9af1428fb2cfb0f5b73ca8941e96546e0af1d13ed3e4cc49487c9c34886f3"
+    },
+    "images/avatar-catalogue/c684d4a21e6aa8344429.webp": {
+      "source": "generated/backpack__blue_charcoal__warm/character.png",
+      "sha256": "c684d4a21e6aa8344429ef8c62e293cf94d27854c632b3103aa2d2ebfb027259"
+    },
+    "images/avatar-catalogue/46255530399ecc4def27.webp": {
+      "source": "generated/backpack__blue_charcoal__tan/character.png",
+      "sha256": "46255530399ecc4def27f7319b68a21f496fae8e8c88dd6d3dbf4ff1a62e2baa"
+    },
+    "images/avatar-catalogue/f5ff6a5e8a583f9f47a3.webp": {
+      "source": "generated/backpack__blue_charcoal__brown/character.png",
+      "sha256": "f5ff6a5e8a583f9f47a3e895872afef39c892ca733b6058743ac53b99e172306"
+    },
+    "images/avatar-catalogue/214298d206d165a16116.webp": {
+      "source": "generated/backpack__blue_charcoal__deep/character.png",
+      "sha256": "214298d206d165a161160bf7135226155ab1ec74063b4c26621f1a754ffbd762"
+    },
+    "images/avatar-catalogue/82c08315f4d558d03e6e.webp": {
+      "source": "generated/backpack__blue_charcoal__dark/character.png",
+      "sha256": "82c08315f4d558d03e6e393d6b256c8631b9f54f7758aeb916a27c91cf736577"
+    },
+    "images/avatar-catalogue/48cdd4b1e84cd7b6f643.webp": {
+      "source": "generated/backpack__striped_blue__warm/character.png",
+      "sha256": "48cdd4b1e84cd7b6f643f33b1fb445aeb00cdac92a985e81a07e9368b809ab26"
+    },
+    "images/avatar-catalogue/c06482c5a744882f2c80.webp": {
+      "source": "generated/backpack__striped_blue__tan/character.png",
+      "sha256": "c06482c5a744882f2c80f76c3673b98a511ba9a51090bbc8fdbe6cf4f53bcf97"
+    },
+    "images/avatar-catalogue/9f7c8d8b5957b8b0f272.webp": {
+      "source": "generated/backpack__striped_blue__brown/character.png",
+      "sha256": "9f7c8d8b5957b8b0f27202ff23662f76002c9093c6f901c644ccde2fd1d26d60"
+    },
+    "images/avatar-catalogue/ebd24b1c4f9bbd253e1c.webp": {
+      "source": "generated/backpack__striped_blue__deep/character.png",
+      "sha256": "ebd24b1c4f9bbd253e1c13fb44dc71555bcd36e0927ff7d9364cb0c9ef8f0c2e"
+    },
+    "images/avatar-catalogue/33ea0cb4180dabf3fa03.webp": {
+      "source": "generated/backpack__striped_blue__dark/character.png",
+      "sha256": "33ea0cb4180dabf3fa0333ad89fa995d5937e52f66854cd6093e3bd73706f302"
+    },
+    "images/avatar-catalogue/944991281a2f4e7d4312.webp": {
+      "source": "generated/backpack__dark_hoodie__warm/character.png",
+      "sha256": "944991281a2f4e7d4312d85d5ae75812ed630a3084bfbdb804dd802dd5ac99e1"
+    },
+    "images/avatar-catalogue/bbb1bd57233fbae78cb0.webp": {
+      "source": "generated/backpack__dark_hoodie__tan/character.png",
+      "sha256": "bbb1bd57233fbae78cb0bb68cf022a312482f9920fa4f649c4ba90c54f6dc735"
+    },
+    "images/avatar-catalogue/5948868e40cd1d1c3434.webp": {
+      "source": "generated/backpack__dark_hoodie__brown/character.png",
+      "sha256": "5948868e40cd1d1c34346d2ea7c16d182fc0813de4797164ae8ba7d58be7858a"
+    },
+    "images/avatar-catalogue/171ed7006544f2c40bd3.webp": {
+      "source": "generated/backpack__dark_hoodie__deep/character.png",
+      "sha256": "171ed7006544f2c40bd3681fc18fde06e7472eef56cd0176bb8ff18ba66b5b93"
+    },
+    "images/avatar-catalogue/eb28536fa463a63ff446.webp": {
+      "source": "generated/backpack__dark_hoodie__dark/character.png",
+      "sha256": "eb28536fa463a63ff446c4bafe8c52425340784f78ef37eb63c400e100bdb2b6"
+    },
+    "images/avatar-catalogue/cef7d43d01281677061c.webp": {
+      "source": "generated/backpack__coral_sweatshirt__warm/character.png",
+      "sha256": "cef7d43d01281677061c09b6993e848f18722757fd9498fa7586877cb440790b"
+    },
+    "images/avatar-catalogue/92d2c2b91029cc8d1e28.webp": {
+      "source": "generated/backpack__coral_sweatshirt__tan/character.png",
+      "sha256": "92d2c2b91029cc8d1e28e7c3441741c2c804e49d866e3f93056a9f72bd991f27"
+    },
+    "images/avatar-catalogue/89044180060c9003970d.webp": {
+      "source": "generated/backpack__coral_sweatshirt__brown/character.png",
+      "sha256": "89044180060c9003970d18b54ddba58cc78de752e0ef2ca9633faf5a6a4b2636"
+    },
+    "images/avatar-catalogue/9563d35e2ba323b84b17.webp": {
+      "source": "generated/backpack__coral_sweatshirt__deep/character.png",
+      "sha256": "9563d35e2ba323b84b17eb5d81c16dc8ac33a072f7b8492c560b96614c301c52"
+    },
+    "images/avatar-catalogue/00890a2220a3188a3cb1.webp": {
+      "source": "generated/backpack__coral_sweatshirt__dark/character.png",
+      "sha256": "00890a2220a3188a3cb1efe132eef4738d9b3ac60e137d3c0875c8ad449330dd"
+    },
+    "images/avatar-catalogue/8686196a577620096645.webp": {
+      "source": "generated/backpack__cream_cardigan__warm/character.png",
+      "sha256": "8686196a577620096645bb9a84a265f9dc837ec3b352cf8b3cf6cc0861577d8d"
+    },
+    "images/avatar-catalogue/2ab99c51291aa928c475.webp": {
+      "source": "generated/backpack__cream_cardigan__tan/character.png",
+      "sha256": "2ab99c51291aa928c4753f92aa0748236f199046a4b918405f7ba0d4194e3bfe"
+    },
+    "images/avatar-catalogue/6b92f71a6ad752bd2d8f.webp": {
+      "source": "generated/backpack__cream_cardigan__brown/character.png",
+      "sha256": "6b92f71a6ad752bd2d8ff760190317695f0b05c32069dc9189b4315f76ea7716"
+    },
+    "images/avatar-catalogue/8d8ba5c2206864995f8a.webp": {
+      "source": "generated/backpack__cream_cardigan__deep/character.png",
+      "sha256": "8d8ba5c2206864995f8a36b689a1f28c26e48bc4e4c9ea49af2de57de022b77d"
+    },
+    "images/avatar-catalogue/e5a6fe659ea9023c504f.webp": {
+      "source": "generated/backpack__cream_cardigan__dark/character.png",
+      "sha256": "e5a6fe659ea9023c504f0f2e39a696c329870a8a4322e09d48e0eb254ac5a180"
+    },
+    "images/avatar-catalogue/7c068b3fa927e5934b67.webp": {
+      "source": "generated/backpack__tan_shorts__warm/character.png",
+      "sha256": "7c068b3fa927e5934b6758649e6653691cd32c86a8981313dab6da373f326c37"
+    },
+    "images/avatar-catalogue/b4ae3c48c30749a44c07.webp": {
+      "source": "generated/backpack__tan_shorts__tan/character.png",
+      "sha256": "b4ae3c48c30749a44c07b83ece27194573464071f74c6bfa315d839cf1b725e9"
+    },
+    "images/avatar-catalogue/c20490975e3cb9ba392a.webp": {
+      "source": "generated/backpack__tan_shorts__brown/character.png",
+      "sha256": "c20490975e3cb9ba392acc39b0a601d5adc0c76228561535cdd39153f54300ea"
+    },
+    "images/avatar-catalogue/4655d228b283936188f6.webp": {
+      "source": "generated/backpack__tan_shorts__deep/character.png",
+      "sha256": "4655d228b283936188f6e15905f77eff578a0e482f5e13eed3ff758872759e8e"
+    },
+    "images/avatar-catalogue/dab685035515072ab1a7.webp": {
+      "source": "generated/backpack__tan_shorts__dark/character.png",
+      "sha256": "dab685035515072ab1a7e51735d13256d0652b914eadf8eec8979e64b60523a1"
+    },
+    "images/avatar-catalogue/8fbbf52ce8141fc0c522.webp": {
+      "source": "generated/backpack__dark_trousers__warm/character.png",
+      "sha256": "8fbbf52ce8141fc0c52232e4c970ce52a8ce483957753d01ba5f273aad1f7473"
+    },
+    "images/avatar-catalogue/0c53da49fa26bae8cf9f.webp": {
+      "source": "generated/backpack__dark_trousers__tan/character.png",
+      "sha256": "0c53da49fa26bae8cf9fb71975ee12d9a611e7c63add41dcff9a167494d983f0"
+    },
+    "images/avatar-catalogue/4f7bc9763d80eee30257.webp": {
+      "source": "generated/backpack__dark_trousers__brown/character.png",
+      "sha256": "4f7bc9763d80eee3025781efaf47d932ca26ad30b7b9add3f98d5cc778bbb3eb"
+    },
+    "images/avatar-catalogue/330f6237d23d77589af4.webp": {
+      "source": "generated/backpack__dark_trousers__deep/character.png",
+      "sha256": "330f6237d23d77589af45a4a24ce3eb4a874d84585d0f673a9939bc487df81f4"
+    },
+    "images/avatar-catalogue/06173178957139613693.webp": {
+      "source": "generated/backpack__dark_trousers__dark/character.png",
+      "sha256": "061731789571396136937e9abf62518bb52c7247b5175607bab3088e19197167"
+    },
+    "images/avatar-catalogue/ad8305286ebea495cf0d.webp": {
+      "source": "generated/backpack__cream_skirt__warm/character.png",
+      "sha256": "ad8305286ebea495cf0dbc51ccf5b6e46b46776b8deca53effc5a6cb2021da13"
+    },
+    "images/avatar-catalogue/c1506fe79be19f9cc7cd.webp": {
+      "source": "generated/backpack__cream_skirt__tan/character.png",
+      "sha256": "c1506fe79be19f9cc7cd0dbdd8d46b2f4f317e6de5aea901019d243e9b277c99"
+    },
+    "images/avatar-catalogue/6a387b15872086e65fbb.webp": {
+      "source": "generated/backpack__cream_skirt__brown/character.png",
+      "sha256": "6a387b15872086e65fbb0bbc644cdc78e2b75f0a22728ad90c4116a1b5768cd4"
+    },
+    "images/avatar-catalogue/fcd861afb074c48dc374.webp": {
+      "source": "generated/backpack__cream_skirt__deep/character.png",
+      "sha256": "fcd861afb074c48dc374648ba781f9ed7871f99cc416105c5fc8c804b7edc0ef"
+    },
+    "images/avatar-catalogue/07ee2ea747749d946a2d.webp": {
+      "source": "generated/backpack__cream_skirt__dark/character.png",
+      "sha256": "07ee2ea747749d946a2d33470d31d06ad01aefe9a70bde4e8e9bfeffddb7727f"
+    },
+    "images/avatar-catalogue/c7277551f521cc425339.webp": {
+      "source": "generated/backpack__brown_shoes__warm/character.png",
+      "sha256": "c7277551f521cc42533922a20382d3f0aaf36f6f117210a7c8548fb9f646ed5c"
+    },
+    "images/avatar-catalogue/2f82f219051e1ef7321c.webp": {
+      "source": "generated/backpack__brown_shoes__tan/character.png",
+      "sha256": "2f82f219051e1ef7321cb280b4aebf1315ee1f84f92c1ed38b47b80d42f43312"
+    },
+    "images/avatar-catalogue/f76f52b027b9550c5c36.webp": {
+      "source": "generated/backpack__brown_shoes__brown/character.png",
+      "sha256": "f76f52b027b9550c5c36beca1fd5321684b42fb13cee98c1fb7cfde44d4941c0"
+    },
+    "images/avatar-catalogue/bf3a14714cf26d75ca64.webp": {
+      "source": "generated/backpack__brown_shoes__deep/character.png",
+      "sha256": "bf3a14714cf26d75ca64bd1e6738983c67005012dd8a59e09009ed06edf18bc4"
+    },
+    "images/avatar-catalogue/c097754f0d3be8d48444.webp": {
+      "source": "generated/backpack__brown_shoes__dark/character.png",
+      "sha256": "c097754f0d3be8d4844495a063178bf73fa545c21852cc5c5a213d24ab3654bd"
+    },
+    "images/avatar-catalogue/776d3769517fe5132e7c.webp": {
+      "source": "generated/clothing__jacket__warm/character.png",
+      "sha256": "776d3769517fe5132e7ce1f383981da39926e8c063021caf7fcc77679a551c1c"
+    },
+    "images/avatar-catalogue/e5944c91be230dee6220.webp": {
+      "source": "generated/clothing__jacket__tan/character.png",
+      "sha256": "e5944c91be230dee622029721d8c55b8579df78eb499aaf05d5cc347efc9ee33"
+    },
+    "images/avatar-catalogue/af58f11d8dc763ab411d.webp": {
+      "source": "generated/clothing__jacket__brown/character.png",
+      "sha256": "af58f11d8dc763ab411d1fdad94434562eb420fb479fd009b843133b8ef1037f"
+    },
+    "images/avatar-catalogue/59310026c8bc73863d6a.webp": {
+      "source": "generated/clothing__jacket__deep/character.png",
+      "sha256": "59310026c8bc73863d6a20926cc310784ee948a603d13b24cda284c402fd249b"
+    },
+    "images/avatar-catalogue/61c504e4d18dc83dd9ec.webp": {
+      "source": "generated/clothing__jacket__dark/character.png",
+      "sha256": "61c504e4d18dc83dd9ecaed6d28a2ec936744038b70fa208ae83b475573c9925"
+    },
+    "images/avatar-catalogue/bb9264d9a08cf8ad19ec.webp": {
+      "source": "generated/clothing__shorts__warm/character.png",
+      "sha256": "bb9264d9a08cf8ad19ec98b9de885b44adf33d681692f0588bdd3be7f420ef20"
+    },
+    "images/avatar-catalogue/a80cfd16223cb92bd917.webp": {
+      "source": "generated/clothing__shorts__tan/character.png",
+      "sha256": "a80cfd16223cb92bd9176242b41115098e912db5468f13559547dcbbad13c456"
+    },
+    "images/avatar-catalogue/80a595bdbf05e9128503.webp": {
+      "source": "generated/clothing__shorts__brown/character.png",
+      "sha256": "80a595bdbf05e9128503f671d03c8790941f814bb20f3ccdab1b3c6c9d364645"
+    },
+    "images/avatar-catalogue/05baf146a82e1a44d648.webp": {
+      "source": "generated/clothing__shorts__deep/character.png",
+      "sha256": "05baf146a82e1a44d648326af35f8f9fa8037aca9b48fb4f36c929b281b066cb"
+    },
+    "images/avatar-catalogue/996296dfde8b9a1ac4b9.webp": {
+      "source": "generated/clothing__shorts__dark/character.png",
+      "sha256": "996296dfde8b9a1ac4b9e853cdda87866cb24b1a42eb638f9192096a98988b82"
+    },
+    "images/avatar-catalogue/8310b0520a449a9b9ead.webp": {
+      "source": "generated/clothing__skirt__warm/character.png",
+      "sha256": "8310b0520a449a9b9eadcdafa81aed8eba874f2b9db583e2bb5a2a27ba3b39d4"
+    },
+    "images/avatar-catalogue/4a0463150b4d86bca051.webp": {
+      "source": "generated/clothing__skirt__tan/character.png",
+      "sha256": "4a0463150b4d86bca051d71da75575f09f8987231cb8725b10ade7499e1b3cd0"
+    },
+    "images/avatar-catalogue/948590c1093826a1e0cc.webp": {
+      "source": "generated/clothing__skirt__brown/character.png",
+      "sha256": "948590c1093826a1e0ccb109f2dcda6807e6d19f4ad40089adcd072e7c677ee0"
+    },
+    "images/avatar-catalogue/b90e44886dc646a33e07.webp": {
+      "source": "generated/clothing__skirt__deep/character.png",
+      "sha256": "b90e44886dc646a33e07f08eadb9ed003ce8e8d83777806e65ed2bd7867f3c4a"
+    },
+    "images/avatar-catalogue/e2a1ecb9a160e67e5fce.webp": {
+      "source": "generated/clothing__skirt__dark/character.png",
+      "sha256": "e2a1ecb9a160e67e5fce154b9b60cfb43f530699a47c30e8d9a73cf235f14e7f"
+    },
+    "images/avatar-catalogue/f2dfc9233cace562a388.webp": {
+      "source": "generated/clothing__shoes__warm/character.png",
+      "sha256": "f2dfc9233cace562a3885fcd879aa7ba54134f6eb410efb15d0e3d6e7bc33f9c"
+    },
+    "images/avatar-catalogue/db0eeb7c213cdb11fe71.webp": {
+      "source": "generated/clothing__shoes__tan/character.png",
+      "sha256": "db0eeb7c213cdb11fe716c9ba44c7ce49a01a0473d2b7aa803101d0fce46427a"
+    },
+    "images/avatar-catalogue/06a0e57fc9917a8b3de5.webp": {
+      "source": "generated/clothing__shoes__brown/character.png",
+      "sha256": "06a0e57fc9917a8b3de542cb6a4ec0a6822e719cdfb075812fe95acaad967a77"
+    },
+    "images/avatar-catalogue/48fa1ad863512c799aec.webp": {
+      "source": "generated/clothing__shoes__deep/character.png",
+      "sha256": "48fa1ad863512c799aec90435706c440682844ba7e534ed418efed979647e657"
+    },
+    "images/avatar-catalogue/b32f53ec646182ecee89.webp": {
+      "source": "generated/clothing__shoes__dark/character.png",
+      "sha256": "b32f53ec646182ecee8980c0935454451160e1064cbf9f7cd76a5c77b3c62489"
+    },
+    "images/avatar-catalogue/badc82cc5f2dc71db253.webp": {
+      "source": "generated/clothing__teal_tan__warm/character.png",
+      "sha256": "badc82cc5f2dc71db253c5fc394fe4512d4779d5bcb7ee00e2304922647f9199"
+    },
+    "images/avatar-catalogue/e01b03376c02fd7cfc77.webp": {
+      "source": "generated/clothing__teal_tan__tan/character.png",
+      "sha256": "e01b03376c02fd7cfc7765608d8dca28ce6a1d7958b341799b3d35f82fdf1b31"
+    },
+    "images/avatar-catalogue/6e80161d8a88c8bafbd7.webp": {
+      "source": "generated/clothing__teal_tan__brown/character.png",
+      "sha256": "6e80161d8a88c8bafbd7a3d379b1245dc4eacfccea19595ca62681778d89d1cd"
+    },
+    "images/avatar-catalogue/ddd441a42bd320930e80.webp": {
+      "source": "generated/clothing__teal_tan__deep/character.png",
+      "sha256": "ddd441a42bd320930e808f7abc9739284a51959ffc4aed949018adffe7c22142"
+    },
+    "images/avatar-catalogue/c35ea23546df82da1e4a.webp": {
+      "source": "generated/clothing__teal_tan__dark/character.png",
+      "sha256": "c35ea23546df82da1e4a906fcc2da3d97c482ecd3ad0040824b926469042483b"
+    },
+    "images/avatar-catalogue/538dd190da9bef5d08c0.webp": {
+      "source": "generated/clothing__blue_charcoal__warm/character.png",
+      "sha256": "538dd190da9bef5d08c0b9b6adad393b3701a210c54a5d25249c0545ea67c8ee"
+    },
+    "images/avatar-catalogue/a3ba880d7f7531d6e8db.webp": {
+      "source": "generated/clothing__blue_charcoal__tan/character.png",
+      "sha256": "a3ba880d7f7531d6e8dbe4d6783650d6c037f2755dbf94628e8de83cffff6c17"
+    },
+    "images/avatar-catalogue/11b8c8ea4d9a59a593b5.webp": {
+      "source": "generated/clothing__blue_charcoal__brown/character.png",
+      "sha256": "11b8c8ea4d9a59a593b5a9ff37f94663c0a1c1cf78833d9e45afe6c80705b0f1"
+    },
+    "images/avatar-catalogue/04618f7e2d1e136616ab.webp": {
+      "source": "generated/clothing__blue_charcoal__deep/character.png",
+      "sha256": "04618f7e2d1e136616abc430d95dc858ae192bf69be6a99ad6a465ef28110bba"
+    },
+    "images/avatar-catalogue/f0dd60d1f390006ccd90.webp": {
+      "source": "generated/clothing__blue_charcoal__dark/character.png",
+      "sha256": "f0dd60d1f390006ccd9081b368dfd4b0274d901ca9c309dbdb59deab1178a0bf"
+    },
+    "images/avatar-catalogue/1aaa6a565f08d5b35a5d.webp": {
+      "source": "generated/clothing__striped_blue__warm/character.png",
+      "sha256": "1aaa6a565f08d5b35a5d7c78343a14894ad8cc1b4b82ac7b9501b95eb025bb8e"
+    },
+    "images/avatar-catalogue/fe51c93e7bfbd38ad70d.webp": {
+      "source": "generated/clothing__striped_blue__tan/character.png",
+      "sha256": "fe51c93e7bfbd38ad70dfd0453519d9f50b480b7d2c82957a93bfad1bbe3fb9c"
+    },
+    "images/avatar-catalogue/5713e3b77b47b95dcc52.webp": {
+      "source": "generated/clothing__striped_blue__brown/character.png",
+      "sha256": "5713e3b77b47b95dcc526d88bf4287fb958e755797b64eb07fcac9b9a12002f4"
+    },
+    "images/avatar-catalogue/2389f7355eb9c00ef942.webp": {
+      "source": "generated/clothing__striped_blue__deep/character.png",
+      "sha256": "2389f7355eb9c00ef9421f9f003f704d83c13797699a854f12a07db3a4537a5a"
+    },
+    "images/avatar-catalogue/2152a9c97f33ddcf5ce2.webp": {
+      "source": "generated/clothing__striped_blue__dark/character.png",
+      "sha256": "2152a9c97f33ddcf5ce2ecc0ee4737deb003434b4c2e41c4e25e64fb54c37033"
+    },
+    "images/avatar-catalogue/1a15e5479cfc435338e9.webp": {
+      "source": "generated/clothing__dark_hoodie__warm/character.png",
+      "sha256": "1a15e5479cfc435338e9c009451c2c25957902347ce4d4109069dc885ca2f78e"
+    },
+    "images/avatar-catalogue/4ae48ff4173f54872ca2.webp": {
+      "source": "generated/clothing__dark_hoodie__tan/character.png",
+      "sha256": "4ae48ff4173f54872ca2520a3efdc4ad3cd16d5cc66fa66096670da4e5c74e00"
+    },
+    "images/avatar-catalogue/cef786ddabb089b50e5e.webp": {
+      "source": "generated/clothing__dark_hoodie__brown/character.png",
+      "sha256": "cef786ddabb089b50e5ecdfe081e9d98d2f7585561c938265429e2ac6bb132ad"
+    },
+    "images/avatar-catalogue/6b9d232518de88787b16.webp": {
+      "source": "generated/clothing__dark_hoodie__deep/character.png",
+      "sha256": "6b9d232518de88787b16f59ea44c50768588eb70c6e9e957b30dd5357605460c"
+    },
+    "images/avatar-catalogue/e97be3a00910aeaa6509.webp": {
+      "source": "generated/clothing__dark_hoodie__dark/character.png",
+      "sha256": "e97be3a00910aeaa650931492ccbf20aab32ac70055c1378bd302135eaa65aae"
+    },
+    "images/avatar-catalogue/7f39f1b2cc39b23e4764.webp": {
+      "source": "generated/clothing__coral_sweatshirt__warm/character.png",
+      "sha256": "7f39f1b2cc39b23e47648dc6d509f85aae0f80868b80ae0a51fe3da81c74621d"
+    },
+    "images/avatar-catalogue/c2390836e63d57ec25d3.webp": {
+      "source": "generated/clothing__coral_sweatshirt__tan/character.png",
+      "sha256": "c2390836e63d57ec25d3f332793e278bb45c50f6bd1118fcde18cc17b6b4d5c3"
+    },
+    "images/avatar-catalogue/fb303eea8e5e94eeb453.webp": {
+      "source": "generated/clothing__coral_sweatshirt__brown/character.png",
+      "sha256": "fb303eea8e5e94eeb45346915fc323add965a44d23570c0aafb1c361d728f57d"
+    },
+    "images/avatar-catalogue/7baaf6e4c190c300010d.webp": {
+      "source": "generated/clothing__coral_sweatshirt__deep/character.png",
+      "sha256": "7baaf6e4c190c300010dc12c413592e1668bd0f1af31c9999aabed56e00413bb"
+    },
+    "images/avatar-catalogue/5567fdd46fe73a8dea54.webp": {
+      "source": "generated/clothing__coral_sweatshirt__dark/character.png",
+      "sha256": "5567fdd46fe73a8dea5408121412f1cc373eb349b380b408e7329f359f6e1aee"
+    },
+    "images/avatar-catalogue/8d41dc3b907c33673d18.webp": {
+      "source": "generated/clothing__cream_cardigan__warm/character.png",
+      "sha256": "8d41dc3b907c33673d1847b479f8eb818bf43fb2d1acd9f4150d722f5a0a73e2"
+    },
+    "images/avatar-catalogue/5b99954d90c83465b755.webp": {
+      "source": "generated/clothing__cream_cardigan__tan/character.png",
+      "sha256": "5b99954d90c83465b755a78a0dfe5f457fc9051b424ee0be29dea7bea5b3f989"
+    },
+    "images/avatar-catalogue/f33c14f93d0277f1e65b.webp": {
+      "source": "generated/clothing__cream_cardigan__brown/character.png",
+      "sha256": "f33c14f93d0277f1e65bad1102e3a804367fe438b8f82ddfeb893e11684ad885"
+    },
+    "images/avatar-catalogue/77d2eeee50119a2f644a.webp": {
+      "source": "generated/clothing__cream_cardigan__deep/character.png",
+      "sha256": "77d2eeee50119a2f644a03f02e9eec93cfa674939bc904f447d17432d7670d0a"
+    },
+    "images/avatar-catalogue/5f2eabdccc8a4f83bcbf.webp": {
+      "source": "generated/clothing__cream_cardigan__dark/character.png",
+      "sha256": "5f2eabdccc8a4f83bcbf792751d4f5229830995e93b06799ad085ebf6c33678b"
+    },
+    "images/avatar-catalogue/8b3b284cd23bc4447b7f.webp": {
+      "source": "generated/clothing__tan_shorts__warm/character.png",
+      "sha256": "8b3b284cd23bc4447b7f453b24ab449a090de2c44b7064cab553b1d0f9e99010"
+    },
+    "images/avatar-catalogue/8338d5055c760426b5a8.webp": {
+      "source": "generated/clothing__tan_shorts__tan/character.png",
+      "sha256": "8338d5055c760426b5a838196619ae9a22431c0ba28ed7755cd1c974d62e2eab"
+    },
+    "images/avatar-catalogue/8cb44781af4f78d070e3.webp": {
+      "source": "generated/clothing__tan_shorts__brown/character.png",
+      "sha256": "8cb44781af4f78d070e328d4e893797e2913d758fe7c26026cba213d86f20cab"
+    },
+    "images/avatar-catalogue/763f956222c3efbe56c9.webp": {
+      "source": "generated/clothing__tan_shorts__deep/character.png",
+      "sha256": "763f956222c3efbe56c9b99cad97b364a72d19824f001efb1f69062f290a5b11"
+    },
+    "images/avatar-catalogue/c9622cf1ebfc46ad5385.webp": {
+      "source": "generated/clothing__tan_shorts__dark/character.png",
+      "sha256": "c9622cf1ebfc46ad538562044207fa8cd96a9967d0704785e028e9c6891713d2"
+    },
+    "images/avatar-catalogue/a1aa047ec27371b217ca.webp": {
+      "source": "generated/clothing__dark_trousers__warm/character.png",
+      "sha256": "a1aa047ec27371b217ca1560ad10cded9259f04a01a689516c9bf0316b5aeb0c"
+    },
+    "images/avatar-catalogue/3b98172591f7950aff38.webp": {
+      "source": "generated/clothing__dark_trousers__tan/character.png",
+      "sha256": "3b98172591f7950aff38f1cb37fab9546c7b9745e0a634d39783f137f9d894cb"
+    },
+    "images/avatar-catalogue/c5790bac4779921d85bc.webp": {
+      "source": "generated/clothing__dark_trousers__brown/character.png",
+      "sha256": "c5790bac4779921d85bc11b95cae37b1d7e891bb65f036004386baa70f0eeec0"
+    },
+    "images/avatar-catalogue/b964f484ce7a88159813.webp": {
+      "source": "generated/clothing__dark_trousers__deep/character.png",
+      "sha256": "b964f484ce7a881598133ec9dc8995698cb6cde7bfa3db74486a0056a2ed7852"
+    },
+    "images/avatar-catalogue/f41deb28ed1b100dd36e.webp": {
+      "source": "generated/clothing__dark_trousers__dark/character.png",
+      "sha256": "f41deb28ed1b100dd36ebf15be499c4f3b7414e56d15c34fbe0742e93f0b9fb5"
+    },
+    "images/avatar-catalogue/0f15f26f008e9b07628d.webp": {
+      "source": "generated/clothing__cream_skirt__warm/character.png",
+      "sha256": "0f15f26f008e9b07628d2a62038910a8c1bc43b794ac408c599fb1ac7ccc6a64"
+    },
+    "images/avatar-catalogue/305124d1d7104e2b2925.webp": {
+      "source": "generated/clothing__cream_skirt__tan/character.png",
+      "sha256": "305124d1d7104e2b2925a485d9b86cbdbb49e8ac59cadb8bbaf149416ab9d365"
+    },
+    "images/avatar-catalogue/e5f7fb7ff5caf2dcf9b1.webp": {
+      "source": "generated/clothing__cream_skirt__brown/character.png",
+      "sha256": "e5f7fb7ff5caf2dcf9b1e6c2195eab127a6352fef0be878f96e5efdab8bad31d"
+    },
+    "images/avatar-catalogue/2dce81c9e9d361960ab4.webp": {
+      "source": "generated/clothing__cream_skirt__deep/character.png",
+      "sha256": "2dce81c9e9d361960ab417bd38034c0c2819d688654d0ca7b16b8279a0886a73"
+    },
+    "images/avatar-catalogue/a4c41de81fcb94405a8f.webp": {
+      "source": "generated/clothing__cream_skirt__dark/character.png",
+      "sha256": "a4c41de81fcb94405a8ff73e3eb757acde8b7f0ee0c7d047d2d123be22dde443"
+    },
+    "images/avatar-catalogue/c80b8c01f34077dc89bb.webp": {
+      "source": "generated/clothing__brown_shoes__warm/character.png",
+      "sha256": "c80b8c01f34077dc89bba728f8d6039b40e4187185d0116a0823ccd644b65957"
+    },
+    "images/avatar-catalogue/00711e8537db6a96fa93.webp": {
+      "source": "generated/clothing__brown_shoes__tan/character.png",
+      "sha256": "00711e8537db6a96fa9325a80cd9f3d7b33df6461b62330b2206ed3dc784ff00"
+    },
+    "images/avatar-catalogue/528dd260f98c8e8469fa.webp": {
+      "source": "generated/clothing__brown_shoes__brown/character.png",
+      "sha256": "528dd260f98c8e8469fac6ae28d0de09ec25a501514a8dd2841554164b2c7b09"
+    },
+    "images/avatar-catalogue/7da71ec7601598593da4.webp": {
+      "source": "generated/clothing__brown_shoes__deep/character.png",
+      "sha256": "7da71ec7601598593da43fe8ae136543c94a0af7394f23f53b20ff612d7c2f39"
+    },
+    "images/avatar-catalogue/599fa697051b8dfe71d3.webp": {
+      "source": "generated/clothing__brown_shoes__dark/character.png",
+      "sha256": "599fa697051b8dfe71d358ed1794985bd21265980eb0e0b55a2346d7f49c8272"
+    },
+    "images/avatar-catalogue/18dd86b52e33671c0159.webp": {
+      "source": "generated/cap_glasses__tousled__warm/character.png",
+      "sha256": "18dd86b52e33671c0159e415c41c1292dce7e6ac24288913b5ac7233279dced6"
+    },
+    "images/avatar-catalogue/1335c8ec9a15da96491b.webp": {
+      "source": "generated/cap_glasses__tousled__tan/character.png",
+      "sha256": "1335c8ec9a15da96491b060edeb5cd86610b294ba0f0ed1de563c13bd6533371"
+    },
+    "images/avatar-catalogue/02a420726e2d23950330.webp": {
+      "source": "generated/cap_glasses__tousled__brown/character.png",
+      "sha256": "02a420726e2d2395033047d77709ffc93d70c3807bb77f25de82e94f7df55ae4"
+    },
+    "images/avatar-catalogue/1c25a7178587278c528d.webp": {
+      "source": "generated/cap_glasses__tousled__deep/character.png",
+      "sha256": "1c25a7178587278c528d9b83acd07e116c3a94f9adfa9367fe1c4ef6156c3b47"
+    },
+    "images/avatar-catalogue/cd1ecbaf47c246adb302.webp": {
+      "source": "generated/cap_glasses__tousled__dark/character.png",
+      "sha256": "cd1ecbaf47c246adb30239175a94710998663dd990a32601eb5258d1c571a8df"
+    },
+    "images/avatar-catalogue/2a8351654d6620f53098.webp": {
+      "source": "generated/cap_glasses__bob__warm/character.png",
+      "sha256": "2a8351654d6620f53098efd5393233f7522d5a99bf660c38c13cf9263c00e44f"
+    },
+    "images/avatar-catalogue/340c22bce3a9ef30ed37.webp": {
+      "source": "generated/cap_glasses__bob__tan/character.png",
+      "sha256": "340c22bce3a9ef30ed377931c7063ce761a4e31367e5bc8b6a1dc89cd85f6103"
+    },
+    "images/avatar-catalogue/6ff0242678e4020235dd.webp": {
+      "source": "generated/cap_glasses__bob__brown/character.png",
+      "sha256": "6ff0242678e4020235dd545f149e83618efa375e0e5d6823da7fd1873424baac"
+    },
+    "images/avatar-catalogue/a1d27e5bb3be7284d338.webp": {
+      "source": "generated/cap_glasses__bob__deep/character.png",
+      "sha256": "a1d27e5bb3be7284d338fe622fab2717d517e08c5dcab0ba3e4773a2d76e1436"
+    },
+    "images/avatar-catalogue/1d0d19999c95c0aa9cbb.webp": {
+      "source": "generated/cap_glasses__bob__dark/character.png",
+      "sha256": "1d0d19999c95c0aa9cbb1190f09e89588dd16c5956f181e8d2162a0fe2356d65"
+    },
+    "images/avatar-catalogue/3711dd5bbbf14bec7fa3.webp": {
+      "source": "generated/cap_glasses__waves__warm/character.png",
+      "sha256": "3711dd5bbbf14bec7fa33e3602508684e57e344786480701855d53bfd5a9f059"
+    },
+    "images/avatar-catalogue/7f17136b509d3cb7e96d.webp": {
+      "source": "generated/cap_glasses__waves__tan/character.png",
+      "sha256": "7f17136b509d3cb7e96da47694a0685aa3a13fe7a054ec762f6bdbd2bd7e7337"
+    },
+    "images/avatar-catalogue/a069f406304f161bd38a.webp": {
+      "source": "generated/cap_glasses__waves__brown/character.png",
+      "sha256": "a069f406304f161bd38a28ce5827de6490293810efb7199d943a8319c77f80f6"
+    },
+    "images/avatar-catalogue/12474c8073f781cccdff.webp": {
+      "source": "generated/cap_glasses__waves__deep/character.png",
+      "sha256": "12474c8073f781cccdff97954d010bf2b908c7e75cfd3baa08c9d13041661aef"
+    },
+    "images/avatar-catalogue/142b49313fe3208600d2.webp": {
+      "source": "generated/cap_glasses__waves__dark/character.png",
+      "sha256": "142b49313fe3208600d294dc9bed2b44f70853505ab6884338c30635225441f0"
+    },
+    "images/avatar-catalogue/657e7a4c8dbdeff00738.webp": {
+      "source": "generated/cap_glasses__curls__warm/character.png",
+      "sha256": "657e7a4c8dbdeff00738281f94e68ee89ea959dc3c87a3395229345ac2b3359c"
+    },
+    "images/avatar-catalogue/3914c2eb603aca285cbe.webp": {
+      "source": "generated/cap_glasses__curls__tan/character.png",
+      "sha256": "3914c2eb603aca285cbee6042d7454bf1df02cf88e3461ff12afb8fb2d0abb67"
+    },
+    "images/avatar-catalogue/556b20aad4bef942f50a.webp": {
+      "source": "generated/cap_glasses__curls__brown/character.png",
+      "sha256": "556b20aad4bef942f50a182772810dd2eadf3eaefb87e12204f3d3e1dc080ee3"
+    },
+    "images/avatar-catalogue/9f773dacdb7b21d90b1a.webp": {
+      "source": "generated/cap_glasses__curls__deep/character.png",
+      "sha256": "9f773dacdb7b21d90b1a3c3acf18254dd33c504fed51f1500cb1acaad24868f1"
+    },
+    "images/avatar-catalogue/8988adcb347f00520b85.webp": {
+      "source": "generated/cap_glasses__curls__dark/character.png",
+      "sha256": "8988adcb347f00520b854473ef8b045af2a88bba0a08c178f34ff76f090b4f67"
+    },
+    "images/avatar-catalogue/e00f46d419a79aa79e15.webp": {
+      "source": "generated/cap_glasses__bun__warm/character.png",
+      "sha256": "e00f46d419a79aa79e159565ac82f2bc7fa4b832b00090c9184c23d4dab2742c"
+    },
+    "images/avatar-catalogue/4b28a66e36baca7cfd6c.webp": {
+      "source": "generated/cap_glasses__bun__tan/character.png",
+      "sha256": "4b28a66e36baca7cfd6c1ff60999016d66685355a7cd345a4e90498d67e59d77"
+    },
+    "images/avatar-catalogue/22f8bb2bacf9e359387f.webp": {
+      "source": "generated/cap_glasses__bun__brown/character.png",
+      "sha256": "22f8bb2bacf9e359387f4a219ae83d4c36ed58d01119b070df0daf3f01cf8fb8"
+    },
+    "images/avatar-catalogue/077f0eff5b0873404e23.webp": {
+      "source": "generated/cap_glasses__bun__deep/character.png",
+      "sha256": "077f0eff5b0873404e2356fa3416029018dae3480dc96b0558bbeaacfc54013d"
+    },
+    "images/avatar-catalogue/b4eb6dd15b963293cd70.webp": {
+      "source": "generated/cap_glasses__bun__dark/character.png",
+      "sha256": "b4eb6dd15b963293cd70fbfd0cc6b423029b78a77157979b25f3025edd3e6610"
+    },
+    "images/avatar-catalogue/77a7337caa10bae1d491.webp": {
+      "source": "generated/cap_glasses__pigtails__warm/character.png",
+      "sha256": "77a7337caa10bae1d491ebef66002d3f7df21da94b6556e867237bb9f65fef06"
+    },
+    "images/avatar-catalogue/2410d976c7618a39040a.webp": {
+      "source": "generated/cap_glasses__pigtails__tan/character.png",
+      "sha256": "2410d976c7618a39040a4c91972935931e6f5449c7b927da6f548ec54e916b3e"
+    },
+    "images/avatar-catalogue/6d03d777951ba22958cd.webp": {
+      "source": "generated/cap_glasses__pigtails__brown/character.png",
+      "sha256": "6d03d777951ba22958cd6bc1062917cca065267aacb020af756c263f965cd334"
+    },
+    "images/avatar-catalogue/4d005777c9e3f662357c.webp": {
+      "source": "generated/cap_glasses__pigtails__deep/character.png",
+      "sha256": "4d005777c9e3f662357cd34ebc7d839c4a1477c918ab4f6c36f0a32b8c3f886e"
+    },
+    "images/avatar-catalogue/da242a20d74c5888380c.webp": {
+      "source": "generated/cap_glasses__pigtails__dark/character.png",
+      "sha256": "da242a20d74c5888380ca5a70f90f32a9460bd3186786592690096d2447254a4"
+    },
+    "images/avatar-catalogue/ebb44395568b731027bf.webp": {
+      "source": "generated/bucket__tousled__warm/character.png",
+      "sha256": "ebb44395568b731027bf3e9108e95350c3e21edd6b7009b4f93356a6890f952e"
+    },
+    "images/avatar-catalogue/27c61a40ee986a927738.webp": {
+      "source": "generated/bucket__tousled__tan/character.png",
+      "sha256": "27c61a40ee986a927738fd6ea0d70f3907b0874f0f68b883d5f3940730c1c34e"
+    },
+    "images/avatar-catalogue/832961970ddda2d5f308.webp": {
+      "source": "generated/bucket__tousled__brown/character.png",
+      "sha256": "832961970ddda2d5f308b0b52b425e73c0c3b467784fd5cdf5f790ad1ec1e3af"
+    },
+    "images/avatar-catalogue/425a4cc18d14bfd1e44e.webp": {
+      "source": "generated/bucket__tousled__deep/character.png",
+      "sha256": "425a4cc18d14bfd1e44e40c17e2a5d0e68307f6fab2f459740fa8f66af60262d"
+    },
+    "images/avatar-catalogue/72ebe440620f669a55b1.webp": {
+      "source": "generated/bucket__tousled__dark/character.png",
+      "sha256": "72ebe440620f669a55b1afe1f934cbe706a361bf33cd43fcde23c182341d8b23"
+    },
+    "images/avatar-catalogue/801b2954b7a09619780e.webp": {
+      "source": "generated/bucket__bob__warm/character.png",
+      "sha256": "801b2954b7a09619780e947e344fe8e86e88e750080c864901c97483fa188240"
+    },
+    "images/avatar-catalogue/da42fa39eaa25c44c9a2.webp": {
+      "source": "generated/bucket__bob__tan/character.png",
+      "sha256": "da42fa39eaa25c44c9a261bd84d6708cb3c0421a990ede21bc24ec0498193f24"
+    },
+    "images/avatar-catalogue/2e828515848bdb4a183a.webp": {
+      "source": "generated/bucket__bob__brown/character.png",
+      "sha256": "2e828515848bdb4a183a302c0d93ed4baa1b14d939147581c3d22ac5f047f834"
+    },
+    "images/avatar-catalogue/dc8becfb22938588929a.webp": {
+      "source": "generated/bucket__bob__deep/character.png",
+      "sha256": "dc8becfb22938588929a83b2a27cfaf653deeda22b7f7b72677beeb8cfacb5d0"
+    },
+    "images/avatar-catalogue/b20e401af52d706fc144.webp": {
+      "source": "generated/bucket__bob__dark/character.png",
+      "sha256": "b20e401af52d706fc144dae2f8ee307ae5dc98dac473ad6ea07aab67333b3b8e"
+    },
+    "images/avatar-catalogue/a60055d2af87d592dfb9.webp": {
+      "source": "generated/bucket__waves__warm/character.png",
+      "sha256": "a60055d2af87d592dfb9b29fdcdf4799280a26bdefdc0776cd21477fa1116e4b"
+    },
+    "images/avatar-catalogue/5eaa566d584e1f8c2d35.webp": {
+      "source": "generated/bucket__waves__tan/character.png",
+      "sha256": "5eaa566d584e1f8c2d351ec2d7217b56bfd2782363c3e8669494c4332ab6690e"
+    },
+    "images/avatar-catalogue/6676b841c414095e87e3.webp": {
+      "source": "generated/bucket__waves__brown/character.png",
+      "sha256": "6676b841c414095e87e31610184e0688b7f6e6a18049a70516c5a9c754cbdadf"
+    },
+    "images/avatar-catalogue/c48975a927530ea6c4c5.webp": {
+      "source": "generated/bucket__waves__deep/character.png",
+      "sha256": "c48975a927530ea6c4c59dd1471a9394c28bb31226abd120f4cda56ab02aec94"
+    },
+    "images/avatar-catalogue/66c04ef7c4e78a63c27d.webp": {
+      "source": "generated/bucket__waves__dark/character.png",
+      "sha256": "66c04ef7c4e78a63c27d543d042d0e424ef4f7388430ea4c2920730bf909b3a8"
+    },
+    "images/avatar-catalogue/52da3e50ba050138aba5.webp": {
+      "source": "generated/bucket__curls__warm/character.png",
+      "sha256": "52da3e50ba050138aba5177688de4af4146e0e4a2491ac159625168470a2656f"
+    },
+    "images/avatar-catalogue/5bd1480c5faf294d5b4b.webp": {
+      "source": "generated/bucket__curls__tan/character.png",
+      "sha256": "5bd1480c5faf294d5b4bb78d58aacdb521243928d7c97fea7c664132062ea06b"
+    },
+    "images/avatar-catalogue/568d399a21eafb9230d2.webp": {
+      "source": "generated/bucket__curls__brown/character.png",
+      "sha256": "568d399a21eafb9230d2cc84be746cb27d54bc8f194560bc587f01867ef15022"
+    },
+    "images/avatar-catalogue/1c8b0c483202218a7b08.webp": {
+      "source": "generated/bucket__curls__deep/character.png",
+      "sha256": "1c8b0c483202218a7b085a75fde5628b9ff4c1c995d9118967ace92e09f6dc4b"
+    },
+    "images/avatar-catalogue/78cfd9d0e17828c83dd7.webp": {
+      "source": "generated/bucket__curls__dark/character.png",
+      "sha256": "78cfd9d0e17828c83dd78b9f3fdae8d4c23c9aef4121baf822f226b3632a9784"
+    },
+    "images/avatar-catalogue/fca31d940238da0c7279.webp": {
+      "source": "generated/bucket__bun__warm/character.png",
+      "sha256": "fca31d940238da0c727963d297a18233623b03c600a922d62e71dceb654b085c"
+    },
+    "images/avatar-catalogue/9a2d978a4533a2a5db78.webp": {
+      "source": "generated/bucket__bun__tan/character.png",
+      "sha256": "9a2d978a4533a2a5db782a89c631ee7f359c7f67200076e71a2886b741522a5f"
+    },
+    "images/avatar-catalogue/3d690b9752627221a2d2.webp": {
+      "source": "generated/bucket__bun__brown/character.png",
+      "sha256": "3d690b9752627221a2d24a9223bd24e1eee1f76a18be7478772462d08c94bf8f"
+    },
+    "images/avatar-catalogue/3f7bf1e762d4264bc72c.webp": {
+      "source": "generated/bucket__bun__deep/character.png",
+      "sha256": "3f7bf1e762d4264bc72cb4e187513a0055a4b738c15b3c72c6ea6a59c1b18c84"
+    },
+    "images/avatar-catalogue/0052062ba59749e639ba.webp": {
+      "source": "generated/bucket__bun__dark/character.png",
+      "sha256": "0052062ba59749e639ba80dcfa00c1ae5fc5d8600ac3391c67acdaae5ef22499"
+    },
+    "images/avatar-catalogue/b3e1957cabbc2d76be21.webp": {
+      "source": "generated/bucket__pigtails__warm/character.png",
+      "sha256": "b3e1957cabbc2d76be21f839880f58bb357cb121aee85b3d8fe4a073220da71a"
+    },
+    "images/avatar-catalogue/b172a5b5626df11101e0.webp": {
+      "source": "generated/bucket__pigtails__tan/character.png",
+      "sha256": "b172a5b5626df11101e04227977a7762542abe31d3ea52366ff053c6983e1fa0"
+    },
+    "images/avatar-catalogue/95e63d7ccad8d259fcd4.webp": {
+      "source": "generated/bucket__pigtails__brown/character.png",
+      "sha256": "95e63d7ccad8d259fcd4d41dfa795b9d226f8e18a0959002d312fcf604cbb5a1"
+    },
+    "images/avatar-catalogue/07897169d56cf4315012.webp": {
+      "source": "generated/bucket__pigtails__deep/character.png",
+      "sha256": "07897169d56cf431501284bd275a42b7cc92f3ed6df1a4f2ef5356e013f80f9e"
+    },
+    "images/avatar-catalogue/5d2c0dd61e2da78172ab.webp": {
+      "source": "generated/bucket__pigtails__dark/character.png",
+      "sha256": "5d2c0dd61e2da78172ab75b5d139a223adcb6b8bb7747d5aafb8752bac5b05c4"
+    },
+    "images/avatar-catalogue/bc19f1fce36d627c1647.webp": {
+      "source": "generated/beanie__tousled__warm/character.png",
+      "sha256": "bc19f1fce36d627c1647ec80a6a6bc11583554f5270a56f522d55f204fc98c4c"
+    },
+    "images/avatar-catalogue/aa8dbd9f1e91a65fc946.webp": {
+      "source": "generated/beanie__tousled__tan/character.png",
+      "sha256": "aa8dbd9f1e91a65fc9467404472ff1daa9dc89f36665c727f2680f95e29cbb0e"
+    },
+    "images/avatar-catalogue/9f73295b27fcee58b1f6.webp": {
+      "source": "generated/beanie__tousled__brown/character.png",
+      "sha256": "9f73295b27fcee58b1f6bb0b2b189e6140e0d5d8a36ac5ecce2f5f16ce41efbc"
+    },
+    "images/avatar-catalogue/25eff4aad5a1a73741e9.webp": {
+      "source": "generated/beanie__tousled__deep/character.png",
+      "sha256": "25eff4aad5a1a73741e9ef1af95725620dce9ae0a401c6659644067df27f3231"
+    },
+    "images/avatar-catalogue/30731393b78b6b1a5166.webp": {
+      "source": "generated/beanie__tousled__dark/character.png",
+      "sha256": "30731393b78b6b1a516662129aa1ff193907cabe9d4de7a50a07daef60543dc8"
+    },
+    "images/avatar-catalogue/7ae990c25261f0afd5d5.webp": {
+      "source": "generated/beanie__bob__warm/character.png",
+      "sha256": "7ae990c25261f0afd5d52d9d966e82781fa8c1ed64823635decd368164c08f6d"
+    },
+    "images/avatar-catalogue/bb9dc0c6ff2c1f8292f7.webp": {
+      "source": "generated/beanie__bob__tan/character.png",
+      "sha256": "bb9dc0c6ff2c1f8292f7bbebdfec585d62b4ba8b3c2182052715c15290962063"
+    },
+    "images/avatar-catalogue/12e62ef2d3f38d444ae6.webp": {
+      "source": "generated/beanie__bob__brown/character.png",
+      "sha256": "12e62ef2d3f38d444ae69924be7dbe4785420a8244a9d5cad3960cf46e90930a"
+    },
+    "images/avatar-catalogue/8f84a832ead65d566104.webp": {
+      "source": "generated/beanie__bob__deep/character.png",
+      "sha256": "8f84a832ead65d56610437be6d159cd26427b5e2eed70d67b43fadf07610fc31"
+    },
+    "images/avatar-catalogue/91ad2e54606d1a2965de.webp": {
+      "source": "generated/beanie__bob__dark/character.png",
+      "sha256": "91ad2e54606d1a2965debaf09daeef085c1bb9f98b7281b26c543df7d73450eb"
+    },
+    "images/avatar-catalogue/24d09c7a7fa198f6a9a3.webp": {
+      "source": "generated/beanie__waves__warm/character.png",
+      "sha256": "24d09c7a7fa198f6a9a3f4fb59670dcd0a11134875a5c4d22e5e0f8ce9a0955c"
+    },
+    "images/avatar-catalogue/f3c990591854c0886ed8.webp": {
+      "source": "generated/beanie__waves__tan/character.png",
+      "sha256": "f3c990591854c0886ed80dfe91491182907d8d510734027770656fa2e0647fcb"
+    },
+    "images/avatar-catalogue/842a88f612eae40d7b20.webp": {
+      "source": "generated/beanie__waves__brown/character.png",
+      "sha256": "842a88f612eae40d7b20f9f3303b6891ebfe3eb34351932fcfec3f3fdb3e1dd2"
+    },
+    "images/avatar-catalogue/c4d6ef4577ad452917af.webp": {
+      "source": "generated/beanie__waves__deep/character.png",
+      "sha256": "c4d6ef4577ad452917af1727f9a8925b3e141f5f260e28992fa7a6073da3b638"
+    },
+    "images/avatar-catalogue/11402d680611b356de3f.webp": {
+      "source": "generated/beanie__waves__dark/character.png",
+      "sha256": "11402d680611b356de3ff752c04b930143f33cac95a4911a61bec6a05d280e54"
+    },
+    "images/avatar-catalogue/52c9aeb246f89d9d00b8.webp": {
+      "source": "generated/beanie__curls__warm/character.png",
+      "sha256": "52c9aeb246f89d9d00b836ff48431092b313454b9c8cfd3af28f62033e26143b"
+    },
+    "images/avatar-catalogue/189c4b743e6e4919f7dd.webp": {
+      "source": "generated/beanie__curls__tan/character.png",
+      "sha256": "189c4b743e6e4919f7ddcde2521c9a85a719474bb5e7f1b5ccc8ff6e2beb1d17"
+    },
+    "images/avatar-catalogue/04843d51131e3a04d7a7.webp": {
+      "source": "generated/beanie__curls__brown/character.png",
+      "sha256": "04843d51131e3a04d7a77bd8c5012417157a9cbc517ced5eaf3d0dfd1e91e389"
+    },
+    "images/avatar-catalogue/256696f313408be2d87e.webp": {
+      "source": "generated/beanie__curls__deep/character.png",
+      "sha256": "256696f313408be2d87e45759d33a1c682825c4a9ac06d72c48da5d95aabca92"
+    },
+    "images/avatar-catalogue/8b18b905d8f76591a8bf.webp": {
+      "source": "generated/beanie__curls__dark/character.png",
+      "sha256": "8b18b905d8f76591a8bf0676206c71cedaab82cedf06da6ea59885d3ef46ed8c"
+    },
+    "images/avatar-catalogue/2d20a67db8c7813f72dd.webp": {
+      "source": "generated/beanie__bun__warm/character.png",
+      "sha256": "2d20a67db8c7813f72dd0327cf3967885a1e0171da34be3f1a2baa111c4c3802"
+    },
+    "images/avatar-catalogue/f9b25a607268703a0cc9.webp": {
+      "source": "generated/beanie__bun__tan/character.png",
+      "sha256": "f9b25a607268703a0cc9215bdadf56a5a42a61d871b8aa45be35c8abcab4555e"
+    },
+    "images/avatar-catalogue/5b713fac22cf5677ce55.webp": {
+      "source": "generated/beanie__bun__brown/character.png",
+      "sha256": "5b713fac22cf5677ce554a740baa795f5659f870801670d7424c75c81753ca18"
+    },
+    "images/avatar-catalogue/0c64850bf66b9996bf8b.webp": {
+      "source": "generated/beanie__bun__deep/character.png",
+      "sha256": "0c64850bf66b9996bf8b2acc000beb3fb54a5277c45df5f85daca44c4dd819b9"
+    },
+    "images/avatar-catalogue/e514700611ae2791a14b.webp": {
+      "source": "generated/beanie__bun__dark/character.png",
+      "sha256": "e514700611ae2791a14b5a3c54f3f3993cf8197ad19a366fb6727d0a45a57b78"
+    },
+    "images/avatar-catalogue/95af6aff7de94c1c4ae7.webp": {
+      "source": "generated/beanie__pigtails__warm/character.png",
+      "sha256": "95af6aff7de94c1c4ae708c8c98b5f83877ff641790133cfc2c6c22b23cc19c9"
+    },
+    "images/avatar-catalogue/93144f3b59b28f1c9e79.webp": {
+      "source": "generated/beanie__pigtails__tan/character.png",
+      "sha256": "93144f3b59b28f1c9e79649d36bd89fb84c2e7eba2a68b2f7c48dda47becb6cc"
+    },
+    "images/avatar-catalogue/657ac3439362ee1a302f.webp": {
+      "source": "generated/beanie__pigtails__brown/character.png",
+      "sha256": "657ac3439362ee1a302f3c8e3e4ec184919134a0990ac29233c13114be3c4641"
+    },
+    "images/avatar-catalogue/a9d72fab044c9904a035.webp": {
+      "source": "generated/beanie__pigtails__deep/character.png",
+      "sha256": "a9d72fab044c9904a035b81497cfa23d77545422176ea4eed99453ccfa38bb9e"
+    },
+    "images/avatar-catalogue/958e9dd7a4c3f33de73c.webp": {
+      "source": "generated/beanie__pigtails__dark/character.png",
+      "sha256": "958e9dd7a4c3f33de73cad5cadb1480f28bea382ede6c18f8115d468315d7ed4"
+    },
+    "images/avatar-catalogue/26adc3b087100c43c3ad.webp": {
+      "source": "generated/headphones__tousled__warm/character.png",
+      "sha256": "26adc3b087100c43c3ad0b7598025391458da168f67f4f1719cbf6553c8792b1"
+    },
+    "images/avatar-catalogue/2b5e7b0030e0a155ec91.webp": {
+      "source": "generated/headphones__tousled__tan/character.png",
+      "sha256": "2b5e7b0030e0a155ec9169d2e520d186d89823b0bbed79996a587d47477cf6c7"
+    },
+    "images/avatar-catalogue/00c709708ab3c7ce5cb5.webp": {
+      "source": "generated/headphones__tousled__brown/character.png",
+      "sha256": "00c709708ab3c7ce5cb510663f2aaed86177060fa44eea923be63c54bd7cdacd"
+    },
+    "images/avatar-catalogue/c6d8fae12cc098ae09f4.webp": {
+      "source": "generated/headphones__tousled__deep/character.png",
+      "sha256": "c6d8fae12cc098ae09f4d676f6857bee49d7d6b9b3911a061027e83cbb81b102"
+    },
+    "images/avatar-catalogue/869ce3f0d24ac4faa52e.webp": {
+      "source": "generated/headphones__tousled__dark/character.png",
+      "sha256": "869ce3f0d24ac4faa52ea6b6183045eb55aee9ddde84aa1992b22e96294c1b4c"
+    },
+    "images/avatar-catalogue/0579dc0015979b08fd44.webp": {
+      "source": "generated/headphones__bob__warm/character.png",
+      "sha256": "0579dc0015979b08fd443c645f1b2f6adcde0c673844b6a454f0748402ce08da"
+    },
+    "images/avatar-catalogue/effc4b664aa7e553beba.webp": {
+      "source": "generated/headphones__bob__tan/character.png",
+      "sha256": "effc4b664aa7e553bebac2f7bd31189ab61896d489b03bd5a3eb2a4cbe0614d1"
+    },
+    "images/avatar-catalogue/9a57b534e86a3f5b6788.webp": {
+      "source": "generated/headphones__bob__brown/character.png",
+      "sha256": "9a57b534e86a3f5b67886f41a647352ca223a2950a7bacbc82fe88937fab41f8"
+    },
+    "images/avatar-catalogue/107238f924603103bb2b.webp": {
+      "source": "generated/headphones__bob__deep/character.png",
+      "sha256": "107238f924603103bb2bf2c410b84ca3e6660ef6e5c09034a2ded6786dad83cf"
+    },
+    "images/avatar-catalogue/6fd98bf2b842d2de53af.webp": {
+      "source": "generated/headphones__bob__dark/character.png",
+      "sha256": "6fd98bf2b842d2de53af97dbf7884b2c2550036b3c262b4609c57fe6a91f00d2"
+    },
+    "images/avatar-catalogue/33cdb3c74c5e4faabcf4.webp": {
+      "source": "generated/headphones__waves__warm/character.png",
+      "sha256": "33cdb3c74c5e4faabcf44e226f16c0ecc0cfceb38e4f3501b5811aac1b50212e"
+    },
+    "images/avatar-catalogue/ff7cf15d50f127f90fee.webp": {
+      "source": "generated/headphones__waves__tan/character.png",
+      "sha256": "ff7cf15d50f127f90fee31310099307f5f82d6abc6bffd6d0714e22f17ea6d9c"
+    },
+    "images/avatar-catalogue/05a9fa5ae9b32d6f9d70.webp": {
+      "source": "generated/headphones__waves__brown/character.png",
+      "sha256": "05a9fa5ae9b32d6f9d70b5119475c9f612e2efc00befe4113265114812ebfc4b"
+    },
+    "images/avatar-catalogue/0b2eef9d64da87f88e77.webp": {
+      "source": "generated/headphones__waves__deep/character.png",
+      "sha256": "0b2eef9d64da87f88e7792dbeca88c8961188c53098b683405f3ae365dcdcda6"
+    },
+    "images/avatar-catalogue/71c4a21cf45973c3b154.webp": {
+      "source": "generated/headphones__waves__dark/character.png",
+      "sha256": "71c4a21cf45973c3b154430f268122df3a8669518511dc01a54d63381d824721"
+    },
+    "images/avatar-catalogue/8fe7552fe0d070cf3e6a.webp": {
+      "source": "generated/headphones__curls__warm/character.png",
+      "sha256": "8fe7552fe0d070cf3e6a34c0001ce4542899068348ea142315264fd0dae0fb4e"
+    },
+    "images/avatar-catalogue/69b772cf2b3ae826ef86.webp": {
+      "source": "generated/headphones__curls__tan/character.png",
+      "sha256": "69b772cf2b3ae826ef86d33b080e50c9644cba5f1b7a0f86c6aea8a69ce95a06"
+    },
+    "images/avatar-catalogue/439f40da7764149efdf0.webp": {
+      "source": "generated/headphones__curls__brown/character.png",
+      "sha256": "439f40da7764149efdf03ace12579b8b25cea5ee6de65b11d0e958df16e29e2c"
+    },
+    "images/avatar-catalogue/72d5942a8d8822a8445e.webp": {
+      "source": "generated/headphones__curls__deep/character.png",
+      "sha256": "72d5942a8d8822a8445e804d810a5d7a61d1e0408eaec67b423a43cc5922de0a"
+    },
+    "images/avatar-catalogue/d470a16ba548a7216ca8.webp": {
+      "source": "generated/headphones__curls__dark/character.png",
+      "sha256": "d470a16ba548a7216ca8ba51a3ccfe26a61925c677ae053234f626f5258836db"
+    },
+    "images/avatar-catalogue/88b6779d01fc1f2587eb.webp": {
+      "source": "generated/headphones__bun__warm/character.png",
+      "sha256": "88b6779d01fc1f2587eb2e22ad114cba045a45fc837627e8b3d87f45914c6e8c"
+    },
+    "images/avatar-catalogue/25f15350bcbd4e8038be.webp": {
+      "source": "generated/headphones__bun__tan/character.png",
+      "sha256": "25f15350bcbd4e8038be7d1bf2ec6eb24d29bb3c225289f4db5b2feb4fdd0469"
+    },
+    "images/avatar-catalogue/0b14c1426bc93f16408e.webp": {
+      "source": "generated/headphones__bun__brown/character.png",
+      "sha256": "0b14c1426bc93f16408e88d8a9e68ba198ec5ef670e4d53439d5510e807d4865"
+    },
+    "images/avatar-catalogue/ab811a178dc7026c2aa1.webp": {
+      "source": "generated/headphones__bun__deep/character.png",
+      "sha256": "ab811a178dc7026c2aa12f952b135c18a7b9afda4ad8236c2d59036bf3860fe6"
+    },
+    "images/avatar-catalogue/9744d915ab65c361edfe.webp": {
+      "source": "generated/headphones__bun__dark/character.png",
+      "sha256": "9744d915ab65c361edfe0f004ba532c99efd3382f23baad5f3217b2369757602"
+    },
+    "images/avatar-catalogue/f703f96ba6ff86a902ca.webp": {
+      "source": "generated/headphones__pigtails__warm/character.png",
+      "sha256": "f703f96ba6ff86a902cafd35d00029e99d1741f48bc41e00315ff07c4e588db7"
+    },
+    "images/avatar-catalogue/088594e47bea5126d6bb.webp": {
+      "source": "generated/headphones__pigtails__tan/character.png",
+      "sha256": "088594e47bea5126d6bbe5a59c443d5b728b3b891caf678ec91594b5944b1a7e"
+    },
+    "images/avatar-catalogue/15dcbe4f271517398b6f.webp": {
+      "source": "generated/headphones__pigtails__brown/character.png",
+      "sha256": "15dcbe4f271517398b6ff921b6bd8b92c9cf15d04a537f7986f166ce733d5858"
+    },
+    "images/avatar-catalogue/1aa2a51e9b166ba8a991.webp": {
+      "source": "generated/headphones__pigtails__deep/character.png",
+      "sha256": "1aa2a51e9b166ba8a991008c422c3796d2f0a9de4e75b4895221d2048c95b775"
+    },
+    "images/avatar-catalogue/c04154da1c040a542269.webp": {
+      "source": "generated/headphones__pigtails__dark/character.png",
+      "sha256": "c04154da1c040a5422694bc35a027feda6084e812d261817524e77f3d1283fa8"
+    },
+    "images/avatar-catalogue/fe2bda78934b3fabfb7b.webp": {
+      "source": "generated/crossbody__hoodie_trousers__warm/character.png",
+      "sha256": "fe2bda78934b3fabfb7b9607744ecbd08e8bfc8a1fd3e9dcf0bfb31a83ca4a26"
+    },
+    "images/avatar-catalogue/64f58846e0d3166a907b.webp": {
+      "source": "generated/crossbody__hoodie_trousers__tan/character.png",
+      "sha256": "64f58846e0d3166a907b8acbaf51a08c0ce8d0b43dea5d26b36d571b1da05ac3"
+    },
+    "images/avatar-catalogue/a9849ebd6cf798d6aadc.webp": {
+      "source": "generated/crossbody__hoodie_trousers__brown/character.png",
+      "sha256": "a9849ebd6cf798d6aadc4df94eec13ac018a962baede34a1f4b3b81e25dedbbb"
+    },
+    "images/avatar-catalogue/8acd273ecd77a4ef5d3c.webp": {
+      "source": "generated/crossbody__hoodie_trousers__deep/character.png",
+      "sha256": "8acd273ecd77a4ef5d3cfa87526f6e8d58bdfd8665bcc961c94fbb13a7c2c5b8"
+    },
+    "images/avatar-catalogue/44ff8633501e1fca9888.webp": {
+      "source": "generated/crossbody__hoodie_trousers__dark/character.png",
+      "sha256": "44ff8633501e1fca9888d688a66b1ad71e2a0337792871066c979534535e030b"
+    },
+    "images/avatar-catalogue/d037feb31c8bec84d162.webp": {
+      "source": "generated/crossbody__jacket__warm/character.png",
+      "sha256": "d037feb31c8bec84d1627fc9342c54c09e3342b5595ad2a912e9965898306739"
+    },
+    "images/avatar-catalogue/84ae10ac00b86e2f091b.webp": {
+      "source": "generated/crossbody__jacket__tan/character.png",
+      "sha256": "84ae10ac00b86e2f091b66e7876063ee9073c8472085795070cbc018a2cf9533"
+    },
+    "images/avatar-catalogue/1ffddcdccbabb63e6d89.webp": {
+      "source": "generated/crossbody__jacket__brown/character.png",
+      "sha256": "1ffddcdccbabb63e6d8982072cc64c9e70019c13a3654e7a8a2035a9c5d09faa"
+    },
+    "images/avatar-catalogue/5156442df7eac65387f0.webp": {
+      "source": "generated/crossbody__jacket__deep/character.png",
+      "sha256": "5156442df7eac65387f0de31a89b493b84bd014b126c69dd3d97012013f5884c"
+    },
+    "images/avatar-catalogue/ed0d61df54d4f3cd690e.webp": {
+      "source": "generated/crossbody__jacket__dark/character.png",
+      "sha256": "ed0d61df54d4f3cd690e5b6e4dda7334e2bf0b9da9cc021907faf030cf9b76ba"
+    },
+    "images/avatar-catalogue/0d1d25bf4c0d598bab01.webp": {
+      "source": "generated/crossbody__shorts__warm/character.png",
+      "sha256": "0d1d25bf4c0d598bab0156b485ad540313807c46073b7bb76cd5e64265b19f41"
+    },
+    "images/avatar-catalogue/09fa78cb6885bb9b82e5.webp": {
+      "source": "generated/crossbody__shorts__tan/character.png",
+      "sha256": "09fa78cb6885bb9b82e5c9f190c21e8094de28b3720e64f9159c09252e03d606"
+    },
+    "images/avatar-catalogue/0499cdf38183d18d1bef.webp": {
+      "source": "generated/crossbody__shorts__brown/character.png",
+      "sha256": "0499cdf38183d18d1befa28189df19483aba9dc1fe9136b77531e4e8e8b1b483"
+    },
+    "images/avatar-catalogue/d4cb119ae9d48ac40e77.webp": {
+      "source": "generated/crossbody__shorts__deep/character.png",
+      "sha256": "d4cb119ae9d48ac40e77d42371a15eb231563b337246ff5a831f527bae7107f7"
+    },
+    "images/avatar-catalogue/ba95ec1825ba3696f616.webp": {
+      "source": "generated/crossbody__shorts__dark/character.png",
+      "sha256": "ba95ec1825ba3696f616511c011675b617e2dbf72954492d179ad92f553ab6a5"
+    },
+    "images/avatar-catalogue/baf0704805102a0bf687.webp": {
+      "source": "generated/crossbody__skirt__warm/character.png",
+      "sha256": "baf0704805102a0bf6871064c7ce8ab26a939b0531a79dac39ed7139bf3c52d5"
+    },
+    "images/avatar-catalogue/397a9eed3786e7d7d103.webp": {
+      "source": "generated/crossbody__skirt__tan/character.png",
+      "sha256": "397a9eed3786e7d7d10388e43408dc7fc33aa89634baabc326ecad8fd9d94f5f"
+    },
+    "images/avatar-catalogue/4e3e2dc77e739f995c36.webp": {
+      "source": "generated/crossbody__skirt__brown/character.png",
+      "sha256": "4e3e2dc77e739f995c36791ed8cc041f54c0bc62912fc5aaaeed761b1a955aab"
+    },
+    "images/avatar-catalogue/5dea12404a41ab9695be.webp": {
+      "source": "generated/crossbody__skirt__deep/character.png",
+      "sha256": "5dea12404a41ab9695be3827102e7193a0c6a96a86a017794b5043abd649d22f"
+    },
+    "images/avatar-catalogue/0a1769e396d6c14e2591.webp": {
+      "source": "generated/crossbody__skirt__dark/character.png",
+      "sha256": "0a1769e396d6c14e25912be23bec9c383e08bdce952705f298f4bdf402b19870"
+    },
+    "images/avatar-catalogue/867acf5e6c1ef904e34a.webp": {
+      "source": "generated/crossbody__shoes__warm/character.png",
+      "sha256": "867acf5e6c1ef904e34a1c5af30b364464ef8beb8f1bb4258715ec0fa23f467e"
+    },
+    "images/avatar-catalogue/4dbc6b6674d0a1f9af4b.webp": {
+      "source": "generated/crossbody__shoes__tan/character.png",
+      "sha256": "4dbc6b6674d0a1f9af4b851189114d983c57bab50d5f63791fac2099a8f0dfbd"
+    },
+    "images/avatar-catalogue/b21558441b4d6ec074ca.webp": {
+      "source": "generated/crossbody__shoes__brown/character.png",
+      "sha256": "b21558441b4d6ec074ca2b41452d6d74ea5ec5ed88e2e0ea5854a4f3b84d94c6"
+    },
+    "images/avatar-catalogue/c5b56d7908eb77a356aa.webp": {
+      "source": "generated/crossbody__shoes__deep/character.png",
+      "sha256": "c5b56d7908eb77a356aa58fab4f1a1735c980c99dc8a867dfe80f7350d3ca844"
+    },
+    "images/avatar-catalogue/632cc587d42c4599b735.webp": {
+      "source": "generated/crossbody__shoes__dark/character.png",
+      "sha256": "632cc587d42c4599b735496fe6532d6b5063b241d957efa2f6d8637b1b085890"
+    },
+    "images/avatar-catalogue/b9c0c41a445d2203bb98.webp": {
+      "source": "generated/crossbody__teal_tan__warm/character.png",
+      "sha256": "b9c0c41a445d2203bb98d7ef6a0388c0f6c1d0a30a043faf420c515e58ef8f45"
+    },
+    "images/avatar-catalogue/cb16c86dd34bb25d0598.webp": {
+      "source": "generated/crossbody__teal_tan__tan/character.png",
+      "sha256": "cb16c86dd34bb25d0598581c3773a2cafa125dee7fedc4ea7263409684003fd1"
+    },
+    "images/avatar-catalogue/3f00318dc0556d6343e6.webp": {
+      "source": "generated/crossbody__teal_tan__brown/character.png",
+      "sha256": "3f00318dc0556d6343e65ccd4f2046e6d53f36061482cfd82ec4e8bcee75cbe0"
+    },
+    "images/avatar-catalogue/e56a3ce6f175be757678.webp": {
+      "source": "generated/crossbody__teal_tan__deep/character.png",
+      "sha256": "e56a3ce6f175be757678b5898cfe4dba6072abf8d2a1dfbcb68163a95522118e"
+    },
+    "images/avatar-catalogue/723761615ba88c57a3e7.webp": {
+      "source": "generated/crossbody__teal_tan__dark/character.png",
+      "sha256": "723761615ba88c57a3e771dc72638f8d044b830db81ad89e318df3892c1e8cea"
+    },
+    "images/avatar-catalogue/eeae7c8f49b71ecfc5ef.webp": {
+      "source": "generated/crossbody__blue_charcoal__warm/character.png",
+      "sha256": "eeae7c8f49b71ecfc5ef6b78c74163d7471d78ced9a0e282b5416e8ef64674f9"
+    },
+    "images/avatar-catalogue/9acbbd116698b98c0985.webp": {
+      "source": "generated/crossbody__blue_charcoal__tan/character.png",
+      "sha256": "9acbbd116698b98c0985f1a4c7d63ddeb3ffea84acf7723f9473da69b220c582"
+    },
+    "images/avatar-catalogue/539022bc471e29bc3c43.webp": {
+      "source": "generated/crossbody__blue_charcoal__brown/character.png",
+      "sha256": "539022bc471e29bc3c430ba15e739b870d925f4bcf857a449bfc35d9a09cd66c"
+    },
+    "images/avatar-catalogue/662df8235ac7976d1dbf.webp": {
+      "source": "generated/crossbody__blue_charcoal__deep/character.png",
+      "sha256": "662df8235ac7976d1dbf49808aacfd06ae81264d7d888af5607aacbce47b12ae"
+    },
+    "images/avatar-catalogue/90c58e06cac86df909a9.webp": {
+      "source": "generated/crossbody__blue_charcoal__dark/character.png",
+      "sha256": "90c58e06cac86df909a980351a43940e4f46c0ccb4330f3383d6b9767c2825c3"
+    },
+    "images/avatar-catalogue/bc8339eb95fcb1d5fac7.webp": {
+      "source": "generated/crossbody__striped_blue__warm/character.png",
+      "sha256": "bc8339eb95fcb1d5fac7b9e68f1728414cd4d3c1293cb21a2812d380aee20dbf"
+    },
+    "images/avatar-catalogue/6914194f46c1da32b746.webp": {
+      "source": "generated/crossbody__striped_blue__tan/character.png",
+      "sha256": "6914194f46c1da32b746bd8fc5315f721c47d0c76b2ae7ef4679889aed874a46"
+    },
+    "images/avatar-catalogue/6bd3601a2b75d8c3236c.webp": {
+      "source": "generated/crossbody__striped_blue__brown/character.png",
+      "sha256": "6bd3601a2b75d8c3236cf837764b99bd67914084549900a6e05fe932fc69fc94"
+    },
+    "images/avatar-catalogue/0d1793750c91582b23b5.webp": {
+      "source": "generated/crossbody__striped_blue__deep/character.png",
+      "sha256": "0d1793750c91582b23b5cba806f2837660d430c56809966dee5f96a19f52b85c"
+    },
+    "images/avatar-catalogue/529126ea5378a34a4a8d.webp": {
+      "source": "generated/crossbody__striped_blue__dark/character.png",
+      "sha256": "529126ea5378a34a4a8d3f10b4697174f1ffa3ecb763b50f1c3059756cbdd58c"
+    },
+    "images/avatar-catalogue/17944cead64085e18126.webp": {
+      "source": "generated/crossbody__dark_hoodie__warm/character.png",
+      "sha256": "17944cead64085e18126bb15270c33389ec55061ab2865061aee4937fbb3a423"
+    },
+    "images/avatar-catalogue/98351f2c62b429db0910.webp": {
+      "source": "generated/crossbody__dark_hoodie__tan/character.png",
+      "sha256": "98351f2c62b429db091000cbf30e3465a8b857a4f321d3a4dee81bb90c435f8f"
+    },
+    "images/avatar-catalogue/e5063da466d20f55f94d.webp": {
+      "source": "generated/crossbody__dark_hoodie__brown/character.png",
+      "sha256": "e5063da466d20f55f94d7d5fa8e465d65f854c9e7e3db9d40822c6b2be6544ee"
+    },
+    "images/avatar-catalogue/960972855ea5db580696.webp": {
+      "source": "generated/crossbody__dark_hoodie__deep/character.png",
+      "sha256": "960972855ea5db5806966be2a5279336d29a9b8cc064f1e6d7d5f8eb903cb976"
+    },
+    "images/avatar-catalogue/eec4bf658665921501c5.webp": {
+      "source": "generated/crossbody__dark_hoodie__dark/character.png",
+      "sha256": "eec4bf658665921501c57f003254a66dac9261d7e7d58edf82f5bfea5cc5b10d"
+    },
+    "images/avatar-catalogue/61493c130c081fac555c.webp": {
+      "source": "generated/crossbody__coral_sweatshirt__warm/character.png",
+      "sha256": "61493c130c081fac555ce1b656241e5d9818b8b7f0c74336ef851395fc8cb7dd"
+    },
+    "images/avatar-catalogue/7e78c76ae3516d36194f.webp": {
+      "source": "generated/crossbody__coral_sweatshirt__tan/character.png",
+      "sha256": "7e78c76ae3516d36194fff045cb8d8fe7f8ce80158878e23f74d45b846ff529f"
+    },
+    "images/avatar-catalogue/f0d25ee8205889c4d925.webp": {
+      "source": "generated/crossbody__coral_sweatshirt__brown/character.png",
+      "sha256": "f0d25ee8205889c4d925be473d1020d08a94f932b319a4643b03304e9a912b69"
+    },
+    "images/avatar-catalogue/0f47efd9df39f8cb877d.webp": {
+      "source": "generated/crossbody__coral_sweatshirt__deep/character.png",
+      "sha256": "0f47efd9df39f8cb877d6d326d6954ed95502e2248ef56a0a9262e63eb28ba06"
+    },
+    "images/avatar-catalogue/ae8a6f2167d4583f7280.webp": {
+      "source": "generated/crossbody__coral_sweatshirt__dark/character.png",
+      "sha256": "ae8a6f2167d4583f72808bca19397386c02e6c9cb2e103aa0cc98d0f47708e56"
+    },
+    "images/avatar-catalogue/290d1b53d9207a20cf57.webp": {
+      "source": "generated/crossbody__cream_cardigan__warm/character.png",
+      "sha256": "290d1b53d9207a20cf5724ccadb52a30b10c05119c5b3e94cb190f4339c8ee98"
+    },
+    "images/avatar-catalogue/6edde3096271bfadd015.webp": {
+      "source": "generated/crossbody__cream_cardigan__tan/character.png",
+      "sha256": "6edde3096271bfadd015ca8572b6324f7cb9463f893be17da87f8d9ad1631e93"
+    },
+    "images/avatar-catalogue/c3350696f7c6851daa5a.webp": {
+      "source": "generated/crossbody__cream_cardigan__brown/character.png",
+      "sha256": "c3350696f7c6851daa5a2b12ce2ce6a431de1da252c02dcbfe3310636b3bcdf0"
+    },
+    "images/avatar-catalogue/b069a94b067ebf2c683f.webp": {
+      "source": "generated/crossbody__cream_cardigan__deep/character.png",
+      "sha256": "b069a94b067ebf2c683ff6bf6c21e795fa5619abd768e91a23105eb22e3e4b50"
+    },
+    "images/avatar-catalogue/136167b16efce27cfbc5.webp": {
+      "source": "generated/crossbody__cream_cardigan__dark/character.png",
+      "sha256": "136167b16efce27cfbc5d195f5bf6899333b068db50fe10a5bc7d22b9f1db5d9"
+    },
+    "images/avatar-catalogue/8e9d8b46357e516da796.webp": {
+      "source": "generated/crossbody__tan_shorts__warm/character.png",
+      "sha256": "8e9d8b46357e516da796a35f2c5080e7f0f481db966f177c7951bb989d99b23b"
+    },
+    "images/avatar-catalogue/e4ba9594cc58bf3b7dff.webp": {
+      "source": "generated/crossbody__tan_shorts__tan/character.png",
+      "sha256": "e4ba9594cc58bf3b7dff429d96162eae92ea7354ff5f3b99099ed1f0f485ea8a"
+    },
+    "images/avatar-catalogue/d90f52fbd15223bdf030.webp": {
+      "source": "generated/crossbody__tan_shorts__brown/character.png",
+      "sha256": "d90f52fbd15223bdf030ceb0532d88423025b55eb49049126b3249fa60a4e53b"
+    },
+    "images/avatar-catalogue/182d7ed6d87a988a6543.webp": {
+      "source": "generated/crossbody__tan_shorts__deep/character.png",
+      "sha256": "182d7ed6d87a988a6543172f2380e872d710f8506ad3e9d9be1e337aacd83013"
+    },
+    "images/avatar-catalogue/646f06f78d339a1b44fc.webp": {
+      "source": "generated/crossbody__tan_shorts__dark/character.png",
+      "sha256": "646f06f78d339a1b44fca8359fa1f892908c1b4dd36f9c106ca7f5819d080db9"
+    },
+    "images/avatar-catalogue/de86387168e875a18858.webp": {
+      "source": "generated/crossbody__dark_trousers__warm/character.png",
+      "sha256": "de86387168e875a18858c8c8fd447b72f2fae674d8cb6e654689bfccb50bdbfc"
+    },
+    "images/avatar-catalogue/e018d19f2c495d1e9863.webp": {
+      "source": "generated/crossbody__dark_trousers__tan/character.png",
+      "sha256": "e018d19f2c495d1e9863dd5fa83cec224570419b52ee4969316ec6e5f31c3ebf"
+    },
+    "images/avatar-catalogue/a5a8ae67526030cc2f7b.webp": {
+      "source": "generated/crossbody__dark_trousers__brown/character.png",
+      "sha256": "a5a8ae67526030cc2f7b570864dc99e93c3d1ae674bbb1c875f63e01f7c701d6"
+    },
+    "images/avatar-catalogue/63a49b06f6f7a56289de.webp": {
+      "source": "generated/crossbody__dark_trousers__deep/character.png",
+      "sha256": "63a49b06f6f7a56289deaa9a66549fd4646563882886cd3c06fd60679e867668"
+    },
+    "images/avatar-catalogue/356a9400a4102e37b782.webp": {
+      "source": "generated/crossbody__dark_trousers__dark/character.png",
+      "sha256": "356a9400a4102e37b7823a1aaacb2683cc036081f3abfaf13ed34d6e82702205"
+    },
+    "images/avatar-catalogue/701c330d9b61f029c0df.webp": {
+      "source": "generated/crossbody__cream_skirt__warm/character.png",
+      "sha256": "701c330d9b61f029c0df8d36bb5714b7a1ffda49f953bb24547163fa0bf313a1"
+    },
+    "images/avatar-catalogue/f4a818877528b74c44b5.webp": {
+      "source": "generated/crossbody__cream_skirt__tan/character.png",
+      "sha256": "f4a818877528b74c44b544ca2b867a47f1d2adb700660b93919d988959958f0f"
+    },
+    "images/avatar-catalogue/5c0c5686a9d4c88bdf65.webp": {
+      "source": "generated/crossbody__cream_skirt__brown/character.png",
+      "sha256": "5c0c5686a9d4c88bdf651f0d22a0321aa3f7cd1d00f7dd6e50a186e623285507"
+    },
+    "images/avatar-catalogue/a384a86351e00eea85c3.webp": {
+      "source": "generated/crossbody__cream_skirt__deep/character.png",
+      "sha256": "a384a86351e00eea85c3f749a546ae0e8bf7cecc830b1f4dd68f8872d18a469c"
+    },
+    "images/avatar-catalogue/cf67754961295424aa11.webp": {
+      "source": "generated/crossbody__cream_skirt__dark/character.png",
+      "sha256": "cf67754961295424aa119dd7a6ab05b51557a680a1b3affb34870ac3d9a28bda"
+    },
+    "images/avatar-catalogue/c9c09816e6d39405a7d2.webp": {
+      "source": "generated/crossbody__brown_shoes__warm/character.png",
+      "sha256": "c9c09816e6d39405a7d2ebeaa2ce14881c2df9acc52be369d4343cbe8fdf90fd"
+    },
+    "images/avatar-catalogue/b3c73ba006077d1c4f6d.webp": {
+      "source": "generated/crossbody__brown_shoes__tan/character.png",
+      "sha256": "b3c73ba006077d1c4f6de8a28b19cc8c45cd8e26260da94dfeb698f265f743ec"
+    },
+    "images/avatar-catalogue/8247e3c5d2a29def9c72.webp": {
+      "source": "generated/crossbody__brown_shoes__brown/character.png",
+      "sha256": "8247e3c5d2a29def9c7211b25208a1c511a83c02f73ab7bb67a25d530fa8817a"
+    },
+    "images/avatar-catalogue/98b36b7c9b547c1d2dfa.webp": {
+      "source": "generated/crossbody__brown_shoes__deep/character.png",
+      "sha256": "98b36b7c9b547c1d2dfa54d6f99d3c2c8aa7f84c902b8bcf9c4b5b49a39120ee"
+    },
+    "images/avatar-catalogue/0fb500d2402d88045af4.webp": {
+      "source": "generated/crossbody__brown_shoes__dark/character.png",
+      "sha256": "0fb500d2402d88045af4175be0b9e32fe92489a881130486989cb95ac095b654"
+    },
+    "images/avatar-catalogue/f039d2d83b3c301203a6.webp": {
+      "source": "generated/sunhat__tousled__warm/character.png",
+      "sha256": "f039d2d83b3c301203a629bc79d82e448bb1de2510072482f0b600c745cffb7c"
+    },
+    "images/avatar-catalogue/f54cc20f4c54c22a557b.webp": {
+      "source": "generated/sunhat__tousled__tan/character.png",
+      "sha256": "f54cc20f4c54c22a557b6b629f4ba13861276a3189989741074642a5b4ee98e8"
+    },
+    "images/avatar-catalogue/7982c13f71f0c6a9629b.webp": {
+      "source": "generated/sunhat__tousled__brown/character.png",
+      "sha256": "7982c13f71f0c6a9629b485ddc84f95a86ec30be04d195c9db46e4594038ad52"
+    },
+    "images/avatar-catalogue/65940a59057578c6f945.webp": {
+      "source": "generated/sunhat__tousled__deep/character.png",
+      "sha256": "65940a59057578c6f945316f52554a3e4d6744c1f15002326760ff283ee50ea6"
+    },
+    "images/avatar-catalogue/c3efa29aa1921e3393bb.webp": {
+      "source": "generated/sunhat__tousled__dark/character.png",
+      "sha256": "c3efa29aa1921e3393bb86cfcfbd634d2dd1e001172568ce398bcc1c97edf6cf"
+    },
+    "images/avatar-catalogue/944160318480d0e86404.webp": {
+      "source": "generated/sunhat__bob__warm/character.png",
+      "sha256": "944160318480d0e86404f0672b937367314a4e73a232449539e64a7d809500a9"
+    },
+    "images/avatar-catalogue/2c90bac83545456c70c2.webp": {
+      "source": "generated/sunhat__bob__tan/character.png",
+      "sha256": "2c90bac83545456c70c27f50eff025c15b66916aeb54981670ccb6bd6a129854"
+    },
+    "images/avatar-catalogue/4bab78bba9655d465030.webp": {
+      "source": "generated/sunhat__bob__brown/character.png",
+      "sha256": "4bab78bba9655d465030b8fa7f2f86ab783ef350b60cb9aab2bf199c92c5f994"
+    },
+    "images/avatar-catalogue/cfcb9a5a7d423254f2f1.webp": {
+      "source": "generated/sunhat__bob__deep/character.png",
+      "sha256": "cfcb9a5a7d423254f2f1b52caab160bcaa4810927fbeef287f4f773243bb37f3"
+    },
+    "images/avatar-catalogue/c9cd3a7b12d1f247ccc8.webp": {
+      "source": "generated/sunhat__bob__dark/character.png",
+      "sha256": "c9cd3a7b12d1f247ccc80fd916bea91167929019537a16f18dc92c330ece4bad"
+    },
+    "images/avatar-catalogue/4682ec2c178bfc020a16.webp": {
+      "source": "generated/sunhat__waves__warm/character.png",
+      "sha256": "4682ec2c178bfc020a16eb4b70550a80c9058aa70d0dbec8f4e5963e88815a64"
+    },
+    "images/avatar-catalogue/a4b64f891ce4c184a5ba.webp": {
+      "source": "generated/sunhat__waves__tan/character.png",
+      "sha256": "a4b64f891ce4c184a5ba847341afbd2050471e77bbde31dd697c3ce592745116"
+    },
+    "images/avatar-catalogue/f28b9762b023182478df.webp": {
+      "source": "generated/sunhat__waves__brown/character.png",
+      "sha256": "f28b9762b023182478df06f9a2a2b9ae97c95f3776aacff8bc250946b43b50ba"
+    },
+    "images/avatar-catalogue/3a96e20fc5ee62f018f1.webp": {
+      "source": "generated/sunhat__waves__deep/character.png",
+      "sha256": "3a96e20fc5ee62f018f1cc8895591a1b2d3e8a88382a6720ae5c168424534329"
+    },
+    "images/avatar-catalogue/1fc31af2672968a23e8e.webp": {
+      "source": "generated/sunhat__waves__dark/character.png",
+      "sha256": "1fc31af2672968a23e8e209c1a6fce247c5cf024fda810739aa0bb2e0301be22"
+    },
+    "images/avatar-catalogue/80c921d4b02f2f612808.webp": {
+      "source": "generated/sunhat__curls__warm/character.png",
+      "sha256": "80c921d4b02f2f612808fbc7937027e4dd5797b6ff0b19ebc02957a853477ec5"
+    },
+    "images/avatar-catalogue/9e25487313c086b35ac9.webp": {
+      "source": "generated/sunhat__curls__tan/character.png",
+      "sha256": "9e25487313c086b35ac98af2f88eaf1b8e86a08957edc737474b424f82725be8"
+    },
+    "images/avatar-catalogue/177410ceaf92b576ffb6.webp": {
+      "source": "generated/sunhat__curls__brown/character.png",
+      "sha256": "177410ceaf92b576ffb6771368cce8b51e3918230c908125af6fa7c3534b2686"
+    },
+    "images/avatar-catalogue/e423c0bc7bdaeaaaf01b.webp": {
+      "source": "generated/sunhat__curls__deep/character.png",
+      "sha256": "e423c0bc7bdaeaaaf01b4051562ef14c783d5b3e3a477d868deb69cb3a874445"
+    },
+    "images/avatar-catalogue/fb6b815c4a2575e550c0.webp": {
+      "source": "generated/sunhat__curls__dark/character.png",
+      "sha256": "fb6b815c4a2575e550c044443fa0b4f77613bb028b032506e989c32b1a4b5d10"
+    },
+    "images/avatar-catalogue/8153ce8c2fc52121fe97.webp": {
+      "source": "generated/sunhat__bun__warm/character.png",
+      "sha256": "8153ce8c2fc52121fe970b6a86961188e9952c25fbee6800ced4c730968c26ea"
+    },
+    "images/avatar-catalogue/52af8b42690f6ecce8ff.webp": {
+      "source": "generated/sunhat__bun__tan/character.png",
+      "sha256": "52af8b42690f6ecce8ffcda6cc427775aa51ed400bc4d36af253457c236f7ad3"
+    },
+    "images/avatar-catalogue/7a42ee3c279c5a45e4ef.webp": {
+      "source": "generated/sunhat__bun__brown/character.png",
+      "sha256": "7a42ee3c279c5a45e4ef96966926ce229f80955b8b62125b395d3c094edd0eb6"
+    },
+    "images/avatar-catalogue/12231dfcc86cab4cb677.webp": {
+      "source": "generated/sunhat__bun__deep/character.png",
+      "sha256": "12231dfcc86cab4cb677cb120eabe56a4a81f680013d24d64460f74b1737508a"
+    },
+    "images/avatar-catalogue/af9a8de1471f912378d0.webp": {
+      "source": "generated/sunhat__bun__dark/character.png",
+      "sha256": "af9a8de1471f912378d0cab6492e352f70cfdf37b7aeee48d371e04b2233aa0c"
+    },
+    "images/avatar-catalogue/0456ba2c7bb33d3c676e.webp": {
+      "source": "generated/sunhat__pigtails__warm/character.png",
+      "sha256": "0456ba2c7bb33d3c676e9c2afc38c1c9b3ca253a89d15b7158c2c18e72494616"
+    },
+    "images/avatar-catalogue/00581b433ef2b6bb5fd9.webp": {
+      "source": "generated/sunhat__pigtails__tan/character.png",
+      "sha256": "00581b433ef2b6bb5fd9a679fd671d738b493cd27bad378c1d6ad640be1f128a"
+    },
+    "images/avatar-catalogue/5c27a30f2519e976c83f.webp": {
+      "source": "generated/sunhat__pigtails__brown/character.png",
+      "sha256": "5c27a30f2519e976c83fbfe7132db665cc39a52d89888d5ed4394af1e2e2c426"
+    },
+    "images/avatar-catalogue/f3b854ecb12cc7a18dad.webp": {
+      "source": "generated/sunhat__pigtails__deep/character.png",
+      "sha256": "f3b854ecb12cc7a18dad772b3e2160f2926bfbcbc264e3eb729ca8a9aa6ba41a"
+    },
+    "images/avatar-catalogue/166b34c34956ac76d870.webp": {
+      "source": "generated/sunhat__pigtails__dark/character.png",
+      "sha256": "166b34c34956ac76d87032dcac78db80ba0a67f3af9e02f6051c340952cc2811"
+    },
+    "images/avatar-catalogue/0f74f426e684eb6c04d2.webp": {
+      "source": "generated/green_cap__tousled__warm/character.png",
+      "sha256": "0f74f426e684eb6c04d214939eb3242681179703799357c97c152f621bfb66b3"
+    },
+    "images/avatar-catalogue/3e680b913c809a046bb9.webp": {
+      "source": "generated/green_cap__tousled__tan/character.png",
+      "sha256": "3e680b913c809a046bb9d44e65197b4aece77362e7cef1239fd15c4f0c9c5841"
+    },
+    "images/avatar-catalogue/9860bd1b7d63da862e2b.webp": {
+      "source": "generated/green_cap__tousled__brown/character.png",
+      "sha256": "9860bd1b7d63da862e2b9367d272d92d08cc33fd5d26c17bc28e6d1a55068989"
+    },
+    "images/avatar-catalogue/50a0f27c5b3179b9ce4e.webp": {
+      "source": "generated/green_cap__tousled__deep/character.png",
+      "sha256": "50a0f27c5b3179b9ce4e734a352be75ae6da03b6f6af8081a415ded4ac2c8790"
+    },
+    "images/avatar-catalogue/e21bdd54fab5b89fee96.webp": {
+      "source": "generated/green_cap__tousled__dark/character.png",
+      "sha256": "e21bdd54fab5b89fee9676517651e70fee09d221407eee015636cd9c784e129f"
+    },
+    "images/avatar-catalogue/4d2291b36ee4a1f931cf.webp": {
+      "source": "generated/green_cap__bob__warm/character.png",
+      "sha256": "4d2291b36ee4a1f931cf2fc8e671f4811274c9c5b678d58985e57c8ea921d73e"
+    },
+    "images/avatar-catalogue/3df2172e6c5922ff7924.webp": {
+      "source": "generated/green_cap__bob__tan/character.png",
+      "sha256": "3df2172e6c5922ff792419f46c34e63b6bc15faffde3047f07343a088fa08962"
+    },
+    "images/avatar-catalogue/f02edd9408b12b0221af.webp": {
+      "source": "generated/green_cap__bob__brown/character.png",
+      "sha256": "f02edd9408b12b0221af640d3e8d03aee3d11f5c786bb3d36463d02d5b89c266"
+    },
+    "images/avatar-catalogue/d5199e3efe499d143945.webp": {
+      "source": "generated/green_cap__bob__deep/character.png",
+      "sha256": "d5199e3efe499d1439451be69d8caefe200e60c8b4b4dd0f49b4f51e345820e0"
+    },
+    "images/avatar-catalogue/20bc2ebda012fdacbedd.webp": {
+      "source": "generated/green_cap__bob__dark/character.png",
+      "sha256": "20bc2ebda012fdacbedde0bd2bf533b39ba11ad6357b4c1baeffa34bf45901f2"
+    },
+    "images/avatar-catalogue/141f69aeba08ba92feb0.webp": {
+      "source": "generated/green_cap__waves__warm/character.png",
+      "sha256": "141f69aeba08ba92feb0d521d655c47af28c693f546ef502ff1d344f87a3cb5a"
+    },
+    "images/avatar-catalogue/56e950c5959501ab2868.webp": {
+      "source": "generated/green_cap__waves__tan/character.png",
+      "sha256": "56e950c5959501ab28684b1bdaac4b8a654cad3ff7b4e076b7e4c684f255a1e6"
+    },
+    "images/avatar-catalogue/452af12a5f4a09794eab.webp": {
+      "source": "generated/green_cap__waves__brown/character.png",
+      "sha256": "452af12a5f4a09794eab4169a842ffa61f14d56a917b3a8a8ea71c2c416ddbfd"
+    },
+    "images/avatar-catalogue/d826135dfa48b68d5358.webp": {
+      "source": "generated/green_cap__waves__deep/character.png",
+      "sha256": "d826135dfa48b68d5358d49c3dda942b075200d9c9365c4a5c927ac855c7d8fc"
+    },
+    "images/avatar-catalogue/c907ff2032a8dd495fb5.webp": {
+      "source": "generated/green_cap__waves__dark/character.png",
+      "sha256": "c907ff2032a8dd495fb5ccf9d8212b18e645763935af910c948e5534534140a7"
+    },
+    "images/avatar-catalogue/ea0d320b5565e0772d3b.webp": {
+      "source": "generated/green_cap__curls__warm/character.png",
+      "sha256": "ea0d320b5565e0772d3bdd613f7168635e96e36a582d2d1924103a11b8af7f0e"
+    },
+    "images/avatar-catalogue/0f31edd7cee862c0e7df.webp": {
+      "source": "generated/green_cap__curls__tan/character.png",
+      "sha256": "0f31edd7cee862c0e7df0ca9a38e208c2d48f837fe926f474492ed3fe198c7ea"
+    },
+    "images/avatar-catalogue/234715d336e81158f27e.webp": {
+      "source": "generated/green_cap__curls__brown/character.png",
+      "sha256": "234715d336e81158f27e14de52041e8a406f57ed70b2806356406ccd3a336243"
+    },
+    "images/avatar-catalogue/f68aff986b7783e236a3.webp": {
+      "source": "generated/green_cap__curls__deep/character.png",
+      "sha256": "f68aff986b7783e236a345eb92abf3c00cd1287586a930f88f6795171dec99a9"
+    },
+    "images/avatar-catalogue/d66bb833d7fa9b3b829e.webp": {
+      "source": "generated/green_cap__curls__dark/character.png",
+      "sha256": "d66bb833d7fa9b3b829ebfdb372f27d84ce0664aaa608f189369a2289748507d"
+    },
+    "images/avatar-catalogue/36f5ba3f385a478a768e.webp": {
+      "source": "generated/green_cap__bun__warm/character.png",
+      "sha256": "36f5ba3f385a478a768eac597b8a29e2f7926cc42c7d49380c43cf348eeac2ea"
+    },
+    "images/avatar-catalogue/1b06b9521024c82d257e.webp": {
+      "source": "generated/green_cap__bun__tan/character.png",
+      "sha256": "1b06b9521024c82d257e480e7d0fc62a38c55887f0fc7dc857ecccb8ffeb1d8b"
+    },
+    "images/avatar-catalogue/bf652091f786bde55e85.webp": {
+      "source": "generated/green_cap__bun__brown/character.png",
+      "sha256": "bf652091f786bde55e859ed71e6e0cc94bed9725d84e3ab4b2962986d407400c"
+    },
+    "images/avatar-catalogue/837f778649ce044c7ef3.webp": {
+      "source": "generated/green_cap__bun__deep/character.png",
+      "sha256": "837f778649ce044c7ef328dc2fbb62e335f07647ab73dcbc62792f3a98f79cbb"
+    },
+    "images/avatar-catalogue/785d01d24ef5cdb01336.webp": {
+      "source": "generated/green_cap__bun__dark/character.png",
+      "sha256": "785d01d24ef5cdb013362fe1389e153fdfad6d5d355c30f5abb9d5e8fde2bff9"
+    },
+    "images/avatar-catalogue/cc10cd07e0ee246f0f8e.webp": {
+      "source": "generated/green_cap__pigtails__warm/character.png",
+      "sha256": "cc10cd07e0ee246f0f8eaae6c4c355025aea01c81a367d93260a0b8a9ae9400c"
+    },
+    "images/avatar-catalogue/874ece31483fb1869d80.webp": {
+      "source": "generated/green_cap__pigtails__tan/character.png",
+      "sha256": "874ece31483fb1869d80aab60508651b6d3db1c088552ce073ef8cd535818ff0"
+    },
+    "images/avatar-catalogue/bbd642557fa1dffbc682.webp": {
+      "source": "generated/green_cap__pigtails__brown/character.png",
+      "sha256": "bbd642557fa1dffbc68234967a3d84360e217fced8acf819cb5c9411bb994a61"
+    },
+    "images/avatar-catalogue/8da9949dd94be3d0f4e3.webp": {
+      "source": "generated/green_cap__pigtails__deep/character.png",
+      "sha256": "8da9949dd94be3d0f4e3209cf91a26840f5042cfb0a678f614a9c33c8bedb9c1"
+    },
+    "images/avatar-catalogue/c51cfe1e88dcdf29d517.webp": {
+      "source": "generated/green_cap__pigtails__dark/character.png",
+      "sha256": "c51cfe1e88dcdf29d51745e1a094285f5ff5d0a21cfa5a5d462c6ce520667450"
+    },
+    "images/avatar-catalogue/6e1b07dd0133e90f2202.webp": {
+      "source": "generated/brown_cap__tousled__warm/character.png",
+      "sha256": "6e1b07dd0133e90f2202b67127cff129b3f3877349838c9d7445fcabbe818b27"
+    },
+    "images/avatar-catalogue/ca686a61b2786e1d83c2.webp": {
+      "source": "generated/brown_cap__tousled__tan/character.png",
+      "sha256": "ca686a61b2786e1d83c283d982a4a005e70ab1d27e00d9d952b6c4446b622bef"
+    },
+    "images/avatar-catalogue/4e1aaaf8302cfeceffb8.webp": {
+      "source": "generated/brown_cap__tousled__brown/character.png",
+      "sha256": "4e1aaaf8302cfeceffb89a3cbad1f08041d0d0b50479bb5de6828a0d78451c80"
+    },
+    "images/avatar-catalogue/6cd51283c8ae9fa4bb33.webp": {
+      "source": "generated/brown_cap__tousled__deep/character.png",
+      "sha256": "6cd51283c8ae9fa4bb335801c5a4f31c720db5fbe5066808fa1da19a6cd1cd0e"
+    },
+    "images/avatar-catalogue/c214b927e409c0b56c34.webp": {
+      "source": "generated/brown_cap__tousled__dark/character.png",
+      "sha256": "c214b927e409c0b56c349f12db4b3c1b0c34af08d697647e30a0d13d6d534f66"
+    },
+    "images/avatar-catalogue/e9a2f0d677461631fc3c.webp": {
+      "source": "generated/brown_cap__bob__warm/character.png",
+      "sha256": "e9a2f0d677461631fc3c7e10bb17d1ce8ba6b5072f655b2e93c7e6bcd816c97e"
+    },
+    "images/avatar-catalogue/6d721e53f3ee58a74730.webp": {
+      "source": "generated/brown_cap__bob__tan/character.png",
+      "sha256": "6d721e53f3ee58a747309d5c93a963cac7f78b91fcf22e4bc2f9e1a78e7b32f1"
+    },
+    "images/avatar-catalogue/3d217ecad1beab6cf791.webp": {
+      "source": "generated/brown_cap__bob__brown/character.png",
+      "sha256": "3d217ecad1beab6cf791f1aa1a2e29dad53da2a4bfa4f9052dbbb74a1501f135"
+    },
+    "images/avatar-catalogue/1ee8c1fbc3a5c6de6332.webp": {
+      "source": "generated/brown_cap__bob__deep/character.png",
+      "sha256": "1ee8c1fbc3a5c6de6332b857bc6870c56a596c22b3572f8b91a59141f3bdda6b"
+    },
+    "images/avatar-catalogue/e748e17203bce357c951.webp": {
+      "source": "generated/brown_cap__bob__dark/character.png",
+      "sha256": "e748e17203bce357c9517e1aba8406ffc664dade8983cfd50302884ec9d07ca8"
+    },
+    "images/avatar-catalogue/33f880475228681f66d8.webp": {
+      "source": "generated/brown_cap__waves__warm/character.png",
+      "sha256": "33f880475228681f66d86768e0f570b6d71bb86c12f5edd6d899d6c45da0fc97"
+    },
+    "images/avatar-catalogue/138f2f5216654bbce2ee.webp": {
+      "source": "generated/brown_cap__waves__tan/character.png",
+      "sha256": "138f2f5216654bbce2eec976f7af6c5fcacd4d1da5746767326b23146477ba8c"
+    },
+    "images/avatar-catalogue/49b1e290cfc1509fd7eb.webp": {
+      "source": "generated/brown_cap__waves__brown/character.png",
+      "sha256": "49b1e290cfc1509fd7eb7b3a5252b0977e2c60674599a20ebf0e0d43745231de"
+    },
+    "images/avatar-catalogue/fed5eef84733ba11c48f.webp": {
+      "source": "generated/brown_cap__waves__deep/character.png",
+      "sha256": "fed5eef84733ba11c48f437fb3dfb3d4e76cbf4499eaacd8b7d245aa034512c8"
+    },
+    "images/avatar-catalogue/7de3605ac4fe182af757.webp": {
+      "source": "generated/brown_cap__waves__dark/character.png",
+      "sha256": "7de3605ac4fe182af7574c524be8019790b9f7677b1ef9021eefed1944123153"
+    },
+    "images/avatar-catalogue/ab502c0b058c9fd72679.webp": {
+      "source": "generated/brown_cap__curls__warm/character.png",
+      "sha256": "ab502c0b058c9fd72679b5f644dc3434676d06f02721728f26054b8f41662816"
+    },
+    "images/avatar-catalogue/32d4580c0b216fca3e8a.webp": {
+      "source": "generated/brown_cap__curls__tan/character.png",
+      "sha256": "32d4580c0b216fca3e8a3e1c0eb50919adfb55caabf117e5fe4613818d488d22"
+    },
+    "images/avatar-catalogue/1c8d71eecba54297cb4d.webp": {
+      "source": "generated/brown_cap__curls__brown/character.png",
+      "sha256": "1c8d71eecba54297cb4dd51de82870540549e778d033b5958e68cd2d73e91aab"
+    },
+    "images/avatar-catalogue/a716ead587200468fd6d.webp": {
+      "source": "generated/brown_cap__curls__deep/character.png",
+      "sha256": "a716ead587200468fd6d7d90584d61f4736ce0911f2eb76f034dfb3953a34aa7"
+    },
+    "images/avatar-catalogue/db830d99197cd8df9df2.webp": {
+      "source": "generated/brown_cap__curls__dark/character.png",
+      "sha256": "db830d99197cd8df9df28ad21b5daff01d74cd7dedf2b5f20068829092de2e27"
+    },
+    "images/avatar-catalogue/9824b2cbaa1fc8d9ae93.webp": {
+      "source": "generated/brown_cap__bun__warm/character.png",
+      "sha256": "9824b2cbaa1fc8d9ae932d9fb80cf89e51124d71c8c5928d7ba2965ca54c3d97"
+    },
+    "images/avatar-catalogue/679cdb86b424e8c46912.webp": {
+      "source": "generated/brown_cap__bun__tan/character.png",
+      "sha256": "679cdb86b424e8c46912ccba4936f986d47a97ffb1897edac90137aff6706a95"
+    },
+    "images/avatar-catalogue/b0e4a50cf56ee97d7472.webp": {
+      "source": "generated/brown_cap__bun__brown/character.png",
+      "sha256": "b0e4a50cf56ee97d7472ec5de8fa87dbc3ece45d0aa8d2e8be716f57fba711d8"
+    },
+    "images/avatar-catalogue/147ce88869adeda57db5.webp": {
+      "source": "generated/brown_cap__bun__deep/character.png",
+      "sha256": "147ce88869adeda57db5d2d873b484fdf459f0da1533fb9a00120fa203463318"
+    },
+    "images/avatar-catalogue/878a8b4fdadbea14465a.webp": {
+      "source": "generated/brown_cap__bun__dark/character.png",
+      "sha256": "878a8b4fdadbea14465aa1f19cb42a94a8f8661d9efaf286577adf8fcd79ccbb"
+    },
+    "images/avatar-catalogue/da55d18f54488b80d5a8.webp": {
+      "source": "generated/brown_cap__pigtails__warm/character.png",
+      "sha256": "da55d18f54488b80d5a815d993b962b27949ba022cf1dbac85bfd06465055a87"
+    },
+    "images/avatar-catalogue/0098943b2a015997bf18.webp": {
+      "source": "generated/brown_cap__pigtails__tan/character.png",
+      "sha256": "0098943b2a015997bf18d55658ae48d2cedb3af2057ee657b5ff00cda12f3f4d"
+    },
+    "images/avatar-catalogue/59d6d208f5cb5a05e99a.webp": {
+      "source": "generated/brown_cap__pigtails__brown/character.png",
+      "sha256": "59d6d208f5cb5a05e99a9c36d91cfa085b447606b159495929b1ea582b474852"
+    },
+    "images/avatar-catalogue/5cd979ec80837acf3301.webp": {
+      "source": "generated/brown_cap__pigtails__deep/character.png",
+      "sha256": "5cd979ec80837acf3301c651d64abfc219c0633ea1e113297ee38995371028f8"
+    },
+    "images/avatar-catalogue/12a76d82b1e27a4f4be2.webp": {
+      "source": "generated/brown_cap__pigtails__dark/character.png",
+      "sha256": "12a76d82b1e27a4f4be27d79bfcd9103b98dcb00c0890c71f6017d7527410aa1"
+    }
+  }
+}

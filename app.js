@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=216";
+  const ASSET_V = "?v=219";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1504,7 +1504,7 @@
   const avatarDefault = () => ({ tone: "light", hair: "tousled", hairColor: "#473527", eyes: "open", brows: "relaxed", mouth: "smile", top: "hoodie", bottom: "shorts", shoes: "cream" });
   const AV_LISTS = { hair: AV.hairs, eyes: AV.eyes, brows: AV.brows, mouth: AV.mouths, top: AV.tops, bottom: AV.bottoms, shoes: AV.shoes };
   // a saved choice that no longer has a layer falls back to the first option
-  const avatarCfg = () => {
+  const legacyAvatarCfg = () => {
     const c = Object.assign(avatarDefault(), prefs.avatar || {});
     for (const [k, list] of Object.entries(AV_LISTS)) if (!list.some(o => o[0] === c[k])) c[k] = list[0][0];
     if (!AV.tones.some(t => t[0] === c.tone)) c.tone = "light";
@@ -1540,7 +1540,7 @@
   }
   // Draw an avatar into a canvas. `crop` is the part of the layer canvas to
   // show, as fractions [x, y, w, h]; the head alone is about [.2, .02, .6, .6].
-  async function drawAvatar(canvas, cfg, opts = {}) {
+  async function drawLegacyAvatar(canvas, cfg, opts = {}) {
     if (!canvas) return;
     // Backing size follows the screen's pixel density, up to the layers' own
     // 1024, so a phone at 3x never shows an upscaled canvas.
@@ -1556,10 +1556,11 @@
     order.push([`mouth-${cfg.mouth}`, "base"]);
     if (cfg.hair !== "none") order.push([`hair-${cfg.hair}`, "hair"]);
     const imgs = await Promise.all(order.map(o => avImg(o[0])));
+    if (opts.isCurrent && !opts.isCurrent()) return;
     // compose at the layers' own size, then scale once: scaling each layer on
     // its own softens every cut edge and lets the layer beneath show through
     const first = imgs.find(Boolean); if (!first) return;
-    const full = avStage; full.width = first.width; full.height = first.height;
+    const full = document.createElement("canvas"); full.width = first.width; full.height = first.height;
     const fx = full.getContext("2d"); fx.clearRect(0, 0, full.width, full.height);
     imgs.forEach((img, i) => {
       if (!img) return;
@@ -1570,7 +1571,6 @@
     x.imageSmoothingQuality = "high";
     x.drawImage(full, crop[0] * full.width, crop[1] * full.height, crop[2] * full.width, crop[3] * full.height, 0, 0, canvas.width, canvas.height);
   }
-  const avStage = document.createElement("canvas");
 
   // ---- the builder screen ----
   let avCat = "hair";
@@ -1578,7 +1578,7 @@
   // what each tile shows, as a fraction of the canvas [x, y, w, h]
   const AV_CROPS = { hair: [.2, 0, .6, .6], eyes: [.29, .19, .42, .42], brows: [.29, .19, .42, .42], mouth: [.29, .19, .42, .42],
     top: [.2, .42, .6, .42], bottom: [.2, .58, .6, .42], shoes: [.25, .7, .5, .3] };
-  function renderAvatarBuilder() {
+  function renderLegacyAvatarBuilder() {
     const cfg = avatarCfg();
     drawAvatar($("#avPreview"), cfg, { size: 640 });
     const cats = $("#avCats"); cats.innerHTML = "";
@@ -1612,6 +1612,152 @@
       });
     }
   }
+  // The original editor remains available for saved legacy avatars.
+  const modular = makeModularAvatar(MODULAR_AVATAR_DATA);
+  const wardrobeModel = makeAvatarModel(AVATAR_DATA);
+  const wardrobe = makeAvatarWardrobe(AVATAR_DATA, wardrobeModel);
+  const avatarCfg = () => prefs.avatar?.version === 3 ? modular.normalize(prefs.avatar) : prefs.avatar && prefs.avatar.version !== 2 ? legacyAvatarCfg() : wardrobe.normalize(prefs.avatar);
+  const wardrobeImages = new Map(), avatarDrawTokens = new WeakMap();
+  function wardrobeImage(path) {
+    if (!wardrobeImages.has(path)) {
+      const request = new Promise((resolve,reject) => {
+        const image = new Image(); image.onload = () => resolve(image);
+        image.onerror = () => { wardrobeImages.delete(path); reject(new Error('Connect to load this look, then try again.')); };
+        image.src = path + ASSET_V;
+      });
+      wardrobeImages.set(path,request);
+      // Keep thumbnail browsing from retaining the entire catalogue in memory.
+      if (wardrobeImages.size>40) wardrobeImages.delete(wardrobeImages.keys().next().value);
+    }
+    return wardrobeImages.get(path);
+  }
+  async function drawAvatar(canvas,cfg,opts={}) {
+    if (!canvas) return false;
+    const token={};avatarDrawTokens.set(canvas,token);
+    if (cfg.version !== 2 && cfg.version !== 3) { await drawLegacyAvatar(canvas,cfg,{...opts,isCurrent:()=>avatarDrawTokens.get(canvas)===token}); return true; }
+    canvas.setAttribute('aria-busy','true');
+    try {
+      const images=await Promise.all((cfg.version===3?modular:wardrobe).paths(cfg).map(wardrobeImage));
+      if (avatarDrawTokens.get(canvas)!==token) return false;
+      const full=document.createElement('canvas');full.width=full.height=1024;
+      const fx=full.getContext('2d');images.forEach(image=>fx.drawImage(image,0,0,1024,1024));
+      const crop=opts.crop||[0,0,1,1],size=Math.min(1024,Math.round((opts.size||512)*Math.min(3,window.devicePixelRatio||1)));
+      canvas.width=Math.round(size*crop[2]/Math.max(crop[2],crop[3]));canvas.height=Math.round(size*crop[3]/Math.max(crop[2],crop[3]));
+      const x=canvas.getContext('2d');x.imageSmoothingQuality='high';
+      x.drawImage(full,crop[0]*1024,crop[1]*1024,crop[2]*1024,crop[3]*1024,0,0,canvas.width,canvas.height);
+      canvas.removeAttribute('data-error');return true;
+    } catch(error) {
+      if (avatarDrawTokens.get(canvas)!==token) return false;
+      canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+      canvas.dataset.error=error.message;
+      if (canvas.id==='avPreview') $('#avStatus').textContent=error.message;
+      if (canvas.id==='profAvatar') canvas.setAttribute('aria-label','Avatar unavailable offline; connect to load it.');
+      return false;
+    } finally { if(avatarDrawTokens.get(canvas)===token) canvas.setAttribute('aria-busy','false'); }
+  }
+  let wardrobeCategory='top';
+  const wardrobeCategories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth'],['outfits','Outfit sets']];
+  const wardrobeCrops={top:[.2,.50,.6,.4],bottom:[.25,.68,.5,.31],shoes:[.29,.82,.42,.18],hair:[.2,.08,.6,.55],eyes:[.29,.28,.42,.3],brows:[.29,.28,.42,.3],mouth:[.29,.28,.42,.3]};
+  let wardrobeRender=0, wardrobePick=0;
+  let modularCategory='top';
+  function renderModularBuilder(cfg) {
+    const generation=++wardrobeRender;
+    $('#avStatus').textContent='';
+    const banner=$('#avMigration');banner.replaceChildren();
+    if(prefs.avatarBeforeModular){
+      const restore=el('button',{type:'button',className:'ghost'},'Use previous wardrobe');
+      restore.onclick=()=>{prefs.avatar={...prefs.avatarBeforeModular};savePrefs(prefs);renderAvatarBuilder();};banner.append(restore);
+    }
+    drawAvatar($('#avPreview'),cfg,{size:640});
+    const categories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['hairColour','Hair colour'],['body','Body'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth']];
+    const cats=$('#avCats');cats.replaceChildren();
+    for(const [key,label] of categories){
+      const b=el('button',{type:'button',className:'chip'+(modularCategory===key?' on':'')},label);
+      b.setAttribute('aria-pressed',String(modularCategory===key));b.onclick=()=>{modularCategory=key;renderAvatarBuilder();};cats.append(b);
+    }
+    const box=$('#avOpts');box.replaceChildren();box.className='av-opts '+(modularCategory==='tone'?'swatches':'tiles');
+    for(const option of modular.options(cfg,modularCategory)){
+      const b=el('button',{type:'button',className:(option.swatch?'swatch':'av-tile')+(option.on?' on':'')});
+      b.setAttribute('aria-label',option.label);b.setAttribute('aria-pressed',String(option.on));b.disabled=!option.next;
+      if(option.swatch)b.style.background=option.swatch;
+      else {const canvas=el('canvas');b.append(canvas,el('span',{},option.label));drawAvatar(canvas,option.next,{size:110,crop:wardrobeCrops[modularCategory==='hairColour'?'hair':modularCategory]});}
+      b.onclick=async()=>{const pick=++wardrobePick;try{
+        await Promise.all(modular.paths(option.next).map(wardrobeImage));
+        if(generation!==wardrobeRender||pick!==wardrobePick)return;
+        prefs.avatar={...option.next};savePrefs(prefs);renderAvatarBuilder();
+      }catch(e){if(generation===wardrobeRender)$('#avStatus').textContent=e.message;}};box.append(b);
+    }
+    $('#avHelp').textContent='Mix completed items independently. More items will appear as their Photoshop adjustments are finished.';
+  }
+
+  function renderAvatarBuilder() {
+    if(avatarCfg().version===3){renderModularBuilder(avatarCfg());return;}
+    const generation=++wardrobeRender,cfg=avatarCfg();
+    $('#avStatus').textContent='';
+    const legacy=cfg.version!==2,banner=$('#avMigration');banner.replaceChildren();
+    const modularStart=el('button',{type:'button',className:'ghost'},'Try mix-and-match wardrobe');
+    modularStart.onclick=async()=>{try{const next=modular.defaults();await Promise.all(modular.paths(next).map(wardrobeImage));prefs.avatarBeforeModular={...cfg};prefs.avatar=next;savePrefs(prefs);renderAvatarBuilder();}catch(e){$('#avStatus').textContent=e.message;}};banner.append(modularStart);
+    if (legacy) {
+      banner.append(el('p',{},'Your saved avatar is kept. Try the new wardrobe for hats, bags and more outfits.'));
+      const start=el('button',{className:'ghost',type:'button'},'Try new wardrobe');
+      start.addEventListener('click',()=>{prefs.avatarLegacy={...cfg};prefs.avatar=wardrobe.defaults();savePrefs(prefs);renderAvatarBuilder();});banner.append(start);
+      $('#avHelp').textContent='Your original wardrobe. The new collection has its own matching combinations.';
+      renderLegacyAvatarBuilder();return;
+    }
+    if (prefs.avatarLegacy) {
+      const restore=el('button',{className:'ghost',type:'button'},'Use my previous avatar');
+      restore.addEventListener('click',()=>{prefs.avatar={...prefs.avatarLegacy};savePrefs(prefs);renderAvatarBuilder();});banner.append(restore);
+    }
+    drawAvatar($('#avPreview'),cfg,{size:640});
+    const cats=$('#avCats');cats.replaceChildren();
+    for (const [id,label] of wardrobeCategories) {
+      const button=el('button',{className:'chip'+(wardrobeCategory===id?' on':''),type:'button'},label);
+      button.setAttribute('aria-pressed',String(wardrobeCategory===id));button.onclick=()=>{wardrobeCategory=id;renderAvatarBuilder();};cats.append(button);
+    }
+    const box=$('#avOpts');box.replaceChildren();box.className='av-opts '+(wardrobeCategory==='tone'?'swatches':'tiles');
+    for(const option of wardrobe.options(cfg,wardrobeCategory)) {
+      const button=el('button',{className:(option.swatch?'swatch':'av-tile')+(option.on?' on':''),type:'button'});
+      button.disabled=!option.next;button.title=option.next?option.label:option.why;
+      button.setAttribute('aria-label',option.label+(!option.next?'. '+option.why:''));button.setAttribute('aria-pressed',String(option.on));
+      if (option.swatch) button.style.background=option.swatch;
+      else {
+        if (option.next) {const canvas=el('canvas');button.append(canvas);drawAvatar(canvas,option.next,{size:110,crop:wardrobeCrops[wardrobeCategory]}).then(ok=>{if(!ok&&generation===wardrobeRender)button.append(el('small',{},'Connect to preview'));});}
+        button.append(el('span',{},option.label));if(option.sub)button.append(el('small',{},option.sub));
+        if(!option.next)button.append(el('small',{},option.why));
+      }
+      button.onclick=async()=>{
+        if(!option.next)return;
+        const pick=++wardrobePick;
+        $('#avStatus').textContent='Loading lookâ€¦';
+        try {
+          await Promise.all(wardrobe.paths(option.next).map(wardrobeImage));
+          if(generation!==wardrobeRender || pick!==wardrobePick)return;
+          prefs.avatar={...option.next,version:2};savePrefs(prefs);renderAvatarBuilder();
+        } catch(error) {if(generation===wardrobeRender)$('#avStatus').textContent=error.message;}
+      };box.append(button);
+    }
+    $('#avHelp').textContent=['top','bottom','shoes'].includes(wardrobeCategory)?'Your accessory stays on when changing clothes. For a different combination, choose Outfit sets.':wardrobeCategory==='outfits'?'Changes the named top, bottoms and shoes together. Your accessory stays on.':'Grey choices are not available with this look yet. Looks you open are saved for offline use.';
+    if (wardrobeCategory==='tone') {
+      const matching={...cfg,eyes:'open',brows:'none',mouth:'smile'};
+      const canUnlock=!wardrobeModel.faceDefault(cfg) && Object.keys(AVATAR_DATA.tones).some(tone=>tone!==cfg.tone && wardrobeModel.supported({...matching,tone}));
+      if (canUnlock) {
+        $('#avHelp').textContent='Other skin tones need Open eyes, no brows and Smile. Use the matching expression to unlock them; your outfit and hair stay the same.';
+        const unlock=el('button',{type:'button',className:'ghost'},'Use matching expression');
+        unlock.onclick=async()=>{
+          unlock.disabled=true;
+          try {
+            await Promise.all(wardrobe.paths(matching).map(wardrobeImage));
+            if(generation!==wardrobeRender)return;
+            prefs.avatar=matching;savePrefs(prefs);renderAvatarBuilder();
+          } catch(error) {$('#avStatus').textContent=error.message;unlock.disabled=false;}
+        };
+        $('#avHelp').append(document.createElement('br'),unlock);
+      } else if (!wardrobe.options(cfg,'tone').some(o=>!o.on && o.next)) {
+        $('#avHelp').textContent='This outfit and hairstyle combination currently has only one skin tone. Choose Tousled hair, or the cream hoodie with blue trousers, to use the other tones.';
+      }
+    }
+  }
+
   $("#avBack").addEventListener("click", () => { renderDashboard(); show("progress"); });
   $("#actSeg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
     $("#actSeg").querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
@@ -3236,7 +3382,7 @@
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
-    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=216", alt: "" }));
+    speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=218", alt: "" }));
     const bubble = el("div", { className: "q-bubble" });
     speech.appendChild(bubble);
     face.appendChild(speech);
@@ -3440,7 +3586,7 @@
       wrapEl.insertBefore(fb, wrapEl.firstChild);
       wrapEl.classList.add(correct ? "ok" : "bad");
       const drg = face.querySelector(".quiz-dragon");
-      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=216" : "images/path/panda-sad.webp?v=216"; drg.classList.add("react"); }
+      if (drg) { drg.src = correct ? "images/path/panda-celebrate.webp?v=218" : "images/path/panda-sad.webp?v=218"; drg.classList.add("react"); }
       onResult(correct);
       setContinueLabel("Continue");
       setWriteGate(true);
@@ -3625,11 +3771,11 @@
         choicesBox.dataset.answered = "1";
         const correct = opt === answerText;
         const drg = face.querySelector(".quiz-dragon");
-        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=216"; drg.classList.add("react"); } }
+        if (correct) { btn.classList.add("correct"); if (drg) { drg.src = "images/path/panda-celebrate.webp?v=218"; drg.classList.add("react"); } }
         else {
           btn.classList.add("wrong");
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
-          if (drg) { drg.src = "images/path/panda-sad.webp?v=216"; drg.classList.add("react"); }
+          if (drg) { drg.src = "images/path/panda-sad.webp?v=218"; drg.classList.add("react"); }
         }
         onResult(correct);
       });

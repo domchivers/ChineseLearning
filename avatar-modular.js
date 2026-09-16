@@ -1,0 +1,16 @@
+/* Independent full-canvas Photoshop layers; no fitting or recolouring. */
+function makeModularAvatar(data) {
+ const labels=id=>({darkbrown:'Dark brown',hairColour:'Hair colour'}[id] || id.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()));
+ const defaults=()=>({...data.defaults,version:3});
+ const choices=(s,key)=>key==='tone'?Object.keys(data.skin[s.body]||{}):key==='body'?Object.keys(data.skin):key==='hairColour'?Object.keys(data.hair[s.hair]||{}):Object.keys(data[key]||{});
+ function supported(s){return ['body','tone','hair','hairColour','top','bottom','shoes','eyes','brows','mouth','accessory'].every(k=>choices(s,k).includes(s[k]));}
+ function normalize(saved){const s={...defaults(),...saved,version:3};return supported(s)?s:defaults();}
+ function change(s,key,value){const n={...s,[key]:value};if(key==='hair'&&!data.hair[value][n.hairColour])n.hairColour=data.hair[value].darkbrown?'darkbrown':Object.keys(data.hair[value])[0];return supported(n)?n:null;}
+ function paths(s){
+  if(!supported(s))throw new Error('This asset is not ready yet.');
+  return [data.skin[s.body][s.tone],data.bottom[s.bottom],data.shoes[s.shoes],data.top[s.top],data.eyes[s.eyes],data.brows[s.brows],data.mouth[s.mouth],data.hair[s.hair][s.hairColour],data.accessory[s.accessory]].filter(Boolean);
+ }
+ function options(s,key){return choices(s,key).map(id=>({label:labels(id),on:s[key]===id,next:change(s,key,id),swatch:key==='tone'?data.toneColours[id]:null}));}
+ return {defaults,supported,normalize,change,paths,options};
+}
+if(typeof module!=='undefined')module.exports=makeModularAvatar;
