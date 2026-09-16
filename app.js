@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=219";
+  const ASSET_V = "?v=220";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1616,7 +1616,7 @@
   const modular = makeModularAvatar(MODULAR_AVATAR_DATA);
   const wardrobeModel = makeAvatarModel(AVATAR_DATA);
   const wardrobe = makeAvatarWardrobe(AVATAR_DATA, wardrobeModel);
-  const avatarCfg = () => prefs.avatar?.version === 3 ? modular.normalize(prefs.avatar) : prefs.avatar && prefs.avatar.version !== 2 ? legacyAvatarCfg() : wardrobe.normalize(prefs.avatar);
+  const avatarCfg = () => modular.migrate(prefs.avatar, AVATAR_DATA.outfits);
   const wardrobeImages = new Map(), avatarDrawTokens = new WeakMap();
   function wardrobeImage(path) {
     if (!wardrobeImages.has(path)) {
@@ -1664,10 +1664,6 @@
     const generation=++wardrobeRender;
     $('#avStatus').textContent='';
     const banner=$('#avMigration');banner.replaceChildren();
-    if(prefs.avatarBeforeModular){
-      const restore=el('button',{type:'button',className:'ghost'},'Use previous wardrobe');
-      restore.onclick=()=>{prefs.avatar={...prefs.avatarBeforeModular};savePrefs(prefs);renderAvatarBuilder();};banner.append(restore);
-    }
     drawAvatar($('#avPreview'),cfg,{size:640});
     const categories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['hairColour','Hair colour'],['body','Body'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth']];
     const cats=$('#avCats');cats.replaceChildren();
@@ -1690,73 +1686,7 @@
     $('#avHelp').textContent='Mix completed items independently. More items will appear as their Photoshop adjustments are finished.';
   }
 
-  function renderAvatarBuilder() {
-    if(avatarCfg().version===3){renderModularBuilder(avatarCfg());return;}
-    const generation=++wardrobeRender,cfg=avatarCfg();
-    $('#avStatus').textContent='';
-    const legacy=cfg.version!==2,banner=$('#avMigration');banner.replaceChildren();
-    const modularStart=el('button',{type:'button',className:'ghost'},'Try mix-and-match wardrobe');
-    modularStart.onclick=async()=>{try{const next=modular.defaults();await Promise.all(modular.paths(next).map(wardrobeImage));prefs.avatarBeforeModular={...cfg};prefs.avatar=next;savePrefs(prefs);renderAvatarBuilder();}catch(e){$('#avStatus').textContent=e.message;}};banner.append(modularStart);
-    if (legacy) {
-      banner.append(el('p',{},'Your saved avatar is kept. Try the new wardrobe for hats, bags and more outfits.'));
-      const start=el('button',{className:'ghost',type:'button'},'Try new wardrobe');
-      start.addEventListener('click',()=>{prefs.avatarLegacy={...cfg};prefs.avatar=wardrobe.defaults();savePrefs(prefs);renderAvatarBuilder();});banner.append(start);
-      $('#avHelp').textContent='Your original wardrobe. The new collection has its own matching combinations.';
-      renderLegacyAvatarBuilder();return;
-    }
-    if (prefs.avatarLegacy) {
-      const restore=el('button',{className:'ghost',type:'button'},'Use my previous avatar');
-      restore.addEventListener('click',()=>{prefs.avatar={...prefs.avatarLegacy};savePrefs(prefs);renderAvatarBuilder();});banner.append(restore);
-    }
-    drawAvatar($('#avPreview'),cfg,{size:640});
-    const cats=$('#avCats');cats.replaceChildren();
-    for (const [id,label] of wardrobeCategories) {
-      const button=el('button',{className:'chip'+(wardrobeCategory===id?' on':''),type:'button'},label);
-      button.setAttribute('aria-pressed',String(wardrobeCategory===id));button.onclick=()=>{wardrobeCategory=id;renderAvatarBuilder();};cats.append(button);
-    }
-    const box=$('#avOpts');box.replaceChildren();box.className='av-opts '+(wardrobeCategory==='tone'?'swatches':'tiles');
-    for(const option of wardrobe.options(cfg,wardrobeCategory)) {
-      const button=el('button',{className:(option.swatch?'swatch':'av-tile')+(option.on?' on':''),type:'button'});
-      button.disabled=!option.next;button.title=option.next?option.label:option.why;
-      button.setAttribute('aria-label',option.label+(!option.next?'. '+option.why:''));button.setAttribute('aria-pressed',String(option.on));
-      if (option.swatch) button.style.background=option.swatch;
-      else {
-        if (option.next) {const canvas=el('canvas');button.append(canvas);drawAvatar(canvas,option.next,{size:110,crop:wardrobeCrops[wardrobeCategory]}).then(ok=>{if(!ok&&generation===wardrobeRender)button.append(el('small',{},'Connect to preview'));});}
-        button.append(el('span',{},option.label));if(option.sub)button.append(el('small',{},option.sub));
-        if(!option.next)button.append(el('small',{},option.why));
-      }
-      button.onclick=async()=>{
-        if(!option.next)return;
-        const pick=++wardrobePick;
-        $('#avStatus').textContent='Loading lookâ€¦';
-        try {
-          await Promise.all(wardrobe.paths(option.next).map(wardrobeImage));
-          if(generation!==wardrobeRender || pick!==wardrobePick)return;
-          prefs.avatar={...option.next,version:2};savePrefs(prefs);renderAvatarBuilder();
-        } catch(error) {if(generation===wardrobeRender)$('#avStatus').textContent=error.message;}
-      };box.append(button);
-    }
-    $('#avHelp').textContent=['top','bottom','shoes'].includes(wardrobeCategory)?'Your accessory stays on when changing clothes. For a different combination, choose Outfit sets.':wardrobeCategory==='outfits'?'Changes the named top, bottoms and shoes together. Your accessory stays on.':'Grey choices are not available with this look yet. Looks you open are saved for offline use.';
-    if (wardrobeCategory==='tone') {
-      const matching={...cfg,eyes:'open',brows:'none',mouth:'smile'};
-      const canUnlock=!wardrobeModel.faceDefault(cfg) && Object.keys(AVATAR_DATA.tones).some(tone=>tone!==cfg.tone && wardrobeModel.supported({...matching,tone}));
-      if (canUnlock) {
-        $('#avHelp').textContent='Other skin tones need Open eyes, no brows and Smile. Use the matching expression to unlock them; your outfit and hair stay the same.';
-        const unlock=el('button',{type:'button',className:'ghost'},'Use matching expression');
-        unlock.onclick=async()=>{
-          unlock.disabled=true;
-          try {
-            await Promise.all(wardrobe.paths(matching).map(wardrobeImage));
-            if(generation!==wardrobeRender)return;
-            prefs.avatar=matching;savePrefs(prefs);renderAvatarBuilder();
-          } catch(error) {$('#avStatus').textContent=error.message;unlock.disabled=false;}
-        };
-        $('#avHelp').append(document.createElement('br'),unlock);
-      } else if (!wardrobe.options(cfg,'tone').some(o=>!o.on && o.next)) {
-        $('#avHelp').textContent='This outfit and hairstyle combination currently has only one skin tone. Choose Tousled hair, or the cream hoodie with blue trousers, to use the other tones.';
-      }
-    }
-  }
+  function renderAvatarBuilder() { renderModularBuilder(avatarCfg()); }
 
   $("#avBack").addEventListener("click", () => { renderDashboard(); show("progress"); });
   $("#actSeg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
