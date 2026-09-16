@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=220";
+  const ASSET_V = "?v=221";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1665,7 +1665,7 @@
     $('#avStatus').textContent='';
     const banner=$('#avMigration');banner.replaceChildren();
     drawAvatar($('#avPreview'),cfg,{size:640});
-    const categories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['hairColour','Hair colour'],['body','Body'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth']];
+    const categories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['hairColour','Hair colour'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth']];
     const cats=$('#avCats');cats.replaceChildren();
     for(const [key,label] of categories){
       const b=el('button',{type:'button',className:'chip'+(modularCategory===key?' on':'')},label);
@@ -1676,7 +1676,12 @@
       const b=el('button',{type:'button',className:(option.swatch?'swatch':'av-tile')+(option.on?' on':'')});
       b.setAttribute('aria-label',option.label);b.setAttribute('aria-pressed',String(option.on));b.disabled=!option.next;
       if(option.swatch)b.style.background=option.swatch;
-      else {const canvas=el('canvas');b.append(canvas,el('span',{},option.label));drawAvatar(canvas,option.next,{size:110,crop:wardrobeCrops[modularCategory==='hairColour'?'hair':modularCategory]});}
+      else {
+        const state=option.next,key=modularCategory;
+        const path=key==='hair'||key==='hairColour'?MODULAR_AVATAR_DATA.hair[state.hair][state.hairColour]:MODULAR_AVATAR_DATA[key]?.[state[key]];
+        if(path){const img=el('img',{src:MODULAR_AVATAR_DATA.thumbnails[path],alt:'',width:80,height:80});img.loading='lazy';img.decoding='async';b.append(img);}
+        b.append(el('span',{},option.label));
+      }
       b.onclick=async()=>{const pick=++wardrobePick;try{
         await Promise.all(modular.paths(option.next).map(wardrobeImage));
         if(generation!==wardrobeRender||pick!==wardrobePick)return;
