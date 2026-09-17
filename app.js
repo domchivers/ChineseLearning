@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=222";
+  const ASSET_V = "?v=223";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1668,7 +1668,7 @@
     drawAvatar($('#avPreview'),cfg,{size:640});
     const categories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['hairColour','Hair colour'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth']];
     const main=$('#avMain');main.replaceChildren();
-    for(const [name,icon] of [['Face','i-user'],['Hair','i-user'],['Outfit','i-cards'],['Extras','i-star']]){const b=el('button',{type:'button',className:name===modularSection?'on':''});b.innerHTML=svgUse(icon)+'<span>'+name+'</span>';b.setAttribute('aria-pressed',String(name===modularSection));b.onclick=()=>{modularSection=name;modularCategory=modularSections[name][0];renderAvatarBuilder();};main.append(b);}
+    for(const [name,icon] of [['Face','i-avatar-face'],['Hair','i-avatar-hair'],['Outfit','i-avatar-shirt'],['Extras','i-star']]){const b=el('button',{type:'button',className:name===modularSection?'on':''});b.innerHTML=svgUse(icon)+'<span>'+name+'</span>';b.setAttribute('aria-pressed',String(name===modularSection));b.onclick=()=>{modularSection=name;modularCategory=modularSections[name][0];renderAvatarBuilder();};main.append(b);}
     const cats=$('#avCats');cats.replaceChildren();
     for(const [key,label] of categories.filter(([key])=>modularSections[modularSection].includes(key))){
       const b=el('button',{type:'button',className:'chip'+(modularCategory===key?' on':'')},label);
