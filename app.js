@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=221";
+  const ASSET_V = "?v=222";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1659,15 +1659,18 @@
   const wardrobeCategories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth'],['outfits','Outfit sets']];
   const wardrobeCrops={top:[.2,.50,.6,.4],bottom:[.25,.68,.5,.31],shoes:[.29,.82,.42,.18],hair:[.2,.08,.6,.55],eyes:[.29,.28,.42,.3],brows:[.29,.28,.42,.3],mouth:[.29,.28,.42,.3]};
   let wardrobeRender=0, wardrobePick=0;
-  let modularCategory='top';
+  let modularCategory='top', modularSection='Outfit', avatarDraft=null;
+  const modularSections={Face:['tone','eyes','brows','mouth'],Hair:['hair','hairColour'],Outfit:['top','bottom','shoes'],Extras:['accessory']};
   function renderModularBuilder(cfg) {
     const generation=++wardrobeRender;
     $('#avStatus').textContent='';
     const banner=$('#avMigration');banner.replaceChildren();
     drawAvatar($('#avPreview'),cfg,{size:640});
     const categories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['hairColour','Hair colour'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth']];
+    const main=$('#avMain');main.replaceChildren();
+    for(const [name,icon] of [['Face','i-user'],['Hair','i-user'],['Outfit','i-cards'],['Extras','i-star']]){const b=el('button',{type:'button',className:name===modularSection?'on':''});b.innerHTML=svgUse(icon)+'<span>'+name+'</span>';b.setAttribute('aria-pressed',String(name===modularSection));b.onclick=()=>{modularSection=name;modularCategory=modularSections[name][0];renderAvatarBuilder();};main.append(b);}
     const cats=$('#avCats');cats.replaceChildren();
-    for(const [key,label] of categories){
+    for(const [key,label] of categories.filter(([key])=>modularSections[modularSection].includes(key))){
       const b=el('button',{type:'button',className:'chip'+(modularCategory===key?' on':'')},label);
       b.setAttribute('aria-pressed',String(modularCategory===key));b.onclick=()=>{modularCategory=key;renderAvatarBuilder();};cats.append(b);
     }
@@ -1680,20 +1683,22 @@
         const state=option.next,key=modularCategory;
         const path=key==='hair'||key==='hairColour'?MODULAR_AVATAR_DATA.hair[state.hair][state.hairColour]:MODULAR_AVATAR_DATA[key]?.[state[key]];
         if(path){const img=el('img',{src:MODULAR_AVATAR_DATA.thumbnails[path],alt:'',width:80,height:80});img.loading='lazy';img.decoding='async';b.append(img);}
-        b.append(el('span',{},option.label));
+        if(!['top','bottom','shoes'].includes(modularCategory))b.append(el('span',{},option.label));
       }
       b.onclick=async()=>{const pick=++wardrobePick;try{
         await Promise.all(modular.paths(option.next).map(wardrobeImage));
         if(generation!==wardrobeRender||pick!==wardrobePick)return;
-        prefs.avatar={...option.next};savePrefs(prefs);renderAvatarBuilder();
+        avatarDraft={...option.next};renderAvatarBuilder();
       }catch(e){if(generation===wardrobeRender)$('#avStatus').textContent=e.message;}};box.append(b);
     }
-    $('#avHelp').textContent='Mix completed items independently. More items will appear as their Photoshop adjustments are finished.';
+    $('#avHelp').textContent=modularSection==='Extras'?'More accessories are coming soon.':'';
   }
 
-  function renderAvatarBuilder() { renderModularBuilder(avatarCfg()); }
+  function renderAvatarBuilder() { if(!avatarDraft)avatarDraft={...avatarCfg()};renderModularBuilder(avatarDraft); }
+  $("#avReset").onclick=()=>{++wardrobePick;avatarDraft={...avatarCfg()};renderAvatarBuilder();};
+  $("#avSave").onclick=()=>{++wardrobePick;prefs.avatar={...(avatarDraft||avatarCfg())};savePrefs(prefs);avatarDraft=null;renderDashboard();show("progress");};
 
-  $("#avBack").addEventListener("click", () => { renderDashboard(); show("progress"); });
+  $("#avBack").addEventListener("click", () => { ++wardrobePick;avatarDraft=null;renderDashboard(); show("progress"); });
   $("#actSeg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
     $("#actSeg").querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
     $("#actMonth").classList.toggle("hidden", b.dataset.act !== "month");
@@ -2063,7 +2068,7 @@
   $("#relightBtn") && $("#relightBtn").addEventListener("click", askRelight);
   $("#achAll").addEventListener("click", () => { achShowAll = !achShowAll; renderAchievements(); });
   $("#profSettings").addEventListener("click", () => document.querySelector(".bottomnav [data-nav=settings]").click());
-  $("#editAvatar").addEventListener("click", () => { show("avatar"); renderAvatarBuilder(); });
+  $("#editAvatar").addEventListener("click", () => { avatarDraft=null;show("avatar"); renderAvatarBuilder(); });
   $("#homeReview").addEventListener("click", () => { returnView = "home"; startReview(); });
   $("#homeTrouble").addEventListener("click", () => { returnView = "home"; startTrouble(); });
 
