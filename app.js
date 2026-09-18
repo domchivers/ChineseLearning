@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=238";
+  const ASSET_V = "?v=240";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2704,6 +2704,7 @@
           const lx = p.flip ? 100 - lit.x : lit.x;
           cl.style.setProperty("--lx", ((35 + lx) / 170 * 100).toFixed(1) + "%");
           cl.style.setProperty("--ly", ((45 + lit.y) / 190 * 100).toFixed(1) + "%");
+          cl.style.setProperty("--glow-r", Math.round(parseFloat(cl.style.width) * 0.38) + "px");   // the pool of light scales with the piece
         }
         place(cl, cx, base);
       }
@@ -2782,6 +2783,7 @@
           const lx = flipped ? 100 - lit.x : lit.x;
           cl.style.setProperty("--lx", ((35 + lx) / 170 * 100).toFixed(1) + "%");
           cl.style.setProperty("--ly", ((45 + lit.y) / 190 * 100).toFixed(1) + "%");
+          cl.style.setProperty("--glow-r", Math.round(parseFloat(cl.style.width) * 0.38) + "px");   // the pool of light scales with the piece
         }
         place(cl, cx, y);
         claim(art, cx, y, cw, ch, flipped);
