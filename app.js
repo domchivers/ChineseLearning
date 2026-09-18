@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=232";
+  const ASSET_V = "?v=233";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -168,6 +168,7 @@
   function answerXP(correct) {
     if (!correct) { combo = 0; renderCombo(); return; }
     combo++; renderCombo();
+    if (combo === COMBO_AT) setTimeout(() => sfx("combo"), 180);
     earnXP(combo >= COMBO_AT ? XP.combo : XP.correct);
   }
   function earnXP(n) {
@@ -189,6 +190,28 @@
     if (crossed) { earnXP(XP.goal); celebrateGoal(); if ($(".streak-card")) renderHomeTop(); }
     if (lit) streakExtended(crossed ? 3000 : 0);
     checkQuests();
+    const lv = levelInfo().level;
+    if (lv > (activity.levelSeen || 1)) {
+      activity.levelSeen = lv; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+      setTimeout(() => celebrateLevel(lv), crossed || lit ? 3600 : 300);
+    }
+  }
+  function celebrateLevel(lv) {
+    const next = levelInfo().next;
+    const o = el("div", { className: "goal-burst level-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <svg class="gb-crown"><use href="#i-crown"/></svg>
+         <div class="gb-big">${lv}</div>
+         <div class="gb-title">Level ${lv}!</div>
+         <div class="gb-sub">${next} XP to level ${lv + 1}</div>
+         <div class="gb-actions"><button class="primary" id="lvOk">Nice</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    o.querySelector("#lvOk").addEventListener("click", close);
+    sfx("levelup"); buzz(true); confetti(100);
   }
 
   /* ---- Streak moments ----------------------------------------------------
@@ -317,7 +340,7 @@
     setTimeout(() => o.classList.add("show"), 20);
     setTimeout(close, 3200);
     o.addEventListener("click", close);
-    sfx("goal");
+    sfx("chest"); confetti(80);
   }
   function renderQuests() {
     const rows = $("#questRows"); if (!rows) return;
@@ -385,9 +408,56 @@
     queueSync();
     return true;
   }
-  // The relight moment: a card with the number of days at stake and one tap
-  // to spend an ember. Offered once per lost day when the app opens, and on
-  // demand from the streak card and the profile.
+  /* When the app opens after a missed day: an ember relights the fire by
+     itself (unless turned off in Settings) and the moment is a celebration,
+     not a decision. With no ember, the fire is out and the screen says so once.
+     With auto-relight off, the old ask card is shown instead. */
+  function protectStreak() {
+    const out = outSince();
+    if (!out || activity.relightAsked === out.date) return;
+    if (embers() >= 1 && prefs.autoRelight !== false) {
+      activity.relightAsked = out.date;
+      if (relight()) { renderHomeTop(); celebrateRelight(computeStreak(), embers()); }
+    } else if (embers() >= 1) askRelight(true);
+    else {
+      activity.relightAsked = out.date; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
+      showFireOut(out.lost);
+    }
+  }
+  function celebrateRelight(streak, left) {
+    const o = el("div", { className: "goal-burst relight-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <svg class="gb-flame ignite"><use href="#i-flame-solid"/></svg>
+         <div class="gb-title">Your ember kept the fire lit</div>
+         <div class="gb-big small">${streak}</div>
+         <div class="gb-sub">day streak carries on</div>
+         <div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> ${left} ember${left === 1 ? "" : "s"} left</div>
+         <div class="gb-actions"><button class="primary" id="rlOk">Keep going</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    setTimeout(() => { sfx("relight"); buzz(true); confetti(70); }, 500);
+    o.querySelector("#rlOk").addEventListener("click", close);
+  }
+  function showFireOut(lost) {
+    const o = el("div", { className: "goal-burst relight-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <svg class="gb-flame out"><use href="#i-flame-solid"/></svg>
+         <div class="gb-title">Your fire went out</div>
+         <div class="gb-sub">${lost}-day streak. No ember was left to relight it.</div>
+         <div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> Reach 3 days to earn one</div>
+         <div class="gb-actions"><button class="primary" id="foOk">Start fresh</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    o.querySelector("#foOk").addEventListener("click", close);
+  }
+  // The manual relight card, used when automatic relighting is turned off,
+  // or from the streak card and the profile.
   function askRelight(auto = false) {
     const out = outSince();
     if (!out) return;
@@ -537,6 +607,31 @@
     toastTimer = setTimeout(() => t.classList.remove("show"), 2400);
   }
 
+  // A short burst of confetti over whatever is on screen. Skipped when the
+  // system asks for reduced motion.
+  function confetti(n = 90) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const c = document.createElement("canvas"); c.className = "confetti";
+    c.width = innerWidth * (devicePixelRatio || 1); c.height = innerHeight * (devicePixelRatio || 1);
+    document.body.appendChild(c);
+    const x = c.getContext("2d"), s = devicePixelRatio || 1;
+    const cs = ["#f0b429", "#f0742f", "#4ce1ad", "#6c9dfc", "#e39aae", "#fde68a"];
+    const ps = Array.from({ length: n }, () => ({ x: c.width / 2 + (Math.random() - .5) * c.width * .5, y: c.height * .45,
+      vx: (Math.random() - .5) * 14 * s, vy: (-8 - Math.random() * 9) * s, w: (5 + Math.random() * 6) * s, h: (3 + Math.random() * 5) * s,
+      r: Math.random() * 6.28, vr: (Math.random() - .5) * .3, col: cs[Math.floor(Math.random() * cs.length)] }));
+    const t0 = performance.now();
+    const step = now => {
+      const k = (now - t0) / 1600;
+      x.clearRect(0, 0, c.width, c.height);
+      x.globalAlpha = k > .75 ? Math.max(0, 1 - (k - .75) / .25) : 1;
+      ps.forEach(p => {
+        p.x += p.vx; p.y += p.vy; p.vy += .35 * s; p.vx *= .99; p.r += p.vr;
+        x.save(); x.translate(p.x, p.y); x.rotate(p.r); x.fillStyle = p.col; x.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); x.restore();
+      });
+      if (k < 1) requestAnimationFrame(step); else c.remove();
+    };
+    requestAnimationFrame(step);
+  }
   // Full-screen moment when the daily goal is reached.
   function celebrateGoal() {
     const o = el("div", { className: "goal-burst" });
@@ -571,7 +666,7 @@
     const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
     setTimeout(() => o.classList.add("show"), 20);
     o.querySelector("#msOk").addEventListener("click", close);
-    sfx("goal");
+    sfx("milestone"); confetti(120);
   }
 
   // ---- Sound effects ----
@@ -671,6 +766,11 @@
     else if (kind === "complete") { [523, 659, 784, 1047].forEach((f, i) => tone(ctx, f, i * 0.09, 0.22)); }
     else if (kind === "goal") { [523, 659, 784, 1047, 1319].forEach((f, i) => tone(ctx, f, i * 0.1, 0.3, { gain: 0.18 })); }
     else if (kind === "tap") { tone(ctx, 430, 0, 0.05, { gain: 0.07 }); }
+    else if (kind === "combo") { tone(ctx, 880, 0, 0.08, { gain: 0.12 }); tone(ctx, 1175, 0.06, 0.1, { gain: 0.12 }); tone(ctx, 1568, 0.12, 0.14, { gain: 0.1 }); }
+    else if (kind === "chest") { tone(ctx, 784, 0, 0.18, { gain: 0.16 }); tone(ctx, 1568, 0.12, 0.35, { gain: 0.14 }); tone(ctx, 2093, 0.2, 0.4, { gain: 0.08 }); tone(ctx, 2637, 0.28, 0.45, { gain: 0.05 }); }
+    else if (kind === "milestone") { [659, 784, 988, 1319, 1568].forEach((f, i) => tone(ctx, f, i * 0.11, 0.38, { gain: 0.19 })); tone(ctx, 330, 0, 0.9, { type: "triangle", gain: 0.08 }); }
+    else if (kind === "levelup") { [523, 659, 784, 1047].forEach((f, i) => tone(ctx, f, i * 0.07, 0.2, { gain: 0.16 })); [1319, 1568, 2093].forEach((f, i) => tone(ctx, f, 0.32 + i * 0.09, 0.5, { gain: 0.14 })); }
+    else if (kind === "relight") { [220, 330, 440, 660].forEach((f, i) => tone(ctx, f, i * 0.05, 0.25, { type: "triangle", gain: 0.09 })); tone(ctx, 1319, 0.24, 0.5, { gain: 0.16 }); tone(ctx, 1760, 0.34, 0.6, { gain: 0.1 }); }
   }
   let lastGoalAt = 0;
   function sfx(kind) {
@@ -1772,13 +1872,20 @@
     $("#greetH").textContent = `${greetingWord()}${name ? ", " + name : ""}!`;
     const streak = computeStreak(), goal = dailyGoal(), xp = todayXP(), lit = litOn(todayStr());
     const out = outSince();
+    // from six in the evening an unlit day with a streak behind it is at risk
+    const hoursLeft = 24 - new Date().getHours(), risk = !out && !lit && streak > 0 && hoursLeft <= 6;
     $(".streak-card").classList.toggle("out", !!out);
     $(".streak-card").classList.toggle("lit", lit && !out);
+    $(".streak-card").classList.toggle("risk", risk);
     $("#scNum").textContent = out ? out.lost : streak;
     $("#scSub").textContent = "day streak";
+    const n = embers();
+    $("#scEmbers").innerHTML = `${svgUse("i-ember")}<b>${n}</b>`; $("#scEmbers").title = `${n} ember${n === 1 ? "" : "s"}`;
     // Kept short: the bubble shares the row with the panda on a narrow phone.
-    $("#scBubble").classList.toggle("relight", !!out);
-    $("#scBubble").textContent = out ? (embers() ? "Relight it?" : "Went out") : xp >= goal ? "Goal done!" : lit ? `${goal - xp} XP to goal`
+    $("#scBubble").classList.toggle("relight", !!out && embers() > 0 && prefs.autoRelight === false);
+    $("#scBubble").classList.toggle("risk", risk);
+    $("#scBubble").textContent = out ? (embers() && prefs.autoRelight === false ? "Relight it?" : "Went out")
+      : risk ? `${hoursLeft}h left to keep it` : xp >= goal ? "Goal done!" : lit ? `${goal - xp} XP to goal`
       : streak > 0 ? "Keep it lit!" : "Let's start!";
     renderWeekStrip();
     renderQuests();
@@ -1951,7 +2058,7 @@
   document.querySelectorAll(".practice-list button").forEach(btn =>
     btn.addEventListener("click", () => runMode(btn.dataset.mode)));
   $("#homeContLabel").addEventListener("click", () => { show("path"); renderPath(); });
-  $("#scBubble").addEventListener("click", () => { if (outSince()) askRelight(); });
+  $("#scBubble").addEventListener("click", () => { if (outSince()) askRelight(); else if ($(".streak-card").classList.contains("risk")) $("#homeContinue").click(); });
   $("#relightBtn") && $("#relightBtn").addEventListener("click", askRelight);
   $("#achAll").addEventListener("click", () => { achShowAll = !achShowAll; renderAchievements(); });
   $("#profSettings").addEventListener("click", () => document.querySelector(".bottomnav [data-nav=settings]").click());
@@ -3929,6 +4036,8 @@
     $("#doneStreak").textContent = s;
     $("#doneStreakMsg").textContent = lit ? (s === 1 ? "Fire lit. Come back tomorrow to make it two." : "Fire lit for today. Keep it going tomorrow.") : "Finish a session to light today's fire.";
     $(".done-stage.s2").classList.toggle("lit", lit);
+    const ne = embers();
+    $("#doneEmbers").innerHTML = `${svgUse("i-ember")} ${ne} ember${ne === 1 ? "" : "s"} protecting it`;
     renderWeekStrip($("#doneWeek"));
     // stage three: the quests
     const q = todayQuests(), done = questRowsInto($("#doneQuests"), q);
@@ -4408,6 +4517,7 @@
     $("#goalSeg").querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.goal === g));
     $("#checkSwitch").classList.toggle("on", prefs.checkStrokes !== false);
     $("#soundSwitch").classList.toggle("on", prefs.sound !== false);
+    $("#relightSwitch").classList.toggle("on", prefs.autoRelight !== false);
     $("#pinyinSwitch").classList.toggle("on", prefs.showPinyin !== false);
     if ($("#nameInput") && document.activeElement !== $("#nameInput")) $("#nameInput").value = prefs.name || "";
     const bk = $("#backupAge");
@@ -4436,6 +4546,9 @@
   });
   $("#checkSwitch").addEventListener("click", toggleCheck);
   $("#checkSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCheck(); } });
+  const toggleRelight = () => { prefs.autoRelight = prefs.autoRelight === false ? true : false; savePrefs(prefs); syncSettings(); };
+  $("#relightSwitch").addEventListener("click", toggleRelight);
+  $("#relightSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleRelight(); } });
   $("#soundSwitch").addEventListener("click", toggleSound);
   $("#soundSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSound(); } });
   $("#settingsBtn").addEventListener("click", () => { syncSettings(); renderAccount(); openModal("settingsModal"); });
@@ -4734,10 +4847,11 @@ This REPLACES the progress on this device.`)) return;
     for (const [m, n] of Object.entries(aa.questMonths || {})) questMonths[m] = Math.max(n || 0, questMonths[m] || 0);
     const chests = Math.max(aa.chests || 0, ab.chests || 0);
     const boostUntil = Math.max(aa.boostUntil || 0, ab.boostUntil || 0);
+    const levelSeen = Math.max(aa.levelSeen || 0, ab.levelSeen || 0);
     // today's quests: keep whichever side has claimed more of them
     const qa = aa.quests, qb = ab.quests, nd = q => (q && q.done ? Object.keys(q.done).length : -1);
     const quests = (qa && qb && qa.date === qb.date) ? (nd(qa) >= nd(qb) ? qa : qb) : ((qa && qa.date) >= (qb && qb.date || "") ? qa : qb);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil }));
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
@@ -5043,7 +5157,8 @@ This REPLACES the progress on this device.`)) return;
   hydrateIcons();
   renderHome();
   show("home");                          // land on the Home dashboard (path renders on first Learn tap)
-  setTimeout(() => askRelight(true), 600);   // a streak that went out yesterday can be relit right here
+  setTimeout(protectStreak, 600);            // an ember relights yesterday's miss, or the fire is declared out
+  if (activity.levelSeen == null) { activity.levelSeen = levelInfo().level; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); }
   // local development only: open straight onto a view (?view=progress) for screenshots
   if (location.hostname === "localhost") {
     const v = new URLSearchParams(location.search).get("view");
@@ -5052,7 +5167,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
