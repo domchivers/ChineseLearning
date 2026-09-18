@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=230";
+  const ASSET_V = "?v=231";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1484,139 +1484,30 @@
   }
 
   /* ---- Avatar --------------------------------------------------------------
-     Every layer was generated alone, in place, on the same square canvas, so
-     they stack with no positioning. Skin is a head and a body per tone; hair
-     is drawn once in brown and recoloured by luminance, so the shading
-     survives. Back-to-front: back hair, body, head, eyes, mouth, front hair
-     (clothes and accessories slot in as their layers arrive). */
-  const AV = {
-    tones: [["light", "#fde0c0"], ["warm", "#fbd2a5"], ["tan", "#f2b872"], ["brown", "#d99f66"], ["deep", "#b5703f"], ["dark", "#995e35"]],
-    hairBase: [71, 53, 39],
-    hairColors: ["#2a211e", "#473527", "#785428", "#a0623a", "#c9915a", "#efd9a6", "#e39aae", "#7fb3d5"],
-    hairs: [["none", "None"], ["tousled", "Tousled"], ["bob", "Bob"], ["waves", "Waves"], ["curls", "Curls"], ["bun", "Bun"], ["pigtails", "Pigtails"]],
-    eyes: [["open", "Open"], ["happy", "Happy"], ["wink", "Wink"], ["squeezed", "Squeezed"]],
-    brows: [["none", "None"], ["relaxed", "Relaxed"], ["raised", "Raised"], ["concerned", "Concerned"]],
-    mouths: [["smile", "Smile"], ["open", "Open"], ["neutral", "Neutral"]],
-    tops: [["hoodie", "Hoodie"], ["jacket", "Jacket"]],
-    bottoms: [["shorts", "Shorts"], ["trousers", "Trousers"], ["skirt", "Skirt"]],
-    shoes: [["cream", "Cream"], ["charcoal", "Charcoal"]]
-  };
-  const avatarDefault = () => ({ tone: "light", hair: "tousled", hairColor: "#473527", eyes: "open", brows: "relaxed", mouth: "smile", top: "hoodie", bottom: "shorts", shoes: "cream" });
-  const AV_LISTS = { hair: AV.hairs, eyes: AV.eyes, brows: AV.brows, mouth: AV.mouths, top: AV.tops, bottom: AV.bottoms, shoes: AV.shoes };
-  // a saved choice that no longer has a layer falls back to the first option
-  const legacyAvatarCfg = () => {
-    const c = Object.assign(avatarDefault(), prefs.avatar || {});
-    for (const [k, list] of Object.entries(AV_LISTS)) if (!list.some(o => o[0] === c[k])) c[k] = list[0][0];
-    if (!AV.tones.some(t => t[0] === c.tone)) c.tone = "light";
-    return c;
-  };
-  const hexRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
-  const avImgs = {}, avTints = {};
-  function avImg(name) {
-    return avImgs[name] || (avImgs[name] = new Promise(res => {
-      const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = `images/avatar/${name}.webp${ASSET_V}`;
-    }));
-  }
-  function tinted(key, img, ref, target, weight, maxLift) {
-    const k = key + "|" + target;
-    if (avTints[k]) return avTints[k];
-    const c = document.createElement("canvas"); c.width = img.width; c.height = img.height;
-    const x = c.getContext("2d"); x.drawImage(img, 0, 0);
-    const d = x.getImageData(0, 0, c.width, c.height), p = d.data;
-    const rl = 0.299 * ref[0] + 0.587 * ref[1] + 0.114 * ref[2], t = hexRgb(target), lift = maxLift || 1.35;
-    for (let i = 0; i < p.length; i += 4) {
-      if (p[i + 3] < 8) continue;
-      const r = p[i], g = p[i + 1], b = p[i + 2];
-      const w = weight ? weight(r, g, b) : 1;
-      if (w <= 0) continue;
-      // shading relative to the reference colour, capped so edge blends do not blow out to white
-      const l = Math.min(lift, (0.299 * r + 0.587 * g + 0.114 * b) / rl);
-      p[i] = r + (Math.min(255, t[0] * l) - r) * w;
-      p[i + 1] = g + (Math.min(255, t[1] * l) - g) * w;
-      p[i + 2] = b + (Math.min(255, t[2] * l) - b) * w;
-    }
-    x.putImageData(d, 0, 0);
-    return (avTints[k] = c);
-  }
-  // Draw an avatar into a canvas. `crop` is the part of the layer canvas to
-  // show, as fractions [x, y, w, h]; the head alone is about [.2, .02, .6, .6].
-  async function drawLegacyAvatar(canvas, cfg, opts = {}) {
-    if (!canvas) return;
-    // Backing size follows the screen's pixel density, up to the layers' own
-    // 1024, so a phone at 3x never shows an upscaled canvas.
-    const dpr = Math.min(3, window.devicePixelRatio || 1);
-    const size = Math.min(1024, Math.round((opts.size || 512) * dpr)), crop = opts.crop || [0, 0, 1, 1];
-    canvas.width = Math.round(size * crop[2] / Math.max(crop[2], crop[3])); canvas.height = Math.round(size * crop[3] / Math.max(crop[2], crop[3]));
-    const t = cfg.tone, order = [];
-    // trousers fall over the shoes; shorts and a skirt sit under them
-    const bottom = [`bottom-${cfg.bottom}-${t}`, "base"], shoes = [`shoes-${cfg.shoes}`, "base"];
-    order.push(...(cfg.bottom === "trousers" ? [shoes, bottom] : [bottom, shoes]));
-    order.push([`top-${cfg.top}-${t}`, "base"], [`head-${t}`, "base"], [`eyes-${cfg.eyes}`, "base"]);
-    if (cfg.brows !== "none") order.push([`brows-${cfg.brows}`, "base"]);
-    order.push([`mouth-${cfg.mouth}`, "base"]);
-    if (cfg.hair !== "none") order.push([`hair-${cfg.hair}`, "hair"]);
-    const imgs = await Promise.all(order.map(o => avImg(o[0])));
-    if (opts.isCurrent && !opts.isCurrent()) return;
-    // compose at the layers' own size, then scale once: scaling each layer on
-    // its own softens every cut edge and lets the layer beneath show through
-    const first = imgs.find(Boolean); if (!first) return;
-    const full = document.createElement("canvas"); full.width = first.width; full.height = first.height;
-    const fx = full.getContext("2d"); fx.clearRect(0, 0, full.width, full.height);
-    imgs.forEach((img, i) => {
-      if (!img) return;
-      const [name, kind] = order[i];
-      fx.drawImage(kind === "hair" ? tinted(name, img, AV.hairBase, cfg.hairColor, null, 1.35) : img, 0, 0);
-    });
-    const x = canvas.getContext("2d"); x.clearRect(0, 0, canvas.width, canvas.height);
-    x.imageSmoothingQuality = "high";
-    x.drawImage(full, crop[0] * full.width, crop[1] * full.height, crop[2] * full.width, crop[3] * full.height, 0, 0, canvas.width, canvas.height);
-  }
-
-  // ---- the builder screen ----
-  let avCat = "hair";
-  const AV_CATS = [["skin", "Skin"], ["hair", "Hair"], ["hairColor", "Hair colour"], ["eyes", "Eyes"], ["brows", "Brows"], ["mouth", "Mouth"], ["top", "Tops"], ["bottom", "Bottoms"], ["shoes", "Shoes"]];
-  // what each tile shows, as a fraction of the canvas [x, y, w, h]
-  const AV_CROPS = { hair: [.2, 0, .6, .6], eyes: [.29, .19, .42, .42], brows: [.29, .19, .42, .42], mouth: [.29, .19, .42, .42],
-    top: [.2, .42, .6, .42], bottom: [.2, .58, .6, .42], shoes: [.25, .7, .5, .3] };
-  function renderLegacyAvatarBuilder() {
-    const cfg = avatarCfg();
-    drawAvatar($("#avPreview"), cfg, { size: 640 });
-    const cats = $("#avCats"); cats.innerHTML = "";
-    AV_CATS.forEach(([k, label]) => {
-      const b = el("button", { className: "chip" + (avCat === k ? " on" : ""), type: "button" }, label);
-      b.addEventListener("click", () => { avCat = k; renderAvatarBuilder(); });
-      cats.appendChild(b);
-    });
-    const box = $("#avOpts"); box.innerHTML = "";
-    const pick = patch => { prefs.avatar = Object.assign(avatarCfg(), patch); savePrefs(prefs); renderAvatarBuilder(); };
-    if (avCat === "skin") {
-      box.className = "av-opts swatches";
-      AV.tones.forEach(([id, c]) => {
-        const b = el("button", { className: "swatch" + (cfg.tone === id ? " on" : ""), type: "button", title: id });
-        b.style.background = c; b.addEventListener("click", () => pick({ tone: id })); box.appendChild(b);
-      });
-    } else if (avCat === "hairColor") {
-      box.className = "av-opts swatches";
-      AV.hairColors.forEach(c => {
-        const b = el("button", { className: "swatch" + (cfg.hairColor === c ? " on" : ""), type: "button" });
-        b.style.background = c; b.addEventListener("click", () => pick({ hairColor: c })); box.appendChild(b);
-      });
-    } else {
-      box.className = "av-opts tiles";
-      const crop = AV_CROPS[avCat];
-      AV_LISTS[avCat].forEach(([id, label]) => {
-        const b = el("button", { className: "av-tile" + (cfg[avCat] === id ? " on" : ""), type: "button" });
-        const c = el("canvas"); b.append(c, el("span", {}, label));
-        drawAvatar(c, Object.assign({}, cfg, { [avCat]: id }), { size: 160, crop });
-        b.addEventListener("click", () => pick({ [avCat]: id })); box.appendChild(b);
-      });
-    }
-  }
-  // The original editor remains available for saved legacy avatars.
+     The modular wardrobe: every option is a full-canvas Photoshop layer listed
+     in avatar-modular-data.js, resolved by makeModularAvatar and stacked in
+     drawAvatar. Saved avatars from the two earlier systems (the first canvas
+     engine, and the v2 "complete look" catalogue) are migrated on read; the
+     v2 outfit ids need this table to become a top, bottom and shoes. */
+  const LEGACY_OUTFITS = [
+    {"id":"hoodie_trousers","top":"Cream hoodie","bottom":"Blue trousers","shoes":"Cream trainers"},
+    {"id":"jacket","top":"Yellow jacket","bottom":"Blue trousers","shoes":"Cream trainers"},
+    {"id":"shorts","top":"Cream hoodie","bottom":"Teal shorts","shoes":"Cream trainers"},
+    {"id":"skirt","top":"Cream hoodie","bottom":"Coral skirt","shoes":"Cream trainers"},
+    {"id":"shoes","top":"Cream hoodie","bottom":"Blue trousers","shoes":"Charcoal trainers"},
+    {"id":"teal_tan","top":"Teal hoodie","bottom":"Tan trousers","shoes":"Cream trainers"},
+    {"id":"blue_charcoal","top":"Blue sweatshirt","bottom":"Charcoal shorts","shoes":"Cream trainers"},
+    {"id":"striped_blue","top":"Striped top","bottom":"Blue shorts","shoes":"Cream trainers"},
+    {"id":"dark_hoodie","top":"Dark hoodie","bottom":"Blue trousers","shoes":"Cream trainers"},
+    {"id":"coral_sweatshirt","top":"Coral sweatshirt","bottom":"Blue trousers","shoes":"Cream trainers"},
+    {"id":"cream_cardigan","top":"Cream cardigan","bottom":"Blue trousers","shoes":"Cream trainers"},
+    {"id":"tan_shorts","top":"Cream hoodie","bottom":"Tan shorts","shoes":"Cream trainers"},
+    {"id":"dark_trousers","top":"Cream hoodie","bottom":"Charcoal trousers","shoes":"Cream trainers"},
+    {"id":"cream_skirt","top":"Cream hoodie","bottom":"Cream skirt","shoes":"Cream trainers"},
+    {"id":"brown_shoes","top":"Cream hoodie","bottom":"Blue trousers","shoes":"Brown shoes"}
+  ];
   const modular = makeModularAvatar(MODULAR_AVATAR_DATA);
-  const wardrobeModel = makeAvatarModel(AVATAR_DATA);
-  const wardrobe = makeAvatarWardrobe(AVATAR_DATA, wardrobeModel);
-  const avatarCfg = () => modular.migrate(prefs.avatar, AVATAR_DATA.outfits);
+  const avatarCfg = () => modular.migrate(prefs.avatar, LEGACY_OUTFITS);
   const wardrobeImages = new Map(), avatarDrawTokens = new WeakMap();
   function wardrobeImage(path) {
     if (!wardrobeImages.has(path)) {
@@ -1634,10 +1525,9 @@
   async function drawAvatar(canvas,cfg,opts={}) {
     if (!canvas) return false;
     const token={};avatarDrawTokens.set(canvas,token);
-    if (cfg.version !== 2 && cfg.version !== 3) { await drawLegacyAvatar(canvas,cfg,{...opts,isCurrent:()=>avatarDrawTokens.get(canvas)===token}); return true; }
     canvas.setAttribute('aria-busy','true');
     try {
-      const images=await Promise.all((cfg.version===3?modular:wardrobe).paths(cfg).map(wardrobeImage));
+      const images=await Promise.all(modular.paths(cfg).map(wardrobeImage));
       if (avatarDrawTokens.get(canvas)!==token) return false;
       const full=document.createElement('canvas');full.width=full.height=1024;
       const fx=full.getContext('2d');images.forEach(image=>fx.drawImage(image,0,0,1024,1024));
@@ -1655,9 +1545,6 @@
       return false;
     } finally { if(avatarDrawTokens.get(canvas)===token) canvas.setAttribute('aria-busy','false'); }
   }
-  let wardrobeCategory='top';
-  const wardrobeCategories=[['top','Tops'],['bottom','Bottoms'],['shoes','Shoes'],['accessory','Accessories'],['hair','Hair'],['tone','Skin'],['eyes','Eyes'],['brows','Brows'],['mouth','Mouth'],['outfits','Outfit sets']];
-  const wardrobeCrops={top:[.2,.50,.6,.4],bottom:[.25,.68,.5,.31],shoes:[.29,.82,.42,.18],hair:[.2,.08,.6,.55],eyes:[.29,.28,.42,.3],brows:[.29,.28,.42,.3],mouth:[.29,.28,.42,.3]};
   let wardrobeRender=0, wardrobePick=0;
   let modularCategory='top', modularSection='Outfit', avatarDraft=null;
   const modularSections={Face:['tone','eyes','brows','mouth'],Hair:['hair','hairColour'],Outfit:['top','bottom','shoes'],Extras:['accessory']};
