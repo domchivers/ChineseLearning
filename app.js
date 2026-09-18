@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=227";
+  const ASSET_V = "?v=228";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1694,7 +1694,6 @@
     $('#avHelp').textContent=modularSection==='Extras'?'More accessories are coming soon.':'';
   }
 
-  $('#avOpts').addEventListener('scroll',()=>{if(window.innerHeight<=780 && $('#avOpts').scrollTop>12)$('#avatar').classList.add('preview-compact');},{passive:true});
   function renderAvatarBuilder() { if(!avatarDraft)avatarDraft={...avatarCfg()};renderModularBuilder(avatarDraft); }
   $("#avReset").onclick=()=>{++wardrobePick;avatarDraft={...avatarCfg()};renderAvatarBuilder();};
   $("#avSave").onclick=()=>{++wardrobePick;prefs.avatar={...(avatarDraft||avatarCfg())};savePrefs(prefs);avatarDraft=null;renderDashboard();show("progress");};
