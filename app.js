@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=233";
+  const ASSET_V = "?v=234";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -180,20 +180,17 @@
     activity.xpDays[t] = after;
     sessionXP += n;
     const goal = dailyGoal();
-    // each moment fires exactly once, the instant the day's XP crosses the line
-    const lit = before < LIT_XP && after >= LIT_XP && activity.litDay !== t;
+    // the goal moment fires exactly once, the instant the day's XP crosses the line
     const crossed = before < goal && after >= goal && activity.celebrated !== t;
-    if (lit) activity.litDay = t;
     if (crossed) activity.celebrated = t;
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
     queueSync();
     if (crossed) { earnXP(XP.goal); celebrateGoal(); if ($(".streak-card")) renderHomeTop(); }
-    if (lit) streakExtended(crossed ? 3000 : 0);
     checkQuests();
     const lv = levelInfo().level;
     if (lv > (activity.levelSeen || 1)) {
       activity.levelSeen = lv; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
-      setTimeout(() => celebrateLevel(lv), crossed || lit ? 3600 : 300);
+      setTimeout(() => celebrateLevel(lv), crossed ? 3600 : 300);
     }
   }
   function celebrateLevel(lv) {
@@ -215,12 +212,17 @@
   }
 
   /* ---- Streak moments ----------------------------------------------------
-     The day the fire is lit, the streak grows by one. Milestones get a full
-     screen; other days a line. Embers arrive at their own milestones, once
-     per streak, so a streak that restarts can earn them again. */
+     Finishing a session lights the day's fire and the streak grows by one.
+     The completion screen carries the moment; milestones add a full screen
+     on top of it. Embers arrive at their own milestones, once per streak, so
+     a streak that restarts can earn them again. */
   const MILESTONES = [3, 7, 14, 30, 50, 100, 200, 365];
   const EMBER_AT = [3, 7, 14, 30, 60, 100];
-  function streakExtended(delay = 0) {
+  function lightFire() {
+    const t = todayStr();
+    activity.lit = activity.lit || {};
+    if (activity.lit[t]) return null;                        // already lit today
+    activity.lit[t] = true;
     const s = computeStreak();
     const start = dayKeyOffset(1 - s);                       // the day this streak began
     activity.emberFor = activity.emberFor || {};
@@ -233,11 +235,8 @@
     if (s > (activity.best || 0)) activity.best = s;
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
     queueSync();
-    setTimeout(() => {
-      if (MILESTONES.includes(s)) celebrateMilestone(s, ember);
-      else toast(s === 1 ? "Fire lit! Day 1 of your streak." : `Fire lit! ${s}-day streak.` + (ember ? " You earned an ember." : ""));
-      if ($(".streak-card")) renderHomeTop();
-    }, delay);
+    if ($(".streak-card")) renderHomeTop();
+    return { streak: s, ember, milestone: MILESTONES.includes(s) };
   }
 
   /* ---- Daily quests ------------------------------------------------------
@@ -487,7 +486,9 @@
   // streak is the run of lit days ending today or yesterday. The daily goal is
   // the separate XP target. Days from before XP existed count if they met the
   // old card goal, so nobody's streak resets on the change.
-  const litOn = key => xpOn(key) >= LIT_XP || !!(activity.relit && activity.relit[key]) || (activity.days[key] || 0) >= 20;
+  const LIT_CUTOFF = "2026-09-19";   // from this day a finished session lights the fire; before it, XP did
+  const litOn = key => !!(activity.lit && activity.lit[key]) || !!(activity.relit && activity.relit[key])
+    || (key < LIT_CUTOFF && (xpOn(key) >= LIT_XP || (activity.days[key] || 0) >= 20));
   const goalMetOn = key => xpOn(key) >= dailyGoal();
   function computeStreak() {
     let d = new Date();
@@ -4022,7 +4023,9 @@
     };
     requestAnimationFrame(step);
   }
-  function startDoneSequence(tiles) {
+  let doneFire = null;
+  function startDoneSequence(tiles, fire = null) {
+    doneFire = fire;
     $("#doneStats").classList.add("hidden");
     const box = $("#doneTiles"); box.classList.remove("hidden"); box.innerHTML = "";
     tiles.forEach((t, i) => {
@@ -4034,10 +4037,11 @@
     // stage two: the streak
     const s = computeStreak(), lit = litOn(todayStr());
     $("#doneStreak").textContent = s;
-    $("#doneStreakMsg").textContent = lit ? (s === 1 ? "Fire lit. Come back tomorrow to make it two." : "Fire lit for today. Keep it going tomorrow.") : "Finish a session to light today's fire.";
+    $("#doneStreakMsg").textContent = fire ? (s === 1 ? "Fire lit. Come back tomorrow to make it two." : (MILESTONE_WORDS[s] || "Fire lit. Keep it going tomorrow."))
+      : lit ? "Already lit today. Keep it going tomorrow." : "Finish a session to light today's fire.";
     $(".done-stage.s2").classList.toggle("lit", lit);
     const ne = embers();
-    $("#doneEmbers").innerHTML = `${svgUse("i-ember")} ${ne} ember${ne === 1 ? "" : "s"} protecting it`;
+    $("#doneEmbers").innerHTML = `${svgUse("i-ember")} ${fire && fire.ember ? "You earned an ember · " : ""}${ne} ember${ne === 1 ? "" : "s"} protecting it`;
     renderWeekStrip($("#doneWeek"));
     // stage three: the quests
     const q = todayQuests(), done = questRowsInto($("#doneQuests"), q);
@@ -4058,7 +4062,10 @@
     const last = i >= doneStageCount - 1;
     $("#doneContinue").classList.toggle("hidden", last);
     $(".done-final").classList.toggle("hidden", !last);
-    if (i === 1) sfx("goal");
+    if (i === 1) {
+      if (doneFire && doneFire.milestone) { sfx("milestone"); setTimeout(() => celebrateMilestone(doneFire.streak, doneFire.ember), 900); }
+      else if (doneFire) { sfx("goal"); buzz(true); }
+    }
   }
 
   function finishStudy() {
@@ -4086,11 +4093,12 @@
     if (perfect) earnXP(XP.perfect);
     if (justFinished) startBoost();
     const acc = studyStats.answered ? Math.round((studyStats.answered - studyStats.again) / studyStats.answered * 100) : 100;
+    const fire = lightFire();
     startDoneSequence([
       { value: sessionXP, label: "XP", prefix: "+", cls: "xp" },
       { value: Math.round((Date.now() - sessionStart) / 1000), label: "Time", fmt: fmtTime, cls: "time" },
       { value: acc, label: "Accuracy", suffix: "%", cls: "acc" }
-    ]);
+    ], fire);
     renderDoneNotes(perfect, justFinished);
     const nextBtn = $("#doneNext");
     if (upNext) {
@@ -4242,11 +4250,12 @@
     earnXP(XP.session);
     if (perfect) earnXP(XP.perfect);
     const pct = Math.round((quizScore / quizItems.length) * 100);
+    const fire = lightFire();
     startDoneSequence([
       { value: sessionXP, label: "XP", prefix: "+", cls: "xp" },
       { value: Math.round((Date.now() - sessionStart) / 1000), label: "Time", fmt: fmtTime, cls: "time" },
       { value: pct, label: "Accuracy", suffix: "%", cls: "acc" }
-    ]);
+    ], fire);
     renderDoneNotes(perfect, false);
     $("#doneAgain").classList.add("hidden");   // redo is a Study feature
     show("done");
@@ -4848,10 +4857,11 @@ This REPLACES the progress on this device.`)) return;
     const chests = Math.max(aa.chests || 0, ab.chests || 0);
     const boostUntil = Math.max(aa.boostUntil || 0, ab.boostUntil || 0);
     const levelSeen = Math.max(aa.levelSeen || 0, ab.levelSeen || 0);
+    const lit = Object.assign({}, ab.lit || {}, aa.lit || {});
     // today's quests: keep whichever side has claimed more of them
     const qa = aa.quests, qb = ab.quests, nd = q => (q && q.done ? Object.keys(q.done).length : -1);
     const quests = (qa && qb && qa.date === qb.date) ? (nd(qa) >= nd(qb) ? qa : qb) : ((qa && qa.date) >= (qb && qb.date || "") ? qa : qb);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen }));
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen, lit }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
@@ -5167,7 +5177,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
