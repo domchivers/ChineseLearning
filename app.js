@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=235";
+  const ASSET_V = "?v=236";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -3343,7 +3343,7 @@
     // A long sentence gets the whole width: the mascot steps up out of the way
     // and the bubble runs edge to edge, so the words wrap into two lines, not four.
     const longSentence = sent.words.length > 6 || enWords(sent.en).length > 7;
-    if (longSentence) { bubble.parentElement.classList.add("long"); host.classList.add("long"); }
+    if (longSentence) { bubble.parentElement.classList.add("long"); bubble.parentElement.classList.toggle("en2cn", en2cn); host.classList.add("long"); }
     // fewer distractors on a long one, so the bank stays in view
     const nDistract = longSentence ? 2 : 3;
 
