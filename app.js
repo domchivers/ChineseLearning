@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=229";
+  const ASSET_V = "?v=230";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -1685,18 +1685,18 @@
         if(path){const img=el('img',{src:MODULAR_AVATAR_DATA.thumbnails[path],alt:'',width:80,height:80});img.loading='lazy';img.decoding='async';b.append(img);}
         if(!['top','bottom','shoes'].includes(modularCategory))b.append(el('span',{},option.label));
       }
-      b.onclick=async()=>{const pick=++wardrobePick;try{
+      b.onclick=async()=>{const pick=++wardrobePick;b.setAttribute("aria-busy","true");try{
         await Promise.all(modular.paths(option.next).map(wardrobeImage));
         if(generation!==wardrobeRender||pick!==wardrobePick)return;
         avatarDraft={...option.next};renderAvatarBuilder();
-      }catch(e){if(generation===wardrobeRender)$('#avStatus').textContent=e.message;}};box.append(b);
+      }catch(e){if(generation===wardrobeRender)$('#avStatus').textContent=e.message;}finally{b.removeAttribute('aria-busy');}};box.append(b);
     }
     $('#avHelp').textContent=modularSection==='Extras'?'More accessories are coming soon.':'';
   }
 
   function renderAvatarBuilder() { if(!avatarDraft)avatarDraft={...avatarCfg()};renderModularBuilder(avatarDraft); }
   $("#avReset").onclick=()=>{++wardrobePick;avatarDraft={...avatarCfg()};renderAvatarBuilder();};
-  $("#avSave").onclick=()=>{++wardrobePick;prefs.avatar={...(avatarDraft||avatarCfg())};savePrefs(prefs);avatarDraft=null;renderDashboard();show("progress");};
+  $("#avSave").onclick=()=>{++wardrobePick;prefs.avatar={...(avatarDraft||avatarCfg())};savePrefs(prefs);avatarDraft=null;renderDashboard();show("progress");toast("Avatar saved");};
 
   $("#avBack").addEventListener("click", () => { ++wardrobePick;avatarDraft=null;renderDashboard(); show("progress"); });
   $("#actSeg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
