@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=237";
+  const ASSET_V = "?v=238";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -5179,6 +5179,10 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "path") { renderPath(); show("path"); }
     // screenshot helpers: the longest sentence card, or an answered choice card
     else if (v === "sentence") setTimeout(() => window.__dev.sentence(window.__dev.longest()[0].slice(0, 4), false), 300);
+    else if (v === "write") setTimeout(() => {
+      curCard = CARDS.find(c => c.hanzi.length === 2 && HW_OK && wordWritable(c.hanzi)) || CARDS[0]; curDir = "write"; studyAnswered = false;
+      queue = [curCard]; sessionTotal = 1; clearedIds = new Set(); show("study"); renderStudyCard();
+    }, 600);
     else if (v === "choice") setTimeout(() => {
       curCard = CARDS.find(c => c.hanzi.length === 2) || CARDS[0]; curDir = "recognize"; studyAnswered = false;
       beginStudySession([curCard]); if ($(".meet-intro")) $("#studyContinue").click();
