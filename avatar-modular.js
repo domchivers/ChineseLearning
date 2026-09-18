@@ -2,7 +2,7 @@
 function makeModularAvatar(data) {
  const labels=id=>({darkbrown:'Dark brown',hairColour:'Hair colour'}[id] || id.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()));
  const defaults=()=>({...data.defaults,version:3});
- const choices=(s,key)=>key==='tone'?Object.keys(data.skin[s.body]||{}):key==='body'?Object.keys(data.skin):key==='hairColour'?Object.keys(data.hair[s.hair]||{}):Object.keys(data[key]||{});
+ const choices=(s,key)=>key==='tone'?['light','warm','tan','brown','deep','dark'].filter(id=>Object.hasOwn(data.skin[s.body]||{},id)):key==='body'?Object.keys(data.skin):key==='hairColour'?Object.keys(data.hair[s.hair]||{}):Object.keys(data[key]||{});
  function supported(s){return ['body','tone','hair','hairColour','top','bottom','shoes','eyes','brows','mouth','accessory'].every(k=>choices(s,k).includes(s[k]));}
  function normalize(saved){const s={...defaults(),...saved,body:'male',version:3};return supported(s)?s:defaults();}
  function migrate(saved, outfits=[]) {
