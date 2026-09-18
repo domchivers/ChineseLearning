@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=231";
+  const ASSET_V = "?v=232";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -3221,16 +3221,23 @@
   //   cn2en - bubble shows the 汉字 (+audio), tiles are English words
   //   en2cn - bubble shows the English, tiles are 汉字 with pinyin underneath
   // Sets studyCheckFn so the pinned button acts as "Check" then "Continue".
+  let devSentence = null, devEn2cn = null;     // localhost testing only: force a sentence and a direction
   function buildSentenceExercise(face, host, sent, labelEl, onResult) {
     // Translating to English needs ≥2 English words, or it's a 1-tile giveaway
     // (e.g. 再见！→ "Goodbye!"); fall back to building the Chinese instead.
-    const en2cn = enWords(sent.en).length < 2 || Math.random() < 0.5;
+    const en2cn = devEn2cn !== null ? devEn2cn : (enWords(sent.en).length < 2 || Math.random() < 0.5);
     face.innerHTML = "";
     face.classList.add("sent");
     host.innerHTML = "";
-    host.classList.add("sentence-mode");
+    host.classList.add("sentence-mode"); host.classList.remove("long");
     $("#studyContinueWrap").classList.add("wide");
     const bubble = mascotSpeech(face);
+    // A long sentence gets the whole width: the mascot steps up out of the way
+    // and the bubble runs edge to edge, so the words wrap into two lines, not four.
+    const longSentence = sent.words.length > 6 || enWords(sent.en).length > 7;
+    if (longSentence) { bubble.parentElement.classList.add("long"); host.classList.add("long"); }
+    // fewer distractors on a long one, so the bank stays in view
+    const nDistract = longSentence ? 2 : 3;
 
     let target, tiles, answerDisplay;
     bubble.classList.add("sent");
@@ -3242,7 +3249,7 @@
       answerDisplay = sent.hanzi;
       const pool = SENTENCES.filter(s => s !== sent).flatMap(s => s.words)
         .filter(w => !target.includes(w.hanzi));
-      sample(pool, 3).forEach(w => tiles.push({ val: w.hanzi, hanzi: w.hanzi, pinyin: w.pinyin }));
+      sample(pool, nDistract).forEach(w => tiles.push({ val: w.hanzi, hanzi: w.hanzi, pinyin: w.pinyin }));
     } else {
       labelEl.textContent = "Translate this sentence";
       // The sentence reads across the bubble, each word with its pinyin above.
@@ -3253,9 +3260,12 @@
         el("span", { className: "hz" }, w.hanzi)
       ])));
       const tail = sent.hanzi.slice(-1);
-      if (/[。？！，、]/.test(tail)) bubble.appendChild(el("span", { className: "sw punct" }, [
-        el("span", { className: "py" }, ""), el("span", { className: "hz" }, tail)
-      ]));
+      if (/[。？！，、]/.test(tail)) {
+        // the mark stays glued to the last word rather than wrapping onto a line of its own
+        const last = bubble.lastElementChild, group = el("span", { className: "swg" });
+        bubble.insertBefore(group, last); group.appendChild(last);
+        group.appendChild(el("span", { className: "sw punct" }, [el("span", { className: "py" }, ""), el("span", { className: "hz" }, tail)]));
+      }
       if (!showPinyin()) {
         bubble.classList.add("nopy");
         bubble.addEventListener("click", () => bubble.classList.remove("nopy"), { once: true });
@@ -3265,10 +3275,12 @@
       answerDisplay = sent.en;
       const pool = SENTENCES.filter(s => s !== sent).flatMap(s => enWords(s.en))
         .filter(w => !target.includes(w));
-      sample([...new Set(pool)], 3).forEach(w => tiles.push({ val: w, text: w }));
+      sample([...new Set(pool)], nDistract).forEach(w => tiles.push({ val: w, text: w }));
     }
 
     const answer = el("div", { className: "sent-answer " + (en2cn ? "han" : "txt") });
+    // ruled lines for about as many rows as the answer will need (five or six tiles a line)
+    answer.style.setProperty("--rows", String(Math.max(2, Math.ceil(target.length / (en2cn ? 6 : 5)))));
     const bank = el("div", { className: "sent-bank" });
     host.append(answer, bank);
 
@@ -3743,7 +3755,7 @@
     } else if (curDir === "sentence") {
       // Tap word tiles to assemble the sentence; the button checks, then advances.
       choices.classList.remove("hidden");
-      const pool = sentencesFor(c);
+      const pool = devSentence ? [devSentence] : sentencesFor(c);
       buildSentenceExercise(face, choices, pool[Math.floor(Math.random() * pool.length)],
         $("#promptLabel"), correct => answerStudy(correct));
       $("#studyContinueWrap").classList.remove("hidden");
@@ -3881,7 +3893,7 @@
     body.appendChild(el("div", { className: "fb-py" }, [c.hanzi, prettyPinyin(c.pinyin), c.en].filter(x => x !== line).join(" · ")));
     fb.appendChild(body);
     wrapEl.insertBefore(fb, wrapEl.firstChild);
-    wrapEl.classList.add(correct ? "ok" : "bad");
+    wrapEl.classList.add(correct ? "ok" : "bad", "wide");
   }
   function clearFeedback(wrapEl) {
     if (!wrapEl) return;
@@ -5040,7 +5052,10 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard };
+  if (location.hostname === "localhost") window.__dev = { earnXP, celebrateMilestone, celebrateGoal, askRelight, computeStreak, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+    // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
+    sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
+    longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
   renderAccount();
   if (cloudOn() && !signedIn() && !localStorage.getItem(LS_SKIPAUTH)) {
     openAuthGate();                       // no session yet — offer sign-in (skippable)
