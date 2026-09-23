@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=274";
+  const ASSET_V = "?v=275";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -3550,6 +3550,16 @@
   }
   function showHint(anchor, h, p, rev) {
     closeHint();
+    if (!h) {                             // no Chinese word for this one
+      hintEl = el("div", { className: "word-hint note", role: "tooltip" }, [el("div", { className: "wh-e" }, "No separate word in Chinese")]);
+      document.body.appendChild(hintEl);
+      const r = anchor.getBoundingClientRect(), b = hintEl.getBoundingClientRect();
+      const left = Math.max(8, Math.min(innerWidth - b.width - 8, r.left + r.width / 2 - b.width / 2));
+      let top = r.top - b.height - 10; if (top < 8) { top = r.bottom + 10; hintEl.classList.add("below"); }
+      hintEl.style.left = left + "px"; hintEl.style.top = top + "px"; hintEl.style.setProperty("--ax", (r.left + r.width / 2 - left) + "px");
+      anchor.classList.add("open"); hintFor = anchor;
+      return;
+    }
     const e = wordMeaning(h);
     hintEl = el("div", { className: "word-hint" + (rev ? " rev" : ""), role: "tooltip" }, rev ? [
       el("div", { className: "wh-h" }, hzSpans(h, p || PINYIN_BY_HANZI[h] || "", false)),
@@ -3598,14 +3608,30 @@
       const m = WORD_EN[w.hanzi] || wordMeaning(w.hanzi) || "";
       return { w, stems: new Set(m.replace(/\([^)]*\)/g, " ").split(/[^A-Za-z']+/).map(enStem).filter(s => s && !EN_FILLER.has(s))) };
     });
-    // I / me / my all point at 我, you / your at 你
-    const alias = { me: "i", my: "i", mine: "i", your: "you", yours: "you" };
+    // I / me / my all point at 我, you / your at 你, yes at 对 or 是
+    const alias = { me: ["i"], my: ["i"], mine: ["i"], your: ["you"], yours: ["you"], yes: ["yes", "right", "correct"],
+      ok: ["good", "okay"], okay: ["good", "okay"], hi: ["hello"], bye: ["goodbye", "bye"], thank: ["thank"], thanks: ["thank"] };
+    const keysFor = st => {
+      const ks = alias[st] ? alias[st].slice() : [st];
+      if (st.length > 4 && st.endsWith("er")) {              // cheaper, colder, faster, bigger
+        const base = st.slice(0, -2); ks.push(base, base + "e");
+        if (/(.)\1$/.test(base)) ks.push(base.slice(0, -1));
+        if (base.endsWith("i")) ks.push(base.slice(0, -1) + "y");
+      }
+      return ks;
+    };
+    const find = ks => {
+      for (const k of ks) { const hit = pools.find(p => p.stems.has(k)); if (hit) return hit; }
+      // "plane" inside "aeroplane", "phone" inside "telephone"
+      for (const k of ks) if (k.length >= 4) { const hit = pools.find(p => [...p.stems].some(s => s.length > k.length && s.endsWith(k))); if (hit) return hit; }
+      return null;
+    };
     return en.split(/(\s+)/).map(tok => {
       if (!tok.trim()) return { text: tok };
-      const st = enStem(tok), key = alias[st] || st;
-      if (!key || EN_FILLER.has(key)) return { text: tok };
-      const hit = pools.find(p => p.stems.has(key));
-      return hit ? { text: tok, word: hit.w } : { text: tok };
+      const st = enStem(tok);
+      if (!st) return { text: tok };
+      const hit = EN_FILLER.has(st) && !alias[st] ? null : find(keysFor(st));
+      return hit ? { text: tok, word: hit.w } : { text: tok, none: true };
     });
   }
   document.addEventListener("pointerdown", ev => { if (hintEl && !ev.target.closest(".word-hint, .hintable")) closeHint(); }, true);
@@ -3652,13 +3678,16 @@
       labelEl.textContent = "Build the Chinese";
       const enLine = el("div", { className: "en en-hints" });
       englishHints(sent.en, sent.words).forEach(t => {
-        if (!t.word) { enLine.appendChild(document.createTextNode(t.text)); return; }
+        if (!t.word && !t.none) { enLine.appendChild(document.createTextNode(t.text)); return; }
         // the underline covers the word, not the punctuation after it
-        const [, core, tail] = /^(.*?)([.,!?;:—]*)$/.exec(t.text);
-        enLine.appendChild(hintable(el("span", { className: "ew" }, core), t.word.hanzi, t.word.pinyin, true));
+        const [, lead, core, tail] = /^([“"‘(—]*)(.*?)([.,!?;:—”"’)]*)$/.exec(t.text);
+        if (lead) enLine.appendChild(document.createTextNode(lead));
+        enLine.appendChild(t.word ? hintable(el("span", { className: "ew" }, core), t.word.hanzi, t.word.pinyin, true)
+          : hintable(el("span", { className: "ew none" }, core), null, null, true));
         if (tail) enLine.appendChild(document.createTextNode(tail));
       });
       bubble.appendChild(enLine);
+      if (hintTip()) face.appendChild(el("div", { className: "hint-tip" }, "Tap a word for the Chinese, or hold a tile"));
       target = sent.words.map(w => w.hanzi);
       tiles = sent.words.map(w => ({ val: w.hanzi, hanzi: w.hanzi, pinyin: w.pinyin }));
       answerDisplay = sent.hanzi;
@@ -3680,7 +3709,7 @@
         ]), w.hanzi, w.pinyin));
       });
       if (anyNew) bubble.insertBefore(newBadge(), bubble.firstChild);
-      if (hintTip()) face.appendChild(el("div", { className: "hint-tip" }, "Tap any word for its meaning"));
+      if (hintTip()) face.appendChild(el("div", { className: "hint-tip" }, "Tap any word for its meaning, or hold a tile"));
       const tail = sent.hanzi.slice(-1);
       if (/[。？！，、]/.test(tail)) {
         // the mark stays glued to the last word rather than wrapping onto a line of its own
@@ -3763,16 +3792,25 @@
       // A drag carries the tile, and its place among the answer's tiles follows
       // the finger, so the order can be fixed without taking tiles out again.
       let press = null;
+      // Holding a tile shows what it means without moving it; a tap still places it.
+      const tileHint = () => {
+        if (item.hanzi) return showHint(t, item.hanzi, item.pinyin, false);
+        const m = englishHints(item.text, sent.words)[0];
+        showHint(t, m && m.word ? m.word.hanzi : null, m && m.word ? m.word.pinyin : null, true);
+      };
       t.addEventListener("pointerdown", ev => {
         if (studyAnswered || t.disabled) return;
         const r = t.getBoundingClientRect();
-        press = { x: ev.clientX, y: ev.clientY, offX: ev.clientX - r.left, offY: ev.clientY - r.top, moved: false };
+        press = { x: ev.clientX, y: ev.clientY, offX: ev.clientX - r.left, offY: ev.clientY - r.top, moved: false, hinted: false };
+        press.timer = setTimeout(() => { if (press && !press.moved) { press.hinted = true; tileHint(); } }, 450);
         try { t.setPointerCapture(ev.pointerId); } catch (e) {}
       });
+      t.addEventListener("contextmenu", ev => ev.preventDefault());
       t.addEventListener("pointermove", ev => {
         if (!press) return;
         if (!press.moved) {
           if (Math.hypot(ev.clientX - press.x, ev.clientY - press.y) < 6) return;
+          clearTimeout(press.timer); closeHint();
           press.moved = true;
           t.classList.add("lift");
           if (t.parentElement === slot) {                 // lifted out of the bank
@@ -3796,7 +3834,9 @@
       const release = ev => {
         if (!press) return;
         const p = press; press = null;
+        clearTimeout(p.timer);
         t.classList.remove("lift");
+        if (p.hinted) { setTimeout(closeHint, 1400); return; }   // it was a hold: leave the tile where it is
         if (!p.moved) { toggle(); return; }
         // Where it was let go: below the answer's lines means back to the bank.
         const was = t.getBoundingClientRect();
@@ -4665,7 +4705,7 @@
                                        // write grid, stacking two exercises on one page.
     // Reset all pinned controls; each mode re-shows what it needs.
     $("#studyContinueWrap").classList.add("hidden");
-    $("#studyContinueWrap").classList.remove("wide", "reserve");
+    $("#studyContinueWrap").classList.remove("wide", "reserve", "short");
     clearFeedback($("#studyContinueWrap"));
     face.classList.remove("sent");
     $("#studyReveal").classList.add("hidden");
@@ -4794,7 +4834,7 @@
       buildSentenceExercise(face, choices, pool[Math.floor(Math.random() * pool.length)],
         $("#promptLabel"), correct => answerStudy(correct));
       $("#studyContinueWrap").classList.remove("hidden");
-      $("#studyContinueWrap").classList.add("reserve");
+      $("#studyContinueWrap").classList.add("reserve", "short");
     } else {
       // Objective multiple choice: mascot asks, you pick, it marks you.
       choices.classList.remove("hidden");
