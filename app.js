@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=241";
+  const ASSET_V = "?v=242";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -3688,7 +3688,7 @@
   }
   function openCharSheet(ch) {
     const d = CHD.chars[ch]; if (!d) return;
-    const back = $("#charSheet");
+    const back = $("#hzSheet");
     const box = el("div", { className: "lsheet csheet" });
     box.addEventListener("click", e => e.stopPropagation());
     const inner = el("div", { className: "lsheet-inner" });
@@ -3750,7 +3750,7 @@
     box.appendChild(inner);
     back.innerHTML = ""; back.appendChild(box); back.classList.remove("hidden");
   }
-  function closeCharSheet() { $("#charSheet").classList.add("hidden"); }
+  function closeCharSheet() { $("#hzSheet").classList.add("hidden"); }
   // any tappable character anywhere opens its page
   document.addEventListener("click", e => {
     const t = e.target.closest(".chz[data-ch]"); if (!t) return;
@@ -3783,7 +3783,7 @@
   $("#charsFilter").querySelectorAll("button").forEach(b => b.addEventListener("click", () => { charsFilter = b.dataset.f; renderChars(); }));
   $("#charsSearch").addEventListener("input", renderChars);
   $("#charsBack").addEventListener("click", () => { renderHome(); show("home"); });
-  $("#charSheet").addEventListener("click", closeCharSheet);
+  $("#hzSheet").addEventListener("click", closeCharSheet);
 
   function prettyPinyin(s) {
     if (!s) return s;
