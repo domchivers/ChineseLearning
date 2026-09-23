@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=251";
+  const ASSET_V = "?v=253";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2415,7 +2415,18 @@
     "panda-puzzled": [[0.331, 1.0], [0.036, 0.96], [0.036, 0.882], [0.002, 0.806], [0.0, 0.832], [0.034, 0.876], [0.192, 0.896], [0.184, 0.89], [0.188, 0.776], [0.152, 0.824]],
     "panda-sleeping": [[0.288, 0.583], [0.091, 0.655], [0.0, 0.9], [0.086, 0.886], [0.083, 0.809], [0.134, 0.878], [0.122, 0.905], [0.063, 0.935], [0.043, 0.992], [0.097, 1.0]]
   };
-  const lessonHero = lesson => (cjkOnly(lesson.words[0].hanzi)[0] || "字");
+  // Each stone shows the first character of its lesson that no earlier stone
+  // already shows, so two stones never carry the same character.
+  const HEROES = (() => {
+    const used = new Set(), out = {};
+    LESSONS.forEach(l => {
+      const firsts = l.words.map(w => cjkOnly(w.hanzi)[0]).filter(Boolean);
+      const ch = firsts.find(c => !used.has(c)) || l.words.flatMap(w => cjkOnly(w.hanzi)).find(c => !used.has(c)) || firsts[0] || "字";
+      used.add(ch); out[l.id] = ch;
+    });
+    return out;
+  })();
+  const lessonHero = lesson => HEROES[lesson.id] || "字";
   /* ---- Lesson completion -------------------------------------------------
      Separate from mastery. A word is "mastered" only once its SRS interval
      reaches a week, so gating the path on that meant finishing a lesson today

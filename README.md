@@ -74,7 +74,21 @@ After editing `data.js`, run:
 ```
 node validate-data.js      # check it
 node fetch-hanzi-data.js   # download stroke data for any new characters
+node build-chars-data.js   # character parts and memory hooks (add a HOOKS entry for any it misses)
+node check-readings.js     # chapter stories only use words taught by then
 ```
+
+Then rebuild the path-stone font so new characters don't fall back to the system
+font. It needs the full Long Cang TTF from github.com/google/fonts (ofl/longcang)
+and `pip install fonttools brotli`:
+
+```
+node -e "const f=require('fs');const s=f.readFileSync('data.js','utf8')+f.readFileSync('readings.js','utf8');f.writeFileSync('chars.txt',[...new Set([...s].filter(c=>/\p{Script=Han}/u.test(c)))].join(''))"
+python -m fontTools.subset LongCang-Regular.ttf --text-file=chars.txt --flavor=woff2 --output-file=vendor/fonts/longcang-subset.woff2
+```
+
+New chapters also go into the path editor artifact (its `chapters` and `heroes`), and
+the build stamp is bumped in `index.html`, `sw.js` and `ASSET_V`.
 
 The validator catches the mistakes that fail **silently** in the app rather than
 throwing an error:
