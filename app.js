@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=254";
+  const ASSET_V = "?v=256";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -624,6 +624,7 @@
   }
 
   function show(sectionId) {
+    if (typeof closeHint === "function") closeHint();
     if (window.__updateReady && ["home", "path", "progress"].includes(sectionId)) { window.__updateReady(); return; }
     ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars", "read", "tones"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
@@ -3436,6 +3437,7 @@
     schedule(curCard.id, correct ? "good" : "again");
     // "Mastered" requires you to have PRODUCED the word, not just recognised it:
     // mark a production pass when you get a recall / write / speak card right.
+    if (correct && srs[curCard.id] && !srs[curCard.id].known) { srs[curCard.id].known = true; saveSRS(srs); }
     if (correct && srs[curCard.id] && PRODUCTION_DIRS.has(curDir)) {
       srs[curCard.id].prod = true;
       saveSRS(srs);
@@ -3479,6 +3481,69 @@
 
   // Build a mascot + prompt bubble into `face`; returns the bubble to fill.
   // Chat-style: one squared corner toward the dragon (no fragile pointy tail).
+  /* ---- Tap-a-word hints and new-word highlights (Duolingo-style) --------
+     Any word marked .hintable shows its English and pinyin in a small bubble
+     when tapped, and says it. A word you have never got right is "new": it
+     wears a NEW WORD tag and a highlight until you do. */
+  const WORD_EN = {};
+  CARDS.forEach(c => { if (!WORD_EN[c.hanzi]) WORD_EN[c.hanzi] = c.en; });
+  function wordMeaning(h) {
+    if (WORD_EN[h]) return WORD_EN[h];
+    const han = [...h].filter(isHan);
+    if (han.length > 1) {
+      // a compound the lessons don't list as a word: build it from its parts
+      for (let k = han.length - 1; k > 0; k--) {
+        const a = han.slice(0, k).join(""), b = han.slice(k).join("");
+        if (WORD_EN[a] && (WORD_EN[b] || charEn(b))) return `${WORD_EN[a]} + ${WORD_EN[b] || charEn(b)}`;
+      }
+    }
+    return han.map(ch => charEn(ch)).filter(Boolean).join(" + ");
+  }
+  const isNewCard = c => {
+    const s = c && srs[c.id];
+    return !s || (!(s.reps >= 1) && !s.known && !((s.lapses || 0) >= 2) && !((s.interval || 0) > 0));
+  };
+  const NEW_CARD_BY_HANZI = h => CARDS.find(c => c.hanzi === h);
+  function newBadge() { return el("div", { className: "new-badge-row" }, el("span", { className: "new-badge" }, "New word")); }
+  let hintEl = null, hintFor = null;
+  function closeHint() {
+    if (hintEl) hintEl.remove();
+    if (hintFor) hintFor.classList.remove("open");
+    hintEl = hintFor = null;
+  }
+  function showHint(anchor, h, p) {
+    closeHint();
+    const e = wordMeaning(h);
+    hintEl = el("div", { className: "word-hint", role: "tooltip" }, [
+      el("div", { className: "wh-e" }, e || "No meaning listed yet"),
+      el("div", { className: "wh-p" }, pySpans(p || PINYIN_BY_HANZI[h] || ""))
+    ]);
+    document.body.appendChild(hintEl);
+    const r = anchor.getBoundingClientRect(), b = hintEl.getBoundingClientRect();
+    const left = Math.max(8, Math.min(innerWidth - b.width - 8, r.left + r.width / 2 - b.width / 2));
+    let top = r.top - b.height - 10;
+    if (top < 8) { top = r.bottom + 10; hintEl.classList.add("below"); }
+    hintEl.style.left = left + "px"; hintEl.style.top = top + "px";
+    hintEl.style.setProperty("--ax", (r.left + r.width / 2 - left) + "px");
+    anchor.classList.add("open"); hintFor = anchor;
+    speak(h);
+    try { localStorage.setItem("zhBeginnerA.hintUsed.v1", "1"); } catch (err) {}
+  }
+  function hintable(node, h, p) {
+    node.classList.add("hintable");
+    node.setAttribute("role", "button");
+    node.addEventListener("click", ev => {
+      ev.stopPropagation();
+      if (hintFor === node) closeHint(); else showHint(node, h, p);
+    });
+    return node;
+  }
+  document.addEventListener("pointerdown", ev => { if (hintEl && !ev.target.closest(".word-hint, .hintable")) closeHint(); }, true);
+  window.addEventListener("scroll", closeHint, true);
+  window.addEventListener("resize", closeHint);
+  // a one-line nudge until the learner has used a hint once
+  const hintTip = () => { try { return !localStorage.getItem("zhBeginnerA.hintUsed.v1"); } catch (e) { return false; } };
+
   function mascotSpeech(face, src) {
     const speech = el("div", { className: "mascot-prompt" });
     speech.appendChild(el("img", { className: "quiz-dragon", src: src || "images/path/panda-teacher.webp?v=218", alt: "" }));
@@ -3527,10 +3592,17 @@
       // The sentence reads across the bubble, each word with its pinyin above.
       // With pinyin turned off the readings stay hidden until the bubble is tapped.
       bubble.appendChild(speakerBtn(sent.hanzi));
-      sent.words.forEach(w => bubble.appendChild(el("span", { className: "sw" }, [
-        el("span", { className: "py" }, pySpans(w.pinyin)),
-        el("span", { className: "hz" }, hzSpans(w.hanzi, w.pinyin, false))
-      ])));
+      let anyNew = false;
+      sent.words.forEach(w => {
+        const card = NEW_CARD_BY_HANZI(w.hanzi), fresh = !!card && isNewCard(card);
+        if (fresh) anyNew = true;
+        bubble.appendChild(hintable(el("span", { className: "sw" + (fresh ? " new" : "") }, [
+          el("span", { className: "py" }, pySpans(w.pinyin)),
+          el("span", { className: "hz" }, hzSpans(w.hanzi, w.pinyin, false))
+        ]), w.hanzi, w.pinyin));
+      });
+      if (anyNew) bubble.insertBefore(newBadge(), bubble.firstChild);
+      if (hintTip()) face.appendChild(el("div", { className: "hint-tip" }, "Tap any word for its meaning"));
       const tail = sent.hanzi.slice(-1);
       if (/[。？！，、]/.test(tail)) {
         // the mark stays glued to the last word rather than wrapping onto a line of its own
@@ -4288,6 +4360,14 @@
       promptNode = el("div", { className: "hanzi" + (c.hanzi.length > 3 ? " small" : "") }, c.hanzi);
       answerText = c.en; distractField = "en";
     }
+    // A word you have never got right is introduced, not tested: it wears a
+    // NEW WORD tag, and its characters can be tapped for the meaning.
+    const fresh = isNewCard(c);
+    if (fresh) {
+      bubble.appendChild(newBadge());
+      promptNode.classList.add("is-new");
+      if (dir === "recognize") hintable(promptNode, c.hanzi, c.pinyin);
+    }
     bubble.appendChild(promptNode);
     // The pinyin drill tests the pinyin, so it can't show the answer — but a bare
     // character is a blind guess, so give the English meaning as context.
@@ -4363,6 +4443,7 @@
   }
 
   function renderStudyCard() {
+    closeHint();
     $("#promptLabel").textContent = DIR_LABEL[curDir];
     const face = $("#studyFace");
     face.innerHTML = "";              // every mode starts from a clean face — the
