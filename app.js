@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=269";
+  const ASSET_V = "?v=271";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -3548,10 +3548,13 @@
     if (hintFor) hintFor.classList.remove("open");
     hintEl = hintFor = null;
   }
-  function showHint(anchor, h, p) {
+  function showHint(anchor, h, p, rev) {
     closeHint();
     const e = wordMeaning(h);
-    hintEl = el("div", { className: "word-hint", role: "tooltip" }, [
+    hintEl = el("div", { className: "word-hint" + (rev ? " rev" : ""), role: "tooltip" }, rev ? [
+      el("div", { className: "wh-h" }, hzSpans(h, p || PINYIN_BY_HANZI[h] || "", false)),
+      el("div", { className: "wh-p" }, pySpans(p || PINYIN_BY_HANZI[h] || ""))
+    ] : [
       el("div", { className: "wh-e" }, e || "No meaning listed yet"),
       el("div", { className: "wh-p" }, pySpans(p || PINYIN_BY_HANZI[h] || ""))
     ]);
@@ -3566,14 +3569,44 @@
     speak(h);
     try { localStorage.setItem("zhBeginnerA.hintUsed.v1", "1"); } catch (err) {}
   }
-  function hintable(node, h, p) {
+  function hintable(node, h, p, rev) {
     node.classList.add("hintable");
     node.setAttribute("role", "button");
     node.addEventListener("click", ev => {
       ev.stopPropagation();
-      if (hintFor === node) closeHint(); else showHint(node, h, p);
+      if (hintFor === node) closeHint(); else showHint(node, h, p, rev);
     });
     return node;
+  }
+  /* English -> Chinese hints. Each English word of a sentence is matched to the
+     Chinese word in the same sentence whose meaning contains it (plurals, -ing,
+     -ed and "n't" folded). Filler words match nothing, and only matched words
+     are tappable, so a hint is never a guess. */
+  const EN_FILLER = new Set(["the", "a", "an", "to", "of", "is", "are", "am", "be", "it", "its", "that", "this", "and", "or", "for", "in", "on", "at", "with", "some", "do", "does", "did"]);
+  const enStem = w => {
+    w = w.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z']/g, "");
+    if (w.endsWith("n't")) return "not";
+    w = w.replace(/'(s|m|re|ll|d|ve)$/, "");
+    if (w.length > 4 && w.endsWith("ies")) return w.slice(0, -3) + "y";
+    if (w.length > 5 && w.endsWith("ing")) return w.slice(0, -3);
+    if (w.length > 4 && w.endsWith("ed")) return w.slice(0, -2);
+    if (w.length > 3 && w.endsWith("s") && !w.endsWith("ss")) return w.slice(0, -1);
+    return w;
+  };
+  function englishHints(en, words) {
+    const pools = words.map(w => {
+      const m = WORD_EN[w.hanzi] || wordMeaning(w.hanzi) || "";
+      return { w, stems: new Set(m.replace(/\([^)]*\)/g, " ").split(/[^A-Za-z']+/).map(enStem).filter(s => s && !EN_FILLER.has(s))) };
+    });
+    // I / me / my all point at 我, you / your at 你
+    const alias = { me: "i", my: "i", mine: "i", your: "you", yours: "you" };
+    return en.split(/(\s+)/).map(tok => {
+      if (!tok.trim()) return { text: tok };
+      const st = enStem(tok), key = alias[st] || st;
+      if (!key || EN_FILLER.has(key)) return { text: tok };
+      const hit = pools.find(p => p.stems.has(key));
+      return hit ? { text: tok, word: hit.w } : { text: tok };
+    });
   }
   document.addEventListener("pointerdown", ev => { if (hintEl && !ev.target.closest(".word-hint, .hintable")) closeHint(); }, true);
   window.addEventListener("scroll", closeHint, true);
@@ -3617,7 +3650,15 @@
     bubble.classList.add("sent");
     if (en2cn) {
       labelEl.textContent = "Build the Chinese";
-      bubble.appendChild(el("div", { className: "en" }, sent.en));
+      const enLine = el("div", { className: "en en-hints" });
+      englishHints(sent.en, sent.words).forEach(t => {
+        if (!t.word) { enLine.appendChild(document.createTextNode(t.text)); return; }
+        // the underline covers the word, not the punctuation after it
+        const [, core, tail] = /^(.*?)([.,!?;:—]*)$/.exec(t.text);
+        enLine.appendChild(hintable(el("span", { className: "ew" }, core), t.word.hanzi, t.word.pinyin, true));
+        if (tail) enLine.appendChild(document.createTextNode(tail));
+      });
+      bubble.appendChild(enLine);
       target = sent.words.map(w => w.hanzi);
       tiles = sent.words.map(w => ({ val: w.hanzi, hanzi: w.hanzi, pinyin: w.pinyin }));
       answerDisplay = sent.hanzi;
@@ -4538,6 +4579,7 @@
       bubble.appendChild(newBadge());
       promptNode.classList.add("is-new");
       if (dir === "recognize") hintable(promptNode, c.hanzi, c.pinyin);
+      if (dir === "recall") { promptNode.classList.add("en-new"); hintable(promptNode, c.hanzi, c.pinyin, true); }
     }
     bubble.appendChild(promptNode);
     // The pinyin drill tests the pinyin, so it can't show the answer — but a bare
@@ -6149,7 +6191,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
