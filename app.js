@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=249";
+  const ASSET_V = "?v=250";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -625,7 +625,7 @@
 
   function show(sectionId) {
     if (window.__updateReady && ["home", "path", "progress"].includes(sectionId)) { window.__updateReady(); return; }
-    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars"].forEach(id =>
+    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars", "read", "tones"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     // Reset the window scroll BEFORE the new view applies its body scroll-lock.
     // The done screen is normal flow, so scrolling down to "Back to path" scrolls
@@ -2036,6 +2036,11 @@
 
   function renderHome() {
     if ($("#ptCharsSub")) $("#ptCharsSub").textContent = `${charsKnown()} known`;
+    if ($("#ptReadSub")) {
+      const fresh = READS.filter(r => chapterDone(r.chapter) && !readDone(r.id)).length;
+      $("#ptReadSub").textContent = fresh ? `${fresh} new ${fresh > 1 ? "stories" : "story"}` : "Chapter stories";
+      $("#ptReadSub").classList.toggle("pt-new", !!fresh);
+    }
     document.body.classList.toggle("tones", tonesOn());
     renderDashboard();
     renderHomeTop();
@@ -2131,6 +2136,8 @@
     scopeLessons = null; scopeFocuses = null;   // global (stats) study uses the full selection
     if (mode === "converse") { openConverse(); return; }   // doesn't need lessons
     if (mode === "pick") { openPicker(); return; }         // choose your own words
+    if (mode === "read") { openReadings(); return; }       // unlocks by chapter
+    if (mode === "tones") { startTones(); return; }        // uses the words you've met
     if (selectedLessons.size === 0) {
       toast("Pick at least one lesson — open “What to study”.");
       $("#studyPanel").open = true;
@@ -2140,6 +2147,8 @@
     else if (mode === "quiz") startQuiz();
     else if (mode === "browse") startBrowse();
     else if (mode === "chars") openChars();
+    else if (mode === "read") openReadings();
+    else if (mode === "tones") startTones();
     else if (mode === "listen") startListening();
     else if (mode === "write") startWriting();
   }
@@ -2552,7 +2561,7 @@
           chapter: li === 0 ? {
             unit: ch.unit, chNo, title: ch.title,
             total: ch.lessons.length,
-            done: ch.lessons.filter(x => doneLessons.has(x)).length
+            done: ch.lessons.filter(x => doneLessons.has(x)).length, ci
           } : null
         });
       });
@@ -2911,6 +2920,15 @@
           el("div", { className: "bar" }, el("i", { style: `width:${pct}%` })),
           el("div", { className: "n" }, `${it.chapter.done} / ${it.chapter.total} lessons`)
         ]);
+        // A finished chapter ends in a short story written from its words.
+        const story = readingFor(it.chapter.ci);
+        if (story && it.chapter.done === it.chapter.total) {
+          const rb = el("button", { className: "pread" + (readDone(story.id) ? " read" : ""), type: "button" });
+          rb.appendChild(licon("i-book", "licon-sm"));
+          rb.appendChild(el("span", {}, readDone(story.id) ? "Read again" : "Read the story"));
+          rb.addEventListener("click", e => { e.stopPropagation(); openReading(story.id, "path"); });
+          hd.querySelector(".n").appendChild(rb);
+        }
         // Centre it in the gap it opened. `btn` (the button this banner labels)
         // is already in the DOM, so measure the START bubble's REAL overhang
         // rather than guessing it — a fixed constant was 11px too big and
@@ -3960,6 +3978,218 @@
   $("#charsBack").addEventListener("click", () => { if (charsFrom === "progress") { renderDashboard(); show("progress"); } else { renderHome(); show("home"); } });
   $("#hzSheet").addEventListener("click", closeCharSheet);
 
+  /* ---- Reading: a short story at the end of each chapter -----------------
+     READINGS (readings.js) holds one passage per chapter, written only from
+     words taught by then (check-readings.js proves it). Tap a word for its
+     pinyin and meaning; a question at the end checks you followed it. */
+  const READS = window.READINGS || [];
+  const READ_XP = 15;
+  const readingFor = ci => READS.find(r => r.chapter === ci);
+  const readDone = id => !!(activity.readsDone || {})[id];
+  const chapterDone = ci => CHAPTERS[ci] && CHAPTERS[ci].lessons.every(id => doneLessons.has(id));
+  const readOpen = r => chapterDone(r.chapter) || (location.hostname === "localhost" && new URLSearchParams(location.search).has("unlock"));
+  const tok = t => { const p = t.split("|"); return p.length === 3 ? { h: p[0], p: p[1], e: p[2] } : { h: t }; };
+  let readFrom = "home";
+  function openReadings(from) {
+    readFrom = from || (document.body.dataset.view === "path" ? "path" : "home");
+    renderReadList(); show("read");
+  }
+  function readBackLabel() { $("#readBack").textContent = readFrom === "path" ? "← Path" : "← Home"; }
+  function readLeave() { if (readFrom === "path") { show("path"); renderPath(); } else { renderHome(); show("home"); } }
+  function renderReadList() {
+    readBackLabel(); $("#readTitle").textContent = "Reading";
+    const body = $("#readBody"); body.innerHTML = "";
+    $("#readCount").textContent = `${READS.filter(r => readDone(r.id)).length} / ${READS.length} read`;
+    body.appendChild(el("p", { className: "read-intro" }, "Finish a chapter and its story opens here. Every word in it is one you've learnt."));
+    READS.forEach(r => {
+      const open = readOpen(r), done = readDone(r.id), ch = CHAPTERS[r.chapter];
+      const card = el("button", { className: "rcard" + (open ? "" : " locked") + (done ? " done" : ""), type: "button" }, [
+        el("div", { className: "rc-h" }, hzSpans(r.title, r.py)),
+        el("div", { className: "rc-t" }, [
+          el("div", { className: "rc-u" }, `Chapter ${r.chapter + 1}`),
+          el("b", {}, r.en),
+          el("span", {}, open ? (done ? "Read ✓" : `New · +${READ_XP} XP`) : `Finish “${ch.title}” to open`)
+        ])
+      ]);
+      card.addEventListener("click", () => open ? openReading(r.id) : toast(`Finish every lesson in “${ch.title}” first.`));
+      body.appendChild(card);
+    });
+  }
+  function openReading(id, from) {
+    const r = READS.find(x => x.id === id); if (!r) return;
+    if (from) readFrom = from;
+    readBackLabel(); $("#readTitle").textContent = r.title;
+    $("#readCount").textContent = "";
+    const body = $("#readBody"); body.innerHTML = "";
+    const all = r.sentences.map(s => s.map(t => tok(t).h).join("")).join("");
+    const head = el("div", { className: "rhead" }, [
+      el("div", { className: "rc-u" }, `Chapter ${r.chapter + 1} · Story`),
+      el("div", { className: "rh-t" }, [el("span", { className: "rh-h" }, hzSpans(r.title, r.py)), el("span", { className: "rh-e" }, r.en)])
+    ]);
+    const tools = el("div", { className: "rtools" });
+    const play = el("button", { className: "rtool", type: "button" }); play.appendChild(licon("i-volume", "licon-sm")); play.appendChild(el("span", {}, "Listen"));
+    play.addEventListener("click", () => speak(all));
+    const slow = el("button", { className: "rtool", type: "button" }, "½×"); slow.addEventListener("click", () => speak(all, { rate: 0.55 }));
+    const pyT = el("button", { className: "rtool", type: "button" }, "Pinyin");
+    const enT = el("button", { className: "rtool", type: "button" }, "English");
+    tools.append(play, slow, pyT, enT);
+    const text = el("div", { className: "rtext" });
+    const panel = el("div", { className: "rword empty" }, "Tap any word for its pinyin and meaning.");
+    let openW = null;
+    const showWord = (t, w) => {
+      if (openW) openW.classList.remove("open");
+      openW = w; w.classList.add("open");
+      panel.className = "rword"; panel.innerHTML = "";
+      const hz = el("div", { className: "rw-h" }, hzSpans(t.h, t.p, true));
+      const sp = el("button", { className: "speaker", type: "button", title: "Play" }); sp.appendChild(licon("i-volume", "licon-sm"));
+      sp.addEventListener("click", () => speak(t.h));
+      panel.append(hz, el("div", { className: "rw-m" }, [el("div", { className: "rw-p" }, pySpans(t.p)), el("div", { className: "rw-e" }, t.e)]), sp);
+      if ([...t.h].some(c => CHD.chars[c])) panel.appendChild(el("div", { className: "rw-tip" }, "Tap a character to see how it's built"));
+      speak(t.h);
+    };
+    r.sentences.forEach(s => {
+      const sen = el("span", { className: "rs" });
+      s.forEach(raw => {
+        const t = tok(raw);
+        if (!t.p) { sen.appendChild(el("span", { className: "rpunct" }, t.h)); return; }
+        const w = el("span", { className: "rw", role: "button", tabIndex: 0 }, [el("span", { className: "rp" }, pySpans(t.p)), el("span", { className: "rh" }, hzSpans(t.h, t.p))]);
+        w.addEventListener("click", () => showWord(t, w));
+        sen.appendChild(w);
+      });
+      text.appendChild(sen);
+    });
+    const tr = el("p", { className: "rtrans hidden" }, r.translation);
+    pyT.addEventListener("click", () => { text.classList.toggle("pyon"); pyT.classList.toggle("on"); });
+    enT.addEventListener("click", () => { tr.classList.toggle("hidden"); enT.classList.toggle("on"); });
+    // the question
+    const q = el("div", { className: "rq" }, [el("div", { className: "rq-l" }, "Did you follow it?"), el("div", { className: "rq-t" }, r.q.text)]);
+    const opts = el("div", { className: "rq-o" });
+    const finish = el("button", { className: "primary rfinish hidden", type: "button" }, "Finish");
+    shuffle(r.q.options.map((o, i) => ({ o, i }))).forEach(({ o, i }) => {
+      const b = el("button", { className: "rq-b", type: "button" }, o);
+      b.addEventListener("click", () => {
+        if (q.classList.contains("solved") || b.disabled) return;
+        if (i === r.q.answer) { b.classList.add("right"); q.classList.add("solved"); sfx("correct"); buzz(true); finish.classList.remove("hidden"); }
+        else { b.classList.add("wrong"); b.disabled = true; sfx("wrong"); buzz(false); }
+      });
+      opts.appendChild(b);
+    });
+    q.appendChild(opts);
+    finish.addEventListener("click", () => {
+      const first = !readDone(r.id);
+      activity.readsDone = activity.readsDone || {}; activity.readsDone[r.id] = todayStr();
+      localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); queueSync();
+      if (first) { earnXP(READ_XP); sfx("complete"); confetti(70); toast(`Story read! +${READ_XP} XP`); }
+      if (readFrom === "path") readLeave(); else renderReadList();
+    });
+    body.append(head, tools, text, tr, panel, q, finish);
+    if (document.body.dataset.view !== "read") show("read");
+  }
+  $("#readBack").addEventListener("click", () => {
+    if ($("#readBody .rtext") && readFrom !== "path") renderReadList(); else readLeave();
+  });
+
+  /* ---- Tone pairs ------------------------------------------------------
+     Hear a two-syllable word you've met and pick its two tones. Mandarin's
+     tones are easiest to hear in pairs, the way they come in real words.
+     Words whose spoken tones differ from their written ones (3+3, 不, 一)
+     are left out, so the answer always matches what you hear. */
+  const TONE_ROUNDS = 10;
+  const TONE_NAME = { 1: "high", 2: "rising", 3: "dipping", 4: "falling", 5: "light" };
+  function tonePair(c) {
+    const han = [...c.hanzi].filter(isHan), ss = sylls(c.pinyin);
+    if (han.length !== 2 || ss.length !== 2 || /[不一]/.test(c.hanzi)) return null;
+    const a = toneOf(ss[0]), b = toneOf(ss[1]);
+    if (a === 5 || (a === 3 && b === 3)) return null;
+    return [a, b];
+  }
+  // a little picture of the pitch: the classic 1-5 pitch scale, drawn left to right
+  function toneShape(t, x0) {
+    const y = v => 30 - v * 5;
+    const d = { 1: `M${x0} ${y(5)}L${x0 + 26} ${y(5)}`, 2: `M${x0} ${y(3)}L${x0 + 26} ${y(5)}`,
+      3: `M${x0} ${y(2)}Q${x0 + 10} ${y(0.2)} ${x0 + 14} ${y(1)}T${x0 + 26} ${y(4)}`, 4: `M${x0} ${y(5)}L${x0 + 26} ${y(1)}` }[t];
+    return d ? `<path d="${d}" stroke="var(--t${t})"/>` : `<circle cx="${x0 + 8}" cy="${y(2)}" r="3.2" fill="var(--t5)"/>`;
+  }
+  const pairSvg = ([a, b]) => `<svg viewBox="-3 -3 70 36" class="tpic" fill="none" stroke-width="4.2" stroke-linecap="round">${toneShape(a, 0)}${toneShape(b, 36)}</svg>`;
+  let toneQ = [], toneI = 0, toneRight = 0, toneMiss = {};
+  function startTones() {
+    returnView = "home";
+    const all = CARDS.filter(tonePair);
+    const met = all.filter(c => srs[c.id] || doneLessons.has(c.lessonId));
+    const pool = met.length >= 6 ? met : all.filter(c => CHAPTERS[0].lessons.includes(c.lessonId)).concat(met);
+    const pick = shuffle([...new Map(pool.map(c => [c.hanzi, c])).values()]);
+    toneQ = []; for (let i = 0; pick.length && i < TONE_ROUNDS; i++) toneQ.push(pick[i % pick.length]); toneI = 0; toneRight = 0; toneMiss = {};
+    show("tones"); renderTone();
+  }
+  function toneChoices(ans) {
+    const key = p => p.join("");
+    const pairs = []; for (let a = 1; a <= 4; a++) for (let b = 1; b <= 5; b++) if (!(a === 3 && b === 3)) pairs.push([a, b]);
+    const others = pairs.filter(p => key(p) !== key(ans));
+    const near = shuffle(others.filter(p => p[0] === ans[0] || p[1] === ans[1])).slice(0, 2);
+    const far = shuffle(others.filter(p => !near.includes(p))).slice(0, 3 - near.length);
+    return shuffle([ans, ...near, ...far]);
+  }
+  function renderTone() {
+    const c = toneQ[toneI], ans = tonePair(c), body = $("#tonesBody");
+    $("#tonesCount").textContent = `${toneI + 1} / ${toneQ.length}`;
+    $("#tonesBar").style.width = (toneI / toneQ.length * 100) + "%";
+    body.innerHTML = "";
+    const play = el("button", { className: "tplay", type: "button", title: "Play again" }); play.appendChild(licon("i-volume"));
+    play.addEventListener("click", () => speak(c.hanzi));
+    const slow = el("button", { className: "tslow", type: "button" }, "½×"); slow.addEventListener("click", () => speak(c.hanzi, { rate: 0.5 }));
+    body.append(el("div", { className: "tprompt" }, "Which two tones do you hear?"), el("div", { className: "tplays" }, [play, slow]));
+    const reveal = el("div", { className: "treveal" });
+    const grid = el("div", { className: "tgrid" });
+    const next = el("button", { className: "primary tnext hidden", type: "button" }, toneI + 1 < toneQ.length ? "Continue" : "See results");
+    toneChoices(ans).forEach(p => {
+      const b = el("button", { className: "tch", type: "button" });
+      b.innerHTML = pairSvg(p) + `<span class="tl"><span class="tn t${p[0]}">${p[0] === 5 ? "light" : p[0]}</span> + <span class="tn t${p[1]}">${p[1] === 5 ? "light" : p[1]}</span></span>`;
+      b.addEventListener("click", () => {
+        if (grid.classList.contains("answered")) return;
+        grid.classList.add("answered");
+        const ok = p.join("") === ans.join("");
+        grid.querySelectorAll(".tch").forEach(x => { if (x === b) x.classList.add(ok ? "right" : "wrong"); });
+        if (!ok) { [...grid.children].find(x => x.dataset.p === ans.join("")).classList.add("right"); toneMiss[ans.join("+")] = (toneMiss[ans.join("+")] || 0) + 1; }
+        else toneRight++;
+        sfx(ok ? "correct" : "wrong"); buzz(ok);
+        reveal.innerHTML = "";
+        reveal.append(el("div", { className: "tr-h" }, hzSpans(c.hanzi, c.pinyin, true)),
+          el("div", { className: "tr-m" }, [el("div", { className: "tr-p" }, pySpans(c.pinyin)), el("div", { className: "tr-e" }, c.en)]),
+          el("div", { className: "tr-n" }, `${TONE_NAME[ans[0]]} then ${TONE_NAME[ans[1]]}`));
+        reveal.classList.add("show", ok ? "ok" : "no");
+        next.classList.remove("hidden");
+        speak(c.hanzi);
+      });
+      b.dataset.p = p.join("");
+      grid.appendChild(b);
+    });
+    next.addEventListener("click", () => { toneI++; if (toneI < toneQ.length) renderTone(); else toneResults(); });
+    body.append(grid, reveal, next);
+    setTimeout(() => speak(c.hanzi), 250);
+  }
+  function toneResults() {
+    $("#tonesBar").style.width = "100%"; $("#tonesCount").textContent = "";
+    const xp = toneRight * XP.correct + XP.session;
+    earnXP(xp); sfx("complete"); if (toneRight >= toneQ.length * 0.8) confetti(70);
+    const worst = Object.entries(toneMiss).sort((a, b) => b[1] - a[1])[0];
+    const body = $("#tonesBody"); body.innerHTML = "";
+    body.append(el("div", { className: "tres" }, [
+      el("div", { className: "tres-n" }, `${toneRight} / ${toneQ.length}`),
+      el("div", { className: "tres-l" }, toneRight === toneQ.length ? "Perfect ear!" : toneRight >= toneQ.length * 0.7 ? "Nicely heard" : "Tones take time. Keep listening."),
+      el("div", { className: "tres-x" }, `+${xp} XP`)
+    ]));
+    if (worst) {
+      const [a, b] = worst[0].split("+").map(Number);
+      const tip = el("div", { className: "ttip" }); tip.innerHTML = pairSvg([a, b]);
+      tip.appendChild(el("div", {}, [el("b", {}, `Trickiest: ${TONE_NAME[a]} + ${TONE_NAME[b]}`), el("span", {}, "Say a few words with this pattern out loud, drawing the shape with your hand.")]));
+      body.appendChild(tip);
+    }
+    const again = el("button", { className: "primary", type: "button" }, "Go again"); again.addEventListener("click", startTones);
+    const home = el("button", { className: "ghost", type: "button" }, "Done"); home.addEventListener("click", () => { renderHome(); show("home"); });
+    body.appendChild(el("div", { className: "tres-b" }, [again, home]));
+  }
+  $("#tonesBack").addEventListener("click", () => { renderHome(); show("home"); });
+
   function prettyPinyin(s) {
     if (!s) return s;
     return String(s).replace(/[A-Za-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]+/g, run => {
@@ -4474,6 +4704,9 @@
     const scopedId = (!reviewMode && scopeLessons && scopeLessons.size === 1) ? [...scopeLessons][0] : null;
     if (scopedId && !doneLessons.has(scopedId) && lessonCleared(scopedId)) {
       doneLessons.add(scopedId); saveDone(); justFinished = scopedId;
+      // finishing a chapter opens its story
+      const ci = CHAPTERS.findIndex(ch => ch.lessons.includes(scopedId)), story = readingFor(ci);
+      if (story && chapterDone(ci) && !readDone(story.id)) setTimeout(() => toast(`New story unlocked: ${story.title}. Find it in Reading.`), 2200);
     }
     const upNext = justFinished ? nextLessonId(justFinished) : null;
     questEvent("session", true, { lesson: !!justFinished, perfect: studyStats.again === 0 && studyStats.answered >= 5 });
@@ -5577,6 +5810,9 @@ This REPLACES the progress on this device.`)) return;
     if (v === "progress") { renderDashboard(); show("progress"); if (new URLSearchParams(location.search).get("act") === "chars") setTimeout(() => { $("#actSeg [data-act=chars]").click(); $("#actChars").scrollIntoView({ block: "center" }); }, 200); }
     else if (v === "path") { renderPath(); show("path"); }
     else if (v === "chars") openChars();
+    else if (v === "reads") openReadings("home");
+    else if (v === "read") openReading(new URLSearchParams(location.search).get("r") || "r1", "home");
+    else if (v === "tones") startTones();
     else if (v === "char") setTimeout(() => openCharSheet(new URLSearchParams(location.search).get("ch") || "好"), 300);
     // screenshot helpers: the longest sentence card, or an answered choice card
     else if (v === "sentence") setTimeout(() => window.__dev.sentence(window.__dev.longest()[0].slice(0, 4), false), 300);
