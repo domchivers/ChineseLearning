@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=243";
+  const ASSET_V = "?v=247";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -3713,6 +3713,82 @@
   }
   const charsKnown = () => allChars().filter(x => charLevel(x.ch) >= 1).length;
 
+  /* ---- Look-alikes ------------------------------------------------------
+     Wrong answers that make you look: words whose characters share parts,
+     plus classic confusions a beginner mixes up. A note says what tells a
+     hand-picked pair apart; other pairs are explained from their parts. */
+  const LOOKALIKE_NOTES = {
+    "买卖": "卖 sell has an extra 十 on top of 买 buy: you add something on top when you sell it on.",
+    "人入": "人 person steps forward on its left leg; 入 enter leads with the right, stepping in.",
+    "大太": "太 too is 大 big with an extra dot underneath: bigger than big.",
+    "大天": "天 sky has a line over 大 big: the sky above a person.",
+    "大夫": "夫 has a second line through the top of 大.",
+    "己已": "已 already closes a little higher than 己 self; 巳 closes all the way.",
+    "日目": "目 eye has two lines inside; 日 sun has one.",
+    "日白": "白 white has a small tick on top of 日 sun.",
+    "土士": "士 has the longer line on top; 土 earth has the longer line at the bottom.",
+    "未末": "末 end has the longer line on top; 未 not yet has the shorter line on top.",
+    "千干": "千 thousand starts with a slanted stroke; 干 starts with a flat one.",
+    "午牛": "牛 cow's middle stroke pokes through the top; 午 noon's doesn't.",
+    "儿几": "几 has a lid across the top; 儿 is open.",
+    "问间": "问 ask has a mouth 口 in the door 门; 间 between has the sun 日.",
+    "今令": "令 has a hook at the bottom where 今 has a flat stroke.",
+    "见贝": "见 see ends in a long hooked leg; 贝 shell has two short legs.",
+    "为办": "办 do has a dot on each side of 力; 为 has two dots together.",
+    "力刀": "力 strength pokes up through the top; 刀 knife doesn't.",
+    "东车": "车 car has a flat line at the bottom; 东 east has two dots.",
+    "找我": "我 I has an extra dot on the right that 找 look for doesn't.",
+    "住往": "住 live has person 亻 on the left; 往 towards has the double person 彳.",
+    "休体": "体 body has an extra line at the bottom of 木.",
+    "午年": "年 year has extra strokes on the left of 午 noon.",
+    "左右": "左 left has 工 underneath; 右 right has 口."
+  };
+  const pairKey = (a, b) => LOOKALIKE_NOTES[a + b] ? a + b : LOOKALIKE_NOTES[b + a] ? b + a : null;
+  // tiny strokes and the everywhere-parts don't make two characters look alike
+  const TRIVIAL_PARTS = new Set("口一丨丿丶乛亅乚八十冖亠".split(""));
+  const partsOf = ch => new Set(((CHD.chars[ch] || {}).c || []).map(p => p[0]).filter(p => !TRIVIAL_PARTS.has(p)));
+  function charSim(a, b) {
+    if (a === b) return 2;
+    if (pairKey(a, b)) return 4;
+    let n = 0; const pa = partsOf(a);
+    partsOf(b).forEach(p => { if (pa.has(p)) n += 1.5; });
+    return n;
+  }
+  // how easily two words could be mistaken for each other at a glance
+  function wordSim(a, b) {
+    const x = [...a].filter(isHan), y = [...b].filter(isHan);
+    if (!x.length || x.length !== y.length || a === b) return 0;
+    let s = 0, differ = 0;
+    x.forEach((ch, i) => { if (ch !== y[i]) differ++; s += charSim(ch, y[i]); });
+    return differ ? s / x.length + (differ === 1 && x.length > 1 ? 1 : 0) : 0;
+  }
+  // up to n look-alike cards for card c, strongest first with a little shuffle
+  function lookalikes(c, n) {
+    return shuffle(CARDS.filter(x => x.en !== c.en && x.hanzi !== c.hanzi).map(x => ({ x, s: wordSim(c.hanzi, x.hanzi) })).filter(o => o.s >= 1.5))
+      .sort((p, q) => q.s - p.s).slice(0, n).map(o => o.x);
+  }
+  // the "spot the difference" block for a wrong pick that was a look-alike
+  function diffBlock(right, wrong) {
+    const x = [...right.hanzi].filter(isHan), y = [...wrong.hanzi].filter(isHan);
+    const i = x.findIndex((ch, k) => ch !== y[k]); if (i < 0) return null;
+    const a = x[i], b = y[i];
+    let note = pairKey(a, b) && LOOKALIKE_NOTES[pairKey(a, b)];
+    if (!note) {
+      const pa = partsOf(a), pb = partsOf(b);
+      const onlyA = [...pa].filter(p => !pb.has(p)), onlyB = [...pb].filter(p => !pa.has(p));
+      const name = p => { const d = CHD.parts[p]; return d && d[0] ? `${p} ${d[0]}` : p; };
+      if (onlyA.length || onlyB.length) note = `${a} ${charEn(a)} has ${onlyA.map(name).join(" and ") || "no extra part"}; ${b} ${charEn(b)} has ${onlyB.map(name).join(" and ") || "no extra part"}.`;
+      else note = `Look closely at ${a} and ${b}: same parts, different arrangement.`;
+    }
+    const cell = (card, ch) => el("div", { className: "dcell" }, [
+      el("div", { className: "dh" }, [...card.hanzi].map(k => el("span", { className: (k === ch ? "dmark " : "") + "chz" }, k))),
+      el("div", { className: "dm" }, card.en)]);
+    const box = el("div", { className: "diff" }, [el("div", { className: "dlabel" }, "Spot the difference"),
+      el("div", { className: "dcells" }, [cell(right, a), cell(wrong, b)]), el("div", { className: "dn" }, note)]);
+    box.querySelectorAll(".chz").forEach(s => { if (CHD.chars[s.textContent]) s.dataset.ch = s.textContent; else s.classList.remove("chz"); });
+    return box;
+  }
+
   // ---- the character page, as a sheet over whatever is on screen ----
   function partBox(comp, role) {
     const p = CHD.parts[comp] || (CHD.chars[comp] ? [charEn(comp), charPy(comp)] : null);
@@ -3921,7 +3997,9 @@
           [...new Set(cards.map(x => x.en))].filter(v => v !== answerText && !distractors.includes(v)),
           3 - distractors.length));
     } else {
-      distractors = sample([...new Set(cards.map(x => x[distractField]))].filter(v => v !== answerText), 3);
+      // two of the three wrong answers are look-alikes when there are any
+      const near = (dir === "recall" || dir === "recognize") ? [...new Set(lookalikes(c, 2).map(x => x[distractField]))].filter(v => v !== answerText) : [];
+      distractors = near.concat(sample([...new Set(cards.map(x => x[distractField]))].filter(v => v !== answerText && !near.includes(v)), 3 - near.length));
     }
     const options = shuffle([answerText, ...distractors]);
     choicesBox.innerHTML = "";
@@ -3950,7 +4028,7 @@
           [...choicesBox.children].forEach(ch => { if (ch.dataset.val === answerText) ch.classList.add("correct"); });
           if (drg) { drg.src = "images/path/panda-sad.webp?v=218"; drg.classList.add("react"); }
         }
-        onResult(correct);
+        onResult(correct, opt);
       });
       choicesBox.appendChild(btn);
     });
@@ -4096,9 +4174,9 @@
     } else {
       // Objective multiple choice: mascot asks, you pick, it marks you.
       choices.classList.remove("hidden");
-      buildChoiceExercise(face, choices, c, curDir, $("#promptLabel"), correct => {
+      buildChoiceExercise(face, choices, c, curDir, $("#promptLabel"), (correct, chosen) => {
         answerStudy(correct);
-        feedbackBanner($("#studyContinueWrap"), correct, c, curDir);
+        feedbackBanner($("#studyContinueWrap"), correct, c, curDir, chosen);
         $("#studyContinueWrap").classList.remove("hidden");
       });
     }
@@ -4235,7 +4313,7 @@
      Continue button, green with a word of praise or red with the right
      answer, and the button takes the colour. */
   const PRAISE = ["Nice!", "Great job!", "Excellent!", "Spot on!", "太棒了!", "对了!"];
-  function feedbackBanner(wrapEl, correct, c, dir) {
+  function feedbackBanner(wrapEl, correct, c, dir, chosen) {
     if (!wrapEl) return;
     clearFeedback(wrapEl);
     const fb = el("div", { className: "sent-fb " + (correct ? "ok" : "bad") });
@@ -4249,7 +4327,10 @@
     const rest = el("div", { className: "fb-py" });
     ["hz", "py", "en"].filter(k => k !== first).forEach((k, i) => { if (i) rest.appendChild(document.createTextNode(" · ")); rest.appendChild(piece(k)); });
     body.appendChild(rest);
-    if ([...c.hanzi].some(ch => CHD.chars[ch])) body.appendChild(el("div", { className: "fb-tip" }, "Tap a character to see how it's built"));
+    const picked = !correct && chosen && (dir === "recall" ? CARDS.find(x => x.hanzi === chosen) : dir === "recognize" ? CARDS.find(x => x.en === chosen) : null);
+    const diff = picked && wordSim(c.hanzi, picked.hanzi) >= 1.5 && diffBlock(c, picked);
+    if (diff) { body.querySelector(".fb-t").textContent = "Nearly! Those two look alike"; body.appendChild(diff); }
+    else if ([...c.hanzi].some(ch => CHD.chars[ch])) body.appendChild(el("div", { className: "fb-tip" }, "Tap a character to see how it's built"));
     fb.appendChild(body);
     wrapEl.insertBefore(fb, wrapEl.firstChild);
     wrapEl.classList.add(correct ? "ok" : "bad", "wide");
@@ -4474,9 +4555,9 @@
     const dir = dirs[Math.floor(Math.random() * dirs.length)];
 
     $("#quizBar").style.width = `${(quizIdx / quizItems.length) * 100}%`;
-    buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), correct => {
+    buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), (correct, chosen) => {
       sfx(correct ? "correct" : "wrong"); buzz(correct);
-      feedbackBanner($("#quizNextWrap"), correct, c, dir);
+      feedbackBanner($("#quizNextWrap"), correct, c, dir, chosen);
       if (correct) quizScore++;
       answerXP(correct);
       questEvent(dir, correct);
@@ -5450,7 +5531,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
