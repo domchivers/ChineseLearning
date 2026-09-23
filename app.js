@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=247";
+  const ASSET_V = "?v=249";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -519,22 +519,66 @@
   }
 
   // ---- Spaced repetition (SM-2 lite) ----
+  /* ---- Review timing: FSRS ------------------------------------------------
+     FSRS (the scheduler modern Anki uses) models each word's memory with a
+     stability S (days until recall drops to 90%) and a difficulty D (1-10),
+     and schedules the next review for when you are 90% likely to remember
+     it. Default FSRS-5 weights. The older fields (reps, interval, due,
+     lapses) are kept up to date, so everything that reads them still works.
+     Words reviewed under the old scheduler are converted the first time they
+     come up again; the old history was copied aside first. */
+  const FSRS_W = [0.40255, 1.18385, 3.173, 15.69105, 7.1949, 0.5345, 1.4604, 0.0046, 1.54575, 0.1192,
+    1.01925, 1.9395, 0.11, 0.29605, 2.2698, 0.2315, 2.9898, 0.51655, 0.6621];
+  const FSRS_DECAY = -0.5, FSRS_FACTOR = 19 / 81, RETENTION = 0.9;
+  const fsrsClampD = d => Math.min(10, Math.max(1, d));
+  const fsrsD0 = g => fsrsClampD(FSRS_W[4] - Math.exp(FSRS_W[5] * (g - 1)) + 1);
+  const fsrsR = (days, S) => Math.pow(1 + FSRS_FACTOR * days / S, FSRS_DECAY);
+  const fsrsInterval = S => S / FSRS_FACTOR * (Math.pow(RETENTION, 1 / FSRS_DECAY) - 1);
+  function fsrsNextD(D, g) {
+    const d = D - FSRS_W[6] * (g - 3) * (10 - D) / 9;
+    return fsrsClampD(FSRS_W[7] * fsrsD0(4) + (1 - FSRS_W[7]) * d);
+  }
+  function fsrsRecall(D, S, R, g) {
+    return S * (Math.exp(FSRS_W[8]) * (11 - D) * Math.pow(S, -FSRS_W[9]) * (Math.exp(FSRS_W[10] * (1 - R)) - 1)
+      * (g === 2 ? FSRS_W[15] : 1) * (g === 4 ? FSRS_W[16] : 1) + 1);
+  }
+  function fsrsForget(D, S, R) {
+    return Math.min(S, FSRS_W[11] * Math.pow(D, -FSRS_W[12]) * (Math.pow(S + 1, FSRS_W[13]) - 1) * Math.exp(FSRS_W[14] * (1 - R)));
+  }
+  // An old-scheduler word: its interval was roughly its stability, and its ease maps onto difficulty.
+  function fsrsFromLegacy(s) {
+    s.S = Math.max(0.5, s.interval || 1);
+    s.D = fsrsClampD(5 + (2.4 - (s.ease || 2.4)) * 4.4);
+    s.last = s.last || Math.max(0, (s.due || NOW()) - (s.interval || 0) * DAY);
+  }
+  // Copy the review history aside once, before FSRS touches any of it.
+  const LS_SRS_OLD = "zhBeginnerA.srs.beforeFSRS.v1";
+  function backupBeforeFsrs() {
+    try { if (!localStorage.getItem(LS_SRS_OLD)) localStorage.setItem(LS_SRS_OLD, JSON.stringify({ at: NOW(), srs })); } catch (e) {}
+  }
   function schedule(id, grade) {
+    backupBeforeFsrs();
     const s = srs[id] || { ease: 2.4, interval: 0, due: 0, reps: 0 };
-    if (grade === "again") {
-      s.reps = 0;
-      s.interval = 0;
-      s.ease = Math.max(1.6, s.ease - 0.2);
+    const g = grade === "again" ? 1 : grade === "easy" ? 4 : grade === "hard" ? 2 : 3, now = NOW();
+    if (s.S == null && (s.reps || 0) >= 1) fsrsFromLegacy(s);
+    if (s.S == null) { s.S = FSRS_W[g - 1]; s.D = fsrsD0(g); }       // first ever review
+    else {
+      const days = s.last ? (now - s.last) / DAY : 0;
+      if (days < 0.5) s.S = s.S * Math.exp(FSRS_W[17] * (g - 3 + FSRS_W[18]));   // again the same day
+      else { const R = fsrsR(days, s.S); s.S = g === 1 ? fsrsForget(s.D, s.S, R) : fsrsRecall(s.D, s.S, R, g); }
+      s.D = fsrsNextD(s.D, g);
+    }
+    s.S = Math.max(0.1, s.S); s.last = now;
+    if (g === 1) {
+      s.reps = 0; s.interval = 0;
       s.lapses = (s.lapses || 0) + 1;   // how often you've missed it — powers "trouble words"
-      s.due = NOW() + 60 * 1000; // ~1 min: comes back this session
+      s.due = now + 60 * 1000;          // ~1 min: comes back this session
     } else {
-      const bump = grade === "easy" ? 0.15 : 0;
-      s.ease = Math.min(3.0, s.ease + bump);
-      if (s.reps === 0) s.interval = grade === "easy" ? 2 : 1;
-      else if (s.reps === 1) s.interval = grade === "easy" ? 5 : 3;
-      else s.interval = Math.round(s.interval * s.ease * (grade === "easy" ? 1.3 : 1));
-      s.reps += 1;
-      s.due = NOW() + s.interval * DAY;
+      s.reps = (s.reps || 0) + 1;
+      // a touch of fuzz so words learnt together don't all fall due on the same day
+      const iv = fsrsInterval(s.S), fuzz = iv > 3 ? 1 + (Math.random() - 0.5) * 0.1 : 1;
+      s.interval = Math.max(1, Math.min(365, Math.round(iv * fuzz)));
+      s.due = now + s.interval * DAY;
     }
     srs[id] = s;
     saveSRS(srs);
@@ -1727,7 +1771,24 @@
     $("#actSeg").querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
     $("#actMonth").classList.toggle("hidden", b.dataset.act !== "month");
     $("#actWeek").classList.toggle("hidden", b.dataset.act !== "week");
+    $("#actChars").classList.toggle("hidden", b.dataset.act !== "chars");
   }));
+  // every character from your lessons as a small square, darker when stronger
+  function renderCharGrid() {
+    const g = $("#charGridP"); if (!g) return;
+    g.innerHTML = "";
+    let known = 0, learning = 0, due = 0;
+    allChars().forEach(({ ch }) => {
+      const lv = charLevel(ch), d = lv > 0 && charDue(ch);
+      if (lv >= 2) known++; else if (lv === 1) learning++;
+      if (d) due++;
+      const i = el("i", { className: "k" + lv + (d ? " due" : ""), title: `${ch} ${charPy(ch)} · ${charEn(ch)}` });
+      g.appendChild(i);
+    });
+    $("#charGridSum").textContent = `${known} strong · ${learning} learning · ${due} due`;
+  }
+  $("#profCharsStat").addEventListener("click", openChars);
+  $("#charGridOpen").addEventListener("click", openChars);
 
   /* ---- Achievements ------------------------------------------------------
      Derived from what is already tracked, so nothing new to save except the
@@ -1842,7 +1903,8 @@
     const lv = levelInfo();
     $("#profName").textContent = displayName() || "Learner";
     $("#profXpTotal").textContent = lv.total.toLocaleString();
-    $("#profLessons").textContent = doneLessons.size;
+    $("#profLessons").textContent = charsKnown();
+    renderCharGrid();
     $("#profLevelNum").textContent = lv.level;
     $("#profXp").textContent = `Level ${lv.level} · ${lv.next} XP to go`;
     drawAvatar($("#profAvatar"), avatarCfg(), { size: 768 });
@@ -3871,7 +3933,8 @@
 
   // ---- the Characters screen ----
   let charsFilter = "all";
-  function openChars() { renderChars(); show("chars"); }
+  let charsFrom = "home";
+  function openChars() { charsFrom = document.body.dataset.view === "progress" ? "progress" : "home"; renderChars(); show("chars"); $("#charsBack").textContent = charsFrom === "progress" ? "← Profile" : "← Home"; }
   function renderChars() {
     const q = ($("#charsSearch").value || "").trim().toLowerCase();
     const strip = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ü/g, "v").toLowerCase();
@@ -3894,7 +3957,7 @@
   }
   $("#charsFilter").querySelectorAll("button").forEach(b => b.addEventListener("click", () => { charsFilter = b.dataset.f; renderChars(); }));
   $("#charsSearch").addEventListener("input", renderChars);
-  $("#charsBack").addEventListener("click", () => { renderHome(); show("home"); });
+  $("#charsBack").addEventListener("click", () => { if (charsFrom === "progress") { renderDashboard(); show("progress"); } else { renderHome(); show("home"); } });
   $("#hzSheet").addEventListener("click", closeCharSheet);
 
   function prettyPinyin(s) {
@@ -5172,8 +5235,8 @@ This REPLACES the progress on this device.`)) return;
     const srsM = Object.assign({}, sbb);
     for (const [id, e] of Object.entries(sa)) {
       const o = srsM[id];
-      const better = !o || (e.reps || 0) > (o.reps || 0) ||
-        ((e.reps || 0) === (o.reps || 0) && (e.due || 0) > (o.due || 0));
+      const better = !o || ((e.last || o.last) ? (e.last || 0) > (o.last || 0)
+        : (e.reps || 0) > (o.reps || 0) || ((e.reps || 0) === (o.reps || 0) && (e.due || 0) > (o.due || 0)));
       if (better) srsM[id] = e;
     }
     out[LS_KEY] = JSON.stringify(srsM);
@@ -5511,7 +5574,7 @@ This REPLACES the progress on this device.`)) return;
   // local development only: open straight onto a view (?view=progress) for screenshots
   if (location.hostname === "localhost") {
     const v = new URLSearchParams(location.search).get("view");
-    if (v === "progress") { renderDashboard(); show("progress"); }
+    if (v === "progress") { renderDashboard(); show("progress"); if (new URLSearchParams(location.search).get("act") === "chars") setTimeout(() => { $("#actSeg [data-act=chars]").click(); $("#actChars").scrollIntoView({ block: "center" }); }, 200); }
     else if (v === "path") { renderPath(); show("path"); }
     else if (v === "chars") openChars();
     else if (v === "char") setTimeout(() => openCharSheet(new URLSearchParams(location.search).get("ch") || "好"), 300);
