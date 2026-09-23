@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=240";
+  const ASSET_V = "?v=241";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -580,7 +580,7 @@
   }
 
   function show(sectionId) {
-    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar"].forEach(id =>
+    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     // Reset the window scroll BEFORE the new view applies its body scroll-lock.
     // The done screen is normal flow, so scrolling down to "Back to path" scrolls
@@ -1008,7 +1008,7 @@
     pinyin = prettyPinyin(pinyin);
     const wrap = el("div", { className: "hint-wrap" });
     if (showPinyin()) {
-      wrap.appendChild(el("span", { className: "pinyin hint-text" }, pinyin));
+      wrap.appendChild(el("span", { className: "pinyin hint-text" }, pySpans(pinyin)));
       return wrap;
     }
     const btn = el("button", { className: "hint-btn", type: "button" });
@@ -1937,6 +1937,8 @@
   }
 
   function renderHome() {
+    if ($("#ptCharsSub")) $("#ptCharsSub").textContent = `${charsKnown()} known`;
+    document.body.classList.toggle("tones", tonesOn());
     renderDashboard();
     renderHomeTop();
 
@@ -2039,6 +2041,7 @@
     if (mode === "study") startStudy();
     else if (mode === "quiz") startQuiz();
     else if (mode === "browse") startBrowse();
+    else if (mode === "chars") openChars();
     else if (mode === "listen") startListening();
     else if (mode === "write") startWriting();
   }
@@ -3193,14 +3196,23 @@
     const list = el("div", { className: "meet-list" });
     shown.forEach(c => {
       const row = el("div", { className: "meet-row" });
-      row.append(
-        el("div", { className: "meet-hz" }, c.hanzi),
-        el("div", { className: "meet-info" }, [
-          el("div", { className: "meet-py" }, prettyPinyin(c.pinyin)),
-          el("div", { className: "meet-en" }, c.en)
-        ]),
-        speakerBtn(c.hanzi)
-      );
+      const info = el("div", { className: "meet-info" }, [
+        el("div", { className: "meet-py" }, pySpans(c.pinyin)),
+        el("div", { className: "meet-en" }, c.en)
+      ]);
+      // how each character is built: 好 = 女 woman + 子 child
+      [...c.hanzi].filter(ch => isHan(ch) && CHD.chars[ch] && (CHD.chars[ch].c || []).length > 1).slice(0, 3).forEach(ch => {
+        const line = el("div", { className: "meet-parts" }, [el("b", { className: "chz", }, ch), " = "]);
+        line.firstChild.dataset.ch = ch;
+        CHD.chars[ch].c.forEach(([comp, role], i) => {
+          if (i) line.appendChild(document.createTextNode(" + "));
+          const p = CHD.parts[comp] || (CHD.chars[comp] ? [charEn(comp), charPy(comp)] : null);
+          line.appendChild(el("span", { className: "mp-c" + (role === "s" ? " snd" : "") }, comp));
+          if (p && p[0]) line.appendChild(document.createTextNode(" " + (role === "s" ? p[1] : p[0])));
+        });
+        info.appendChild(line);
+      });
+      row.append(el("div", { className: "meet-hz" }, hzSpans(c.hanzi, c.pinyin, true)), info, speakerBtn(c.hanzi));
       list.appendChild(row);
     });
     face.appendChild(list);
@@ -3366,8 +3378,8 @@
       // With pinyin turned off the readings stay hidden until the bubble is tapped.
       bubble.appendChild(speakerBtn(sent.hanzi));
       sent.words.forEach(w => bubble.appendChild(el("span", { className: "sw" }, [
-        el("span", { className: "py" }, prettyPinyin(w.pinyin)),
-        el("span", { className: "hz" }, w.hanzi)
+        el("span", { className: "py" }, pySpans(w.pinyin)),
+        el("span", { className: "hz" }, hzSpans(w.hanzi, w.pinyin, false))
       ])));
       const tail = sent.hanzi.slice(-1);
       if (/[。？！，、]/.test(tail)) {
@@ -3419,8 +3431,8 @@
       const t = el("button", { className: "tile" });
       t.dataset.val = item.val;
       if (item.pinyin) {
-        t.appendChild(el("span", { className: "t-han" }, item.hanzi));
-        t.appendChild(el("span", { className: "t-py" }, prettyPinyin(item.pinyin)));
+        t.appendChild(el("span", { className: "t-han" }, hzSpans(item.hanzi, item.pinyin, false)));
+        t.appendChild(el("span", { className: "t-py" }, pySpans(item.pinyin)));
       } else t.textContent = item.text;
       const slot = el("div", { className: "slot" });
       slot.appendChild(t);
@@ -3597,6 +3609,182 @@
     for (let k = 0; k < cuts.length - 1; k++) parts.push(chars.slice(cuts[k], cuts[k + 1]).join(""));
     return parts;
   }
+  /* ---- Characters: tones, pages and the Characters screen ----------------
+     CHARS_DATA (chars-data.js, built from Make Me a Hanzi) gives each
+     character its parts and a memory hook. Tone colours come from the word's
+     own pinyin, aligned syllable by syllable to its characters. */
+  const CHD = (window.CHARS_DATA || { chars: {}, parts: {} });
+  const TONE_OF = {};
+  "āēīōūǖ".split("").forEach(v => TONE_OF[v] = 1); "áéíóúǘ".split("").forEach(v => TONE_OF[v] = 2);
+  "ǎěǐǒǔǚ".split("").forEach(v => TONE_OF[v] = 3); "àèìòùǜ".split("").forEach(v => TONE_OF[v] = 4);
+  const toneOf = syl => { for (const ch of syl) if (TONE_OF[ch]) return TONE_OF[ch]; return 5; };
+  const tonesOn = () => prefs.toneColours !== false;
+  const isHan = ch => /[\u3400-\u9fff]/.test(ch);
+  const sylls = py => (prettyPinyin(py || "").match(/[A-Za-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]+/g) || []);
+  // Each character of a word, tone-classed when its pinyin lines up; tappable
+  // characters (tap) open their page.
+  function hzSpans(hanzi, pinyin, tap) {
+    const f = document.createDocumentFragment(), cs = [...(hanzi || "")];
+    const han = cs.filter(isHan), ss = sylls(pinyin), aligned = ss.length === han.length;
+    let k = 0;
+    cs.forEach(ch => {
+      if (!isHan(ch)) { f.appendChild(document.createTextNode(ch)); return; }
+      const s = el("span", { className: "tn" + (aligned ? " t" + toneOf(ss[k]) : "") + (tap && CHD.chars[ch] ? " chz" : "") }, ch);
+      if (tap && CHD.chars[ch]) s.dataset.ch = ch;
+      f.appendChild(s); k++;
+    });
+    return f;
+  }
+  // Pinyin with each syllable tone-classed, spacing kept.
+  function pySpans(pinyin) {
+    const f = document.createDocumentFragment(), s = prettyPinyin(pinyin || "");
+    let last = 0;
+    s.replace(/[A-Za-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]+/g, (m, i) => {
+      if (i > last) f.appendChild(document.createTextNode(s.slice(last, i)));
+      f.appendChild(el("span", { className: "tn t" + toneOf(m) }, m)); last = i + m.length; return m;
+    });
+    if (last < s.length) f.appendChild(document.createTextNode(s.slice(last)));
+    return f;
+  }
+  // A character's reading and meaning as this app teaches them.
+  const CHAR_PY = {}, CHAR_EN = {};
+  function charIndex() {
+    if (Object.keys(CHAR_PY).length) return;
+    CARDS.forEach(c => {
+      const han = [...c.hanzi].filter(isHan), ss = sylls(c.pinyin);
+      if (han.length === 1 && !CHAR_EN[han[0]]) CHAR_EN[han[0]] = c.en;
+      if (ss.length === han.length) han.forEach((ch, i) => { if (!CHAR_PY[ch] && toneOf(ss[i]) !== 5) CHAR_PY[ch] = ss[i]; });
+      if (ss.length === han.length) han.forEach((ch, i) => { if (!CHAR_PY[ch]) CHAR_PY[ch] = ss[i]; });
+    });
+  }
+  const charPy = ch => { charIndex(); return CHAR_PY[ch] || (CHD.chars[ch] || {}).p || ""; };
+  const charEn = ch => { charIndex(); return CHAR_EN[ch] || (CHD.chars[ch] || {}).d || ""; };
+  const cardsWith = ch => CARDS.filter(c => c.hanzi.includes(ch));
+  // 0 not met, 1 learning, 2 getting there, 3 strong — the best of the words it appears in
+  function charLevel(ch) {
+    let lv = 0;
+    cardsWith(ch).forEach(c => {
+      const s = srs[c.id]; if (!s || s.reps < 1) return;
+      lv = Math.max(lv, s.interval >= MASTER_INTERVAL ? 3 : s.interval >= 3 ? 2 : 1);
+    });
+    return lv;
+  }
+  const charDue = ch => cardsWith(ch).some(c => srs[c.id] && srs[c.id].due <= NOW());
+  function allChars() {
+    const seen = new Set(), out = [];
+    CARDS.forEach(c => [...c.hanzi].forEach(ch => { if (isHan(ch) && !seen.has(ch)) { seen.add(ch); out.push({ ch, lesson: c.lessonTitle }); } }));
+    return out;
+  }
+  const charsKnown = () => allChars().filter(x => charLevel(x.ch) >= 1).length;
+
+  // ---- the character page, as a sheet over whatever is on screen ----
+  function partBox(comp, role) {
+    const p = CHD.parts[comp] || (CHD.chars[comp] ? [charEn(comp), charPy(comp)] : null);
+    const b = el("button", { className: "cpart" + (CHD.chars[comp] ? " chz" : ""), type: "button" }, [el("span", { className: "g" }, comp)]);
+    if (CHD.chars[comp]) b.dataset.ch = comp;
+    if (p && p[0]) b.appendChild(el("span", { className: "m" }, role === "s" ? `${p[1]} · ${p[0]}` : p[0]));
+    if (role) b.appendChild(el("span", { className: "role " + (role === "s" ? "sound" : "meaning") }, role === "s" ? "sound" : "meaning"));
+    return b;
+  }
+  function openCharSheet(ch) {
+    const d = CHD.chars[ch]; if (!d) return;
+    const back = $("#charSheet");
+    const box = el("div", { className: "lsheet csheet" });
+    box.addEventListener("click", e => e.stopPropagation());
+    const inner = el("div", { className: "lsheet-inner" });
+    const py = charPy(ch), strokes = (window.HANZI_DATA && HANZI_DATA[ch] && HANZI_DATA[ch].strokes || []).length;
+    const words = cardsWith(ch);
+    inner.appendChild(el("div", { className: "handle" }));
+    const big = el("div", { className: "cbig tn t" + toneOf(py) }, ch);
+    const acts = el("div", { className: "cacts" }, [speakerBtn(ch)]);
+    if (HW_OK && strokes) acts.appendChild(strokeBtn(ch, py));
+    inner.appendChild(el("div", { className: "chero" }, [big,
+      el("div", { className: "cmeta" }, [el("div", { className: "cpy" }, pySpans(py)), el("div", { className: "cen" }, charEn(ch)),
+        el("div", { className: "cinfo" }, [strokes ? `${strokes} strokes` : "", words.length ? `in ${words.length} of your word${words.length === 1 ? "" : "s"}` : ""].filter(Boolean).join(" · "))]),
+      acts]));
+    if (d.c && d.c.length > 1) {
+      const row = el("div", { className: "cparts" });
+      d.c.forEach(([comp, role], i) => { if (i) row.appendChild(el("span", { className: "plus" }, "+")); row.appendChild(partBox(comp, role)); });
+      inner.appendChild(row);
+    } else if (d.t === "g") inner.appendChild(el("div", { className: "cnote" }, "A picture character: it started as a drawing of the thing itself."));
+    // memory hook: the generated one, or your own
+    const hooks = prefs.hooks || {};
+    const hookBox = el("div", { className: "chook" });
+    const drawHook = () => {
+      hookBox.innerHTML = "";
+      hookBox.append(licon("i-bulb", "licon-sm"), el("div", { className: "ht" }, [el("span", {}, hooks[ch] || d.h || "Write a story to remember this one."),
+        el("button", { className: "link hedit", type: "button" }, hooks[ch] ? "Edit your hook" : "Write your own")]));
+      hookBox.querySelector(".hedit").addEventListener("click", () => {
+        hookBox.innerHTML = "";
+        const ta = el("textarea", { className: "hta", rows: 3, value: hooks[ch] || d.h || "" });
+        const save = el("button", { className: "primary", type: "button" }, "Save hook");
+        const reset = el("button", { className: "ghost", type: "button" }, hooks[ch] ? "Use the suggested one" : "Cancel");
+        save.addEventListener("click", () => { const v = ta.value.trim(); prefs.hooks = Object.assign({}, prefs.hooks); if (v && v !== d.h) prefs.hooks[ch] = v; else delete prefs.hooks[ch]; savePrefs(prefs); Object.assign(hooks, prefs.hooks); if (!prefs.hooks[ch]) delete hooks[ch]; drawHook(); toast("Hook saved"); });
+        reset.addEventListener("click", () => { if (hooks[ch]) { prefs.hooks = Object.assign({}, prefs.hooks); delete prefs.hooks[ch]; delete hooks[ch]; savePrefs(prefs); } drawHook(); });
+        hookBox.append(ta, el("div", { className: "hbtns" }, [reset, save]));
+        ta.focus();
+      });
+    };
+    drawHook(); inner.appendChild(hookBox);
+    if (words.length) {
+      inner.appendChild(el("div", { className: "csub" }, `Words with ${ch}`));
+      const list = el("div", { className: "cwords" });
+      words.slice(0, 12).forEach(c => {
+        const known = srs[c.id] && srs[c.id].reps >= 1;
+        list.appendChild(el("div", { className: "cw" }, [el("span", { className: "h" }, hzSpans(c.hanzi, c.pinyin, true)),
+          el("span", { className: "d" }, [pySpans(c.pinyin), el("br"), c.en]), el("span", { className: "k" + (known ? "" : " new") }, known ? "KNOWN" : "NEW")]));
+      });
+      inner.appendChild(list);
+    }
+    // relatives: characters from your lessons sharing a meaning part or a sound part
+    const mine = new Set(allChars().map(x => x.ch));
+    (d.c || []).forEach(([comp, role]) => {
+      if (!role) return;
+      const rel = [...mine].filter(o => o !== ch && CHD.chars[o] && (CHD.chars[o].c || []).some(([cc, rr]) => cc === comp && (role === "s" ? rr === "s" : true)));
+      if (!rel.length) return;
+      inner.appendChild(el("div", { className: "csub" }, role === "s" ? `Same sound part ${comp}` : `Also has ${comp}`));
+      const chips = el("div", { className: "cchips" });
+      rel.slice(0, 8).forEach(o => { const b = el("button", { className: "cchip chz", type: "button" }, [el("span", { className: "tn t" + toneOf(charPy(o)) }, o), el("small", {}, role === "s" ? charPy(o) : charEn(o))]); b.dataset.ch = o; chips.appendChild(b); });
+      inner.appendChild(chips);
+    });
+    box.appendChild(inner);
+    back.innerHTML = ""; back.appendChild(box); back.classList.remove("hidden");
+  }
+  function closeCharSheet() { $("#charSheet").classList.add("hidden"); }
+  // any tappable character anywhere opens its page
+  document.addEventListener("click", e => {
+    const t = e.target.closest(".chz[data-ch]"); if (!t) return;
+    e.preventDefault(); e.stopPropagation(); openCharSheet(t.dataset.ch);
+  }, true);
+
+  // ---- the Characters screen ----
+  let charsFilter = "all";
+  function openChars() { renderChars(); show("chars"); }
+  function renderChars() {
+    const q = ($("#charsSearch").value || "").trim().toLowerCase();
+    const strip = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ü/g, "v").toLowerCase();
+    const body = $("#charsBody"); body.innerHTML = "";
+    const all = allChars();
+    $("#charsCount").textContent = `${charsKnown()} / ${all.length}`;
+    let group = null, grid = null, shown = 0;
+    all.forEach(({ ch, lesson }) => {
+      const lv = charLevel(ch), due = charDue(ch) && lv > 0;
+      if (charsFilter === "due" && !due) return;
+      if (charsFilter === "weak" && lv !== 1) return;
+      if (charsFilter === "new" && lv !== 0) return;
+      if (q && !(ch.includes(q) || strip(charPy(ch)).includes(strip(q)) || charEn(ch).toLowerCase().includes(q))) return;
+      if (lesson !== group) { group = lesson; body.appendChild(el("div", { className: "unit-h" }, lesson)); grid = el("div", { className: "cgrid" }); body.appendChild(grid); }
+      const b = el("button", { className: `cg s${lv}${due ? " due" : ""} chz`, type: "button", title: `${charPy(ch)} · ${charEn(ch)}` }, ch);
+      b.dataset.ch = ch; grid.appendChild(b); shown++;
+    });
+    if (!shown) body.appendChild(el("p", { className: "muted", style: "text-align:center;margin:30px 0" }, q ? "No characters match that search." : "Nothing here right now."));
+    $("#charsFilter").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.f === charsFilter));
+  }
+  $("#charsFilter").querySelectorAll("button").forEach(b => b.addEventListener("click", () => { charsFilter = b.dataset.f; renderChars(); }));
+  $("#charsSearch").addEventListener("input", renderChars);
+  $("#charsBack").addEventListener("click", () => { renderHome(); show("home"); });
+  $("#charSheet").addEventListener("click", closeCharSheet);
+
   function prettyPinyin(s) {
     if (!s) return s;
     return String(s).replace(/[A-Za-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹ]+/g, run => {
@@ -3710,7 +3898,7 @@
       btn.dataset.val = opt;
       if (withTilePinyin) {
         btn.appendChild(el("span", { className: "c-han" }, opt));
-        if (PINYIN_BY_HANZI[opt]) btn.appendChild(el("span", { className: "c-py" }, prettyPinyin(PINYIN_BY_HANZI[opt])));
+        if (PINYIN_BY_HANZI[opt]) btn.appendChild(el("span", { className: "c-py" }, pySpans(PINYIN_BY_HANZI[opt])));
       } else {
         // display prettified for the pinyin drill; the match still uses dataset.val
         btn.textContent = dir === "pinyin" ? prettyPinyin(opt) : opt;
@@ -3941,7 +4129,7 @@
       const header = el("div", { className: "write-head" });
       if (hasStrokes(ch)) header.appendChild(refAnimBox(ch, 50));
       header.appendChild(el("div", { className: "wh-txt" }, [
-        el("div", { className: "pinyin", style: "font-size:1.15rem;line-height:1.15" }, prettyPinyin(c.pinyin)),
+        el("div", { className: "pinyin", style: "font-size:1.15rem;line-height:1.15" }, pySpans(c.pinyin)),
         el("div", { className: "muted", style: "font-size:.9rem" }, c.en + (N > 1 ? `  ·  ${writeCharIdx + 1}/${N}` : ""))
       ]));
       header.appendChild(speakerBtn(c.hanzi));
@@ -3998,9 +4186,13 @@
     const body = el("div");
     body.appendChild(el("div", { className: "fb-t" }, correct ? PRAISE[Math.floor(Math.random() * PRAISE.length)] : "Correct answer:"));
     // what to show: the whole word, with the part they were asked for first
-    const line = dir === "recognize" ? `${c.en}` : dir === "pinyin" ? prettyPinyin(c.pinyin) : c.hanzi;
-    body.appendChild(el("div", { className: "fb-a" }, line));
-    body.appendChild(el("div", { className: "fb-py" }, [c.hanzi, prettyPinyin(c.pinyin), c.en].filter(x => x !== line).join(" · ")));
+    const first = dir === "recognize" ? "en" : dir === "pinyin" ? "py" : "hz";
+    const piece = k => k === "en" ? document.createTextNode(c.en) : k === "py" ? pySpans(c.pinyin) : hzSpans(c.hanzi, c.pinyin, true);
+    body.appendChild(el("div", { className: "fb-a" }, piece(first)));
+    const rest = el("div", { className: "fb-py" });
+    ["hz", "py", "en"].filter(k => k !== first).forEach((k, i) => { if (i) rest.appendChild(document.createTextNode(" · ")); rest.appendChild(piece(k)); });
+    body.appendChild(rest);
+    if ([...c.hanzi].some(ch => CHD.chars[ch])) body.appendChild(el("div", { className: "fb-tip" }, "Tap a character to see how it's built"));
     fb.appendChild(body);
     wrapEl.insertBefore(fb, wrapEl.firstChild);
     wrapEl.classList.add(correct ? "ok" : "bad", "wide");
@@ -4533,6 +4725,7 @@
     $("#soundSwitch").classList.toggle("on", prefs.sound !== false);
     $("#relightSwitch").classList.toggle("on", prefs.autoRelight !== false);
     $("#pinyinSwitch").classList.toggle("on", prefs.showPinyin !== false);
+    $("#toneSwitch").classList.toggle("on", tonesOn());
     if ($("#nameInput") && document.activeElement !== $("#nameInput")) $("#nameInput").value = prefs.name || "";
     const bk = $("#backupAge");
     if (bk) {
@@ -4553,6 +4746,9 @@
     prefs.showPinyin = prefs.showPinyin === false ? true : false;
     savePrefs(prefs); syncSettings();
   }
+  const toggleTones = () => { prefs.toneColours = !tonesOn(); savePrefs(prefs); document.body.classList.toggle("tones", tonesOn()); syncSettings(); };
+  $("#toneSwitch").addEventListener("click", toggleTones);
+  $("#toneSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleTones(); } });
   $("#pinyinSwitch").addEventListener("click", togglePinyin);
   $("#pinyinSwitch").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); togglePinyin(); } });
   if ($("#nameInput")) $("#nameInput").addEventListener("input", e => {
@@ -5179,6 +5375,8 @@ This REPLACES the progress on this device.`)) return;
     const v = new URLSearchParams(location.search).get("view");
     if (v === "progress") { renderDashboard(); show("progress"); }
     else if (v === "path") { renderPath(); show("path"); }
+    else if (v === "chars") openChars();
+    else if (v === "char") setTimeout(() => openCharSheet(new URLSearchParams(location.search).get("ch") || "好"), 300);
     // screenshot helpers: the longest sentence card, or an answered choice card
     else if (v === "sentence") setTimeout(() => window.__dev.sentence(window.__dev.longest()[0].slice(0, 4), false), 300);
     else if (v === "write") setTimeout(() => {
