@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=242";
+  const ASSET_V = "?v=243";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -580,6 +580,7 @@
   }
 
   function show(sectionId) {
+    if (window.__updateReady && ["home", "path", "progress"].includes(sectionId)) { window.__updateReady(); return; }
     ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     // Reset the window scroll BEFORE the new view applies its body scroll-lock.
@@ -1255,7 +1256,38 @@
   // Validated version: each box is a Hanzi Writer quiz — wrong strokes don't
   // register and a hint flashes after 2 misses. Top row shows a faint outline
   // to trace; lower rows are from memory.
-  function buildCheckGrid(host, chars, { rows, cols, cell, tight = false, onAllDone = null }) {
+  /* Writing help fades as a word is learnt. Stage 0, new: full outline, the
+     strokes animate once, then you trace. Stage 1, learning: no outline, only
+     the character's first part (its radical) shown faintly. Stage 2, known:
+     a blank box, hints only after mistakes. */
+  function writeStage(c) {
+    const s = c && srs[c.id];
+    if (!s || s.reps < 1) return 0;
+    return s.interval >= MASTER_INTERVAL ? 2 : 1;
+  }
+  const STAGE_INFO = [
+    { chip: "New", note: "Watch the strokes, then trace over them.", hint: 1 },
+    { chip: "Learning", note: "The first part is shown. Write the whole character.", hint: 2 },
+    { chip: "From memory", note: "Write it from memory. A hint shows after a few misses.", hint: 3 }
+  ];
+  // The first part of a character (its radical, or the first third of its
+  // strokes) drawn faintly as a guide, in the same box as the writer.
+  function partGuide(ch, cell) {
+    const d = HANZI[ch]; if (!d) return null;
+    const idx = d.radStrokes && d.radStrokes.length && d.radStrokes.length < d.strokes.length
+      ? d.radStrokes : d.strokes.map((_, i) => i).slice(0, Math.max(1, Math.ceil(d.strokes.length / 3)));
+    const pad = 6 * 1024 / Math.max(40, cell - 12);
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", `${-pad} ${-pad} ${1024 + 2 * pad} ${1024 + 2 * pad}`);
+    svg.setAttribute("class", "part-guide");
+    const g = document.createElementNS(ns, "g");
+    g.setAttribute("transform", "translate(0, 900) scale(1, -1)");
+    idx.forEach(i => { const p = document.createElementNS(ns, "path"); p.setAttribute("d", d.strokes[i]); g.appendChild(p); });
+    svg.appendChild(g);
+    return svg;
+  }
+  function buildCheckGrid(host, chars, { rows, cols, cell, tight = false, onAllDone = null, stage = 0 }) {
     const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d";
     // drawingWidth is in the 1024-unit glyph space, so scale it up for small
     // cells to keep the pen ~7px on screen regardless of box size.
@@ -1280,13 +1312,17 @@
         box.style.width = box.style.height = cell + "px";
         row.appendChild(box);
         if (!hasStrokes(ch)) { box.appendChild(el("div", { className: "hanzi", style: `line-height:${cell}px` }, ch)); continue; }
+        if (stage === 1 && r === 0) { const guide = partGuide(ch, cell); if (guide) box.appendChild(guide); }
         const w = makeWriter(box, ch, {
-          width: cell, height: cell, showOutline: r === 0, showCharacter: false,
+          width: cell, height: cell, showOutline: stage === 0 && r === 0, showCharacter: false,
           drawingWidth: pen, drawingColor: accent,
           // Completed strokes in red (like the pen) so it's obvious they registered.
           strokeColor: accent, radicalColor: accent
         });
-        w.quiz({ leniency: 1.4, showHintAfterMisses: 2, onComplete: () => markWritten(ch) });
+        const quiz = () => w.quiz({ leniency: 1.4, showHintAfterMisses: STAGE_INFO[stage].hint, onComplete: () => markWritten(ch) });
+        // a new character plays its strokes once in the box before you trace it
+        if (stage === 0 && r === 0 && col === 0) w.animateCharacter({ onComplete: () => setTimeout(quiz, 350) });
+        else quiz();
       }
     }
   }
@@ -4070,6 +4106,19 @@
   }
 
   // Animated red stroke-order reference box for one character (loops, tap-replay).
+  // Past the first stage the answer isn't on screen; Peek shows it briefly.
+  function peekBox(ch, size) {
+    const box = el("button", { className: "tzg-cell peek-box", type: "button", title: "Peek at the character" });
+    box.style.width = box.style.height = size + "px";
+    box.innerHTML = `<svg class="licon"><use href="#i-eye"/></svg><span>Peek</span>`;
+    box.addEventListener("click", () => {
+      if (box.dataset.open) return;
+      box.dataset.open = "1"; box.innerHTML = "";
+      const ref = refAnimBox(ch, size); ref.style.border = "0"; box.appendChild(ref);
+      setTimeout(() => { delete box.dataset.open; box.innerHTML = `<svg class="licon"><use href="#i-eye"/></svg><span>Peek</span>`; }, 3200);
+    });
+    return box;
+  }
   function refAnimBox(ch, size) {
     const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#2b776d";
     const box = el("div", { className: "tzg-cell", style: "cursor:pointer" });
@@ -4086,10 +4135,11 @@
   function renderWriteDesktop(face, chars, checkOn) {
     const avail = (face.clientWidth || 340) - 4;
     const refSize = Math.max(56, Math.min(96, Math.floor((avail - (chars.length - 1) * 12) / chars.length)));
+    const stage = checkOn ? writeStage(curCard) : 0;
     const refRow = el("div", { className: "writing-inline", style: "gap:12px" });
     face.appendChild(refRow);
-    chars.forEach(ch => refRow.appendChild(hasStrokes(ch) ? refAnimBox(ch, refSize) : el("div", { className: "hanzi" }, ch)));
-    face.appendChild(el("div", { className: "muted", style: "font-size:.78rem" }, "stroke order — tap a character to replay"));
+    chars.forEach(ch => refRow.appendChild(!hasStrokes(ch) ? el("div", { className: "hanzi" }, ch) : stage === 0 ? refAnimBox(ch, refSize) : peekBox(ch, refSize)));
+    face.appendChild(el("div", { className: "muted", style: "font-size:.78rem" }, stage === 0 ? "stroke order — tap a character to replay" : `${STAGE_INFO[stage].chip}: ${STAGE_INFO[stage].note}`));
 
     const cols = chars.length === 1 ? (checkOn ? 3 : 4) : chars.length;
     const cell = checkOn
@@ -4099,7 +4149,7 @@
     if (checkOn) {
       face.appendChild(el("div", { className: "muted", style: "margin-top:8px" },
         "write each character once to continue — wrong strokes won’t register; a hint appears after 2 misses"));
-      buildCheckGrid(face, chars, { rows: 2, cols, cell, onAllDone: () => setWriteGate(true) });
+      buildCheckGrid(face, chars, { rows: 2, cols, cell, stage, onAllDone: () => setWriteGate(true) });
     } else {
       face.appendChild(el("div", { className: "muted", style: "margin-top:8px" },
         "trace each row — the guide fades; the last row is from memory"));
@@ -4126,12 +4176,18 @@
       const N = chars.length, last = writeCharIdx === N - 1;
 
       // Compact one-line header: small animated stroke-order + prompt + audio.
+      const stage = checkOn ? writeStage(c) : 0;
       const header = el("div", { className: "write-head" });
-      if (hasStrokes(ch)) header.appendChild(refAnimBox(ch, 50));
+      if (hasStrokes(ch)) header.appendChild(stage === 0 ? refAnimBox(ch, 50) : peekBox(ch, 50));
       header.appendChild(el("div", { className: "wh-txt" }, [
         el("div", { className: "pinyin", style: "font-size:1.15rem;line-height:1.15" }, pySpans(c.pinyin)),
         el("div", { className: "muted", style: "font-size:.9rem" }, c.en + (N > 1 ? `  ·  ${writeCharIdx + 1}/${N}` : ""))
       ]));
+      // the title says what this stage asks for, with the stage as a chip beside it
+      if (checkOn) {
+        const lbl = $("#promptLabel"); lbl.textContent = ["Trace, then write it", "Write it", "Write it from memory"][stage] + " ";
+        lbl.appendChild(el("span", { className: "wstage s" + stage }, STAGE_INFO[stage].chip));
+      }
       header.appendChild(speakerBtn(c.hanzi));
       pageWrap.appendChild(header);
 
@@ -4139,11 +4195,12 @@
       setWriteGate(!(checkOn && hasStrokes(ch)));
       if (hasStrokes(ch)) {
         // The box fills the on-screen space between the header and the controls.
-        const gap = face.getBoundingClientRect().bottom - header.getBoundingClientRect().bottom - 62;
+        const gap = face.getBoundingClientRect().bottom - header.getBoundingClientRect().bottom - 84;
         const box = Math.max(180, Math.min((face.clientWidth || 340) - 8, gap, 460));
         if (checkOn) {
-          buildCheckGrid(pageWrap, [ch], { rows: 1, cols: 1, cell: box, tight: true, onAllDone: () => setWriteGate(true) });
-          const redo = el("button", { className: "ghost", style: "margin-top:6px" }, "↺ Clear");
+          buildCheckGrid(pageWrap, [ch], { rows: 1, cols: 1, cell: box, tight: true, stage, onAllDone: () => setWriteGate(true) });
+          pageWrap.appendChild(el("div", { className: "wstage-note" }, STAGE_INFO[stage].note));
+          const redo = el("button", { className: "ghost", style: "margin-top:2px" }, "↺ Clear");
           redo.addEventListener("click", renderPage);
           pageWrap.appendChild(redo);
         } else {
@@ -5380,7 +5437,9 @@ This REPLACES the progress on this device.`)) return;
     // screenshot helpers: the longest sentence card, or an answered choice card
     else if (v === "sentence") setTimeout(() => window.__dev.sentence(window.__dev.longest()[0].slice(0, 4), false), 300);
     else if (v === "write") setTimeout(() => {
+      const st = +(new URLSearchParams(location.search).get("stage") || 0);
       curCard = CARDS.find(c => c.hanzi.length === 2 && HW_OK && wordWritable(c.hanzi)) || CARDS[0]; curDir = "write"; studyAnswered = false;
+      if (st) srs[curCard.id] = { ease: 2.4, reps: 3, interval: st === 2 ? 20 : 3, due: NOW() + DAY }; else delete srs[curCard.id];
       queue = [curCard]; sessionTotal = 1; clearedIds = new Set(); show("study"); renderStudyCard();
     }, 600);
     else if (v === "choice") setTimeout(() => {
