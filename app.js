@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=260";
+  const ASSET_V = "?v=261";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2022,17 +2022,23 @@
       cont.onclick = () => launchLesson(curId, null);
     }
 
-    const due = dueReviewCards().length, rev = $("#homeReview");
-    if (due) {
-      $("#homeReviewTxt").textContent = `${due} word${due === 1 ? "" : "s"} ready to review`;
-      rev.classList.remove("hidden");
-    } else rev.classList.add("hidden");
+    renderHub();
+  }
 
-    const trouble = troubleCards().length, tr = $("#homeTrouble");
-    if (trouble) {
-      $("#homeTroubleTxt").textContent = `${trouble} trouble word${trouble === 1 ? "" : "s"} to drill`;
-      tr.classList.remove("hidden");
-    } else tr.classList.add("hidden");
+  // The practice hub on Home: your mistakes, words due, and weak words.
+  function renderHub() {
+    const row = (btn, n, subEl, nEl, some, none) => {
+      $(btn).classList.toggle("empty", !n);
+      $(subEl).textContent = n ? some(n) : none;
+      $(nEl).textContent = n ? String(n) : "";
+    };
+    const s = n => (n === 1 ? "" : "s");
+    row("#hubMistakes", mistakeCards().length, "#hubMistakesSub", "#hubMistakesN",
+      n => `${n} word${s(n)} to get right again`, "Nothing to fix. Mistakes you make land here");
+    row("#homeReview", dueReviewCards().length, "#homeReviewTxt", "#homeReviewN",
+      n => `${n} word${s(n)} ready to review`, "All caught up");
+    row("#homeTrouble", troubleCards().length, "#homeTroubleTxt", "#homeTroubleN",
+      n => `${n} word${s(n)} you often miss`, "No weak words yet");
   }
 
   function renderHome() {
@@ -2175,8 +2181,9 @@
   $("#achAll").addEventListener("click", () => { achShowAll = !achShowAll; renderAchievements(); });
   $("#profSettings").addEventListener("click", () => document.querySelector(".bottomnav [data-nav=settings]").click());
   $("#editAvatar").addEventListener("click", () => { avatarDraft=null;$("#avatar").classList.remove("preview-compact");show("avatar"); renderAvatarBuilder(); });
-  $("#homeReview").addEventListener("click", () => { returnView = "home"; startReview(); });
-  $("#homeTrouble").addEventListener("click", () => { returnView = "home"; startTrouble(); });
+  $("#homeReview").addEventListener("click", () => { if ($("#homeReview").classList.contains("empty")) return; returnView = "home"; startReview(); });
+  $("#homeTrouble").addEventListener("click", () => { if ($("#homeTrouble").classList.contains("empty")) return; returnView = "home"; startTrouble(); });
+  $("#hubMistakes").addEventListener("click", () => { if ($("#hubMistakes").classList.contains("empty")) return; returnView = "home"; startMistakes(); });
 
   function resetProgress() {
     const ids = new Set(activeCards().map(c => c.id));
@@ -2512,6 +2519,25 @@
       const sa = srs[a.id], sb = srs[b.id];
       return (sb.lapses || 0) - (sa.lapses || 0) || sa.ease - sb.ease;   // most-missed first
     });
+  }
+  /* ---- Your mistakes ------------------------------------------------------
+     A wrong answer is kept on the word (srs[id].miss: the exercise type and
+     when). It counts as fixed once the word is answered right in a LATER
+     session, or in a mistakes session, so a retry at the end of the same
+     session doesn't wipe it. The mistakes session asks each word the way
+     you missed it. */
+  let mistakesMode = false, sessionMistakes = 0, sessionFixed = 0;
+  function mistakeCards() {
+    return CARDS.filter(c => srs[c.id] && srs[c.id].miss).sort((a, b) => srs[b.id].miss.at - srs[a.id].miss.at);
+  }
+  function startMistakes() {
+    const cards = mistakeCards().slice(0, SESSION_LEN);
+    if (!cards.length) { toast("No mistakes to fix. Nice!"); return; }
+    reviewMode = true;
+    scopeLessons = new Set(cards.map(c => c.lessonId));   // plausible distractors
+    scopeFocuses = new Set(FOCUSES.map(f => f.key));        // so each can be asked the way it was missed
+    beginStudySession(cards, { mistakes: true });
+    $("#studyTitle").textContent = "Your mistakes";
   }
   function startTrouble() {
     const cards = troubleCards();
@@ -3244,6 +3270,8 @@
   const sentencesFor = card => SENTENCES.filter(s => s.hanzi.includes(card.hanzi));
 
   function pickDirection(card) {
+    const miss = mistakesMode && card && srs[card.id] && srs[card.id].miss;
+    if (miss && !dirByCard[card.id] && missedDirPossible(card, miss.d)) { dirByCard[card.id] = miss.d; return (lastDir = miss.d); }
     const focusSet = scopeFocuses || selectedFocuses;
     let enabled = FOCUSES.filter(f => focusSet.has(f.key)).map(f => f.key);
     // "write" only makes sense when we have stroke data for the whole word.
@@ -3278,6 +3306,11 @@
     return lastDir;
   }
   let lastDir = null, sessionStart = 0, dirByCard = {};
+  function missedDirPossible(card, d) {
+    if (d === "write") return HW_OK && wordWritable(card.hanzi);
+    if (d === "sentence") return sentencesFor(card).length > 0;
+    return FOCUSES.some(f => f.key === d);
+  }
 
   function buildStudyQueue() {
     const focusSet = scopeFocuses || selectedFocuses;
@@ -3324,7 +3357,8 @@
   let studyAnswered = false;  // has the current card been answered yet?
 
   // Start (or restart) a study session over a given set of cards.
-  function beginStudySession(cards) {
+  function beginStudySession(cards, opts = {}) {
+    mistakesMode = !!opts.mistakes; sessionMistakes = 0; sessionFixed = 0;
     studySource = cards.slice();
     queue = sessionOrder(cards);
     clearedIds = new Set(); stepsDone = 0;
@@ -3477,6 +3511,9 @@
     box.innerHTML = "";
     if (perfect) box.appendChild(el("div", { className: "done-note gold" }, `Perfect! No mistakes, +${XP.perfect} XP`));
     if (lesson) box.appendChild(el("div", { className: "done-note boost" }, `Lesson done: double XP for the next 15 minutes`));
+    if (sessionFixed) box.appendChild(el("div", { className: "done-note fixed" }, `${sessionFixed} mistake${sessionFixed === 1 ? "" : "s"} fixed`));
+    else if (sessionMistakes && !mistakesMode) box.appendChild(el("div", { className: "done-note miss" },
+      `${sessionMistakes} mistake${sessionMistakes === 1 ? "" : "s"} saved to practise in Fix your mistakes`));
     else if (boostOn()) box.appendChild(el("div", { className: "done-note boost" }, `Double XP is on`));
   }
 
@@ -3491,6 +3528,9 @@
     // "Mastered" requires you to have PRODUCED the word, not just recognised it:
     // mark a production pass when you get a recall / write / speak card right.
     if (correct && srs[curCard.id] && !srs[curCard.id].known) { srs[curCard.id].known = true; saveSRS(srs); }
+    const sEntry = srs[curCard.id];
+    if (sEntry && !correct) { sEntry.miss = { d: curDir, at: NOW(), s: sessionStart }; sessionMistakes++; saveSRS(srs); }
+    else if (sEntry && correct && sEntry.miss && (mistakesMode || sEntry.miss.s !== sessionStart)) { delete sEntry.miss; sessionFixed++; saveSRS(srs); }
     if (correct && srs[curCard.id] && PRODUCTION_DIRS.has(curDir)) {
       srs[curCard.id].prod = true;
       saveSRS(srs);
@@ -4885,7 +4925,7 @@
       ? CARDS.filter(c => c.lessonId === scopedId && !(srs[c.id] && srs[c.id].reps >= 1)).length
       : 0;
 
-    $("#doneTitle").textContent = reviewMode ? "Review complete"
+    $("#doneTitle").textContent = mistakesMode ? "Mistakes practised" : reviewMode ? "Review complete"
       : justFinished ? "Lesson complete"
       : remaining ? "Batch done" : "Session complete";
     sfx("complete");
