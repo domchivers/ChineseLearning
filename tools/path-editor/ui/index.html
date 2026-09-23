@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>步步 Path Editor</title>
+<link rel="icon" href="/app/icons/icon-192.png">
+<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><span class="logo">步</span><div><b>Path Editor</b><small id="buildChip">loading…</small></div></div>
+
+  <div class="group" title="Screen to edit and preview on">
+    <label for="device">Screen</label>
+    <select id="device"></select>
+    <button class="icon-btn" id="rotate" title="Rotate (R)" aria-label="Rotate">⟲</button>
+    <span class="custom" id="customBox" hidden>
+      <input id="customW" type="number" min="280" max="3840" value="1024"> × <input id="customH" type="number" min="400" max="2400" value="768">
+    </span>
+    <span class="dim" id="dimLabel"></span>
+  </div>
+
+  <div class="group seg" role="group" aria-label="Theme">
+    <button data-theme="light" class="on">Day</button><button data-theme="dark">Night</button>
+  </div>
+
+  <div class="group" title="Where the START bubble sits">
+    <label for="cur">Current lesson</label>
+    <select id="cur"></select>
+  </div>
+
+  <div class="group zoom">
+    <button class="icon-btn" id="zoomOut" title="Zoom out (−)">−</button>
+    <button class="zoom-val" id="zoomVal" title="Fit to window (0)">100%</button>
+    <button class="icon-btn" id="zoomIn" title="Zoom in (+)">+</button>
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="group">
+    <button class="btn" id="undo" title="Undo (Ctrl+Z)" disabled>Undo</button>
+    <button class="btn" id="redo" title="Redo (Ctrl+Y)" disabled>Redo</button>
+  </div>
+  <div class="group">
+    <button class="btn" id="reload" title="Load the latest from the app's files">Reload from app</button>
+    <button class="btn toggle on" id="previewToggle" title="Live preview of the real app (P)">Preview</button>
+  </div>
+  <div class="group">
+    <button class="btn primary" id="save" title="Write the layout into app.js (Ctrl+S)">Save</button>
+    <button class="btn accent" id="publish" title="Commit and push, so it goes live on your phone">Publish</button>
+  </div>
+</header>
+
+<div class="banner" id="banner" hidden><span id="bannerText"></span><span class="banner-actions" id="bannerActions"></span></div>
+
+<div class="workspace" id="workspace">
+  <aside class="panel left">
+    <div class="tabs" role="tablist">
+      <button class="on" data-tab="pieces">Pieces</button><button data-tab="chapters">Chapters</button>
+    </div>
+    <div class="tab" data-tab="pieces">
+      <p class="hint">Click a piece to drop it where you are looking, then drag it into place.</p>
+      <h3>Landmarks</h3><div class="palette" id="pal-land"></div>
+      <h3>Foliage</h3><div class="palette" id="pal-fol"></div>
+      <h3>Grass</h3><div class="palette" id="pal-grass"></div>
+      <h3>Pandas</h3><div class="palette" id="pal-panda"></div>
+      <h3>Clusters</h3><div class="palette" id="pal-orig"></div>
+    </div>
+    <div class="tab" data-tab="chapters" hidden>
+      <p class="hint">Jump to a chapter. Click a chapter header on the path to move it to the other side.</p>
+      <div class="chapters" id="chapters"></div>
+    </div>
+  </aside>
+
+  <main class="canvas" id="canvas">
+    <div class="zoomer" id="zoomer">
+      <div class="stage" id="stage"></div>
+      <div class="ptools" id="ptools" hidden>
+        <button id="t-flip" title="Flip (F)">⇋ Flip</button><button id="t-behind" title="Behind / in front (B)">Behind</button>
+        <button id="t-dup" title="Duplicate (D)">Duplicate</button><button id="t-del" class="danger" title="Remove (Del)">Remove</button>
+      </div>
+    </div>
+    <div class="empty-state" id="loading">Loading the app…</div>
+  </main>
+
+  <section class="panel preview" id="previewPane">
+    <div class="preview-head">
+      <b>Live app</b><span id="previewLabel"></span>
+      <label class="check"><input type="checkbox" id="syncScroll" checked> Follow scroll</label>
+      <button class="icon-btn" id="previewReload" title="Reload the preview">↻</button>
+    </div>
+    <div class="device-well" id="deviceWell">
+      <div class="device" id="deviceFrame"><iframe id="preview" title="Live preview of the app"></iframe></div>
+    </div>
+  </section>
+
+  <aside class="panel right">
+    <h3>Selected</h3>
+    <div id="props" class="props"><div class="empty">Nothing selected.</div></div>
+    <h3>Issues <span class="count" id="issueCount"></span></h3>
+    <div class="list issues" id="issues"></div>
+    <h3>Pieces <span class="count" id="count"></span></h3>
+    <div class="list" id="list"></div>
+    <details class="keys">
+      <summary>Keyboard shortcuts</summary>
+      <dl>
+        <dt><kbd>Ctrl</kbd>+<kbd>S</kbd></dt><dd>Save to the app</dd>
+        <dt><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd></dt><dd>Undo / redo</dd>
+        <dt><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd></dt><dd>Nudge 1px, <kbd>Shift</kbd> 10px</dd>
+        <dt><kbd>F</kbd></dt><dd>Flip</dd>
+        <dt><kbd>B</kbd></dt><dd>Behind / in front of stones</dd>
+        <dt><kbd>D</kbd></dt><dd>Duplicate</dd>
+        <dt><kbd>Del</kbd></dt><dd>Remove</dd>
+        <dt><kbd>Esc</kbd></dt><dd>Deselect</dd>
+        <dt><kbd>+</kbd> <kbd>−</kbd> <kbd>0</kbd></dt><dd>Zoom in, out, fit</dd>
+        <dt><kbd>R</kbd></dt><dd>Rotate the screen</dd>
+        <dt><kbd>P</kbd></dt><dd>Show / hide the preview</dd>
+      </dl>
+    </details>
+  </aside>
+</div>
+
+<footer class="statusbar">
+  <span id="connDot" class="dot"></span><span id="connText">Connecting…</span>
+  <span class="sep"></span><span id="gitText"></span>
+  <span class="sep"></span><span id="geomText"></span>
+  <span class="spacer"></span>
+  <span id="saveState" class="save-state"></span>
+</footer>
+
+<div class="modal-back" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h2 id="modalTitle"></h2>
+    <div id="modalBody"></div>
+    <div class="modal-actions"><button class="btn" id="modalCancel">Cancel</button><button class="btn primary" id="modalOk">OK</button></div>
+  </div>
+</div>
+<div class="toasts" id="toasts"></div>
+
+<script src="editor.js"></script>
+</body>
+</html>

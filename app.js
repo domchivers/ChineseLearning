@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=253";
+  const ASSET_V = "?v=254";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2376,6 +2376,18 @@
         }
     ]
 };
+  /* Local editing only: the path editor (tools/path-editor) previews an
+     unsaved layout by handing it over through localStorage. Never runs on the
+     live site, which is not served from localhost. */
+  const DEV_LAYOUT_KEY = "bubu.dev.pathLayout";
+  function devLayout() {
+    if (location.hostname !== "localhost") return;
+    try {
+      const o = JSON.parse(localStorage.getItem(DEV_LAYOUT_KEY) || "null");
+      if (o && Array.isArray(o.pieces)) { PATH_LAYOUT.headers = o.headers || {}; PATH_LAYOUT.pieces = o.pieces; }
+    } catch (e) {}
+  }
+  devLayout();
   // Where the mascot stands relative to the lesson you are on.
   const PANDA = { x: 79.2, y: 50.8, w: 22, flip: true, ar: 831 / 614 };
   /* Where each piece is actually painted: ten strips top to bottom, each the
@@ -2588,7 +2600,8 @@
       });
     });
 
-    [...wrap.querySelectorAll(".pnode,.pchapter,.psprite")].forEach(n => n.remove());
+    // everything this function draws, so a redraw never stacks a second copy
+    [...wrap.querySelectorAll(".pnode,.pchapter,.psprite,.pcluster,.pground,.ppebble")].forEach(n => n.remove());
 
     // Vertical positions. A chapter opens a banner-sized void before its first
     // button; size that void to one even edge-gap above AND below the banner
@@ -5828,9 +5841,20 @@ This REPLACES the progress on this device.`)) return;
   if (activity.levelSeen == null) { activity.levelSeen = levelInfo().level; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); }
   // local development only: open straight onto a view (?view=progress) for screenshots
   if (location.hostname === "localhost") {
+    // the path editor's live preview: redraw in place when it hands over a new
+    // layout or a different current lesson, keeping the scroll where it was
+    window.addEventListener("storage", e => {
+      if (e.key !== DEV_LAYOUT_KEY && e.key !== LS_DONE) return;
+      devLayout();
+      if (e.key === LS_DONE) { try { doneLessons = new Set(JSON.parse(e.newValue || "[]")); } catch (err) {} }
+      if (document.body.dataset.view !== "path") return;
+      const sc = $("#pathScroll"), top = sc ? sc.scrollTop : 0;
+      renderPath();
+      if (sc && e.key === DEV_LAYOUT_KEY) requestAnimationFrame(() => requestAnimationFrame(() => { sc.scrollTop = top; }));
+    });
     const v = new URLSearchParams(location.search).get("view");
     if (v === "progress") { renderDashboard(); show("progress"); if (new URLSearchParams(location.search).get("act") === "chars") setTimeout(() => { $("#actSeg [data-act=chars]").click(); $("#actChars").scrollIntoView({ block: "center" }); }, 200); }
-    else if (v === "path") { renderPath(); show("path"); }
+    else if (v === "path") { show("path"); renderPath(); }
     else if (v === "chars") openChars();
     else if (v === "reads") openReadings("home");
     else if (v === "read") openReading(new URLSearchParams(location.search).get("r") || "r1", "home");

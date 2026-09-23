@@ -87,8 +87,14 @@ node -e "const f=require('fs');const s=f.readFileSync('data.js','utf8')+f.readFi
 python -m fontTools.subset LongCang-Regular.ttf --text-file=chars.txt --flavor=woff2 --output-file=vendor/fonts/longcang-subset.woff2
 ```
 
-New chapters also go into the path editor artifact (its `chapters` and `heroes`), and
-the build stamp is bumped in `index.html`, `sw.js` and `ASSET_V`.
+The path editor picks up new chapters by itself. Bump the build stamp in `index.html`,
+`sw.js` and `ASSET_V` when you release.
+
+## Path editor
+
+Double-click `tools/path-editor/start.bat` to place the path scenery on any phone,
+iPad or computer size, with a live preview. It saves straight into `app.js` and can
+publish. See `tools/path-editor/README.md`.
 
 The validator catches the mistakes that fail **silently** in the app rather than
 throwing an error:
