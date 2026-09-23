@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=268";
+  const ASSET_V = "?v=269";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -4021,15 +4021,45 @@
     if (role) b.appendChild(el("span", { className: "role " + (role === "s" ? "sound" : "meaning") }, role === "s" ? "sound" : "meaning"));
     return b;
   }
+  /* Tapping a character inside the sheet opens that one in the same sheet, so
+     the sheet keeps a trail: Back and the trail of characters lead back, the
+     sheet keeps one height, and each page starts at its top. */
+  let charTrail = [];
   function openCharSheet(ch) {
+    if (!CHD.chars[ch]) return;
+    const open = !$("#hzSheet").classList.contains("hidden");
+    if (!open) charTrail = [ch];
+    else if (charTrail[charTrail.length - 1] !== ch) { charTrail.push(ch); if (charTrail.length > 12) charTrail.shift(); }
+    renderCharSheet(ch, !open);
+  }
+  function renderCharSheet(ch, first) {
     const d = CHD.chars[ch]; if (!d) return;
     const back = $("#hzSheet");
-    const box = el("div", { className: "lsheet csheet" });
+    const box = el("div", { className: "lsheet csheet" + (first ? "" : " still") });
     box.addEventListener("click", e => e.stopPropagation());
     const inner = el("div", { className: "lsheet-inner" });
     const py = charPy(ch), strokes = (window.HANZI_DATA && HANZI_DATA[ch] && HANZI_DATA[ch].strokes || []).length;
     const words = cardsWith(ch);
     inner.appendChild(el("div", { className: "handle" }));
+    // the trail: Back, the characters you came through, and Close
+    const nav = el("div", { className: "cnav" });
+    if (charTrail.length > 1) {
+      const bk = el("button", { className: "cnav-back", type: "button" }, "‹ Back");
+      bk.addEventListener("click", () => { charTrail.pop(); renderCharSheet(charTrail[charTrail.length - 1], false); });
+      nav.appendChild(bk);
+      const crumbs = el("div", { className: "cnav-trail" });
+      charTrail.forEach((c, i) => {
+        if (i) crumbs.appendChild(el("span", { className: "cnav-sep" }, "›"));
+        const b = el("button", { className: "cnav-c" + (i === charTrail.length - 1 ? " on" : ""), type: "button" }, c);
+        if (i < charTrail.length - 1) b.addEventListener("click", () => { charTrail = charTrail.slice(0, i + 1); renderCharSheet(c, false); });
+        crumbs.appendChild(b);
+      });
+      nav.appendChild(crumbs);
+    } else nav.appendChild(el("span", { className: "cnav-hint" }, "Tap any character to explore it"));
+    const x = el("button", { className: "cnav-x", type: "button", title: "Close" }, "✕");
+    x.addEventListener("click", closeCharSheet);
+    nav.appendChild(x);
+    inner.appendChild(nav);
     const big = el("div", { className: "cbig tn t" + toneOf(py) }, ch);
     const acts = el("div", { className: "cacts" }, [speakerBtn(ch)]);
     if (HW_OK && strokes) acts.appendChild(strokeBtn(ch, py));
@@ -4084,8 +4114,10 @@
     });
     box.appendChild(inner);
     back.innerHTML = ""; back.appendChild(box); back.classList.remove("hidden");
+    inner.scrollTop = 0;
+    const cur = nav.querySelector(".cnav-c.on"); if (cur) cur.scrollIntoView({ block: "nearest", inline: "end" });
   }
-  function closeCharSheet() { $("#hzSheet").classList.add("hidden"); }
+  function closeCharSheet() { $("#hzSheet").classList.add("hidden"); charTrail = []; }
   // any tappable character anywhere opens its page
   document.addEventListener("click", e => {
     const t = e.target.closest(".chz[data-ch]"); if (!t) return;
