@@ -394,6 +394,242 @@ window.VOCAB = {
         { hanzi: "下周五", pinyin: "xià zhōu wǔ", pos: "",     en: "next Friday" },
         { hanzi: "好朋友", pinyin: "hǎo péng you",pos: "n.",   en: "good friend" }
       ]
+    },
+
+    /* ==================== Beginner C (Unit C) ==================== */
+    /* JIC Chinese Beginner C, transcribed from the course PDF (BC-新版). Words the
+       app already teaches (苹果, 医生, 银行, 眼睛…) are left out so progress stays on
+       one card. Lesson ids c1… are appended so existing card IDs stay stable. */
+    {
+      id: "c1",
+      title: "C1 · 你每天怎么去学校？Getting around",
+      words: [
+        { hanzi: "交通", pinyin: "jiāo tōng", pos: "n.", en: "transport, traffic" },
+        { hanzi: "汽车", pinyin: "qì chē", pos: "n.", en: "car" },
+        { hanzi: "出租车", pinyin: "chū zū chē", pos: "n.", en: "taxi" },
+        { hanzi: "公共汽车", pinyin: "gōng gòng qì chē", pos: "n.", en: "bus" },
+        { hanzi: "公交车", pinyin: "gōng jiāo chē", pos: "n.", en: "bus (everyday word)" },
+        { hanzi: "地铁", pinyin: "dì tiě", pos: "n.", en: "underground, subway" },
+        { hanzi: "火车", pinyin: "huǒ chē", pos: "n.", en: "train" },
+        { hanzi: "动车", pinyin: "dòng chē", pos: "n.", en: "high-speed train" },
+        { hanzi: "电车", pinyin: "diàn chē", pos: "n.", en: "tram" },
+        { hanzi: "飞机", pinyin: "fēi jī", pos: "n.", en: "aeroplane" },
+        { hanzi: "轮船", pinyin: "lún chuán", pos: "n.", en: "ship, ferry" },
+        { hanzi: "自行车", pinyin: "zì xíng chē", pos: "n.", en: "bicycle" },
+        { hanzi: "摩托车", pinyin: "mó tuō chē", pos: "n.", en: "motorbike" },
+        { hanzi: "面包车", pinyin: "miàn bāo chē", pos: "n.", en: "van, minibus" }
+      ]
+    },
+    {
+      id: "c2",
+      title: "C2 · 交通怎么样？Driving, riding, commuting",
+      words: [
+        { hanzi: "怎么", pinyin: "zěn me", pos: "adv.", en: "how (怎么 + verb)" },
+        { hanzi: "开", pinyin: "kāi", pos: "v.", en: "to drive" },
+        { hanzi: "坐", pinyin: "zuò", pos: "v.", en: "to take (bus, plane…); to sit" },
+        { hanzi: "骑", pinyin: "qí", pos: "v.", en: "to ride (bike, horse)" },
+        { hanzi: "马", pinyin: "mǎ", pos: "n.", en: "horse" },
+        { hanzi: "走路", pinyin: "zǒu lù", pos: "v.", en: "to walk" },
+        { hanzi: "上班", pinyin: "shàng bān", pos: "v.", en: "to go to work" },
+        { hanzi: "下班", pinyin: "xià bān", pos: "v.", en: "to finish work" },
+        { hanzi: "上学", pinyin: "shàng xué", pos: "v.", en: "to go to school" },
+        { hanzi: "堵车", pinyin: "dǔ chē", pos: "v.", en: "traffic jam" },
+        { hanzi: "高峰", pinyin: "gāo fēng", pos: "n.", en: "peak time, rush hour" },
+        { hanzi: "用", pinyin: "yòng", pos: "v.", en: "to use" }
+      ]
+    },
+    {
+      id: "c3",
+      title: "C3 · 飞机比火车快 Comparing",
+      words: [
+        { hanzi: "比", pinyin: "bǐ", pos: "prep.", en: "than (A 比 B + adj.)" },
+        { hanzi: "快", pinyin: "kuài", pos: "adj.", en: "fast" },
+        { hanzi: "慢", pinyin: "màn", pos: "adj.", en: "slow" },
+        { hanzi: "贵", pinyin: "guì", pos: "adj.", en: "expensive" },
+        { hanzi: "便宜", pinyin: "pián yi", pos: "adj.", en: "cheap" },
+        { hanzi: "大", pinyin: "dà", pos: "adj.", en: "big; older" },
+        { hanzi: "小", pinyin: "xiǎo", pos: "adj.", en: "small" },
+        { hanzi: "多", pinyin: "duō", pos: "adj.", en: "many, a lot" },
+        { hanzi: "少", pinyin: "shǎo", pos: "adj.", en: "few, little" },
+        { hanzi: "早", pinyin: "zǎo", pos: "adj.", en: "early" },
+        { hanzi: "晚", pinyin: "wǎn", pos: "adj.", en: "late" },
+        { hanzi: "岁", pinyin: "suì", pos: "m.", en: "years old" },
+        { hanzi: "速度", pinyin: "sù dù", pos: "n.", en: "speed" },
+        { hanzi: "价格", pinyin: "jià gé", pos: "n.", en: "price" },
+        { hanzi: "尺寸", pinyin: "chǐ cùn", pos: "n.", en: "size, measurements" },
+        { hanzi: "时差", pinyin: "shí chā", pos: "n.", en: "time difference" }
+      ]
+    },
+    {
+      id: "c4",
+      title: "C4 · 妹妹比姐姐漂亮 Describing people and weather",
+      words: [
+        { hanzi: "冷", pinyin: "lěng", pos: "adj.", en: "cold" },
+        { hanzi: "热", pinyin: "rè", pos: "adj.", en: "hot" },
+        { hanzi: "高", pinyin: "gāo", pos: "adj.", en: "tall, high" },
+        { hanzi: "矮", pinyin: "ǎi", pos: "adj.", en: "short (height)" },
+        { hanzi: "重", pinyin: "zhòng", pos: "adj.", en: "heavy" },
+        { hanzi: "轻", pinyin: "qīng", pos: "adj.", en: "light (weight)" },
+        { hanzi: "胖", pinyin: "pàng", pos: "adj.", en: "fat" },
+        { hanzi: "瘦", pinyin: "shòu", pos: "adj.", en: "thin" },
+        { hanzi: "聪明", pinyin: "cōng ming", pos: "adj.", en: "clever, smart" },
+        { hanzi: "帅", pinyin: "shuài", pos: "adj.", en: "handsome" },
+        { hanzi: "漂亮", pinyin: "piào liang", pos: "adj.", en: "pretty, beautiful" },
+        { hanzi: "酷", pinyin: "kù", pos: "adj.", en: "cool" },
+        { hanzi: "好吃", pinyin: "hǎo chī", pos: "adj.", en: "tasty" },
+        { hanzi: "气温", pinyin: "qì wēn", pos: "n.", en: "temperature" },
+        { hanzi: "身高", pinyin: "shēn gāo", pos: "n.", en: "height" },
+        { hanzi: "体重", pinyin: "tǐ zhòng", pos: "n.", en: "body weight" }
+      ]
+    },
+    {
+      id: "c5",
+      title: "C5 · 洗手间在哪里？Where is it?",
+      words: [
+        { hanzi: "洗手间", pinyin: "xǐ shǒu jiān", pos: "n.", en: "toilet, restroom" },
+        { hanzi: "往", pinyin: "wǎng", pos: "prep.", en: "towards" },
+        { hanzi: "走", pinyin: "zǒu", pos: "v.", en: "to walk, to go" },
+        { hanzi: "前", pinyin: "qián", pos: "n.", en: "front, ahead" },
+        { hanzi: "后", pinyin: "hòu", pos: "n.", en: "back, behind" },
+        { hanzi: "左", pinyin: "zuǒ", pos: "n.", en: "left" },
+        { hanzi: "右", pinyin: "yòu", pos: "n.", en: "right" },
+        { hanzi: "上", pinyin: "shàng", pos: "n.", en: "up, on top" },
+        { hanzi: "下", pinyin: "xià", pos: "n.", en: "down, under" },
+        { hanzi: "边", pinyin: "biān", pos: "n.", en: "side" },
+        { hanzi: "旁边", pinyin: "páng biān", pos: "n.", en: "next to, beside" },
+        { hanzi: "对面", pinyin: "duì miàn", pos: "n.", en: "opposite" },
+        { hanzi: "房间", pinyin: "fáng jiān", pos: "n.", en: "room" },
+        { hanzi: "手机", pinyin: "shǒu jī", pos: "n.", en: "mobile phone" },
+        { hanzi: "包", pinyin: "bāo", pos: "n.", en: "bag" }
+      ]
+    },
+    {
+      id: "c6",
+      title: "C6 · 银行离这里远吗？Near and far",
+      words: [
+        { hanzi: "东", pinyin: "dōng", pos: "n.", en: "east" },
+        { hanzi: "南", pinyin: "nán", pos: "n.", en: "south" },
+        { hanzi: "西", pinyin: "xī", pos: "n.", en: "west" },
+        { hanzi: "北", pinyin: "běi", pos: "n.", en: "north" },
+        { hanzi: "附近", pinyin: "fù jìn", pos: "n.", en: "nearby" },
+        { hanzi: "离", pinyin: "lí", pos: "prep.", en: "away from (A 离 B 远)" },
+        { hanzi: "远", pinyin: "yuǎn", pos: "adj.", en: "far" },
+        { hanzi: "近", pinyin: "jìn", pos: "adj.", en: "near, close" },
+        { hanzi: "就", pinyin: "jiù", pos: "adv.", en: "just, right (就在旁边)" },
+        { hanzi: "怎么走", pinyin: "zěn me zǒu", pos: "phr.", en: "how do I get to…?" },
+        { hanzi: "饭店", pinyin: "fàn diàn", pos: "n.", en: "restaurant, hotel" },
+        { hanzi: "市场", pinyin: "shì chǎng", pos: "n.", en: "market" }
+      ]
+    },
+    {
+      id: "c7",
+      title: "C7 · 地铁站怎么走？Finding your way",
+      words: [
+        { hanzi: "站", pinyin: "zhàn", pos: "n.", en: "station, stop" },
+        { hanzi: "车站", pinyin: "chē zhàn", pos: "n.", en: "bus or train station" },
+        { hanzi: "换乘", pinyin: "huàn chéng", pos: "v.", en: "to change (trains, lines)" },
+        { hanzi: "线路", pinyin: "xiàn lù", pos: "n.", en: "route, line" },
+        { hanzi: "十字路口", pinyin: "shí zì lù kǒu", pos: "n.", en: "crossroads" },
+        { hanzi: "拐", pinyin: "guǎi", pos: "v.", en: "to turn" },
+        { hanzi: "楼", pinyin: "lóu", pos: "n.", en: "building; floor" },
+        { hanzi: "迷路", pinyin: "mí lù", pos: "v.", en: "to get lost" },
+        { hanzi: "告诉", pinyin: "gào su", pos: "v.", en: "to tell" },
+        { hanzi: "地图", pinyin: "dì tú", pos: "n.", en: "map" },
+        { hanzi: "位置", pinyin: "wèi zhi", pos: "n.", en: "position, location" }
+      ]
+    },
+    {
+      id: "c8",
+      title: "C8 · 身体 The body",
+      words: [
+        { hanzi: "身体", pinyin: "shēn tǐ", pos: "n.", en: "body; health" },
+        { hanzi: "头", pinyin: "tóu", pos: "n.", en: "head" },
+        { hanzi: "头发", pinyin: "tóu fa", pos: "n.", en: "hair" },
+        { hanzi: "眉毛", pinyin: "méi mao", pos: "n.", en: "eyebrows" },
+        { hanzi: "耳朵", pinyin: "ěr duo", pos: "n.", en: "ear" },
+        { hanzi: "鼻子", pinyin: "bí zi", pos: "n.", en: "nose" },
+        { hanzi: "嘴", pinyin: "zuǐ", pos: "n.", en: "mouth" },
+        { hanzi: "牙齿", pinyin: "yá chǐ", pos: "n.", en: "teeth" },
+        { hanzi: "手", pinyin: "shǒu", pos: "n.", en: "hand" },
+        { hanzi: "胳膊", pinyin: "gē bo", pos: "n.", en: "arm" },
+        { hanzi: "肚子", pinyin: "dù zi", pos: "n.", en: "belly, stomach" },
+        { hanzi: "腿", pinyin: "tuǐ", pos: "n.", en: "leg" },
+        { hanzi: "脚", pinyin: "jiǎo", pos: "n.", en: "foot" },
+        { hanzi: "长", pinyin: "cháng", pos: "adj.", en: "long" },
+        { hanzi: "短", pinyin: "duǎn", pos: "adj.", en: "short (length)" }
+      ]
+    },
+    {
+      id: "c9",
+      title: "C9 · 你怎么了？Feeling unwell",
+      words: [
+        { hanzi: "怎么了", pinyin: "zěn me le", pos: "phr.", en: "what's wrong? what happened?" },
+        { hanzi: "全身", pinyin: "quán shēn", pos: "n.", en: "the whole body, all over" },
+        { hanzi: "舒服", pinyin: "shū fu", pos: "adj.", en: "comfortable, well" },
+        { hanzi: "不舒服", pinyin: "bù shū fu", pos: "adj.", en: "unwell, uncomfortable" },
+        { hanzi: "最近", pinyin: "zuì jìn", pos: "adv.", en: "recently, lately" },
+        { hanzi: "感冒", pinyin: "gǎn mào", pos: "n.", en: "a cold; to catch a cold" },
+        { hanzi: "流行", pinyin: "liú xíng", pos: "adj.", en: "popular, going around" },
+        { hanzi: "应该", pinyin: "yīng gāi", pos: "v.", en: "should, ought to" },
+        { hanzi: "等一下", pinyin: "děng yí xià", pos: "phr.", en: "wait a moment; in a while" },
+        { hanzi: "一下", pinyin: "yí xià", pos: "phr.", en: "(verb +) a bit, quickly" }
+      ]
+    },
+    {
+      id: "c10",
+      title: "C10 · 看医生 At the doctor",
+      words: [
+        { hanzi: "嗓子", pinyin: "sǎng zi", pos: "n.", en: "throat" },
+        { hanzi: "疼", pinyin: "téng", pos: "adj.", en: "sore, painful" },
+        { hanzi: "发烧", pinyin: "fā shāo", pos: "v.", en: "to have a fever" },
+        { hanzi: "药", pinyin: "yào", pos: "n.", en: "medicine" },
+        { hanzi: "开药", pinyin: "kāi yào", pos: "v.", en: "to prescribe medicine" },
+        { hanzi: "中药", pinyin: "zhōng yào", pos: "n.", en: "Chinese medicine" },
+        { hanzi: "西药", pinyin: "xī yào", pos: "n.", en: "Western medicine" },
+        { hanzi: "次", pinyin: "cì", pos: "m.", en: "time(s) (一天三次)" },
+        { hanzi: "片", pinyin: "piàn", pos: "m.", en: "(measure for tablets)" },
+        { hanzi: "最好", pinyin: "zuì hǎo", pos: "adv.", en: "had better" },
+        { hanzi: "给", pinyin: "gěi", pos: "v.", en: "to give; for" },
+        { hanzi: "今年", pinyin: "jīn nián", pos: "n.", en: "this year" },
+        { hanzi: "多大", pinyin: "duō dà", pos: "phr.", en: "how old?" }
+      ]
+    },
+    {
+      id: "c11",
+      title: "C11 · 我要买苹果 At the market",
+      words: [
+        { hanzi: "先生", pinyin: "xiān sheng", pos: "n.", en: "Mr, sir" },
+        { hanzi: "您", pinyin: "nín", pos: "pron.", en: "you (polite)" },
+        { hanzi: "多少钱", pinyin: "duō shao qián", pos: "phr.", en: "how much is it?" },
+        { hanzi: "斤", pinyin: "jīn", pos: "m.", en: "jin (half a kilo)" },
+        { hanzi: "毛", pinyin: "máo", pos: "m.", en: "10 cents (spoken)" },
+        { hanzi: "元", pinyin: "yuán", pos: "m.", en: "yuan (written)" },
+        { hanzi: "一共", pinyin: "yí gòng", pos: "adv.", en: "altogether, in total" },
+        { hanzi: "两", pinyin: "liǎng", pos: "num.", en: "two (of something)" },
+        { hanzi: "送", pinyin: "sòng", pos: "v.", en: "to give (as a present)" },
+        { hanzi: "找", pinyin: "zhǎo", pos: "v.", en: "to give change; to look for" },
+        { hanzi: "葡萄", pinyin: "pú tao", pos: "n.", en: "grapes" },
+        { hanzi: "牛肉", pinyin: "niú ròu", pos: "n.", en: "beef" }
+      ]
+    },
+    {
+      id: "c12",
+      title: "C12 · 我想买衬衫 Buying clothes",
+      words: [
+        { hanzi: "想", pinyin: "xiǎng", pos: "v.", en: "to want to, would like" },
+        { hanzi: "衬衫", pinyin: "chèn shān", pos: "n.", en: "shirt" },
+        { hanzi: "喜欢", pinyin: "xǐ huan", pos: "v.", en: "to like" },
+        { hanzi: "颜色", pinyin: "yán sè", pos: "n.", en: "colour" },
+        { hanzi: "蓝色", pinyin: "lán sè", pos: "n.", en: "blue" },
+        { hanzi: "件", pinyin: "jiàn", pos: "m.", en: "(measure for clothes)" },
+        { hanzi: "试", pinyin: "shì", pos: "v.", en: "to try (on)" },
+        { hanzi: "码", pinyin: "mǎ", pos: "n.", en: "size (clothes)" },
+        { hanzi: "大码", pinyin: "dà mǎ", pos: "n.", en: "large (size)" },
+        { hanzi: "中码", pinyin: "zhōng mǎ", pos: "n.", en: "medium (size)" },
+        { hanzi: "小码", pinyin: "xiǎo mǎ", pos: "n.", en: "small (size)" },
+        { hanzi: "穿", pinyin: "chuān", pos: "v.", en: "to wear" },
+        { hanzi: "试衣间", pinyin: "shì yī jiān", pos: "n.", en: "fitting room" }
+      ]
     }
   ]
 };
@@ -546,6 +782,105 @@ window.DIALOGUES = [
       { who: "you", hanzi: "我和同学去。",             pinyin: "wǒ hé tóngxué qù",                    en: "With my classmates." },
       { who: "app", hanzi: "下午呢？",                 pinyin: "xiàwǔ ne",                            en: "And in the afternoon?" },
       { who: "you", hanzi: "下午我要去健身房运动。",   pinyin: "xiàwǔ wǒ yào qù jiànshēnfáng yùndòng", en: "In the afternoon I'll go to the gym to work out." }
+    ]
+  },
+
+  /* ---- Beginner C ---- */
+  {
+    id: "c-commute", title: "How do you get to work?", lesson: "C2",
+    turns: [
+      { who: "app", hanzi: "你每天怎么去公司？", pinyin: "nǐ měitiān zěnme qù gōngsī", en: "How do you get to the office every day?" },
+      { who: "you", hanzi: "我每天坐地铁去公司。", pinyin: "wǒ měitiān zuò dìtiě qù gōngsī", en: "I take the underground to the office every day." },
+      { who: "app", hanzi: "交通怎么样？", pinyin: "jiāotōng zěnmeyàng", en: "How's the traffic?" },
+      { who: "you", hanzi: "上班高峰堵车。", pinyin: "shàngbān gāofēng dǔchē", en: "There are jams in the morning rush hour." },
+      { who: "app", hanzi: "你开车吗？", pinyin: "nǐ kāichē ma", en: "Do you drive?" },
+      { who: "you", hanzi: "我不开车，我骑自行车。", pinyin: "wǒ bù kāichē, wǒ qí zìxíngchē", en: "I don't drive, I ride a bike." }
+    ]
+  },
+  {
+    id: "c-compare", title: "Which is faster?", lesson: "C3",
+    turns: [
+      { who: "app", hanzi: "飞机比火车快吗？", pinyin: "fēijī bǐ huǒchē kuài ma", en: "Is a plane faster than a train?" },
+      { who: "you", hanzi: "对，飞机比火车快。", pinyin: "duì, fēijī bǐ huǒchē kuài", en: "Yes, a plane is faster than a train." },
+      { who: "app", hanzi: "火车比飞机便宜吗？", pinyin: "huǒchē bǐ fēijī piányi ma", en: "Is the train cheaper than the plane?" },
+      { who: "you", hanzi: "对，火车没有飞机贵。", pinyin: "duì, huǒchē méiyǒu fēijī guì", en: "Yes, the train isn't as expensive as the plane." },
+      { who: "app", hanzi: "今天比昨天冷吗？", pinyin: "jīntiān bǐ zuótiān lěng ma", en: "Is today colder than yesterday?" },
+      { who: "you", hanzi: "今天没有昨天冷。", pinyin: "jīntiān méiyǒu zuótiān lěng", en: "Today isn't as cold as yesterday." }
+    ]
+  },
+  {
+    id: "c-where", title: "Where is it?", lesson: "C5",
+    turns: [
+      { who: "app", hanzi: "你找什么？", pinyin: "nǐ zhǎo shénme", en: "What are you looking for?" },
+      { who: "you", hanzi: "请问，洗手间在哪里？", pinyin: "qǐngwèn, xǐshǒujiān zài nǎlǐ", en: "Excuse me, where is the toilet?" },
+      { who: "app", hanzi: "往前走，在三一二号房间对面。", pinyin: "wǎng qián zǒu, zài sān yāo èr hào fángjiān duìmiàn", en: "Go straight ahead. It's opposite room 312." },
+      { who: "you", hanzi: "谢谢！我的手机在哪里？", pinyin: "xièxie! wǒ de shǒujī zài nǎlǐ", en: "Thanks! Where's my phone?" },
+      { who: "app", hanzi: "在包里。你的书在桌子上。", pinyin: "zài bāo lǐ. nǐ de shū zài zhuōzi shàng", en: "In your bag. Your book is on the table." }
+    ]
+  },
+  {
+    id: "c-bank", title: "Is there a bank nearby?", lesson: "C6",
+    turns: [
+      { who: "app", hanzi: "你好，你要去哪里？", pinyin: "nǐ hǎo, nǐ yào qù nǎlǐ", en: "Hello, where are you going?" },
+      { who: "you", hanzi: "请问附近有银行吗？", pinyin: "qǐngwèn fùjìn yǒu yínháng ma", en: "Excuse me, is there a bank nearby?" },
+      { who: "app", hanzi: "有。", pinyin: "yǒu", en: "Yes, there is." },
+      { who: "you", hanzi: "银行离这里远吗？", pinyin: "yínháng lí zhèlǐ yuǎn ma", en: "Is the bank far from here?" },
+      { who: "app", hanzi: "不远。", pinyin: "bù yuǎn", en: "Not far." },
+      { who: "you", hanzi: "银行怎么走？", pinyin: "yínháng zěnme zǒu", en: "How do I get to the bank?" },
+      { who: "app", hanzi: "往前走，就在公交车站旁边。", pinyin: "wǎng qián zǒu, jiù zài gōngjiāochē zhàn pángbiān", en: "Go straight on. It's right next to the bus stop." }
+    ]
+  },
+  {
+    id: "c-unwell", title: "What's wrong?", lesson: "C9",
+    turns: [
+      { who: "app", hanzi: "你怎么了？", pinyin: "nǐ zěnme le", en: "What's wrong?" },
+      { who: "you", hanzi: "我全身都不舒服。", pinyin: "wǒ quánshēn dōu bù shūfu", en: "I feel unwell all over." },
+      { who: "app", hanzi: "你应该去看医生，最近感冒很流行。", pinyin: "nǐ yīnggāi qù kàn yīshēng, zuìjìn gǎnmào hěn liúxíng", en: "You should see a doctor. There's a cold going around." },
+      { who: "you", hanzi: "好，等一下就去医院。", pinyin: "hǎo, děng yíxià jiù qù yīyuàn", en: "OK, I'll go to the hospital in a bit." }
+    ]
+  },
+  {
+    id: "c-doctor", title: "At the doctor's", lesson: "C10",
+    turns: [
+      { who: "app", hanzi: "请坐，你叫什么名字？", pinyin: "qǐng zuò, nǐ jiào shénme míngzi", en: "Please sit down. What's your name?" },
+      { who: "you", hanzi: "我叫大卫。", pinyin: "wǒ jiào Dàwèi", en: "My name is David.", free: true },
+      { who: "app", hanzi: "你今年多大？", pinyin: "nǐ jīnnián duō dà", en: "How old are you?" },
+      { who: "you", hanzi: "我今年二十五岁。", pinyin: "wǒ jīnnián èrshíwǔ suì", en: "I'm 25 this year.", free: true },
+      { who: "app", hanzi: "你哪里不舒服？", pinyin: "nǐ nǎlǐ bù shūfu", en: "Where does it hurt?" },
+      { who: "you", hanzi: "我头疼，嗓子也疼，还有发烧。", pinyin: "wǒ tóu téng, sǎngzi yě téng, hái yǒu fāshāo", en: "I have a headache and a sore throat, and a fever too." },
+      { who: "app", hanzi: "应该是感冒。给你开点药。", pinyin: "yīnggāi shì gǎnmào. gěi nǐ kāi diǎn yào", en: "It must be a cold. I'll prescribe you some medicine." },
+      { who: "you", hanzi: "好，药怎么吃？", pinyin: "hǎo, yào zěnme chī", en: "OK, how do I take it?" },
+      { who: "app", hanzi: "一天三次，一次一片。最好多喝水。", pinyin: "yì tiān sān cì, yí cì yí piàn. zuìhǎo duō hē shuǐ", en: "Three times a day, one tablet each time. Drink plenty of water." },
+      { who: "you", hanzi: "好的，谢谢！", pinyin: "hǎo de, xièxie", en: "OK, thank you!" }
+    ]
+  },
+  {
+    id: "c-fruit", title: "Buying fruit", lesson: "C11",
+    turns: [
+      { who: "app", hanzi: "先生，您要什么？", pinyin: "xiānsheng, nín yào shénme", en: "What would you like, sir?" },
+      { who: "you", hanzi: "苹果多少钱？", pinyin: "píngguǒ duōshao qián", en: "How much are the apples?" },
+      { who: "app", hanzi: "一斤三块五毛钱。", pinyin: "yì jīn sān kuài wǔ máo qián", en: "3.50 a jin." },
+      { who: "you", hanzi: "香蕉多少钱？", pinyin: "xiāngjiāo duōshao qián", en: "How much are the bananas?" },
+      { who: "app", hanzi: "一斤两块钱。", pinyin: "yì jīn liǎng kuài qián", en: "2 kuai a jin." },
+      { who: "you", hanzi: "我要买四斤香蕉和两斤苹果。", pinyin: "wǒ yào mǎi sì jīn xiāngjiāo hé liǎng jīn píngguǒ", en: "I'll take four jin of bananas and two jin of apples." },
+      { who: "app", hanzi: "一共十五块钱。再送你一个苹果。", pinyin: "yígòng shíwǔ kuài qián. zài sòng nǐ yí ge píngguǒ", en: "That's 15 kuai altogether. Have an apple on the house." },
+      { who: "you", hanzi: "谢谢！给您钱。", pinyin: "xièxie! gěi nín qián", en: "Thanks! Here's the money." },
+      { who: "app", hanzi: "好，我找您五块钱。再见！", pinyin: "hǎo, wǒ zhǎo nín wǔ kuài qián. zàijiàn", en: "Right, here's 5 kuai change. Bye!" }
+    ]
+  },
+  {
+    id: "c-shirt", title: "Buying a shirt", lesson: "C12",
+    turns: [
+      { who: "app", hanzi: "先生，您要买什么？", pinyin: "xiānsheng, nín yào mǎi shénme", en: "What would you like to buy, sir?" },
+      { who: "you", hanzi: "我想买衬衫。", pinyin: "wǒ xiǎng mǎi chènshān", en: "I'd like to buy a shirt." },
+      { who: "app", hanzi: "你喜欢什么颜色的衬衫？", pinyin: "nǐ xǐhuan shénme yánsè de chènshān", en: "What colour shirt do you like?" },
+      { who: "you", hanzi: "我喜欢蓝色衬衫。", pinyin: "wǒ xǐhuan lánsè chènshān", en: "I like blue shirts." },
+      { who: "app", hanzi: "这里有很多蓝色衬衫。", pinyin: "zhèlǐ yǒu hěn duō lánsè chènshān", en: "There are lots of blue shirts here." },
+      { who: "you", hanzi: "我可以试一下这件吗？", pinyin: "wǒ kěyǐ shì yíxià zhè jiàn ma", en: "Can I try this one on?" },
+      { who: "app", hanzi: "可以，你要什么码？", pinyin: "kěyǐ, nǐ yào shénme mǎ", en: "Sure, what size?" },
+      { who: "you", hanzi: "我穿中码。", pinyin: "wǒ chuān zhōngmǎ", en: "I wear a medium." },
+      { who: "app", hanzi: "好，试衣间在那里。", pinyin: "hǎo, shìyījiān zài nàlǐ", en: "OK, the fitting room is over there." },
+      { who: "you", hanzi: "好的，谢谢！", pinyin: "hǎo de, xièxie", en: "OK, thanks!" }
     ]
   }
 ];

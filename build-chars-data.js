@@ -94,6 +94,21 @@ const HOOKS = {
   "那": "A city 阝 over there: that.",
   "餐": "Food 食 at the bottom: a meal.",
   "了": "A child wrapped up with no arms: done, finished.",
+  // Beginner C
+  "价": "A person 亻 in the middle 介 of a deal: the price.",
+  "体": "A person 亻 at the root 本 of things: the body.",
+  "便": "A person 亻 who changes 更 things to make life easy: convenient, and cheap in 便宜.",
+  "前": "Two horns 丷 over a boat 月 with a knife 刂 cutting ahead: the front.",
+  "发": "A friend 友 with a flick of hair: to send out, and 头发 hair.",
+  "右": "A hand 𠂇 raising a mouth 口 to eat: the right hand, the one you eat with.",
+  "后": "A figure bent over a mouth 口, giving orders from the back: behind, after.",
+  "岁": "A mountain 山 over an evening 夕: the years pile up like mountains.",
+  "市": "A lid 亠 over a cloth hung on a pole 巾: a stall's sign at the market.",
+  "应": "Under a roof 广, the marks of a heart answering: what you should do (应该).",
+  "斤": "A picture of an axe: an old weight, now half a kilo.",
+  "毛": "A picture of a feather or a tuft of hair: fur, and 10 cents.",
+  "牙": "A picture of a tooth with its long root.",
+  "用": "A picture of a bucket with a handle: something to use.",
 };
 
 function download() {

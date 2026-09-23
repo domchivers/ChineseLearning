@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=250";
+  const ASSET_V = "?v=251";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2200,7 +2200,11 @@
     { unit: "A", title: "Work, things & numbers", lessons: ["l3", "l4", "l5", "numbers", "l6"] },
     { unit: "B", title: "Talking about your day", lessons: ["b1", "b2"] },
     { unit: "B", title: "In the room — measure words", lessons: ["b3", "b4", "b5"] },
-    { unit: "B", title: "Dates & plans", lessons: ["b6", "b7", "b8"] }
+    { unit: "B", title: "Dates & plans", lessons: ["b6", "b7", "b8"] },
+    { unit: "C", title: "Getting around & comparing", lessons: ["c1", "c2", "c3", "c4"] },
+    { unit: "C", title: "Directions", lessons: ["c5", "c6", "c7"] },
+    { unit: "C", title: "At the doctor", lessons: ["c8", "c9", "c10"] },
+    { unit: "C", title: "Shopping", lessons: ["c11", "c12"] }
   ];
 
   // Short grammar/pattern notes, shown on the "meet the new words" screen and on
@@ -2213,6 +2217,12 @@
     b2: { title: "Telling the time", body: "点 = o’clock, 分 = minutes, 半 = half, 刻 = quarter: 三点半 (3:30), 从五点到六点 (from 5 to 6)." },
     b3: { title: "Counting: number + measure word + noun", body: "You can’t say 一书 — a measure word goes between: 一本书 (a book), 两杯水 (two cups of water)." },
     b6: { title: "Dates: biggest unit first", body: "月 (month) → 号 (day) → 星期 (weekday): 八月二十一号星期二 (Tues 21 Aug)." },
+    c2: { title: "How you get there: 怎么 + verb", body: "怎么 before a verb asks how: 你每天怎么去学校？ Answer with the transport: 我坐地铁去 / 我骑自行车去 / 我走路去." },
+    c3: { title: "Comparing: A 比 B + adjective", body: "飞机比火车快 (planes are faster than trains). Add the difference at the end: 哥哥比弟弟大四岁. Not as … as: B 没有 A + adj., 火车没有飞机快." },
+    c5: { title: "Where is it? 在哪里, 往…走", body: "Place + 在哪里？ asks where: 洗手间在哪里？ Answer with 往 + direction + 走 (往前走, 往左拐) and 在 + place + 边/对面: 在房间对面." },
+    c6: { title: "Near and far: 附近有…吗, A 离 B 远", body: "附近有银行吗？ (is there a bank nearby?) 银行离这里远吗？ (is it far from here?) Place + 怎么走？ asks the way: 银行怎么走？" },
+    c9: { title: "应该 and verb + 一下", body: "应该 + verb = should: 你应该去看医生. Verb + 一下 softens it to “a quick …”: 等一下 (wait a moment), 试一下 (have a try)." },
+    c11: { title: "Money: 块, 毛 and 元", body: "Spoken prices use 块 (yuan) and 毛 (ten cents): 三块五毛 = 3.50. Written prices use 元. 一共 = in total, and 找 = give change: 我找您五块钱." },
     b7: { title: "在 + verb, and 要 / 不要 + verb", body: "在 + verb = doing it now: 我在看电视. 要 + verb = will; 不要 + verb = won’t: 我要学习 / 我不要看电视." }
   };
   // One mascot sprite per chapter; chapter N uses sprite N (wraps around).
@@ -3988,6 +3998,7 @@
   const readDone = id => !!(activity.readsDone || {})[id];
   const chapterDone = ci => CHAPTERS[ci] && CHAPTERS[ci].lessons.every(id => doneLessons.has(id));
   const readOpen = r => chapterDone(r.chapter) || (location.hostname === "localhost" && new URLSearchParams(location.search).has("unlock"));
+  const chLabel = ci => { const u = CHAPTERS[ci].unit; return `Unit ${u} · Chapter ${CHAPTERS.slice(0, ci + 1).filter(c => c.unit === u).length}`; };
   const tok = t => { const p = t.split("|"); return p.length === 3 ? { h: p[0], p: p[1], e: p[2] } : { h: t }; };
   let readFrom = "home";
   function openReadings(from) {
@@ -4006,7 +4017,7 @@
       const card = el("button", { className: "rcard" + (open ? "" : " locked") + (done ? " done" : ""), type: "button" }, [
         el("div", { className: "rc-h" }, hzSpans(r.title, r.py)),
         el("div", { className: "rc-t" }, [
-          el("div", { className: "rc-u" }, `Chapter ${r.chapter + 1}`),
+          el("div", { className: "rc-u" }, chLabel(r.chapter)),
           el("b", {}, r.en),
           el("span", {}, open ? (done ? "Read ✓" : `New · +${READ_XP} XP`) : `Finish “${ch.title}” to open`)
         ])
@@ -4023,7 +4034,7 @@
     const body = $("#readBody"); body.innerHTML = "";
     const all = r.sentences.map(s => s.map(t => tok(t).h).join("")).join("");
     const head = el("div", { className: "rhead" }, [
-      el("div", { className: "rc-u" }, `Chapter ${r.chapter + 1} · Story`),
+      el("div", { className: "rc-u" }, `${chLabel(r.chapter)} · Story`),
       el("div", { className: "rh-t" }, [el("span", { className: "rh-h" }, hzSpans(r.title, r.py)), el("span", { className: "rh-e" }, r.en)])
     ]);
     const tools = el("div", { className: "rtools" });
