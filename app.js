@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=261";
+  const ASSET_V = "?v=267";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -626,7 +626,7 @@
   function show(sectionId) {
     if (typeof closeHint === "function") closeHint();
     if (window.__updateReady && ["home", "path", "progress"].includes(sectionId)) { window.__updateReady(); return; }
-    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars", "read", "tones"].forEach(id =>
+    ["path", "home", "progress", "study", "quiz", "browse", "done", "sheet", "converse", "pick", "flash", "match", "avatar", "chars", "read", "tones", "guide"].forEach(id =>
       $("#" + id).classList.toggle("hidden", id !== sectionId));
     // Reset the window scroll BEFORE the new view applies its body scroll-lock.
     // The done screen is normal flow, so scrolling down to "Back to path" scrolls
@@ -2313,77 +2313,20 @@
   const PATH_LAYOUT = {
     version: 1,
     phone: true,
-    headers: {
-        "b1": "right",
-        "l3": "right",
-        "b3": "left"
-    },
+    headers: { "b1": "left", "b3": "left", "c5": "left", "c8": "left", "l3": "right" },
     pieces: [
-        {
-            "art": "cluster-right-temple",
-            "stone": "l1",
-            "dx": 145.1,
-            "dy": -38.5,
-            "w": 65,
-            "flip": false,
-            "behind": true
-        },
-        {
-            "art": "panda-walking",
-            "stone": "l2",
-            "dx": 114.9,
-            "dy": -38.2,
-            "w": 22,
-            "flip": true,
-            "behind": false
-        },
-        {
-            "art": "cluster-left-bamboo",
-            "stone": "l3",
-            "dx": -196.9,
-            "dy": -51.2,
-            "w": 66,
-            "flip": false,
-            "behind": true
-        },
-        {
-            "art": "panda-sleeping",
-            "stone": "l4",
-            "dx": -172.8,
-            "dy": 44.3,
-            "w": 36,
-            "flip": false,
-            "behind": false
-        },
-        {
-            "art": "land-pagoda",
-            "stone": "l6",
-            "dx": 245,
-            "dy": 63.6,
-            "w": 84.5,
-            "flip": false,
-            "behind": true
-        },
-        {
-            "art": "fol-blossom",
-            "stone": "b5",
-            "dx": -185.8,
-            "dy": 78.2,
-            "w": 63,
-            "flip": false,
-            "behind": true
-        },
-        {
-            "art": "panda-writing",
-            "stone": "b8",
-            "dx": 201.2,
-            "dy": -40,
-            "w": 36,
-            "flip": false,
-            "behind": false
-        }
+      { art: "cluster-right-temple", stone: "l1", dx: 145.1, dy: -38.5, w: 65, flip: false, behind: true },
+      { art: "panda-walking", stone: "l2", dx: 114.9, dy: -38.2, w: 22, flip: true, behind: false },
+      { art: "cluster-left-bamboo", stone: "l3", dx: -188.3, dy: -33.2, w: 66, flip: false, behind: true },
+      { art: "panda-sleeping", stone: "l4", dx: -172.8, dy: 44.3, w: 36, flip: false, behind: false },
+      { art: "land-pagoda", stone: "l6", dx: 245, dy: 63.6, w: 84.5, flip: false, behind: true },
+      { art: "panda-writing", stone: "b4", dx: -220.6, dy: 64, w: 36, flip: false, behind: false },
+      { art: "land-torii", stone: "b8", dx: 240, dy: 57.4, w: 83.4, flip: false, behind: true },
+      { art: "panda-listening", stone: "c4", dx: -203.8, dy: 8.4, w: 31.5, flip: false, behind: false },
+      { art: "cluster-right-bamboo", stone: "c8", dx: 185.7, dy: -40.1, w: 72.6, flip: false, behind: false },
+      { art: "panda-reading", stone: "c9", dx: 182.9, dy: 36.4, w: 26.1, flip: false, behind: false }
     ]
-};
+  };
   /* Local editing only: the path editor (tools/path-editor) previews an
      unsaved layout by handing it over through localStorage. Never runs on the
      live site, which is not served from localhost. */
@@ -2979,7 +2922,7 @@
       if (it.chapter) {                    // banner sits in the lead-in gap above
         const pct = it.chapter.total ? Math.round(it.chapter.done / it.chapter.total * 100) : 0;
         const hd = el("div", { className: "pchapter" }, [
-          el("div", { className: "u" }, `UNIT ${it.chapter.unit} · CHAPTER ${it.chapter.chNo}`),
+          el("div", { className: "u" }, [`UNIT ${it.chapter.unit} · CHAPTER ${it.chapter.chNo}`, guideLink(it.chapter.ci)]),
           el("div", { className: "t" }, it.chapter.title),
           el("div", { className: "bar" }, el("i", { style: `width:${pct}%` })),
           el("div", { className: "n" }, `${it.chapter.done} / ${it.chapter.total} lessons`)
@@ -4290,6 +4233,108 @@
     if ($("#readBody .rtext") && readFrom !== "path") renderReadList(); else readLeave();
   });
 
+  /* ---- Guidebook: one page per chapter --------------------------------------
+     What the chapter teaches, before or after you do it: its grammar tips, key
+     phrases from the dialogues that use only words taught by then, and its
+     words with how well you know each. */
+  let guideFrom = "path";
+  function guideLink(ci) {
+    const b = el("button", { className: "pguide", type: "button", title: "Guidebook" });
+    b.appendChild(licon("i-bulb", "licon-sm")); b.appendChild(document.createTextNode("Guide"));
+    b.addEventListener("click", e => { e.stopPropagation(); openGuide(ci, "path"); });
+    return b;
+  }
+  function chapterChars(ci) {
+    const ids = new Set(CHAPTERS.slice(0, ci + 1).flatMap(c => c.lessons));
+    return new Set(CARDS.filter(c => ids.has(c.lessonId)).flatMap(c => [...c.hanzi].filter(isHan)));
+  }
+  function keyPhrases(ci) {
+    const ch = CHAPTERS[ci], known = chapterChars(ci);
+    const words = CARDS.filter(c => ch.lessons.includes(c.lessonId) && [...c.hanzi].some(isHan));
+    const seen = new Set(), out = [];
+    (window.DIALOGUES || []).forEach(d => (d.turns || []).forEach(t => {
+      const han = [...t.hanzi].filter(isHan);
+      if (han.length < 2 || seen.has(t.hanzi) || t.free) return;
+      if (!han.every(c => known.has(c))) return;                    // only words taught by now
+      const hits = words.filter(w => t.hanzi.includes(w.hanzi.replace(/[^\u3400-\u9fff]/g, "")) && w.hanzi.replace(/[^\u3400-\u9fff]/g, "")).length;
+      if (!hits) return;                                            // must use this chapter's words
+      seen.add(t.hanzi); out.push({ t, hits, len: han.length });
+    }));
+    return out.sort((a, b) => b.hits - a.hits || a.len - b.len).slice(0, 6).map(o => o.t)
+      .sort((a, b) => [...a.hanzi].length - [...b.hanzi].length);
+  }
+  function openGuide(ci, from) {
+    guideFrom = from || (document.body.dataset.view === "home" ? "home" : "path");
+    const ch = CHAPTERS[ci]; if (!ch) return;
+    $("#guideBack").textContent = guideFrom === "home" ? "← Home" : "← Path";
+    const body = $("#guideBody"); body.innerHTML = "";
+    const cards = CARDS.filter(c => ch.lessons.includes(c.lessonId));
+    const learnt = cards.filter(c => srs[c.id] && (srs[c.id].reps || 0) >= 1).length;
+    $("#guideCount").textContent = `${learnt} / ${cards.length} words`;
+    body.appendChild(el("div", { className: "g-head" }, [
+      el("div", { className: "rc-u" }, chLabel(ci)),
+      el("h2", {}, ch.title),
+      el("p", {}, `${ch.lessons.length} lesson${ch.lessons.length === 1 ? "" : "s"} · ${cards.length} words` + (chapterDone(ci) ? " · finished" : ""))
+    ]));
+    // grammar tips
+    const notes = ch.lessons.map(id => LESSON_NOTES[id]).filter(Boolean);
+    if (notes.length) {
+      body.appendChild(el("h3", { className: "g-h" }, "Grammar tips"));
+      notes.forEach(n => body.appendChild(el("div", { className: "g-tip" }, [
+        el("div", { className: "g-tip-t" }, [licon("i-bulb", "licon-sm"), document.createTextNode(" " + n.title)]),
+        el("div", { className: "g-tip-b" }, n.body)])));
+    }
+    // key phrases
+    const phrases = keyPhrases(ci);
+    if (phrases.length) {
+      body.appendChild(el("h3", { className: "g-h" }, "Key phrases"));
+      const box = el("div", { className: "g-phrases" });
+      phrases.forEach(t => {
+        const words = segmentSentence(t.hanzi, t.pinyin);
+        const line = el("div", { className: "g-ph-h" });
+        if (words) {
+          // walk the sentence, so its punctuation stays where it was
+          const H = [...t.hanzi]; let pos = 0;
+          const punct = () => { while (pos < H.length && !isHan(H[pos])) line.appendChild(document.createTextNode(H[pos++])); };
+          words.forEach(w => { punct(); line.appendChild(hintable(el("span", { className: "g-w" }, hzSpans(w.hanzi, w.pinyin, false)), w.hanzi, w.pinyin)); pos += [...w.hanzi].length; });
+          punct();
+        } else line.appendChild(hzSpans(t.hanzi, t.pinyin, false));
+        box.appendChild(el("div", { className: "g-ph" }, [
+          el("div", { className: "g-ph-m" }, [line, el("div", { className: "g-ph-p" }, pySpans(t.pinyin)), el("div", { className: "g-ph-e" }, t.en)]),
+          speakerBtn(t.hanzi)]));
+      });
+      body.appendChild(box);
+      body.appendChild(el("div", { className: "hint-tip" }, "Tap a word for its meaning"));
+    }
+    // words, lesson by lesson
+    body.appendChild(el("h3", { className: "g-h" }, "Words"));
+    ch.lessons.forEach(id => {
+      const l = LESSONS.find(x => x.id === id); if (!l) return;
+      body.appendChild(el("div", { className: "g-lesson" }, l.title.replace(/^.*?· /, "")));
+      const list = el("div", { className: "g-words" });
+      cards.filter(c => c.lessonId === id).forEach(c => {
+        const s = srs[c.id], lv = !s ? 0 : (s.reps || 0) >= 2 || (s.interval || 0) >= 7 ? 2 : (s.reps || 0) >= 1 ? 1 : 0;
+        list.appendChild(el("div", { className: "g-word k" + lv }, [
+          el("span", { className: "g-wh" }, hzSpans(c.hanzi, c.pinyin, true)),
+          el("span", { className: "g-wm" }, [el("span", { className: "g-wp" }, pySpans(c.pinyin)), el("span", { className: "g-we" }, c.en)]),
+          el("i", { className: "g-dot", title: ["Not met yet", "Learning", "Known"][lv] }),
+          speakerBtn(c.hanzi)]));
+      });
+      body.appendChild(list);
+    });
+    const story = readingFor(ci);
+    if (story) {
+      const b = el("button", { className: "g-story", type: "button" }, [licon("i-book", "licon-sm"),
+        document.createTextNode(chapterDone(ci) ? ` Read the story: ${story.title}` : ` Finish the chapter to unlock its story`)]);
+      b.disabled = !chapterDone(ci);
+      b.addEventListener("click", () => openReading(story.id, guideFrom));
+      body.appendChild(b);
+    }
+    show("guide");
+    window.scrollTo(0, 0);
+  }
+  $("#guideBack").addEventListener("click", () => { if (guideFrom === "home") { renderHome(); show("home"); } else { show("path"); renderPath(); } });
+
   /* ---- Tone pairs ------------------------------------------------------
      Hear a two-syllable word you've met and pick its two tones. Mandarin's
      tones are easiest to hear in pairs, the way they come in real words.
@@ -4984,7 +5029,7 @@
 
   // Build a skip test covering every not-yet-done lesson up to (and including)
   // the target. Passing unlocks the longest run of lessons you're solid on.
-  function startPlacement(targetId) {
+  function startPlacement(targetId, label = "Skip test") {
     const order = LESSONS.map(l => l.id);
     const ti = order.indexOf(targetId);
     const range = [];
@@ -5003,7 +5048,7 @@
     placeRange = range; placeTarget = targetId;
     scopeLessons = new Set(range);                     // distractors drawn from the tested range
     scopeFocuses = new Set(["recognize", "recall"]);   // clean "do you know this word" tests
-    $("#quizTitle").textContent = `Skip test · ${quizItems.length} question${quizItems.length === 1 ? "" : "s"}`;
+    $("#quizTitle").textContent = `${label} · ${quizItems.length} question${quizItems.length === 1 ? "" : "s"}`;
     show("quiz");
     renderQuiz();
   }
@@ -5983,14 +6028,14 @@ This REPLACES the progress on this device.`)) return;
     const slides = [...ob.querySelectorAll(".ob-slide")];
     const dots = $("#obDots");
     dots.innerHTML = ""; slides.forEach(() => dots.appendChild(el("i")));
-    let i = 0;
+    let i = 0, level = "new";
     const paint = () => {
       slides.forEach((s, k) => s.classList.toggle("on", k === i));
       [...dots.children].forEach((d, k) => d.classList.toggle("on", k === i));
       // display:none, NOT visibility:hidden — a hidden-but-present Back button
       // still occupies its width and shoves "Next" off-centre on the first slide.
       $("#obBack").style.display = i === 0 ? "none" : "";
-      $("#obNext").textContent = i === slides.length - 1 ? "Start learning" : "Next";
+      $("#obNext").textContent = i < slides.length - 1 ? "Next" : level === "new" ? "Start my first lesson" : "Take the test";
     };
     // goal presets inside onboarding write straight to prefs
     ob.querySelectorAll("#obGoalSeg button").forEach(b =>
@@ -5998,10 +6043,24 @@ This REPLACES the progress on this device.`)) return;
         ob.querySelectorAll("#obGoalSeg button").forEach(x => x.classList.toggle("on", x === b));
         prefs.dailyGoal = +b.dataset.goal; savePrefs(prefs);
       }));
+    // how much you know decides where you start
+    ob.querySelectorAll("#obLevel button").forEach(b =>
+      b.addEventListener("click", () => {
+        ob.querySelectorAll("#obLevel button").forEach(x => x.classList.toggle("on", x === b));
+        level = b.dataset.level; paint();
+      }));
+    // The last lesson of a unit, for a placement test up to it.
+    const unitEnd = u => { const chs = CHAPTERS.filter(c => c.unit === u); const last = chs[chs.length - 1]; return last && last.lessons[last.lessons.length - 1]; };
     const finish = () => {
       localStorage.setItem(LS_ONBOARDED, "1");
       ob.classList.add("hidden"); ob.setAttribute("aria-hidden", "true");
-      renderPath(); renderHome();         // reflect the chosen goal on the HUD + Home
+      renderHome();                       // reflect the chosen goal on Home
+      // Straight into learning, the way Duolingo does it: the first lesson, or
+      // a placement test for someone who already knows some.
+      returnView = "path";
+      show("path"); renderPath();
+      const target = level === "a" ? unitEnd("A") : level === "b" ? unitEnd("B") : null;
+      setTimeout(() => { if (target) startPlacement(target, "Placement test"); else launchLesson(currentLessonId(), null); }, 350);
     };
     $("#obBack").addEventListener("click", () => { if (i > 0) { i--; paint(); } });
     $("#obNext").addEventListener("click", () => {
@@ -6039,6 +6098,8 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "reads") openReadings("home");
     else if (v === "read") openReading(new URLSearchParams(location.search).get("r") || "r1", "home");
     else if (v === "tones") startTones();
+    else if (v === "guide") openGuide(+(new URLSearchParams(location.search).get("c") || 0), "path");
+    else if (v === "onboard") runOnboarding();
     else if (v === "char") setTimeout(() => openCharSheet(new URLSearchParams(location.search).get("ch") || "好"), 300);
     // screenshot helpers: the longest sentence card, or an answered choice card
     else if (v === "sentence") setTimeout(() => window.__dev.sentence(window.__dev.longest()[0].slice(0, 4), false), 300);
