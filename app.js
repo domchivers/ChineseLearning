@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=256";
+  const ASSET_V = "?v=260";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2463,6 +2463,9 @@
   // Beyond this many due cards a lesson study is split into even batches.
   const SESSION_CAP = 20;
   const SESSION_LEN = 12;     // words per session
+  const NEW_PER_SESSION = 6;  // brand-new words in one session, at most
+  const REVIEW_PER_SESSION = 4; // known words mixed into a session that teaches new ones
+  const MEET_GROUP = 3;       // new words introduced together, before they are practised
   // A lesson is complete once every one of its words has been answered correctly
   // at least once (reps ≥ 1) — this is what lets big lessons finish across batches
   // instead of on a single cleared round.
@@ -3247,23 +3250,34 @@
     if (card && !(HW_OK && wordWritable(card.hanzi))) enabled = enabled.filter(k => k !== "write");
     // "sentence" only when this word actually appears in a dialogue sentence.
     if (card && !sentencesFor(card).length) enabled = enabled.filter(k => k !== "sentence");
-    // Ease beginners in: on a word you've never got right yet, hold back the
-    // demanding output skills (writing, speaking) in a MIXED session — you meet
-    // it through recognition first, and write/speak join in once it has landed.
-    // A single-skill practice (you chose "Write"/"Speak") is always honoured.
+    // The ladder, easy to hard, in a MIXED session. A word you have never got
+    // right is recognised (meaning from the characters, or from the sound).
+    // Once right, you produce it with support (pick the characters, the pinyin,
+    // or build a sentence). Only a word that has held up in a later session
+    // is written or spoken. A single-skill practice is always honoured.
     if (card && (scopeFocuses || selectedFocuses).size > 1) {
-      const reps = srs[card.id] ? srs[card.id].reps : 0;
-      if (reps < 1) {
-        const eased = enabled.filter(k => k !== "write" && k !== "speak");
-        if (eased.length) enabled = eased;
+      const s = srs[card.id], reps = s ? (s.reps || 0) : 0;
+      // a word learnt before this ladder existed (it has a long interval but
+      // few counted reviews) is treated as known
+      const level = reps >= 2 || (s && (s.interval || 0) >= 7) ? 2 : reps >= 1 ? 1 : 0;
+      const rung = level === 0 ? ["recognize", "listen"] : level === 1 ? ["recall", "pinyin", "sentence", "listen"] : null;
+      if (rung) {
+        let on = enabled.filter(k => rung.includes(k));
+        // the second meeting in a session asks it a different way from the first
+        const before = dirByCard[card.id];
+        if (before && on.length > 1) on = on.filter(k => k !== before);
+        if (on.length) enabled = on;
+        else { const eased = enabled.filter(k => k !== "write" && k !== "speak"); if (eased.length) enabled = eased; }
       }
     }
     if (enabled.length === 0) enabled = ["recognize"];
     // vary the exercise type: never the same one twice running when there is a choice
     if (enabled.length > 1 && lastDir) { const alt = enabled.filter(k => k !== lastDir); if (alt.length) enabled = alt; }
-    return (lastDir = enabled[Math.floor(Math.random() * enabled.length)]);
+    lastDir = enabled[Math.floor(Math.random() * enabled.length)];
+    if (card) dirByCard[card.id] = lastDir;
+    return lastDir;
   }
-  let lastDir = null, sessionStart = 0;
+  let lastDir = null, sessionStart = 0, dirByCard = {};
 
   function buildStudyQueue() {
     const focusSet = scopeFocuses || selectedFocuses;
@@ -3274,6 +3288,25 @@
       if (withSent.length) cards = withSent;
     }
     const due = cards.filter(c => { const s = srs[c.id]; return !s || s.due <= NOW(); });
+    // New words come a few at a time: at most NEW_PER_SESSION, in even
+    // batches (15 new words is 5, 5, 5), in the book's order, with a few
+    // words you already know mixed in to review, Duolingo-style.
+    const fresh = due.filter(c => !srs[c.id]);
+    if (fresh.length && !(focusSet.size === 1 && (focusSet.has("write") || focusSet.has("speak")))) {
+      const order = new Map(CARDS.map((c, i) => [c.id, i]));
+      fresh.sort((a, b) => order.get(a.id) - order.get(b.id));
+      const n = fresh.length > NEW_PER_SESSION ? Math.ceil(fresh.length / Math.ceil(fresh.length / NEW_PER_SESSION)) : fresh.length;
+      const picked = fresh.slice(0, n), ids = new Set(picked.map(c => c.id));
+      const scope = new Set(cards.map(c => c.id));
+      // review: this lesson's words that are due, then any due word from lessons
+      // you have reached, then this lesson's words met in an earlier batch
+      const reviews = [];
+      const addFrom = list => shuffle(list).forEach(c => { if (reviews.length < REVIEW_PER_SESSION && !ids.has(c.id) && !reviews.includes(c)) reviews.push(c); });
+      addFrom(due.filter(c => srs[c.id]));
+      if (!reviewMode) addFrom(dueReviewCards().filter(c => !scope.has(c.id)));
+      addFrom(cards.filter(c => srs[c.id] && (srs[c.id].reps || 0) >= 1));
+      return picked.concat(reviews);
+    }
     // If nothing is due, review everything (a manual refresher session).
     const pool = due.length ? due : cards;
     const q = shuffle(pool);
@@ -3287,37 +3320,52 @@
   let sessionTotal = 0;
   let studySource = [];       // the unique cards this session was built from (for "Practice again")
   let clearedIds = new Set(); // cards answered correctly (a card is "cleared" once right)
+  let stepsDone = 0;          // exercises answered right this session (a new word has two)
   let studyAnswered = false;  // has the current card been answered yet?
 
   // Start (or restart) a study session over a given set of cards.
   function beginStudySession(cards) {
     studySource = cards.slice();
-    queue = shuffle(cards.slice());
-    clearedIds = new Set();
+    queue = sessionOrder(cards);
+    clearedIds = new Set(); stepsDone = 0;
     studyStats = { answered: 0, again: 0, learned: 0 };
-    sessionXP = 0; combo = 0; lastDir = null; sessionStart = Date.now();
-    sessionTotal = queue.length;
+    sessionXP = 0; combo = 0; lastDir = null; dirByCard = {}; sessionStart = Date.now();
+    sessionTotal = queue.filter(x => !x.meet).length;
     $("#studyTitle").textContent = "Study";
     show("study");
     renderCombo(); renderBoost();
     updateStudyProgress();
-    // Teach before test: if this session introduces words the learner has never
-    // seen, MEET them first (character + pinyin + meaning + audio) before any quiz.
-    const fresh = queue.filter(c => !srs[c.id]);
-    if (fresh.length) {
-      const order = new Map(CARDS.map((c, i) => [c.id, i]));
-      fresh.sort((a, b) => (order.get(a.id) ?? 0) - (order.get(b.id) ?? 0));
-      meetNewWords(fresh, () => nextStudyCard());
-    } else {
-      nextStudyCard();
-    }
+    nextStudyCard();
+  }
+  /* The order of a session that teaches new words: meet two or three, practise
+     them straight away (the easy rung), a word you know, then the group before
+     comes back a rung harder, so each new word is seen twice with a gap
+     between. Sessions with no new words are simply shuffled. */
+  function sessionOrder(cards) {
+    const orderIx = new Map(CARDS.map((c, i) => [c.id, i]));
+    const fresh = cards.filter(c => !srs[c.id]).sort((a, b) => orderIx.get(a.id) - orderIx.get(b.id));
+    const known = shuffle(cards.filter(c => srs[c.id]));
+    if (!fresh.length) return shuffle(cards.slice());
+    const groups = [], k = Math.ceil(fresh.length / MEET_GROUP), size = Math.ceil(fresh.length / k);
+    for (let i = 0; i < fresh.length; i += size) groups.push(fresh.slice(i, i + size));
+    const out = [];
+    const review = () => { if (known.length) out.push(known.shift()); };
+    groups.forEach((g, gi) => {
+      out.push({ meet: g, first: gi === 0, left: fresh.length - groups.slice(0, gi).flat().length });
+      shuffle(g).forEach(c => out.push(c));
+      review();
+      if (gi > 0) { shuffle(groups[gi - 1]).forEach(c => out.push(c)); review(); }
+    });
+    shuffle(groups[groups.length - 1]).forEach(c => out.push(c));
+    while (known.length) review();
+    return out;
   }
   function startStudy() { beginStudySession(buildStudyQueue()); }
 
   // "Meet the new words" preview — shown once per session, before the first quiz
   // card, whenever the session brings in words never studied before. Beginners
   // get to SEE and HEAR a word before being asked to recall it.
-  function meetNewWords(cards, done) {
+  function meetNewWords(cards, done, info = {}) {
     curCard = null; studyAnswered = true;
     $("#promptLabel").textContent = "New words";
     $("#studyChoices").classList.add("hidden");
@@ -3332,13 +3380,15 @@
     const face = $("#studyFace");
     face.innerHTML = "";
     face.style.justifyContent = "flex-start";
+    const later = info.left != null ? info.left - shown.length : more;
+    face.appendChild(newBadge());
     face.appendChild(el("div", { className: "meet-intro" },
-      shown.length === 1
-        ? "Here's a new word — tap the speaker to hear it, then practise."
-        : `Here ${more > 0 ? "are your first" : "are these"} ${shown.length} new words — tap each speaker to hear it` +
-          (more > 0 ? `, then practise (${more} more along the way).` : ", then practise.")));
-    // If every new word is from one lesson and it has a pattern note, teach it here.
-    const lid = cards.length && cards.every(c => c.lessonId === cards[0].lessonId) ? cards[0].lessonId : null;
+      (shown.length === 1 ? "A new word. Tap the speaker to hear it, then practise it."
+        : `${shown.length === 2 ? "Two" : shown.length === 3 ? "Three" : shown.length} new words. Tap each speaker to hear it, then practise them.`) +
+      (later > 0 ? ` ${later} more come${later === 1 ? "s" : ""} later in this session.` : "")));
+    // If every new word is from one lesson and it has a pattern note, teach it
+    // with the first group.
+    const lid = info.first !== false && cards.length && cards.every(c => c.lessonId === cards[0].lessonId) ? cards[0].lessonId : null;
     const note = lid && LESSON_NOTES[lid];
     if (note) face.appendChild(el("div", { className: "lnote" }, [
       el("div", { className: "lnote-t" }, [licon("i-bulb", "licon-sm"), document.createTextNode(" " + note.title)]),
@@ -3367,7 +3417,7 @@
       list.appendChild(row);
     });
     face.appendChild(list);
-    const start = el("button", { className: "study-start", type: "button" }, "Start practising →");
+    const start = el("button", { className: "study-start", type: "button" }, shown.length === 1 ? "Practise it →" : "Practise them →");
     start.addEventListener("click", done);
     face.appendChild(start);
   }
@@ -3376,7 +3426,9 @@
 
   function nextStudyCard() {
     if (queue.length === 0) return finishStudy();
-    curCard = queue.shift();
+    const item = queue.shift();
+    if (item && item.meet) { meetNewWords(item.meet, () => nextStudyCard(), item); return; }
+    curCard = item;
     curDir = pickDirection(curCard);
     studyAnswered = false;
     renderStudyCard();
@@ -3384,10 +3436,11 @@
 
   let lastCleared = 0;
   function updateStudyProgress() {
-    $("#studyBar").style.width = `${(clearedIds.size / Math.max(sessionTotal, 1)) * 100}%`;
-    $("#studyCounter").textContent = `${clearedIds.size} / ${sessionTotal}`;
-    if (clearedIds.size > lastCleared) pulseBar($("#studyBar"));
-    lastCleared = clearedIds.size;
+    const done = Math.min(stepsDone, sessionTotal);
+    $("#studyBar").style.width = `${(done / Math.max(sessionTotal, 1)) * 100}%`;
+    $("#studyCounter").textContent = `${done} / ${sessionTotal}`;
+    if (done > lastCleared) pulseBar($("#studyBar"));
+    lastCleared = done;
   }
   // A light sweeps along the bar each time it grows.
   function pulseBar(bar) {
@@ -3447,6 +3500,7 @@
     questEvent(curDir, correct);
     studyStats.answered += 1;
     if (correct) {
+      stepsDone += 1;
       if (!clearedIds.has(curCard.id)) { clearedIds.add(curCard.id); if (wasNew) studyStats.learned += 1; }
     } else {
       studyStats.again += 1;
@@ -4872,7 +4926,12 @@
     nextStudyCard();
   });
   $("#studyBack").addEventListener("click", () => { goBack(); });
-  $("#studyShuffle").addEventListener("click", () => { queue = shuffle(queue); nextStudyCard(); });
+  $("#studyShuffle").addEventListener("click", () => {
+    // new words keep their order: each group is met before it is practised
+    if (queue.some(x => x.meet)) { toast("Shuffle is available once all the new words have been introduced."); return; }
+    if (curCard && !studyAnswered) queue.push(curCard);
+    queue = shuffle(queue); nextStudyCard();
+  });
 
   /* ==================================================================== */
   /*  QUIZ (multiple choice)                                              */
@@ -5947,7 +6006,7 @@ This REPLACES the progress on this device.`)) return;
       const st = +(new URLSearchParams(location.search).get("stage") || 0);
       curCard = CARDS.find(c => c.hanzi.length === 2 && HW_OK && wordWritable(c.hanzi)) || CARDS[0]; curDir = "write"; studyAnswered = false;
       if (st) srs[curCard.id] = { ease: 2.4, reps: 3, interval: st === 2 ? 20 : 3, due: NOW() + DAY }; else delete srs[curCard.id];
-      queue = [curCard]; sessionTotal = 1; clearedIds = new Set(); show("study"); renderStudyCard();
+      queue = [curCard]; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard();
     }, 600);
     else if (v === "choice") setTimeout(() => {
       curCard = CARDS.find(c => c.hanzi.length === 2) || CARDS[0]; curDir = "recognize"; studyAnswered = false;
@@ -5957,7 +6016,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
