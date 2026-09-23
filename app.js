@@ -42,7 +42,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=271";
+  const ASSET_V = "?v=273";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -4657,6 +4657,7 @@
 
   function renderStudyCard() {
     closeHint();
+    { const st = $("#study .stage"); if (st) st.scrollTop = 0; }
     $("#promptLabel").textContent = DIR_LABEL[curDir];
     const face = $("#studyFace");
     face.innerHTML = "";              // every mode starts from a clean face — the
@@ -4664,7 +4665,7 @@
                                        // write grid, stacking two exercises on one page.
     // Reset all pinned controls; each mode re-shows what it needs.
     $("#studyContinueWrap").classList.add("hidden");
-    $("#studyContinueWrap").classList.remove("wide");
+    $("#studyContinueWrap").classList.remove("wide", "reserve");
     clearFeedback($("#studyContinueWrap"));
     face.classList.remove("sent");
     $("#studyReveal").classList.add("hidden");
@@ -4793,6 +4794,7 @@
       buildSentenceExercise(face, choices, pool[Math.floor(Math.random() * pool.length)],
         $("#promptLabel"), correct => answerStudy(correct));
       $("#studyContinueWrap").classList.remove("hidden");
+      $("#studyContinueWrap").classList.add("reserve");
     } else {
       // Objective multiple choice: mascot asks, you pick, it marks you.
       choices.classList.remove("hidden");
@@ -4800,7 +4802,13 @@
         answerStudy(correct);
         feedbackBanner($("#studyContinueWrap"), correct, c, curDir, chosen);
         $("#studyContinueWrap").classList.remove("hidden");
+        setWriteGate(true);
       });
+      // The answer's feedback appears in a slot kept for it from the start,
+      // so answering never moves the question or the choices.
+      $("#studyContinueWrap").classList.remove("hidden");
+      $("#studyContinueWrap").classList.add("reserve");
+      setWriteGate(false);
     }
     updateStudyProgress();
   }
@@ -4957,8 +4965,9 @@
     wrapEl.insertBefore(fb, wrapEl.firstChild);
     wrapEl.classList.add(correct ? "ok" : "bad", "wide");
     // the bar sticks to the bottom of the card; bring the last option out from under it
+    // (with a reserved slot nothing needs bringing into view, and moving would be the drift)
     const stage = wrapEl.closest(".stage");
-    if (stage) { const down = () => { stage.scrollTop = stage.scrollHeight; }; requestAnimationFrame(down); setTimeout(down, 320); }
+    if (stage && !wrapEl.classList.contains("reserve")) { const down = () => { stage.scrollTop = stage.scrollHeight; }; requestAnimationFrame(down); setTimeout(down, 320); }
   }
   function clearFeedback(wrapEl) {
     if (!wrapEl) return;
@@ -5178,6 +5187,7 @@
     if (quizIdx >= quizItems.length) return quizMode === "placement" ? finishPlacement() : finishQuiz();
     const c = quizItems[quizIdx];
     clearFeedback($("#quizNextWrap"));
+    { const st = $("#quiz .stage"); if (st) st.scrollTop = 0; }
     pulseBar($("#quizBar"));
     // Direction: only multiple-choice types (write/sentence/speak aren't MC).
     let dirs = [...(scopeFocuses || selectedFocuses)].filter(k => k !== "write" && k !== "sentence" && k !== "speak");
@@ -5198,9 +5208,12 @@
         schedule(c.id, correct ? "good" : "again");
         recordReview(1);
       }
-      $("#quizNextWrap").classList.remove("hidden");
+      $("#quizNext").disabled = false;
     });
-    $("#quizNextWrap").classList.add("hidden");
+    // feedback slot kept from the start, so answering doesn't move anything
+    $("#quizNextWrap").classList.remove("hidden");
+    $("#quizNextWrap").classList.add("reserve");
+    $("#quizNext").disabled = true;
   }
 
   $("#quizNext").addEventListener("click", () => { quizIdx++; renderQuiz(); });
