@@ -16,6 +16,21 @@ const SRC_URL = "https://raw.githubusercontent.com/skishore/makemeahanzi/master/
 const CACHE = path.join(__dirname, ".mmah-dictionary.txt");   // gitignored
 
 // Hooks written by hand for the characters where the generated one is weak.
+// The dictionary's first meaning, where it misleads a learner, replaced by the
+// sense the course actually uses (道 is "road, way" in 知道, not "method").
+const DEFS = {
+  "道": "road, way", "什": "what (in 什么)", "今": "now, this (今天)", "伽": "(sound in 瑜伽 yoga)", "瑜": "(sound in 瑜伽 yoga)",
+  "便": "convenient; cheap (便宜)", "宜": "suitable (便宜 cheap)", "典": "dictionary (词典)", "几": "how many; a few", "利": "benefit (意大利 Italy)",
+  "司": "to manage (公司 company)", "周": "week; all around", "唐": "Tang (唐人街 Chinatown)", "堵": "to block (堵车 traffic jam)",
+  "工": "work", "差": "difference (时差)", "度": "degree (速度 speed)", "德": "virtue (德国 Germany)", "托": "to hold up (摩托车)",
+  "摩": "to rub (摩托车 motorbike)", "机": "machine (飞机, 手机)", "样": "kind, way (怎么样)", "格": "pattern (价格 price)",
+  "檬": "(in 柠檬 lemon)", "柠": "(in 柠檬 lemon)", "汽": "steam (汽车 car)", "法": "method; France (法国)", "澳": "(澳大利亚 Australia)",
+  "票": "ticket", "眼": "eye", "睛": "eye (眼睛)", "程": "process (工程师 engineer)", "等": "to wait", "英": "England (英国); hero",
+  "衬": "lining (衬衫 shirt)", "诉": "to tell (告诉)", "迷": "lost; a fan (迷路)", "速": "speed", "院": "courtyard; institution (医院)",
+  "题": "question, topic (问题)", "颜": "colour (颜色)", "香": "fragrant (香蕉 banana)", "冒": "to emit (感冒 a cold)", "感": "to feel",
+  "识": "to know (认识)", "尔": "(sound in names)", "户": "door; household", "套": "set; cover", "销": "to sell"
+};
+
 const HOOKS = {
   "好": "A woman 女 with her child 子. That's good.",
   "买": "买 buy vs 卖 sell: when you sell, you put something 十 on top to pass on.",
@@ -162,7 +177,7 @@ const IDC = /[⿰-⿻]/;
       else if (et.type === "pictophonetic" && et.semantic && parts[et.semantic]) hook = `${et.semantic} ${parts[et.semantic][0]} points to the meaning.`;
     }
     chars[ch] = {
-      d: short(e.definition),
+      d: DEFS[ch] || short(e.definition),
       p: (e.pinyin || [])[0] || "",
       t: { ideographic: "i", pictophonetic: "p", pictographic: "g" }[et.type] || "",
       c: comps.length > 1 || et.type ? comps.map((c, i) => [c, roles[i]]) : [],
