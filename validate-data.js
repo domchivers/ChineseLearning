@@ -44,10 +44,11 @@ function segmentSentence(hanzi, pinyin) {
   const tokens = pinyin.split(/\s+/).map(t => t.replace(/[,.!?;:，。！？]/g, "")).filter(Boolean);
   const words = []; let i = 0;
   for (const tok of tokens) {
-    const w = chars.slice(i, i + syllableCount(tok)).join("");
+    const n = syllableCount(tok) + (/[^e]r$/i.test(tok) && chars[i + syllableCount(tok)] === "儿" ? 1 : 0);
+    const w = chars.slice(i, i + n).join("");
     if (!w) break;
     words.push({ hanzi: w, pinyin: tok });
-    i += syllableCount(tok);
+    i += n;
   }
   return { ok: i === chars.length && words.length >= 2, consumed: i, total: chars.length, words };
 }
@@ -134,6 +135,8 @@ if (!Array.isArray(DIALOGUES)) {
       });
       if (t.who && !["app", "you"].includes(t.who)) W(`${at}: who="${t.who}" (expected "app" or "you").`);
       if (!t.hanzi || !t.pinyin) return;
+      // A line with a name in Latin letters (我姓 Smith) is a free answer: say your own.
+      if (/[A-Za-z]/.test(t.hanzi)) { N(`${at} "${t.hanzi}": contains Latin letters, so it's a free answer and not used for tiles.`); return; }
 
       const seg = segmentSentence(t.hanzi, t.pinyin);
       if (seg.ok) { usable++; return; }

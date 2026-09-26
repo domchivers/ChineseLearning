@@ -12,6 +12,8 @@ READINGS.forEach(r => {
   const ids = CH.slice(0, r.chapter + 1).flatMap(c => c.lessons);
   const words = VOCAB.lessons.filter(l => ids.includes(l.id)).flatMap(l => l.words);
   const chars = new Set(words.flatMap(w => [...w.hanzi].filter(isHan)));
+  // the cast's names, and words a story glosses for itself, don't need teaching
+  (VOCAB.names || []).concat(r.allow || "").forEach(n => [...n].filter(isHan).forEach(c => chars.add(c)));
   const miss = new Set();
   r.sentences.flat().forEach(t => { const h = t.split("|")[0]; [...h].filter(isHan).forEach(c => { if (!chars.has(c)) miss.add(c); }); if (t.includes("|") && t.split("|").length !== 3) { console.log("bad token", t); bad++; } });
   if (r.q.answer == null || !r.q.options[r.q.answer]) { console.log(r.id, "bad question"); bad++; }
