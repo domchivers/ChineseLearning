@@ -2,7 +2,7 @@
 window.READINGS = [
  {
   "id": "qibu1-u1",
-  "chapter": 1,
+  "chapter": 0,
   "title": "这是我朋友",
   "py": "zhè shì wǒ péng you",
   "en": "This is my friend",
@@ -112,7 +112,7 @@ window.READINGS = [
  },
  {
   "id": "qibu1-u2",
-  "chapter": 2,
+  "chapter": 1,
   "title": "你会说法语吗？",
   "py": "nǐ huì shuō fǎ yǔ ma",
   "en": "Can you speak French?",
@@ -214,7 +214,7 @@ window.READINGS = [
  },
  {
   "id": "qibu1-u3",
-  "chapter": 3,
+  "chapter": 2,
   "title": "这是我表哥",
   "py": "zhè shì wǒ biǎo gē",
   "en": "This is my cousin",
@@ -345,7 +345,7 @@ window.READINGS = [
  },
  {
   "id": "qibu1-u4",
-  "chapter": 4,
+  "chapter": 3,
   "title": "你多大？",
   "py": "nǐ duō dà",
   "en": "How old are you?",
@@ -434,7 +434,7 @@ window.READINGS = [
  },
  {
   "id": "qibu1-u5",
-  "chapter": 5,
+  "chapter": 4,
   "title": "明天见！",
   "py": "míng tiān jiàn",
   "en": "See you tomorrow!",
@@ -518,7 +518,7 @@ window.READINGS = [
  },
  {
   "id": "qibu1-story",
-  "chapter": 5,
+  "chapter": 4,
   "title": "马克的中国朋友",
   "py": "mǎ kè de zhōng guó péng you",
   "en": "Mark's Chinese friends",
@@ -712,7 +712,7 @@ window.READINGS = [
  },
  {
   "id": "qibu2-u1",
-  "chapter": 6,
+  "chapter": 5,
   "title": "上个周末你做了什么？",
   "py": "shàng gè zhōu mò nǐ zuò le shén me",
   "en": "What did you do last weekend?",
@@ -857,7 +857,7 @@ window.READINGS = [
  },
  {
   "id": "qibu2-u2",
-  "chapter": 7,
+  "chapter": 6,
   "title": "对不起，我来晚了！",
   "py": "duì bu qǐ, wǒ lái wǎn le",
   "en": "Sorry I'm late!",
@@ -996,7 +996,7 @@ window.READINGS = [
  },
  {
   "id": "qibu2-u3",
-  "chapter": 8,
+  "chapter": 7,
   "title": "买几盒月饼？",
   "py": "mǎi jǐ hé yuè bǐng",
   "en": "How many boxes of mooncakes?",
@@ -1142,7 +1142,7 @@ window.READINGS = [
  },
  {
   "id": "qibu2-u4",
-  "chapter": 9,
+  "chapter": 8,
   "title": "生日快乐！",
   "py": "shēng rì kuài lè",
   "en": "Happy birthday!",
@@ -1285,7 +1285,7 @@ window.READINGS = [
  },
  {
   "id": "qibu2-story",
-  "chapter": 9,
+  "chapter": 8,
   "title": "中秋的月亮",
   "py": "zhōng qiū de yuè liang",
   "en": "The Mid-Autumn moon",
@@ -1504,7 +1504,7 @@ window.READINGS = [
  },
  {
   "id": "qibu3-u1",
-  "chapter": 10,
+  "chapter": 9,
   "title": "你去过牛津吗？",
   "py": "nǐ qù guo niú jīn ma",
   "en": "Have you been to Oxford?",
@@ -1662,7 +1662,7 @@ window.READINGS = [
  },
  {
   "id": "qibu3-u2",
-  "chapter": 11,
+  "chapter": 10,
   "title": "一点儿也不辣！",
   "py": "yī diǎnr yě bù là",
   "en": "It's not spicy at all!",
@@ -1819,7 +1819,7 @@ window.READINGS = [
  },
  {
   "id": "qibu3-u3",
-  "chapter": 12,
+  "chapter": 11,
   "title": "超市在银行旁边",
   "py": "chāo shì zài yín háng páng biān",
   "en": "The supermarket's next to the bank",
@@ -1986,7 +1986,7 @@ window.READINGS = [
  },
  {
   "id": "qibu3-u4",
-  "chapter": 13,
+  "chapter": 12,
   "title": "能便宜一点儿吗？",
   "py": "néng pián yi yī diǎnr ma",
   "en": "Could you do it a bit cheaper?",
@@ -2130,7 +2130,7 @@ window.READINGS = [
  },
  {
   "id": "qibu3-story",
-  "chapter": 13,
+  "chapter": 12,
   "title": "去牛津",
   "py": "qù niú jīn",
   "en": "A trip to Oxford",
@@ -2313,7 +2313,7 @@ window.READINGS = [
  },
  {
   "id": "qibu4-u1",
-  "chapter": 14,
+  "chapter": 13,
   "title": "今天我请客！",
   "py": "jīn tiān wǒ qǐng kè",
   "en": "It's on me tonight!",
@@ -2480,7 +2480,7 @@ window.READINGS = [
  },
  {
   "id": "qibu4-u2",
-  "chapter": 15,
+  "chapter": 14,
   "title": "别一边打球一边说话！",
   "py": "bié yī biān dǎ qiú yī biān shuō huà",
   "en": "Don't talk while you play!",
@@ -2672,7 +2672,7 @@ window.READINGS = [
  },
  {
   "id": "qibu4-u3",
-  "chapter": 16,
+  "chapter": 15,
   "title": "黑色还是白色？",
   "py": "hēi sè hái shi bái sè",
   "en": "Black or white?",
@@ -2861,7 +2861,7 @@ window.READINGS = [
  },
  {
   "id": "qibu4-u4",
-  "chapter": 17,
+  "chapter": 16,
   "title": "我想订一个羽毛球场",
   "py": "wǒ xiǎng dìng yī gè yǔ máo qiú chǎng",
   "en": "I'd like to book a badminton court",
@@ -3051,7 +3051,7 @@ window.READINGS = [
  },
  {
   "id": "qibu4-story",
-  "chapter": 17,
+  "chapter": 16,
   "title": "新年第一场比赛",
   "py": "xīn nián dì yī chǎng bǐ sài",
   "en": "The first match of the year",
@@ -3321,7 +3321,7 @@ window.READINGS = [
  },
  {
   "id": "qibu5-u1",
-  "chapter": 18,
+  "chapter": 17,
   "title": "说真的，你觉得怎么样？",
   "py": "shuō zhēn de, nǐ jué de zěn me yàng",
   "en": "Honestly, what did you think?",
@@ -3518,7 +3518,7 @@ window.READINGS = [
  },
  {
   "id": "qibu5-u2",
-  "chapter": 19,
+  "chapter": 18,
   "title": "哪里哪里！",
   "py": "nǎ lǐ nǎ lǐ",
   "en": "Oh, not at all!",
@@ -3707,7 +3707,7 @@ window.READINGS = [
  },
  {
   "id": "qibu5-u3",
-  "chapter": 20,
+  "chapter": 19,
   "title": "大后天别迟到！",
   "py": "dà hòu tiān bié chí dào",
   "en": "Don't be late on Thursday!",
@@ -3907,7 +3907,7 @@ window.READINGS = [
  },
  {
   "id": "qibu5-u4",
-  "chapter": 21,
+  "chapter": 20,
   "title": "马克的第一封中文邮件",
   "py": "mǎ kè de dì yī fēng zhōng wén yóu jiàn",
   "en": "Mark's first email in Chinese",
@@ -4127,7 +4127,7 @@ window.READINGS = [
  },
  {
   "id": "qibu5-story",
-  "chapter": 21,
+  "chapter": 20,
   "title": "九月见！",
   "py": "jiǔ yuè jiàn!",
   "en": "See you in September!",

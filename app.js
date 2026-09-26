@@ -2234,15 +2234,9 @@
   const CHAPTERS = [
     {
       "unit": "起步 1",
-      "title": "Hello! Sounds and survival",
-      "lessons": [
-        "qibu1-s0-1"
-      ]
-    },
-    {
-      "unit": "起步 1",
       "title": "Nice to meet you!",
       "lessons": [
+        "qibu1-s0-1",
         "qibu1-u1-1",
         "qibu1-u1-2",
         "qibu1-u1-3",
@@ -2471,29 +2465,31 @@
   // Short grammar/pattern notes, shown on the "meet the new words" screen and on
   // the lesson sheet, for the lessons that introduce a pattern worth a sentence.
   const LESSON_NOTES = {
-    "qibu1-u1-1": [
+    "qibu1-s0-1": [
       {
         "title": "是 — to be",
         "body": "是 links two nouns. To say 'not', put 不 in front: 不是. Don't use 是 with adjectives: say 我很高兴, not 我是高兴. 我是马克。 (I'm Mark.)"
       }
     ],
-    "qibu1-u1-2": [
+    "qibu1-u1-1": [
       {
         "title": "吗 — yes/no questions",
         "body": "Add 吗 to the end of a statement to turn it into a question. Answer by repeating the verb: 是 / 不是, 喝 / 不喝. 你是学生吗？ (Are you a student?)"
       }
     ],
-    "qibu1-u1-3": [
+    "qibu1-u1-2": [
       {
         "title": "呢 — and you?",
         "body": "呢 bounces the same question back, so you don't need to repeat it. 我是学生，你呢？ (I'm a student. And you?)"
       }
     ],
-    "qibu1-u1-4": [
+    "qibu1-u1-3": [
       {
         "title": "也 — also, too",
         "body": "也 always goes before the verb, never at the start of the sentence. 我也是学生。 (I'm a student too.)"
-      },
+      }
+    ],
+    "qibu1-u1-4": [
       {
         "title": "姓 and 叫 — names",
         "body": "姓 is for the surname only. 叫 is for your full name or given name. Chinese surnames come first: 林小雨 is Lin (surname) Xiaoyu. The polite way to ask a surname is 您贵姓？ (nín guì xìng). 我姓林。 (My surname is Lin.)"
