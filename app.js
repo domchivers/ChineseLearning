@@ -984,11 +984,55 @@
 
   // ---- Speech recognition (you speak → it checks) ----
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const canRecognize = () => !!SR;
+  // Inside the iPhone app (Capacitor) the web speech API isn't there, so Apple's own
+  // recogniser is used through the speech-recognition plugin instead.
+  const NSR = window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()
+    && window.Capacitor.Plugins && window.Capacitor.Plugins.SpeechRecognition;
+  const canRecognize = () => !!(NSR || SR);
+  // Same contract as the web version below: onEnd fires exactly once, however it ends.
+  function recognizeNative({ onStart, onResult, onInterim, onError, onEnd, acceptEarly }) {
+    let delivered = false, ended = false, last = [], watchdog = null, quiet = null;
+    const handles = [];
+    const done = () => {
+      if (ended) return; ended = true;
+      clearTimeout(watchdog); clearTimeout(quiet);
+      handles.forEach(h => { try { h.remove(); } catch {} });
+      NSR.stop().catch(() => {});
+      onEnd && onEnd();
+    };
+    const deliver = alts => { if (delivered) return; delivered = true; onResult && onResult(alts); done(); };
+    const settle = () => { if (last.length) deliver(last); else { onError && onError("no-speech"); done(); } };
+    (async () => {
+      try {
+        const p = await NSR.checkPermissions();
+        if (p.speechRecognition !== "granted") {
+          const r = await NSR.requestPermissions();
+          if (r.speechRecognition !== "granted") { onError && onError("not-allowed"); return done(); }
+        }
+        handles.push(await NSR.addListener("partialResults", d => {
+          const alts = (d && d.matches) || [];
+          if (!alts.length || ended) return;
+          last = alts;
+          onInterim && onInterim(alts);
+          if (acceptEarly && acceptEarly(alts)) return deliver(alts);
+          // Apple's recogniser doesn't stop on silence: settle once you've paused
+          clearTimeout(quiet); quiet = setTimeout(settle, 1400);
+        }));
+        handles.push(await NSR.addListener("listeningState", d => {
+          if (d && d.status === "started") onStart && onStart();
+          else if (d && d.status === "stopped") settle();
+        }));
+        await NSR.start({ language: "zh-CN", maxResults: 8, partialResults: true, popup: false });
+        watchdog = setTimeout(settle, 12000);
+      } catch (e) { onError && onError("start-failed"); done(); }
+    })();
+    return { stop: settle, abort: done };
+  }
   // onInterim(alts)  – live partial guesses while you're still speaking
   // acceptEarly(alts) – return true to settle NOW without waiting for the engine
   //                     to time out on silence (the main source of the lag)
   function recognizeOnce({ onStart, onResult, onInterim, onError, onEnd, acceptEarly }) {
+    if (NSR) return recognizeNative({ onStart, onResult, onInterim, onError, onEnd, acceptEarly });
     if (!SR) { onError && onError("unsupported"); onEnd && onEnd(); return null; }
     const rec = new SR();
     rec.lang = "zh-CN";
