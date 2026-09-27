@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=281";
+  const ASSET_V = "?v=282";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -5190,6 +5190,8 @@
   // Where the lamplight sits inside each night cluster, measured from the art.
   const PATH_LIGHTS = {
     "cluster-left-bamboo": { x: 17.1, y: 69.9 },
+    "cluster-left-waterfall": { x: 15.2, y: 71.2 },
+    "cluster-left-bridge": { x: 18.2, y: 72.0 },
     "cluster-right-temple": { x: 73.1, y: 35.8 },
     "land-pagoda": { x: 56.0, y: 59.7 },
     "fol-blossom": { x: 67.4, y: 49.6 }
@@ -5215,6 +5217,9 @@
   const ART = {
     "cluster-right-temple": { w: 65, ar: 0.738, side: "right" },
     "cluster-left-bamboo": { w: 66, ar: 1.689, side: "left" },
+    "cluster-left-waterfall": { w: 66, ar: 1.546, side: "left" },
+    "cluster-left-bridge": { w: 66, ar: 1.451, side: "left" },
+    "cluster-left-steps": { w: 66, ar: 1.478, side: "left" },
     "cluster-right-bamboo": { w: 44, ar: 1.470, side: "right" },
     "panda-walking": { w: 22, ar: 1.352, side: "any" },
     "fol-bamboo": { w: 60, ar: 1.532, side: "left" },
@@ -5247,7 +5252,7 @@
   };
   const FAMILIES = {
     landmark: ["cluster-right-temple", "land-torii", "land-pagoda", "land-pavilion", "land-house", "land-bridge", "land-waterfall", "land-cliff"],
-    left: ["cluster-left-bamboo", "fol-bamboo", "fol-pine", "fol-blossom", "fol-banana", "fol-oak"],
+    left: ["cluster-left-bamboo", "cluster-left-waterfall", "cluster-left-bridge", "cluster-left-steps", "fol-bamboo", "fol-pine", "fol-blossom", "fol-banana", "fol-oak"],
     right: ["cluster-right-bamboo", "fol-bamboo", "fol-pine", "fol-blossom", "fol-banana", "fol-oak"]
   };
   /* The path as composed by hand in the path editor, phone edition. Each
@@ -5293,6 +5298,9 @@
      way it was composed without its empty corners counting against it. */
   const SLABS = {
     "cluster-left-bamboo": [[0.0, 0.306], [0.0, 0.346], [0.0, 0.352], [0.0, 0.427], [0.0, 0.499], [0.0, 0.596], [0.0, 0.598], [0.0, 0.605], [0.0, 0.932], [0.0, 1.0]],
+    "cluster-left-waterfall": [[0.0, 0.307], [0.0, 0.378], [0.0, 0.505], [0.0, 0.465], [0.0, 0.39], [0.0, 0.5], [0.0, 0.594], [0.0, 0.704], [0.0, 0.967], [0.0, 0.999]],
+    "cluster-left-bridge": [[0.0, 0.285], [0.0, 0.511], [0.0, 0.511], [0.0, 0.52], [0.0, 0.478], [0.0, 0.532], [0.0, 0.69], [0.0, 0.913], [0.0, 0.95], [0.0, 1.0]],
+    "cluster-left-steps": [[0.0, 0.309], [0.0, 0.481], [0.0, 0.512], [0.0, 0.373], [0.0, 0.462], [0.0, 0.524], [0.0, 0.595], [0.0, 0.772], [0.0, 0.962], [0.0, 1.0]],
     "cluster-right-temple": [[0.735, 1.0], [0.641, 1.0], [0.423, 1.0], [0.332, 1.0], [0.278, 1.0], [0.185, 1.0], [0.06, 1.0], [0.0, 1.0], [0.149, 1.0], [0.48, 1.0]],
     "cluster-right-bamboo": [[0.718, 0.989], [0.668, 1.0], [0.618, 1.0], [0.638, 1.0], [0.707, 1.0], [0.627, 1.0], [0.618, 1.0], [0.449, 1.0], [0.38, 1.0], [0.0, 1.0]],
     "panda-walking": [[0.143, 0.893], [0.117, 0.926], [0.131, 0.986], [0.119, 0.995], [0.048, 0.969], [0.0, 0.995], [0.0, 1.0], [0.067, 0.8], [0.045, 0.94], [0.048, 0.94]],
