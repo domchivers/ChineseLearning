@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=279";
+  const ASSET_V = "?v=280";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2625,7 +2625,7 @@
     },
     {
       "unit": "进步 4",
-      "title": "I passed HSK 4!",
+      "title": "My proposal's been approved!",
       "lessons": [
         "jinbu4-u2-1",
         "jinbu4-u2-2",
@@ -4300,14 +4300,14 @@
     ],
     "jinbu4-u2-2": [
       {
-        "title": "通过, 考过 — passing",
-        "body": "通过 is 'pass' and takes the exam as its object: 通过考试, 通过了四级. In speech, 考过了 is 'passed' and 没考过 is 'failed'. 通过 can also mean 'through, by way of': 通过朋友认识的. 你一定能通过。 (You're bound to pass.)"
+        "title": "通过 — getting through",
+        "body": "通过 is for getting through something that someone has to approve: a proposal (方案通过了), an interview (通过了面试), a probation period (通过了试用期). The thing can come first, as in 方案通过了, or after it, as in 通过了面试. 通过 can also mean 'through, by way of': 通过朋友认识的. 我们的方案通过了！ (Our proposal's been approved!)"
       }
     ],
     "jinbu4-u2-3": [
       {
         "title": "为了 — in order to, for",
-        "body": "为了 puts the goal first and what you did for it second. It usually starts the sentence. Compare 因为, which gives a reason, not a goal. 为了这次考试，我每天背生词。 (For this exam, I learned new words every day.)"
+        "body": "为了 puts the goal first and what you did for it second. It usually starts the sentence. Compare 因为, which gives a reason, not a goal. 为了明天，我每天背生词。 (For tomorrow, I've been learning new words every day.)"
       }
     ],
     "jinbu4-u2-4": [
@@ -4324,14 +4324,14 @@
     ],
     "jinbu4-u2-6": [
       {
-        "title": "Sounds · Scores and big numbers",
-        "body": "People shorten round numbers: 一百八 is 180 and 两百五 is 250 (but be careful: 二百五 is also slang for an idiot!). 一 before 百 changes to yì. For 200, you'll hear both 二百 and 两百."
+        "title": "Sounds · Modest replies",
+        "body": "哪里 is nǎ lǐ, but two third tones together make the first one rise, and in 哪里哪里 the 里 goes light: ná li ná li, said quickly with a smile. 还差得远呢 falls away gently at the end. In 过奖了, stress 奖 and keep 了 short."
       }
     ],
     "jinbu4-u2-7": [
       {
-        "title": "Culture · The HSK, and taking a compliment",
-        "body": "The HSK (汉语水平考试) is the standard Chinese test for non-native speakers. For years it had six levels. HSK 4, the one Mark sits, has listening (听力), reading (阅读) and writing (书写) papers, each worth 100 points, and you need 180 out of 300 to pass. A newer standard, sometimes called HSK 3.0, has nine levels and far bigger word lists, and centres are gradually moving over to it. Many universities in China ask overseas students for HSK 4 or 5. The speaking test, HSKK, is separate."
+        "title": "Culture · Face at work, and taking a compliment",
+        "body": "面子, face, is the respect you have in other people's eyes, and in Chinese business it matters a great deal. You give face (给面子) by addressing people by their title, like 王经理 or 沈总, by using 您, and by never making a client or a senior colleague look wrong in front of others. If you disagree, you say so privately, or wrap it in a suggestion. Making an effort also gives face: a foreign designer who presents in Chinese, even imperfectly, is showing the client real respect."
       }
     ],
     "jinbu4-u3-1": [
@@ -4399,7 +4399,7 @@
     "jinbu4-u4-5": [
       {
         "title": "了, 过, 着, 正在 — aspect at a glance",
-        "body": "了 after a verb: it happened, it's done. 过: you've had the experience at some time (从来没…过 is 'never ever'). 着: a state that lasts. 正在 (often with 呢): in the middle of it right now. English uses tenses for this; Chinese uses these little words. 两个月以前，我考过了HSK四级。 (了: two months ago I passed HSK 4.)"
+        "body": "了 after a verb: it happened, it's done. 过: you've had the experience at some time (从来没…过 is 'never ever'). 着: a state that lasts. 正在 (often with 呢): in the middle of it right now. English uses tenses for this; Chinese uses these little words. 上个月，我们的方案通过了。 (了: last month our proposal was approved.)"
       },
       {
         "title": "Sounds · Light middles, strong ends",
@@ -4581,7 +4581,7 @@
     "dabu1-u1-2": [
       {
         "title": "通过 — through, by means of",
-        "body": "You know 通过 as 'to pass' (通过了HSK四级). At the start of a sentence it means 'through' or 'by means of': how you learned, met or achieved something. It's a favourite in interviews and cover letters, because it links an experience to what you got out of it. 通过这次实习，我对品牌设计有了更深的了解。 (Through this internship I came to understand brand design much better.)"
+        "body": "You know 通过 as 'to get through' or 'be approved' (方案通过了). At the start of a sentence it means 'through' or 'by means of': how you learned, met or achieved something. It's a favourite in interviews and cover letters, because it links an experience to what you got out of it. 通过这次实习，我对品牌设计有了更深的了解。 (Through this internship I came to understand brand design much better.)"
       }
     ],
     "dabu1-u1-3": [

@@ -4543,6 +4543,12 @@ window.VOCAB = {
    "title": "起步5 U1.1 · 演出怎么样？ How was the show?",
    "words": [
     {
+     "hanzi": "早",
+     "pinyin": "zǎo",
+     "pos": "adj.",
+     "en": "early; (as a greeting) morning!"
+    },
+    {
      "hanzi": "演出",
      "pinyin": "yǎn chū",
      "pos": "n./v.",
@@ -4643,6 +4649,12 @@ window.VOCAB = {
      "pinyin": "gē shǒu",
      "pos": "n.",
      "en": "singer"
+    },
+    {
+     "hanzi": "观众",
+     "pinyin": "guān zhòng",
+     "pos": "n.",
+     "en": "audience"
     }
    ]
   },
@@ -4650,12 +4662,6 @@ window.VOCAB = {
    "id": "qibu5-u1-3",
    "title": "起步5 U1.3 · 演出怎么样？ How was the show?",
    "words": [
-    {
-     "hanzi": "观众",
-     "pinyin": "guān zhòng",
-     "pos": "n.",
-     "en": "audience"
-    },
     {
      "hanzi": "钢琴",
      "pinyin": "gāng qín",
@@ -4697,13 +4703,7 @@ window.VOCAB = {
      "pinyin": "rè nao",
      "pos": "adj.",
      "en": "lively, busy and fun"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u1-4",
-   "title": "起步5 U1.4 · 演出怎么样？ How was the show?",
-   "words": [
+    },
     {
      "hanzi": "精彩",
      "pinyin": "jīng cǎi",
@@ -4715,7 +4715,13 @@ window.VOCAB = {
      "pinyin": "yǒu yì si",
      "pos": "adj.",
      "en": "interesting, fun"
-    },
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-4",
+   "title": "起步5 U1.4 · 演出怎么样？ How was the show?",
+   "words": [
     {
      "hanzi": "没意思",
      "pinyin": "méi yì si",
@@ -5107,12 +5113,6 @@ window.VOCAB = {
      "en": "as early as, already; as soon as (七点就到了 here by seven) (new meaning)"
     },
     {
-     "hanzi": "早",
-     "pinyin": "zǎo",
-     "pos": "adj.",
-     "en": "early; (as a greeting) morning!"
-    },
-    {
      "hanzi": "闹钟",
      "pinyin": "nào zhōng",
      "pos": "n.",
@@ -5135,6 +5135,12 @@ window.VOCAB = {
      "pinyin": "yī",
      "pos": "phr.",
      "en": "as soon as (一…就…)"
+    },
+    {
+     "hanzi": "肯定",
+     "pinyin": "kěn dìng",
+     "pos": "adv.",
+     "en": "definitely, certainly"
     }
    ]
   },
@@ -5142,12 +5148,6 @@ window.VOCAB = {
    "id": "qibu5-u3-2",
    "title": "起步5 U3.2 · 你怎么才来？ What took you so long?",
    "words": [
-    {
-     "hanzi": "肯定",
-     "pinyin": "kěn dìng",
-     "pos": "adv.",
-     "en": "definitely, certainly"
-    },
     {
      "hanzi": "来不及",
      "pinyin": "lái bu jí",
@@ -5195,6 +5195,12 @@ window.VOCAB = {
      "pinyin": "gǎn",
      "pos": "v.",
      "en": "to rush (赶火车 rush to catch a train)"
+    },
+    {
+     "hanzi": "准时",
+     "pinyin": "zhǔn shí",
+     "pos": "adj.",
+     "en": "on time, punctual"
     }
    ]
   },
@@ -5202,12 +5208,6 @@ window.VOCAB = {
    "id": "qibu5-u3-3",
    "title": "起步5 U3.3 · 你怎么才来？ What took you so long?",
    "words": [
-    {
-     "hanzi": "准时",
-     "pinyin": "zhǔn shí",
-     "pos": "adj.",
-     "en": "on time, punctual"
-    },
     {
      "hanzi": "请假",
      "pinyin": "qǐng jià",
@@ -7915,6 +7915,12 @@ window.VOCAB = {
    "title": "进步2 U2.1 · 旗袍还是汉服？ Qipao or hanfu?",
    "words": [
     {
+     "hanzi": "虾",
+     "pinyin": "xiā",
+     "pos": "n.",
+     "en": "shrimp, prawn"
+    },
+    {
      "hanzi": "旗袍",
      "pinyin": "qí páo",
      "pos": "n.",
@@ -7979,12 +7985,6 @@ window.VOCAB = {
      "pinyin": "gē ge",
      "pos": "n.",
      "en": "older brother"
-    },
-    {
-     "hanzi": "姐姐",
-     "pinyin": "jiě jie",
-     "pos": "n.",
-     "en": "older sister"
     }
    ]
   },
@@ -7992,6 +7992,12 @@ window.VOCAB = {
    "id": "jinbu2-u2-2",
    "title": "进步2 U2.2 · 旗袍还是汉服？ Qipao or hanfu?",
    "words": [
+    {
+     "hanzi": "姐姐",
+     "pinyin": "jiě jie",
+     "pos": "n.",
+     "en": "older sister"
+    },
     {
      "hanzi": "弟弟",
      "pinyin": "dì di",
@@ -8057,12 +8063,6 @@ window.VOCAB = {
      "pinyin": "lǐng dài",
      "pos": "n.",
      "en": "tie"
-    },
-    {
-     "hanzi": "高跟鞋",
-     "pinyin": "gāo gēn xié",
-     "pos": "n.",
-     "en": "high heels"
     }
    ]
   },
@@ -8070,6 +8070,12 @@ window.VOCAB = {
    "id": "jinbu2-u2-3",
    "title": "进步2 U2.3 · 旗袍还是汉服？ Qipao or hanfu?",
    "words": [
+    {
+     "hanzi": "高跟鞋",
+     "pinyin": "gāo gēn xié",
+     "pos": "n.",
+     "en": "high heels"
+    },
     {
      "hanzi": "头发",
      "pinyin": "tóu fa",
@@ -8341,10 +8347,10 @@ window.VOCAB = {
    "title": "进步2 U3.1 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
    "words": [
     {
-     "hanzi": "虾",
-     "pinyin": "xiā",
-     "pos": "n.",
-     "en": "shrimp, prawn"
+     "hanzi": "聊天",
+     "pinyin": "liáo tiān",
+     "pos": "v.",
+     "en": "to chat"
     },
     {
      "hanzi": "只",
@@ -8989,12 +8995,6 @@ window.VOCAB = {
      "en": "as you like, casually; whatever"
     },
     {
-     "hanzi": "聊天",
-     "pinyin": "liáo tiān",
-     "pos": "v.",
-     "en": "to chat"
-    },
-    {
      "hanzi": "聊",
      "pinyin": "liáo",
      "pos": "v.",
@@ -9089,12 +9089,6 @@ window.VOCAB = {
      "pinyin": "wú liáo",
      "pos": "adj.",
      "en": "bored, boring"
-    },
-    {
-     "hanzi": "宅",
-     "pinyin": "zhái",
-     "pos": "v./adj.",
-     "en": "to stay in, be a homebody (宅在家 stay in all day)"
     }
    ]
   },
@@ -9102,6 +9096,12 @@ window.VOCAB = {
    "id": "jinbu2-u4-6",
    "title": "进步2 U4.6 · 做完了！ All done!",
    "words": [
+    {
+     "hanzi": "宅",
+     "pinyin": "zhái",
+     "pos": "v./adj.",
+     "en": "to stay in, be a homebody (宅在家 stay in all day)"
+    },
     {
      "hanzi": "家务",
      "pinyin": "jiā wù",
@@ -11386,13 +11386,13 @@ window.VOCAB = {
      "hanzi": "级",
      "pinyin": "jí",
      "pos": "n.",
-     "en": "level, grade (HSK四级 HSK level 4)"
+     "en": "level, grade (一级 level one)"
     },
     {
      "hanzi": "顺利",
      "pinyin": "shùn lì",
      "pos": "adj.",
-     "en": "smooth, without a hitch (祝你考试顺利 good luck in your exam)"
+     "en": "smooth, without a hitch (祝你一切顺利 hope it all goes well)"
     },
     {
      "hanzi": "学会",
@@ -11506,8 +11506,14 @@ window.VOCAB = {
   },
   {
    "id": "jinbu4-u2-1",
-   "title": "进步4 U2.1 · 我考过了HSK四级！ I passed HSK 4!",
+   "title": "进步4 U2.1 · 我的方案通过了！ My proposal's been approved!",
    "words": [
+    {
+     "hanzi": "记住",
+     "pinyin": "jì zhù",
+     "pos": "v.",
+     "en": "to remember, memorise (记得住 can remember; 记不住 can't remember)"
+    },
     {
      "hanzi": "晕",
      "pinyin": "yūn",
@@ -11515,10 +11521,28 @@ window.VOCAB = {
      "en": "dizzy (头晕 my head's spinning)"
     },
     {
+     "hanzi": "经理",
+     "pinyin": "jīng lǐ",
+     "pos": "n.",
+     "en": "manager (王经理 Manager Wang)"
+    },
+    {
+     "hanzi": "方案",
+     "pinyin": "fāng àn",
+     "pos": "n.",
+     "en": "proposal, plan, design concept (讲方案 present a proposal)"
+    },
+    {
+     "hanzi": "点心",
+     "pinyin": "diǎn xin",
+     "pos": "n.",
+     "en": "pastries, cakes, snacks"
+    },
+    {
      "hanzi": "听力",
      "pinyin": "tīng lì",
      "pos": "n.",
-     "en": "listening (in an exam)"
+     "en": "listening (as a skill, or in an exam)"
     },
     {
      "hanzi": "还行",
@@ -11536,13 +11560,13 @@ window.VOCAB = {
      "hanzi": "书写",
      "pinyin": "shū xiě",
      "pos": "n.",
-     "en": "writing (in an exam)"
+     "en": "writing (as a skill, or in an exam)"
     },
     {
      "hanzi": "写出来",
      "pinyin": "xiě chu lai",
      "pos": "v.",
-     "en": "to write down, manage to write"
+     "en": "to write down, write out"
     },
     {
      "hanzi": "大部分",
@@ -11555,7 +11579,13 @@ window.VOCAB = {
      "pinyin": "míng míng",
      "pos": "adv.",
      "en": "clearly, obviously (but…)"
-    },
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-2",
+   "title": "进步4 U2.2 · 我的方案通过了！ My proposal's been approved!",
+   "words": [
     {
      "hanzi": "想不起来",
      "pinyin": "xiǎng bu qǐ lai",
@@ -11567,13 +11597,7 @@ window.VOCAB = {
      "pinyin": "xiǎng qi lai",
      "pos": "v.",
      "en": "to remember, think of"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u2-2",
-   "title": "进步4 U2.2 · 我考过了HSK四级！ I passed HSK 4!",
-   "words": [
+    },
     {
      "hanzi": "背",
      "pinyin": "bèi",
@@ -11590,7 +11614,7 @@ window.VOCAB = {
      "hanzi": "题",
      "pinyin": "tí",
      "pos": "n.",
-     "en": "question (in an exam) (一套题 a practice paper)"
+     "en": "question (in an exam or exercise) (做题 do exercises)"
     },
     {
      "hanzi": "对",
@@ -11626,7 +11650,7 @@ window.VOCAB = {
      "hanzi": "通过",
      "pinyin": "tōng guò",
      "pos": "v.",
-     "en": "to pass (an exam); by way of, through"
+     "en": "to get through, be approved, pass (方案通过了 the proposal was approved); by way of, through"
     },
     {
      "hanzi": "面子",
@@ -11644,8 +11668,14 @@ window.VOCAB = {
   },
   {
    "id": "jinbu4-u2-3",
-   "title": "进步4 U2.3 · 我考过了HSK四级！ I passed HSK 4!",
+   "title": "进步4 U2.3 · 我的方案通过了！ My proposal's been approved!",
    "words": [
+    {
+     "hanzi": "给面子",
+     "pinyin": "gěi miàn zi",
+     "pos": "phr.",
+     "en": "to show (someone) respect, give face"
+    },
     {
      "hanzi": "考过",
      "pinyin": "kǎo guò",
@@ -11686,7 +11716,7 @@ window.VOCAB = {
      "hanzi": "报名",
      "pinyin": "bào míng",
      "pos": "v.",
-     "en": "to sign up, enter (for an exam)"
+     "en": "to sign up, enter (for a course or an exam)"
     },
     {
      "hanzi": "考场",
@@ -11705,19 +11735,19 @@ window.VOCAB = {
      "pinyin": "jí gé",
      "pos": "v.",
      "en": "to pass, reach the pass mark"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u2-4",
-   "title": "进步4 U2.4 · 我考过了HSK四级！ I passed HSK 4!",
-   "words": [
+    },
     {
      "hanzi": "口试",
      "pinyin": "kǒu shì",
      "pos": "n.",
      "en": "speaking test, oral exam"
-    },
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-4",
+   "title": "进步4 U2.4 · 我的方案通过了！ My proposal's been approved!",
+   "words": [
     {
      "hanzi": "笔试",
      "pinyin": "bǐ shì",
@@ -11776,7 +11806,7 @@ window.VOCAB = {
   },
   {
    "id": "jinbu4-u2-5",
-   "title": "进步4 U2.5 · 我考过了HSK四级！ I passed HSK 4!",
+   "title": "进步4 U2.5 · 我的方案通过了！ My proposal's been approved!",
    "words": [
     {
      "hanzi": "敢",
@@ -11788,13 +11818,13 @@ window.VOCAB = {
      "hanzi": "分",
      "pinyin": "fēn",
      "pos": "m.",
-     "en": "point, mark (二百四十六分 246 points) (new meaning)"
+     "en": "point, mark (打分 give marks) (new meaning)"
     },
     {
      "hanzi": "满分",
      "pinyin": "mǎn fēn",
      "pos": "n.",
-     "en": "full marks"
+     "en": "full marks (打满分 give full marks)"
     },
     {
      "hanzi": "语言",
@@ -11848,7 +11878,7 @@ window.VOCAB = {
   },
   {
    "id": "jinbu4-u2-6",
-   "title": "进步4 U2.6 · 我考过了HSK四级！ I passed HSK 4!",
+   "title": "进步4 U2.6 · 我的方案通过了！ My proposal's been approved!",
    "words": [
     {
      "hanzi": "优点",
@@ -11887,6 +11917,12 @@ window.VOCAB = {
      "en": "to say (A) as (B) by mistake"
     },
     {
+     "hanzi": "试用期",
+     "pinyin": "shì yòng qī",
+     "pos": "n.",
+     "en": "probation, trial period (通过了试用期 passed probation)"
+    },
+    {
      "hanzi": "证书",
      "pinyin": "zhèng shū",
      "pos": "n.",
@@ -11909,19 +11945,19 @@ window.VOCAB = {
      "pinyin": "jiāo ào",
      "pos": "adj.",
      "en": "proud; arrogant"
-    },
-    {
-     "hanzi": "羡慕",
-     "pinyin": "xiàn mù",
-     "pos": "v.",
-     "en": "to envy, admire"
     }
    ]
   },
   {
    "id": "jinbu4-u2-7",
-   "title": "进步4 U2.7 · 我考过了HSK四级！ I passed HSK 4!",
+   "title": "进步4 U2.7 · 我的方案通过了！ My proposal's been approved!",
    "words": [
+    {
+     "hanzi": "羡慕",
+     "pinyin": "xiàn mù",
+     "pos": "v.",
+     "en": "to envy, admire"
+    },
     {
      "hanzi": "鼓励",
      "pinyin": "gǔ lì",
@@ -12355,12 +12391,6 @@ window.VOCAB = {
      "en": "podcast"
     },
     {
-     "hanzi": "记住",
-     "pinyin": "jì zhù",
-     "pos": "v.",
-     "en": "to remember, memorise (记得住 can remember; 记不住 can't remember)"
-    },
-    {
      "hanzi": "记得住",
      "pinyin": "jì de zhù",
      "pos": "phr.",
@@ -12383,6 +12413,12 @@ window.VOCAB = {
      "pinyin": "yī gè yī gè",
      "pos": "phr.",
      "en": "one by one, one at a time"
+    },
+    {
+     "hanzi": "轮到",
+     "pinyin": "lún dào",
+     "pos": "v.",
+     "en": "to be (someone's) turn"
     }
    ]
   },
@@ -12390,12 +12426,6 @@ window.VOCAB = {
    "id": "jinbu4-u4-2",
    "title": "进步4 U4.2 · 学中文的秘诀 The secret of learning Chinese",
    "words": [
-    {
-     "hanzi": "轮到",
-     "pinyin": "lún dào",
-     "pos": "v.",
-     "en": "to be (someone's) turn"
-    },
     {
      "hanzi": "初学者",
      "pinyin": "chū xué zhě",
@@ -12443,6 +12473,12 @@ window.VOCAB = {
      "pinyin": "kǒu yīn",
      "pos": "n.",
      "en": "accent"
+    },
+    {
+     "hanzi": "母语",
+     "pinyin": "mǔ yǔ",
+     "pos": "n.",
+     "en": "mother tongue, first language"
     }
    ]
   },
@@ -12450,12 +12486,6 @@ window.VOCAB = {
    "id": "jinbu4-u4-3",
    "title": "进步4 U4.3 · 学中文的秘诀 The secret of learning Chinese",
    "words": [
-    {
-     "hanzi": "母语",
-     "pinyin": "mǔ yǔ",
-     "pos": "n.",
-     "en": "mother tongue, first language"
-    },
     {
      "hanzi": "语伴",
      "pinyin": "yǔ bàn",
@@ -14905,12 +14935,6 @@ window.VOCAB = {
      "en": "senior, highly experienced"
     },
     {
-     "hanzi": "方案",
-     "pinyin": "fāng àn",
-     "pos": "n.",
-     "en": "proposal, plan, design concept"
-    },
-    {
      "hanzi": "并",
      "pinyin": "bìng",
      "pos": "conj./adv.",
@@ -14939,6 +14963,12 @@ window.VOCAB = {
      "pinyin": "gōu tōng",
      "pos": "v./n.",
      "en": "to communicate; communication"
+    },
+    {
+     "hanzi": "按时",
+     "pinyin": "àn shí",
+     "pos": "adv.",
+     "en": "on time, on schedule"
     }
    ]
   },
@@ -14946,12 +14976,6 @@ window.VOCAB = {
    "id": "dabu1-u1-7",
    "title": "大步1 U1.7 · 今天我是面试官 On the other side of the table",
    "words": [
-    {
-     "hanzi": "按时",
-     "pinyin": "àn shí",
-     "pos": "adv.",
-     "en": "on time, on schedule"
-    },
     {
      "hanzi": "任职要求",
      "pinyin": "rèn zhí yāo qiú",
@@ -15029,6 +15053,12 @@ window.VOCAB = {
      "pinyin": "shěn měi",
      "pos": "n.",
      "en": "aesthetic sense, taste"
+    },
+    {
+     "hanzi": "能力",
+     "pinyin": "néng lì",
+     "pos": "n.",
+     "en": "ability, skill"
     }
    ]
   },
@@ -15036,12 +15066,6 @@ window.VOCAB = {
    "id": "dabu1-u1-8",
    "title": "大步1 U1.8 · 今天我是面试官 On the other side of the table",
    "words": [
-    {
-     "hanzi": "能力",
-     "pinyin": "néng lì",
-     "pos": "n.",
-     "en": "ability, skill"
-    },
     {
      "hanzi": "责任心",
      "pinyin": "zé rèn xīn",
@@ -15119,6 +15143,12 @@ window.VOCAB = {
      "pinyin": "yī duì yī",
      "pos": "phr.",
      "en": "one-to-one"
+    },
+    {
+     "hanzi": "指导",
+     "pinyin": "zhǐ dǎo",
+     "pos": "v./n.",
+     "en": "to guide, mentor; guidance"
     }
    ]
   },
@@ -15126,12 +15156,6 @@ window.VOCAB = {
    "id": "dabu1-u1-9",
    "title": "大步1 U1.9 · 今天我是面试官 On the other side of the table",
    "words": [
-    {
-     "hanzi": "指导",
-     "pinyin": "zhǐ dǎo",
-     "pos": "v./n.",
-     "en": "to guide, mentor; guidance"
-    },
     {
      "hanzi": "有意者",
      "pinyin": "yǒu yì zhě",
@@ -16015,12 +16039,6 @@ window.VOCAB = {
      "en": "about, concerning"
     },
     {
-     "hanzi": "经理",
-     "pinyin": "jīng lǐ",
-     "pos": "n.",
-     "en": "manager"
-    },
-    {
      "hanzi": "总经理",
      "pinyin": "zǒng jīng lǐ",
      "pos": "n.",
@@ -16085,6 +16103,12 @@ window.VOCAB = {
      "pinyin": "shì dàng",
      "pos": "adj.",
      "en": "appropriate, suitable"
+    },
+    {
+     "hanzi": "市场",
+     "pinyin": "shì chǎng",
+     "pos": "n.",
+     "en": "market (市场调查 market research) (new meaning)"
     }
    ]
   },
@@ -16092,12 +16116,6 @@ window.VOCAB = {
    "id": "dabu1-u3-5",
    "title": "大步1 U3.5 · 开个短会 A quick meeting",
    "words": [
-    {
-     "hanzi": "市场",
-     "pinyin": "shì chǎng",
-     "pos": "n.",
-     "en": "market (市场调查 market research) (new meaning)"
-    },
     {
      "hanzi": "供",
      "pinyin": "gōng",
@@ -16169,6 +16187,12 @@ window.VOCAB = {
      "pinyin": "shì pín huì yì",
      "pos": "n.",
      "en": "video conference"
+    },
+    {
+     "hanzi": "进行",
+     "pinyin": "jìn xíng",
+     "pos": "v.",
+     "en": "to carry out, conduct"
     }
    ]
   },
@@ -16176,12 +16200,6 @@ window.VOCAB = {
    "id": "dabu1-u3-6",
    "title": "大步1 U3.6 · 开个短会 A quick meeting",
    "words": [
-    {
-     "hanzi": "进行",
-     "pinyin": "jìn xíng",
-     "pos": "v.",
-     "en": "to carry out, conduct"
-    },
     {
      "hanzi": "可",
      "pinyin": "kě",
@@ -16651,6 +16669,12 @@ window.VOCAB = {
    "title": "大步2 U1.1 · 租房记 A room with a tree",
    "words": [
     {
+     "hanzi": "占",
+     "pinyin": "zhàn",
+     "pos": "v.",
+     "en": "to take up, occupy (占地方 take up room)"
+    },
+    {
      "hanzi": "侬",
      "pinyin": "nóng",
      "pos": "pron.",
@@ -16727,12 +16751,6 @@ window.VOCAB = {
      "pinyin": "guāng",
      "pos": "adj.",
      "en": "used up, all gone (掉光了 all fallen) (new meaning)"
-    },
-    {
-     "hanzi": "毛病",
-     "pinyin": "máo bìng",
-     "pos": "n.",
-     "en": "fault, problem, bad habit"
     }
    ]
   },
@@ -16740,6 +16758,12 @@ window.VOCAB = {
    "id": "dabu2-u1-2",
    "title": "大步2 U1.2 · 租房记 A room with a tree",
    "words": [
+    {
+     "hanzi": "毛病",
+     "pinyin": "máo bìng",
+     "pos": "n.",
+     "en": "fault, problem, bad habit"
+    },
     {
      "hanzi": "隔音",
      "pinyin": "gé yīn",
@@ -16817,12 +16841,6 @@ window.VOCAB = {
      "pinyin": "zhōng jiè fèi",
      "pos": "n.",
      "en": "agent's fee"
-    },
-    {
-     "hanzi": "省",
-     "pinyin": "shěng",
-     "pos": "v.",
-     "en": "to save (money, time)"
     }
    ]
   },
@@ -16830,6 +16848,12 @@ window.VOCAB = {
    "id": "dabu2-u1-3",
    "title": "大步2 U1.3 · 租房记 A room with a tree",
    "words": [
+    {
+     "hanzi": "省",
+     "pinyin": "shěng",
+     "pos": "v.",
+     "en": "to save (money, time)"
+    },
     {
      "hanzi": "算下来",
      "pinyin": "suàn xià lái",
@@ -16907,12 +16931,6 @@ window.VOCAB = {
      "pinyin": "qiān",
      "pos": "v.",
      "en": "to sign"
-    },
-    {
-     "hanzi": "合同",
-     "pinyin": "hé tong",
-     "pos": "n.",
-     "en": "contract"
     }
    ]
   },
@@ -16920,6 +16938,12 @@ window.VOCAB = {
    "id": "dabu2-u1-4",
    "title": "大步2 U1.4 · 租房记 A room with a tree",
    "words": [
+    {
+     "hanzi": "合同",
+     "pinyin": "hé tong",
+     "pos": "n.",
+     "en": "contract"
+    },
     {
      "hanzi": "看房",
      "pinyin": "kàn fáng",
@@ -17723,12 +17747,6 @@ window.VOCAB = {
      "pinyin": "bù rán",
      "pos": "conj.",
      "en": "otherwise, or else (spoken)"
-    },
-    {
-     "hanzi": "占",
-     "pinyin": "zhàn",
-     "pos": "v.",
-     "en": "to take up, occupy (占地方 take up room)"
     },
     {
      "hanzi": "红马甲",
@@ -18853,6 +18871,12 @@ window.VOCAB = {
    "title": "大步3 U1.1 · 没有现金的生活 Life without cash",
    "words": [
     {
+     "hanzi": "刷手机",
+     "pinyin": "shuā shǒu jī",
+     "pos": "v.",
+     "en": "to scroll through your phone"
+    },
+    {
      "hanzi": "菜场",
      "pinyin": "cài chǎng",
      "pos": "n.",
@@ -18923,12 +18947,6 @@ window.VOCAB = {
      "pinyin": "shēn shang",
      "pos": "n.",
      "en": "on you, on your person (身上带现金 have cash on you)"
-    },
-    {
-     "hanzi": "零钱",
-     "pinyin": "líng qián",
-     "pos": "n.",
-     "en": "small change"
     }
    ]
   },
@@ -18936,6 +18954,12 @@ window.VOCAB = {
    "id": "dabu3-u1-2",
    "title": "大步3 U1.2 · 没有现金的生活 Life without cash",
    "words": [
+    {
+     "hanzi": "零钱",
+     "pinyin": "líng qián",
+     "pos": "n.",
+     "en": "small change"
+    },
     {
      "hanzi": "找",
      "pinyin": "zhǎo",
@@ -19007,12 +19031,6 @@ window.VOCAB = {
      "pinyin": "kě pà",
      "pos": "adj.",
      "en": "frightening, terrible"
-    },
-    {
-     "hanzi": "轻松",
-     "pinyin": "qīng sōng",
-     "pos": "adj.",
-     "en": "easy, relaxed (讲得轻松 easy for you to say)"
     }
    ]
   },
@@ -19020,6 +19038,12 @@ window.VOCAB = {
    "id": "dabu3-u1-3",
    "title": "大步3 U1.3 · 没有现金的生活 Life without cash",
    "words": [
+    {
+     "hanzi": "轻松",
+     "pinyin": "qīng sōng",
+     "pos": "adj.",
+     "en": "easy, relaxed (讲得轻松 easy for you to say)"
+    },
     {
      "hanzi": "按",
      "pinyin": "àn",
@@ -19091,12 +19115,6 @@ window.VOCAB = {
      "pinyin": "qǔ kuǎn jī",
      "pos": "n.",
      "en": "cash machine, ATM"
-    },
-    {
-     "hanzi": "余额",
-     "pinyin": "yú é",
-     "pos": "n.",
-     "en": "balance (of an account)"
     }
    ]
   },
@@ -19104,6 +19122,12 @@ window.VOCAB = {
    "id": "dabu3-u1-4",
    "title": "大步3 U1.4 · 没有现金的生活 Life without cash",
    "words": [
+    {
+     "hanzi": "余额",
+     "pinyin": "yú é",
+     "pos": "n.",
+     "en": "balance (of an account)"
+    },
     {
      "hanzi": "诈骗",
      "pinyin": "zhà piàn",
@@ -19483,12 +19507,6 @@ window.VOCAB = {
      "en": "to scroll, swipe (刷手机 scroll through your phone; 刷视频 scroll videos)"
     },
     {
-     "hanzi": "刷手机",
-     "pinyin": "shuā shǒu jī",
-     "pos": "v.",
-     "en": "to scroll through your phone"
-    },
-    {
      "hanzi": "在线",
      "pinyin": "zài xiàn",
      "pos": "adj./v.",
@@ -19619,12 +19637,6 @@ window.VOCAB = {
      "pinyin": "suì piàn",
      "pos": "n.",
      "en": "fragment, scrap, bits"
-    },
-    {
-     "hanzi": "所谓",
-     "pinyin": "suǒ wèi",
-     "pos": "adj.",
-     "en": "so-called, what's known as"
     }
    ]
   },
@@ -19632,6 +19644,12 @@ window.VOCAB = {
    "id": "dabu3-u2-3",
    "title": "大步3 U2.3 · 刷手机 Just one more video",
    "words": [
+    {
+     "hanzi": "所谓",
+     "pinyin": "suǒ wèi",
+     "pos": "adj.",
+     "en": "so-called, what's known as"
+    },
     {
      "hanzi": "碎片化",
      "pinyin": "suì piàn huà",
@@ -19691,7 +19709,13 @@ window.VOCAB = {
      "pinyin": "shuā dào",
      "pos": "v.",
      "en": "to come across (while scrolling)"
-    },
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-4",
+   "title": "大步3 U2.4 · 刷手机 Just one more video",
+   "words": [
     {
      "hanzi": "点击",
      "pinyin": "diǎn jī",
@@ -19703,13 +19727,7 @@ window.VOCAB = {
      "pinyin": "zhòng cǎo",
      "pos": "v.",
      "en": "to make someone want to buy something (by recommending it online)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-4",
-   "title": "大步3 U2.4 · 刷手机 Just one more video",
-   "words": [
+    },
     {
      "hanzi": "爆款",
      "pinyin": "bào kuǎn",
@@ -20971,6 +20989,12 @@ window.VOCAB = {
    "title": "大步4 U1.1 · 催婚 So when are you getting married?",
    "words": [
     {
+     "hanzi": "失眠",
+     "pinyin": "shī mián",
+     "pos": "v./n.",
+     "en": "to be unable to sleep; insomnia"
+    },
+    {
      "hanzi": "催婚",
      "pinyin": "cuī hūn",
      "pos": "v.",
@@ -21041,12 +21065,6 @@ window.VOCAB = {
      "pinyin": "biǎo jiě",
      "pos": "n.",
      "en": "(older female) cousin"
-    },
-    {
-     "hanzi": "背后",
-     "pinyin": "bèi hòu",
-     "pos": "n.",
-     "en": "behind (someone's back)"
     }
    ]
   },
@@ -21054,6 +21072,12 @@ window.VOCAB = {
    "id": "dabu4-u1-2",
    "title": "大步4 U1.2 · 催婚 So when are you getting married?",
    "words": [
+    {
+     "hanzi": "背后",
+     "pinyin": "bèi hòu",
+     "pos": "n.",
+     "en": "behind (someone's back)"
+    },
     {
      "hanzi": "剩女",
      "pinyin": "shèng nǚ",
@@ -21125,12 +21149,6 @@ window.VOCAB = {
      "pinyin": "bì jìng",
      "pos": "adv.",
      "en": "after all"
-    },
-    {
-     "hanzi": "两代人",
-     "pinyin": "liǎng dài rén",
-     "pos": "phr.",
-     "en": "two generations"
     }
    ]
   },
@@ -21138,6 +21156,12 @@ window.VOCAB = {
    "id": "dabu4-u1-3",
    "title": "大步4 U1.3 · 催婚 So when are you getting married?",
    "words": [
+    {
+     "hanzi": "两代人",
+     "pinyin": "liǎng dài rén",
+     "pos": "phr.",
+     "en": "two generations"
+    },
     {
      "hanzi": "父母",
      "pinyin": "fù mǔ",
@@ -21209,12 +21233,6 @@ window.VOCAB = {
      "pinyin": "xìng fú",
      "pos": "adj./n.",
      "en": "happy (of a life); happiness"
-    },
-    {
-     "hanzi": "管",
-     "pinyin": "guǎn",
-     "pos": "v.",
-     "en": "to interfere, concern yourself with (不怎么管 don't really interfere)"
     }
    ]
   },
@@ -21222,6 +21240,12 @@ window.VOCAB = {
    "id": "dabu4-u1-4",
    "title": "大步4 U1.4 · 催婚 So when are you getting married?",
    "words": [
+    {
+     "hanzi": "管",
+     "pinyin": "guǎn",
+     "pos": "v.",
+     "en": "to interfere, concern yourself with (不怎么管 don't really interfere)"
+    },
     {
      "hanzi": "怪",
      "pinyin": "guài",
@@ -21841,12 +21865,6 @@ window.VOCAB = {
      "en": "all night, the whole night"
     },
     {
-     "hanzi": "失眠",
-     "pinyin": "shī mián",
-     "pos": "v./n.",
-     "en": "to be unable to sleep; insomnia"
-    },
-    {
      "hanzi": "病倒",
      "pinyin": "bìng dǎo",
      "pos": "v.",
@@ -21911,6 +21929,12 @@ window.VOCAB = {
      "pinyin": "jìn lì",
      "pos": "v.",
      "en": "to do your best"
+    },
+    {
+     "hanzi": "尽管",
+     "pinyin": "jǐn guǎn",
+     "pos": "conj.",
+     "en": "although, even though (written)"
     }
    ]
   },
@@ -21918,12 +21942,6 @@ window.VOCAB = {
    "id": "dabu4-u2-6",
    "title": "大步4 U2.6 · 高考 The race to the exam",
    "words": [
-    {
-     "hanzi": "尽管",
-     "pinyin": "jǐn guǎn",
-     "pos": "conj.",
-     "en": "although, even though (written)"
-    },
     {
      "hanzi": "志愿",
      "pinyin": "zhì yuàn",
@@ -29890,95 +29908,94 @@ window.DIALOGUES = [
    },
    {
     "who": "you",
-    "hanzi": "快两年了。下个月我还要考HSK四级呢。",
-    "pinyin": "kuài liǎng nián le. xià gè yuè wǒ hái yào kǎoHSK sì jí ne.",
-    "en": "Nearly two years. Next month I'm sitting HSK 4.",
-    "free": true
+    "hanzi": "快两年了。下个月我还要用中文给一个上海的客户讲我们的设计呢。",
+    "pinyin": "kuài liǎng nián le. xià gè yuè wǒ hái yào yòng zhōngwén gěi yī gè Shànghǎi de kèhù jiǎng wǒmen de shèjì ne.",
+    "en": "Nearly two years. Next month I'm presenting our designs to a client in Shanghai, in Chinese."
    },
    {
     "who": "app",
-    "hanzi": "那祝你考试顺利！手机丢了还能再买，学会的中文可是谁也偷不走的。",
-    "pinyin": "nà zhù nǐ kǎoshì shùnlì! shǒujī diū le hái néng zài mǎi, xuéhuì de zhōngwén kěshì shéi yě tōubuzǒu de.",
-    "en": "Then good luck with the exam! You can always buy another phone, but the Chinese you've learned, nobody can steal that."
+    "hanzi": "那祝你一切顺利！手机丢了还能再买，学会的中文可是谁也偷不走的。",
+    "pinyin": "nà zhù nǐ yī qiè shùnlì! shǒujī diū le hái néng zài mǎi, xuéhuì de zhōngwén kěshì shéi yě tōubuzǒu de.",
+    "en": "Then good luck with it! You can always buy another phone, but the Chinese you've learned, nobody can steal that."
    }
   ]
  },
  {
   "id": "jinbu4-u2-t1",
-  "title": "How did it go?",
+  "title": "It's tomorrow!",
   "lesson": "进步4 U2",
   "turns": [
    {
     "who": "app",
-    "hanzi": "马克，这儿！考得怎么样？",
-    "pinyin": "Mǎkè, zhèr! kǎo de zěnmeyàng?",
-    "en": "Mark, over here! How did it go?"
+    "hanzi": "马克，准备得怎么样了？明天上午就要讲了吧？",
+    "pinyin": "Mǎkè, zhǔnbèi de zěnmeyàng le? míngtiān shàngwǔ jiù yào jiǎng le ba?",
+    "en": "Mark, how's it going? You're presenting tomorrow morning, aren't you?"
    },
    {
     "who": "you",
-    "hanzi": "别问了，我现在头还晕呢。听力还行，阅读太长了，差点儿没做完。",
-    "pinyin": "bié wèn le, wǒ xiànzài tóu hái yūn ne. tīnglì háixíng, yuèdú tài cháng le, chàdiǎnr méi zuò wán.",
-    "en": "Don't ask. My head's still spinning. The listening was OK, but the reading was so long I only just finished."
+    "hanzi": "别问了，我现在头都晕了。伦敦上午九点，上海下午五点，福和的王经理和他的同事都会在视频上看我讲。",
+    "pinyin": "bié wèn le, wǒ xiànzài tóu dōu yūn le. lúndūn shàngwǔ jiǔ diǎn, Shànghǎi xiàwǔ wǔ diǎn, Fúhé de Wángjīnglǐ hé tā de tóngshì dōu huì zài shìpín shang kàn wǒ jiǎng.",
+    "en": "Don't ask. My head's spinning. Nine in the morning here, five in the afternoon in Shanghai, and Manager Wang from Fuhe and his colleagues will all be watching me on video."
    },
    {
     "who": "app",
-    "hanzi": "书写呢？汉字都写出来了吗？",
-    "pinyin": "shūxiě ne? hànzì dōu xiěchulai le ma?",
-    "en": "And the writing? Did you manage to write all the characters?"
+    "hanzi": "老板为什么让你讲？",
+    "pinyin": "lǎobǎn wèishénme ràng nǐ jiǎng?",
+    "en": "Why has your boss asked you to do it?"
    },
    {
     "who": "you",
-    "hanzi": "大部分写出来了。有两个字，我明明学过，怎么也想不起来。",
-    "pinyin": "dàbùfen xiěchulai le. yǒu liǎng gè zì, wǒ míngmíng xué guo, zěnme yě xiǎngbuqǐlai.",
-    "en": "Most of them. There were two I've definitely learned, but I just couldn't remember them."
+    "hanzi": "福和是我们第一个上海的客户。老板说我会说中文，以后就让我跟他们联系。这是我第一次用中文给客户讲方案。",
+    "pinyin": "Fúhé shì wǒmen dì yī gè Shànghǎi de kèhù. lǎobǎn shuō wǒ huì shuō zhōngwén, yǐhòu jiù ràng wǒ gēn tāmen liánxì. zhè shì wǒ dì yī cì yòng zhōngwén gěi kèhù jiǎng fāng'àn.",
+    "en": "Fuhe is our first client in Shanghai. My boss says since I speak Chinese, I'll be the one dealing with them from now on. It's the first time I've presented a proposal to a client in Chinese."
    },
    {
     "who": "app",
-    "hanzi": "正常！考试的时候谁都这样。你准备了这么久，肯定没问题。",
-    "pinyin": "zhèngcháng! kǎoshì de shíhou shéi dōu zhèyàng. nǐ zhǔnbèi le zhème jiǔ, kěndìng méiwèntí.",
-    "en": "That's normal! It happens to everyone in exams. You've prepared for so long, you'll be fine."
+    "hanzi": "那你先给我讲一遍，我就是王经理。",
+    "pinyin": "nà nǐ xiān gěi wǒ jiǎng yī biàn, wǒ jiùshì Wángjīnglǐ.",
+    "en": "Then run through it for me first. I'll be Manager Wang."
    },
    {
     "who": "you",
-    "hanzi": "为了这次考试，我每天早上在地铁上背生词，晚上还做一套题。",
-    "pinyin": "wèile zhè cì kǎoshì, wǒ měitiān zǎoshang zài dìtiě shang bèi shēngcí, wǎnshang hái zuò yī tào tí.",
-    "en": "For this exam I learned new words on the Tube every morning, and did a practice paper every evening."
+    "hanzi": "好……王经理，您好！福和的点心有一百多年的历史，为了让英国的年轻人也对它感兴趣……哎，下面那句我明明背过，怎么想不起来了？",
+    "pinyin": "hǎo Wángjīnglǐ, nín hǎo! Fúhé de diǎnxin yǒu yī bǎi duō nián de lìshǐ, wèile ràng yīngguó de niánqīngrén yě duì tā gǎnxìngqù āi, xià miàn nà jù wǒ míngmíng bèi guo, zěnme xiǎngbuqǐlai le?",
+    "en": "OK... Good afternoon, Manager Wang! Fuhe's pastries have more than a hundred years of history, and to get young people in Britain interested in them too... Argh, I've definitely learned the next line. Why can't I remember it?"
    },
    {
     "who": "app",
-    "hanzi": "你对中文这么感兴趣，又这么努力，一定能通过。",
-    "pinyin": "nǐ duì zhōngwén zhème gǎnxìngqù, yòu zhème nǔlì, yīdìng néng tōngguò.",
-    "en": "You're so interested in Chinese, and you've worked so hard. You're bound to pass."
+    "hanzi": "正常！紧张的时候谁都这样。别把每个字都背下来，这是你自己的设计，用自己的话说就行。",
+    "pinyin": "zhèngcháng! jǐnzhāng de shíhou shéi dōu zhèyàng. bié bǎ měi gè zì dōu bèi xialai, zhè shì nǐ zìjǐ de shèjì, yòng zìjǐ dehuà shuō jiù xíng.",
+    "en": "That's normal! It happens to everyone when they're nervous. Don't try to learn every word by heart. It's your own design, so just say it in your own words."
    },
    {
     "who": "you",
-    "hanzi": "希望吧。要是没考过，就太没面子了。我们公司的人都知道我今天考试。",
-    "pinyin": "xīwàng ba. yàoshi méi kǎoguò, jiù tài méimiànzi le. wǒmen gōngsī de rén dōu zhīdào wǒ jīntiān kǎoshì.",
-    "en": "I hope so. If I fail, I'll look such an idiot. Everyone at work knows I've got the exam today."
+    "hanzi": "为了明天，我每天早上在地铁上背生词，晚上还把要说的话都写出来，每句都练了好几遍。",
+    "pinyin": "wèile míngtiān, wǒ měitiān zǎoshang zài dìtiě shang bèi shēngcí, wǎnshang hái bǎ yào shuō dehuà dōu xiěchulai, měi jù dōu liàn le hǎojǐ biàn.",
+    "en": "For tomorrow, I've been learning new words on the Tube every morning, and in the evenings I've written out everything I want to say and practised every line again and again."
    },
    {
     "who": "app",
-    "hanzi": "你告诉他们了？",
-    "pinyin": "nǐ gàosu tāmen le?",
-    "en": "You told them?"
+    "hanzi": "你对中文这么感兴趣，又这么努力，明天一定没问题。",
+    "pinyin": "nǐ duì zhōngwén zhème gǎnxìngqù, yòu zhème nǔlì, míngtiān yīdìng méiwèntí.",
+    "en": "You're so interested in Chinese, and you've worked so hard. You'll be fine tomorrow."
    },
    {
     "who": "you",
-    "hanzi": "老板说，我们有个上海的客户，我要是考过了，以后就让我跟他们联系。",
-    "pinyin": "lǎobǎn shuō, wǒmen yǒu gè Shànghǎi de kèhù, wǒ yàoshi kǎoguò le, yǐhòu jiù ràng wǒ gēn tāmen liánxì.",
-    "en": "My boss says we've got a client in Shanghai, and if I pass, I'll be the one dealing with them."
+    "hanzi": "希望吧。讲还行，我就怕他们问问题。上海人说话快，我的听力……要是听不懂，就太没面子了。",
+    "pinyin": "xīwàng ba. jiǎng háixíng, wǒ jiù pà tāmen wèn wèntí. Shànghǎi rén shuōhuà kuài, wǒ de tīnglì yàoshi tīng bu dǒng, jiù tài méimiànzi le.",
+    "en": "I hope so. The talking's OK. It's their questions I'm worried about. People in Shanghai talk fast, and my listening... If I can't understand them, I'll look such an idiot."
    },
    {
     "who": "app",
-    "hanzi": "那你更得考过了！成绩什么时候出来？",
-    "pinyin": "nà nǐ gèng děi kǎoguò le! chéngjì shénmeshíhou chūlai?",
-    "en": "Then you really have to pass! When do the results come out?"
+    "hanzi": "听不懂就请他们再说一遍，这不丢面子。对客户来说，你用中文讲，就已经很给他们面子了。",
+    "pinyin": "tīng bu dǒng jiù qǐng tāmen zàishuō yī biàn, zhè bù diū miànzi. duì kèhù lái shuō, nǐ yòng zhōngwén jiǎng, jiù yǐjīng hěn gěi tāmen miànzi le.",
+    "en": "If you don't understand, ask them to say it again. You won't lose face. For a client, the very fact that you're presenting in Chinese shows them real respect."
    },
    {
     "who": "you",
-    "hanzi": "一个月以后，在网上查。对了，你那个面试怎么样了？",
-    "pinyin": "yī gè yuè yǐhòu, zài wǎngshang chá. duìle, nǐ nàge miànshì zěnmeyàng le?",
-    "en": "In a month. You check them online. Oh, by the way, how did your interview go?"
+    "hanzi": "好，记住了。对了，你那个面试怎么样了？",
+    "pinyin": "hǎo, jìzhù le. duìle, nǐ nàge miànshì zěnmeyàng le?",
+    "en": "OK, got it. Oh, by the way, how did your interview go?"
    },
    {
     "who": "app",
@@ -29988,9 +30005,9 @@ window.DIALOGUES = [
    },
    {
     "who": "you",
-    "hanzi": "那我们俩今天都别想了！走，吃火锅去，庆祝我考完了！",
-    "pinyin": "nà wǒmen liǎ jīntiān dōu bié xiǎng le! zǒu, chī huǒguō qù, qìngzhù wǒ kǎo wán le!",
-    "en": "Then let's both stop thinking about it today! Come on, let's go for hotpot to celebrate the exam being over!"
+    "hanzi": "那我们俩今天都别想了！明天讲完了，我请你吃火锅，庆祝一下！",
+    "pinyin": "nà wǒmen liǎ jīntiān dōu bié xiǎng le! míngtiān jiǎng wán le, wǒ qǐng nǐ chī huǒguō, qìngzhù yīxià!",
+    "en": "Then let's both stop thinking about it today! Once tomorrow's over, I'll take you for hotpot to celebrate!"
    }
   ]
  },
@@ -30001,27 +30018,27 @@ window.DIALOGUES = [
   "turns": [
    {
     "who": "app",
-    "hanzi": "马克，成绩出来了没有？快查查！",
-    "pinyin": "Mǎkè, chéngjì chūlai le méiyǒu? kuài chá cha!",
-    "en": "Mark, are the results out? Go on, look!"
+    "hanzi": "马克，福和回复了没有？快查查邮件！",
+    "pinyin": "Mǎkè, Fúhé huífù le méiyǒu? kuài chá cha yóujiàn!",
+    "en": "Mark, has Fuhe replied? Go on, check your email!"
    },
    {
     "who": "you",
-    "hanzi": "出来了，可是我不敢看……艾玛，你帮我看吧。",
-    "pinyin": "chūlai le, kěshì wǒ bù gǎn kàn Àimǎ, nǐ bāng wǒ kàn ba.",
-    "en": "They are, but I daren't look... Emma, you look for me."
+    "hanzi": "回复了，可是我不敢看……艾玛，你帮我看吧。",
+    "pinyin": "huífù le, kěshì wǒ bù gǎn kàn Àimǎ, nǐ bāng wǒ kàn ba.",
+    "en": "They have, but I daren't look... Emma, you look for me."
    },
    {
     "who": "app",
-    "hanzi": "好……二百四十六分！马克，你通过了！",
-    "pinyin": "hǎo èrbǎisìshí liù fēn! Mǎkè, nǐ tōngguò le!",
-    "en": "OK... two hundred and forty-six! Mark, you've passed!"
+    "hanzi": "好……“我们对你们的方案非常满意，方案通过了！”还有一句：“马克，你的中文讲得很好，我给你打满分！”",
+    "pinyin": "hǎo wǒmen duì nǐmen de fāng'àn fēicháng mǎnyì, fāng'àn tōngguò le! hái yǒu yī jù: Mǎkè, nǐ de zhōngwén jiǎng de hěn hǎo, wǒ gěi nǐ dǎ mǎnfēn!",
+    "en": "OK... 'We are very pleased with your proposal, and it has been approved!' And there's one more line: 'Mark, you presented very well in Chinese. I'd give you full marks!'"
    },
    {
     "who": "you",
-    "hanzi": "真的？满分三百，一百八就通过……我真的考过了！",
-    "pinyin": "zhēnde? mǎnfēn sānbǎi, yībǎibā jiù tōngguò wǒ zhēnde kǎoguò le!",
-    "en": "Really? It's out of three hundred and you need a hundred and eighty... I've actually passed!"
+    "hanzi": "真的？我们的方案真的通过了！",
+    "pinyin": "zhēnde? wǒmen de fāng'àn zhēnde tōngguò le!",
+    "en": "Really? Our proposal's really been approved!"
    },
    {
     "who": "app",
@@ -30037,15 +30054,15 @@ window.DIALOGUES = [
    },
    {
     "who": "you",
-    "hanzi": "哪里哪里，还差得远呢。我的听力还可以，汉字还是写得不好。",
-    "pinyin": "nǎlǐnǎlǐ, hái chàdeyuǎn ne. wǒ de tīnglì háikěyǐ, hànzì háishi xiě de bù hǎo.",
-    "en": "Oh, not really, I've still got a long way to go. My listening's all right, but my characters are still bad."
+    "hanzi": "哪里哪里，还差得远呢。那天王经理说话太快，我只听懂了大部分。",
+    "pinyin": "nǎlǐnǎlǐ, hái chàdeyuǎn ne. nà tiān Wángjīnglǐ shuōhuà tài kuài, wǒ zhǐ tīngdǒng le dàbùfen.",
+    "en": "Oh, not really, I've still got a long way to go. Manager Wang talked so fast that day, I only understood most of it."
    },
    {
     "who": "app",
-    "hanzi": "你别客气了！我今年也想考三级，你有什么经验？给我介绍介绍。",
-    "pinyin": "nǐ bié kèqi le! wǒ jīnnián yě xiǎng kǎo sān jí, nǐ yǒu shénme jīngyàn? gěi wǒ jièshào jièshào.",
-    "en": "Don't be so modest! I want to sit HSK 3 this year. What's your secret? Tell me about it."
+    "hanzi": "你别客气了！我学了一年了，可是一说中文就紧张。你有什么经验？给我介绍介绍。",
+    "pinyin": "nǐ bié kèqi le! wǒ xué le yī nián le, kěshì yī shuō zhōngwén jiù jǐnzhāng. nǐ yǒu shénme jīngyàn? gěi wǒ jièshào jièshào.",
+    "en": "Don't be so modest! I've been learning for a year, and I still get nervous as soon as I speak Chinese. What's your secret? Tell me about it."
    },
    {
     "who": "you",
@@ -33231,10 +33248,9 @@ window.DIALOGUES = [
    },
    {
     "who": "app",
-    "hanzi": "放心吧，我们都坐第一排给你加油。我去年考过了HSK五级，今天终于能听懂你讲的每一个字了。",
-    "pinyin": "fàngxīn ba, wǒmen dōu zuò dìyīpái gěi nǐ jiāyóu. wǒ qùnián kǎoguò leHSK wǔ jí, jīntiān zhōngyú néng tīngdǒng nǐ jiǎng de měi yī gè zì le.",
-    "en": "Relax. We'll all be in the front row cheering you on. I passed HSK 5 last year, so today I'll finally understand every word you say.",
-    "free": true
+    "hanzi": "放心吧，我们都坐第一排给你加油。我这两年中文进步可大了，今天你讲的每一个字，我都能听懂！",
+    "pinyin": "fàngxīn ba, wǒmen dōu zuò dìyīpái gěi nǐ jiāyóu. wǒ zhè liǎng nián zhōngwén jìnbù kě dà le, jīntiān nǐ jiǎng de měi yī gè zì, wǒ dōu néng tīngdǒng!",
+    "en": "Relax. We'll all be in the front row cheering you on. My Chinese has come on a lot these last two years. Today I'll understand every word you say!"
    },
    {
     "who": "app",
