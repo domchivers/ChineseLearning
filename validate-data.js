@@ -136,7 +136,7 @@ if (!Array.isArray(DIALOGUES)) {
       if (t.who && !["app", "you"].includes(t.who)) W(`${at}: who="${t.who}" (expected "app" or "you").`);
       if (!t.hanzi || !t.pinyin) return;
       // A line with a name in Latin letters (我姓 Smith) is a free answer: say your own.
-      if (/[A-Za-z]/.test(t.hanzi)) { N(`${at} "${t.hanzi}": contains Latin letters, so it's a free answer and not used for tiles.`); return; }
+      if (/[A-Za-z0-9]/.test(t.hanzi)) { N(`${at} "${t.hanzi}": contains Latin letters, so it's a free answer and not used for tiles.`); return; }
 
       const seg = segmentSentence(t.hanzi, t.pinyin);
       if (seg.ok) { usable++; return; }
