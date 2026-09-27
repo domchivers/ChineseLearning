@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=283";
+  const ASSET_V = "?v=284";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -5267,18 +5267,23 @@
   const PATH_LAYOUT = {
     version: 1,
     phone: true,
-    headers: {},
+    headers: { "qibu2-u3-1": "right", "qibu3-u2-1": "left" },
     pieces: [
       { art: "cluster-right-temple", stone: "qibu1-u1-1", dx: 145.1, dy: -38.5, w: 65, flip: false, behind: true },
       { art: "panda-walking", stone: "qibu1-u1-2", dx: 114.9, dy: -38.2, w: 22, flip: true, behind: false },
-      { art: "cluster-left-bamboo", stone: "qibu1-u1-4", dx: -188.3, dy: -33.2, w: 66, flip: false, behind: true },
-      { art: "panda-sleeping", stone: "qibu1-u2-1", dx: -172.8, dy: 44.3, w: 36, flip: false, behind: false },
-      { art: "land-pagoda", stone: "qibu1-u2-4", dx: 245, dy: 63.6, w: 84.5, flip: false, behind: true },
-      { art: "panda-writing", stone: "qibu1-u4-1", dx: -220.6, dy: 64, w: 36, flip: false, behind: false },
-      { art: "land-torii", stone: "qibu1-u4-5", dx: 240, dy: 57.4, w: 83.4, flip: false, behind: true },
-      { art: "panda-listening", stone: "qibu2-u1-1", dx: -203.8, dy: 8.4, w: 31.5, flip: false, behind: false },
-      { art: "cluster-right-bamboo", stone: "qibu2-u1-5", dx: 185.7, dy: -40.1, w: 72.6, flip: false, behind: false },
-      { art: "panda-reading", stone: "qibu2-u2-1", dx: 182.9, dy: 36.4, w: 26.1, flip: false, behind: false }
+      { art: "cluster-left-bamboo", stone: "qibu1-u1-4", dx: -202.2, dy: 58.8, w: 66, flip: false, behind: true },
+      { art: "panda-sleeping", stone: "qibu1-u2-1", dx: -176, dy: 62.3, w: 36, flip: false, behind: false },
+      { art: "land-pagoda", stone: "qibu1-u2-4", dx: 237.4, dy: 91.6, w: 95, flip: false, behind: true },
+      { art: "panda-writing", stone: "qibu1-u4-2", dx: -171.1, dy: -22, w: 36, flip: false, behind: false },
+      { art: "land-torii", stone: "qibu1-u4-5", dx: 241.1, dy: 71.4, w: 88.7, flip: false, behind: true },
+      { art: "panda-listening", stone: "qibu2-u1-2", dx: -166.1, dy: -10.6, w: 31.5, flip: false, behind: false },
+      { art: "cluster-right-bamboo", stone: "qibu2-u1-5", dx: 193.2, dy: 59.9, w: 72.6, flip: false, behind: false },
+      { art: "panda-reading", stone: "qibu2-u2-4", dx: -209.2, dy: 47.4, w: 27.9, flip: false, behind: false },
+      { art: "panda-celebrate", stone: "qibu2-u3-3", dx: 163.5, dy: -40.9, w: 36.9, flip: false, behind: false },
+      { art: "cluster-left-waterfall", stone: "qibu2-u3-6", dx: -192.3, dy: 70.7, w: 66, flip: false, behind: true },
+      { art: "panda-teacher", stone: "qibu3-u1-2", dx: 162.4, dy: 36.5, w: 35.1, flip: true, behind: false },
+      { art: "panda-sad", stone: "qibu3-u2-2", dx: -177, dy: -4.4, w: 29.7, flip: false, behind: false },
+      { art: "fol-blossom", stone: "qibu3-u2-5", dx: 195.7, dy: 58.7, w: 61, flip: true, behind: true }
     ]
   };
   /* Local editing only: the path editor (tools/path-editor) previews an
