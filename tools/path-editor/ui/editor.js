@@ -506,6 +506,8 @@ function applyZoom() {
   z.style.width = (G.W + 80) + "px"; z.style.height = (G.height + 80) + "px";
   z.style.marginRight = ((G.W + 80) * (state.zoom - 1)) + "px";
   z.style.marginBottom = ((G.height + 80) * (state.zoom - 1)) + "px";
+  // centre the path in the stage when it's narrower than it (no empty space off to one side)
+  z.style.marginLeft = Math.max(0, ($("#canvas").clientWidth - (G.W + 80) * state.zoom) / 2) + "px";
   $("#zoomVal").textContent = Math.round(state.zoom * 100) + "%";
   placeTools();
 }
@@ -517,6 +519,7 @@ function setZoom(z, keepCentre = true) {
   if (keepCentre) { main.scrollLeft = cx * state.zoom - main.clientWidth / 2; main.scrollTop = cy * state.zoom - main.clientHeight / 2; }
   savePrefs();
 }
+window.addEventListener("resize", () => applyZoom());
 function fitZoom() { const main = $("#canvas"); setZoom(Math.min(1.5, (main.clientWidth - 30) / (G.W + 80)), false); }
 
 /* ---- loading from the app -------------------------------------------------- */
