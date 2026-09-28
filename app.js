@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=289";
+  const ASSET_V = "?v=290";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -9344,6 +9344,20 @@ This REPLACES the progress on this device.`)) return;
       } catch (e) { acctMsg(e.message, "err"); }
     });
     $("#acctSignOut").addEventListener("click", signOut);
+    // Delete the account: the synced progress, then the sign-in itself (the
+    // project's delete_user() function removes the caller). This device keeps its progress.
+    $("#acctDelete").addEventListener("click", async () => {
+      if (!signedIn()) return;
+      if (!confirm(`Delete the account ${userEmail()} and the progress saved with it? This can't be undone. Progress on this device stays.`)) return;
+      const msg = t => { $("#acctDelMsg").textContent = t; $("#acctDelMsg").className = "acct-msg err"; };
+      const uid = session.user && session.user.id;
+      let r = await sbAuthed(`/rest/v1/progress?user_id=eq.${uid}`, { method: "DELETE" });
+      if (!r.ok) { msg("Couldn't delete your progress. Try again later."); return; }
+      r = await sbAuthed("/rest/v1/rpc/delete_user", { method: "POST", body: "{}" });
+      if (!r.ok) { msg("Your progress is deleted, but the account couldn't be. Try again later."); return; }
+      signOut();
+      toast("Your account is deleted. Progress on this device stays.");
+    });
     $("#acctSyncNow").addEventListener("click", async () => {
       const ok = await cloudSync("manual");
       if (ok) toast("Synced.");
