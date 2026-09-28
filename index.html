@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>步步 Bùbù · Learn Chinese</title>
-<link rel="manifest" href="manifest.webmanifest?v=286">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=286">
+<link rel="manifest" href="manifest.webmanifest?v=287">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=287">
 <meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1420" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="步步 Bùbù">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=286">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=287">
 <style>
   /* Nunito (variable weight, latin) is vendored so the app stays offline.
      CJK glyphs fall through to the system font, which is what we want. */
   @font-face { font-family: "Nunito"; src: url("vendor/fonts/nunito-latin.woff2") format("woff2");
     font-weight: 200 1000; font-style: normal; font-display: swap; }
   /* Long Cang, subset to every character in the course (rebuild when lessons are added) so it stays offline. */
-  @font-face { font-family: "Long Cang"; src: url("vendor/fonts/longcang-subset.woff2?v=286") format("woff2");
+  @font-face { font-family: "Long Cang"; src: url("vendor/fonts/longcang-subset.woff2?v=287") format("woff2");
     font-weight: 400; font-style: normal; font-display: swap; }
 
   /* ---- Theme: cream + jade by day, navy + periwinkle by night ----
@@ -66,62 +66,62 @@
     /* Path scenery. Ground is the cleared earth the stones sit on. */
     --ground: #e6dcc6; --ground-alpha: .33; --glow-alpha: 0;
     --stone-shadow: rgba(60,50,35,.20);
-    --st-done-0: url("images/path/stone-light-done-0.webp?v=286");
-    --st-done-1: url("images/path/stone-light-done-1.webp?v=286");
-    --st-done-2: url("images/path/stone-light-done-2.webp?v=286");
-    --st-done-3: url("images/path/stone-light-done-3.webp?v=286");
-    --st-done-4: url("images/path/stone-light-done-4.webp?v=286");
-    --st-now-0: url("images/path/stone-light-now-0.webp?v=286");
-    --st-now-1: url("images/path/stone-light-now-1.webp?v=286");
-    --st-now-2: url("images/path/stone-light-now-2.webp?v=286");
-    --st-now-3: url("images/path/stone-light-now-3.webp?v=286");
-    --st-now-4: url("images/path/stone-light-now-4.webp?v=286");
-    --st-locked-0: url("images/path/stone-light-locked-0.webp?v=286");
-    --st-locked-1: url("images/path/stone-light-locked-1.webp?v=286");
-    --st-locked-2: url("images/path/stone-light-locked-2.webp?v=286");
-    --st-locked-3: url("images/path/stone-light-locked-3.webp?v=286");
-    --st-locked-4: url("images/path/stone-light-locked-4.webp?v=286");
-    --cluster-left-bamboo: url("images/path/cluster-left-bamboo-light.webp?v=286");
-    --cluster-right-bamboo: url("images/path/cluster-right-bamboo-light.webp?v=286");
-    --cluster-right-temple: url("images/path/cluster-right-temple-light.webp?v=286");
-    --panda-walk: url("images/path/panda-walking-light.webp?v=286");
-    --home-cloud-a: url("images/home/cloud-a-light.webp?v=286");
-    --home-temple: url("images/home/temple-light.webp?v=286");
-    --home-cloud-b: url("images/home/cloud-b-light.webp?v=286");
-    --home-bottom: url("images/home/bottom-light.webp?v=286");
-    --fol-bamboo: url("images/path/fol-bamboo.webp?v=286");
-    --cluster-left-waterfall: url("images/path/cluster-left-waterfall.webp?v=286");
-    --cluster-left-bridge: url("images/path/cluster-left-bridge.webp?v=286");
-    --cluster-left-steps: url("images/path/cluster-left-steps.webp?v=286");
-    --fol-pine: url("images/path/fol-pine.webp?v=286");
-    --fol-blossom: url("images/path/fol-blossom-light.webp?v=286");
-    --fol-banana: url("images/path/fol-banana.webp?v=286");
-    --land-torii: url("images/path/land-torii.webp?v=286");
-    --land-pagoda: url("images/path/land-pagoda-light.webp?v=286");
-    --land-pavilion: url("images/path/land-pavilion.webp?v=286");
-    --land-house: url("images/path/land-house.webp?v=286");
-    --fol-oak: url("images/path/fol-oak.webp?v=286");
-    --land-bridge: url("images/path/land-bridge.webp?v=286");
-    --land-waterfall: url("images/path/land-waterfall.webp?v=286");
-    --land-bridge-red: url("images/path/land-bridge-red.webp?v=286");
-    --land-pavilion-pond: url("images/path/land-pavilion-pond.webp?v=286");
-    --land-hall: url("images/path/land-hall.webp?v=286");
-    --grass-1: url("images/path/grass-1.webp?v=286");
-    --grass-2: url("images/path/grass-2.webp?v=286");
-    --grass-3: url("images/path/grass-3.webp?v=286");
-    --land-cliff: url("images/path/land-cliff.webp?v=286");
-    --panda-celebrate: url("images/path/panda-celebrate.webp?v=286");
-    --panda-idle: url("images/path/panda-idle.webp?v=286");
-    --panda-peek: url("images/path/panda-peek.webp?v=286");
-    --panda-sad: url("images/path/panda-sad.webp?v=286");
-    --panda-teacher: url("images/path/panda-teacher.webp?v=286");
-    --panda-waving: url("images/path/panda-waving.webp?v=286");
-    --panda-reading: url("images/path/panda-reading.webp?v=286");
-    --panda-baozi: url("images/path/panda-baozi.webp?v=286");
-    --panda-writing: url("images/path/panda-writing-light.webp?v=286");
-    --panda-listening: url("images/path/panda-listening.webp?v=286");
-    --panda-puzzled: url("images/path/panda-puzzled.webp?v=286");
-    --panda-sleeping: url("images/path/panda-sleeping-light.webp?v=286");
+    --st-done-0: url("images/path/stone-light-done-0.webp?v=287");
+    --st-done-1: url("images/path/stone-light-done-1.webp?v=287");
+    --st-done-2: url("images/path/stone-light-done-2.webp?v=287");
+    --st-done-3: url("images/path/stone-light-done-3.webp?v=287");
+    --st-done-4: url("images/path/stone-light-done-4.webp?v=287");
+    --st-now-0: url("images/path/stone-light-now-0.webp?v=287");
+    --st-now-1: url("images/path/stone-light-now-1.webp?v=287");
+    --st-now-2: url("images/path/stone-light-now-2.webp?v=287");
+    --st-now-3: url("images/path/stone-light-now-3.webp?v=287");
+    --st-now-4: url("images/path/stone-light-now-4.webp?v=287");
+    --st-locked-0: url("images/path/stone-light-locked-0.webp?v=287");
+    --st-locked-1: url("images/path/stone-light-locked-1.webp?v=287");
+    --st-locked-2: url("images/path/stone-light-locked-2.webp?v=287");
+    --st-locked-3: url("images/path/stone-light-locked-3.webp?v=287");
+    --st-locked-4: url("images/path/stone-light-locked-4.webp?v=287");
+    --cluster-left-bamboo: url("images/path/cluster-left-bamboo-light.webp?v=287");
+    --cluster-right-bamboo: url("images/path/cluster-right-bamboo-light.webp?v=287");
+    --cluster-right-temple: url("images/path/cluster-right-temple-light.webp?v=287");
+    --panda-walk: url("images/path/panda-walking-light.webp?v=287");
+    --home-cloud-a: url("images/home/cloud-a-light.webp?v=287");
+    --home-temple: url("images/home/temple-light.webp?v=287");
+    --home-cloud-b: url("images/home/cloud-b-light.webp?v=287");
+    --home-bottom: url("images/home/bottom-light.webp?v=287");
+    --fol-bamboo: url("images/path/fol-bamboo.webp?v=287");
+    --cluster-left-waterfall: url("images/path/cluster-left-waterfall.webp?v=287");
+    --cluster-left-bridge: url("images/path/cluster-left-bridge.webp?v=287");
+    --cluster-left-steps: url("images/path/cluster-left-steps.webp?v=287");
+    --fol-pine: url("images/path/fol-pine.webp?v=287");
+    --fol-blossom: url("images/path/fol-blossom-light.webp?v=287");
+    --fol-banana: url("images/path/fol-banana.webp?v=287");
+    --land-torii: url("images/path/land-torii.webp?v=287");
+    --land-pagoda: url("images/path/land-pagoda-light.webp?v=287");
+    --land-pavilion: url("images/path/land-pavilion.webp?v=287");
+    --land-house: url("images/path/land-house.webp?v=287");
+    --fol-oak: url("images/path/fol-oak.webp?v=287");
+    --land-bridge: url("images/path/land-bridge.webp?v=287");
+    --land-waterfall: url("images/path/land-waterfall.webp?v=287");
+    --land-bridge-red: url("images/path/land-bridge-red.webp?v=287");
+    --land-pavilion-pond: url("images/path/land-pavilion-pond.webp?v=287");
+    --land-hall: url("images/path/land-hall.webp?v=287");
+    --grass-1: url("images/path/grass-1.webp?v=287");
+    --grass-2: url("images/path/grass-2.webp?v=287");
+    --grass-3: url("images/path/grass-3.webp?v=287");
+    --land-cliff: url("images/path/land-cliff.webp?v=287");
+    --panda-celebrate: url("images/path/panda-celebrate.webp?v=287");
+    --panda-idle: url("images/path/panda-idle.webp?v=287");
+    --panda-peek: url("images/path/panda-peek.webp?v=287");
+    --panda-sad: url("images/path/panda-sad.webp?v=287");
+    --panda-teacher: url("images/path/panda-teacher.webp?v=287");
+    --panda-waving: url("images/path/panda-waving.webp?v=287");
+    --panda-reading: url("images/path/panda-reading.webp?v=287");
+    --panda-baozi: url("images/path/panda-baozi.webp?v=287");
+    --panda-writing: url("images/path/panda-writing-light.webp?v=287");
+    --panda-listening: url("images/path/panda-listening.webp?v=287");
+    --panda-puzzled: url("images/path/panda-puzzled.webp?v=287");
+    --panda-sleeping: url("images/path/panda-sleeping-light.webp?v=287");
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -133,62 +133,62 @@
       --ground: #24384f; --ground-alpha: .19; --glow-alpha: .5;
     --stone-shadow: rgba(0,0,0,.55);
       --stone-shadow: rgba(0,0,0,.55);
-      --st-done-0: url("images/path/stone-dark-done-0.webp?v=286");
-      --st-done-1: url("images/path/stone-dark-done-1.webp?v=286");
-      --st-done-2: url("images/path/stone-dark-done-2.webp?v=286");
-      --st-done-3: url("images/path/stone-dark-done-3.webp?v=286");
-      --st-done-4: url("images/path/stone-dark-done-4.webp?v=286");
-      --st-now-0: url("images/path/stone-dark-now-0.webp?v=286");
-      --st-now-1: url("images/path/stone-dark-now-1.webp?v=286");
-      --st-now-2: url("images/path/stone-dark-now-2.webp?v=286");
-      --st-now-3: url("images/path/stone-dark-now-3.webp?v=286");
-      --st-now-4: url("images/path/stone-dark-now-4.webp?v=286");
-      --st-locked-0: url("images/path/stone-dark-locked-0.webp?v=286");
-      --st-locked-1: url("images/path/stone-dark-locked-1.webp?v=286");
-      --st-locked-2: url("images/path/stone-dark-locked-2.webp?v=286");
-      --st-locked-3: url("images/path/stone-dark-locked-3.webp?v=286");
-      --st-locked-4: url("images/path/stone-dark-locked-4.webp?v=286");
-      --cluster-left-bamboo: url("images/path/cluster-left-bamboo-dark.webp?v=286");
-      --cluster-right-bamboo: url("images/path/cluster-right-bamboo-dark.webp?v=286");
-      --cluster-right-temple: url("images/path/cluster-right-temple-dark.webp?v=286");
-      --panda-walk: url("images/path/panda-walking-dark.webp?v=286");
-      --home-cloud-a: url("images/home/cloud-a-dark.webp?v=286");
-      --home-temple: url("images/home/temple-dark.webp?v=286");
-      --home-cloud-b: url("images/home/cloud-b-dark.webp?v=286");
-      --home-bottom: url("images/home/bottom-dark.webp?v=286");
-      --fol-bamboo: url("images/path/fol-bamboo.webp?v=286");
-      --cluster-left-waterfall: url("images/path/cluster-left-waterfall.webp?v=286");
-      --cluster-left-bridge: url("images/path/cluster-left-bridge.webp?v=286");
-      --cluster-left-steps: url("images/path/cluster-left-steps.webp?v=286");
-      --fol-pine: url("images/path/fol-pine.webp?v=286");
-      --fol-blossom: url("images/path/fol-blossom-dark.webp?v=286");
-      --fol-banana: url("images/path/fol-banana.webp?v=286");
-      --land-torii: url("images/path/land-torii.webp?v=286");
-      --land-pagoda: url("images/path/land-pagoda-dark.webp?v=286");
-      --land-pavilion: url("images/path/land-pavilion.webp?v=286");
-      --land-house: url("images/path/land-house.webp?v=286");
-      --fol-oak: url("images/path/fol-oak.webp?v=286");
-      --land-bridge: url("images/path/land-bridge.webp?v=286");
-      --land-waterfall: url("images/path/land-waterfall.webp?v=286");
-      --land-bridge-red: url("images/path/land-bridge-red.webp?v=286");
-      --land-pavilion-pond: url("images/path/land-pavilion-pond.webp?v=286");
-      --land-hall: url("images/path/land-hall.webp?v=286");
-      --grass-1: url("images/path/grass-1.webp?v=286");
-      --grass-2: url("images/path/grass-2.webp?v=286");
-      --grass-3: url("images/path/grass-3.webp?v=286");
-      --land-cliff: url("images/path/land-cliff.webp?v=286");
-      --panda-celebrate: url("images/path/panda-celebrate.webp?v=286");
-      --panda-idle: url("images/path/panda-idle.webp?v=286");
-      --panda-peek: url("images/path/panda-peek.webp?v=286");
-      --panda-sad: url("images/path/panda-sad.webp?v=286");
-      --panda-teacher: url("images/path/panda-teacher.webp?v=286");
-      --panda-waving: url("images/path/panda-waving.webp?v=286");
-      --panda-reading: url("images/path/panda-reading.webp?v=286");
-      --panda-baozi: url("images/path/panda-baozi.webp?v=286");
-      --panda-writing: url("images/path/panda-writing-dark.webp?v=286");
-      --panda-listening: url("images/path/panda-listening.webp?v=286");
-      --panda-puzzled: url("images/path/panda-puzzled.webp?v=286");
-      --panda-sleeping: url("images/path/panda-sleeping-dark.webp?v=286");
+      --st-done-0: url("images/path/stone-dark-done-0.webp?v=287");
+      --st-done-1: url("images/path/stone-dark-done-1.webp?v=287");
+      --st-done-2: url("images/path/stone-dark-done-2.webp?v=287");
+      --st-done-3: url("images/path/stone-dark-done-3.webp?v=287");
+      --st-done-4: url("images/path/stone-dark-done-4.webp?v=287");
+      --st-now-0: url("images/path/stone-dark-now-0.webp?v=287");
+      --st-now-1: url("images/path/stone-dark-now-1.webp?v=287");
+      --st-now-2: url("images/path/stone-dark-now-2.webp?v=287");
+      --st-now-3: url("images/path/stone-dark-now-3.webp?v=287");
+      --st-now-4: url("images/path/stone-dark-now-4.webp?v=287");
+      --st-locked-0: url("images/path/stone-dark-locked-0.webp?v=287");
+      --st-locked-1: url("images/path/stone-dark-locked-1.webp?v=287");
+      --st-locked-2: url("images/path/stone-dark-locked-2.webp?v=287");
+      --st-locked-3: url("images/path/stone-dark-locked-3.webp?v=287");
+      --st-locked-4: url("images/path/stone-dark-locked-4.webp?v=287");
+      --cluster-left-bamboo: url("images/path/cluster-left-bamboo-dark.webp?v=287");
+      --cluster-right-bamboo: url("images/path/cluster-right-bamboo-dark.webp?v=287");
+      --cluster-right-temple: url("images/path/cluster-right-temple-dark.webp?v=287");
+      --panda-walk: url("images/path/panda-walking-dark.webp?v=287");
+      --home-cloud-a: url("images/home/cloud-a-dark.webp?v=287");
+      --home-temple: url("images/home/temple-dark.webp?v=287");
+      --home-cloud-b: url("images/home/cloud-b-dark.webp?v=287");
+      --home-bottom: url("images/home/bottom-dark.webp?v=287");
+      --fol-bamboo: url("images/path/fol-bamboo.webp?v=287");
+      --cluster-left-waterfall: url("images/path/cluster-left-waterfall.webp?v=287");
+      --cluster-left-bridge: url("images/path/cluster-left-bridge.webp?v=287");
+      --cluster-left-steps: url("images/path/cluster-left-steps.webp?v=287");
+      --fol-pine: url("images/path/fol-pine.webp?v=287");
+      --fol-blossom: url("images/path/fol-blossom-dark.webp?v=287");
+      --fol-banana: url("images/path/fol-banana.webp?v=287");
+      --land-torii: url("images/path/land-torii.webp?v=287");
+      --land-pagoda: url("images/path/land-pagoda-dark.webp?v=287");
+      --land-pavilion: url("images/path/land-pavilion.webp?v=287");
+      --land-house: url("images/path/land-house.webp?v=287");
+      --fol-oak: url("images/path/fol-oak.webp?v=287");
+      --land-bridge: url("images/path/land-bridge.webp?v=287");
+      --land-waterfall: url("images/path/land-waterfall.webp?v=287");
+      --land-bridge-red: url("images/path/land-bridge-red.webp?v=287");
+      --land-pavilion-pond: url("images/path/land-pavilion-pond.webp?v=287");
+      --land-hall: url("images/path/land-hall.webp?v=287");
+      --grass-1: url("images/path/grass-1.webp?v=287");
+      --grass-2: url("images/path/grass-2.webp?v=287");
+      --grass-3: url("images/path/grass-3.webp?v=287");
+      --land-cliff: url("images/path/land-cliff.webp?v=287");
+      --panda-celebrate: url("images/path/panda-celebrate.webp?v=287");
+      --panda-idle: url("images/path/panda-idle.webp?v=287");
+      --panda-peek: url("images/path/panda-peek.webp?v=287");
+      --panda-sad: url("images/path/panda-sad.webp?v=287");
+      --panda-teacher: url("images/path/panda-teacher.webp?v=287");
+      --panda-waving: url("images/path/panda-waving.webp?v=287");
+      --panda-reading: url("images/path/panda-reading.webp?v=287");
+      --panda-baozi: url("images/path/panda-baozi.webp?v=287");
+      --panda-writing: url("images/path/panda-writing-dark.webp?v=287");
+      --panda-listening: url("images/path/panda-listening.webp?v=287");
+      --panda-puzzled: url("images/path/panda-puzzled.webp?v=287");
+      --panda-sleeping: url("images/path/panda-sleeping-dark.webp?v=287");
       --good: #4ce1ad; --on-good: #0b1626; --good-soft: #112a2d; --again: #f08a7a; --again-soft: #2b2230;
       --easy: #74b3ec; --easy-soft: #122136;
       --t-red: #26232f;    --t-red-ink: #ff8a7a;
@@ -209,62 +209,62 @@
     --g: #6c9dfc; --g-dark: #4f7fdc; --g-soft: #182b48;
     --grid: rgba(108,157,252,.42); --grid-soft: rgba(108,157,252,.18);
     --ground: #24384f; --ground-alpha: .19; --glow-alpha: .5;
-    --st-done-0: url("images/path/stone-dark-done-0.webp?v=286");
-    --st-done-1: url("images/path/stone-dark-done-1.webp?v=286");
-    --st-done-2: url("images/path/stone-dark-done-2.webp?v=286");
-    --st-done-3: url("images/path/stone-dark-done-3.webp?v=286");
-    --st-done-4: url("images/path/stone-dark-done-4.webp?v=286");
-    --st-now-0: url("images/path/stone-dark-now-0.webp?v=286");
-    --st-now-1: url("images/path/stone-dark-now-1.webp?v=286");
-    --st-now-2: url("images/path/stone-dark-now-2.webp?v=286");
-    --st-now-3: url("images/path/stone-dark-now-3.webp?v=286");
-    --st-now-4: url("images/path/stone-dark-now-4.webp?v=286");
-    --st-locked-0: url("images/path/stone-dark-locked-0.webp?v=286");
-    --st-locked-1: url("images/path/stone-dark-locked-1.webp?v=286");
-    --st-locked-2: url("images/path/stone-dark-locked-2.webp?v=286");
-    --st-locked-3: url("images/path/stone-dark-locked-3.webp?v=286");
-    --st-locked-4: url("images/path/stone-dark-locked-4.webp?v=286");
-    --cluster-left-bamboo: url("images/path/cluster-left-bamboo-dark.webp?v=286");
-    --cluster-right-bamboo: url("images/path/cluster-right-bamboo-dark.webp?v=286");
-    --cluster-right-temple: url("images/path/cluster-right-temple-dark.webp?v=286");
-    --panda-walk: url("images/path/panda-walking-dark.webp?v=286");
-    --home-cloud-a: url("images/home/cloud-a-dark.webp?v=286");
-    --home-temple: url("images/home/temple-dark.webp?v=286");
-    --home-cloud-b: url("images/home/cloud-b-dark.webp?v=286");
-    --home-bottom: url("images/home/bottom-dark.webp?v=286");
-    --fol-bamboo: url("images/path/fol-bamboo.webp?v=286");
-    --cluster-left-waterfall: url("images/path/cluster-left-waterfall.webp?v=286");
-    --cluster-left-bridge: url("images/path/cluster-left-bridge.webp?v=286");
-    --cluster-left-steps: url("images/path/cluster-left-steps.webp?v=286");
-    --fol-pine: url("images/path/fol-pine.webp?v=286");
-    --fol-blossom: url("images/path/fol-blossom-dark.webp?v=286");
-    --fol-banana: url("images/path/fol-banana.webp?v=286");
-    --land-torii: url("images/path/land-torii.webp?v=286");
-    --land-pagoda: url("images/path/land-pagoda-dark.webp?v=286");
-    --land-pavilion: url("images/path/land-pavilion.webp?v=286");
-    --land-house: url("images/path/land-house.webp?v=286");
-    --fol-oak: url("images/path/fol-oak.webp?v=286");
-    --land-bridge: url("images/path/land-bridge.webp?v=286");
-    --land-waterfall: url("images/path/land-waterfall.webp?v=286");
-    --land-bridge-red: url("images/path/land-bridge-red.webp?v=286");
-    --land-pavilion-pond: url("images/path/land-pavilion-pond.webp?v=286");
-    --land-hall: url("images/path/land-hall.webp?v=286");
-    --grass-1: url("images/path/grass-1.webp?v=286");
-    --grass-2: url("images/path/grass-2.webp?v=286");
-    --grass-3: url("images/path/grass-3.webp?v=286");
-    --land-cliff: url("images/path/land-cliff.webp?v=286");
-    --panda-celebrate: url("images/path/panda-celebrate.webp?v=286");
-    --panda-idle: url("images/path/panda-idle.webp?v=286");
-    --panda-peek: url("images/path/panda-peek.webp?v=286");
-    --panda-sad: url("images/path/panda-sad.webp?v=286");
-    --panda-teacher: url("images/path/panda-teacher.webp?v=286");
-    --panda-waving: url("images/path/panda-waving.webp?v=286");
-    --panda-reading: url("images/path/panda-reading.webp?v=286");
-    --panda-baozi: url("images/path/panda-baozi.webp?v=286");
-    --panda-writing: url("images/path/panda-writing-dark.webp?v=286");
-    --panda-listening: url("images/path/panda-listening.webp?v=286");
-    --panda-puzzled: url("images/path/panda-puzzled.webp?v=286");
-    --panda-sleeping: url("images/path/panda-sleeping-dark.webp?v=286");
+    --st-done-0: url("images/path/stone-dark-done-0.webp?v=287");
+    --st-done-1: url("images/path/stone-dark-done-1.webp?v=287");
+    --st-done-2: url("images/path/stone-dark-done-2.webp?v=287");
+    --st-done-3: url("images/path/stone-dark-done-3.webp?v=287");
+    --st-done-4: url("images/path/stone-dark-done-4.webp?v=287");
+    --st-now-0: url("images/path/stone-dark-now-0.webp?v=287");
+    --st-now-1: url("images/path/stone-dark-now-1.webp?v=287");
+    --st-now-2: url("images/path/stone-dark-now-2.webp?v=287");
+    --st-now-3: url("images/path/stone-dark-now-3.webp?v=287");
+    --st-now-4: url("images/path/stone-dark-now-4.webp?v=287");
+    --st-locked-0: url("images/path/stone-dark-locked-0.webp?v=287");
+    --st-locked-1: url("images/path/stone-dark-locked-1.webp?v=287");
+    --st-locked-2: url("images/path/stone-dark-locked-2.webp?v=287");
+    --st-locked-3: url("images/path/stone-dark-locked-3.webp?v=287");
+    --st-locked-4: url("images/path/stone-dark-locked-4.webp?v=287");
+    --cluster-left-bamboo: url("images/path/cluster-left-bamboo-dark.webp?v=287");
+    --cluster-right-bamboo: url("images/path/cluster-right-bamboo-dark.webp?v=287");
+    --cluster-right-temple: url("images/path/cluster-right-temple-dark.webp?v=287");
+    --panda-walk: url("images/path/panda-walking-dark.webp?v=287");
+    --home-cloud-a: url("images/home/cloud-a-dark.webp?v=287");
+    --home-temple: url("images/home/temple-dark.webp?v=287");
+    --home-cloud-b: url("images/home/cloud-b-dark.webp?v=287");
+    --home-bottom: url("images/home/bottom-dark.webp?v=287");
+    --fol-bamboo: url("images/path/fol-bamboo.webp?v=287");
+    --cluster-left-waterfall: url("images/path/cluster-left-waterfall.webp?v=287");
+    --cluster-left-bridge: url("images/path/cluster-left-bridge.webp?v=287");
+    --cluster-left-steps: url("images/path/cluster-left-steps.webp?v=287");
+    --fol-pine: url("images/path/fol-pine.webp?v=287");
+    --fol-blossom: url("images/path/fol-blossom-dark.webp?v=287");
+    --fol-banana: url("images/path/fol-banana.webp?v=287");
+    --land-torii: url("images/path/land-torii.webp?v=287");
+    --land-pagoda: url("images/path/land-pagoda-dark.webp?v=287");
+    --land-pavilion: url("images/path/land-pavilion.webp?v=287");
+    --land-house: url("images/path/land-house.webp?v=287");
+    --fol-oak: url("images/path/fol-oak.webp?v=287");
+    --land-bridge: url("images/path/land-bridge.webp?v=287");
+    --land-waterfall: url("images/path/land-waterfall.webp?v=287");
+    --land-bridge-red: url("images/path/land-bridge-red.webp?v=287");
+    --land-pavilion-pond: url("images/path/land-pavilion-pond.webp?v=287");
+    --land-hall: url("images/path/land-hall.webp?v=287");
+    --grass-1: url("images/path/grass-1.webp?v=287");
+    --grass-2: url("images/path/grass-2.webp?v=287");
+    --grass-3: url("images/path/grass-3.webp?v=287");
+    --land-cliff: url("images/path/land-cliff.webp?v=287");
+    --panda-celebrate: url("images/path/panda-celebrate.webp?v=287");
+    --panda-idle: url("images/path/panda-idle.webp?v=287");
+    --panda-peek: url("images/path/panda-peek.webp?v=287");
+    --panda-sad: url("images/path/panda-sad.webp?v=287");
+    --panda-teacher: url("images/path/panda-teacher.webp?v=287");
+    --panda-waving: url("images/path/panda-waving.webp?v=287");
+    --panda-reading: url("images/path/panda-reading.webp?v=287");
+    --panda-baozi: url("images/path/panda-baozi.webp?v=287");
+    --panda-writing: url("images/path/panda-writing-dark.webp?v=287");
+    --panda-listening: url("images/path/panda-listening.webp?v=287");
+    --panda-puzzled: url("images/path/panda-puzzled.webp?v=287");
+    --panda-sleeping: url("images/path/panda-sleeping-dark.webp?v=287");
     --good: #4ce1ad; --on-good: #0b1626; --good-soft: #112a2d; --again: #f08a7a; --again-soft: #2b2230;
     --easy: #74b3ec; --easy-soft: #122136;
     --t-red: #26232f;    --t-red-ink: #ff8a7a;
@@ -628,9 +628,9 @@
     color: var(--muted); padding: 8px 16px; font-size: .92rem; }
 
   /* ---- Splash (the sign-in gate) — the welcome scene, full bleed ---- */
-  :root { --welcome-art: url("images/welcome-light.webp?v=286"); --cont-art: url("images/card-light.webp?v=286"); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=286"); --cont-art: url("images/card-dark.webp?v=286"); } }
-  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=286"); --cont-art: url("images/card-dark.webp?v=286"); }
+  :root { --welcome-art: url("images/welcome-light.webp?v=287"); --cont-art: url("images/card-light.webp?v=287"); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --welcome-art: url("images/welcome-dark.webp?v=287"); --cont-art: url("images/card-dark.webp?v=287"); } }
+  :root[data-theme="dark"] { --welcome-art: url("images/welcome-dark.webp?v=287"); --cont-art: url("images/card-dark.webp?v=287"); }
   .onboard.splash { background: var(--bg) var(--welcome-art) center bottom / cover no-repeat;
     flex-direction: column; justify-content: space-between; align-items: stretch; padding: 0; }
   .splash-top { text-align: center; padding: calc(9vh + env(safe-area-inset-top)) 24px 0; }
@@ -2144,14 +2144,14 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
     <button class="review-fab hidden" id="reviewFab"></button>
     <div class="path-top">
       <span class="st"><span data-icon="flame" data-size="17"></span> <b id="pathStreak">0</b></span>
-      <button class="st goal" id="pathGoal" aria-label="Daily goal — view progress">
+      <button class="st goal" id="pathGoal" aria-label="Today's lesson — view progress">
         <svg class="goalring" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
           <circle cx="12" cy="12" r="9" fill="none" stroke="var(--line)" stroke-width="3.2"/>
           <circle id="pathGoalArc" cx="12" cy="12" r="9" fill="none" stroke="var(--accent)"
             stroke-width="3.2" stroke-linecap="round" transform="rotate(-90 12 12)"
             stroke-dasharray="56.5" stroke-dashoffset="56.5"/>
         </svg>
-        <b id="pathGoalTxt">0/20</b>
+        <b id="pathGoalTxt">Today</b>
       </button>
       <button class="icon-btn ghost" id="pathSettings" aria-label="Settings"><span data-icon="gear" data-size="18"></span></button>
     </div>
@@ -2203,7 +2203,7 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
       <div class="act-pane" id="actMonth">
         <div class="cal-head"><span class="cal-title" id="calTitle"></span><span class="cal-best" id="calBest"></span></div>
         <div class="streak-cal" id="streakCal"></div>
-        <div class="cal-foot"><span class="prof-embers"><svg class="licon sh-ember-i"><use href="#i-ember"/></svg><b id="emberNum">1</b> <span id="emberSub">ember</span></span><span class="cal-key"><i class="k-lit"></i>lit <i class="k-goal"></i>goal met <i class="k-relit"></i>relit</span></div>
+        <div class="cal-foot"><span class="prof-embers"><svg class="licon sh-ember-i"><use href="#i-ember"/></svg><b id="emberNum">1</b> <span id="emberSub">ember</span></span><span class="cal-key"><i class="k-goal"></i>done <i class="k-relit"></i>relit</span></div>
       </div>
       <div class="act-pane hidden" id="actWeek">
         <div class="cal-head"><span class="cal-title">XP this week</span></div>
@@ -2247,7 +2247,7 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
           <svg class="flame-ic"><use href="#i-flame-solid"/></svg>
           <div class="sc-num"><b id="scNum">0</b><span id="scSub">day streak</span><span class="sc-embers" id="scEmbers"></span></div>
           <span class="sc-bubble" id="scBubble">Let's start!</span>
-          <img src="images/panda-peek.png?v=286" alt="" class="sc-peek">
+          <img src="images/panda-peek.png?v=287" alt="" class="sc-peek">
         </div>
         <div class="week" id="weekStrip"></div>
       </div>
@@ -2476,7 +2476,7 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
   <section id="done" class="hidden">
     <div class="card done">
       <div class="done-stage s1">
-        <img src="images/panda-celebrate.png?v=286" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
+        <img src="images/panda-celebrate.png?v=287" alt="" style="width:160px;max-width:60%;margin:0 auto 4px;display:block">
         <h2 id="doneTitle">Session complete</h2>
         <div id="doneStats" style="margin:14px 0 6px"></div>
         <div class="done-tiles hidden" id="doneTiles"></div>
@@ -2590,15 +2590,6 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
         <div style="display:flex;gap:8px;width:100%">
           <select id="voiceSel" class="pick-search" style="margin:0;flex:1"></select>
           <button id="voiceTest" class="ghost" type="button" style="flex:none">Test</button>
-        </div>
-      </div>
-      <div class="set-row stack">
-        <div><div class="lbl">Daily goal</div><div class="desc">XP to earn each day for the bonus. Any finished session keeps your streak alive.</div></div>
-        <div class="seg goal-seg" id="goalSeg">
-          <button data-goal="10">Casual<small>10 XP</small></button>
-          <button data-goal="20">Regular<small>20 XP</small></button>
-          <button data-goal="30">Serious<small>30 XP</small></button>
-          <button data-goal="50">Intense<small>50 XP</small></button>
         </div>
       </div>
       <div class="set-row">
@@ -2748,7 +2739,7 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
     <div class="ob-card">
       <div class="ob-slides" id="obSlides">
         <section class="ob-slide">
-          <img src="images/panda-waving.png?v=286" alt="" class="ob-hero">
+          <img src="images/panda-waving.png?v=287" alt="" class="ob-hero">
           <h2>欢迎！Welcome</h2>
           <p>I'm your study buddy. Let's learn beginner Mandarin together — a little every day.</p>
         </section>
@@ -2763,15 +2754,9 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
           <small class="ob-fine">A short test unlocks the lessons you already know.</small>
         </section>
         <section class="ob-slide">
-          <h2>Pick your pace</h2>
-          <p>Any finished session keeps your streak alive. This is the daily XP target on top, for a bonus.</p>
-          <div class="ob-pace" id="obGoalSeg">
-            <button data-goal="10"><b>Casual</b><span>10 XP · one short session</span></button>
-            <button data-goal="20" class="on"><b>Regular</b><span>20 XP · a session and a few words</span></button>
-            <button data-goal="30"><b>Serious</b><span>30 XP · a lesson a day</span></button>
-            <button data-goal="50"><b>Intense</b><span>50 XP · two lessons</span></button>
-          </div>
-          <small class="ob-fine">You can change this any time in Settings.</small>
+          <h2>One lesson a day</h2>
+          <p>Finish one session each day to keep your streak going. A lesson, a review, practice or a story all count.</p>
+          <small class="ob-fine">Miss a day and an ember can relight your fire. You earn them as your streak grows.</small>
         </section>
       </div>
       <div class="ob-dots" id="obDots"></div>
@@ -2782,15 +2767,15 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
     </div>
   </div>
 
-<script src="data.js?v=286"></script>
-<script src="chars-data.js?v=286"></script>
-<script src="hanzi-data.js?v=286"></script>
+<script src="data.js?v=287"></script>
+<script src="chars-data.js?v=287"></script>
+<script src="hanzi-data.js?v=287"></script>
 <script src="vendor/hanzi-writer.min.js"></script>
-<script src="avatar-modular-data.js?v=286"></script>
-<script src="avatar-modular.js?v=286"></script>
-<script src="readings.js?v=286"></script>
-<script src="migrate-old.js?v=286"></script>
-<script src="app.js?v=286"></script>
+<script src="avatar-modular-data.js?v=287"></script>
+<script src="avatar-modular.js?v=287"></script>
+<script src="readings.js?v=287"></script>
+<script src="migrate-old.js?v=287"></script>
+<script src="app.js?v=287"></script>
 <script>
   // Register the offline service worker (only activates over HTTPS/localhost).
   // Always check for a new build when the app opens or comes back to the

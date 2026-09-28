@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=286";
+  const ASSET_V = "?v=287";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -156,16 +156,12 @@
     else document.documentElement.setAttribute("data-theme", t);
   }
   const audioRate = () => (typeof prefs.rate === "number" ? prefs.rate : 0.85);
-  // The daily goal is XP now (10 / 20 / 30 / 50). Older prefs held a card count
-  // with the same three numbers, so they carry across unchanged.
-  const dailyGoal = () => (typeof prefs.dailyGoal === "number" ? prefs.dailyGoal : 20);
-
-  // ---- Activity log (streak + daily goal) ----
+  // ---- Activity log (streak) ----
   function loadActivity() { try { return JSON.parse(localStorage.getItem(LS_ACTIVITY)) || { days: {} }; } catch { return { days: {} }; } }
   let activity = loadActivity();
   const dateStr = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   const todayStr = () => dateStr(new Date());
-  // Cards reviewed per day. Kept for the stats; the streak and the goal run on XP.
+  // Cards reviewed per day. Kept for the stats and the review quests.
   function recordReview(n = 1) {
     queueSync();
     const t = todayStr();
@@ -173,15 +169,12 @@
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
   }
   /* ---- XP and levels ----------------------------------------------------
-     Every right answer earns XP, sessions and finished lessons earn more, and
-     hitting the daily goal adds a bonus. Earned per day (so it merges across
-     devices like the activity count does); the total is the sum. Levels get
-     further apart as they go: reaching level L+1 takes 50·L·(L+1) XP in all.
-
-     Two bars, both in XP. LIT_XP keeps the streak alive: one finished session
-     or a handful of right answers. The daily goal is the bigger, optional
-     target with its own bonus and celebration. */
-  const XP = { correct: 2, combo: 3, perfect: 5, session: 10, lesson: 25, goal: 15 };
+     Every right answer earns XP, and sessions and finished lessons earn more.
+     Earned per day (so it merges across devices like the activity count does);
+     the total is the sum. Levels get further apart as they go: reaching level
+     L+1 takes 50·L·(L+1) XP in all. There's no daily XP target: the day is done
+     by finishing one session, a lesson a day, as Duolingo does. */
+  const XP = { correct: 2, combo: 3, perfect: 5, session: 10, lesson: 25 };
   const LIT_XP = 10;
   const COMBO_AT = 5;                 // from the fifth right answer in a row, each is worth XP.combo
   const BOOST_MS = 15 * 60 * 1000;    // finishing a lesson doubles XP for a quarter of an hour
@@ -205,21 +198,15 @@
     if (boostOn()) n *= 2;
     const t = todayStr();
     activity.xpDays = activity.xpDays || {};
-    const before = activity.xpDays[t] || 0, after = before + n;
-    activity.xpDays[t] = after;
+    activity.xpDays[t] = (activity.xpDays[t] || 0) + n;
     sessionXP += n;
-    const goal = dailyGoal();
-    // the goal moment fires exactly once, the instant the day's XP crosses the line
-    const crossed = before < goal && after >= goal && activity.celebrated !== t;
-    if (crossed) activity.celebrated = t;
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
     queueSync();
-    if (crossed) { earnXP(XP.goal); celebrateGoal(); if ($(".streak-card")) renderHomeTop(); }
     checkQuests();
     const lv = levelInfo().level;
     if (lv > (activity.levelSeen || 1)) {
       activity.levelSeen = lv; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
-      setTimeout(() => celebrateLevel(lv), crossed ? 3600 : 300);
+      setTimeout(() => celebrateLevel(lv), 300);
     }
   }
   function celebrateLevel(lv) {
@@ -511,14 +498,13 @@
     });
   }
 
-  // A day is LIT once it has LIT_XP (one finished session) or was relit. The
-  // streak is the run of lit days ending today or yesterday. The daily goal is
-  // the separate XP target. Days from before XP existed count if they met the
-  // old card goal, so nobody's streak resets on the change.
+  // A day is LIT once a session was finished on it, or it was relit: one lesson a
+  // day keeps the streak. The streak is the run of lit days ending today or
+  // yesterday. Days from before this rule count if they met the old goals, so
+  // nobody's streak resets on the change.
   const LIT_CUTOFF = "2026-09-19";   // from this day a finished session lights the fire; before it, XP did
   const litOn = key => !!(activity.lit && activity.lit[key]) || !!(activity.relit && activity.relit[key])
     || (key < LIT_CUTOFF && (xpOn(key) >= LIT_XP || (activity.days[key] || 0) >= 20));
-  const goalMetOn = key => xpOn(key) >= dailyGoal();
   function computeStreak() {
     let d = new Date();
     if (!litOn(dateStr(d))) d.setDate(d.getDate() - 1);
@@ -528,7 +514,6 @@
   }
   const todayCount = () => activity.days[todayStr()] || 0;
   const todayXP = () => xpOn(todayStr());
-  const goalDone = () => todayXP() >= dailyGoal();
 
   // ---- Progress stats over all cards ----
   const MASTER_INTERVAL = 7;   // days; a word is "mastered" once spaced this far
@@ -708,22 +693,6 @@
     };
     requestAnimationFrame(step);
   }
-  // Full-screen moment when the daily goal is reached.
-  function celebrateGoal() {
-    const o = el("div", { className: "goal-burst" });
-    o.innerHTML =
-      `<div class="gb-card">
-         <img src="images/panda-celebrate.png${ASSET_V}" alt="">
-         <div class="gb-title">Daily goal reached!</div>
-         <div class="gb-sub">+${XP.goal} XP bonus</div>
-       </div>`;
-    document.body.appendChild(o);
-    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
-    setTimeout(() => o.classList.add("show"), 20);
-    setTimeout(close, 2800);
-    o.addEventListener("click", close);
-    sfx("goal");
-  }
   // Full-screen moment at a streak milestone.
   const MILESTONE_WORDS = { 3: "Three days. It's a habit now.", 7: "A whole week on fire.", 14: "Two weeks. Unstoppable.", 30: "A month. Seriously impressive.",
     50: "Fifty days of Chinese.", 100: "One hundred days.", 200: "Two hundred days.", 365: "A full year. 太厉害了!" };
@@ -852,7 +821,7 @@
   function sfx(kind) {
     const ctx = ensureAudio();
     if (!ctx) return;
-    // The daily-goal fanfare fires on the answer that crosses the goal. When that
+    // The fanfare can fire on the answer that finishes the session. When that
     // answer is also a lesson's last card, the done screen's "complete" chime
     // would land on top of it — two fanfares at once. The goal fanfare already IS
     // the celebration, so let "complete" yield to it.
@@ -1921,7 +1890,7 @@
     card.onclick = () => { show("path"); renderPath(); };
   }
 
-  // This month as a grid: lit days filled, goal days gold, relit days marked
+  // This month as a grid: days with a finished session filled, relit days marked
   // with an ember, plus the longest streak ever recorded.
   function renderStreakCal() {
     const cal = $("#streakCal"); if (!cal) return;
@@ -1938,7 +1907,7 @@
       const key = dateStr(new Date(y, m, d));
       const cls = ["cal-d"];
       if (litOn(key)) cls.push("lit");
-      if (goalMetOn(key)) cls.push("goal");
+      if (litOn(key)) cls.push("goal");
       if (activity.relit && activity.relit[key]) cls.push("relit");
       if (key === today) cls.push("today");
       if (key > today) cls.push("future");
@@ -2020,7 +1989,7 @@
     const h = new Date().getHours();
     return h < 5 ? "Good night" : h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
   }
-  // This week's seven days, Monday first. Filled = the fire was lit that day; gold = the goal was met too.
+  // This week's seven days, Monday first. Filled = a session was finished that day.
   function renderWeekStrip(strip = $("#weekStrip")) {
     if (!strip) return;
     const today = new Date(); today.setHours(0, 0, 0, 0);
@@ -2032,7 +2001,6 @@
       const key = dateStr(d);
       const cls = ["wd"];
       if (litOn(key)) cls.push("met");
-      if (goalMetOn(key)) cls.push("goal");
       if (d.getTime() === today.getTime()) cls.push("today");
       if (d > today) cls.push("future");
       const ring = el("i"); ring.innerHTML = svgUse("i-tick");
@@ -2043,7 +2011,7 @@
   function renderHomeTop() {
     const name = displayName();
     $("#greetH").textContent = `${greetingWord()}${name ? ", " + name : ""}!`;
-    const streak = computeStreak(), goal = dailyGoal(), xp = todayXP(), lit = litOn(todayStr());
+    const streak = computeStreak(), lit = litOn(todayStr());
     const out = outSince();
     // from six in the evening an unlit day with a streak behind it is at risk
     const hoursLeft = 24 - new Date().getHours(), risk = !out && !lit && streak > 0 && hoursLeft <= 6;
@@ -2058,7 +2026,7 @@
     $("#scBubble").classList.toggle("relight", !!out && embers() > 0 && prefs.autoRelight === false);
     $("#scBubble").classList.toggle("risk", risk);
     $("#scBubble").textContent = out ? (embers() && prefs.autoRelight === false ? "Relight it?" : "Went out")
-      : risk ? `${hoursLeft}h left to keep it` : xp >= goal ? "Goal done!" : lit ? `${goal - xp} XP to goal`
+      : risk ? `${hoursLeft}h left to keep it` : lit ? "Done for today!"
       : streak > 0 ? "Keep it lit!" : "Let's start!";
     renderWeekStrip();
     renderQuests();
@@ -5553,14 +5521,13 @@
 
   function renderPath() {
     $("#pathStreak").textContent = computeStreak();
-    // Daily-goal ring in the HUD: fills through the day, flips to a gold ✓ when met.
-    const goal = dailyGoal(), done = todayXP(), met = done >= goal;
-    const frac = Math.max(0, Math.min(1, goal ? done / goal : 0));
+    // Today's lesson in the HUD: an open ring until a session is finished, then a ✓.
+    const met = litOn(todayStr());
     const arc = $("#pathGoalArc"), circ = 2 * Math.PI * 9;
     arc.setAttribute("stroke-dasharray", circ.toFixed(1));
-    arc.setAttribute("stroke-dashoffset", (circ * (1 - frac)).toFixed(1));
+    arc.setAttribute("stroke-dashoffset", (met ? 0 : circ).toFixed(1));
     $("#pathGoal").classList.toggle("done", met);
-    $("#pathGoalTxt").textContent = met ? "✓" : `${done}/${goal}`;
+    $("#pathGoalTxt").textContent = met ? "✓ Today" : "Today";
     renderBackupNudge();
     // Review call-to-action: only shown when something has actually fallen due.
     const due = dueReviewCards().length, fab = $("#reviewFab");
@@ -6160,7 +6127,7 @@
     }));
   $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) { returnView = "path"; startReview(); } });
   $("#pathSettings").addEventListener("click", () => { syncSettings(); renderAccount(); openModal("settingsModal"); });
-  // Tapping the daily-goal ring jumps to Progress, where the full ring + streak live.
+  // Tapping today's lesson marker jumps to Progress, where the calendar and streak live.
   $("#pathGoal").addEventListener("click", () => { renderDashboard(); show("progress"); });
 
   let queue = [];        // array of card objects
@@ -8572,8 +8539,6 @@
     $("#rateRange").value = audioRate();
     if ($("#appVersion")) $("#appVersion").textContent = APP_VERSION;
     if (typeof syncVoicePicker === "function") syncVoicePicker();
-    const g = dailyGoal();
-    $("#goalSeg").querySelectorAll("button").forEach(b => b.classList.toggle("on", +b.dataset.goal === g));
     $("#checkSwitch").classList.toggle("on", prefs.checkStrokes !== false);
     $("#soundSwitch").classList.toggle("on", prefs.sound !== false);
     $("#relightSwitch").classList.toggle("on", prefs.autoRelight !== false);
@@ -8690,11 +8655,6 @@
   // Voices often arrive after boot (esp. iOS) — refresh the list when they land.
   if ("speechSynthesis" in window)
     speechSynthesis.onvoiceschanged = () => { pickVoice(); syncVoicePicker(); };
-  $("#goalSeg").querySelectorAll("button").forEach(b =>
-    b.addEventListener("click", () => {
-      prefs.dailyGoal = +b.dataset.goal;
-      savePrefs(prefs); renderDashboard(); renderHomeTop(); syncSettings();
-    }));
   /* ---- Backup / restore --------------------------------------------------
      Everything lives in localStorage, so clearing site data, switching browser
      or reinstalling the PWA would wipe months of study with no warning.     */
@@ -9196,12 +9156,6 @@ This REPLACES the progress on this device.`)) return;
       $("#obBack").style.display = i === 0 ? "none" : "";
       $("#obNext").textContent = i < slides.length - 1 ? "Next" : level === "new" ? "Start my first lesson" : "Take the test";
     };
-    // goal presets inside onboarding write straight to prefs
-    ob.querySelectorAll("#obGoalSeg button").forEach(b =>
-      b.addEventListener("click", () => {
-        ob.querySelectorAll("#obGoalSeg button").forEach(x => x.classList.toggle("on", x === b));
-        prefs.dailyGoal = +b.dataset.goal; savePrefs(prefs);
-      }));
     // how much you know decides where you start
     ob.querySelectorAll("#obLevel button").forEach(b =>
       b.addEventListener("click", () => {
@@ -9213,7 +9167,7 @@ This REPLACES the progress on this device.`)) return;
     const finish = () => {
       localStorage.setItem(LS_ONBOARDED, "1");
       ob.classList.add("hidden"); ob.setAttribute("aria-hidden", "true");
-      renderHome();                       // reflect the chosen goal on Home
+      renderHome();
       // Straight into learning, the way Duolingo does it: the first lesson, or
       // a placement test for someone who already knows some.
       returnView = "path";
@@ -9287,7 +9241,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, celebrateGoal, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
