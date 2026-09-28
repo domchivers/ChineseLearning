@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=291";
+  const ASSET_V = "?v=292";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -8407,6 +8407,27 @@
   // Placement / "skip test": pass a quick test to unlock lessons you already know.
   let quizMode = "quiz";
   let placeRange = [], placeTarget = null, placeScores = {}, placeCorrectCards = new Set();
+  /* A long way to skip is tested adaptively: chapters are probed three questions at
+     a time, the first first (miss it and the test stops), then halving the range, so
+     even the whole course takes about twenty questions. */
+  const PROBE = 3, PROBE_PASS = 2, MAX_PROBES = 8;
+  let placeBlocks = [], placeLo = -1, placeHi = -1, placeProbe = null, probeOk = 0, probeN = 0, probes = 0, placeTotal = 0;
+  function probeCards(block) {           // spread across the chapter's lessons, one word from each in turn
+    const pools = shuffle(block.map(lid => shuffle(CARDS.filter(c => c.lessonId === lid))).filter(p => p.length));
+    const out = [];
+    while (out.length < PROBE && pools.some(p => p.length))
+      for (const p of pools) if (p.length && out.length < PROBE) out.push(p.shift());
+    return out;
+  }
+  // after a probe: move the range and pick the next chapter to ask about (null: done)
+  function nextProbe() {
+    const b = placeProbe, passed = probeN > 0 && probeOk >= Math.min(PROBE_PASS, probeN);
+    if (passed) placeLo = Math.max(placeLo, b); else placeHi = Math.min(placeHi, b - 1);
+    probeOk = 0; probeN = 0;
+    if (b === 0 && !passed) return null;           // missed the first chapter: start from the beginning
+    if (placeLo >= placeHi || probes >= MAX_PROBES) return null;
+    return Math.floor((placeLo + placeHi + 1) / 2);
+  }
 
   // Build a skip test covering every not-yet-done lesson up to (and including)
   // the target. Passing unlocks the longest run of lessons you're solid on.
@@ -8416,6 +8437,26 @@
     const range = [];
     for (let i = 0; i <= ti; i++) if (!doneLessons.has(order[i])) range.push(order[i]);
     if (!range.length) { toast("That's already unlocked."); return; }
+    placeBlocks = [];
+    range.forEach(lid => {
+      const ci = CHAPTERS.findIndex(ch => ch.lessons.includes(lid)), last = placeBlocks[placeBlocks.length - 1];
+      if (last && last.ci === ci) last.lessons.push(lid); else placeBlocks.push({ ci, lessons: [lid] });
+    });
+    if (placeBlocks.length >= 3) {
+      placeCorrectCards = new Set(); placeScores = {};
+      placeLo = -1; placeHi = placeBlocks.length - 1; placeProbe = 0; probeOk = 0; probeN = 0; probes = 1; placeAsked = 0;
+      placeTotal = PROBE * Math.min(MAX_PROBES, 1 + Math.ceil(Math.log2(placeBlocks.length)));
+      quizItems = probeCards(placeBlocks[0].lessons);
+      quizIdx = 0; quizScore = 0; quizMode = "placement";
+      placeRange = range; placeTarget = targetId;
+      scopeLessons = new Set(range);
+      scopeFocuses = new Set(["recognize", "recall"]);
+      $("#quizTitle").textContent = label;
+      show("quiz");
+      renderQuiz();
+      return;
+    }
+    placeBlocks = [];
     const perLesson = Math.max(2, Math.min(5, Math.floor(20 / range.length)));
     placeScores = {}; placeCorrectCards = new Set();
     const items = [];
@@ -8439,7 +8480,9 @@
     quizMode = "quiz";
     const PASS = 0.7;
     const unlocked = [];
-    for (const lid of placeRange) {          // linear: stop at the first lesson you don't clear
+    if (placeBlocks.length) {                // adaptive: every chapter up to the highest one passed
+      for (let b = 0; b <= placeLo; b++) unlocked.push(...placeBlocks[b].lessons);
+    } else for (const lid of placeRange) {   // linear: stop at the first lesson you don't clear
       const s = placeScores[lid] || { ok: 0, total: 0 };
       if (s.total && s.ok / s.total >= PASS) unlocked.push(lid); else break;
     }
@@ -8459,7 +8502,7 @@
     sfx(unlocked.length ? "complete" : "wrong");
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(
-      statEl(`${quizScore}/${quizItems.length}`, "correct"),
+      statEl(`${quizScore}/${placeBlocks.length ? placeAsked : quizItems.length}`, "correct"),
       statEl(unlocked.length, unlocked.length === 1 ? "lesson unlocked" : "lessons unlocked")
     );
     $("#doneNext").classList.add("hidden");
@@ -8481,7 +8524,14 @@
     renderQuiz();
   }
 
+  let placeAsked = 0;
   function renderQuiz() {
+    // the adaptive test: the next chapter's questions once a probe is answered
+    if (quizIdx >= quizItems.length && quizMode === "placement" && placeBlocks.length) {
+      const b = nextProbe();
+      if (b !== null) { placeProbe = b; probes++; placeAsked += quizItems.length; quizItems = probeCards(placeBlocks[b].lessons); quizIdx = 0; }
+      else placeAsked += quizItems.length;
+    }
     if (quizIdx >= quizItems.length) return quizMode === "placement" ? finishPlacement() : finishQuiz();
     const c = quizItems[quizIdx];
     clearFeedback($("#quizNextWrap"));
@@ -8492,7 +8542,9 @@
     if (dirs.length === 0) dirs = ["recognize"];
     const dir = dirs[Math.floor(Math.random() * dirs.length)];
 
-    $("#quizBar").style.width = `${(quizIdx / quizItems.length) * 100}%`;
+    $("#quizBar").style.width = quizMode === "placement" && placeBlocks.length
+      ? `${Math.min(1, (placeAsked + quizIdx) / Math.max(placeTotal, placeAsked + PROBE)) * 100}%`
+      : `${(quizIdx / quizItems.length) * 100}%`;
     buildChoiceExercise($("#quizFace"), $("#quizChoices"), c, dir, $("#quizPromptLabel"), (correct, chosen) => {
       sfx(correct ? "correct" : "wrong"); buzz(correct);
       feedbackBanner($("#quizNextWrap"), correct, c, dir, chosen);
@@ -8500,6 +8552,7 @@
       answerXP(correct);
       questEvent(dir, correct);
       if (quizMode === "placement") {
+        probeN++; if (correct) probeOk++;
         const s = placeScores[c.lessonId] || (placeScores[c.lessonId] = { ok: 0, total: 0 });
         s.total++; if (correct) { s.ok++; placeCorrectCards.add(c.id); }
       } else {
@@ -9521,7 +9574,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal, reviewMode, mistakesMode, bunMode, answered: studyAnswered }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, coins, addCoins, buns, setBuns, showBuns, openShop, showPocket, showPlus, plus: on => { activity.plus = !!on; saveActivity(); renderHud(); renderBunRow(); return isPlus(); }, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal, reviewMode, mistakesMode, bunMode, answered: studyAnswered }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, startPlacement, chapterLessons: () => CHAPTERS.map(c => c.lessons), placeState: () => ({ placeLo, placeHi, placeProbe, probes, placeAsked, quizIdx, n: quizItems.length, blocks: placeBlocks.length, card: quizItems[quizIdx] && quizItems[quizIdx].lessonId, hz: quizItems[quizIdx] && quizItems[quizIdx].hanzi, en: quizItems[quizIdx] && quizItems[quizIdx].en, ch: quizItems[quizIdx] && CHAPTERS.findIndex(c => c.lessons.includes(quizItems[quizIdx].lessonId)) }), coins, addCoins, buns, setBuns, showBuns, openShop, showPocket, showPlus, plus: on => { activity.plus = !!on; saveActivity(); renderHud(); renderBunRow(); return isPlus(); }, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
