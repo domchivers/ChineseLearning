@@ -440,7 +440,7 @@
     return true;
   }
   const fmtWait = ms => { const m = Math.ceil(ms / 60000), h = Math.floor(m / 60); return h ? `${h}h ${m % 60}m` : `${m}m`; };
-  const coinIco = (cls = "") => `<svg class="coin-ico ${cls}" aria-hidden="true"><use href="#i-coin"/></svg>`;
+  const coinIco = (cls = "") => `<img class="coin-ico ${cls}" src="images/rewards/coin.webp${ASSET_V}" alt="">`;
   const bunImg = (cls = "") => `<img class="bun-ico ${cls}" src="images/rewards/bun.webp${ASSET_V}" alt="">`;
 
   // The top bar on the path: streak, coins, buns.

@@ -39,6 +39,7 @@ const ASSETS = [
   "./images/panda-celebrate.png?v=288",
   "./images/panda-sad.png?v=288",
   "./images/rewards/bun.webp?v=288",
+  "./images/rewards/coin.webp?v=288",
   "./images/rewards/bun-bitten.webp?v=288",
   "./images/rewards/pocket-red.webp?v=288",
   "./images/rewards/pocket-jade.webp?v=288",
