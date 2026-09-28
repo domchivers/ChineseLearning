@@ -23,7 +23,7 @@
       if (seenHanzi.has(dedupKey)) return;
       seenHanzi.add(dedupKey);
       CARDS.push({
-        id: `${lesson.id}:${i}`,
+        id: w.id || `${lesson.id}:${i}`,   // the exporter keeps a word's id when it moves stone
         lessonId: lesson.id,
         lessonTitle: lesson.title,
         hanzi: w.hanzi,
@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=293";
+  const ASSET_V = "?v=294";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -2492,731 +2492,1149 @@
       "unit": "起步 1",
       "title": "Nice to meet you!",
       "lessons": [
-        "qibu1-s0-1",
-        "qibu1-u1-1",
-        "qibu1-u1-2",
-        "qibu1-u1-3",
-        "qibu1-u1-4"
+        "qibu1-u1-1a",
+        "qibu1-u1-1b",
+        "qibu1-u1-2a",
+        "qibu1-u1-3a",
+        "qibu1-u1-4a",
+        "qibu1-u1-4b",
+        "qibu1-s0-1a",
+        "qibu1-s0-1b",
+        "qibu1-s0-1c",
+        "qibu1-s0-1d"
       ]
     },
     {
       "unit": "起步 1",
       "title": "Where are you from?",
       "lessons": [
-        "qibu1-u2-1",
-        "qibu1-u2-2",
-        "qibu1-u2-3",
-        "qibu1-u2-4"
+        "qibu1-u2-1a",
+        "qibu1-u2-1b",
+        "qibu1-u2-2a",
+        "qibu1-u2-3a",
+        "qibu1-u2-4a",
+        "qibu1-u2-4b"
       ]
     },
     {
       "unit": "起步 1",
       "title": "Where do you work?",
       "lessons": [
-        "qibu1-u3-1",
-        "qibu1-u3-2",
-        "qibu1-u3-3"
+        "qibu1-u3-1a",
+        "qibu1-u3-2a",
+        "qibu1-u3-3a",
+        "qibu1-u3-3b",
+        "qibu1-u3-3c"
       ]
     },
     {
       "unit": "起步 1",
       "title": "Let's add each other on WeChat!",
       "lessons": [
-        "qibu1-u4-1",
-        "qibu1-u4-2",
-        "qibu1-u4-3",
-        "qibu1-u4-4",
-        "qibu1-u4-5"
+        "qibu1-u4-1a",
+        "qibu1-u4-1b",
+        "qibu1-u4-1c",
+        "qibu1-u4-2a",
+        "qibu1-u4-3a",
+        "qibu1-u4-4a",
+        "qibu1-u4-5a",
+        "qibu1-u4-5b"
       ]
     },
     {
       "unit": "起步 1",
       "title": "I'm studying Chinese!",
       "lessons": [
-        "qibu1-u5-1",
-        "qibu1-u5-2",
-        "qibu1-u5-3"
+        "qibu1-u5-1a",
+        "qibu1-u5-2a",
+        "qibu1-u5-2b",
+        "qibu1-u5-3a",
+        "qibu1-u5-3b",
+        "qibu1-u5-3c"
       ]
     },
     {
       "unit": "起步 2",
       "title": "Let's go at the weekend!",
       "lessons": [
-        "qibu2-u1-1",
-        "qibu2-u1-2",
-        "qibu2-u1-3",
-        "qibu2-u1-4",
-        "qibu2-u1-5"
+        "qibu2-u1-1a",
+        "qibu2-u1-1b",
+        "qibu2-u1-2a",
+        "qibu2-u1-3a",
+        "qibu2-u1-3b",
+        "qibu2-u1-4a",
+        "qibu2-u1-4b",
+        "qibu2-u1-5a",
+        "qibu2-u1-5b"
       ]
     },
     {
       "unit": "起步 2",
       "title": "What time shall we meet?",
       "lessons": [
-        "qibu2-u2-1",
-        "qibu2-u2-2",
-        "qibu2-u2-3",
-        "qibu2-u2-4",
-        "qibu2-u2-5",
-        "qibu2-u2-6"
+        "qibu2-u2-1a",
+        "qibu2-u2-1b",
+        "qibu2-u2-2a",
+        "qibu2-u2-3a",
+        "qibu2-u2-4a",
+        "qibu2-u2-4b",
+        "qibu2-u2-5a",
+        "qibu2-u2-5b",
+        "qibu2-u2-6a",
+        "qibu2-u2-6b"
       ]
     },
     {
       "unit": "起步 2",
       "title": "One bubble tea, please!",
       "lessons": [
-        "qibu2-u3-1",
-        "qibu2-u3-2",
-        "qibu2-u3-3",
-        "qibu2-u3-4",
-        "qibu2-u3-5",
-        "qibu2-u3-6"
+        "qibu2-u3-1a",
+        "qibu2-u3-2a",
+        "qibu2-u3-3a",
+        "qibu2-u3-3b",
+        "qibu2-u3-4a",
+        "qibu2-u3-5a",
+        "qibu2-u3-5b",
+        "qibu2-u3-6a",
+        "qibu2-u3-6b"
       ]
     },
     {
       "unit": "起步 2",
       "title": "Happy Mid-Autumn!",
       "lessons": [
-        "qibu2-u4-1",
-        "qibu2-u4-2",
-        "qibu2-u4-3"
+        "qibu2-u4-1a",
+        "qibu2-u4-1b",
+        "qibu2-u4-2a",
+        "qibu2-u4-2b",
+        "qibu2-u4-3a",
+        "qibu2-u4-3b"
       ]
     },
     {
       "unit": "起步 3",
       "title": "How do you get to work?",
       "lessons": [
-        "qibu3-u1-1",
-        "qibu3-u1-2",
-        "qibu3-u1-3",
-        "qibu3-u1-4"
+        "qibu3-u1-1a",
+        "qibu3-u1-1b",
+        "qibu3-u1-2a",
+        "qibu3-u1-3a",
+        "qibu3-u1-3b",
+        "qibu3-u1-4a",
+        "qibu3-u1-4b"
       ]
     },
     {
       "unit": "起步 3",
       "title": "London's colder than Chengdu!",
       "lessons": [
-        "qibu3-u2-1",
-        "qibu3-u2-2",
-        "qibu3-u2-3",
-        "qibu3-u2-4",
-        "qibu3-u2-5"
+        "qibu3-u2-1a",
+        "qibu3-u2-1b",
+        "qibu3-u2-2a",
+        "qibu3-u2-3a",
+        "qibu3-u2-3b",
+        "qibu3-u2-4a",
+        "qibu3-u2-4b",
+        "qibu3-u2-5a"
       ]
     },
     {
       "unit": "起步 3",
       "title": "Excuse me, how do I get to Chinatown?",
       "lessons": [
-        "qibu3-u3-1",
-        "qibu3-u3-2",
-        "qibu3-u3-3",
-        "qibu3-u3-4",
-        "qibu3-u3-5"
+        "qibu3-u3-1a",
+        "qibu3-u3-1b",
+        "qibu3-u3-2a",
+        "qibu3-u3-2b",
+        "qibu3-u3-3a",
+        "qibu3-u3-4a",
+        "qibu3-u3-5a",
+        "qibu3-u3-5b"
       ]
     },
     {
       "unit": "起步 3",
       "title": "What's wrong?",
       "lessons": [
-        "qibu3-u4-1",
-        "qibu3-u4-2",
-        "qibu3-u4-3",
-        "qibu3-u4-4",
-        "qibu3-u4-5"
+        "qibu3-u4-1a",
+        "qibu3-u4-2a",
+        "qibu3-u4-2b",
+        "qibu3-u4-3a",
+        "qibu3-u4-4a",
+        "qibu3-u4-4b",
+        "qibu3-u4-5a",
+        "qibu3-u4-5b"
       ]
     },
     {
       "unit": "起步 4",
       "title": "Waiter, the bill please!",
       "lessons": [
-        "qibu4-u1-1",
-        "qibu4-u1-2",
-        "qibu4-u1-3",
-        "qibu4-u1-4",
-        "qibu4-u1-5",
-        "qibu4-u1-6",
-        "qibu4-u1-7",
-        "qibu4-u1-8"
+        "qibu4-u1-1a",
+        "qibu4-u1-1b",
+        "qibu4-u1-2a",
+        "qibu4-u1-2b",
+        "qibu4-u1-3a",
+        "qibu4-u1-4a",
+        "qibu4-u1-4b",
+        "qibu4-u1-5a",
+        "qibu4-u1-6a",
+        "qibu4-u1-6b",
+        "qibu4-u1-7a",
+        "qibu4-u1-8a",
+        "qibu4-u1-8b"
       ]
     },
     {
       "unit": "起步 4",
       "title": "Can you play badminton?",
       "lessons": [
-        "qibu4-u2-1",
-        "qibu4-u2-2",
-        "qibu4-u2-3",
-        "qibu4-u2-4"
+        "qibu4-u2-1a",
+        "qibu4-u2-1b",
+        "qibu4-u2-2a",
+        "qibu4-u2-2b",
+        "qibu4-u2-3a",
+        "qibu4-u2-3b",
+        "qibu4-u2-4a",
+        "qibu4-u2-4b"
       ]
     },
     {
       "unit": "起步 4",
       "title": "I need a new phone",
       "lessons": [
-        "qibu4-u3-1",
-        "qibu4-u3-2",
-        "qibu4-u3-3",
-        "qibu4-u3-4",
-        "qibu4-u3-5"
+        "qibu4-u3-1a",
+        "qibu4-u3-1b",
+        "qibu4-u3-2a",
+        "qibu4-u3-3a",
+        "qibu4-u3-4a",
+        "qibu4-u3-4b",
+        "qibu4-u3-5a",
+        "qibu4-u3-5b"
       ]
     },
     {
       "unit": "起步 4",
       "title": "Hello, is that the sports hall?",
       "lessons": [
-        "qibu4-u4-1",
-        "qibu4-u4-2",
-        "qibu4-u4-3",
-        "qibu4-u4-4",
-        "qibu4-u4-5"
+        "qibu4-u4-1a",
+        "qibu4-u4-1b",
+        "qibu4-u4-2a",
+        "qibu4-u4-2b",
+        "qibu4-u4-3a",
+        "qibu4-u4-3b",
+        "qibu4-u4-4a",
+        "qibu4-u4-5a",
+        "qibu4-u4-5b"
       ]
     },
     {
       "unit": "起步 5",
       "title": "How was the show?",
       "lessons": [
-        "qibu5-u1-1",
-        "qibu5-u1-2",
-        "qibu5-u1-3",
-        "qibu5-u1-4",
-        "qibu5-u1-5"
+        "qibu5-u1-1a",
+        "qibu5-u1-1b",
+        "qibu5-u1-2a",
+        "qibu5-u1-2b",
+        "qibu5-u1-3a",
+        "qibu5-u1-4a",
+        "qibu5-u1-4b",
+        "qibu5-u1-5a"
       ]
     },
     {
       "unit": "起步 5",
       "title": "Your Chinese is so good!",
       "lessons": [
-        "qibu5-u2-1",
-        "qibu5-u2-2",
-        "qibu5-u2-3",
-        "qibu5-u2-4",
-        "qibu5-u2-5"
+        "qibu5-u2-1a",
+        "qibu5-u2-1b",
+        "qibu5-u2-2a",
+        "qibu5-u2-3a",
+        "qibu5-u2-3b",
+        "qibu5-u2-4a",
+        "qibu5-u2-5a",
+        "qibu5-u2-5b"
       ]
     },
     {
       "unit": "起步 5",
       "title": "What took you so long?",
       "lessons": [
-        "qibu5-u3-1",
-        "qibu5-u3-2",
-        "qibu5-u3-3",
-        "qibu5-u3-4",
-        "qibu5-u3-5"
+        "qibu5-u3-1a",
+        "qibu5-u3-1b",
+        "qibu5-u3-2a",
+        "qibu5-u3-2b",
+        "qibu5-u3-3a",
+        "qibu5-u3-4a",
+        "qibu5-u3-4b",
+        "qibu5-u3-5a"
       ]
     },
     {
       "unit": "起步 5",
       "title": "Dear Xiaoyu,",
       "lessons": [
-        "qibu5-u4-1",
-        "qibu5-u4-2",
-        "qibu5-u4-3",
-        "qibu5-u4-4",
-        "qibu5-u4-5",
-        "qibu5-u4-6"
+        "qibu5-u4-1a",
+        "qibu5-u4-1b",
+        "qibu5-u4-2a",
+        "qibu5-u4-2b",
+        "qibu5-u4-3a",
+        "qibu5-u4-3b",
+        "qibu5-u4-4a",
+        "qibu5-u4-5a",
+        "qibu5-u4-5b",
+        "qibu5-u4-5c",
+        "qibu5-u4-6a",
+        "qibu5-u4-6b"
       ]
     },
     {
       "unit": "进步 1",
       "title": "I'd like to book a room",
       "lessons": [
-        "jinbu1-u1-1",
-        "jinbu1-u1-2",
-        "jinbu1-u1-3",
-        "jinbu1-u1-4",
-        "jinbu1-u1-5",
-        "jinbu1-u1-6",
-        "jinbu1-u1-7"
+        "jinbu1-u1-1a",
+        "jinbu1-u1-1b",
+        "jinbu1-u1-2a",
+        "jinbu1-u1-2b",
+        "jinbu1-u1-3a",
+        "jinbu1-u1-3b",
+        "jinbu1-u1-4a",
+        "jinbu1-u1-4b",
+        "jinbu1-u1-5a",
+        "jinbu1-u1-5b",
+        "jinbu1-u1-6a",
+        "jinbu1-u1-6b",
+        "jinbu1-u1-6c",
+        "jinbu1-u1-7a",
+        "jinbu1-u1-7b"
       ]
     },
     {
       "unit": "进步 1",
       "title": "Change at Chunxi Road",
       "lessons": [
-        "jinbu1-u2-1",
-        "jinbu1-u2-2",
-        "jinbu1-u2-3",
-        "jinbu1-u2-4",
-        "jinbu1-u2-5",
-        "jinbu1-u2-6"
+        "jinbu1-u2-1a",
+        "jinbu1-u2-1b",
+        "jinbu1-u2-2a",
+        "jinbu1-u2-2b",
+        "jinbu1-u2-2c",
+        "jinbu1-u2-3a",
+        "jinbu1-u2-3b",
+        "jinbu1-u2-4a",
+        "jinbu1-u2-4b",
+        "jinbu1-u2-5a",
+        "jinbu1-u2-5b",
+        "jinbu1-u2-5c",
+        "jinbu1-u2-6a",
+        "jinbu1-u2-6b"
       ]
     },
     {
       "unit": "进步 1",
       "title": "It's too small. Can I change it?",
       "lessons": [
-        "jinbu1-u3-1",
-        "jinbu1-u3-2",
-        "jinbu1-u3-3",
-        "jinbu1-u3-4",
-        "jinbu1-u3-5",
-        "jinbu1-u3-6",
-        "jinbu1-u3-7"
+        "jinbu1-u3-1a",
+        "jinbu1-u3-1b",
+        "jinbu1-u3-2a",
+        "jinbu1-u3-2b",
+        "jinbu1-u3-3a",
+        "jinbu1-u3-3b",
+        "jinbu1-u3-4a",
+        "jinbu1-u3-5a",
+        "jinbu1-u3-5b",
+        "jinbu1-u3-6a",
+        "jinbu1-u3-6b",
+        "jinbu1-u3-6c",
+        "jinbu1-u3-7a",
+        "jinbu1-u3-7b"
       ]
     },
     {
       "unit": "进步 1",
       "title": "Thank you for having me",
       "lessons": [
-        "jinbu1-u4-1",
-        "jinbu1-u4-2",
-        "jinbu1-u4-3",
-        "jinbu1-u4-4",
-        "jinbu1-u4-5",
-        "jinbu1-u4-6"
+        "jinbu1-u4-1a",
+        "jinbu1-u4-1b",
+        "jinbu1-u4-2a",
+        "jinbu1-u4-2b",
+        "jinbu1-u4-3a",
+        "jinbu1-u4-3b",
+        "jinbu1-u4-4a",
+        "jinbu1-u4-5a",
+        "jinbu1-u4-5b",
+        "jinbu1-u4-6a",
+        "jinbu1-u4-6b",
+        "jinbu1-u4-6c",
+        "jinbu1-u4-6d"
       ]
     },
     {
       "unit": "进步 2",
       "title": "Hang the painting up!",
       "lessons": [
-        "jinbu2-u1-1",
-        "jinbu2-u1-2",
-        "jinbu2-u1-3",
-        "jinbu2-u1-4",
-        "jinbu2-u1-5",
-        "jinbu2-u1-6",
-        "jinbu2-u1-7"
+        "jinbu2-u1-1a",
+        "jinbu2-u1-1b",
+        "jinbu2-u1-2a",
+        "jinbu2-u1-2b",
+        "jinbu2-u1-3a",
+        "jinbu2-u1-3b",
+        "jinbu2-u1-4a",
+        "jinbu2-u1-5a",
+        "jinbu2-u1-5b",
+        "jinbu2-u1-5c",
+        "jinbu2-u1-6a",
+        "jinbu2-u1-6b",
+        "jinbu2-u1-7a",
+        "jinbu2-u1-7b"
       ]
     },
     {
       "unit": "进步 2",
       "title": "Qipao or hanfu?",
       "lessons": [
-        "jinbu2-u2-1",
-        "jinbu2-u2-2",
-        "jinbu2-u2-3",
-        "jinbu2-u2-4",
-        "jinbu2-u2-5",
-        "jinbu2-u2-6"
+        "jinbu2-u2-1a",
+        "jinbu2-u2-1b",
+        "jinbu2-u2-2a",
+        "jinbu2-u2-2b",
+        "jinbu2-u2-2c",
+        "jinbu2-u2-3a",
+        "jinbu2-u2-3b",
+        "jinbu2-u2-4a",
+        "jinbu2-u2-4b",
+        "jinbu2-u2-5a",
+        "jinbu2-u2-5b",
+        "jinbu2-u2-5c",
+        "jinbu2-u2-6a",
+        "jinbu2-u2-6b"
       ]
     },
     {
       "unit": "进步 2",
       "title": "How is Chinese painting different from oil painting?",
       "lessons": [
-        "jinbu2-u3-1",
-        "jinbu2-u3-2",
-        "jinbu2-u3-3",
-        "jinbu2-u3-4",
-        "jinbu2-u3-5",
-        "jinbu2-u3-6"
+        "jinbu2-u3-1a",
+        "jinbu2-u3-1b",
+        "jinbu2-u3-2a",
+        "jinbu2-u3-2b",
+        "jinbu2-u3-3a",
+        "jinbu2-u3-3b",
+        "jinbu2-u3-4a",
+        "jinbu2-u3-4b",
+        "jinbu2-u3-4c",
+        "jinbu2-u3-5a",
+        "jinbu2-u3-5b",
+        "jinbu2-u3-6a",
+        "jinbu2-u3-6b",
+        "jinbu2-u3-6c"
       ]
     },
     {
       "unit": "进步 2",
       "title": "All done!",
       "lessons": [
-        "jinbu2-u4-1",
-        "jinbu2-u4-2",
-        "jinbu2-u4-3",
-        "jinbu2-u4-4",
-        "jinbu2-u4-5",
-        "jinbu2-u4-6"
+        "jinbu2-u4-1a",
+        "jinbu2-u4-1b",
+        "jinbu2-u4-2a",
+        "jinbu2-u4-2b",
+        "jinbu2-u4-3a",
+        "jinbu2-u4-3b",
+        "jinbu2-u4-4a",
+        "jinbu2-u4-5a",
+        "jinbu2-u4-5b",
+        "jinbu2-u4-6a",
+        "jinbu2-u4-6b",
+        "jinbu2-u4-6c"
       ]
     },
     {
       "unit": "进步 3",
       "title": "Happy New Year!",
       "lessons": [
-        "jinbu3-u1-1",
-        "jinbu3-u1-2",
-        "jinbu3-u1-3",
-        "jinbu3-u1-4",
-        "jinbu3-u1-5",
-        "jinbu3-u1-6",
-        "jinbu3-u1-7",
-        "jinbu3-u1-8"
+        "jinbu3-u1-1a",
+        "jinbu3-u1-1b",
+        "jinbu3-u1-2a",
+        "jinbu3-u1-2b",
+        "jinbu3-u1-3a",
+        "jinbu3-u1-3b",
+        "jinbu3-u1-3c",
+        "jinbu3-u1-4a",
+        "jinbu3-u1-4b",
+        "jinbu3-u1-5a",
+        "jinbu3-u1-5b",
+        "jinbu3-u1-6a",
+        "jinbu3-u1-6b",
+        "jinbu3-u1-6c",
+        "jinbu3-u1-7a",
+        "jinbu3-u1-7b",
+        "jinbu3-u1-8a",
+        "jinbu3-u1-8b"
       ]
     },
     {
       "unit": "进步 3",
       "title": "It sounds beautiful!",
       "lessons": [
-        "jinbu3-u2-1",
-        "jinbu3-u2-2",
-        "jinbu3-u2-3",
-        "jinbu3-u2-4",
-        "jinbu3-u2-5",
-        "jinbu3-u2-6"
+        "jinbu3-u2-1a",
+        "jinbu3-u2-1b",
+        "jinbu3-u2-2a",
+        "jinbu3-u2-2b",
+        "jinbu3-u2-3a",
+        "jinbu3-u2-3b",
+        "jinbu3-u2-4a",
+        "jinbu3-u2-5a",
+        "jinbu3-u2-5b",
+        "jinbu3-u2-5c",
+        "jinbu3-u2-6a",
+        "jinbu3-u2-6b"
       ]
     },
     {
       "unit": "进步 3",
       "title": "Have you read Dream of the Red Chamber?",
       "lessons": [
-        "jinbu3-u3-1",
-        "jinbu3-u3-2",
-        "jinbu3-u3-3",
-        "jinbu3-u3-4",
-        "jinbu3-u3-5",
-        "jinbu3-u3-6",
-        "jinbu3-u3-7"
+        "jinbu3-u3-1a",
+        "jinbu3-u3-1b",
+        "jinbu3-u3-2a",
+        "jinbu3-u3-2b",
+        "jinbu3-u3-3a",
+        "jinbu3-u3-3b",
+        "jinbu3-u3-4a",
+        "jinbu3-u3-4b",
+        "jinbu3-u3-5a",
+        "jinbu3-u3-6a",
+        "jinbu3-u3-6b",
+        "jinbu3-u3-7a",
+        "jinbu3-u3-7b"
       ]
     },
     {
       "unit": "进步 3",
       "title": "You're not a hero till you've climbed the Great Wall",
       "lessons": [
-        "jinbu3-u4-1",
-        "jinbu3-u4-2",
-        "jinbu3-u4-3",
-        "jinbu3-u4-4",
-        "jinbu3-u4-5"
+        "jinbu3-u4-1a",
+        "jinbu3-u4-1b",
+        "jinbu3-u4-2a",
+        "jinbu3-u4-2b",
+        "jinbu3-u4-3a",
+        "jinbu3-u4-3b",
+        "jinbu3-u4-4a",
+        "jinbu3-u4-4b",
+        "jinbu3-u4-5a",
+        "jinbu3-u4-5b",
+        "jinbu3-u4-5c",
+        "jinbu3-u4-5d"
       ]
     },
     {
       "unit": "进步 4",
       "title": "My phone's been stolen!",
       "lessons": [
-        "jinbu4-u1-1",
-        "jinbu4-u1-2",
-        "jinbu4-u1-3",
-        "jinbu4-u1-4",
-        "jinbu4-u1-5",
-        "jinbu4-u1-6",
-        "jinbu4-u1-7",
-        "jinbu4-u1-8"
+        "jinbu4-u1-1a",
+        "jinbu4-u1-1b",
+        "jinbu4-u1-2a",
+        "jinbu4-u1-2b",
+        "jinbu4-u1-3a",
+        "jinbu4-u1-3b",
+        "jinbu4-u1-3c",
+        "jinbu4-u1-4a",
+        "jinbu4-u1-4b",
+        "jinbu4-u1-5a",
+        "jinbu4-u1-6a",
+        "jinbu4-u1-6b",
+        "jinbu4-u1-6c",
+        "jinbu4-u1-7a",
+        "jinbu4-u1-7b",
+        "jinbu4-u1-8a",
+        "jinbu4-u1-8b"
       ]
     },
     {
       "unit": "进步 4",
       "title": "My proposal's been approved!",
       "lessons": [
-        "jinbu4-u2-1",
-        "jinbu4-u2-2",
-        "jinbu4-u2-3",
-        "jinbu4-u2-4",
-        "jinbu4-u2-5",
-        "jinbu4-u2-6",
-        "jinbu4-u2-7"
+        "jinbu4-u2-1a",
+        "jinbu4-u2-1b",
+        "jinbu4-u2-2a",
+        "jinbu4-u2-2b",
+        "jinbu4-u2-2c",
+        "jinbu4-u2-3a",
+        "jinbu4-u2-3b",
+        "jinbu4-u2-4a",
+        "jinbu4-u2-4b",
+        "jinbu4-u2-5a",
+        "jinbu4-u2-5b",
+        "jinbu4-u2-6a",
+        "jinbu4-u2-6b",
+        "jinbu4-u2-6c",
+        "jinbu4-u2-7a",
+        "jinbu4-u2-7b"
       ]
     },
     {
       "unit": "进步 4",
       "title": "Let's get together some time",
       "lessons": [
-        "jinbu4-u3-1",
-        "jinbu4-u3-2",
-        "jinbu4-u3-3",
-        "jinbu4-u3-4",
-        "jinbu4-u3-5"
+        "jinbu4-u3-1a",
+        "jinbu4-u3-1b",
+        "jinbu4-u3-2a",
+        "jinbu4-u3-2b",
+        "jinbu4-u3-3a",
+        "jinbu4-u3-3b",
+        "jinbu4-u3-4a",
+        "jinbu4-u3-4b",
+        "jinbu4-u3-5a",
+        "jinbu4-u3-5b",
+        "jinbu4-u3-5c"
       ]
     },
     {
       "unit": "进步 4",
       "title": "The secret of learning Chinese",
       "lessons": [
-        "jinbu4-u4-1",
-        "jinbu4-u4-2",
-        "jinbu4-u4-3",
-        "jinbu4-u4-4",
-        "jinbu4-u4-5"
+        "jinbu4-u4-1a",
+        "jinbu4-u4-1b",
+        "jinbu4-u4-2a",
+        "jinbu4-u4-2b",
+        "jinbu4-u4-3a",
+        "jinbu4-u4-4a",
+        "jinbu4-u4-4b",
+        "jinbu4-u4-4c",
+        "jinbu4-u4-5a",
+        "jinbu4-u4-5b",
+        "jinbu4-u4-5c"
       ]
     },
     {
       "unit": "进步 5",
       "title": "Melbourne or London?",
       "lessons": [
-        "jinbu5-u1-1",
-        "jinbu5-u1-2",
-        "jinbu5-u1-3",
-        "jinbu5-u1-4",
-        "jinbu5-u1-5",
-        "jinbu5-u1-6",
-        "jinbu5-u1-7",
-        "jinbu5-u1-8"
+        "jinbu5-u1-1a",
+        "jinbu5-u1-1b",
+        "jinbu5-u1-2a",
+        "jinbu5-u1-2b",
+        "jinbu5-u1-3a",
+        "jinbu5-u1-3b",
+        "jinbu5-u1-4a",
+        "jinbu5-u1-4b",
+        "jinbu5-u1-5a",
+        "jinbu5-u1-5b",
+        "jinbu5-u1-6a",
+        "jinbu5-u1-6b",
+        "jinbu5-u1-6c",
+        "jinbu5-u1-7a",
+        "jinbu5-u1-7b",
+        "jinbu5-u1-8a"
       ]
     },
     {
       "unit": "进步 5",
       "title": "How were characters made?",
       "lessons": [
-        "jinbu5-u2-1",
-        "jinbu5-u2-2",
-        "jinbu5-u2-3",
-        "jinbu5-u2-4",
-        "jinbu5-u2-5",
-        "jinbu5-u2-6",
-        "jinbu5-u2-7"
+        "jinbu5-u2-1a",
+        "jinbu5-u2-1b",
+        "jinbu5-u2-2a",
+        "jinbu5-u2-2b",
+        "jinbu5-u2-3a",
+        "jinbu5-u2-3b",
+        "jinbu5-u2-4a",
+        "jinbu5-u2-4b",
+        "jinbu5-u2-5a",
+        "jinbu5-u2-5b",
+        "jinbu5-u2-6a",
+        "jinbu5-u2-6b",
+        "jinbu5-u2-7a",
+        "jinbu5-u2-7b",
+        "jinbu5-u2-7c"
       ]
     },
     {
       "unit": "进步 5",
       "title": "What makes a good present?",
       "lessons": [
-        "jinbu5-u3-1",
-        "jinbu5-u3-2",
-        "jinbu5-u3-3",
-        "jinbu5-u3-4",
-        "jinbu5-u3-5",
-        "jinbu5-u3-6"
+        "jinbu5-u3-1a",
+        "jinbu5-u3-1b",
+        "jinbu5-u3-2a",
+        "jinbu5-u3-2b",
+        "jinbu5-u3-3a",
+        "jinbu5-u3-3b",
+        "jinbu5-u3-4a",
+        "jinbu5-u3-5a",
+        "jinbu5-u3-5b",
+        "jinbu5-u3-5c",
+        "jinbu5-u3-6a",
+        "jinbu5-u3-6b"
       ]
     },
     {
       "unit": "进步 5",
       "title": "Thank you for the present!",
       "lessons": [
-        "jinbu5-u4-1",
-        "jinbu5-u4-2",
-        "jinbu5-u4-3",
-        "jinbu5-u4-4",
-        "jinbu5-u4-5"
+        "jinbu5-u4-1a",
+        "jinbu5-u4-1b",
+        "jinbu5-u4-2a",
+        "jinbu5-u4-2b",
+        "jinbu5-u4-3a",
+        "jinbu5-u4-4a",
+        "jinbu5-u4-4b",
+        "jinbu5-u4-4c",
+        "jinbu5-u4-5a",
+        "jinbu5-u4-5b",
+        "jinbu5-u4-5c"
       ]
     },
     {
       "unit": "大步 1",
       "title": "On the other side of the table",
       "lessons": [
-        "dabu1-u1-1",
-        "dabu1-u1-2",
-        "dabu1-u1-3",
-        "dabu1-u1-4",
-        "dabu1-u1-5",
-        "dabu1-u1-6",
-        "dabu1-u1-7",
-        "dabu1-u1-8",
-        "dabu1-u1-9"
+        "dabu1-u1-1a",
+        "dabu1-u1-1b",
+        "dabu1-u1-1c",
+        "dabu1-u1-2a",
+        "dabu1-u1-2b",
+        "dabu1-u1-2c",
+        "dabu1-u1-3a",
+        "dabu1-u1-3b",
+        "dabu1-u1-4a",
+        "dabu1-u1-4b",
+        "dabu1-u1-4c",
+        "dabu1-u1-5a",
+        "dabu1-u1-5b",
+        "dabu1-u1-6a",
+        "dabu1-u1-6b",
+        "dabu1-u1-6c",
+        "dabu1-u1-7a",
+        "dabu1-u1-7b",
+        "dabu1-u1-7c",
+        "dabu1-u1-8a",
+        "dabu1-u1-8b",
+        "dabu1-u1-8c",
+        "dabu1-u1-9a",
+        "dabu1-u1-9b"
       ]
     },
     {
       "unit": "大步 1",
       "title": "Working late",
       "lessons": [
-        "dabu1-u2-1",
-        "dabu1-u2-2",
-        "dabu1-u2-3",
-        "dabu1-u2-4",
-        "dabu1-u2-5",
-        "dabu1-u2-6",
-        "dabu1-u2-7"
+        "dabu1-u2-1a",
+        "dabu1-u2-1b",
+        "dabu1-u2-2a",
+        "dabu1-u2-2b",
+        "dabu1-u2-2c",
+        "dabu1-u2-3a",
+        "dabu1-u2-3b",
+        "dabu1-u2-4a",
+        "dabu1-u2-4b",
+        "dabu1-u2-4c",
+        "dabu1-u2-5a",
+        "dabu1-u2-5b",
+        "dabu1-u2-5c",
+        "dabu1-u2-6a",
+        "dabu1-u2-6b",
+        "dabu1-u2-7a",
+        "dabu1-u2-7b",
+        "dabu1-u2-7c"
       ]
     },
     {
       "unit": "大步 1",
       "title": "A quick meeting",
       "lessons": [
-        "dabu1-u3-1",
-        "dabu1-u3-2",
-        "dabu1-u3-3",
-        "dabu1-u3-4",
-        "dabu1-u3-5",
-        "dabu1-u3-6"
+        "dabu1-u3-1a",
+        "dabu1-u3-1b",
+        "dabu1-u3-1c",
+        "dabu1-u3-2a",
+        "dabu1-u3-2b",
+        "dabu1-u3-3a",
+        "dabu1-u3-3b",
+        "dabu1-u3-3c",
+        "dabu1-u3-4a",
+        "dabu1-u3-4b",
+        "dabu1-u3-4c",
+        "dabu1-u3-5a",
+        "dabu1-u3-5b",
+        "dabu1-u3-6a",
+        "dabu1-u3-6b",
+        "dabu1-u3-6c"
       ]
     },
     {
       "unit": "大步 1",
       "title": "Move on or stay put?",
       "lessons": [
-        "dabu1-u4-1",
-        "dabu1-u4-2",
-        "dabu1-u4-3",
-        "dabu1-u4-4",
-        "dabu1-u4-5"
+        "dabu1-u4-1a",
+        "dabu1-u4-1b",
+        "dabu1-u4-1c",
+        "dabu1-u4-2a",
+        "dabu1-u4-2b",
+        "dabu1-u4-3a",
+        "dabu1-u4-3b",
+        "dabu1-u4-4a",
+        "dabu1-u4-4b",
+        "dabu1-u4-5a",
+        "dabu1-u4-5b",
+        "dabu1-u4-5c"
       ]
     },
     {
       "unit": "大步 2",
       "title": "A room with a tree",
       "lessons": [
-        "dabu2-u1-1",
-        "dabu2-u1-2",
-        "dabu2-u1-3",
-        "dabu2-u1-4",
-        "dabu2-u1-5",
-        "dabu2-u1-6",
-        "dabu2-u1-7",
-        "dabu2-u1-8",
-        "dabu2-u1-9"
+        "dabu2-u1-1a",
+        "dabu2-u1-1b",
+        "dabu2-u1-1c",
+        "dabu2-u1-2a",
+        "dabu2-u1-2b",
+        "dabu2-u1-3a",
+        "dabu2-u1-3b",
+        "dabu2-u1-3c",
+        "dabu2-u1-4a",
+        "dabu2-u1-4b",
+        "dabu2-u1-4c",
+        "dabu2-u1-5a",
+        "dabu2-u1-5b",
+        "dabu2-u1-5c",
+        "dabu2-u1-6a",
+        "dabu2-u1-6b",
+        "dabu2-u1-6c",
+        "dabu2-u1-7a",
+        "dabu2-u1-7b",
+        "dabu2-u1-8a",
+        "dabu2-u1-8b",
+        "dabu2-u1-8c",
+        "dabu2-u1-9a",
+        "dabu2-u1-9b",
+        "dabu2-u1-9c"
       ]
     },
     {
       "unit": "大步 2",
       "title": "Which bin?",
       "lessons": [
-        "dabu2-u2-1",
-        "dabu2-u2-2",
-        "dabu2-u2-3",
-        "dabu2-u2-4",
-        "dabu2-u2-5",
-        "dabu2-u2-6",
-        "dabu2-u2-7",
-        "dabu2-u2-8"
+        "dabu2-u2-1a",
+        "dabu2-u2-1b",
+        "dabu2-u2-2a",
+        "dabu2-u2-2b",
+        "dabu2-u2-2c",
+        "dabu2-u2-3a",
+        "dabu2-u2-3b",
+        "dabu2-u2-4a",
+        "dabu2-u2-4b",
+        "dabu2-u2-5a",
+        "dabu2-u2-5b",
+        "dabu2-u2-5c",
+        "dabu2-u2-6a",
+        "dabu2-u2-6b",
+        "dabu2-u2-7a",
+        "dabu2-u2-7b",
+        "dabu2-u2-8a",
+        "dabu2-u2-8b",
+        "dabu2-u2-8c"
       ]
     },
     {
       "unit": "大步 2",
       "title": "The village in the bamboo",
       "lessons": [
-        "dabu2-u3-1",
-        "dabu2-u3-2",
-        "dabu2-u3-3",
-        "dabu2-u3-4",
-        "dabu2-u3-5"
+        "dabu2-u3-1a",
+        "dabu2-u3-1b",
+        "dabu2-u3-1c",
+        "dabu2-u3-2a",
+        "dabu2-u3-2b",
+        "dabu2-u3-3a",
+        "dabu2-u3-3b",
+        "dabu2-u3-3c",
+        "dabu2-u3-4a",
+        "dabu2-u3-4b",
+        "dabu2-u3-5a",
+        "dabu2-u3-5b",
+        "dabu2-u3-5c"
       ]
     },
     {
       "unit": "大步 2",
       "title": "My Shanghai",
       "lessons": [
-        "dabu2-u4-1",
-        "dabu2-u4-2",
-        "dabu2-u4-3",
-        "dabu2-u4-4",
-        "dabu2-u4-5"
+        "dabu2-u4-1a",
+        "dabu2-u4-1b",
+        "dabu2-u4-2a",
+        "dabu2-u4-2b",
+        "dabu2-u4-2c",
+        "dabu2-u4-3a",
+        "dabu2-u4-3b",
+        "dabu2-u4-4a",
+        "dabu2-u4-4b",
+        "dabu2-u4-5a",
+        "dabu2-u4-5b"
       ]
     },
     {
       "unit": "大步 3",
       "title": "Life without cash",
       "lessons": [
-        "dabu3-u1-1",
-        "dabu3-u1-2",
-        "dabu3-u1-3",
-        "dabu3-u1-4",
-        "dabu3-u1-5",
-        "dabu3-u1-6",
-        "dabu3-u1-7",
-        "dabu3-u1-8"
+        "dabu3-u1-1a",
+        "dabu3-u1-1b",
+        "dabu3-u1-1c",
+        "dabu3-u1-2a",
+        "dabu3-u1-2b",
+        "dabu3-u1-3a",
+        "dabu3-u1-3b",
+        "dabu3-u1-3c",
+        "dabu3-u1-4a",
+        "dabu3-u1-4b",
+        "dabu3-u1-5a",
+        "dabu3-u1-5b",
+        "dabu3-u1-5c",
+        "dabu3-u1-6a",
+        "dabu3-u1-6b",
+        "dabu3-u1-7a",
+        "dabu3-u1-7b",
+        "dabu3-u1-8a",
+        "dabu3-u1-8b",
+        "dabu3-u1-8c"
       ]
     },
     {
       "unit": "大步 3",
       "title": "Just one more video",
       "lessons": [
-        "dabu3-u2-1",
-        "dabu3-u2-2",
-        "dabu3-u2-3",
-        "dabu3-u2-4",
-        "dabu3-u2-5",
-        "dabu3-u2-6"
+        "dabu3-u2-1a",
+        "dabu3-u2-1b",
+        "dabu3-u2-2a",
+        "dabu3-u2-2b",
+        "dabu3-u2-3a",
+        "dabu3-u2-3b",
+        "dabu3-u2-4a",
+        "dabu3-u2-4b",
+        "dabu3-u2-4c",
+        "dabu3-u2-5a",
+        "dabu3-u2-5b",
+        "dabu3-u2-6a",
+        "dabu3-u2-6b",
+        "dabu3-u2-6c"
       ]
     },
     {
       "unit": "大步 3",
       "title": "Will AI replace us?",
       "lessons": [
-        "dabu3-u3-1",
-        "dabu3-u3-2",
-        "dabu3-u3-3",
-        "dabu3-u3-4",
-        "dabu3-u3-5",
-        "dabu3-u3-6"
+        "dabu3-u3-1a",
+        "dabu3-u3-1b",
+        "dabu3-u3-2a",
+        "dabu3-u3-2b",
+        "dabu3-u3-3a",
+        "dabu3-u3-3b",
+        "dabu3-u3-3c",
+        "dabu3-u3-4a",
+        "dabu3-u3-4b",
+        "dabu3-u3-5a",
+        "dabu3-u3-5b",
+        "dabu3-u3-6a",
+        "dabu3-u3-6b",
+        "dabu3-u3-6c"
       ]
     },
     {
       "unit": "大步 3",
       "title": "Reading the news",
       "lessons": [
-        "dabu3-u4-1",
-        "dabu3-u4-2",
-        "dabu3-u4-3",
-        "dabu3-u4-4",
-        "dabu3-u4-5",
-        "dabu3-u4-6",
-        "dabu3-u4-7"
+        "dabu3-u4-1a",
+        "dabu3-u4-1b",
+        "dabu3-u4-2a",
+        "dabu3-u4-2b",
+        "dabu3-u4-2c",
+        "dabu3-u4-3a",
+        "dabu3-u4-3b",
+        "dabu3-u4-4a",
+        "dabu3-u4-4b",
+        "dabu3-u4-4c",
+        "dabu3-u4-5a",
+        "dabu3-u4-5b",
+        "dabu3-u4-6a",
+        "dabu3-u4-6b",
+        "dabu3-u4-6c",
+        "dabu3-u4-7a",
+        "dabu3-u4-7b",
+        "dabu3-u4-7c",
+        "dabu3-u4-7d"
       ]
     },
     {
       "unit": "大步 4",
       "title": "So when are you getting married?",
       "lessons": [
-        "dabu4-u1-1",
-        "dabu4-u1-2",
-        "dabu4-u1-3",
-        "dabu4-u1-4",
-        "dabu4-u1-5",
-        "dabu4-u1-6",
-        "dabu4-u1-7"
+        "dabu4-u1-1a",
+        "dabu4-u1-1b",
+        "dabu4-u1-1c",
+        "dabu4-u1-2a",
+        "dabu4-u1-2b",
+        "dabu4-u1-3a",
+        "dabu4-u1-3b",
+        "dabu4-u1-3c",
+        "dabu4-u1-4a",
+        "dabu4-u1-4b",
+        "dabu4-u1-5a",
+        "dabu4-u1-5b",
+        "dabu4-u1-6a",
+        "dabu4-u1-6b",
+        "dabu4-u1-7a",
+        "dabu4-u1-7b"
       ]
     },
     {
       "unit": "大步 4",
       "title": "The race to the exam",
       "lessons": [
-        "dabu4-u2-1",
-        "dabu4-u2-2",
-        "dabu4-u2-3",
-        "dabu4-u2-4",
-        "dabu4-u2-5",
-        "dabu4-u2-6"
+        "dabu4-u2-1a",
+        "dabu4-u2-1b",
+        "dabu4-u2-1c",
+        "dabu4-u2-2a",
+        "dabu4-u2-2b",
+        "dabu4-u2-2c",
+        "dabu4-u2-3a",
+        "dabu4-u2-3b",
+        "dabu4-u2-4a",
+        "dabu4-u2-4b",
+        "dabu4-u2-4c",
+        "dabu4-u2-5a",
+        "dabu4-u2-5b",
+        "dabu4-u2-6a",
+        "dabu4-u2-6b",
+        "dabu4-u2-6c"
       ]
     },
     {
       "unit": "大步 4",
       "title": "Who looks after Mum and Dad?",
       "lessons": [
-        "dabu4-u3-1",
-        "dabu4-u3-2",
-        "dabu4-u3-3",
-        "dabu4-u3-4",
-        "dabu4-u3-5",
-        "dabu4-u3-6",
-        "dabu4-u3-7",
-        "dabu4-u3-8"
+        "dabu4-u3-1a",
+        "dabu4-u3-1b",
+        "dabu4-u3-2a",
+        "dabu4-u3-2b",
+        "dabu4-u3-3a",
+        "dabu4-u3-3b",
+        "dabu4-u3-3c",
+        "dabu4-u3-4a",
+        "dabu4-u3-4b",
+        "dabu4-u3-5a",
+        "dabu4-u3-5b",
+        "dabu4-u3-6a",
+        "dabu4-u3-6b",
+        "dabu4-u3-7a",
+        "dabu4-u3-7b",
+        "dabu4-u3-8a",
+        "dabu4-u3-8b",
+        "dabu4-u3-8c"
       ]
     },
     {
       "unit": "大步 4",
       "title": "Two generations",
       "lessons": [
-        "dabu4-u4-1",
-        "dabu4-u4-2",
-        "dabu4-u4-3",
-        "dabu4-u4-4",
-        "dabu4-u4-5",
-        "dabu4-u4-6",
-        "dabu4-u4-7"
+        "dabu4-u4-1a",
+        "dabu4-u4-1b",
+        "dabu4-u4-2a",
+        "dabu4-u4-2b",
+        "dabu4-u4-3a",
+        "dabu4-u4-3b",
+        "dabu4-u4-4a",
+        "dabu4-u4-4b",
+        "dabu4-u4-4c",
+        "dabu4-u4-5a",
+        "dabu4-u4-5b",
+        "dabu4-u4-6a",
+        "dabu4-u4-6b",
+        "dabu4-u4-7a",
+        "dabu4-u4-7b",
+        "dabu4-u4-7c"
       ]
     },
     {
       "unit": "大步 5",
       "title": "Keeping well in the dog days",
       "lessons": [
-        "dabu5-u1-1",
-        "dabu5-u1-2",
-        "dabu5-u1-3",
-        "dabu5-u1-4",
-        "dabu5-u1-5",
-        "dabu5-u1-6",
-        "dabu5-u1-7",
-        "dabu5-u1-8"
+        "dabu5-u1-1a",
+        "dabu5-u1-1b",
+        "dabu5-u1-1c",
+        "dabu5-u1-2a",
+        "dabu5-u1-2b",
+        "dabu5-u1-3a",
+        "dabu5-u1-3b",
+        "dabu5-u1-3c",
+        "dabu5-u1-4a",
+        "dabu5-u1-4b",
+        "dabu5-u1-4c",
+        "dabu5-u1-5a",
+        "dabu5-u1-5b",
+        "dabu5-u1-6a",
+        "dabu5-u1-6b",
+        "dabu5-u1-6c",
+        "dabu5-u1-7a",
+        "dabu5-u1-7b",
+        "dabu5-u1-8a",
+        "dabu5-u1-8b",
+        "dabu5-u1-8c"
       ]
     },
     {
       "unit": "大步 5",
       "title": "What travel is for",
       "lessons": [
-        "dabu5-u2-1",
-        "dabu5-u2-2",
-        "dabu5-u2-3",
-        "dabu5-u2-4",
-        "dabu5-u2-5",
-        "dabu5-u2-6"
+        "dabu5-u2-1a",
+        "dabu5-u2-1b",
+        "dabu5-u2-2a",
+        "dabu5-u2-2b",
+        "dabu5-u2-2c",
+        "dabu5-u2-3a",
+        "dabu5-u2-3b",
+        "dabu5-u2-4a",
+        "dabu5-u2-4b",
+        "dabu5-u2-4c",
+        "dabu5-u2-5a",
+        "dabu5-u2-5b",
+        "dabu5-u2-6a",
+        "dabu5-u2-6b",
+        "dabu5-u2-6c"
       ]
     },
     {
       "unit": "大步 5",
       "title": "A basket for the world",
       "lessons": [
-        "dabu5-u3-1",
-        "dabu5-u3-2",
-        "dabu5-u3-3",
-        "dabu5-u3-4",
-        "dabu5-u3-5",
-        "dabu5-u3-6",
-        "dabu5-u3-7",
-        "dabu5-u3-8"
+        "dabu5-u3-1a",
+        "dabu5-u3-1b",
+        "dabu5-u3-2a",
+        "dabu5-u3-2b",
+        "dabu5-u3-3a",
+        "dabu5-u3-3b",
+        "dabu5-u3-3c",
+        "dabu5-u3-4a",
+        "dabu5-u3-4b",
+        "dabu5-u3-5a",
+        "dabu5-u3-5b",
+        "dabu5-u3-6a",
+        "dabu5-u3-6b",
+        "dabu5-u3-7a",
+        "dabu5-u3-7b",
+        "dabu5-u3-7c",
+        "dabu5-u3-8a",
+        "dabu5-u3-8b"
       ]
     },
     {
       "unit": "大步 5",
       "title": "Back where it started",
       "lessons": [
-        "dabu5-u4-1",
-        "dabu5-u4-2",
-        "dabu5-u4-3",
-        "dabu5-u4-4"
+        "dabu5-u4-1a",
+        "dabu5-u4-1b",
+        "dabu5-u4-1c",
+        "dabu5-u4-2a",
+        "dabu5-u4-2b",
+        "dabu5-u4-3a",
+        "dabu5-u4-3b",
+        "dabu5-u4-4a",
+        "dabu5-u4-4b",
+        "dabu5-u4-4c"
       ]
     }
   ];
@@ -3224,93 +3642,103 @@
   // Short grammar/pattern notes, shown on the "meet the new words" screen and on
   // the lesson sheet, for the lessons that introduce a pattern worth a sentence.
   const LESSON_NOTES = {
-    "qibu1-s0-1": [
+    "qibu1-u1-1a": [
       {
         "title": "是 — to be",
         "body": "是 links two nouns. To say 'not', put 不 in front: 不是. Don't use 是 with adjectives: say 我很高兴, not 我是高兴. 我是马克。 (I'm Mark.)"
       }
     ],
-    "qibu1-u1-1": [
+    "qibu1-u1-1b": [
       {
         "title": "吗 — yes/no questions",
         "body": "Add 吗 to the end of a statement to turn it into a question. Answer by repeating the verb: 是 / 不是, 喝 / 不喝. 你是学生吗？ (Are you a student?)"
       }
     ],
-    "qibu1-u1-2": [
+    "qibu1-u1-2a": [
       {
         "title": "呢 — and you?",
         "body": "呢 bounces the same question back, so you don't need to repeat it. 我是学生，你呢？ (I'm a student. And you?)"
       }
     ],
-    "qibu1-u1-3": [
+    "qibu1-u1-3a": [
       {
         "title": "也 — also, too",
         "body": "也 always goes before the verb, never at the start of the sentence. 我也是学生。 (I'm a student too.)"
       }
     ],
-    "qibu1-u1-4": [
+    "qibu1-u1-4a": [
       {
         "title": "姓 and 叫 — names",
         "body": "姓 is for the surname only. 叫 is for your full name or given name. Chinese surnames come first: 林小雨 is Lin (surname) Xiaoyu. The polite way to ask a surname is 您贵姓？ (nín guì xìng). 我姓林。 (My surname is Lin.)"
-      },
+      }
+    ],
+    "qibu1-u1-4b": [
       {
         "title": "Sounds · Two third tones in a row",
         "body": "When two third tones meet, the first one rises like a second tone. You write nǐ hǎo but say ní hǎo. This book always prints the original tones."
       }
     ],
-    "qibu1-u2-1": [
+    "qibu1-u2-1a": [
       {
         "title": "哪国人 and 哪里人",
         "body": "哪国人 asks for a nationality. 哪里人 asks which city or region someone comes from. 你是哪国人？ (What nationality are you?)"
       }
     ],
-    "qibu1-u2-2": [
+    "qibu1-u2-1b": [
       {
         "title": "Country + 人 · country + 语",
         "body": "Add 人 for the people and 语 for the language. Chinese is usually 中文 or 汉语, and Japanese is 日语 (not 日本语). 法国人会说法语。 (French people speak French.)"
       }
     ],
-    "qibu1-u2-3": [
+    "qibu1-u2-2a": [
       {
         "title": "从 … 来 — to come from",
         "body": "The place goes between 从 and 来. 我从中国来。 (I'm from China.)"
       }
     ],
-    "qibu1-u2-4": [
+    "qibu1-u2-3a": [
       {
         "title": "住在 — to live in",
         "body": "在 marks the place, and the place comes after it. 我住在伦敦。 (I live in London.)"
-      },
+      }
+    ],
+    "qibu1-u2-4a": [
       {
         "title": "会 — can (a learned skill)",
         "body": "Use 会 for things you've learned, like languages. 一点儿 goes before the thing: 一点儿中文. 我会说法语。 (I can speak French.)"
-      },
+      }
+    ],
+    "qibu1-u2-4b": [
       {
         "title": "Sounds · zh ch sh · z c s",
         "body": "For zh ch sh, curl the tongue tip back. For z c s, keep it flat behind your teeth. Say each pair slowly, then quickly."
       }
     ],
-    "qibu1-u3-1": [
+    "qibu1-u3-1a": [
       {
         "title": "Asking about jobs",
         "body": "You can also answer with where you work. 你做什么工作？ (What do you do?)"
       }
     ],
-    "qibu1-u3-2": [
+    "qibu1-u3-2a": [
       {
         "title": "在 + place + verb",
         "body": "The place comes before the verb, never after it. Say 我在医院工作, not 我工作在医院. 我在设计公司工作。 (I work at a design company.)"
       }
     ],
-    "qibu1-u3-3": [
+    "qibu1-u3-3a": [
       {
         "title": "的 — 's",
         "body": "的 shows who something belongs to. You can drop the thing when it's clear: 是我的. With family and close friends, 的 is usually left out: 我表哥, 我朋友. 陈明的饭馆 (Chen Ming's restaurant)"
-      },
+      }
+    ],
+    "qibu1-u3-3b": [
       {
         "title": "这 and 那 — this and that",
         "body": "这 is near you, 那 is further away. You met 哪 (which) in Unit 2: the three belong together. 这是我表哥。 (This is my cousin.)"
-      },
+      }
+    ],
+    "qibu1-u3-3c": [
       {
         "title": "谁 — who",
         "body": "谁 goes where the answer would go. 他是谁？ (Who is he?)"
@@ -3320,221 +3748,247 @@
         "body": "j q x are always followed by i or ü. After j q x (and y), ü loses its dots, so xue is really xüe. To say ü, say 'ee' and round your lips."
       }
     ],
-    "qibu1-u4-1": [
+    "qibu1-u4-1a": [
       {
         "title": "Numbers to 1,000",
         "body": "Build numbers like a calculator reads them: 21 is 'two ten one'. When a zero sits in the middle, say 零 once: 105 is 一百零五. 九十九 (99)"
       }
     ],
-    "qibu1-u4-2": [
+    "qibu1-u4-1b": [
       {
         "title": "Measure words",
         "body": "Between a number and a noun you need a measure word. 个 is the most common one. You'll meet more in 起步 2. 三个厨师 (three chefs)"
       }
     ],
-    "qibu1-u4-3": [
+    "qibu1-u4-1c": [
       {
         "title": "二 or 两?",
         "body": "Use 二 when counting and in longer numbers (十二, 二十二). Before a measure word on its own, use 两. 两个服务员 (two waiters)"
       }
     ],
-    "qibu1-u4-4": [
+    "qibu1-u4-2a": [
       {
         "title": "几 or 多少?",
         "body": "几 expects a small number, about ten or under, and needs a measure word. 多少 works for any number, and is what you use for phone numbers. 你有几个孩子？ (How many children do you have?)"
       }
     ],
-    "qibu1-u4-5": [
+    "qibu1-u4-3a": [
       {
         "title": "Asking someone's age",
         "body": "Ask a child 你几岁？ and an adult 你多大？. For older people, 您多大年纪？ is politer. In the answer you don't need 是. 我三十二岁。 (I'm 32.)"
-      },
+      }
+    ],
+    "qibu1-u4-4a": [
       {
         "title": "吧 — let's",
         "body": "吧 at the end makes a friendly suggestion. 我们加个微信吧！ (Let's add each other on WeChat!)"
-      },
+      }
+    ],
+    "qibu1-u4-5a": [
       {
         "title": "Sounds · 一 and 不 change their tones",
         "body": "一 is yī when counting. Before a fourth tone it becomes yí; before any other tone, yì. 不 is bù, but becomes bú before a fourth tone. This book prints the original tones, so watch for these."
       }
     ],
-    "qibu1-u5-1": [
+    "qibu1-u5-1a": [
       {
         "title": "在 — doing it right now",
         "body": "在 before a verb means the action is happening now. 呢 at the end makes it sound natural and chatty. For 'not doing', use 没在. 我在学中文呢。 (I'm studying Chinese.)"
       }
     ],
-    "qibu1-u5-2": [
+    "qibu1-u5-2a": [
       {
         "title": "Two kinds of 在",
         "body": "在 + place says where. 在 + verb says it's happening now. With a place and a verb together, the place comes first. 我在家。 (I'm at home.)"
       }
     ],
-    "qibu1-u5-3": [
+    "qibu1-u5-2b": [
       {
         "title": "要 and 想 — plans and wishes",
         "body": "要 is for plans: 'going to'. 想 is 'would like to'. For 'don't want to', say 不想. (不要 on its own means 'don't!') 明天我要去饭馆。 (I'm going to the restaurant tomorrow.)"
-      },
+      }
+    ],
+    "qibu1-u5-3a": [
       {
         "title": "去 + place + verb",
         "body": "Say where you're going, then what you'll do there. 我们去饭馆吃饺子。 (We're going to the restaurant for dumplings.)"
-      },
+      }
+    ],
+    "qibu1-u5-3b": [
       {
         "title": "Time words come early",
         "body": "Put time words at the start or just after the subject, never at the end. 明天晚上我要去饭馆。 (Tomorrow evening I'm going to the restaurant.)"
-      },
+      }
+    ],
+    "qibu1-u5-3c": [
       {
         "title": "Sounds · The 儿 sound, and light syllables",
         "body": "In the north, 儿 curls onto the end of a word: 哪儿 nǎr, 一点儿 yīdiǎnr. In the south people often say 哪里 and 一点 instead. Some syllables are said light and short, with no tone: 什么, 朋友, 晚上."
       }
     ],
-    "qibu2-u1-1": [
+    "qibu2-u1-1a": [
       {
         "title": "喜欢 — to like (doing)",
         "body": "喜欢 can take a thing or a whole activity. 很喜欢 means 'really like'. The noun for 'hobby' is 爱好: 我的爱好是唱歌. 我喜欢做饭。 (I like cooking.)"
       }
     ],
-    "qibu2-u1-2": [
+    "qibu2-u1-1b": [
       {
         "title": "Inviting someone",
         "body": "Check they're free, then make the suggestion with 吧. Put 怎么样？ after a plan to ask what they think. 星期六你有空吗？ (Are you free on Saturday?)"
       }
     ],
-    "qibu2-u1-3": [
+    "qibu2-u1-2a": [
       {
         "title": "Saying no politely",
         "body": "A bare 不 sounds blunt. Say 不好意思, give a reason, and offer another time if you can. 要 here means 'have to'. 不好意思，我要工作。 (Sorry, I have to work.)"
       }
     ],
-    "qibu2-u1-4": [
+    "qibu2-u1-3a": [
       {
         "title": "那 — in that case",
         "body": "At the start of a sentence, 那 means 'then' or 'in that case'. It picks up what the other person has just said. 可以 on its own is a handy 'that's fine'. 那星期天呢？ (What about Sunday, then?)"
       }
     ],
-    "qibu2-u1-5": [
+    "qibu2-u1-3b": [
       {
         "title": "了 — it's done",
         "body": "了 after a verb shows the action is complete. The object usually has a number, 一些 or 很多 with it. Just 我买了面包 sounds unfinished. 我买了一些面包。 (I bought some bread.)"
-      },
+      }
+    ],
+    "qibu2-u1-4a": [
       {
         "title": "没 — didn't",
         "body": "For 'didn't', put 没 before the verb and drop the 了. Don't say 没买了. 她没买东西。 (She didn't buy anything.)"
-      },
+      }
+    ],
+    "qibu2-u1-4b": [
       {
         "title": "Sounds · The half third tone",
         "body": "Before another third tone, a third tone rises (you met this in 你好). Before any other tone, it just dips low and stays there. This 'half third' is how you'll say most third tones."
       }
     ],
-    "qibu2-u2-1": [
+    "qibu2-u2-1a": [
       {
         "title": "Telling the time",
         "body": "点 is o'clock and 分 is minutes. Two o'clock is 两点, not 二点. 半 is half past and 一刻 quarter past. 三刻 is quarter to, though many people just say 四十五. 八点 (8:00)"
       }
     ],
-    "qibu2-u2-2": [
+    "qibu2-u2-1b": [
       {
         "title": "差 — to the hour",
         "body": "差 means 'short of', so 差五分三点 is 'five minutes short of three': 2:55. Use it for the last few minutes before the hour. 差五分三点 (2:55)"
       }
     ],
-    "qibu2-u2-3": [
+    "qibu2-u2-2a": [
       {
         "title": "The time goes before the verb",
         "body": "Clock times go before the verb, like 明天 and 晚上 in 起步 1. When there are several, the biggest comes first: 星期六下午两点. 我七点半起床。 (I get up at half past seven.)"
       }
     ],
-    "qibu2-u2-4": [
+    "qibu2-u2-3a": [
       {
         "title": "以前 and 以后 — before and after",
         "body": "These come after the event, the other way round from English. With an amount of time, 以后 means 'in': 二十分钟以后 is 'in twenty minutes'. 睡觉以前，我看书。 (Before bed, I read.)"
       }
     ],
-    "qibu2-u2-5": [
+    "qibu2-u2-4a": [
       {
         "title": "每天 … 都 — every day",
         "body": "With 每天 and other 'every' words, add 都 before the verb. 我每天都跑步。 (I go running every day.)"
       }
     ],
-    "qibu2-u2-6": [
+    "qibu2-u2-4b": [
       {
         "title": "几点 or 什么时候?",
         "body": "几点 asks for a clock time. 什么时候 is any 'when': a day, a time, or just 'later'. 你几点起床？ (What time do you get up?)"
-      },
+      }
+    ],
+    "qibu2-u2-5a": [
       {
         "title": "Sounds · 四 and 十",
         "body": "With times, 四 sì and 十 shí are easy to mix up, and 十四 (14) and 四十 (40) even more so. For 十, curl your tongue back and let the tone rise. For 四, keep the tongue behind your teeth and let it fall."
       }
     ],
-    "qibu2-u3-1": [
+    "qibu2-u3-1a": [
       {
         "title": "Measure words for containers: 杯 瓶 盒",
         "body": "For food and drink, the measure word is often the container, just like 'a cup of' or 'a bottle of' in English. 一杯绿茶 (a cup of green tea)"
       }
     ],
-    "qibu2-u3-2": [
+    "qibu2-u3-2a": [
       {
         "title": "Measure words for shapes: 张 条 本 件",
         "body": "张 is for flat things, 条 for long, thin things, 本 for books and 件 for clothes and presents. Shops and restaurants take 家. 个 works for lots of things, but the right word sounds much more natural. 一张票 (a ticket)"
       }
     ],
-    "qibu2-u3-3": [
+    "qibu2-u3-3a": [
       {
         "title": "这个, 那个, 哪个",
         "body": "With a noun, 这, 那 and 哪 need a measure word: 这张卡, not 这卡. When it's clear what you mean, drop the noun: 这个, 哪个. 这张卡怎么样？ (What do you think of this card?)"
       }
     ],
-    "qibu2-u3-4": [
+    "qibu2-u3-3b": [
       {
         "title": "要 — ordering",
         "body": "In cafés and shops, 要 is the simplest way to order. Staff will ask 还要别的吗？ When you've finished, say 不要了，谢谢. 我要一杯珍珠奶茶。 (I'll have a pearl milk tea.)"
       }
     ],
-    "qibu2-u3-5": [
+    "qibu2-u3-4a": [
       {
         "title": "还是 — or? (in questions)",
         "body": "Use 还是 to offer a choice in a question. Answer with just the one you want. 大杯、中杯还是小杯？ (Large, medium or small?)"
       }
     ],
-    "qibu2-u3-6": [
+    "qibu2-u3-5a": [
       {
         "title": "送 and 给 — presents",
         "body": "送 is 'to give as a present', and the person comes before the thing. 是给…的 says who something is for. 别 + verb means 'don't'. 送她一张唱片吧！ (Get her a record!)"
-      },
+      }
+    ],
+    "qibu2-u3-5b": [
       {
         "title": "Sounds · -n or -ng?",
         "body": "Lots of measure words end in -n or -ng, and the difference changes the word. For -n, the tip of the tongue touches behind the top teeth. For -ng, the back of the tongue rises and the sound comes out through the nose."
-      },
+      }
+    ],
+    "qibu2-u3-6a": [
       {
         "title": "Culture · Bubble tea",
         "body": "Bubble tea, 珍珠奶茶 or 'pearl milk tea', started in Taiwan in the 1980s and is now sold all over the world, including on almost every corner of London's Chinatown. The 'pearls' are chewy balls of tapioca."
       }
     ],
-    "qibu2-u4-1": [
+    "qibu2-u4-1a": [
       {
         "title": "Dates: biggest first",
         "body": "Chinese dates go from the biggest unit to the smallest. Read the year digit by digit: 2026年 is èr líng èr liù nián. In speech the day is 号; in writing it's 日, and the year may be written in characters: 二〇二六年九月二十五日. 2026年9月25号 (25 September 2026)"
       }
     ],
-    "qibu2-u4-2": [
+    "qibu2-u4-1b": [
       {
         "title": "星期几 — days of the week",
         "body": "Monday to Saturday are numbered: 星期一 is 'week one'. Sunday is 星期天 (星期日 in writing). To ask which day, say 星期几. 今天星期几？ (What day is it today?)"
       }
     ],
-    "qibu2-u4-3": [
+    "qibu2-u4-2a": [
       {
         "title": "Asking about birthdays",
         "body": "Put 几 where the numbers go in the answer. In the answer you can drop 是. 你的生日是几月几号？ (When's your birthday?)"
-      },
+      }
+    ],
+    "qibu2-u4-2b": [
       {
         "title": "上, 这, 下 — last, this, next",
         "body": "上 is last and 下 is next, with 个 before 星期 and 月. Years work differently: 去年, 今年, 明年. 下个星期五是中秋节。 (Next Friday is Mid-Autumn.)"
-      },
+      }
+    ],
+    "qibu2-u4-3a": [
       {
         "title": "打算 — to plan to",
         "body": "打算 is for plans you've thought about, a bit firmer than 想. It's also a noun: 你有什么打算？ What are your plans? 明年我打算回成都。 (I'm planning to go back to Chengdu next year.)"
-      },
+      }
+    ],
+    "qibu2-u4-3b": [
       {
         "title": "快乐 — wishes",
         "body": "Add 快乐 to an occasion for a greeting. 祝 (wish) makes it warmer, and 祝大家 wishes everyone. 生日快乐！ (Happy birthday!)"
@@ -3548,1885 +4002,1969 @@
         "body": "The Mid-Autumn Festival (中秋节) falls on the fifteenth day of the eighth month of the Chinese calendar, when the moon is at its fullest. In the Western calendar it moves around between mid-September and early October: in 2026 it's on 25 September."
       }
     ],
-    "qibu3-u1-1": [
+    "qibu3-u1-1a": [
       {
         "title": "怎么 + verb — how?",
         "body": "You met 怎么 in 怎么过 and 怎么说. Put it before any verb to ask how something is done. 怎么去 asks how you get somewhere. 你怎么去上班？ (How do you get to work?)"
       }
     ],
-    "qibu3-u1-2": [
+    "qibu3-u1-1b": [
       {
         "title": "坐, 骑, 开 and 走路",
         "body": "坐 is for anything you ride in as a passenger: the Tube, a bus, a train, a plane. 骑 is for anything you sit astride, like a bike. 开 is to drive. The way you travel goes before 去, never after it. 我坐地铁去上班。 (I take the Tube to work.)"
       }
     ],
-    "qibu3-u1-3": [
+    "qibu3-u1-2a": [
       {
         "title": "从 … 到 … — from … to …",
         "body": "从 marks the start and 到 the end. The whole phrase comes before the verb or at the start of the sentence. 从我家到公司 (from my place to the office)"
       }
     ],
-    "qibu3-u1-4": [
+    "qibu3-u1-3a": [
       {
         "title": "要多长时间？ — how long does it take?",
         "body": "要 here means 'to take'. 左右 after an amount means 'about', like 差不多 before it. 只要 means 'it only takes'. 从你家到公司要多长时间？ (How long does it take from your place to the office?)"
-      },
+      }
+    ],
+    "qibu3-u1-3b": [
       {
         "title": "过 — have you ever …?",
         "body": "过 after a verb means you've done it at some time in your life. For 'never', use 没 and keep the 过. Add 还 for 'not yet'. 你去过牛津吗？ (Have you been to Oxford?)"
-      },
+      }
+    ],
+    "qibu3-u1-4a": [
       {
         "title": "Sounds · q or ch?",
         "body": "q is said with the tongue flat and the lips spread, like the 'ch' in 'cheese' but further forward. ch curls the tongue back. Both are said with a strong puff of air. Transport words are full of them."
       }
     ],
-    "qibu3-u2-1": [
+    "qibu3-u2-1a": [
       {
         "title": "比 — comparing",
         "body": "Put 比 between the two things, then the adjective. Don't add 很: say 伦敦比成都冷, not 伦敦比成都很冷. With people, 大 and 小 mean older and younger. 成都比伦敦暖和。 (Chengdu is warmer than London.)"
       }
     ],
-    "qibu3-u2-2": [
+    "qibu3-u2-1b": [
       {
         "title": "A bit more: 比 … 一点儿",
         "body": "To say the difference is small, add 一点儿 after the adjective. 今天比昨天暖和一点儿。 (Today's a bit warmer than yesterday.)"
       }
     ],
-    "qibu3-u2-3": [
+    "qibu3-u2-2a": [
       {
         "title": "没有 … 那么 — not as … as",
         "body": "This is the everyday way to say 'not as … as'. Don't use 不比 for this: 成都没有北京那么冷 is what people say. 成都没有北京那么冷。 (Chengdu isn't as cold as Beijing.)"
       }
     ],
-    "qibu3-u2-4": [
+    "qibu3-u2-3a": [
       {
         "title": "更 — even more",
         "body": "更 compares with something already mentioned. It goes before the adjective. 北京的冬天更冷。 (Winters in Beijing are even colder.)"
       }
     ],
-    "qibu3-u2-5": [
+    "qibu3-u2-3b": [
       {
         "title": "一样 — the same",
         "body": "一样 on its own means 'the same'. Add an adjective for 'just as …'. 上海和伦敦一样冷。 (Shanghai is as cold as London.)"
-      },
+      }
+    ],
+    "qibu3-u2-4a": [
       {
         "title": "有点儿 or 一点儿?",
         "body": "有点儿 goes before an adjective and usually means 'a bit too', so it's often a complaint. 一点儿 goes after an adjective, in comparisons and requests. 一点儿也不 means 'not at all'. 今天有点儿冷，多穿一点儿衣服。 (It's a bit cold today. Put on some more clothes.)"
-      },
+      }
+    ],
+    "qibu3-u2-4b": [
       {
         "title": "Sounds · The e in 热",
         "body": "Pinyin e on its own is not the English 'e'. Start with your mouth as for 'o', then spread your lips without moving your tongue: it sounds a bit like the 'u' in 'fur'. In 冷 and 更, eng is closer to the 'ung' in 'lung'."
-      },
+      }
+    ],
+    "qibu3-u2-5a": [
       {
         "title": "Culture · Chengdu: tea, sun and chilli",
         "body": "Chengdu is the capital of Sichuan province, in the south-west of China. It sits in a basin surrounded by mountains, so the sky is often grey and misty. An old saying claims that Sichuan's dogs bark when the sun comes out, because they so rarely see it."
       }
     ],
-    "qibu3-u3-1": [
+    "qibu3-u3-1a": [
       {
         "title": "Asking the way",
         "body": "怎么走 asks for directions on foot. Start with 请问 to be polite. Use 您 for older people. 请问，唐人街怎么走？ (Excuse me, how do I get to Chinatown?)"
       }
     ],
-    "qibu3-u3-2": [
+    "qibu3-u3-1b": [
       {
         "title": "往 + direction",
         "body": "往 means 'towards'. 一直走 is 'keep going straight'. 第 makes an order: 第二个路口 is the second crossing. 往前一直走。 (Go straight on.)"
       }
     ],
-    "qibu3-u3-3": [
+    "qibu3-u3-2a": [
       {
         "title": "离 — how far?",
         "body": "离 measures the distance between two places. Here and there are 这儿 and 那儿. 唐人街离这儿很近。 (Chinatown is very close to here.)"
       }
     ],
-    "qibu3-u3-4": [
+    "qibu3-u3-2b": [
       {
         "title": "Where things are",
         "body": "The place word comes after the landmark, the other way round from English: 银行旁边 is 'next to the bank'. 就在 means 'right there'. 超市在银行旁边。 (The supermarket is next to the bank.)"
       }
     ],
-    "qibu3-u3-5": [
+    "qibu3-u3-3a": [
       {
         "title": "有没有? 远不远? — yes or no",
         "body": "Another way to ask a yes/no question is to say the verb or adjective twice, with 不 in between (没 for 有). Don't add 吗. 附近有没有超市？ (Is there a supermarket nearby?)"
-      },
+      }
+    ],
+    "qibu3-u3-4a": [
       {
         "title": "Sounds · zou or zuo? ou and uo",
         "body": "ou starts with an 'o' and glides to 'u', like the 'o' in 'go'. uo starts with a 'u' and opens to 'o', like the 'wa' in 'water'. Mix them up and 走 (walk) becomes 左 (left)."
-      },
+      }
+    ],
+    "qibu3-u3-5a": [
       {
         "title": "Culture · London's Chinatown",
         "body": "London's first Chinatown grew up in Limehouse, by the docks in the East End, where Chinese sailors settled in the late 1800s. After the Second World War, Chinese restaurants started opening around Gerrard Street in Soho, and by the 1970s it was known as Chinatown."
       }
     ],
-    "qibu3-u4-1": [
+    "qibu3-u4-1a": [
       {
         "title": "Saying what's wrong",
         "body": "怎么了 asks what's the matter. 不舒服 means 'not feeling well'. Put 疼 after the part that hurts. 你哪儿不舒服？ (Where does it hurt? / What's wrong?)"
       }
     ],
-    "qibu3-u4-2": [
+    "qibu3-u4-2a": [
       {
         "title": "应该 — should",
         "body": "应该 gives advice or says what's right. It goes before the verb. 你应该去看医生。 (You should see a doctor.)"
       }
     ],
-    "qibu3-u4-3": [
+    "qibu3-u4-2b": [
       {
         "title": "得 děi — must, have to",
         "body": "得 is said děi when it means 'must'. It's very common in speech. For 'don't have to', say 不用, never 不得. 我得工作。 (I have to work.)"
       }
     ],
-    "qibu3-u4-4": [
+    "qibu3-u4-3a": [
       {
         "title": "Asking prices",
         "body": "多少钱 is 'how much?'. In shops and markets, 怎么卖 asks the price of something sold by weight or number. The price can come first or last: 多少钱一盒 or 一盒多少钱. 多少钱一盒？ (How much is a box?)"
       }
     ],
-    "qibu3-u4-5": [
+    "qibu3-u4-4a": [
       {
         "title": "Money: 块, 毛, 元, 英镑",
         "body": "In speech, 块 is the everyday word for a unit of money: a pound in London, a yuan in China. A number after 块 is the tenths: 六块五 is 6.50. The written word for yuan is 元, and 毛 is a tenth in speech. China's money is 人民币, and the pound is 英镑. 六块五 (£6.50)"
-      },
+      }
+    ],
+    "qibu3-u4-4b": [
       {
         "title": "Softer asking: 能 … 吗? and 试试",
         "body": "能…吗？ asks if something is possible. Saying a verb twice, like 试试, makes it light and casual: 'have a try'. 能便宜一点儿吗？ (Could you do it a bit cheaper?)"
-      },
+      }
+    ],
+    "qibu3-u4-5a": [
       {
         "title": "Sounds · One character, two readings (again)",
         "body": "Some characters change their reading with their meaning. Learn these as whole words."
-      },
+      }
+    ],
+    "qibu3-u4-5b": [
       {
         "title": "Culture · 多喝热水: drink more hot water",
         "body": "Tell a Chinese friend you have a cold, a headache or a stomach ache, and the first thing you'll probably hear is 多喝热水 (duō hē rè shuǐ): 'drink more hot water'. It's such a common reply that it has become a friendly joke online."
       }
     ],
-    "qibu4-u1-1": [
+    "qibu4-u1-1a": [
       {
         "title": "来 — ordering",
         "body": "In a restaurant, 来 is the everyday way to order, a bit more casual than 要. Dishes take 个 or 份 (a portion). 再来 means 'and we'd also like'. 来一个水煮鱼。 (One boiled fish, please.)"
       }
     ],
-    "qibu4-u1-2": [
+    "qibu4-u1-1b": [
       {
         "title": "几位？ — how many of you?",
         "body": "位 is a polite measure word for people. Staff use it for you, and you use it for guests or strangers. Don't use it about yourself: say 我们三个人, or just 三位 when answering. 几位？ (How many of you?)"
       }
     ],
-    "qibu4-u1-3": [
+    "qibu4-u1-2a": [
       {
         "title": "别放 … — leave it out",
         "body": "You met 别 in 别告诉小雨. When ordering, 别放 or 不要放 says what to leave out, and 少放 means 'go easy on it'. 别 + verb + 了 means 'stop doing it'. 别放辣椒！ (No chilli!)"
       }
     ],
-    "qibu4-u1-4": [
+    "qibu4-u1-2b": [
       {
         "title": "的 with no noun",
         "body": "When it's clear what you mean, drop the noun after 的: 不辣的 is 'one that isn't spicy'. 有没有不辣的？ (Is there anything that isn't spicy?)"
       }
     ],
-    "qibu4-u1-5": [
+    "qibu4-u1-3a": [
       {
         "title": "Paying the bill",
         "body": "Call 服务员，买单！ for the bill. 我请客 means 'it's on me', and 我来 is 'let me (pay)'. Among friends, especially younger people, 我们 AA 吧 means splitting the bill or everyone paying their own. It's written with the English letters. 服务员，买单！ (Waiter, the bill please!)"
       }
     ],
-    "qibu4-u1-6": [
+    "qibu4-u1-4a": [
       {
         "title": "Sounds · s, sh and x",
         "body": "s keeps the tongue flat behind the teeth, sh curls it back, and x spreads the lips with the tongue flat and forward, as in 'she' said with a smile. The menu is full of all three."
       }
     ],
-    "qibu4-u1-7": [
+    "qibu4-u1-4b": [
       {
         "title": "Culture · Who pays? Fighting over the bill",
         "body": "At the end of a meal in China, you'll often see two or three people on their feet, each trying to push their card or phone at the waiter first. This is 抢着买单 (qiǎngzhe mǎidān), 'fighting to pay', and it's a way of showing warmth and respect. The oldest person, the host, or whoever invited everyone usually expects to win, and the loser says 下次我请！, 'next time it's on me'. A quiet trip to the counter halfway through the meal is a classic move."
       }
     ],
-    "qibu4-u2-1": [
+    "qibu4-u2-1a": [
       {
         "title": "会, 能 or 可以?",
         "body": "All three can be 'can'. 会 is a skill you've learned. 能 is being able to, because of your body or the situation. 可以 is permission, or saying something is fine. For 'not allowed', say 不可以 or 不能. 我会踢足球，不会打羽毛球。 (I can play football, but not badminton.)"
       }
     ],
-    "qibu4-u2-2": [
+    "qibu4-u2-1b": [
       {
         "title": "打, 踢 and 游 — playing sport",
         "body": "Games you play with your hands or a racket take 打, 'hit'. Football takes 踢, 'kick'. 游泳 is to swim, and 游 on its own is the verb. 打球 and 踢球 mean 'play' when the game is clear. 打羽毛球 (play badminton)"
       }
     ],
-    "qibu4-u2-3": [
+    "qibu4-u2-2a": [
       {
         "title": "一边 … 一边 … — at the same time",
         "body": "Put 一边 before each of the two actions. The subject comes first, before the first 一边. 他一边跑步一边听音乐。 (He listens to music while he runs.)"
       }
     ],
-    "qibu4-u2-4": [
+    "qibu4-u2-2b": [
       {
         "title": "过 — have you ever?",
         "body": "You met 过 in 起步 3. It asks about experience. The short answer repeats the verb with 过: 打过 or 没打过. 你打过羽毛球吗？ (Have you ever played badminton?)"
-      },
+      }
+    ],
+    "qibu4-u2-3a": [
       {
         "title": "这样 — like this",
         "body": "这样 before a verb means 'this way'. On its own, with a question mark, it checks: 'like this?' 球拍要这样拿。 (Hold the racket like this.)"
-      },
+      }
+    ],
+    "qibu4-u2-3b": [
       {
         "title": "Sounds · yu, you and yong",
         "body": "yu is really ü: round your lips as if to whistle and say 'ee'. you sounds like 'yo' in 'yoga'. yong starts like 'yo' and ends in -ng. Sport words have all three."
-      },
+      }
+    ],
+    "qibu4-u2-4a": [
       {
         "title": "Culture · Morning in a Chinese park",
         "body": "Walk through a Chinese park at seven in the morning and it's already busy. Older people do tai chi (太极拳 tàijíquán) in slow, quiet groups, others walk backwards or clap their hands for their health, and someone is always practising calligraphy on the path with a big brush and water."
       }
     ],
-    "qibu4-u3-1": [
+    "qibu4-u3-1a": [
       {
         "title": "比 … 多了 — much more",
         "body": "For a big difference, add 多了 after the adjective. For a small one, add 一点儿, as in 起步 3. Still no 很 in a 比 sentence. 新的比去年的贵多了。 (The new one is much more expensive than last year's.)"
       }
     ],
-    "qibu4-u3-2": [
+    "qibu4-u3-1b": [
       {
         "title": "最 — the most",
         "body": "最 before an adjective makes 'the most' or '-est'. It also goes before 喜欢: 'like best'. Don't add 很. 拍照最重要。 (The camera is the most important thing.)"
       }
     ],
-    "qibu4-u3-3": [
+    "qibu4-u3-2a": [
       {
         "title": "又 … 又 … — both … and …",
         "body": "Two things about the same thing, usually both good or both bad. Each adjective gets its own 又. 又轻又好看 (light and good-looking)"
       }
     ],
-    "qibu4-u3-4": [
+    "qibu4-u3-3a": [
       {
         "title": "还是 or 或者?",
         "body": "Both mean 'or'. 还是 is for questions that offer a choice. 或者 is for statements, when either will do. 你喜欢黑色还是白色？ (Do you prefer black or white?)"
       }
     ],
-    "qibu4-u3-5": [
+    "qibu4-u3-4a": [
       {
         "title": "不 … 了 — not any more",
         "body": "了 at the end of a negative sentence shows a change: it used to be so, but not now. 不能再 + adjective + 了 means 'can't go any further'. 我的手机不能用了。 (My phone doesn't work any more.)"
-      },
+      }
+    ],
+    "qibu4-u3-4b": [
       {
         "title": "Sounds · ui is really uei",
         "body": "Pinyin ui is short for uei: 最 zuì sounds like 'zway', and 贵 guì like 'gway'. Glide from u to the 'ay' in 'day'."
-      },
+      }
+    ],
+    "qibu4-u3-5a": [
       {
         "title": "Culture · A phone for everything",
         "body": "In Chinese cities, the phone is your wallet. People pay for almost everything with WeChat Pay (微信支付) or Alipay (支付宝) by scanning a QR code, from a meal in a restaurant to a bunch of vegetables at a market stall. Many young people hardly carry cash at all, and some street sellers just tape a printed QR code to their stall."
       }
     ],
-    "qibu4-u4-1": [
+    "qibu4-u4-1a": [
       {
         "title": "On the phone",
         "body": "Start every call with 喂. When you answer at work, add the name of the place. To ask for someone, use 请问…在吗？ 哪位 is the polite way to ask 'who?'. 喂，您好，陈家饺子。 (Hello, Chen Family Dumplings.)"
       }
     ],
-    "qibu4-u4-2": [
+    "qibu4-u4-1b": [
       {
         "title": "打错了 and 找",
         "body": "打错了 is 'wrong number'. 找 means 'look for', and on the phone it's 'want to speak to'. 我一会儿再打 means 'I'll call back later'. 您打错了。 (You've got the wrong number.)"
       }
     ],
-    "qibu4-u4-3": [
+    "qibu4-u4-2a": [
       {
         "title": "跟 … 一起 — with",
         "body": "跟 means 'with'. The whole 跟…一起 phrase goes before the verb. 和 works the same way, but 跟 is more common in speech. 我想跟你一起去打羽毛球。 (I'd like to go and play badminton with you.)"
       }
     ],
-    "qibu4-u4-4": [
+    "qibu4-u4-2b": [
       {
         "title": "预订 and 订 — booking",
         "body": "预订 is the full word, used by staff and on websites. In speech people usually say 订. Put the day and time first, and the number of people last. 我想预订一个羽毛球场。 (I'd like to book a badminton court.)"
       }
     ],
-    "qibu4-u4-5": [
+    "qibu4-u4-3a": [
       {
         "title": "很会 — good at it",
         "body": "会 means you can do something. 很会 means you're good at it, and 不太会 means you're not much good. 他很会打乒乓球。 (He's really good at table tennis.)"
-      },
+      }
+    ],
+    "qibu4-u4-3b": [
       {
         "title": "给 + person + 打电话",
         "body": "The person you ring goes after 给, before 打电话. Don't say 打电话给他 in a simple sentence, though you'll hear it. 我给她打电话。 (I'll ring her.)"
-      },
+      }
+    ],
+    "qibu4-u4-4a": [
       {
         "title": "Sounds · 喂 on the phone",
         "body": "喂 is wèi in the dictionary, and that's how you'd shout 'hey!'. On the phone, most people say it with a rising tone, wéi, which sounds friendlier. This book prints wèi. Say these phone and sport words aloud."
-      },
+      }
+    ],
+    "qibu4-u4-5a": [
       {
         "title": "Culture · Table tennis: China's national game",
         "body": "Table tennis is often called China's 国球 (guóqiú), its 'national ball game'. China has won most of the Olympic table-tennis gold medals since the sport joined the Games in 1988, and players like Deng Yaping and Ma Long are household names."
       }
     ],
-    "qibu5-u1-1": [
+    "qibu5-u1-1a": [
       {
         "title": "觉得 — I think, I feel",
         "body": "觉得 gives your opinion or says how you feel. To ask what someone thought, use 你觉得…怎么样？ Don't use 想 for opinions: 想 is 'would like to'. 你觉得演出怎么样？ (What did you think of the show?)"
       }
     ],
-    "qibu5-u1-2": [
+    "qibu5-u1-1b": [
       {
         "title": "挺 … 的 — pretty, quite",
         "body": "挺 is spoken and friendly, a little weaker than 很 or 真. The 的 at the end is usual but not a must. 挺好的！ (Pretty good!)"
       }
     ],
-    "qibu5-u1-3": [
+    "qibu5-u1-2a": [
       {
         "title": "From great to so-so",
         "body": "还可以 is 'OK, not bad', without much excitement. 一般 is 'so-so', and it's the polite way to say you weren't impressed. People soften criticism, so 一般 can mean quite bad. 演出怎么样？——太棒了！ (How was the show? Brilliant!)"
       }
     ],
-    "qibu5-u1-4": [
+    "qibu5-u1-2b": [
       {
         "title": "了 — what happened",
         "body": "To report what happened, put 了 after the verb, usually with an amount. For 'didn't', use 没 and drop the 了. 了 at the end of a sentence marks a change: 后来就好了, 'then she was fine'. 她唱了六首歌。 (She sang six songs.)"
       }
     ],
-    "qibu5-u1-5": [
+    "qibu5-u1-3a": [
       {
         "title": "首 and 句 — songs and lines",
         "body": "首 counts songs and poems, and 句 counts lines and sentences. 第 + number is 'first, second …', and 最后 is 'last'. 一句也没听懂 means 'didn't understand a single word'. 她唱错了一句。 (She got a line wrong.)"
-      },
+      }
+    ],
+    "qibu5-u1-4a": [
       {
         "title": "Sounds · 听 or 挺? The tone makes the word",
         "body": "tīng is 'listen' and tǐng is 'quite'. 挺好听的 has both, and only the tones keep them apart: a low dip, then high and level. Remember the two third tones in 挺好: say tíng hǎo."
-      },
+      }
+    ],
+    "qibu5-u1-4b": [
       {
         "title": "Culture · A night at KTV",
         "body": "In China, you don't need a stage to sing. KTV (karaoke) is one of the most popular nights out: a group of friends or colleagues hires a private room with a big screen, sofas, a menu of snacks and drinks, and two microphones that never stop being passed round. Birthdays, work dinners and the end of exams all tend to finish at KTV."
       }
     ],
-    "qibu5-u2-1": [
+    "qibu5-u2-1a": [
       {
         "title": "Verb + 得 — how it's done",
         "body": "To say how well someone does something, put 得 (said de) after the verb, then the comment. 不 goes after 得, not before the verb. To ask, say 说得怎么样？ or 说得好不好？ 你学得真快！ (You learn really fast!)"
       }
     ],
-    "qibu5-u2-2": [
+    "qibu5-u2-1b": [
       {
         "title": "With an object: say the verb twice",
         "body": "得 can't come straight after an object. Either say the verb again, or put the object first and drop the first verb. 你切菜切得真快！ (You chop really fast!)"
       }
     ],
-    "qibu5-u2-3": [
+    "qibu5-u2-2a": [
       {
         "title": "哪里哪里 — taking a compliment",
         "body": "The traditional reply to praise plays it down. 哪里哪里 is 'oh, not at all', and 还差得远呢 is 'I've still got a long way to go'. Passing the credit on is even better. Among friends, a simple 谢谢 is fine too. 你的中文真好！——哪里哪里。 (Your Chinese is so good! Oh, not really.)"
       }
     ],
-    "qibu5-u2-4": [
+    "qibu5-u2-3a": [
       {
         "title": "越来越 — more and more",
         "body": "越来越 shows something changing over time. It goes straight before the adjective, with no 很. 了 at the end is common. 你的中文越来越好了！ (Your Chinese is getting better and better!)"
       }
     ],
-    "qibu5-u2-5": [
+    "qibu5-u2-3b": [
       {
         "title": "多 + verb + 点儿 — have some more!",
         "body": "Every host's favourite line is 多吃点儿！ 多 before a verb means 'more', as in 多喝热水. 少 before a verb means 'less'. 多吃点儿！ (Have some more!)"
-      },
+      }
+    ],
+    "qibu5-u2-4a": [
       {
         "title": "Sounds · Light de, and děi",
         "body": "得 in 说得好 and 的 in 我的 are both said de, light and short, so you only tell them apart in writing. When 得 means 'must', it's děi. 哪里哪里 sounds like ná li ná li in quick speech."
-      },
+      }
+    ],
+    "qibu5-u2-5a": [
       {
         "title": "Culture · Modesty: 哪里哪里",
         "body": "Say 你好 to someone in China and you may well hear 你的中文说得真好！ Chinese people are generous with praise for learners. But there's a catch: the traditional reply to a compliment isn't 'thank you'. Accepting praise too readily can sound like boasting, so people play it down with 哪里哪里 (literally 'where? where?'), 还差得远呢 or 过奖了 (guòjiǎng le, 'you flatter me')."
       }
     ],
-    "qibu5-u3-1": [
+    "qibu5-u3-1a": [
       {
         "title": "就 — early or quick",
         "body": "就 after a time says it happened earlier or faster than you'd expect. 了 usually comes at the end. 我七点半就到了。 (I got here at half past seven.)"
       }
     ],
-    "qibu5-u3-2": [
+    "qibu5-u3-1b": [
       {
         "title": "才 — late or slow",
         "body": "才 says it happened later than expected, or took longer. Don't add 了. 你怎么才来？ means 'what took you so long?' 我八点才醒。 (I didn't wake up till eight.)"
       }
     ],
-    "qibu5-u3-3": [
+    "qibu5-u3-2a": [
       {
         "title": "就 or 才?",
         "body": "The same time can be early or late. It depends on what you expected, and how you feel about it. 我们七点半就到了，你九点才来！ (We were here at half seven, and you didn't come till nine!)"
       }
     ],
-    "qibu5-u3-4": [
+    "qibu5-u3-2b": [
       {
         "title": "一 … 就 … — as soon as",
         "body": "The second thing happens straight after the first. 一 and 就 both go before verbs, never before the subject. 我一醒就出门了。 (I left as soon as I woke up.)"
       }
     ],
-    "qibu5-u3-5": [
+    "qibu5-u3-3a": [
       {
         "title": "Days and weeks either side",
         "body": "Days count out from today. Weeks and months double 上 and 下: 上上个星期 is the week before last, and 下下个月 is the month after next. 前天吃饭，你也来晚了。 (You were late for dinner the day before yesterday too.)"
-      },
+      }
+    ],
+    "qibu5-u3-4a": [
       {
         "title": "Sounds · c or z?",
         "body": "c sounds like the 'ts' in 'cats', with a strong puff of air. z is like the 'ds' in 'beds', with no puff. Hold your hand in front of your mouth: you should feel 才, but not 在."
-      },
+      }
+    ],
+    "qibu5-u3-4b": [
       {
         "title": "Culture · China by high-speed train",
         "body": "China has the world's biggest high-speed rail network, over 45,000 kilometres of it. Trains called 高铁 (gāotiě) run at up to 350 km/h: Beijing to Shanghai takes about four and a half hours, and Chengdu to Chongqing about an hour."
       }
     ],
-    "qibu5-u4-1": [
+    "qibu5-u4-1a": [
       {
         "title": "Opening and closing an email",
         "body": "An email to a friend opens with 亲爱的 and the name, then a colon, with 你好！ on the next line. It closes with a wish, 祝你…, then 你的朋友 and your name, with the date last. For someone you don't know well, just start with the name and 你好. 亲爱的小雨： (Dear Xiaoyu,)"
       }
     ],
-    "qibu5-u4-2": [
+    "qibu5-u4-1b": [
       {
         "title": "Writing a diary",
         "body": "A Chinese diary entry puts the date, the day and the weather on the first line. In writing, the day of the month is 日, not 号. Tell the day with 了, and say how you felt with 觉得 or 心里. 六月二十六日　星期六　晴天 (Saturday 26 June, sunny)"
       }
     ],
-    "qibu5-u4-3": [
+    "qibu5-u4-2a": [
       {
         "title": "会 … 的 — I'm sure it will",
         "body": "You know 会 as 'can'. It also means 'will', for something that's likely to happen. 的 at the end makes it sound sure and warm. 我们会想你的。 (We'll miss you.)"
       }
     ],
-    "qibu5-u4-4": [
+    "qibu5-u4-2b": [
       {
         "title": "就 … 了 and 才 — soon, and not until",
         "body": "With a future time, 就…了 means 'soon, already by then', and it sounds close. 才 means 'not until', and it sounds a long way off. 你下个星期就回成都了？ (So you're going back to Chengdu next week?)"
       }
     ],
-    "qibu5-u4-5": [
+    "qibu5-u4-3a": [
       {
         "title": "用 — in Chinese, by phone",
         "body": "用 means 'to use'. Put 用中文 before the verb for 'in Chinese', and 用手机 for 'on your phone'. 用中文写邮件 (write emails in Chinese)"
       }
     ],
-    "qibu5-u4-6": [
+    "qibu5-u4-3b": [
       {
         "title": "Sounds · ie and üe",
         "body": "写 xiě and 学 xué are easy to mix up. xie spreads the lips; for xue, round them as if to whistle before you open to e. After j, q, x and y, ü is written u, so xue is really xüe, and 月 yuè is yüe."
-      },
+      }
+    ],
+    "qibu5-u4-4a": [
       {
         "title": "Culture · Dear …: letters and emails in Chinese",
         "body": "A Chinese letter has a fixed shape. The name goes top left, followed by a colon, and 你好！ gets a line of its own, indented. The letter ends with a wish, 祝你… ('wishing you …'): 身体健康 (good health) for older people, 学习进步 (progress in your studies) for students, 工作顺利 (gōngzuò shùnlì, 'that work goes well') for colleagues, or just 快乐 for friends. Your name and the date go bottom right, with the date last."
       }
     ],
-    "jinbu1-u1-1": [
+    "jinbu1-u1-1a": [
       {
         "title": "打算 and 计划 — plans",
         "body": "You met 打算 in 起步 2: 'plan to', always before a verb. It can be a noun too: 有什么打算？ 'what are your plans?'. 计划 is a firmer, more organised plan, and it's the word for a written itinerary. 你打算在成都待几天？ (How many days are you planning to stay in Chengdu?)"
       }
     ],
-    "jinbu1-u1-2": [
+    "jinbu1-u1-1b": [
       {
         "title": "先 … 再 … — first this, then that",
         "body": "For a plan, 先 goes before the first action and 再 before the next one. 再 is for things that haven't happened yet; 然后 works for both future and past. 我先去成都，再去北京。 (I'll go to Chengdu first, then Beijing.)"
       }
     ],
-    "jinbu1-u1-3": [
+    "jinbu1-u1-2a": [
       {
         "title": "住几晚？ — nights and dates",
         "body": "Hotels count nights with 晚 or 个晚上. The length goes after the verb: 住五晚, not 五晚住. Dates go before it, with 号 in speech: 十九号入住. 我想住五晚。 (I'd like to stay five nights.)"
       }
     ],
-    "jinbu1-u1-4": [
+    "jinbu1-u1-2b": [
       {
         "title": "包括 — including",
         "body": "包括 means 'to include'. It's the key word for what's in the price: breakfast, tax, a ticket. The answer is 包括 or 不包括. 房费包括早餐吗？ (Does the room rate include breakfast?)"
       }
     ],
-    "jinbu1-u1-5": [
+    "jinbu1-u1-3a": [
       {
         "title": "Verb + 好 — done and ready",
         "body": "好 after a verb says the job is done properly and ready to go. 订好了 is 'all booked', and 还没想好 is 'I haven't decided yet'. 带好 is 'make sure you've got'. 机票订好了。 (The flights are booked.)"
       }
     ],
-    "jinbu1-u1-6": [
+    "jinbu1-u1-3b": [
       {
         "title": "还是 … 吧 — I'd better",
         "body": "You know 还是 as 'or' and 'still'. With 吧 at the end it means 'I'd better' or 'let's just': a polite way to settle on something after thinking it over. 太麻烦你们了，我还是住酒店吧。 (It's too much trouble for you. I'd better stay in a hotel.)"
       }
     ],
-    "jinbu1-u1-7": [
+    "jinbu1-u1-4a": [
       {
         "title": "Sounds · Prices the short way",
         "body": "In speech, prices drop the last unit: 四百八 is 480, and 四百零八 is 408. Say the numbers as one smooth phrase with the stress on the first number. Remember the tone changes: 一晚 is said yì wǎn, and 一百 is yì bǎi."
-      },
+      }
+    ],
+    "jinbu1-u1-4b": [
       {
         "title": "Culture · Checking in, Chinese style",
         "body": "At a Chinese hotel, check-in starts with your passport. Hotels must register foreign guests with the police, so the front desk will scan it, and not every hotel can take foreigners: when you book online, look for a note saying it accepts overseas guests. Chinese guests use their ID card (身份证)."
       }
     ],
-    "jinbu1-u2-1": [
+    "jinbu1-u2-1a": [
       {
         "title": "Getting around by metro",
         "body": "Lines are numbered: 二号线, 三号线. 坐到 is 'ride as far as', and 站 counts stops. To change, say 在 + station + 换乘 (or just 换) + the next line. 你先坐二号线，到春熙路换乘三号线。 (Take Line 2 to Chunxi Road, and change to Line 3.)"
       }
     ],
-    "jinbu1-u2-2": [
+    "jinbu1-u2-1b": [
       {
         "title": "Topic first — 春熙路我去过",
         "body": "Chinese often puts what you're talking about first, then says something about it. The object moves to the front, and the rest of the sentence stays in its usual order. It's very common in speech, especially to pick up something already mentioned. 春熙路我去过。 (Chunxi Road, I've been there.)"
       }
     ],
-    "jinbu1-u2-3": [
+    "jinbu1-u2-2a": [
       {
         "title": "Getting it wrong: 坐反, 坐错, 坐过站",
         "body": "Put the result straight after the verb. 坐反了 is going the wrong way, 坐错了 is taking the wrong line, and 坐过站了 is missing your stop. 别 … 了 warns someone not to. 别坐反了！ (Don't go the wrong way!)"
       }
     ],
-    "jinbu1-u2-4": [
+    "jinbu1-u2-2b": [
       {
         "title": "Being a host — 快坐，别客气",
         "body": "Hosts hurry guests along with 快: 快进来, 快坐. 别客气 here means 'don't be shy', and 就当在自己家 is 'make yourself at home'. When you hand over a present, say 一点儿小礼物, and expect 你太客气了 in return. 快进来，快进来！ (Come in, come in!)"
       }
     ],
-    "jinbu1-u2-5": [
+    "jinbu1-u2-2c": [
       {
         "title": "叔叔 and 阿姨 — your friend's parents",
         "body": "Call a friend's parents 叔叔 and 阿姨, just as you do older strangers. Using their given names would sound rude. When you mention them to your friend, say 你爸爸 and 你妈妈, or 叔叔阿姨. 叔叔好！阿姨好！ (Hello! (to a friend's father and mother))"
       }
     ],
-    "jinbu1-u2-6": [
+    "jinbu1-u2-3a": [
       {
         "title": "Sounds · A Sichuan accent",
         "body": "Chengdu people speak Sichuanese at home, and their Mandarin often has a Sichuan flavour. The curled-tongue sounds zh, ch, sh flatten to z, c, s, so 是 and 四 can sound the same, and n and l often swap. You'll also hear a few local words."
-      },
+      }
+    ],
+    "jinbu1-u2-3b": [
       {
         "title": "Culture · Mid-Autumn at home",
         "body": "Mid-Autumn Festival (中秋节) is about 团圆: the family together. People travel home if they can, there's a public holiday, and the big meal is at home, not in a restaurant. In the evening everyone goes out onto the balcony or into a park to look at the moon (赏月), which is said to be at its roundest and brightest that night."
       }
     ],
-    "jinbu1-u3-1": [
+    "jinbu1-u3-1a": [
       {
         "title": "跟 … 一样 — the same as",
         "body": "跟 … 一样 says two things are the same. Add an adjective for the way they're the same: 跟我一样高. For 'not the same', put 不 before 一样, not before 跟. 一模一样 is 'identical'. 你的衬衫怎么跟马克的一样？ (How come your shirt is the same as Mark's?)"
       }
     ],
-    "jinbu1-u3-2": [
+    "jinbu1-u3-1b": [
       {
         "title": "像 — like, look like",
         "body": "像 compares things that aren't really the same: 'like'. 像 … 一样 is 'just like', and 长得像 is for faces and looks. Don't say 很一样; say 很像. 你们俩像父子一样！ (You two look like father and son!)"
       }
     ],
-    "jinbu1-u3-3": [
+    "jinbu1-u3-2a": [
       {
         "title": "差不多 — about the same",
         "body": "You know 差不多 as 'about' before a number. After 跟, it means 'about the same': there's a difference, but not much. 差不多 on its own is also a handy reply: 'more or less'. 你们俩个子差不多。 (You two are about the same height.)"
       }
     ],
-    "jinbu1-u3-4": [
+    "jinbu1-u3-2b": [
       {
         "title": "大一号 — one size up",
         "body": "号 means 'size'. 大一号 is one size up, and 小一号 one size down: the number goes after the adjective, as in 大一点儿. Clothes in China tend to be sized smaller than in Britain. 能换大一号的吗？ (Could I change it for one a size up?)"
       }
     ],
-    "jinbu1-u3-5": [
+    "jinbu1-u3-3a": [
       {
         "title": "退 or 换? — returns, exchanges and 要是",
         "body": "换 is swapping for something else, and 退 is taking it back for your money. 退换 covers both. 要是 means 'if' and is common in speech; 就 often starts the second half. 这件太小了，能换吗？ (This is too small. Can I change it?)"
       }
     ],
-    "jinbu1-u3-6": [
+    "jinbu1-u3-3b": [
       {
         "title": "Sounds · Stress for contrast",
         "body": "When you correct someone or compare two things, stress the word that makes the difference, and say it a little longer and louder. The rest of the sentence gets lighter."
       }
     ],
-    "jinbu1-u3-7": [
+    "jinbu1-u3-4a": [
       {
         "title": "Culture · Hotpot, Chengdu style",
         "body": "Hotpot (火锅) is Chengdu's great night out. A pot of broth bubbles in the middle of the table, and everyone cooks their own food in it: thin slices of beef and lamb, tripe (毛肚), duck intestines, tofu, mushrooms, potato and greens. The spicy red broth (红锅) is thick with dried chillies and Sichuan pepper (花椒), which gives the famous numbing tingle called 麻. If that's too much, order a split pot (鸳鸯锅) with a clear, mild broth on the other side."
       }
     ],
-    "jinbu1-u4-1": [
+    "jinbu1-u4-1a": [
       {
         "title": "让 — made me feel",
         "body": "让 means 'to let', and also 'to make someone feel'. The cause comes first, then 让, the person, and the feeling. It's warmer and more natural than saying 'I feel … because …'. 你们让我觉得像在自己家一样。 (You made me feel completely at home.)"
       }
     ],
-    "jinbu1-u4-2": [
+    "jinbu1-u4-1b": [
       {
         "title": "难忘 and 好找 — hard to, easy to",
         "body": "难 before a verb means 'hard to', and 好 means 'easy to'. You know 好吃, 好看, 难吃 and 难过. The same pattern gives 难忘 (hard to forget, unforgettable), 好找 (easy to find) and 难找 (hard to find). 这是我最难忘的一个中秋节。 (It's the most memorable Mid-Autumn I've ever had.)"
       }
     ],
-    "jinbu1-u4-3": [
+    "jinbu1-u4-2a": [
       {
         "title": "Writing to older people",
         "body": "Start with the family name and 叔叔 or 阿姨, then a colon. 亲爱的 is for friends. Thank them first (首先), then give details, then thank them again (再次感谢) and finish with a wish. 身体健康 and 万事如意 suit older people. 林叔叔、林阿姨：你们好！ (Dear Mr and Mrs Lin, hello!)"
       }
     ],
-    "jinbu1-u4-4": [
+    "jinbu1-u4-2b": [
       {
         "title": "不是 … 而是 … — not this, but that",
         "body": "而是 is the written partner of 不是. It corrects the first idea and stresses the second. In speech, people often just say 不是 A，是 B. 你们让我觉得自己不是客人，而是家里人。 (You made me feel I wasn't a guest, but one of the family.)"
       }
     ],
-    "jinbu1-u4-5": [
+    "jinbu1-u4-3a": [
       {
         "title": "Thanks and replies",
         "body": "Chinese thanks often apologise for the trouble: 太麻烦你们了. The host waves it away with 麻烦什么！ or 不麻烦. When you've helped someone, reply to their thanks with 应该的, 'it was the least I could do'. 这几天真是太麻烦你们了。 (I've put you to so much trouble these last few days.)"
       }
     ],
-    "jinbu1-u4-6": [
+    "jinbu1-u4-3b": [
       {
         "title": "Sounds · Reading a letter aloud",
         "body": "Read in chunks, not word by word. Pause at each comma, a little longer at each full stop, and keep 的, 了 and 们 light and short. The stress falls on the words that carry the feeling: 非常, 最, 一直."
-      },
+      }
+    ],
+    "jinbu1-u4-4a": [
       {
         "title": "Culture · Being a guest, and saying thank you",
         "body": "Chinese hospitality can be overwhelming. Hosts meet you at the station, pay for everything, fill your bowl before it's empty and pack you off with food for the journey. Arguing too hard can seem cold, so accept graciously, and repay the kindness later: a present from home, a meal when they visit you, or photos and news."
       }
     ],
-    "jinbu2-u1-1": [
+    "jinbu2-u1-1a": [
       {
         "title": "把 — doing something to something",
         "body": "把 brings the object forward, before the verb, when you do something to it: move it, hang it, turn it off. The verb can't stand alone at the end: it needs something after it, like 上去, 好, 在门口 or 了. 别 and 没 go before 把. 快帮我把这幅画挂上去。 (Quick, help me hang this painting up.)"
       }
     ],
-    "jinbu2-u1-2": [
+    "jinbu2-u1-1b": [
       {
         "title": "来 and 去 — towards you, away from you",
         "body": "来 means towards the speaker and 去 means away. So someone downstairs calls 下来！ and someone upstairs says 我下去！. A place goes before 来 or 去: 回饭馆去, 进教室来. In speech 来 and 去 are usually light. 快下来帮我拿！ (Come down and help me carry it!)"
       }
     ],
-    "jinbu2-u1-3": [
+    "jinbu2-u1-2a": [
       {
         "title": "Verb + direction — 挂上去, 拿过来",
         "body": "Put the direction straight after the verb to show which way the thing moves. 挂上去 is 'hang up there', 拿过来 is 'bring it over here', 搬下去 is 'carry it downstairs'. With 把, the object comes before the verb. 地上那幅你帮我拿过来。 (Bring me the one on the floor.)"
       }
     ],
-    "jinbu2-u1-4": [
+    "jinbu2-u1-2b": [
       {
         "title": "把 … 在 / 到 — putting things somewhere",
         "body": "To say where something ends up, use 把 with 在 (where it stays) or 到 (where it goes to). You can't say 搬桌子到门口 without 把: say 把桌子搬到门口. 我们把这张桌子搬到门口去吧。 (Let's move this table to the door.)"
       }
     ],
-    "jinbu2-u1-5": [
+    "jinbu2-u1-3a": [
       {
         "title": "挂高一点儿 — adjusting",
         "body": "To fine-tune something, put an adjective after the verb and 一点儿 after that: 挂高一点儿, 放低一点儿. 再 means 'a bit more'. For a direction, use 往: 再往左一点儿. 有点儿低，再挂高一点儿。 (It's a bit low. Hang it a bit higher.)"
       }
     ],
-    "jinbu2-u1-6": [
+    "jinbu2-u1-3b": [
       {
         "title": "Sounds · Light directions",
         "body": "来 and 去 after a verb are usually said lightly, in the neutral tone, and so is the 上, 下 or 过 in front of them in a longer phrase. Put the stress on the main verb: GUÀ shang qu, NÁ guo lai."
       }
     ],
-    "jinbu2-u1-7": [
+    "jinbu2-u1-4a": [
       {
         "title": "Culture · Opening day, Chinese style",
         "body": "In China, an opening (开幕) is a proper event. Shops, restaurants and exhibitions often start with a ribbon-cutting (剪彩), and the entrance fills up with tall flower baskets (花篮) sent by friends and business partners, each with a red ribbon carrying the sender's name and good wishes."
       }
     ],
-    "jinbu2-u2-1": [
+    "jinbu2-u2-1a": [
       {
         "title": "比 … + how much — 大两岁",
         "body": "To say exactly how big the difference is, put the amount after the adjective: 大两岁, 贵五十镑, 高一点儿. Don't put it before: not 比我两岁大. 这件唐装比我还大两岁！ (This Tang jacket is two years older than me!)"
       }
     ],
-    "jinbu2-u2-2": [
+    "jinbu2-u2-1b": [
       {
         "title": "得多 and 多了 — much more",
         "body": "For a big difference, add 得多 or 多了 after the adjective. They mean the same. In a 比 sentence you can't use 很 or 非常 before the adjective: not 比旗袍很早. 汉服比旗袍早得多。 (Hanfu is much older than the qipao.)"
       }
     ],
-    "jinbu2-u2-3": [
+    "jinbu2-u2-2a": [
       {
         "title": "比 … 还 / 更 — even more",
         "body": "还 and 更 both mean 'even more'. 还 often sounds surprised or teasing: the jacket is even older than Chen Ming! 更 is more neutral, and can be used without 比 when the comparison is clear. 这件唐装比我还大！ (This jacket is even older than me!)"
       }
     ],
-    "jinbu2-u2-4": [
+    "jinbu2-u2-2b": [
       {
         "title": "没有 … 那么 — not as … as",
         "body": "没有 … 那么 says A doesn't reach B's level. It's softer than 比 with a negative. Use 这么 for something here and now. Don't put an amount after it: for 'two years younger', use 比 … 小两岁. 汉服没有旗袍那么方便。 (Hanfu isn't as practical as a qipao.)"
       }
     ],
-    "jinbu2-u2-5": [
+    "jinbu2-u2-2c": [
       {
         "title": "穿 or 戴? — wearing",
         "body": "穿 is for things you get into: clothes, shoes, socks. 戴 is for things you put on or attach: hats, glasses, a watch, a necklace. 穿上 and 戴上 are 'put on'. 开幕那天我穿旗袍。 (I'm wearing the qipao on opening night.)"
       }
     ],
-    "jinbu2-u2-6": [
+    "jinbu2-u2-3a": [
       {
         "title": "Sounds · Stress the difference",
         "body": "In a comparison, the most important part is how big the difference is, so that's where the stress goes. Say the amount a little louder and longer, and keep 比 and the names light."
-      },
+      }
+    ],
+    "jinbu2-u2-3b": [
       {
         "title": "Culture · Three kinds of Chinese clothes",
         "body": "The qipao (旗袍) is the dress most people picture when they think of Chinese clothes: close-fitting, with a high collar and fastenings of knotted cloth. Its modern form grew popular in Shanghai in the 1920s and 30s. Today it's worn for weddings, parties and formal events, and red is the favourite colour for a celebration."
       }
     ],
-    "jinbu2-u3-1": [
+    "jinbu2-u3-1a": [
       {
         "title": "用 … 来 … — using something to do something",
         "body": "用 names the tool or the method, and 来 leads into what you do with it. 来 can be left out in speech, but 用…来… sounds clear and complete, especially when explaining. 国画用毛笔和墨来画。 (Chinese painting is done with a brush and ink.)"
       }
     ],
-    "jinbu2-u3-2": [
+    "jinbu2-u3-1b": [
       {
         "title": "之一 — one of the …",
         "body": "之一 goes at the very end, after the whole group: 最有名的画家之一 is 'one of the most famous painters'. It's the natural way to avoid saying 'the most' when there are others too. 齐白石是中国最有名的画家之一。 (Qi Baishi is one of China's most famous painters.)"
       }
     ],
-    "jinbu2-u3-3": [
+    "jinbu2-u3-2a": [
       {
         "title": "好像 and 跟 … 一样 — as if, just like",
         "body": "好像 means something seems or looks a certain way. 跟活的一样 is 'just like the real thing', a favourite way to praise a picture. You can put both together: 好像跟真的一样. 这些虾好像在水里游。 (These shrimps look like they're swimming.)"
       }
     ],
-    "jinbu2-u3-4": [
+    "jinbu2-u3-2b": [
       {
         "title": "到底 — what exactly?",
         "body": "到底 in a question means 'exactly' or 'after all', when you really want a clear answer. It goes before the verb or the question word, never at the end. 国画和油画到底有什么不同？ (What exactly is the difference between Chinese painting and oil painting?)"
       }
     ],
-    "jinbu2-u3-5": [
+    "jinbu2-u3-3a": [
       {
         "title": "是 … 的 — talking about how it was done",
         "body": "When something has already happened and you want to know who did it, when, where or how, put the detail between 是 and 的. It's how people talk about paintings: 是谁画的？ 是在哪儿学的？ 这是谁画的？ (Who painted this?)"
       }
     ],
-    "jinbu2-u3-6": [
+    "jinbu2-u3-3b": [
       {
         "title": "Sounds · Two third tones",
         "body": "When two third tones come together, the first one rises and becomes a second tone. The characters keep their third-tone marks in writing, so watch out for them. With three or more, group the words and change all but the last in each group."
-      },
+      }
+    ],
+    "jinbu2-u3-4a": [
       {
         "title": "Culture · Ink, brush and empty space",
         "body": "Chinese painting (国画) uses the same tools as calligraphy, often called the 'four treasures of the study': the brush, the ink, the paper and the inkstone, where solid ink is ground with water. A painter controls everything with the brush: thick or thin lines, dark or watery ink, fast or slow strokes. Mistakes can't be painted over, so the work is quick and sure."
       }
     ],
-    "jinbu2-u4-1": [
+    "jinbu2-u4-1a": [
       {
         "title": "Verb + 完 — finished",
         "body": "完 after a verb says the action has come to an end: there's nothing left to do. The negative is 没 … 完, 'not finished yet'. To ask, add 了没有 or 了吗. 菜单做完了没有？ (Have you finished the menu yet?)"
       }
     ],
-    "jinbu2-u4-2": [
+    "jinbu2-u4-1b": [
       {
         "title": "完 or 好? — finished, or done right",
         "body": "完 just says you've come to the end. 好 says it's been done properly and is ready. 写完了 means you stopped writing; 写好了 means it's ready to send. Often both work. 英文菜名我都写好了。 (I've done all the English names of the dishes.)"
       }
     ],
-    "jinbu2-u4-3": [
+    "jinbu2-u4-2a": [
       {
         "title": "到, 见 and 懂 — getting there",
         "body": "These say the action worked. 见 is for seeing and hearing: 看见, 听见. 到 is for reaching or getting what you wanted: 找到, 收到, 买到. 懂 is for understanding: 看懂, 听懂. The negative uses 没: 没看见, 没看懂. 我发给你的照片，你看见了吗？ (Did you see the photos I sent you?)"
       }
     ],
-    "jinbu2-u4-4": [
+    "jinbu2-u4-2b": [
       {
         "title": "看看, 试一试 — just a bit",
         "body": "Saying a verb twice makes it light and casual: 'have a look', 'give it a try', 'have a rest'. One-syllable verbs can take 一 in the middle (试一试). Two-syllable verbs repeat as a pair: 休息休息. For the past, put 了 in the middle: 看了看. 我们去看看吧。 (Let's go and have a look.)"
       }
     ],
-    "jinbu2-u4-5": [
+    "jinbu2-u4-3a": [
       {
         "title": "聊聊天, 散散步 — relaxing with verb + object",
         "body": "When a verb has its own object, like 聊天 or 散步, only the verb part repeats: 聊聊天, not 聊天聊天. It makes plans sound easy and unhurried, perfect for a lazy Sunday. 找个地方喝喝咖啡，聊聊天。 (Find somewhere for a coffee and a chat.)"
       }
     ],
-    "jinbu2-u4-6": [
+    "jinbu2-u4-3b": [
       {
         "title": "Sounds · Light repeats",
         "body": "In a repeated verb, the second one is said lightly, in the neutral tone, and the 一 in the middle is light too. It's part of what makes these phrases sound so relaxed. Say the first syllable clearly and let the rest fall away."
-      },
+      }
+    ],
+    "jinbu2-u4-4a": [
       {
         "title": "Culture · What's on the menu?",
         "body": "Chinese dish names can be poetic, practical or just puzzling. Many simply list what's in them: 西红柿炒鸡蛋 is tomato fried with egg. Others describe how a dish looks or where it comes from, and some tell a story. 蚂蚁上树, 'ants climbing a tree', is minced pork on glass noodles. 夫妻肺片, 'husband and wife lung slices', is a cold Sichuan beef dish with no lungs in it at all, and it's famous for bad English translations."
       }
     ],
-    "jinbu3-u1-1": [
+    "jinbu3-u1-1a": [
       {
         "title": "除了 … 以外，还 / 也 — besides",
         "body": "With 还 or 也 in the second half, 除了…以外 adds something: 'besides A, there's also B'. 以外 can be dropped in speech. 还 and 也 go after the subject, before the verb. 除了饺子以外，今天晚上还有鱼、有鸡、有肉。 (Besides dumplings, tonight there's fish, chicken and meat.)"
       }
     ],
-    "jinbu3-u1-2": [
+    "jinbu3-u1-1b": [
       {
         "title": "除了 … 以外，都 — except",
         "body": "With 都 in the second half, 除了…以外 leaves something out: 'everything except A'. 别的 (the others) often comes before 都. Watch the difference: 还 adds, 都 excludes. 除了相声以外，别的都看懂了。 (I understood everything except the comic dialogues.)"
       }
     ],
-    "jinbu3-u1-3": [
+    "jinbu3-u1-2a": [
       {
         "title": "谁 … 谁 … — whoever",
         "body": "A question word used twice, once in each half, means 'whoever' (or 'whatever', 'wherever'). Both halves point to the same person or thing. 就 often comes before the second verb. 谁吃到硬币，谁明年就有福气。 (Whoever gets a coin will have good luck next year.)"
       }
     ],
-    "jinbu3-u1-4": [
+    "jinbu3-u1-2b": [
       {
         "title": "New Year wishes",
         "body": "过年好 and 新年好 are the everyday greetings for the whole holiday. 给您拜年了 is warm and respectful, for older people. 恭喜发财 wishes someone wealth, and is great for shopkeepers and friends. For older people, add 身体健康 and 万事如意. 叔叔、阿姨，过年好！ (Happy New Year!)"
       }
     ],
-    "jinbu3-u1-5": [
+    "jinbu3-u1-3a": [
       {
         "title": "不让 and …的话 — rules and ifs",
         "body": "不让 + verb is a spoken way to say something isn't allowed: 'they don't let you'. The formal word on signs is 禁止. …的话 at the end of a condition means 'if'. It can go with 要是 or stand alone. 现在城里不让放鞭炮了。 (You can't set off firecrackers in town any more.)"
       }
     ],
-    "jinbu3-u1-6": [
+    "jinbu3-u1-3b": [
       {
         "title": "Sounds · Beijing 儿",
         "body": "In Beijing, lots of words end with 儿, which curls the tongue back at the end of the syllable. When the syllable ends in -n or -i, that sound drops out: 馅儿 sounds like xiàr and 一块儿 like yí kuàr. You don't need to copy it, but you'll hear it all the time in the north."
       }
     ],
-    "jinbu3-u1-7": [
+    "jinbu3-u1-3c": [
       {
         "title": "Culture · Spring Festival in Beijing",
         "body": "Spring Festival (春节) starts on the first day of the lunar year, between late January and mid-February, and it's the biggest holiday in China. Hundreds of millions of people travel home, and the most important meal of the year is the New Year's Eve dinner (年夜饭). In the north, that means dumplings, shaped like old gold ingots (元宝) for wealth, with a coin hidden in one or two. Fish is always on the table too, because 鱼 sounds like 余, 'plenty left over'."
       }
     ],
-    "jinbu3-u2-1": [
+    "jinbu3-u2-1a": [
       {
         "title": "Can or can't: 听得懂, 听不懂",
         "body": "Put 得 or 不 between a verb and its result to say whether you can or can't manage it. 听懂 is 'understand by listening'; 听得懂 is 'can understand', 听不懂 is 'can't understand'. For 'can't', this is much more natural than 不能听懂. 他们唱的，您听得懂吗？ (Can you understand what they're singing?)"
       }
     ],
-    "jinbu3-u2-2": [
+    "jinbu3-u2-1b": [
       {
         "title": "Asking with 得 and 不",
         "body": "Ask with 吗 at the end, or put the 'can' and 'can't' forms side by side. Answer with just the 得 or 不 form: 听得懂 or 听不懂. 字幕你看得清楚吗？ (Can you see the subtitles?)"
       }
     ],
-    "jinbu3-u2-3": [
+    "jinbu3-u2-2a": [
       {
         "title": "看不出来 — can't tell",
         "body": "出来 after 看, 听 or 吃 means 'make out, tell': 看不出来 is 'can't tell by looking', 听得出来 is 'can tell by listening'. It's the natural way to say you can't work something out. 谁也看不出来是怎么变的。 (Nobody can work out how he does it.)"
       }
     ],
-    "jinbu3-u2-4": [
+    "jinbu3-u2-2b": [
       {
         "title": "听起来, 看起来 — it sounds, it looks",
         "body": "起来 after a verb of the senses says how something seems when you hear it, see it or taste it. 听起来 can also be about an idea: 听起来不错 is 'sounds good'. 二胡听起来有点儿难过。 (The erhu sounds a bit sad.)"
       }
     ],
-    "jinbu3-u2-5": [
+    "jinbu3-u2-3a": [
       {
         "title": "一会儿 … 一会儿 … — now this, now that",
         "body": "Two 一会儿 in a row describe something that keeps switching between two things. It's perfect for face-changing, and for the weather. 他的脸一会儿红，一会儿黑。 (His face is red one moment, black the next.)"
       }
     ],
-    "jinbu3-u2-6": [
+    "jinbu3-u2-3b": [
       {
         "title": "Sounds · Light 得 and 不",
         "body": "In 听得懂 and 听不懂, the 得 or 不 in the middle is said lightly, in the neutral tone, and quickly. The stress falls on the result at the end. That's why 不 in 听不懂 doesn't change tone the way it does in 不是: it's too light to carry one."
-      },
+      }
+    ],
+    "jinbu3-u2-4a": [
       {
         "title": "Culture · Beijing opera and face-changing",
         "body": "Beijing opera (京剧) took shape in Beijing about two hundred years ago, when opera troupes from the south came to the capital and mixed their styles. It combines singing, speech, acting, dance and acrobatics, and every movement has a meaning. There are four main kinds of role: men, women, painted faces and clowns. The colours of a painted face (脸谱) tell you about the character: red is loyal and brave, black is honest and fierce, and white often means sly. The band sits at the side, led by drums and a small, high fiddle called the jinghu."
       }
     ],
-    "jinbu3-u3-1": [
+    "jinbu3-u3-1a": [
       {
         "title": "虽然 … 但是 … — although",
         "body": "虽然 gives one side, and 但是 or 可是 gives the other. Unlike English, Chinese uses both words. 虽然 can go before or after the subject. In speech you'll often hear just one of the pair. 虽然看了这么多遍，但是每次看都想哭。 (Although I've seen it so many times, I still want to cry every time.)"
       }
     ],
-    "jinbu3-u3-2": [
+    "jinbu3-u3-1b": [
       {
         "title": "不但 … 而且 … — not only … but also",
         "body": "不但…而且… adds a second point that goes further than the first. With one subject, put it before 不但. 也 or 还 often comes after 而且 too. 林黛玉不但长得漂亮，而且特别有才。 (Lin Daiyu isn't only beautiful, she's really talented too.)"
       }
     ],
-    "jinbu3-u3-3": [
+    "jinbu3-u3-2a": [
       {
         "title": "连 … 也 / 都 … — even",
         "body": "连 picks out the most surprising example, and 也 or 都 goes before the verb. It can pick out the subject (连小学生也知道) or the object (连一个字也不认识). With a negative, it means 'not even'. 在中国，连小学生也知道《红楼梦》。 (In China, even primary school children know Dream of the Red Chamber.)"
       }
     ],
-    "jinbu3-u3-4": [
+    "jinbu3-u3-2b": [
       {
         "title": "讲的是 … — it's about …",
         "body": "讲 means 'tell' or 'explain', and 讲的是 is the everyday way to say what a book, film or series is about. 给我讲讲 is 'tell me about it'. 《红楼梦》讲的是什么故事？ (What's Dream of the Red Chamber about?)"
       }
     ],
-    "jinbu3-u3-5": [
+    "jinbu3-u3-3a": [
       {
         "title": "看了十几遍了 — so far",
         "body": "With 了 after the verb and another 了 at the end, you count up to now, and it's still going on. With only the first 了, it's finished. Compare 我学了两年中文 (and stopped) with 我学了两年中文了 (and I'm still learning). 这部电视剧您看了多少遍了？ (How many times have you seen this series?)"
       }
     ],
-    "jinbu3-u3-6": [
+    "jinbu3-u3-3b": [
       {
         "title": "Sounds · Pairs in long sentences",
         "body": "When a sentence has two halves joined by a pair of words, pause after the first half and let your voice stay up, so people know more is coming. Stress the linking words a little: 虽然, 但是, 不但, 而且, 连."
       }
     ],
-    "jinbu3-u3-7": [
+    "jinbu3-u3-4a": [
       {
         "title": "Culture · The four great classical novels",
         "body": "Four novels, all written between the 14th and the 18th centuries, are known in China as the 'four great classical novels' (四大名著). Journey to the West follows the Monkey King and a monk on their way to India to fetch Buddhist scriptures. Romance of the Three Kingdoms tells of war and clever generals after the fall of the Han dynasty. Water Margin is about a band of 108 outlaws. And Dream of the Red Chamber (红楼梦) follows the rise and fall of the rich Jia family."
       }
     ],
-    "jinbu3-u4-1": [
+    "jinbu3-u4-1a": [
       {
         "title": "越 … 越 … — the more … the more",
         "body": "越…越… links two changes: as one grows, so does the other. With one subject, you can say 越爬越累. With two, each goes after its own 越: 越往上爬，台阶越陡. 越来越 is the simple version, for one thing changing over time. 我越爬越累！ (The more I climb, the more tired I get!)"
       }
     ],
-    "jinbu3-u4-2": [
+    "jinbu3-u4-1b": [
       {
         "title": "终于 — at last",
         "body": "终于 says something finally happened after a long wait or a lot of effort, and it sounds relieved. 才 is about being late, and often sounds cross: 你怎么才来？ 'what took you so long?' 终于到了！ (We're finally here!)"
       }
     ],
-    "jinbu3-u4-3": [
+    "jinbu3-u4-2a": [
       {
         "title": "累死了, 美极了 — so, so …",
         "body": "死了 after an adjective means 'incredibly', 'to death'. It's very spoken, and usually for bad things: 累死了, 冷死了, 饿死了. 极了 means 'extremely' and works for good things too: 美极了, 好吃极了. Don't add 很 before either. 累死了！ (I'm exhausted!)"
       }
     ],
-    "jinbu3-u4-4": [
+    "jinbu3-u4-2b": [
       {
         "title": "不到长城非好汉 — how a saying works",
         "body": "Many sayings are short and written-style. Here 到 is 'reach', 非 is the written word for 不是, and the two halves make an 'if not… then not…' sentence. 非 also appears in 非要, 'insist on', and 非常. 不到长城非好汉。 (You're not a hero till you've climbed the Great Wall.)"
       }
     ],
-    "jinbu3-u4-5": [
+    "jinbu3-u4-3a": [
       {
         "title": "走不了, 爬不上去 — can't manage it",
         "body": "不了 (liǎo) after a verb means you can't do it at all, because of time, tiredness or circumstances. 得了 is the 'can' form. You can also put 得 or 不 before a direction: 爬得上去, 走不下来. 明天我可能走不了路了。 (Tomorrow I might not be able to walk.)"
-      },
+      }
+    ],
+    "jinbu3-u4-3b": [
       {
         "title": "Sounds · 不 and 一 on the Wall",
         "body": "不 changes to bú before a fourth tone, and 一 changes to yí before a fourth tone and yì before the other tones. The word tables keep bù and yī, so watch for them when you read aloud. In 不到长城非好汉, 不到 is said bú dào."
-      },
+      }
+    ],
+    "jinbu3-u4-4a": [
       {
         "title": "Culture · The Great Wall",
         "body": "The Great Wall (长城) isn't one wall but many, built and rebuilt by different dynasties over more than two thousand years to keep out raiders from the north. Most of what visitors see today was built in the Ming dynasty, in brick and stone, with watchtowers (烽火台) where soldiers lit fires to send warnings along the Wall. Altogether it runs for over twenty thousand kilometres. And no, you can't see it from space with the naked eye."
       }
     ],
-    "jinbu4-u1-1": [
+    "jinbu4-u1-1a": [
       {
         "title": "被 — it happened to me",
         "body": "被 turns the sentence round: the thing that suffered comes first, and 被 introduces who did it. You can leave out who did it, as in 我的手机被偷了. In conversation, 被 is mostly for bad luck. The verb can't stand alone at the end: it needs 了, a result or a 'how much' after it. 我的手机被偷了！ (My phone's been stolen!)"
       }
     ],
-    "jinbu4-u1-2": [
+    "jinbu4-u1-1b": [
       {
         "title": "叫 and 让 — the spoken passive",
         "body": "In everyday speech, 叫 and 让 work just like 被, but they always need the 'who', even if it's only 人 (someone). 让你说对了 and 叫你说对了 are fixed ways of saying 'you were right', often when you wish they weren't. 我的自行车叫人偷了。 (My bike got nicked.)"
       }
     ],
-    "jinbu4-u1-3": [
+    "jinbu4-u1-2a": [
       {
         "title": "没被, 别被 — not, and don't let it",
         "body": "Negative words and 不会 go before 被, never after it. To ask when or where something happened, use 是…的 around the whole thing: 是在哪儿被偷的？ 还好，我的钱包没被偷。 (Luckily my wallet wasn't stolen.)"
       }
     ],
-    "jinbu4-u1-4": [
+    "jinbu4-u1-2b": [
       {
         "title": "被 or 把? — two ways round",
         "body": "把 starts with the person who did it, and 被 starts with the thing it happened to. Choose by what you're talking about. If it's your phone, start with the phone and use 被. 小偷把我的手机偷了。 (A thief stole my phone.)"
       }
     ],
-    "jinbu4-u1-5": [
+    "jinbu4-u1-3a": [
       {
         "title": "得要命 — terribly",
         "body": "得要命 after an adjective means 'unbearably, like mad'. Like 死了, it's very spoken and usually for bad things. Don't put 很 in front of the adjective. 下班的时候人多得要命。 (It was absolutely packed after work.)"
       }
     ],
-    "jinbu4-u1-6": [
+    "jinbu4-u1-3b": [
       {
         "title": "Sounds · Say it with feeling",
         "body": "A good complaint puts the stress on the word that hurts: the verb after 被, or the adjective before 得要命. 被 and 了 stay light and quick. 别提了 falls away at the end, with a sigh."
       }
     ],
-    "jinbu4-u1-7": [
+    "jinbu4-u1-3c": [
       {
         "title": "Culture · When your phone goes",
         "body": "In China, losing your phone is almost like losing your wallet, your keys and your ID at once. People pay for almost everything with WeChat or Alipay, show QR codes to get into buildings, and keep tickets and travel records on their phones. If a phone is stolen, the first job is to freeze the payment accounts, which both apps let you do from another phone, and to report any bank cards lost (挂失)."
       }
     ],
-    "jinbu4-u2-1": [
+    "jinbu4-u2-1a": [
       {
         "title": "对 … 感兴趣 — interested in",
         "body": "The thing you're interested in goes after 对, before 感兴趣. Adverbs like 很, 特别 and 不太 go before 感兴趣. Don't say 我感兴趣中文. 你对中文这么感兴趣。 (You're so interested in Chinese.)"
       }
     ],
-    "jinbu4-u2-2": [
+    "jinbu4-u2-1b": [
       {
         "title": "通过 — getting through",
         "body": "通过 is for getting through something that someone has to approve: a proposal (方案通过了), an interview (通过了面试), a probation period (通过了试用期). The thing can come first, as in 方案通过了, or after it, as in 通过了面试. 通过 can also mean 'through, by way of': 通过朋友认识的. 我们的方案通过了！ (Our proposal's been approved!)"
       }
     ],
-    "jinbu4-u2-3": [
+    "jinbu4-u2-2a": [
       {
         "title": "为了 — in order to, for",
         "body": "为了 puts the goal first and what you did for it second. It usually starts the sentence. Compare 因为, which gives a reason, not a goal. 为了明天，我每天背生词。 (For tomorrow, I've been learning new words every day.)"
       }
     ],
-    "jinbu4-u2-4": [
+    "jinbu4-u2-2b": [
       {
         "title": "进步 and 经验 — progress and experience",
         "body": "进步 is both a verb and a noun: 你进步了, 你的进步很大. 经验 is what you've learned from doing something, so 有什么经验 means 'any tips?'. For 'I've experienced something', use 经历, not 经验. 你进步真大！ (You've come so far!)"
       }
     ],
-    "jinbu4-u2-5": [
+    "jinbu4-u2-2c": [
       {
         "title": "Taking praise — 哪里哪里",
         "body": "When someone praises you, it's polite to play it down, especially about your own work. 哪里哪里 and 还差得远呢 are the classics. Younger people often just say 谢谢 and add something modest. 你的中文太好了！——哪里哪里，还差得远呢。 (Your Chinese is great! Oh, not really, I've a long way to go.)"
       }
     ],
-    "jinbu4-u2-6": [
+    "jinbu4-u2-3a": [
       {
         "title": "Sounds · Modest replies",
         "body": "哪里 is nǎ lǐ, but two third tones together make the first one rise, and in 哪里哪里 the 里 goes light: ná li ná li, said quickly with a smile. 还差得远呢 falls away gently at the end. In 过奖了, stress 奖 and keep 了 short."
       }
     ],
-    "jinbu4-u2-7": [
+    "jinbu4-u2-3b": [
       {
         "title": "Culture · Face at work, and taking a compliment",
         "body": "面子, face, is the respect you have in other people's eyes, and in Chinese business it matters a great deal. You give face (给面子) by addressing people by their title, like 王经理 or 沈总, by using 您, and by never making a client or a senior colleague look wrong in front of others. If you disagree, you say so privately, or wrap it in a suggestion. Making an effort also gives face: a foreign designer who presents in Chinese, even imperfectly, is showing the client real respect."
       }
     ],
-    "jinbu4-u3-1": [
+    "jinbu4-u3-1a": [
       {
         "title": "约 — making it happen",
         "body": "约 means to arrange to meet. 约个时间 is 'let's fix a time', 约好了 means it's agreed, and 我有约 means 'I've got plans'. 约 can also take a person: 我约了大卫 is 'I've arranged to see David'. 我们现在就约个时间吧。 (Let's fix a time right now.)"
       }
     ],
-    "jinbu4-u3-2": [
+    "jinbu4-u3-1b": [
       {
         "title": "改天, 有空再说 — maybe, maybe not",
         "body": "改天 means 'another day', and 改天聚聚吧 sounds warm. But without a date, it often never happens. 有空再说 and 再说吧 mean 'we'll see', and are often a polite way of saying no. If you really mean it, name a day. 我们好久没聚了，改天聚聚吧！ (We haven't got together for ages. Let's meet up some time!)"
       }
     ],
-    "jinbu4-u3-3": [
+    "jinbu4-u3-2a": [
       {
         "title": "不见不散, 回头见 — see you there",
         "body": "不见不散 means 'we won't leave until we've met', so be there! It's for friends, once a time and place are fixed. 回头见 is a relaxed 'see you later', and 到时候见 is 'see you then'. 一言为定 seals a deal. 七点，老成都，不见不散！ (Seven o'clock, Lao Chengdu. Be there!)"
       }
     ],
-    "jinbu4-u3-4": [
+    "jinbu4-u3-2b": [
       {
         "title": "着 — how things are",
         "body": "着 after a verb describes a state that lasts: the door is open, the food is on the table. To say what's somewhere, start with the place: 门口站着一个服务员 'there's a waiter standing at the door'. The negative is 没 + verb + 着. 包间的门开着。 (The private room's door is open.)"
       }
     ],
-    "jinbu4-u3-5": [
+    "jinbu4-u3-3a": [
       {
         "title": "看着, 拿着 — while you're doing it",
         "body": "着 can also describe how you are while you do something else: 笑着说 'say with a smile', 站着吃 'eat standing up'. And 你们看着我干什么？ is 'why are you looking at me?' 你们都看着我干什么？ (Why are you all staring at me?)"
-      },
+      }
+    ],
+    "jinbu4-u3-3b": [
       {
         "title": "Sounds · Four-syllable phrases",
         "body": "Set phrases of four syllables fall into two pairs, with a tiny break in the middle and the stress on the last syllable. Watch 不 before a fourth tone: it becomes bú, so 不见不散 is said bú jiàn bú sàn."
-      },
+      }
+    ],
+    "jinbu4-u3-4a": [
       {
         "title": "Culture · Some other time",
         "body": "Chinese is full of friendly phrases that don't quite mean what they say. 改天请你吃饭 ('I'll take you out for a meal some day') and 有空来我家玩儿 ('come round when you're free') are often ways of ending a conversation warmly, not real invitations. 有空再说 ('let's see when I'm free') and 再说吧 ('we'll see') can mean 'probably not'. None of this is rude: it saves both sides from a direct no."
       }
     ],
-    "jinbu4-u4-1": [
+    "jinbu4-u4-1a": [
       {
         "title": "Complements at a glance",
         "body": "A complement comes after the verb and adds to it. Result: what the action achieved (写错, 记住, 考过). Degree: how well or how much, with 得 (说得很好). Potential: can or can't, with 得 or 不 in the middle (听得懂, 记不住). Direction: which way (走过来, 写出来). Quantity: how long or how many times (学了两年, 听了三遍). 我写错了一个字。 (Result: I wrote a character wrong.)"
       }
     ],
-    "jinbu4-u4-2": [
+    "jinbu4-u4-1b": [
       {
         "title": "记住, 记得住, 记不住 — did, can, can't",
         "body": "A result complement says what happened: 记住了 'I've memorised it'. Put 得 or 不 in the middle and it becomes about ability: 记得住 'can remember', 记不住 'can't remember'. The negative of the plain result is 没: 没记住. 这个字我记住了。 (I've memorised this character.)"
       }
     ],
-    "jinbu4-u4-3": [
+    "jinbu4-u4-2a": [
       {
         "title": "紧张得说不出话来 — so … that",
         "body": "After 得, you can put a whole phrase to say how far something went: 'so nervous that he couldn't speak'. It's more vivid than 很紧张. You'll also hear 得要命 and 得不得了. 那天他紧张得说不出话来。 (He was so nervous that day he couldn't get a word out.)"
       }
     ],
-    "jinbu4-u4-4": [
+    "jinbu4-u4-2b": [
       {
         "title": "学了两年, 听了三遍 — how long, how often",
         "body": "How long and how many times go after the verb. With an object, either put it after the time (学了两年中文) or repeat the verb (学中文学了两年). 了 at the end means it's still going on. 你学了三个星期中文了？ (You've been learning Chinese for three weeks?)"
       }
     ],
-    "jinbu4-u4-5": [
+    "jinbu4-u4-3a": [
       {
         "title": "了, 过, 着, 正在 — aspect at a glance",
         "body": "了 after a verb: it happened, it's done. 过: you've had the experience at some time (从来没…过 is 'never ever'). 着: a state that lasts. 正在 (often with 呢): in the middle of it right now. English uses tenses for this; Chinese uses these little words. 上个月，我们的方案通过了。 (了: last month our proposal was approved.)"
-      },
+      }
+    ],
+    "jinbu4-u4-4a": [
       {
         "title": "Sounds · Light middles, strong ends",
         "body": "In a complement, the stress usually falls on the end. 得 and 不 in the middle are light, and so are 来 and 去 at the end of a direction. So: tīng bu DǑNG, jì de ZHÙ, xiě chu lai with the stress on 写. Reading a passage aloud, pause after each 第一, 第二 and at every comma."
-      },
+      }
+    ],
+    "jinbu4-u4-4b": [
       {
         "title": "Culture · Face, praise and mistakes",
         "body": "Many learners are held back by the fear of losing face (丢面子) by saying something wrong. The good news is that most Chinese speakers are delighted to hear foreigners try, and will praise your Chinese after the smallest effort: 你的中文说得真好！ Take it with a modest 哪里哪里, and keep going."
       }
     ],
-    "jinbu5-u1-1": [
+    "jinbu5-u1-1a": [
       {
         "title": "我认为, 在我看来 — giving your opinion",
         "body": "我觉得 is the everyday 'I think'. 我认为 sounds more considered, so it's good for a discussion or for writing. 在我看来 means 'the way I see it'. Keep 以为 for something you thought but turned out to be wrong. 我认为两个城市各有各的好。 (I think each city has its good points.)"
       }
     ],
-    "jinbu5-u1-2": [
+    "jinbu5-u1-1b": [
       {
         "title": "比如, 拿 … 来说 — for example",
         "body": "比如 (or 比如说) brings in one or more examples, like 'such as' or 'for instance'. 拿…来说 picks out one example and then talks about it: 'take …'. Both make an opinion sound fair, because you're giving evidence. 墨尔本人对咖啡特别讲究，比如牛奶多热、咖啡多浓。 (Melbourne people are fussy about coffee: how hot the milk is, how strong the coffee is.)"
       }
     ],
-    "jinbu5-u1-3": [
+    "jinbu5-u1-2a": [
       {
         "title": "最 and 比 … 都 … — the best of all",
         "body": "最 is 'most', '-est'. Another way to say something is the best is to compare it with a question word and add 都: 比谁都 'more than anyone', 比哪儿都 'more than anywhere'. 这是我在墨尔本最喜欢的咖啡馆。 (This is my favourite café in Melbourne.)"
       }
     ],
-    "jinbu5-u1-4": [
+    "jinbu5-u1-2b": [
       {
         "title": "没有比 … 更 … 的了 — nothing beats it",
         "body": "Literally 'there's nothing more … than A'. It's a strong, slightly dramatic superlative, good for complaints and for boasting. The 的了 at the end is spoken and can be left out after 没有什么比. 没有比这更让人头疼的了。 (Nothing's more of a headache than that.)"
       }
     ],
-    "jinbu5-u1-5": [
+    "jinbu5-u1-3a": [
       {
         "title": "再 … 不过了 — couldn't be more",
         "body": "Literally 'nothing goes beyond it'. 那再好不过了 or 那最好不过了 is a warm way of saying 'that's perfect'. Don't put 很 in front of the adjective. 免费的？那再好不过了！ (Free? That couldn't be better!)"
       }
     ],
-    "jinbu5-u1-6": [
+    "jinbu5-u1-3b": [
       {
         "title": "Sounds · Stress in a friendly argument",
         "body": "When you give an opinion, the frame is quick and light: 我认为, 在我看来, 拿…来说. The stress goes on the words that carry your point. In 比哪儿都好, stress 哪儿. After 拿…来说, keep your voice up: more is coming."
       }
     ],
-    "jinbu5-u1-7": [
+    "jinbu5-u1-4a": [
       {
         "title": "Culture · Melbourne: coffee, trams and gold",
         "body": "Melbourne, the capital of the state of Victoria, is Australia's second-biggest city, and Melbourne people will happily tell you it's the best. Its coffee culture goes back to the Italian and Greek immigrants who arrived after the Second World War and brought espresso machines with them. Today the city is known for small cafés tucked down narrow lanes, and the flat white is so linked with Australia that in China it's often called 澳白, 'Australian white'."
       }
     ],
-    "jinbu5-u2-1": [
+    "jinbu5-u2-1a": [
       {
         "title": "电 + 脑 — compound words",
         "body": "Most Chinese words have two characters, and each one usually means something. Knowing the parts helps you remember the word and guess new ones. The last character often says what kind of thing it is: 电车 is a kind of 车, and 手机 is a kind of 机. But not always: a 熊猫 is a bear! 电 + 脑 → 电脑 (electric + brain: computer)"
       }
     ],
-    "jinbu5-u2-2": [
+    "jinbu5-u2-1b": [
       {
         "title": "日 月 山 人 木 — from pictures to characters",
         "body": "A few hundred characters began as pictures (象形字). Many more were made by putting characters together, and most characters today have a meaning part and a sound part (形声字). Spotting the parts makes characters much easier to remember. “日”像太阳，“月”像月亮。 (日 looks like the sun, 月 like the moon.)"
       }
     ],
-    "jinbu5-u2-3": [
+    "jinbu5-u2-2a": [
       {
         "title": "老- and 小- — not always old or small",
         "body": "With a surname, 老 is a friendly way to address a colleague or friend of your own age or older (老周), and 小 is for someone younger (小周). In words like 老师, 老板, 老虎, 老鼠 and 老外, 老 is just a prefix and doesn't mean old. 同事都叫他“老周”。 (His colleagues all call him 'Lao Zhou'.)"
       }
     ],
-    "jinbu5-u2-4": [
+    "jinbu5-u2-2b": [
       {
         "title": "-家 and -者 — people",
         "body": "家 after a field makes an expert or professional: 画家, 作家, 音乐家, 科学家, 艺术家. 者 after a verb or phrase means 'someone who does it': 作者, 读者, 记者, 初学者, 爱好者. Neither is used for ordinary jobs: a cook is a 厨师, not a 做饭家! 齐白石是有名的画家。 (Qi Baishi was a famous painter.)"
       }
     ],
-    "jinbu5-u2-5": [
+    "jinbu5-u2-3a": [
       {
         "title": "-化 and -性 — making new words",
         "body": "化 is like '-ise' or '-isation': something is becoming that way (现代化, 国际化, 全球化). 性 is like '-ness' or '-ity': it turns a quality into a thing you can talk about (重要性, 可能性, 安全性). 墨尔本是一个很国际化的城市。 (Melbourne is a very international city.)"
       }
     ],
-    "jinbu5-u2-6": [
+    "jinbu5-u2-3b": [
       {
         "title": "Sounds · Two third tones in a row",
         "body": "When two third tones come together, the first one rises (it's said like a second tone). Lots of 老- and 小- words start this way. The tone mark in the word list doesn't change, but your voice does."
       }
     ],
-    "jinbu5-u2-7": [
+    "jinbu5-u2-4a": [
       {
         "title": "Culture · How characters are made",
         "body": "The oldest Chinese writing we have was carved on bones and shells more than three thousand years ago, and many of those characters are clearly pictures: a sun, a moon, a mountain, a person. But only a few hundred characters began as pictures (象形字). Some were made by combining ideas, like 休 (a person by a tree: rest) and 明 (sun and moon: bright). The great majority are 形声字, with one part that hints at the meaning and another that hints at the sound, like 妈, 吗 and 骂."
       }
     ],
-    "jinbu5-u3-1": [
+    "jinbu5-u3-1a": [
       {
         "title": "送 or 给? — giving",
         "body": "送 means to give as a present (and also to see someone off, or take them somewhere). 给 is the everyday 'give', for anything that passes from hand to hand; red envelopes are usually 给, or 发. You can't use 送 for 'pass me the salt'. 这是我们送您和叔叔的。 (This is from us, for you and your husband.)"
       }
     ],
-    "jinbu5-u3-2": [
+    "jinbu5-u3-1b": [
       {
         "title": "A 听起来像 B — it sounds like…",
         "body": "Many New Year customs and taboos are about words that sound alike. Some are exact (钟 and 终 are both zhōng); others are just close (伞 sǎn, 散 sàn). Close is enough. “送钟”听起来像“送终”。 (送钟 sounds like 送终.)"
       }
     ],
-    "jinbu5-u3-3": [
+    "jinbu5-u3-2a": [
       {
         "title": "千万别, 可不能, 最好别 — strong advice",
         "body": "千万别 is 'whatever you do, don't'. 可不能 is just as firm: 'you really mustn't'. 最好别 is gentler: 'better not'. 千万 also works with a positive: 路上千万小心 'do be careful on the way'. 你千万别送钟！ (Whatever you do, don't give a clock!)"
       }
     ],
-    "jinbu5-u3-4": [
+    "jinbu5-u3-2b": [
       {
         "title": "当着 … 的面 — in front of someone",
         "body": "当着…的面 means 'with someone there to see'. It often goes with things you shouldn't do in front of people, but not always. 当面 on its own means 'in person, to someone's face'. 不能当着客人的面打开红包。 (You mustn't open a red envelope in front of the guests.)"
       }
     ],
-    "jinbu5-u3-5": [
+    "jinbu5-u3-3a": [
       {
         "title": "看 — it depends",
         "body": "看 at the start of an answer means 'it depends on'. 看情况 is 'it depends', 看你 is 'it's up to you'. 红包里放多少钱？——看关系。 (How much goes in a red envelope? It depends on the relationship.)"
       }
     ],
-    "jinbu5-u3-6": [
+    "jinbu5-u3-3b": [
       {
         "title": "Sounds · Words that sound alike",
         "body": "Lucky and unlucky gifts come from sounds. Some pairs are exact homophones, some differ only in tone, and that's close enough for a pun. Say each pair and listen to how near they are."
-      },
+      }
+    ],
+    "jinbu5-u3-4a": [
       {
         "title": "Culture · Presents and red envelopes",
         "body": "A few presents are best avoided in Chinese culture, mostly because of their sound. A clock (钟) is the famous one, because 送钟 sounds like 送终, being with someone as they die. An umbrella (伞) sounds like 散, splitting up, and a pear (梨) like 离, parting; friends shouldn't even share a pear (分梨 sounds like 分离). Knives and scissors suggest cutting a relationship. Anything in fours is avoided because 四 sounds like 死. White and black are colours for funerals, so wrap presents in red or gold."
       }
     ],
-    "jinbu5-u4-1": [
+    "jinbu5-u4-1a": [
       {
         "title": "让你破费了 — thanking for a present",
         "body": "When you're given a present, a plain 谢谢 can sound thin. Say the giver shouldn't have (你太客气了), that they've spent too much (让你破费了), or that they've been thoughtful (你真是太有心了). Then accept: 那我就不客气了, or 那我就收下了. 你们太客气了！让你们破费了。 (You shouldn't have! You've spent far too much.)"
       }
     ],
-    "jinbu5-u4-2": [
+    "jinbu5-u4-1b": [
       {
         "title": "一点儿小心意 — giving modestly",
         "body": "When you give a present, play it down, however much it cost: it's 'a little token' or 'nothing much'. The other person protests, you insist, and then they accept. 这是我们全家的一点儿心意。 (This is a little something from all of us.)"
       }
     ],
-    "jinbu5-u4-3": [
+    "jinbu5-u4-2a": [
       {
         "title": "… 就好 — that's all that matters",
         "body": "就好 after something means 'as long as …, that's fine'. 喜欢就好 is the classic reply when someone thanks you for a present. 你喜欢就好。 (As long as you like it.)"
       }
     ],
-    "jinbu5-u4-4": [
+    "jinbu5-u4-2b": [
       {
         "title": "至少, 最多 — at least, at most",
         "body": "至少 is 'at least' and 最多 is 'at most'. Both go before the amount, or before the verb. 公司要派我去上海，至少一年。 (The company wants to send me to Shanghai for at least a year.)"
       }
     ],
-    "jinbu5-u4-5": [
+    "jinbu5-u4-3a": [
       {
         "title": "最 … 之一, 再好不过的 … — the very best",
         "body": "最…之一 is 'one of the most …', a fair and polite superlative. 再…不过了 can also describe a noun: 再好不过的机会 'the best chance you could ask for'. 这是我这次收到的最好的礼物之一。 (It's one of the best presents I've had this trip.)"
-      },
+      }
+    ],
+    "jinbu5-u4-4a": [
       {
         "title": "Sounds · 一 and 不 in polite phrases",
         "body": "Polite phrases are full of 一 and 不, and their tones change: before a fourth tone they become second tones, and 一 before other tones becomes a fourth tone. Say the phrases warmly, with the stress on the last word: 客气, 心意, 有心."
-      },
+      }
+    ],
+    "jinbu5-u4-4b": [
       {
         "title": "Culture · Receiving a present",
         "body": "Traditionally, a Chinese present isn't accepted straight away. The receiver protests (你太客气了, 让你破费了), the giver insists (一点儿心意), and the present may be pushed back and forth a couple of times before it's accepted, ideally with both hands. The giver plays it down, and the receiver praises the thought behind it: 你真是太有心了."
       }
     ],
-    "dabu1-u1-1": [
+    "dabu1-u1-1a": [
       {
         "title": "对于 and 对 — about, regarding",
         "body": "对于 brings in the topic you're talking about, and sounds more formal than 对. Wherever 对于 works, 对 works too, but not the other way round: for how people treat each other (对我很好, 对客人很热情) only 对 will do. 对于…来说 means 'for …, as far as … is concerned'. 对于这一点，你怎么看？ (What's your view on that?)"
       }
     ],
-    "dabu1-u1-2": [
+    "dabu1-u1-1b": [
       {
         "title": "通过 — through, by means of",
         "body": "You know 通过 as 'to get through' or 'be approved' (方案通过了). At the start of a sentence it means 'through' or 'by means of': how you learned, met or achieved something. It's a favourite in interviews and cover letters, because it links an experience to what you got out of it. 通过这次实习，我对品牌设计有了更深的了解。 (Through this internship I came to understand brand design much better.)"
       }
     ],
-    "dabu1-u1-3": [
+    "dabu1-u1-1c": [
       {
         "title": "负责, 具备, 经验丰富 — the language of job adverts",
         "body": "These three turn up in every advert and interview. 负责 is 'be in charge of'. 具备 is a formal 'have', used with abilities and qualities, never with things you own. 经验丰富 is 'rich in experience': 他经验丰富, or 一位经验丰富的设计师. 我主要负责海报和社交媒体的设计。 (I was mainly responsible for posters and social media design.)"
       }
     ],
-    "dabu1-u1-4": [
+    "dabu1-u1-2a": [
       {
         "title": "Formal register — 贵公司, 曾, 者, 及, 因, 现",
         "body": "CVs, interviews and job adverts use a more formal register. Swap everyday words for written ones: 你们公司 → 贵公司, 上大学的时候 → 在校期间, 过 → 曾, 的人 → 者, 和 → 及, 因为 → 因, 现在 → 现. Don't carry it into ordinary conversation, though: it sounds like reading out a document, as Mark notices. 我上大学的时候在广告公司实习过。→ 在校期间，我曾在广告公司实习。 (While at university I did an internship at an ad agency.)"
       }
     ],
-    "dabu1-u1-5": [
+    "dabu1-u1-2b": [
       {
         "title": "Culture · Job hunting in China",
         "body": "Chinese students start job hunting early. Big companies recruit final-year students in the autumn (秋招) and again in the spring (春招), and an 应届毕业生, someone graduating this year, has a special status: many posts are open only to them. A Chinese CV (简历) is usually a single page and often includes a photo, date of birth and home town, which a British CV would leave out. Job adverts list 岗位职责 (duties) and 任职要求 (requirements), and 五险一金, five kinds of social insurance plus a housing fund, is a standard part of the package."
       }
     ],
-    "dabu1-u2-1": [
+    "dabu1-u2-1a": [
       {
         "title": "一方面 … 另一方面 … — on the one hand, on the other",
         "body": "Use it to set out two sides of something: two reasons, or a good point and a bad one. The second half often takes 也 or 又. It's more structured than just listing, and it's at home in discussions and essays. Don't confuse it with 一边…一边…, which is two actions at the same time. 那两年我一方面学到了很多东西，另一方面身体真的吃不消。 (In those two years I learned a lot, but my health couldn't take it.)"
       }
     ],
-    "dabu1-u2-2": [
+    "dabu1-u2-1b": [
       {
         "title": "不仅 … 还 / 也 / 而且 … — not only … but also",
         "body": "不仅 is the written cousin of 不但 (进步 3). The second half takes 还, 也 or 而且. When the two halves have different subjects, 不仅 goes before the first subject: 不仅许诺在加班，老顾也…. 多吃点儿苦，不仅能学到更多东西，还能更快地升职加薪。 (Putting up with hardship not only teaches you more, but gets you promoted faster.)"
       }
     ],
-    "dabu1-u2-3": [
+    "dabu1-u2-2a": [
       {
         "title": "难免 — bound to happen",
         "body": "难免 says something is hard to avoid, and so understandable. It often takes 会. It's a kind way to excuse a mistake, your own or someone else's. It can also stand alone at the end: 加班难免. 我们这一行，加班难免。 (In our line of work, some overtime's unavoidable.)"
       }
     ],
-    "dabu1-u2-4": [
+    "dabu1-u2-2b": [
       {
         "title": "则 and 甚至 — writing a balanced argument",
         "body": "A balanced piece gives both sides before its own view. 则 is a written 'whereas, on the other hand'. It goes after the second subject, never before it. In speech you'd use 可是 instead. 甚至 'even' pushes a point one step further. 支持的人认为年轻人应该多吃点儿苦，反对的人则认为健康更重要。 (Supporters say the young should put up with hardship; opponents say health matters more.)"
       }
     ],
-    "dabu1-u2-5": [
+    "dabu1-u2-2c": [
       {
         "title": "Culture · 996, and the words around it",
         "body": "The number 996 became a household word in China in 2019, when programmers started an online campaign against companies that expected staff to work from 9 am to 9 pm, six days a week. Some business leaders defended long hours as the price of success; many more people criticised them, and the debate has never really stopped. Under China's labour law, a schedule like that goes well beyond the limits on working hours and overtime, and the authorities have said more than once that overtime must follow the law. Many companies have publicly dropped such schedules, though long hours remain common in some industries."
       }
     ],
-    "dabu1-u3-1": [
+    "dabu1-u3-1a": [
       {
         "title": "按照 or 根据? — according to",
         "body": "Both translate as 'according to'. 按照 means following something: a rule, a request, a plan. 根据 means basing something on evidence: a survey, figures, the situation. With 要求 and 规定, choose 按照; with 调查, 结果 and 情况, choose 根据. In speech, 按 alone is common too: 按他们说的改. 我们可以按照他们的要求调一下颜色。 (We can tweak the colour the way they asked.)"
       }
     ],
-    "dabu1-u3-2": [
+    "dabu1-u3-1b": [
       {
         "title": "于 and 将 — two words that make it formal",
         "body": "于 is a written 在 before times and places, and it's built into words like 位于 and 关于. 将 is a written 会 or 要 for the future, and also a written 把. Both belong in emails, reports and notices. In a WeChat message they sound like a press release. 感谢您于4月6日提出的宝贵意见。 (Thank you for your valuable comments of 6 April.)"
       }
     ],
-    "dabu1-u3-3": [
+    "dabu1-u3-1c": [
       {
         "title": "请查收, 如有问题 — formal email phrases",
         "body": "A formal Chinese email is built from set phrases, and using them is expected, not stiff. Open with 尊敬的 + surname + title and a colon, then 您好！ on its own line. At the end, 此致 goes on a line of its own and 敬礼！ on the next, followed by your name and the date. 修改后的方案请见附件，请查收。 (Please find the revised design attached.)"
       }
     ],
-    "dabu1-u3-4": [
+    "dabu1-u3-2a": [
       {
         "title": "WeChat or email? — one message, two registers",
         "body": "The same message changes a lot between a chat and an email. WeChat drops subjects and uses 你, 了 and 吧. Email uses 您, full sentences and written words: 已 for 已经, 如 for 要是, 与 for 跟, 将 for 会. 方案发你了，你看一下。→ 方案已发送，请查收。 (Sent you the design, have a look. → The design has been sent. Please check your inbox.)"
       }
     ],
-    "dabu1-u3-5": [
+    "dabu1-u3-2b": [
       {
         "title": "Culture · Meetings, WeChat and email",
         "body": "In most Chinese offices, day-to-day work happens on WeChat, in 工作群 (work group chats) that often include the client. Messages are short, fast and friendly, full of 好的 and 收到 ('got it'), and people are expected to reply quickly, often even after hours. Email is kept for things that need a record: proposals, contracts, quotes and meeting minutes (会议纪要). A common habit is to send the email and then post a quick WeChat message to say so: 邮件已发，请查收."
       }
     ],
-    "dabu1-u4-1": [
+    "dabu1-u4-1a": [
       {
         "title": "与其 … 不如 … — rather than",
         "body": "'Rather than A, better to B.' The speaker has weighed up both and rejects A. It's for advice and decisions, and works in speech and writing alike. Both halves are usually verb phrases. 与其为了钱去做自己不喜欢的事，不如留下来。 (Rather than doing something you don't like for the money, why not stay?)"
       }
     ],
-    "dabu1-u4-2": [
+    "dabu1-u4-1b": [
       {
         "title": "宁可 … 也 … — I'd rather",
         "body": "The thing after 宁可 is a cost you're willing to pay: 'I'd rather A, so as to B' (也要), or 'I'd rather A than B' (也不). That's the difference from 与其…不如…, where A is the option you turn down. 宁愿 means the same as 宁可. 我宁可少挣一点儿，也要做自己喜欢的事。 (I'd rather earn a bit less and do what I love.)"
       }
     ],
-    "dabu1-u4-3": [
+    "dabu1-u4-1c": [
       {
         "title": "成语 — four-character idioms",
         "body": "成语 are set phrases, most of them four characters long, and many come from old stories. Each works like one word. 半途而废 is a verb phrase: 'give up halfway'. 三心二意 and 一心一意 describe how someone does something, and can take 地 before a verb. 一举两得 usually comes after 就是, 真是 or 那就…了. One or two in a paragraph adds polish; more sounds showy. 现在走，半途而废，多可惜。 (Leaving now would mean giving up halfway. What a shame.)"
       }
     ],
-    "dabu1-u4-4": [
+    "dabu1-u4-2a": [
       {
         "title": "趁 and 至于 — while you can; as for",
         "body": "趁 means 'while the chance is there': 趁年轻 while you're young, 趁热吃 eat it while it's hot. 至于 turns to a related topic, 'as for', often to give your own case last. 趁年轻，多挣点儿钱。 (Earn as much as you can while you're young.)"
       }
     ],
-    "dabu1-u4-5": [
+    "dabu1-u4-2b": [
       {
         "title": "Culture · Idioms, and the spring job-hop",
         "body": "成语 are fixed expressions, usually of four characters, and there are thousands of them. Many sum up an old story. 半途而废 comes from a tale about a woman who cut through the cloth on her loom to show her husband what it meant to give up his studies halfway. Others are simply vivid: 三心二意 is 'three hearts and two minds'. Educated speakers use them in speeches, essays and everyday chat, so a few, learned with how they're used, go a long way."
       }
     ],
-    "dabu2-u1-1": [
+    "dabu2-u1-1a": [
       {
         "title": "倒是 … 就是 … — fine, it's just that",
         "body": "A very spoken way to weigh something up: grant one point with 倒是, then give the real problem with 就是 (or 不过, 可是). It sounds fair and a little tentative, which makes it good for turning something down gently. You can also flip it: 我倒是不怕没有电梯 'I don't mind about the lift', with the worry coming next. 房间倒是挺大的，就是离地铁站太远了。 (The room's big enough, it's just too far from the metro.)"
       }
     ],
-    "dabu2-u1-2": [
+    "dabu2-u1-1b": [
       {
         "title": "算下来 and 不到哪里去 — adding up, playing down",
         "body": "算下来 means 'when you add it all up', and is the natural way to give a total or a conclusion after some sums. The pattern verb + 下来 also works with time: 一年下来 'over a whole year'. Adjective + 不到哪里去 plays something down: 'it won't be all that ….' It's reassuring and very spoken. 押一付三，这样算下来，一开始就得交一万八。 (One down and three up front: all told, that's eighteen thousand to start with.)"
       }
     ],
-    "dabu2-u1-3": [
+    "dabu2-u1-1c": [
       {
         "title": "由 … 承担, 须, 不得 — the language of contracts",
         "body": "Contracts use a register of their own. 由 says who does or pays something: 由乙方承担 'borne by Party B'. 须 is a written 必须 'must', 应 a written 应该 'shall', and 不得 a written 不能 or 不可以 'may not'. Dates run 自…起至…止 'from … to …'. In a lease, 甲方 is the landlord and 乙方 the tenant. 水电费由乙方承担。 (Water and electricity are paid by the tenant.)"
       }
     ],
-    "dabu2-u1-4": [
+    "dabu2-u1-2a": [
       {
         "title": "Spoken → written: the same deal, two ways",
         "body": "What 钱阿姨 says at the door and what the contract says are the same deal in two registers. Swap 你 and 我 for 甲方 and 乙方, 得 and 要 for 须 and 应, 大概 for 约, 就是 'that is' for 即, and 从…到… for 自…起至…止. Don't bring these into conversation: 乙方须付清租金 at the dinner table would get a laugh. 房间大概十六平米。→ 面积约十六平方米。 (The room's about sixteen square metres.)"
       }
     ],
-    "dabu2-u1-5": [
+    "dabu2-u1-2b": [
       {
         "title": "Culture · Renting in Shanghai",
         "body": "Most young people in Shanghai rent, and many share. 整租 means renting a whole flat; 合租 means taking a room in a shared one, with a shared kitchen and bathroom and a flatmate you may not choose. The standard terms are 押一付三: a month's rent as deposit, plus three months paid in advance, so moving in costs four months' rent at once. Agents (中介) usually charge a fee too, often around a month's rent, which is why a room found through a friend or a colleague's neighbour is such a prize. Bills are 水电煤, water, electricity and gas, and rent is almost always paid by phone."
       }
     ],
-    "dabu2-u2-1": [
+    "dabu2-u2-1a": [
       {
         "title": "必须 and 不必 — must and needn't",
         "body": "必须 'must' is strong and a little formal; in speech people often say 得 děi instead. Its negative is not 不必须 but 不必 or 不用, 'needn't'. For 'mustn't', use 不能, 不许 or, in writing, 不得. 必须 can also stand as the predicate: 这是必须的 'that's a must'. 吃剩的饭菜和用过的纸巾必须分开扔。 (Leftover food and used tissues must go in separately.)"
       }
     ],
-    "dabu2-u2-2": [
+    "dabu2-u2-1b": [
       {
         "title": "否则 — otherwise",
         "body": "否则 means 'otherwise, if not': A is what should happen, B the consequence if it doesn't. It starts the second clause, often with 就 or 会 after it. It's a little formal; in speech 不然 or 要不然 is more common, and 钱阿姨 uses both. 必须分开扔，否则我这个志愿者不是白当了？ (It has to go in separately, otherwise what am I volunteering for?)"
       }
     ],
-    "dabu2-u2-3": [
+    "dabu2-u2-2a": [
       {
         "title": "由于 — because of (in writing)",
         "body": "由于 is a more formal 因为. It usually comes in the first clause, and pairs well with 因此 'therefore'. Unlike 因为, it doesn't normally come after the result: say 由于下雨，比赛取消了, not 比赛取消了，由于下雨. It can also go straight before a noun: 由于时间关系 'for reasons of time'. 以前由于不分类，大部分垃圾只能埋掉、烧掉。 (Before, because nothing was sorted, most rubbish could only be buried or burned.)"
       }
     ],
-    "dabu2-u2-4": [
+    "dabu2-u2-2b": [
       {
         "title": "以便 — so that (in writing)",
         "body": "以便 introduces the purpose of the first clause: 'so that, in order to'. It always comes at the start of the second clause, never the first. It belongs in notices, reports and articles; in speech, say 好 or 这样 instead: 带个杯子，这样就不用一次性的了. 出门带上自己的杯子，以便少用一次性用品。 (Take your own cup when you go out, so that you use fewer disposable things.)"
       }
     ],
-    "dabu2-u2-5": [
+    "dabu2-u2-2c": [
       {
         "title": "Culture · Shanghai sorts its rubbish",
         "body": "On 1 July 2019 Shanghai's regulations on household waste took effect, and the city became one of the first in China to make sorting compulsory. Households must separate four kinds of rubbish, each with its own colour of bin: 可回收物 (recyclables, blue), 有害垃圾 (hazardous waste such as rechargeable batteries, old medicine and fluorescent tubes, red), 湿垃圾 (wet rubbish, food waste, brown) and 干垃圾 (dry rubbish, everything else, black). The national standard, used in other cities, calls the last two 厨余垃圾 and 其他垃圾. Residents who don't sort can be fined."
       }
     ],
-    "dabu2-u3-1": [
+    "dabu2-u3-1a": [
       {
         "title": "随着 — as, along with",
         "body": "随着 links two changes: as one thing develops, another follows. The part after 随着 is a noun phrase, often ending in 的发展, 的变化 or 的增加, and the second clause usually has 越来越, 也 or 开始. It's common in writing and in thoughtful speech. 随着城市化的发展，越来越多的人离开乡村。 (As urbanisation goes on, more and more people are leaving the countryside.)"
       }
     ],
-    "dabu2-u3-2": [
+    "dabu2-u3-1b": [
       {
         "title": "不是 … 而是 … — not A, but B",
         "body": "Use it to correct a mistaken idea and put the right one in its place. It's stronger and neater than 不是A，是B, and more at home in writing and discussion. Both halves should be the same kind of thing: two nouns, two verbs or two clauses. 问题不是东西不好，而是没有人帮他们把故事讲好。 (The problem isn't that the baskets aren't good; it's that nobody's helping them tell their story.)"
       }
     ],
-    "dabu2-u3-3": [
+    "dabu2-u3-1c": [
       {
         "title": "一 … 就是 … — once you start, it's a lot",
         "body": "This pattern stresses that an amount is large, or a time long: once the action starts, it goes on for that long. 一走就是十年 'left, and was gone for ten years'. The amount after 就是 is the point of the sentence, so say it with some weight. 我去杭州上大学，一走就是十年。 (I went off to university in Hangzhou, and was away for ten years.)"
       }
     ],
-    "dabu2-u3-4": [
+    "dabu2-u3-2a": [
       {
         "title": "变, 变成, 变得 and -化 — talking about change",
         "body": "变 goes straight before a short adjective: 变小, 变老. 变成 is 'turn into' and takes a noun: 变成一个篮子. 变得 takes a fuller description: 变得更安静. The suffix 化, which you met in 进步 5, turns a word into a process: 城市化 'urbanisation', 现代化 'modernisation'. 城市在长大，乡村却在变老。 (The cities are growing up, but the villages are growing old.)"
       }
     ],
-    "dabu2-u3-5": [
+    "dabu2-u3-2b": [
       {
         "title": "Culture · Leaving home, going home",
         "body": "In 1980 about one in five people in China lived in towns and cities; today it's about two in three. Much of that change was made by migrant workers (农民工), nearly three hundred million of them, who left villages to work in factories, on building sites and in restaurants. Under the household registration system (户口), many could not easily bring their children to the city's schools, so millions of children grew up with grandparents at home: the 留守儿童, 'left-behind children'. Their parents' wages paid for houses, school fees and university, and the cost was measured in years apart."
       }
     ],
-    "dabu2-u4-1": [
+    "dabu2-u4-1a": [
       {
         "title": "仿佛 — as if",
         "body": "仿佛 is a literary 好像: 'as if, it seemed'. It goes before the verb or the whole clause, and can close with 一样 or 似的. Use it for impressions and comparisons in descriptive writing. In conversation, 好像 or 像…一样 sounds more natural, but Mark uses 仿佛 once, carefully, and it works. 走在梧桐树下面，我仿佛回到了伦敦。 (Walking under the plane trees, it's as if I'm back in London.)"
       }
     ],
-    "dabu2-u4-2": [
+    "dabu2-u4-1b": [
       {
         "title": "不禁 and 忍不住 — can't help it",
         "body": "不禁 means a reaction happened by itself: you found yourself laughing, stopping or remembering. It's written and a little literary, and goes before the verb. 忍不住 means the same and is used in speech too; it can also mean you tried not to and failed, and it can take a negative after it (忍不住不看). 我不禁停下来看了半天。 (I couldn't help stopping to stare.)"
       }
     ],
-    "dabu2-u4-3": [
+    "dabu2-u4-2a": [
       {
         "title": "既 … 又 … — both at once",
         "body": "You met 既…又… in 大步 1. It joins two qualities, or two roles, of one person or thing, and it's tidier and more written than 又…又…. It's good for showing that something is two things at once: 既像一个租客，又像一个孙子. 又…又… is commoner in speech, especially with short adjectives: 又闷又热. 在她面前，我既像一个租客，又像一个孙子。 (With her, I'm part tenant, part grandson.)"
       }
     ],
-    "dabu2-u4-4": [
+    "dabu2-u4-2b": [
       {
         "title": "Doubled words — making a description come alive",
         "body": "Doubling makes a description warmer and more vivid. A doubled adjective takes 的 (高高的, 软软的) or 地 before a verb (慢慢地). Some adjectives come in fixed ABB forms: 热乎乎 'nice and hot'. And 一片一片 or 一条条 means 'one by one' or 'row upon row'. Don't double adjectives that already have 很 or 非常 in front of them. 路两边的梧桐树高高的。 (The plane trees along the roads stand tall.)"
       }
     ],
-    "dabu2-u4-5": [
+    "dabu2-u4-2c": [
       {
         "title": "Culture · A little Shanghainese",
         "body": "Shanghainese (上海话) belongs to the Wu family of Chinese, and a Mandarin speaker who hasn't learned it can understand very little. You don't need it to live in Shanghai: everyone speaks Mandarin, and many younger people now speak Shanghainese less than their grandparents do. But a few words will make an auntie smile. 侬好 (roughly 'nong ho') is 'hello', 阿拉 ('ah-lah') is 'we' or 'I', 侬 ('nong') is 'you', and 谢谢侬 ('shia-shia nong') is 'thank you'. 侬晓得伐？ is 'Did you know?', with 伐 as the question particle, like 吗. 嗲 ('dia') means lovely or charming, and has made its way into Mandarin."
       }
     ],
-    "dabu3-u1-1": [
+    "dabu3-u1-1a": [
       {
         "title": "…的同时: while, at the same time as",
         "body": "的同时 joins two things that come together, very often a benefit and its cost: 'while A, B too'. A is a verb phrase or clause before 的同时, and the second half usually has 也 or 还. With 在 in front it sounds more written. It's the natural way to be fair in an argument: grant the good side, then add the other. 方便的同时，也要留个心眼。 (Enjoy the convenience, but keep your wits about you.)"
       }
     ],
-    "dabu3-u1-2": [
+    "dabu3-u1-1b": [
       {
         "title": "靠, 全靠 and 离不开: depending on something",
         "body": "靠 means 'rely on, depend on', and can go straight before a second verb to say how something is done: 靠直播卖竹篮 'sell baskets by livestream'. 全靠 is 'depend entirely on'. 离不开 'can't do without' is the everyday way to say how much you need something. 依赖 is the formal word, common in articles and often a little critical. 再…也… 'however …, still …' often comes with them. 手机再方便，也不能全靠它。 (However handy your phone is, you can't rely on it for everything.)"
       }
     ],
-    "dabu3-u1-3": [
+    "dabu3-u1-1c": [
       {
         "title": "不见得 and 未必: not necessarily",
         "body": "Both soften a claim to 'not necessarily'. 不见得 is spoken and a little sceptical; 未必 is more written. Use them to push back gently on a generalisation without claiming the opposite: 年纪大不见得就学不会 doesn't say old people learn easily, only that age isn't the whole story. They often take 就 after them. 老人需要的，不见得是更先进的技术。 (What older people need isn't necessarily more advanced technology.)"
       }
     ],
-    "dabu3-u1-4": [
+    "dabu3-u1-2a": [
       {
         "title": "扫, 刷, 转, 付: paying in Shanghai",
         "body": "Shanghai pays by phone, and the verbs are short. 扫 is 'scan': 我扫你 means 'I'll scan your code'. 刷 is 'swipe', for bank cards, travel cards and even your face. 转 is 'transfer': 我转给你. In speech you 付钱; on a sign, a bill or in an article you 支付 or 付款, and send money by 转账. 我扫你还是你扫我？ (Shall I scan you, or will you scan me?)"
       }
     ],
-    "dabu3-u1-5": [
+    "dabu3-u1-2b": [
       {
         "title": "Culture · Paying by phone",
         "body": "Since the mid-2010s China has become one of the most cashless places on earth. Almost every shop and market stall shows a payment QR code (收款码), and customers scan it with WeChat Pay or Alipay and type in the amount; in bigger shops the till scans a code on the customer's phone instead. Metro gates, bills, hospital fees and red envelopes all work the same way, and friends split the bill by transferring money in a chat."
       }
     ],
-    "dabu3-u2-1": [
+    "dabu3-u2-1a": [
       {
         "title": "即使 … 也 …: even if",
         "body": "即使 introduces a condition, real or imagined, and 也 says the result holds anyway: 'even if'. It's a touch more formal than 就算…也…, and different from 虽然…但是…, which is about facts. 即使 can come before or after the subject, but 也 always goes after the subject of the second clause. 即使…再… 'however much' is common too. 即使没有算法，我也会刷。 (Even without the algorithm, I'd still scroll.)"
       }
     ],
-    "dabu3-u2-2": [
+    "dabu3-u2-1b": [
       {
         "title": "所谓: what's known as, so-called",
         "body": "所谓 introduces a term and explains it: 所谓X，就是Y 'X means Y'. 这就是所谓的X 'this is what's called X' names something you've just described. New terms usually go in quotation marks. Said with a raised eyebrow, 所谓的 can sound sceptical, like English 'so-called'. 这就是所谓的“碎片化”。 (That's what they call 'fragmentation'.)"
       }
     ],
-    "dabu3-u2-3": [
+    "dabu3-u2-2a": [
       {
         "title": "不在于 … 而在于 …: where the point really lies",
         "body": "在于 'lies in, rests on' is written and thoughtful. 关键在于 'the key lies in' names what matters most. 不在于A，而在于B corrects a wrong idea of where a problem lies. It's a more formal cousin of 不是…而是… from 大步 2, and good for the turn in an argument. 问题不在于短视频，而在于我们还能不能控制自己。 (The problem doesn't lie in short video, but in whether we can still control ourselves.)"
       }
     ],
-    "dabu3-u2-4": [
+    "dabu3-u2-2b": [
       {
         "title": "何况: besides, let alone",
         "body": "何况 adds a further, often stronger reason: 'besides, what's more'. After 连…都… or a negative, (更)何况 means 'let alone', often as a rhetorical question. It's a little bookish, and very useful in writing and careful argument. 何况，短视频本身并不是坏东西。 (Besides, short video isn't a bad thing in itself.)"
       }
     ],
-    "dabu3-u2-5": [
+    "dabu3-u2-3a": [
       {
         "title": "Culture · Short video and 'traffic'",
         "body": "China's short-video apps, led by Douyin (the Chinese sister of TikTok) and Kuaishou, have more than a billion users between them, and the average user spends over two hours a day watching. Feeds are driven by recommendation algorithms (算法) that learn from every swipe, which is why one cooking video can fill your screen with cooking."
       }
     ],
-    "dabu3-u3-1": [
+    "dabu3-u3-1a": [
       {
         "title": "我不同意 and 这一点我同意: agreeing and disagreeing",
         "body": "In a discussion, disagree with the idea, not the person: 我不同意这种说法 or 我不同意这种看法 sounds far better than a flat 你错了. 这一点我同意 grants one point before you add your own. 我不完全同意 is softer still. 同意 takes a person, an idea or a clause directly: say 我同意你, never 我同意跟你. 我不同意“AI会取代设计师”这种说法。 (I don't agree that AI will replace designers.)"
       }
     ],
-    "dabu3-u3-2": [
+    "dabu3-u3-1b": [
       {
         "title": "话虽如此: that may be so, but",
         "body": "话虽如此 'though that is so' accepts what has just been said, then pushes back. It's more formal than 话是这么说 from 大步 1, and works in discussion, essays and speeches alike. The second half often has 但是, 也 or 还是. 话虽如此，这次不一样。 (That may be so, but this time it's different.)"
       }
     ],
-    "dabu3-u3-3": [
+    "dabu3-u3-2a": [
       {
         "title": "反过来说: looked at the other way round",
         "body": "反过来说 turns an argument round: 'conversely, on the other hand'. Use it to show that the same fact has another side, or to state the reverse of what's just been said. It isn't a flat contradiction, so it keeps a debate friendly. 反过来说，如果基础工作交给AI，新人就能把时间花在更重要的地方。 (Look at it the other way round: if the groundwork goes to AI, new people can spend their time on more important things.)"
       }
     ],
-    "dabu3-u3-4": [
+    "dabu3-u3-2b": [
       {
         "title": "归根结底: when all's said and done",
         "body": "归根结底 'going back to the root' sums up an argument: 'in the final analysis, at the end of the day'. It opens the closing sentence, or goes before the verb. Save it for your conclusion: used every other line, it sounds pompous. 客户要的归根结底不是一百张图，而是一个对的想法。 (At the end of the day, what the client wants isn't a hundred images but one right idea.)"
       }
     ],
-    "dabu3-u3-5": [
+    "dabu3-u3-3a": [
       {
         "title": "与其 … 不如 … again, with 取代 and 代替",
         "body": "You met 与其…不如… in 大步 1. In an argument or a speech it's a strong way to recommend: reject one course, propose another. 取代 is 'replace, take the place of', usually for good and on a big scale: jobs, technologies. 代替 is lighter and can be temporary, and can take a verb after it: 老顾代替她开会 'Lao Gu went to the meeting in her place'. 与其担心被取代，不如想清楚哪些事只有人能做。 (Rather than worrying about being replaced, be clear about what only people can do.)"
       }
     ],
-    "dabu3-u3-6": [
+    "dabu3-u3-3b": [
       {
         "title": "Culture · AI and the people who make things",
         "body": "Generative AI (生成式人工智能) arrived in a rush in China after 2022. Chinese tech companies launched dozens of large models, and design, advertising and online-shopping firms were among the first to use AI images for product photos, posters and first drafts. Freelance illustrators and junior designers felt the change first, and 'AI will replace you' became a joke and a worry at the same time."
       }
     ],
-    "dabu3-u4-1": [
+    "dabu3-u4-1a": [
       {
         "title": "据报道, 据悉, 据了解: giving a source",
         "body": "News gives its sources with 据 'according to'. 据报道 is 'it is reported', 据悉 'it is understood' (the source isn't named), 据了解 'we understand', and 据…介绍 'according to …'. They open the sentence and are followed by a comma. In speech you'd say 听说 or 新闻上说 instead. 据报道，最近网上流传“商家可以不收现金”的说法。 (According to reports, a claim that 'shops can refuse cash' has been going round online.)"
       }
     ],
-    "dabu3-u4-2": [
+    "dabu3-u4-1b": [
       {
         "title": "表示 and 称: what people said",
         "body": "Reports rarely use 说. 表示 'stated' is neutral and formal: it's what officials, managers and experts do. 称 'said, claimed' is shorter, common after a name and in headlines, and can suggest the paper is only passing the claim on. 介绍 'explained' is for background. A comma or a colon comes after them. 有关部门表示，这是谣言。 (The authorities stated that it was a rumour.)"
       }
     ],
-    "dabu3-u4-3": [
+    "dabu3-u4-2a": [
       {
         "title": "截至, 余, 近 and 超过: numbers in the news",
         "body": "截至 'as of, up to' gives the date a figure is counted to. Don't confuse it with 截止 'to close', as in 截止日期 'deadline'. 余 is a written 多 'more than' and comes straight after the number: 八千余件. 近 means 'nearly': 近一个月. 超过 is 'more than, over'. 截至1月20日，合作社共卖出竹编产品八千余件。 (As of 20 January, the co-operative had sold more than 8,000 bamboo items.)"
       }
     ],
-    "dabu3-u4-4": [
+    "dabu3-u4-2b": [
       {
         "title": "Headlines: reading them like a telegram",
         "body": "Headlines are short and dense. They drop 了, 的 and most measure words, prefer one-character written verbs like 获 'win' and 将 'will', and often set two phrases side by side, with a space or a colon between. Read the headline as a telegram, then find the full sentence in the first paragraph. 竹编年货走俏　山村直播一月卖出八千件 → 竹编年货卖得很好，一个山村一个月在直播中卖出了八千件。 (Bamboo New Year goods sell well: a village sells eight thousand in a month by livestream.)"
       }
     ],
-    "dabu3-u4-5": [
+    "dabu3-u4-2c": [
       {
         "title": "Culture · Reading the news, and the family group chat",
         "body": "Chinese news has a register of its own. A report opens with a dense first paragraph that answers who, what, when and how many, and a newspaper marks its own reporting with 本报讯, 'this paper reports'. Sources come with 据: 据报道, 据悉, 据了解. Officials 表示; people making a claim 称. Headlines often come in two parts and drop the small grammatical words."
       }
     ],
-    "dabu4-u1-1": [
+    "dabu4-u1-1a": [
       {
         "title": "说到底: when it comes down to it",
         "body": "说到底 'if you talk it through to the bottom' strips a question down to its real cause or core. It's the spoken cousin of 归根结底 from 大步 3, warmer and less formal, and it often opens the sentence that says what someone really feels. Use it once, at the point where you get to the heart of things. 说到底，还是怕。 (When it comes down to it, it's fear.)"
       }
     ],
-    "dabu4-u1-2": [
+    "dabu4-u1-1b": [
       {
         "title": "何必 and 难道: making a point with a question",
         "body": "Both turn a question into an argument. 何必 'why must, what's the point of' says something is unnecessary: 何必呢？ on its own means 'why bother?'. 难道 'surely you don't mean' challenges an assumption and expects the answer no; the sentence usually ends with 吗. Both can sound sharp, so soften them with a smile, or with 其实 before your next point. 为了结婚而结婚，何必呢？ (Why marry just for the sake of it?)"
       }
     ],
-    "dabu4-u1-3": [
+    "dabu4-u1-1c": [
       {
         "title": "为了 … 而 …: for the sake of",
         "body": "In 为了A而B, A is the purpose and B the action taken for it; 而 links them. It's more written than plain 为了…, and it's the natural way to criticise an action done for the wrong reason: 为了结婚而结婚 'marrying for the sake of marrying'. 因为A而B works the same way for causes. 不能为了完成任务而随便找个人。 (You can't just pick anyone for the sake of getting it done.)"
       }
     ],
-    "dabu4-u1-4": [
+    "dabu4-u1-2a": [
       {
         "title": "毕竟 and 话说回来: being fair to the other side",
         "body": "毕竟 'after all' gives the fact that explains or excuses something, and it goes before the verb or at the start of the clause. 话说回来 'that said, mind you' turns the conversation back to the other side of the argument. Together they let you disagree with someone without being unfair to them. 毕竟是两代人，想法不一样很正常。 (You're two generations, after all; it's normal to think differently.)"
       }
     ],
-    "dabu4-u1-5": [
+    "dabu4-u1-2b": [
       {
         "title": "Culture · Pressure to marry, and a contested label",
         "body": "催婚, 'hurrying someone to marry', peaks at Spring Festival and other holidays, when young people go home and parents, aunts and uncles ask the same question: 有对象了吗? 'Are you seeing anyone?' For many parents, marriage is simply the next stage of life, and behind the nagging is a real fear: who will look after their child when they are gone?"
       }
     ],
-    "dabu4-u2-1": [
+    "dabu4-u2-1a": [
       {
         "title": "不得不 and 只好: no choice",
         "body": "不得不 'can't not' is a double negative: you have no choice but to, usually because of pressure from outside. It's stronger than 必须 and carries a note of reluctance. 只好 'have to, can only' is milder, for making the best of a situation after something has happened. Don't put 不 after 不得不: say 不得不去, not 不得不不去. 好的初中竞争那么激烈，我不得不早做准备。 (Competition for the good schools is so fierce that I've no choice but to prepare early.)"
       }
     ],
-    "dabu4-u2-2": [
+    "dabu4-u2-1b": [
       {
         "title": "非 … 不可: simply have to",
         "body": "非…不可 'unless …, it won't do' means something must happen. It's emphatic, and often a little exasperated. With 要, 非要…不可 means someone insists on doing something, usually against advice; in speech the 不可 is often dropped: 他非要去. 孩子想上好大学，就非从小打好基础不可。 (If a child wants to get into a good university, they simply have to build the foundations early.)"
       }
     ],
-    "dabu4-u2-3": [
+    "dabu4-u2-1c": [
       {
         "title": "尽管 … 还是 / 但是 …: even though",
         "body": "尽管 is a more written 虽然 'although', and it stresses that B happens in spite of A. The second clause usually has 但是 or 可是, and often 还是 or 也 before the verb. It's the natural way to concede a point in an essay before you make your own. 尽管国家出台了“双减”政策，家长还是很焦虑。 (Although the government introduced the 'double reduction' policy, parents are still anxious.)"
       }
     ],
-    "dabu4-u2-4": [
+    "dabu4-u2-2a": [
       {
         "title": "凭 and 靠: on the strength of",
         "body": "凭 'on the strength of, by virtue of' names what you can rightfully count on: your score, your skill, your own work. 靠 from 大步 3 is broader, 'rely on', and can mean help from others. 凭什么？ 'on what grounds?' is a sharp challenge, and can sound rude, so save it for arguments you mean. 我能凭的，只有自己的分数。 (All I had to go on was my own score.)"
       }
     ],
-    "dabu4-u2-5": [
+    "dabu4-u2-2b": [
       {
         "title": "Culture · The gaokao, and the race that leads up to it",
         "body": "The 高考, the national university entrance exam, starts every year on 7 June and lasts two to four days, depending on the province. In 2025 about 13.4 million people sat it. For most, the score decides which university, and often which city, they go to. Streets near exam halls go quiet, police escort latecomers, and parents wait outside the gates, some wearing red for luck. In 高三, the final year, many students study from early morning until late at night under a countdown on the classroom board."
       }
     ],
-    "dabu4-u3-1": [
+    "dabu4-u3-1a": [
       {
         "title": "与其说 … 不如说 …: it's not so much A as B",
         "body": "与其说A，不如说B re-describes something: 'rather than calling it A, it would be truer to call it B'. It corrects a label, not a choice, so it's different from 与其A，不如B 'better to do B than A' from 大步 1, which recommends an action. It's thoughtful and a little literary, and very useful when you want to change how someone sees a situation. 与其说姨父是怕花钱，不如说他是怕自己没用了。 (It isn't so much that Uncle's afraid of the cost as that he's afraid of being useless.)"
       }
     ],
-    "dabu4-u3-2": [
+    "dabu4-u3-1b": [
       {
         "title": "固然 … 但是 …: admittedly",
         "body": "固然 grants a point fully, 'it's true that, of course', before the real argument comes with 但是 or 可是. It goes after the subject. It's written and measured, and it makes an argument sound fair, because you've shown you've thought about the other side first. 专业的护理固然代替不了儿女的陪伴，但是累垮了的儿女也照顾不好父母。 (Professional nursing can't take the place of children's company, of course, but children who are worn out can't care for their parents well either.)"
       }
     ],
-    "dabu4-u3-3": [
+    "dabu4-u3-2a": [
       {
         "title": "哪怕 … 也 …: even if",
         "body": "哪怕 'even if, even though' is like 即使 from 大步 3, but more emotional and more common in speech: it often introduces an extreme or a small, humble case. 也 or 都 follows in the second clause. 哪怕是 + noun is common too: 哪怕是一个电话 'even just a phone call'. 哪怕不能天天在身边，多打一个电话也是孝顺。 (Even if you can't be there every day, one more phone call is duty too.)"
       }
     ],
-    "dabu4-u3-4": [
+    "dabu4-u3-2b": [
       {
         "title": "照顾, 照料, 护理 and 陪: caring for someone",
         "body": "照顾 is the everyday word for looking after someone, and also for keeping an eye out for them. 照料 is its written twin, common in notices and reports (日间照料 'day care'). 护理 is nursing care, done by professionals. 陪 and 陪伴 are about company, being with someone, and that's what many older people want most. 她一个人照顾生病的丈夫。 (She's looking after her sick husband on her own.)"
       }
     ],
-    "dabu4-u3-5": [
+    "dabu4-u3-3a": [
       {
         "title": "Culture · Filial piety, and who cares for the old",
         "body": "孝, filial piety, has been at the heart of Chinese ethics for more than two thousand years. 孝顺 joins respect (孝) with going along with your parents' wishes (顺), and the old saying 养儿防老, 'raise children to provide for old age', assumed that sons and daughters would care for their parents at home. 'Face' (面子) matters too: for many older people, being seen to be looked after by their own children is a sign of a life well lived."
       }
     ],
-    "dabu4-u4-1": [
+    "dabu4-u4-1a": [
       {
         "title": "Reporting speech in writing",
         "body": "A profile mixes direct and indirect speech. Quote someone word for word with a colon and quotation marks, and keep their voice. Report them indirectly without quotation marks, changing 我 to 她 and 现在 to 那时. 据她回忆 'as she remembers it' marks her memory as the source; 用她的话说 introduces a phrase too good to paraphrase; 在她看来 gives her opinion. “那时候买什么都要票，”她说。 ('Back then you needed coupons for everything,' she says.)"
       }
     ],
-    "dabu4-u4-2": [
+    "dabu4-u4-1b": [
       {
         "title": "回想起来 and 现在想想: looking back",
         "body": "回想起来 'thinking back on it' opens a reflection on the past from the present, and often leads to a judgement or a feeling you didn't have at the time. It's reflective and a little written. 现在想想 'thinking about it now' is its everyday equivalent. Both are followed by a comma. 现在回想起来，那是我最开心的时候。 (Looking back now, those were my happiest days.)"
       }
     ],
-    "dabu4-u4-3": [
+    "dabu4-u4-2a": [
       {
         "title": "不由得 and 不禁: can't help it",
         "body": "不由得 'not up to you' means a reaction happens by itself, like 不禁 from 大步 2. 不由得 is a little more spoken, and it has a second use that 不禁 doesn't: 不由得你不信 'you can't help but believe it', with a person and 不 after it. Use either one sparingly: once in an essay is plenty. 我不由得想，这间厨房里曾经有过五个煤炉。 (I couldn't help thinking that this kitchen once had five coal stoves.)"
       }
     ],
-    "dabu4-u4-4": [
+    "dabu4-u4-2b": [
       {
         "title": "与此同时: meanwhile",
         "body": "与此同时 'at the same time as this' links two things happening in parallel, usually one personal and one larger. It's written, and it opens the second sentence, followed by a comma. 同时 alone is more flexible and can go inside a clause. In a profile, 与此同时 is how you set one life against the history around it. 她进了纺织厂。与此同时，这座城市正在发生巨大的变化。 (She went into the textile mill. Meanwhile, the city was changing enormously.)"
       }
     ],
-    "dabu4-u4-5": [
+    "dabu4-u4-3a": [
       {
         "title": "Culture · Oral history, and Shanghai since the 1960s",
         "body": "In the 1960s and 1970s most Shanghai families lived in crowded lane houses, often several households in a house built for one. Kitchens were shared, coal stoves (煤炉) were lit at the door each morning, and many homes had no toilet, so the day began with emptying the chamber pot (倒马桶) at the lane's collection point. Rice, oil, meat and cloth were rationed with coupons (票) from the 1950s until the early 1990s, and grain coupons were finally abolished in 1993. From 1968 until the late 1970s, over a million young Shanghainese were sent to the countryside as 知青, 'educated youth'."
       }
     ],
-    "dabu5-u1-1": [
+    "dabu5-u1-1a": [
       {
         "title": "Evidence or hearsay? 研究表明, 数据显示, 据说, 老话说",
         "body": "When you talk about health, show how you know. 研究表明 'research shows' and 数据显示 'the data show' are for evidence, and belong in writing and careful speech. 据说 'it's said' and 听说 'I've heard' pass on something you haven't checked; 老话说 'as the old saying goes' quotes tradition. Mixing them up is how rumours sound like facts, so choose on purpose. 研究表明，骨头汤里的钙其实很少。 (Research shows there's very little calcium in bone soup.)"
       }
     ],
-    "dabu5-u1-2": [
+    "dabu5-u1-1b": [
       {
         "title": "并非: it isn't so",
         "body": "并非 is the written form of 并不是: 'is not at all, is by no means'. It corrects an assumption firmly but calmly, which is why columns and reports love it. 也并非如此 'that isn't the case either' answers a question you've just raised. 并非都 means 'not all': 老话并非都是错的 'not all old sayings are wrong'. In speech, say 并不是 or 也不是. 老话并非都是错的。 (Not all old sayings are wrong.)"
       }
     ],
-    "dabu5-u1-3": [
+    "dabu5-u1-1c": [
       {
         "title": "适当, 适量 and 过度: in moderation",
         "body": "适当 'appropriate, suitable' goes before verbs to mean 'a reasonable amount, when it's right': 适当运动, 适当休息. 适量 'a moderate amount' is for things you consume: food, drink, medicine, sun. 过度 'too much, excessive' is the opposite, and often comes before 劳累, 使用 or 治疗. All three are a little formal: a doctor's words. 空调开到二十六度，适当开窗通风。 (Set the air conditioning to twenty-six, and open the windows now and then.)"
       }
     ],
-    "dabu5-u1-4": [
+    "dabu5-u1-2a": [
       {
         "title": "以…为主 and 因人而异",
         "body": "以A为主 'take A as the main thing' says what something mostly consists of: 饮食以清淡为主 'eat mostly light food'. It's neat and written, and very common in advice. 因人而异 'differs from person to person' is a four-character phrase for results that vary: use it to be honest about uncertain evidence. 夏天的饮食，最好以清淡为主。 (In summer, it's best to eat mostly light food.)"
       }
     ],
-    "dabu5-u1-5": [
+    "dabu5-u1-2b": [
       {
         "title": "Culture · The dog days, and the art of 'nourishing life'",
         "body": "养生, literally 'nourishing life', is an old idea: that you stay well through daily habits of eating, sleeping, moving and keeping calm, rather than waiting to be cured. It runs through traditional Chinese medicine (中医) and everyday speech. Older people swap tips in parks and group chats, and young office workers joke about 朋克养生, 'punk wellness': staying up till three, but with goji berries (枸杞) in the flask."
       }
     ],
-    "dabu5-u2-1": [
+    "dabu5-u2-1a": [
       {
         "title": "以偏概全 and 一概而论: don't generalise",
         "body": "Two useful four-character phrases for pushing back on stereotypes. 以偏概全 'take a part for the whole' criticises a conclusion drawn from too little: one rude waiter, so all Londoners are rude. 一概而论 'treat everything the same way' is almost always negative: 不能一概而论 'you can't generalise'. Soften them with 有点儿 or 也, and they sound thoughtful rather than rude. “英国人都很冷漠”，就有点儿以偏概全了。 ('The English are all cold' is a bit of a sweeping generalisation.)"
       }
     ],
-    "dabu5-u2-2": [
+    "dabu5-u2-1b": [
       {
         "title": "对…而言: as far as … is concerned",
         "body": "对…而言 means 'for, as far as … is concerned', and is the written twin of 对…来说. It sets up whose point of view you're giving, often before a judgement about meaning or difficulty. 就…而言 is similar but narrows a topic rather than a person: 就价格而言 'in terms of price'. 对我而言，旅行最大的意义，就是把标签撕下来。 (For me, the biggest point of travelling is peeling off the labels.)"
       }
     ],
-    "dabu5-u2-3": [
+    "dabu5-u2-2a": [
       {
         "title": "以为 or 认为?",
         "body": "Both translate as 'think', but 以为 usually means you thought something that turned out to be wrong: 我以为中国菜都是甜的. 认为 states a considered opinion, and is more formal: 我认为旅行的意义在于交流. Don't use 以为 for a view you still hold, or it sounds as though you've changed your mind. 我以为中国人都很严肃，结果不是。 (I thought Chinese people were all serious, but they're not.)"
       }
     ],
-    "dabu5-u2-4": [
+    "dabu5-u2-2b": [
       {
         "title": "…而已: that's all",
         "body": "而已 at the end of a sentence means 'and that's all, merely', and plays something down. It usually pairs with 只是, 不过 or 仅仅 earlier in the sentence. It's a little more written than 罢了, and it's a graceful way to be modest or to shrink an argument down to size. 其实，只是我听不懂而已。 (In fact, I just couldn't understand them, that's all.)"
       }
     ],
-    "dabu5-u2-5": [
+    "dabu5-u2-2c": [
       {
         "title": "Culture · Dunhuang and the Silk Road",
         "body": "Dunhuang stands on the edge of the Gobi desert in Gansu, at the point where the old routes west divided to pass north and south of the Taklamakan. For more than a thousand years, merchants, monks, soldiers and envoys passed through it on the roads later named the Silk Road (丝绸之路). Silk, paper and porcelain went west; horses, glass, grapes, musical instruments like the pipa, and Buddhism came east."
       }
     ],
-    "dabu5-u3-1": [
+    "dabu5-u3-1a": [
       {
         "title": "一方面 … 另一方面 …: on the one hand, on the other",
         "body": "一方面…另一方面… sets out two aspects of one thing. In English 'on the one hand … on the other' usually contrasts; in Chinese the two sides often point the same way, adding one reason to another, though they can contrast too. The second half often takes 也 or 又. It's formal and balanced, and at home in essays, reports and meetings. 一方面，订单稳定；另一方面，也能学学人家的管理。 (On the one hand, the orders are steady; on the other, we can learn from how they're run.)"
       }
     ],
-    "dabu5-u3-2": [
+    "dabu5-u3-1b": [
       {
         "title": "不可否认 and 然而: granting a point, then turning",
         "body": "不可否认 'it can't be denied' grants a point fully, and is stronger than 固然 from 大步 4. 然而 'however' is the written 可是: it opens a sentence or clause and turns the argument. Used together, they make a formal essay sound fair before it criticises. In speech you'd say 确实… and 可是…. 不可否认，这是个大机会。 (There's no denying it's a big opportunity.)"
       }
     ],
-    "dabu5-u3-3": [
+    "dabu5-u3-2a": [
       {
         "title": "由此可见 and 总而言之: drawing a conclusion, and closing",
         "body": "由此可见 'from this it can be seen' draws a conclusion from the example or evidence just given; 可见 alone is lighter and can go mid-sentence. 总而言之 'to sum up' opens the final paragraph of an essay or the last point of a speech; 总之 is its everyday form. Don't use 由此可见 unless something really does follow. 由此可见，交流并不一定意味着失去自己。 (It follows that exchange doesn't necessarily mean losing yourself.)"
       }
     ],
-    "dabu5-u3-4": [
+    "dabu5-u3-2b": [
       {
         "title": "以…为代价: at the cost of",
         "body": "以A为代价 'taking A as the price' says what is sacrificed to get something. It's written and usually critical, and often comes with 换取 'get in exchange' or 来. Use it to name the hidden cost of a gain: health for money, the environment for growth. 不少工厂以牺牲环境为代价，换取订单。 (Many factories win orders at the expense of the environment.)"
       }
     ],
-    "dabu5-u3-5": [
+    "dabu5-u3-3a": [
       {
         "title": "Culture · From 'Made in China' to the story behind it",
         "body": "Since China opened up to world trade in the 1980s, and especially after it joined the World Trade Organization in 2001, 中国制造 'Made in China' has been printed on a large share of the world's goods. China became the world's biggest exporter of goods in 2009, and now accounts for around 14 per cent of global goods exports."
       }
     ],
-    "dabu5-u4-1": [
+    "dabu5-u4-1a": [
       {
         "title": "Opening a speech: 尊敬的…, 亲爱的…, 大家好",
         "body": "A Chinese speech opens by addressing the audience, most senior first, followed by a colon: 尊敬的 'respected' for guests, teachers or leaders, 亲爱的 'dear' for friends, and 各位 + group for everyone else. Then comes the greeting, and usually 首先 with a thank-you to whoever invited you. At an informal event, 各位朋友，大家好 is plenty. 尊敬的各位老师，亲爱的朋友们：大家下午好！ (Teachers, dear friends: good afternoon!)"
       }
     ],
-    "dabu5-u4-2": [
+    "dabu5-u4-1b": [
       {
         "title": "如果说 … 那么 …: if A, then B",
         "body": "如果说A，那么B is not a real condition. It sets two things side by side, usually to build to the bigger one: 'if the first year gave me friends, then later it gave me homes'. It's a favourite of speeches and essays because it moves the argument up a step. Keep A and B parallel in shape. 如果说第一年，中文给了我几个朋友，那么后来，它给了我好几个家。 (If in the first year Chinese gave me a few friends, then later it gave me several homes.)"
       }
     ],
-    "dabu5-u4-3": [
+    "dabu5-u4-1c": [
       {
         "title": "Closing a speech: 最后, 感谢, 谢谢大家",
         "body": "最后 'finally' signals the end, and it's usually where the thanks go: 我要感谢 A，感谢 B…, with 感谢 repeated for each person. End with 谢谢大家 or 谢谢 on its own line, and at a festival or a party, a wish with 祝. 我的话就说到这里 'that's all from me' is a modest way to finish. 最后，我要感谢小雨，她是我的第一位中文老师。 (Finally, I'd like to thank Xiaoyu, my first Chinese teacher.)"
       }
     ],
-    "dabu5-u4-4": [
+    "dabu5-u4-2a": [
       {
         "title": "成语 and sayings in a speech",
         "body": "A 成语 or an old saying is at its best at a turning point: when it sums up what you've just said, or opens what you're about to say. Introduce a longer saying with 中国有句老话 or the person who said it, and put it in quotation marks. One or two in a speech is plenty. Some, like 一步一个脚印, work as adverbs with 地 before a verb. 中国有句老话：“千里之行，始于足下。” (There's an old Chinese saying: 'A journey of a thousand miles begins with a single step.')"
-      },
+      }
+    ],
+    "dabu5-u4-2b": [
       {
         "title": "Culture · Sayings that open doors",
         "body": "The first saying of the 《论语》, the Analects of Confucius, is about learning and friendship: 学而时习之，不亦说乎？有朋自远方来，不亦乐乎？ 'To learn, and practise what you have learned: is that not a pleasure? To have friends come from afar: is that not a joy?' Chinese hosts still quote the second line to welcome visitors, and it's printed on banners at airports, conferences and graduations."
@@ -5523,23 +6061,23 @@
   const PATH_LAYOUT = {
     version: 1,
     phone: true,
-    headers: { "qibu2-u3-1": "right", "qibu3-u2-1": "left" },
+    headers: { "qibu2-u3-1a": "right", "qibu3-u2-1a": "left" },
     pieces: [
-      { art: "cluster-right-temple", stone: "qibu1-u1-1", dx: 145.1, dy: -38.5, w: 65, flip: false, behind: true },
-      { art: "panda-walking", stone: "qibu1-u1-2", dx: 114.9, dy: -38.2, w: 22, flip: true, behind: false },
-      { art: "cluster-left-bamboo", stone: "qibu1-u1-4", dx: -202.2, dy: 58.8, w: 66, flip: false, behind: true },
-      { art: "panda-sleeping", stone: "qibu1-u2-1", dx: -176, dy: 62.3, w: 36, flip: false, behind: false },
-      { art: "land-pagoda", stone: "qibu1-u2-4", dx: 237.4, dy: 91.6, w: 95, flip: false, behind: true },
-      { art: "panda-writing", stone: "qibu1-u4-2", dx: -171.1, dy: -22, w: 36, flip: false, behind: false },
-      { art: "land-torii", stone: "qibu1-u4-5", dx: 241.1, dy: 71.4, w: 88.7, flip: false, behind: true },
-      { art: "panda-listening", stone: "qibu2-u1-2", dx: -166.1, dy: -10.6, w: 31.5, flip: false, behind: false },
-      { art: "cluster-right-bamboo", stone: "qibu2-u1-5", dx: 193.2, dy: 59.9, w: 72.6, flip: false, behind: false },
-      { art: "panda-reading", stone: "qibu2-u2-4", dx: -209.2, dy: 47.4, w: 27.9, flip: false, behind: false },
-      { art: "panda-celebrate", stone: "qibu2-u3-3", dx: 163.5, dy: -40.9, w: 36.9, flip: false, behind: false },
-      { art: "cluster-left-waterfall", stone: "qibu2-u3-6", dx: -192.3, dy: 70.7, w: 66, flip: false, behind: true },
-      { art: "panda-teacher", stone: "qibu3-u1-2", dx: 162.4, dy: 36.5, w: 35.1, flip: true, behind: false },
-      { art: "panda-sad", stone: "qibu3-u2-2", dx: -177, dy: -4.4, w: 29.7, flip: false, behind: false },
-      { art: "fol-blossom", stone: "qibu3-u2-5", dx: 195.7, dy: 58.7, w: 61, flip: true, behind: true }
+      { art: "cluster-right-temple", stone: "qibu1-u1-1a", dx: 145.1, dy: -38.5, w: 65, flip: false, behind: true },
+      { art: "panda-walking", stone: "qibu1-u1-2a", dx: 114.9, dy: -38.2, w: 22, flip: true, behind: false },
+      { art: "cluster-left-bamboo", stone: "qibu1-u1-4a", dx: -202.2, dy: 58.8, w: 66, flip: false, behind: true },
+      { art: "panda-sleeping", stone: "qibu1-u2-1a", dx: -176, dy: 62.3, w: 36, flip: false, behind: false },
+      { art: "land-pagoda", stone: "qibu1-u2-4a", dx: 237.4, dy: 91.6, w: 95, flip: false, behind: true },
+      { art: "panda-writing", stone: "qibu1-u4-2a", dx: -171.1, dy: -22, w: 36, flip: false, behind: false },
+      { art: "land-torii", stone: "qibu1-u4-5a", dx: 241.1, dy: 71.4, w: 88.7, flip: false, behind: true },
+      { art: "panda-listening", stone: "qibu2-u1-2a", dx: -166.1, dy: -10.6, w: 31.5, flip: false, behind: false },
+      { art: "cluster-right-bamboo", stone: "qibu2-u1-5a", dx: 193.2, dy: 59.9, w: 72.6, flip: false, behind: false },
+      { art: "panda-reading", stone: "qibu2-u2-4a", dx: -209.2, dy: 47.4, w: 27.9, flip: false, behind: false },
+      { art: "panda-celebrate", stone: "qibu2-u3-3a", dx: 163.5, dy: -40.9, w: 36.9, flip: false, behind: false },
+      { art: "cluster-left-waterfall", stone: "qibu2-u3-6a", dx: -192.3, dy: 70.7, w: 66, flip: false, behind: true },
+      { art: "panda-teacher", stone: "qibu3-u1-2a", dx: 162.4, dy: 36.5, w: 35.1, flip: true, behind: false },
+      { art: "panda-sad", stone: "qibu3-u2-2a", dx: -177, dy: -4.4, w: 29.7, flip: false, behind: false },
+      { art: "fol-blossom", stone: "qibu3-u2-5a", dx: 195.7, dy: 58.7, w: 61, flip: true, behind: true }
     ]
   };
   /* Local editing only: the path editor (tools/path-editor) previews an
@@ -5618,23 +6156,42 @@
      still drives the progress bar in the lesson sheet.                      */
   const LS_DONE = "zhBeginnerA.done.v1";
   const LS_MIGRATED = "zhBeginnerA.migrated.v1";
+  const LS_RESTONED = "zhBeginnerA.restoned.v1";   // lessons cut into stones of five (v294)
   let doneLessons = (() => {
     try { return migrateOldDone(new Set(JSON.parse(localStorage.getItem(LS_DONE)) || [])); }
     catch { return new Set(); }
   })();
-  // Lesson ids from the JIC edition don't exist any more: a new lesson counts as
-  // done when every one of its words already has review history.
+  /* Lesson ids that no longer exist. Lessons were cut into stones of at most five new
+     words (v294): OLD_LESSONS (migrate-old.js) lists the stones that now hold each old
+     lesson's words, and a stone is done when every old lesson feeding it was done (a
+     word brought forward from a lesson not yet reached keeps its stone open). Ids from
+     the JIC edition have no entry there: a lesson counts as done when every one of its
+     words already has review history. */
+  function restoneDone(set, stale) {
+    const OLD = window.OLD_LESSONS || {}, from = {};
+    Object.keys(OLD).forEach(o => OLD[o].forEach(id => { (from[id] = from[id] || []).push(o); }));
+    const was = new Set(stale.filter(id => OLD[id]));
+    let n = 0;
+    if (!was.size) return n;
+    Object.keys(from).forEach(id => {
+      if (!set.has(id) && from[id].every(o => was.has(o))) { set.add(id); n++; }
+    });
+    return n;
+  }
   function migrateOldDone(set) {
     const stale = [...set].filter(id => !LESSONS.some(l => l.id === id));
     if (!stale.length) return set;
     stale.forEach(id => set.delete(id));
+    const restoned = restoneDone(set, stale);
     let carried = 0;
     LESSONS.forEach(l => {
       const cs = CARDS.filter(c => c.lessonId === l.id);
       if (!set.has(l.id) && cs.length && cs.every(c => srs[c.id] && srs[c.id].reps > 0)) { set.add(l.id); carried++; }
     });
     // tell them once, so stones that start out done don't look like a glitch
-    if (!localStorage.getItem(LS_MIGRATED)) localStorage.setItem(LS_MIGRATED, JSON.stringify({ stones: carried, shown: false }));
+    if (restoned) {
+      if (!localStorage.getItem(LS_RESTONED)) localStorage.setItem(LS_RESTONED, JSON.stringify({ stones: restoned + carried, shown: false }));
+    } else if (!localStorage.getItem(LS_MIGRATED)) localStorage.setItem(LS_MIGRATED, JSON.stringify({ stones: carried, shown: false }));
     localStorage.setItem(LS_DONE, JSON.stringify([...set]));
     if (prefs.lessons && prefs.lessons.some(id => !LESSONS.some(l => l.id === id))) { delete prefs.lessons; savePrefs(prefs); }
     return set;
@@ -9643,6 +10200,14 @@ This REPLACES the progress on this device.`)) return;
         ? `Welcome to the new course! ${m.stones} stone${m.stones === 1 ? " is" : "s are"} already done from your old progress, and your words keep their reviews.`
         : "Welcome to the new course! Your words keep their reviews.", 7000), 1200);
       m.shown = true; localStorage.setItem(LS_MIGRATED, JSON.stringify(m));
+    }
+  } catch {}
+  // once, after lessons became stones of five: say so
+  try {
+    const m = JSON.parse(localStorage.getItem(LS_RESTONED) || "null");
+    if (m && !m.shown) {
+      setTimeout(() => toast(`Lessons are now shorter: up to five new words a stone. ${m.stones} stone${m.stones === 1 ? " is" : "s are"} done from your progress, and your words keep their reviews.`, 7000), 1200);
+      m.shown = true; localStorage.setItem(LS_RESTONED, JSON.stringify(m));
     }
   } catch {}
   if (activity.levelSeen == null) { activity.levelSeen = levelInfo().level; localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); }

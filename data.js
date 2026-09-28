@@ -147,25028 +147,32116 @@ window.VOCAB = {
  ],
  "lessons": [
   {
-   "id": "qibu1-s0-1",
-   "title": "起步1 US.1 · 你好！ Hello! Sounds and survival",
-   "words": [
-    {
-     "hanzi": "你好",
-     "pinyin": "nǐ hǎo",
-     "pos": "phr.",
-     "en": "hello"
-    },
-    {
-     "hanzi": "谢谢",
-     "pinyin": "xiè xie",
-     "pos": "phr.",
-     "en": "thank you"
-    },
-    {
-     "hanzi": "不客气",
-     "pinyin": "bù kè qi",
-     "pos": "phr.",
-     "en": "you're welcome"
-    },
-    {
-     "hanzi": "对不起",
-     "pinyin": "duì bu qǐ",
-     "pos": "phr.",
-     "en": "sorry"
-    },
-    {
-     "hanzi": "没关系",
-     "pinyin": "méi guān xi",
-     "pos": "phr.",
-     "en": "that's OK, no problem"
-    },
-    {
-     "hanzi": "再见",
-     "pinyin": "zài jiàn",
-     "pos": "phr.",
-     "en": "goodbye"
-    },
-    {
-     "hanzi": "请再说一遍",
-     "pinyin": "qǐng zài shuō yī biàn",
-     "pos": "phr.",
-     "en": "please say that again"
-    },
-    {
-     "hanzi": "请说慢一点儿",
-     "pinyin": "qǐng shuō màn yī diǎn r",
-     "pos": "phr.",
-     "en": "please speak more slowly"
-    },
-    {
-     "hanzi": "我不懂",
-     "pinyin": "wǒ bù dǒng",
-     "pos": "phr.",
-     "en": "I don't understand"
-    },
-    {
-     "hanzi": "这个用中文怎么说",
-     "pinyin": "zhè ge yòng zhōng wén zěn me shuō",
-     "pos": "phr.",
-     "en": "how do you say this in Chinese?"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u1-1",
-   "title": "起步1 U1.1 · 很高兴认识你！ Nice to meet you!",
+   "id": "qibu1-u1-1a",
+   "title": "起步1 U1.1 · 很高兴认识你！ Nice to meet you! · 1",
    "words": [
     {
      "hanzi": "你",
      "pinyin": "nǐ",
      "pos": "pron.",
-     "en": "you"
-    },
-    {
-     "hanzi": "我",
-     "pinyin": "wǒ",
-     "pos": "pron.",
-     "en": "I, me"
+     "en": "you",
+     "id": "qibu1-u1-1:0"
     },
     {
      "hanzi": "好",
      "pinyin": "hǎo",
      "pos": "adj.",
-     "en": "good, well"
+     "en": "good, well",
+     "id": "qibu1-u1-1:2"
     },
     {
-     "hanzi": "请问",
-     "pinyin": "qǐng wèn",
+     "hanzi": "你好",
+     "pinyin": "nǐ hǎo",
      "pos": "phr.",
-     "en": "excuse me, may I ask"
+     "en": "hello",
+     "id": "qibu1-s0-1:0"
     },
+    {
+     "hanzi": "谢谢",
+     "pinyin": "xiè xie",
+     "pos": "phr.",
+     "en": "thank you",
+     "id": "qibu1-s0-1:1"
+    },
+    {
+     "hanzi": "我",
+     "pinyin": "wǒ",
+     "pos": "pron.",
+     "en": "I, me",
+     "id": "qibu1-u1-1:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u1-1b",
+   "title": "起步1 U1.1 · 很高兴认识你！ Nice to meet you! · 2",
+   "words": [
     {
      "hanzi": "是",
      "pinyin": "shì",
      "pos": "v.",
-     "en": "to be; yes"
+     "en": "to be; yes",
+     "id": "qibu1-u1-1:4"
     },
     {
      "hanzi": "吗",
      "pinyin": "ma",
      "pos": "part.",
-     "en": "turns a statement into a yes/no question"
+     "en": "turns a statement into a yes/no question",
+     "id": "qibu1-u1-1:5"
     },
     {
      "hanzi": "叫",
      "pinyin": "jiào",
      "pos": "v.",
-     "en": "to be called"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u1-2",
-   "title": "起步1 U1.2 · 很高兴认识你！ Nice to meet you!",
-   "words": [
+     "en": "to be called",
+     "id": "qibu1-u1-1:6"
+    },
     {
      "hanzi": "姓",
      "pinyin": "xìng",
      "pos": "v./n.",
-     "en": "to have the surname; surname"
+     "en": "to have the surname; surname",
+     "id": "qibu1-u1-2:0"
     },
     {
      "hanzi": "对",
      "pinyin": "duì",
      "pos": "adj.",
-     "en": "right, correct; yes"
-    },
+     "en": "right, correct; yes",
+     "id": "qibu1-u1-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u1-2a",
+   "title": "起步1 U1.2 · 很高兴认识你！ Nice to meet you!",
+   "words": [
     {
      "hanzi": "什么",
      "pinyin": "shén me",
      "pos": "q.",
-     "en": "what"
+     "en": "what",
+     "id": "qibu1-u1-2:2"
     },
     {
      "hanzi": "很",
      "pinyin": "hěn",
      "pos": "adv.",
-     "en": "very"
+     "en": "very",
+     "id": "qibu1-u1-2:3"
     },
     {
      "hanzi": "高兴",
      "pinyin": "gāo xìng",
      "pos": "adj.",
-     "en": "glad, happy"
+     "en": "glad, happy",
+     "id": "qibu1-u1-2:4"
     },
     {
      "hanzi": "认识",
      "pinyin": "rèn shi",
      "pos": "v.",
-     "en": "to know (a person), to meet"
+     "en": "to know (a person), to meet",
+     "id": "qibu1-u1-2:5"
     },
     {
      "hanzi": "也",
      "pinyin": "yě",
      "pos": "adv.",
-     "en": "also, too"
+     "en": "also, too",
+     "id": "qibu1-u1-2:6"
     }
    ]
   },
   {
-   "id": "qibu1-u1-3",
+   "id": "qibu1-u1-3a",
    "title": "起步1 U1.3 · 很高兴认识你！ Nice to meet you!",
    "words": [
     {
      "hanzi": "这",
      "pinyin": "zhè",
      "pos": "pron.",
-     "en": "this"
+     "en": "this",
+     "id": "qibu1-u1-3:0"
     },
     {
      "hanzi": "朋友",
      "pinyin": "péng you",
      "pos": "n.",
-     "en": "friend"
+     "en": "friend",
+     "id": "qibu1-u1-3:1"
     },
     {
      "hanzi": "名字",
      "pinyin": "míng zi",
      "pos": "n.",
-     "en": "name"
+     "en": "name",
+     "id": "qibu1-u1-3:2"
     },
     {
      "hanzi": "学生",
      "pinyin": "xué sheng",
      "pos": "n.",
-     "en": "student"
+     "en": "student",
+     "id": "qibu1-u1-3:3"
     },
     {
      "hanzi": "呢",
      "pinyin": "ne",
      "pos": "part.",
-     "en": "and …? (asks the same question back)"
-    },
+     "en": "and …? (asks the same question back)",
+     "id": "qibu1-u1-3:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u1-4a",
+   "title": "起步1 U1.4 · 很高兴认识你！ Nice to meet you! · 1",
+   "words": [
     {
      "hanzi": "不",
      "pinyin": "bù",
      "pos": "adv.",
-     "en": "not, no"
+     "en": "not, no",
+     "id": "qibu1-u1-3:5"
     },
     {
      "hanzi": "喝",
      "pinyin": "hē",
      "pos": "v.",
-     "en": "to drink"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u1-4",
-   "title": "起步1 U1.4 · 很高兴认识你！ Nice to meet you!",
-   "words": [
+     "en": "to drink",
+     "id": "qibu1-u1-3:6"
+    },
     {
      "hanzi": "咖啡",
      "pinyin": "kā fēi",
      "pos": "n.",
-     "en": "coffee"
+     "en": "coffee",
+     "id": "qibu1-u1-4:0"
     },
     {
      "hanzi": "茶",
      "pinyin": "chá",
      "pos": "n.",
-     "en": "tea"
+     "en": "tea",
+     "id": "qibu1-u1-4:1"
     },
     {
      "hanzi": "他",
      "pinyin": "tā",
      "pos": "pron.",
-     "en": "he, him"
-    },
+     "en": "he, him",
+     "id": "qibu1-u1-4:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u1-4b",
+   "title": "起步1 U1.4 · 很高兴认识你！ Nice to meet you! · 2",
+   "words": [
     {
      "hanzi": "她",
      "pinyin": "tā",
      "pos": "pron.",
-     "en": "she, her"
+     "en": "she, her",
+     "id": "qibu1-u1-4:3"
     },
     {
      "hanzi": "水",
      "pinyin": "shuǐ",
      "pos": "n.",
-     "en": "water"
+     "en": "water",
+     "id": "qibu1-u1-4:4"
     },
     {
      "hanzi": "老师",
      "pinyin": "lǎo shī",
      "pos": "n.",
-     "en": "teacher"
+     "en": "teacher",
+     "id": "qibu1-u1-4:5"
+    },
+    {
+     "hanzi": "客气",
+     "pinyin": "kè qi",
+     "pos": "adj.",
+     "en": "polite, modest (别客气 don't be so modest; you're welcome)",
+     "id": "qibu5-u2-4:2"
+    },
+    {
+     "hanzi": "对不起",
+     "pinyin": "duì bu qǐ",
+     "pos": "phr.",
+     "en": "sorry",
+     "id": "qibu1-s0-1:3"
     }
    ]
   },
   {
-   "id": "qibu1-u2-1",
-   "title": "起步1 U2.1 · 你从哪里来？ Where are you from?",
+   "id": "qibu1-s0-1a",
+   "title": "起步1 US.1 · 你好！ Hello! Sounds and survival · 1",
+   "words": [
+    {
+     "hanzi": "不客气",
+     "pinyin": "bù kè qi",
+     "pos": "phr.",
+     "en": "you're welcome",
+     "id": "qibu1-s0-1:2",
+     "parts": [
+      "不",
+      "客气"
+     ]
+    },
+    {
+     "hanzi": "没关系",
+     "pinyin": "méi guān xi",
+     "pos": "phr.",
+     "en": "that's OK, no problem",
+     "id": "qibu1-s0-1:4"
+    },
+    {
+     "hanzi": "请",
+     "pinyin": "qǐng",
+     "pos": "v.",
+     "en": "to invite; to treat (someone to something)",
+     "id": "qibu2-u1-5:5"
+    },
+    {
+     "hanzi": "请问",
+     "pinyin": "qǐng wèn",
+     "pos": "phr.",
+     "en": "excuse me, may I ask",
+     "id": "qibu1-u1-1:3"
+    },
+    {
+     "hanzi": "再",
+     "pinyin": "zài",
+     "pos": "adv.",
+     "en": "again; then, further",
+     "id": "qibu3-u3-3:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-s0-1b",
+   "title": "起步1 US.1 · 你好！ Hello! Sounds and survival · 2",
+   "words": [
+    {
+     "hanzi": "再见",
+     "pinyin": "zài jiàn",
+     "pos": "phr.",
+     "en": "goodbye",
+     "id": "qibu1-s0-1:5"
+    },
+    {
+     "hanzi": "说",
+     "pinyin": "shuō",
+     "pos": "v.",
+     "en": "to speak, to say",
+     "id": "qibu1-u2-3:1"
+    },
+    {
+     "hanzi": "慢",
+     "pinyin": "màn",
+     "pos": "adj.",
+     "en": "slow",
+     "id": "qibu3-u2-5:7"
+    },
+    {
+     "hanzi": "一点儿",
+     "pinyin": "yī diǎn r",
+     "pos": "phr.",
+     "en": "a little",
+     "id": "qibu1-u2-3:4"
+    },
+    {
+     "hanzi": "懂",
+     "pinyin": "dǒng",
+     "pos": "v.",
+     "en": "to understand",
+     "id": "qibu4-u4-4:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-s0-1c",
+   "title": "起步1 US.1 · 你好！ Hello! Sounds and survival · 3",
+   "words": [
+    {
+     "hanzi": "请再说一遍",
+     "pinyin": "qǐng zài shuō yī biàn",
+     "pos": "phr.",
+     "en": "please say that again",
+     "id": "qibu1-s0-1:6",
+     "parts": [
+      "请",
+      "再",
+      "说"
+     ]
+    },
+    {
+     "hanzi": "我不懂",
+     "pinyin": "wǒ bù dǒng",
+     "pos": "phr.",
+     "en": "I don't understand",
+     "id": "qibu1-s0-1:8",
+     "parts": [
+      "我",
+      "不",
+      "懂"
+     ]
+    },
+    {
+     "hanzi": "这个",
+     "pinyin": "zhè ge",
+     "pos": "pron.",
+     "en": "this (one)",
+     "id": "qibu2-u3-2:4"
+    },
+    {
+     "hanzi": "用",
+     "pinyin": "yòng",
+     "pos": "v.",
+     "en": "to use",
+     "id": "qibu4-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-s0-1d",
+   "title": "起步1 US.1 · 你好！ Hello! Sounds and survival · 4",
+   "words": [
+    {
+     "hanzi": "请说慢一点儿",
+     "pinyin": "qǐng shuō màn yī diǎn r",
+     "pos": "phr.",
+     "en": "please speak more slowly",
+     "id": "qibu1-s0-1:7",
+     "parts": [
+      "请",
+      "说",
+      "慢",
+      "一点儿"
+     ]
+    },
+    {
+     "hanzi": "中文",
+     "pinyin": "Zhōng wén",
+     "pos": "n.",
+     "en": "Chinese (language)",
+     "id": "qibu1-u2-3:2"
+    },
+    {
+     "hanzi": "怎么",
+     "pinyin": "zěn me",
+     "pos": "q.",
+     "en": "how",
+     "id": "qibu2-u4-1:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u2-1a",
+   "title": "起步1 U2.1 · 你从哪里来？ Where are you from? · 1",
    "words": [
     {
      "hanzi": "哪",
      "pinyin": "nǎ",
      "pos": "q.",
-     "en": "which"
+     "en": "which",
+     "id": "qibu1-u2-1:0"
     },
     {
      "hanzi": "国",
      "pinyin": "guó",
      "pos": "n.",
-     "en": "country"
+     "en": "country",
+     "id": "qibu1-u2-1:1"
     },
     {
      "hanzi": "人",
      "pinyin": "rén",
      "pos": "n.",
-     "en": "person, people"
+     "en": "person, people",
+     "id": "qibu1-u2-1:2"
     },
     {
      "hanzi": "英国",
      "pinyin": "Yīng guó",
      "pos": "n.",
-     "en": "the UK, Britain"
+     "en": "the UK, Britain",
+     "id": "qibu1-u2-1:3"
     },
     {
      "hanzi": "住",
      "pinyin": "zhù",
      "pos": "v.",
-     "en": "to live"
+     "en": "to live",
+     "id": "qibu1-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u2-1b",
+   "title": "起步1 U2.1 · 你从哪里来？ Where are you from? · 2",
+   "words": [
+    {
+     "hanzi": "这个用中文怎么说",
+     "pinyin": "zhè ge yòng zhōng wén zěn me shuō",
+     "pos": "phr.",
+     "en": "how do you say this in Chinese?",
+     "id": "qibu1-s0-1:9",
+     "parts": [
+      "这个",
+      "用",
+      "中文",
+      "怎么",
+      "说"
+     ]
     },
     {
      "hanzi": "在",
      "pinyin": "zài",
      "pos": "prep.",
-     "en": "in, at"
+     "en": "in, at",
+     "id": "qibu1-u2-1:5"
     },
     {
      "hanzi": "伦敦",
      "pinyin": "Lún dūn",
      "pos": "n.",
-     "en": "London"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u2-2",
-   "title": "起步1 U2.2 · 你从哪里来？ Where are you from?",
-   "words": [
+     "en": "London",
+     "id": "qibu1-u2-1:6"
+    },
     {
      "hanzi": "从",
      "pinyin": "cóng",
      "pos": "prep.",
-     "en": "from"
+     "en": "from",
+     "id": "qibu1-u2-2:0"
     },
     {
      "hanzi": "哪里",
      "pinyin": "nǎ lǐ",
      "pos": "q.",
-     "en": "where"
-    },
+     "en": "where",
+     "id": "qibu1-u2-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u2-2a",
+   "title": "起步1 U2.2 · 你从哪里来？ Where are you from?",
+   "words": [
     {
      "hanzi": "来",
      "pinyin": "lái",
      "pos": "v.",
-     "en": "to come"
+     "en": "to come",
+     "id": "qibu1-u2-2:2"
     },
     {
      "hanzi": "中国",
      "pinyin": "Zhōng guó",
      "pos": "n.",
-     "en": "China"
+     "en": "China",
+     "id": "qibu1-u2-2:3"
     },
     {
      "hanzi": "成都",
      "pinyin": "Chéng dū",
      "pos": "n.",
-     "en": "Chengdu"
+     "en": "Chengdu",
+     "id": "qibu1-u2-2:4"
     },
     {
      "hanzi": "北京",
      "pinyin": "Běi jīng",
      "pos": "n.",
-     "en": "Beijing"
+     "en": "Beijing",
+     "id": "qibu1-u2-2:5"
     },
     {
      "hanzi": "美国",
      "pinyin": "Měi guó",
      "pos": "n.",
-     "en": "the USA"
+     "en": "the USA",
+     "id": "qibu1-u2-2:6"
     }
    ]
   },
   {
-   "id": "qibu1-u2-3",
+   "id": "qibu1-u2-3a",
    "title": "起步1 U2.3 · 你从哪里来？ Where are you from?",
    "words": [
     {
      "hanzi": "会",
      "pinyin": "huì",
      "pos": "v.",
-     "en": "can, know how to"
-    },
-    {
-     "hanzi": "说",
-     "pinyin": "shuō",
-     "pos": "v.",
-     "en": "to speak, to say"
-    },
-    {
-     "hanzi": "中文",
-     "pinyin": "Zhōng wén",
-     "pos": "n.",
-     "en": "Chinese (language)"
+     "en": "can, know how to",
+     "id": "qibu1-u2-3:0"
     },
     {
      "hanzi": "汉语",
      "pinyin": "Hàn yǔ",
      "pos": "n.",
-     "en": "Chinese (language)"
-    },
-    {
-     "hanzi": "一点儿",
-     "pinyin": "yī diǎn r",
-     "pos": "phr.",
-     "en": "a little"
+     "en": "Chinese (language)",
+     "id": "qibu1-u2-3:3"
     },
     {
      "hanzi": "法国",
      "pinyin": "Fǎ guó",
      "pos": "n.",
-     "en": "France"
+     "en": "France",
+     "id": "qibu1-u2-3:5"
     },
     {
      "hanzi": "法语",
      "pinyin": "Fǎ yǔ",
      "pos": "n.",
-     "en": "French"
+     "en": "French",
+     "id": "qibu1-u2-3:6"
     },
     {
      "hanzi": "英语",
      "pinyin": "Yīng yǔ",
      "pos": "n.",
-     "en": "English"
+     "en": "English",
+     "id": "qibu1-u2-3:7"
     }
    ]
   },
   {
-   "id": "qibu1-u2-4",
-   "title": "起步1 U2.4 · 你从哪里来？ Where are you from?",
+   "id": "qibu1-u2-4a",
+   "title": "起步1 U2.4 · 你从哪里来？ Where are you from? · 1",
    "words": [
     {
      "hanzi": "和",
      "pinyin": "hé",
      "pos": "conj.",
-     "en": "and"
+     "en": "and",
+     "id": "qibu1-u2-4:0"
     },
     {
      "hanzi": "日本",
      "pinyin": "Rì běn",
      "pos": "n.",
-     "en": "Japan"
+     "en": "Japan",
+     "id": "qibu1-u2-4:1"
     },
     {
      "hanzi": "日语",
      "pinyin": "Rì yǔ",
      "pos": "n.",
-     "en": "Japanese"
+     "en": "Japanese",
+     "id": "qibu1-u2-4:2"
     },
     {
      "hanzi": "澳大利亚",
      "pinyin": "Ào dà lì yà",
      "pos": "n.",
-     "en": "Australia"
-    },
+     "en": "Australia",
+     "id": "qibu1-u2-4:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u2-4b",
+   "title": "起步1 U2.4 · 你从哪里来？ Where are you from? · 2",
+   "words": [
     {
      "hanzi": "只",
      "pinyin": "zhǐ",
      "pos": "adv.",
-     "en": "only"
+     "en": "only",
+     "id": "qibu1-u2-4:4"
     },
     {
      "hanzi": "我们",
      "pinyin": "wǒ men",
      "pos": "pron.",
-     "en": "we, us"
+     "en": "we, us",
+     "id": "qibu1-u2-4:5"
     },
     {
      "hanzi": "一起",
      "pinyin": "yī qǐ",
      "pos": "adv.",
-     "en": "together"
+     "en": "together",
+     "id": "qibu1-u2-4:6"
     },
     {
      "hanzi": "学",
      "pinyin": "xué",
      "pos": "v.",
-     "en": "to learn, to study"
+     "en": "to learn, to study",
+     "id": "qibu1-u2-4:7"
     }
    ]
   },
   {
-   "id": "qibu1-u3-1",
+   "id": "qibu1-u3-1a",
    "title": "起步1 U3.1 · 你在哪儿工作？ Where do you work?",
    "words": [
     {
      "hanzi": "做",
      "pinyin": "zuò",
      "pos": "v.",
-     "en": "to do, to make"
+     "en": "to do, to make",
+     "id": "qibu1-u3-1:0"
     },
     {
      "hanzi": "工作",
      "pinyin": "gōng zuò",
      "pos": "n./v.",
-     "en": "job; to work"
+     "en": "job; to work",
+     "id": "qibu1-u3-1:1"
     },
     {
      "hanzi": "设计",
      "pinyin": "shè jì",
      "pos": "n./v.",
-     "en": "design; to design"
+     "en": "design; to design",
+     "id": "qibu1-u3-1:2"
     },
     {
      "hanzi": "设计师",
      "pinyin": "shè jì shī",
      "pos": "n.",
-     "en": "designer"
-    },
-    {
-     "hanzi": "真的",
-     "pinyin": "zhēn de",
-     "pos": "adv.",
-     "en": "really"
+     "en": "designer",
+     "id": "qibu1-u3-1:3"
     },
     {
      "hanzi": "大学",
      "pinyin": "dà xué",
      "pos": "n.",
-     "en": "university"
-    },
-    {
-     "hanzi": "大学生",
-     "pinyin": "dà xué shēng",
-     "pos": "n.",
-     "en": "university student"
+     "en": "university",
+     "id": "qibu1-u3-1:5"
     }
    ]
   },
   {
-   "id": "qibu1-u3-2",
+   "id": "qibu1-u3-2a",
    "title": "起步1 U3.2 · 你在哪儿工作？ Where do you work?",
    "words": [
+    {
+     "hanzi": "大学生",
+     "pinyin": "dà xué shēng",
+     "pos": "n.",
+     "en": "university student",
+     "id": "qibu1-u3-1:6"
+    },
     {
      "hanzi": "太好了",
      "pinyin": "tài hǎo le",
      "pos": "phr.",
-     "en": "great!"
+     "en": "great!",
+     "id": "qibu1-u3-2:0"
     },
     {
      "hanzi": "哪儿",
      "pinyin": "nǎ r",
      "pos": "q.",
-     "en": "where"
+     "en": "where",
+     "id": "qibu1-u3-2:1"
     },
     {
      "hanzi": "公司",
      "pinyin": "gōng sī",
      "pos": "n.",
-     "en": "company, office"
+     "en": "company, office",
+     "id": "qibu1-u3-2:2"
     },
     {
      "hanzi": "医生",
      "pinyin": "yī shēng",
      "pos": "n.",
-     "en": "doctor"
-    },
+     "en": "doctor",
+     "id": "qibu1-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u3-3a",
+   "title": "起步1 U3.3 · 你在哪儿工作？ Where do you work? · 1",
+   "words": [
     {
      "hanzi": "医院",
      "pinyin": "yī yuàn",
      "pos": "n.",
-     "en": "hospital"
+     "en": "hospital",
+     "id": "qibu1-u3-2:4"
     },
     {
      "hanzi": "学校",
      "pinyin": "xué xiào",
      "pos": "n.",
-     "en": "school"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u3-3",
-   "title": "起步1 U3.3 · 你在哪儿工作？ Where do you work?",
-   "words": [
+     "en": "school",
+     "id": "qibu1-u3-2:5"
+    },
     {
      "hanzi": "表哥",
      "pinyin": "biǎo gē",
      "pos": "n.",
-     "en": "(older male) cousin"
+     "en": "(older male) cousin",
+     "id": "qibu1-u3-3:0"
     },
     {
      "hanzi": "厨师",
      "pinyin": "chú shī",
      "pos": "n.",
-     "en": "chef, cook"
+     "en": "chef, cook",
+     "id": "qibu1-u3-3:1"
     },
     {
      "hanzi": "那",
      "pinyin": "nà",
      "pos": "pron.",
-     "en": "that"
-    },
+     "en": "that",
+     "id": "qibu1-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u3-3b",
+   "title": "起步1 U3.3 · 你在哪儿工作？ Where do you work? · 2",
+   "words": [
     {
      "hanzi": "的",
      "pinyin": "de",
      "pos": "part.",
-     "en": "'s (shows who something belongs to)"
+     "en": "'s (shows who something belongs to)",
+     "id": "qibu1-u3-3:3"
+    },
+    {
+     "hanzi": "真的",
+     "pinyin": "zhēn de",
+     "pos": "adv.",
+     "en": "really",
+     "id": "qibu1-u3-1:4"
     },
     {
      "hanzi": "饭馆",
      "pinyin": "fàn guǎn",
      "pos": "n.",
-     "en": "restaurant"
+     "en": "restaurant",
+     "id": "qibu1-u3-3:4"
     },
     {
      "hanzi": "家",
      "pinyin": "jiā",
      "pos": "n.",
-     "en": "family; home"
-    },
+     "en": "family; home",
+     "id": "qibu1-u3-3:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u3-3c",
+   "title": "起步1 U3.3 · 你在哪儿工作？ Where do you work? · 3",
+   "words": [
     {
      "hanzi": "饺子",
      "pinyin": "jiǎo zi",
      "pos": "n.",
-     "en": "dumpling"
+     "en": "dumpling",
+     "id": "qibu1-u3-3:6"
     },
     {
      "hanzi": "好吃",
      "pinyin": "hǎo chī",
      "pos": "adj.",
-     "en": "tasty, delicious"
+     "en": "tasty, delicious",
+     "id": "qibu1-u3-3:7"
     },
     {
      "hanzi": "谁",
      "pinyin": "shéi",
      "pos": "q.",
-     "en": "who"
+     "en": "who",
+     "id": "qibu1-u3-3:8"
     },
     {
      "hanzi": "手机",
      "pinyin": "shǒu jī",
      "pos": "n.",
-     "en": "mobile phone"
+     "en": "mobile phone",
+     "id": "qibu1-u3-3:9"
     }
    ]
   },
   {
-   "id": "qibu1-u4-1",
-   "title": "起步1 U4.1 · 数字 Numbers",
+   "id": "qibu1-u4-1a",
+   "title": "起步1 U4.1 · 数字 Numbers · 1",
    "words": [
     {
      "hanzi": "零",
      "pinyin": "líng",
      "pos": "num.",
-     "en": "0"
+     "en": "0",
+     "id": "qibu1-u4-1:0"
     },
     {
      "hanzi": "一",
      "pinyin": "yī",
      "pos": "num.",
-     "en": "1"
+     "en": "1",
+     "id": "qibu1-u4-1:1"
     },
     {
      "hanzi": "二",
      "pinyin": "èr",
      "pos": "num.",
-     "en": "2"
+     "en": "2",
+     "id": "qibu1-u4-1:2"
     },
     {
      "hanzi": "三",
      "pinyin": "sān",
      "pos": "num.",
-     "en": "3"
+     "en": "3",
+     "id": "qibu1-u4-1:3"
     },
     {
      "hanzi": "四",
      "pinyin": "sì",
      "pos": "num.",
-     "en": "4"
-    },
+     "en": "4",
+     "id": "qibu1-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u4-1b",
+   "title": "起步1 U4.1 · 数字 Numbers · 2",
+   "words": [
     {
      "hanzi": "五",
      "pinyin": "wǔ",
      "pos": "num.",
-     "en": "5"
+     "en": "5",
+     "id": "qibu1-u4-1:5"
     },
     {
      "hanzi": "六",
      "pinyin": "liù",
      "pos": "num.",
-     "en": "6"
+     "en": "6",
+     "id": "qibu1-u4-1:6"
     },
     {
      "hanzi": "七",
      "pinyin": "qī",
      "pos": "num.",
-     "en": "7"
+     "en": "7",
+     "id": "qibu1-u4-1:7"
     },
     {
      "hanzi": "八",
      "pinyin": "bā",
      "pos": "num.",
-     "en": "8"
+     "en": "8",
+     "id": "qibu1-u4-1:8"
     },
     {
      "hanzi": "九",
      "pinyin": "jiǔ",
      "pos": "num.",
-     "en": "9"
-    },
+     "en": "9",
+     "id": "qibu1-u4-1:9"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u4-1c",
+   "title": "起步1 U4.1 · 数字 Numbers · 3",
+   "words": [
     {
      "hanzi": "十",
      "pinyin": "shí",
      "pos": "num.",
-     "en": "10"
+     "en": "10",
+     "id": "qibu1-u4-1:10"
     },
     {
      "hanzi": "百",
      "pinyin": "bǎi",
      "pos": "num.",
-     "en": "100"
+     "en": "100",
+     "id": "qibu1-u4-1:11"
     },
     {
      "hanzi": "千",
      "pinyin": "qiān",
      "pos": "num.",
-     "en": "1000"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u4-2",
-   "title": "起步1 U4.2 · 加个微信吧！ Let's add each other on WeChat!",
-   "words": [
+     "en": "1000",
+     "id": "qibu1-u4-1:12"
+    },
     {
      "hanzi": "加",
      "pinyin": "jiā",
      "pos": "v.",
-     "en": "to add"
+     "en": "to add",
+     "id": "qibu1-u4-2:0"
     },
     {
      "hanzi": "个",
      "pinyin": "gè",
      "pos": "m.",
-     "en": "general measure word"
-    },
+     "en": "general measure word",
+     "id": "qibu1-u4-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u4-2a",
+   "title": "起步1 U4.2 · 加个微信吧！ Let's add each other on WeChat!",
+   "words": [
     {
      "hanzi": "微信",
      "pinyin": "Wēi xìn",
      "pos": "n.",
-     "en": "WeChat"
+     "en": "WeChat",
+     "id": "qibu1-u4-2:2"
     },
     {
      "hanzi": "吧",
      "pinyin": "ba",
      "pos": "part.",
-     "en": "let's …, why don't you … (a suggestion)"
+     "en": "let's …, why don't you … (a suggestion)",
+     "id": "qibu1-u4-2:3"
     },
     {
      "hanzi": "啊",
      "pinyin": "a",
      "pos": "part.",
-     "en": "softens a reply: 好啊 sure!"
+     "en": "softens a reply: 好啊 sure!",
+     "id": "qibu1-u4-2:4"
     },
     {
      "hanzi": "扫",
      "pinyin": "sǎo",
      "pos": "v.",
-     "en": "to scan"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u4-3",
-   "title": "起步1 U4.3 · 加个微信吧！ Let's add each other on WeChat!",
-   "words": [
+     "en": "to scan",
+     "id": "qibu1-u4-2:5"
+    },
     {
      "hanzi": "二维码",
      "pinyin": "èr wéi mǎ",
      "pos": "n.",
-     "en": "QR code"
-    },
+     "en": "QR code",
+     "id": "qibu1-u4-3:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u4-3a",
+   "title": "起步1 U4.3 · 加个微信吧！ Let's add each other on WeChat!",
+   "words": [
     {
      "hanzi": "电话",
      "pinyin": "diàn huà",
      "pos": "n.",
-     "en": "telephone"
+     "en": "telephone",
+     "id": "qibu1-u4-3:1"
     },
     {
      "hanzi": "号码",
      "pinyin": "hào mǎ",
      "pos": "n.",
-     "en": "number"
-    },
-    {
-     "hanzi": "多少",
-     "pinyin": "duō shǎo",
-     "pos": "q.",
-     "en": "how many, how much"
+     "en": "number",
+     "id": "qibu1-u4-3:2"
     },
     {
      "hanzi": "零",
      "pinyin": "líng",
      "pos": "num.",
-     "en": "zero"
+     "en": "zero",
+     "id": "qibu1-u4-3:4"
     },
     {
      "hanzi": "幺",
      "pinyin": "yāo",
      "pos": "num.",
-     "en": "one (in phone numbers)"
+     "en": "one (in phone numbers)",
+     "id": "qibu1-u4-3:5"
+    },
+    {
+     "hanzi": "大",
+     "pinyin": "dà",
+     "pos": "adj.",
+     "en": "big, large",
+     "id": "qibu2-u3-1:6"
     }
    ]
   },
   {
-   "id": "qibu1-u4-4",
+   "id": "qibu1-u4-4a",
    "title": "起步1 U4.4 · 加个微信吧！ Let's add each other on WeChat!",
    "words": [
-    {
-     "hanzi": "多大",
-     "pinyin": "duō dà",
-     "pos": "q.",
-     "en": "how old (for adults)"
-    },
     {
      "hanzi": "岁",
      "pinyin": "suì",
      "pos": "m.",
-     "en": "years old"
+     "en": "years old",
+     "id": "qibu1-u4-4:1"
     },
     {
      "hanzi": "有",
      "pinyin": "yǒu",
      "pos": "v.",
-     "en": "to have; there is, there are"
+     "en": "to have; there is, there are",
+     "id": "qibu1-u4-4:2"
     },
     {
      "hanzi": "几",
      "pinyin": "jǐ",
      "pos": "q.",
-     "en": "how many (a small number)"
+     "en": "how many (a small number)",
+     "id": "qibu1-u4-4:3"
     },
     {
      "hanzi": "两",
      "pinyin": "liǎng",
      "pos": "num.",
-     "en": "two (before a measure word)"
+     "en": "two (before a measure word)",
+     "id": "qibu1-u4-4:4"
     },
     {
      "hanzi": "服务员",
      "pinyin": "fú wù yuán",
      "pos": "n.",
-     "en": "waiter, waitress"
+     "en": "waiter, waitress",
+     "id": "qibu1-u4-4:5"
     }
    ]
   },
   {
-   "id": "qibu1-u4-5",
-   "title": "起步1 U4.5 · 加个微信吧！ Let's add each other on WeChat!",
+   "id": "qibu1-u4-5a",
+   "title": "起步1 U4.5 · 加个微信吧！ Let's add each other on WeChat! · 1",
    "words": [
     {
      "hanzi": "你们",
      "pinyin": "nǐ men",
      "pos": "pron.",
-     "en": "you (more than one)"
+     "en": "you (more than one)",
+     "id": "qibu1-u4-5:0"
     },
     {
      "hanzi": "天",
      "pinyin": "tiān",
      "pos": "n.",
-     "en": "day"
-    },
-    {
-     "hanzi": "差不多",
-     "pinyin": "chà bu duō",
-     "pos": "adv.",
-     "en": "about, almost"
+     "en": "day",
+     "id": "qibu1-u4-5:1"
     },
     {
      "hanzi": "太",
      "pinyin": "tài",
      "pos": "phr.",
-     "en": "too …, so … (太…了)"
+     "en": "too …, so … (太…了)",
+     "id": "qibu1-u4-5:3"
     },
     {
      "hanzi": "多",
      "pinyin": "duō",
      "pos": "adj.",
-     "en": "many, a lot"
+     "en": "many, a lot",
+     "id": "qibu1-u4-5:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u4-5b",
+   "title": "起步1 U4.5 · 加个微信吧！ Let's add each other on WeChat! · 2",
+   "words": [
+    {
+     "hanzi": "多少",
+     "pinyin": "duō shǎo",
+     "pos": "q.",
+     "en": "how many, how much",
+     "id": "qibu1-u4-3:3"
+    },
+    {
+     "hanzi": "多大",
+     "pinyin": "duō dà",
+     "pos": "q.",
+     "en": "how old (for adults)",
+     "id": "qibu1-u4-4:0",
+     "parts": [
+      "多",
+      "大"
+     ]
+    },
+    {
+     "hanzi": "差不多",
+     "pinyin": "chà bu duō",
+     "pos": "adv.",
+     "en": "about, almost",
+     "id": "qibu1-u4-5:2"
     },
     {
      "hanzi": "孩子",
      "pinyin": "hái zi",
      "pos": "n.",
-     "en": "child"
+     "en": "child",
+     "id": "qibu1-u4-5:5"
     }
    ]
   },
   {
-   "id": "qibu1-u5-1",
+   "id": "qibu1-u5-1a",
    "title": "起步1 U5.1 · 我在学中文呢！ I'm studying Chinese!",
    "words": [
     {
      "hanzi": "干",
      "pinyin": "gàn",
      "pos": "v.",
-     "en": "to do (informal)"
+     "en": "to do (informal)",
+     "id": "qibu1-u5-1:0"
     },
     {
      "hanzi": "在",
      "pinyin": "zài",
      "pos": "adv.",
-     "en": "be doing (an action in progress)"
+     "en": "be doing (an action in progress)",
+     "id": "qibu1-u5-1:1"
     },
     {
      "hanzi": "现在",
      "pinyin": "xiàn zài",
      "pos": "n.",
-     "en": "now"
+     "en": "now",
+     "id": "qibu1-u5-1:2"
     },
     {
      "hanzi": "听",
      "pinyin": "tīng",
      "pos": "v.",
-     "en": "to listen"
+     "en": "to listen",
+     "id": "qibu1-u5-1:3"
     },
     {
      "hanzi": "音乐",
      "pinyin": "yīn yuè",
      "pos": "n.",
-     "en": "music"
+     "en": "music",
+     "id": "qibu1-u5-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u5-2a",
+   "title": "起步1 U5.2 · 我在学中文呢！ I'm studying Chinese! · 1",
+   "words": [
+    {
+     "hanzi": "饭",
+     "pinyin": "fàn",
+     "pos": "n.",
+     "en": "meal, rice",
+     "id": "qibu1-u5-1:6"
     },
     {
      "hanzi": "做饭",
      "pinyin": "zuò fàn",
      "pos": "v.",
-     "en": "to cook"
-    },
-    {
-     "hanzi": "饭",
-     "pinyin": "fàn",
-     "pos": "n.",
-     "en": "meal, rice"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u5-2",
-   "title": "起步1 U5.2 · 我在学中文呢！ I'm studying Chinese!",
-   "words": [
-    {
-     "hanzi": "吃饭",
-     "pinyin": "chī fàn",
-     "pos": "v.",
-     "en": "to eat, have a meal"
+     "en": "to cook",
+     "id": "qibu1-u5-1:5"
     },
     {
      "hanzi": "看",
      "pinyin": "kàn",
      "pos": "v.",
-     "en": "to look, to watch, to read"
+     "en": "to look, to watch, to read",
+     "id": "qibu1-u5-2:1"
     },
     {
      "hanzi": "书",
      "pinyin": "shū",
      "pos": "n.",
-     "en": "book"
+     "en": "book",
+     "id": "qibu1-u5-2:2"
     },
     {
      "hanzi": "电视",
      "pinyin": "diàn shì",
      "pos": "n.",
-     "en": "TV"
-    },
+     "en": "TV",
+     "id": "qibu1-u5-2:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u5-2b",
+   "title": "起步1 U5.2 · 我在学中文呢！ I'm studying Chinese! · 2",
+   "words": [
     {
      "hanzi": "睡觉",
      "pinyin": "shuì jiào",
      "pos": "v.",
-     "en": "to sleep"
+     "en": "to sleep",
+     "id": "qibu1-u5-2:4"
     },
     {
      "hanzi": "跑步",
      "pinyin": "pǎo bù",
      "pos": "v.",
-     "en": "to run, go running"
+     "en": "to run, go running",
+     "id": "qibu1-u5-2:5"
     },
     {
      "hanzi": "没",
      "pinyin": "méi",
      "pos": "adv.",
-     "en": "not (for actions in progress or done)"
-    }
-   ]
-  },
-  {
-   "id": "qibu1-u5-3",
-   "title": "起步1 U5.3 · 我在学中文呢！ I'm studying Chinese!",
-   "words": [
+     "en": "not (for actions in progress or done)",
+     "id": "qibu1-u5-2:6"
+    },
     {
      "hanzi": "明天",
      "pinyin": "míng tiān",
      "pos": "n.",
-     "en": "tomorrow"
-    },
+     "en": "tomorrow",
+     "id": "qibu1-u5-3:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u5-3a",
+   "title": "起步1 U5.3 · 我在学中文呢！ I'm studying Chinese! · 1",
+   "words": [
     {
      "hanzi": "今天",
      "pinyin": "jīn tiān",
      "pos": "n.",
-     "en": "today"
+     "en": "today",
+     "id": "qibu1-u5-3:1"
     },
     {
      "hanzi": "晚上",
      "pinyin": "wǎn shang",
      "pos": "n.",
-     "en": "evening"
+     "en": "evening",
+     "id": "qibu1-u5-3:2"
     },
     {
      "hanzi": "想",
      "pinyin": "xiǎng",
      "pos": "v.",
-     "en": "would like to, want to"
+     "en": "would like to, want to",
+     "id": "qibu1-u5-3:3"
     },
     {
      "hanzi": "电影",
      "pinyin": "diàn yǐng",
      "pos": "n.",
-     "en": "film, movie"
-    },
+     "en": "film, movie",
+     "id": "qibu1-u5-3:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u5-3b",
+   "title": "起步1 U5.3 · 我在学中文呢！ I'm studying Chinese! · 2",
+   "words": [
     {
      "hanzi": "要",
      "pinyin": "yào",
      "pos": "v.",
-     "en": "to be going to; to want"
+     "en": "to be going to; to want",
+     "id": "qibu1-u5-3:5"
     },
     {
      "hanzi": "去",
      "pinyin": "qù",
      "pos": "v.",
-     "en": "to go"
+     "en": "to go",
+     "id": "qibu1-u5-3:6"
     },
     {
      "hanzi": "吃",
      "pinyin": "chī",
      "pos": "v.",
-     "en": "to eat"
+     "en": "to eat",
+     "id": "qibu1-u5-3:7"
     },
+    {
+     "hanzi": "吃饭",
+     "pinyin": "chī fàn",
+     "pos": "v.",
+     "en": "to eat, have a meal",
+     "id": "qibu1-u5-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu1-u5-3c",
+   "title": "起步1 U5.3 · 我在学中文呢！ I'm studying Chinese! · 3",
+   "words": [
     {
      "hanzi": "见",
      "pinyin": "jiàn",
      "pos": "v.",
-     "en": "to see, to meet"
-    },
-    {
-     "hanzi": "明天见",
-     "pinyin": "míng tiān jiàn",
-     "pos": "phr.",
-     "en": "see you tomorrow"
+     "en": "to see, to meet",
+     "id": "qibu1-u5-3:8"
     },
     {
      "hanzi": "问",
      "pinyin": "wèn",
      "pos": "",
-     "en": "to ask"
+     "en": "to ask",
+     "id": "qibu1-u5-3:10"
     },
     {
      "hanzi": "很多",
      "pinyin": "hěn duō",
      "pos": "",
-     "en": "lots of, many"
+     "en": "lots of, many",
+     "id": "qibu1-u5-3:11"
     }
    ]
   },
   {
-   "id": "qibu2-u1-1",
-   "title": "起步2 U1.1 · 周末一起去吧！ Let's go at the weekend!",
+   "id": "qibu2-u1-1a",
+   "title": "起步2 U1.1 · 周末一起去吧！ Let's go at the weekend! · 1",
    "words": [
+    {
+     "hanzi": "明天见",
+     "pinyin": "míng tiān jiàn",
+     "pos": "phr.",
+     "en": "see you tomorrow",
+     "id": "qibu1-u5-3:9",
+     "parts": [
+      "明天",
+      "见"
+     ]
+    },
     {
      "hanzi": "周末",
      "pinyin": "zhōu mò",
      "pos": "n.",
-     "en": "weekend"
+     "en": "weekend",
+     "id": "qibu2-u1-1:0"
     },
     {
      "hanzi": "喜欢",
      "pinyin": "xǐ huan",
      "pos": "v.",
-     "en": "to like"
+     "en": "to like",
+     "id": "qibu2-u1-1:1"
     },
     {
      "hanzi": "逛",
      "pinyin": "guàng",
      "pos": "v.",
-     "en": "to wander round, browse (shops, markets)"
+     "en": "to wander round, browse (shops, markets)",
+     "id": "qibu2-u1-1:2"
     },
     {
      "hanzi": "市场",
      "pinyin": "shì chǎng",
      "pos": "n.",
-     "en": "market"
-    },
+     "en": "market",
+     "id": "qibu2-u1-1:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-1b",
+   "title": "起步2 U1.1 · 周末一起去吧！ Let's go at the weekend! · 2",
+   "words": [
     {
      "hanzi": "爱好",
      "pinyin": "ài hào",
      "pos": "n.",
-     "en": "hobby"
+     "en": "hobby",
+     "id": "qibu2-u1-1:4"
     },
     {
      "hanzi": "唱歌",
      "pinyin": "chàng gē",
      "pos": "v.",
-     "en": "to sing"
+     "en": "to sing",
+     "id": "qibu2-u1-1:5"
     },
     {
      "hanzi": "弹",
      "pinyin": "tán",
      "pos": "v.",
-     "en": "to play (the guitar, the piano)"
+     "en": "to play (the guitar, the piano)",
+     "id": "qibu2-u1-1:6"
     },
     {
      "hanzi": "吉他",
      "pinyin": "jí tā",
      "pos": "n.",
-     "en": "guitar"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u1-2",
-   "title": "起步2 U1.2 · 周末一起去吧！ Let's go at the weekend!",
-   "words": [
+     "en": "guitar",
+     "id": "qibu2-u1-1:7"
+    },
     {
      "hanzi": "跳舞",
      "pinyin": "tiào wǔ",
      "pos": "v.",
-     "en": "to dance"
-    },
+     "en": "to dance",
+     "id": "qibu2-u1-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-2a",
+   "title": "起步2 U1.2 · 周末一起去吧！ Let's go at the weekend!",
+   "words": [
     {
      "hanzi": "画画",
      "pinyin": "huà huà",
      "pos": "v.",
-     "en": "to draw, to paint"
-    },
-    {
-     "hanzi": "拍照",
-     "pinyin": "pāi zhào",
-     "pos": "v.",
-     "en": "to take photos"
+     "en": "to draw, to paint",
+     "id": "qibu2-u1-2:1"
     },
     {
      "hanzi": "旅游",
      "pinyin": "lǚ yóu",
      "pos": "v.",
-     "en": "to travel, go sightseeing"
+     "en": "to travel, go sightseeing",
+     "id": "qibu2-u1-2:3"
     },
     {
      "hanzi": "玩",
      "pinyin": "wán",
      "pos": "v.",
-     "en": "to play, to have fun"
+     "en": "to play, to have fun",
+     "id": "qibu2-u1-2:4"
     },
     {
      "hanzi": "游戏",
      "pinyin": "yóu xì",
      "pos": "n.",
-     "en": "game"
+     "en": "game",
+     "id": "qibu2-u1-2:5"
     },
     {
      "hanzi": "星期",
      "pinyin": "xīng qī",
      "pos": "n.",
-     "en": "week (星期一 Monday … 星期六 Saturday)"
-    },
-    {
-     "hanzi": "星期天",
-     "pinyin": "xīng qī tiān",
-     "pos": "n.",
-     "en": "Sunday"
+     "en": "week (星期一 Monday … 星期六 Saturday)",
+     "id": "qibu2-u1-2:6"
     }
    ]
   },
   {
-   "id": "qibu2-u1-3",
-   "title": "起步2 U1.3 · 周末一起去吧！ Let's go at the weekend!",
+   "id": "qibu2-u1-3a",
+   "title": "起步2 U1.3 · 周末一起去吧！ Let's go at the weekend! · 1",
    "words": [
+    {
+     "hanzi": "星期天",
+     "pinyin": "xīng qī tiān",
+     "pos": "n.",
+     "en": "Sunday",
+     "id": "qibu2-u1-2:7"
+    },
     {
      "hanzi": "有空",
      "pinyin": "yǒu kòng",
      "pos": "phr.",
-     "en": "to be free, to have time"
+     "en": "to be free, to have time",
+     "id": "qibu2-u1-3:0"
     },
     {
      "hanzi": "不好意思",
      "pinyin": "bù hǎo yì si",
      "pos": "phr.",
-     "en": "sorry (polite, for small things)"
+     "en": "sorry (polite, for small things)",
+     "id": "qibu2-u1-3:1"
     },
     {
      "hanzi": "忙",
      "pinyin": "máng",
      "pos": "adj.",
-     "en": "busy"
+     "en": "busy",
+     "id": "qibu2-u1-3:2"
     },
     {
      "hanzi": "那",
      "pinyin": "nà",
      "pos": "conj.",
-     "en": "then, in that case (new meaning)"
-    },
+     "en": "then, in that case (new meaning)",
+     "id": "qibu2-u1-3:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-3b",
+   "title": "起步2 U1.3 · 周末一起去吧！ Let's go at the weekend! · 2",
+   "words": [
     {
      "hanzi": "上午",
      "pinyin": "shàng wǔ",
      "pos": "n.",
-     "en": "morning (before noon)"
+     "en": "morning (before noon)",
+     "id": "qibu2-u1-3:4"
     },
     {
      "hanzi": "可以",
      "pinyin": "kě yǐ",
      "pos": "v.",
-     "en": "can, may; that's fine"
+     "en": "can, may; that's fine",
+     "id": "qibu2-u1-3:5"
     },
     {
      "hanzi": "怎么样",
      "pinyin": "zěn me yàng",
      "pos": "q.",
-     "en": "how about …? how is …?"
+     "en": "how about …? how is …?",
+     "id": "qibu2-u1-3:6"
     },
     {
      "hanzi": "好主意",
      "pinyin": "hǎo zhǔ yi",
      "pos": "phr.",
-     "en": "good idea"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u1-4",
-   "title": "起步2 U1.4 · 周末一起去吧！ Let's go at the weekend!",
-   "words": [
+     "en": "good idea",
+     "id": "qibu2-u1-3:7"
+    },
     {
      "hanzi": "上",
      "pinyin": "shàng",
      "pos": "adj.",
-     "en": "last, previous (上个周末 last weekend)"
-    },
+     "en": "last, previous (上个周末 last weekend)",
+     "id": "qibu2-u1-4:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-4a",
+   "title": "起步2 U1.4 · 周末一起去吧！ Let's go at the weekend! · 1",
+   "words": [
     {
      "hanzi": "了",
      "pinyin": "le",
      "pos": "part.",
-     "en": "after a verb: the action is done"
+     "en": "after a verb: the action is done",
+     "id": "qibu2-u1-4:1"
     },
     {
      "hanzi": "买",
      "pinyin": "mǎi",
      "pos": "v.",
-     "en": "to buy"
+     "en": "to buy",
+     "id": "qibu2-u1-4:2"
     },
     {
      "hanzi": "一些",
      "pinyin": "yī xiē",
      "pos": "m.",
-     "en": "some"
+     "en": "some",
+     "id": "qibu2-u1-4:3"
     },
     {
      "hanzi": "面包",
      "pinyin": "miàn bāo",
      "pos": "n.",
-     "en": "bread"
+     "en": "bread",
+     "id": "qibu2-u1-4:4"
     },
     {
      "hanzi": "水果",
      "pinyin": "shuǐ guǒ",
      "pos": "n.",
-     "en": "fruit"
-    },
+     "en": "fruit",
+     "id": "qibu2-u1-4:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-4b",
+   "title": "起步2 U1.4 · 周末一起去吧！ Let's go at the weekend! · 2",
+   "words": [
     {
      "hanzi": "菜",
      "pinyin": "cài",
      "pos": "n.",
-     "en": "vegetables; dish, food"
+     "en": "vegetables; dish, food",
+     "id": "qibu2-u1-4:6"
     },
     {
      "hanzi": "东西",
      "pinyin": "dōng xi",
      "pos": "n.",
-     "en": "thing, stuff"
+     "en": "thing, stuff",
+     "id": "qibu2-u1-4:7"
     },
     {
      "hanzi": "可是",
      "pinyin": "kě shì",
      "pos": "conj.",
-     "en": "but"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u1-5",
-   "title": "起步2 U1.5 · 周末一起去吧！ Let's go at the weekend!",
-   "words": [
+     "en": "but",
+     "id": "qibu2-u1-4:8"
+    },
     {
      "hanzi": "拍",
      "pinyin": "pāi",
      "pos": "v.",
-     "en": "to take (a photo)"
+     "en": "to take (a photo)",
+     "id": "qibu2-u1-5:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-5a",
+   "title": "起步2 U1.5 · 周末一起去吧！ Let's go at the weekend! · 1",
+   "words": [
+    {
+     "hanzi": "拍照",
+     "pinyin": "pāi zhào",
+     "pos": "v.",
+     "en": "to take photos",
+     "id": "qibu2-u1-2:2"
     },
     {
      "hanzi": "照片",
      "pinyin": "zhào piàn",
      "pos": "n.",
-     "en": "photo"
+     "en": "photo",
+     "id": "qibu2-u1-5:1"
     },
     {
      "hanzi": "还",
      "pinyin": "hái",
      "pos": "adv.",
-     "en": "also, as well; still"
+     "en": "also, as well; still",
+     "id": "qibu2-u1-5:2"
     },
     {
      "hanzi": "下",
      "pinyin": "xià",
      "pos": "adj.",
-     "en": "next (下次 next time)"
-    },
+     "en": "next (下次 next time)",
+     "id": "qibu2-u1-5:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u1-5b",
+   "title": "起步2 U1.5 · 周末一起去吧！ Let's go at the weekend! · 2",
+   "words": [
     {
      "hanzi": "次",
      "pinyin": "cì",
      "pos": "m.",
-     "en": "time (how many times)"
-    },
-    {
-     "hanzi": "请",
-     "pinyin": "qǐng",
-     "pos": "v.",
-     "en": "to invite; to treat (someone to something)"
+     "en": "time (how many times)",
+     "id": "qibu2-u1-5:4"
     },
     {
      "hanzi": "昨天",
      "pinyin": "zuó tiān",
      "pos": "n.",
-     "en": "yesterday"
+     "en": "yesterday",
+     "id": "qibu2-u1-5:6"
     },
     {
      "hanzi": "妈妈",
      "pinyin": "mā ma",
      "pos": "n.",
-     "en": "mum"
+     "en": "mum",
+     "id": "qibu2-u1-5:7"
     },
     {
      "hanzi": "爸爸",
      "pinyin": "bà ba",
      "pos": "n.",
-     "en": "dad"
+     "en": "dad",
+     "id": "qibu2-u1-5:8"
     }
    ]
   },
   {
-   "id": "qibu2-u2-1",
-   "title": "起步2 U2.1 · 我们几点见？ What time shall we meet?",
+   "id": "qibu2-u2-1a",
+   "title": "起步2 U2.1 · 我们几点见？ What time shall we meet? · 1",
    "words": [
     {
      "hanzi": "每天",
      "pinyin": "měi tiān",
      "pos": "n.",
-     "en": "every day"
+     "en": "every day",
+     "id": "qibu2-u2-1:0"
     },
     {
      "hanzi": "点",
      "pinyin": "diǎn",
      "pos": "m.",
-     "en": "o'clock"
+     "en": "o'clock",
+     "id": "qibu2-u2-1:1"
     },
     {
      "hanzi": "起床",
      "pinyin": "qǐ chuáng",
      "pos": "v.",
-     "en": "to get up"
+     "en": "to get up",
+     "id": "qibu2-u2-1:2"
     },
     {
      "hanzi": "半",
      "pinyin": "bàn",
      "pos": "num.",
-     "en": "half; half past"
+     "en": "half; half past",
+     "id": "qibu2-u2-1:3"
     },
     {
      "hanzi": "刻",
      "pinyin": "kè",
      "pos": "m.",
-     "en": "quarter (of an hour)"
-    },
+     "en": "quarter (of an hour)",
+     "id": "qibu2-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u2-1b",
+   "title": "起步2 U2.1 · 我们几点见？ What time shall we meet? · 2",
+   "words": [
     {
      "hanzi": "出门",
      "pinyin": "chū mén",
      "pos": "v.",
-     "en": "to go out, leave the house"
+     "en": "to go out, leave the house",
+     "id": "qibu2-u2-1:5"
     },
     {
      "hanzi": "上班",
      "pinyin": "shàng bān",
      "pos": "v.",
-     "en": "to go to work, start work"
+     "en": "to go to work, start work",
+     "id": "qibu2-u2-1:6"
     },
     {
      "hanzi": "下班",
      "pinyin": "xià bān",
      "pos": "v.",
-     "en": "to finish work"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u2-2",
-   "title": "起步2 U2.2 · 我们几点见？ What time shall we meet?",
-   "words": [
+     "en": "to finish work",
+     "id": "qibu2-u2-1:7"
+    },
     {
      "hanzi": "以后",
      "pinyin": "yǐ hòu",
      "pos": "n.",
-     "en": "after, afterwards; later"
+     "en": "after, afterwards; later",
+     "id": "qibu2-u2-2:0"
     },
     {
      "hanzi": "以前",
      "pinyin": "yǐ qián",
      "pos": "n.",
-     "en": "before; in the past"
-    },
+     "en": "before; in the past",
+     "id": "qibu2-u2-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u2-2a",
+   "title": "起步2 U2.2 · 我们几点见？ What time shall we meet?",
+   "words": [
     {
      "hanzi": "常常",
      "pinyin": "cháng cháng",
      "pos": "adv.",
-     "en": "often"
+     "en": "often",
+     "id": "qibu2-u2-2:2"
     },
     {
      "hanzi": "都",
      "pinyin": "dōu",
      "pos": "adv.",
-     "en": "all, both; (with 每天) every single day"
+     "en": "all, both; (with 每天) every single day",
+     "id": "qibu2-u2-2:3"
     },
     {
      "hanzi": "课",
      "pinyin": "kè",
      "pos": "n.",
-     "en": "class, lesson"
+     "en": "class, lesson",
+     "id": "qibu2-u2-2:4"
     },
     {
      "hanzi": "中午",
      "pinyin": "zhōng wǔ",
      "pos": "n.",
-     "en": "midday"
+     "en": "midday",
+     "id": "qibu2-u2-2:5"
     },
     {
      "hanzi": "午饭",
      "pinyin": "wǔ fàn",
      "pos": "n.",
-     "en": "lunch"
-    },
-    {
-     "hanzi": "下午",
-     "pinyin": "xià wǔ",
-     "pos": "n.",
-     "en": "afternoon"
+     "en": "lunch",
+     "id": "qibu2-u2-2:6"
     }
    ]
   },
   {
-   "id": "qibu2-u2-3",
+   "id": "qibu2-u2-3a",
    "title": "起步2 U2.3 · 我们几点见？ What time shall we meet?",
    "words": [
+    {
+     "hanzi": "下午",
+     "pinyin": "xià wǔ",
+     "pos": "n.",
+     "en": "afternoon",
+     "id": "qibu2-u2-2:7"
+    },
     {
      "hanzi": "图书馆",
      "pinyin": "tú shū guǎn",
      "pos": "n.",
-     "en": "library"
+     "en": "library",
+     "id": "qibu2-u2-3:0"
     },
     {
      "hanzi": "早上",
      "pinyin": "zǎo shang",
      "pos": "n.",
-     "en": "(early) morning"
+     "en": "(early) morning",
+     "id": "qibu2-u2-3:1"
     },
     {
      "hanzi": "早饭",
      "pinyin": "zǎo fàn",
      "pos": "n.",
-     "en": "breakfast"
-    },
-    {
-     "hanzi": "晚饭",
-     "pinyin": "wǎn fàn",
-     "pos": "n.",
-     "en": "dinner, evening meal"
+     "en": "breakfast",
+     "id": "qibu2-u2-3:2"
     },
     {
      "hanzi": "时间",
      "pinyin": "shí jiān",
      "pos": "n.",
-     "en": "time"
-    },
-    {
-     "hanzi": "休息",
-     "pinyin": "xiū xi",
-     "pos": "v.",
-     "en": "to rest, take it easy"
+     "en": "time",
+     "id": "qibu2-u2-3:4"
     }
    ]
   },
   {
-   "id": "qibu2-u2-4",
-   "title": "起步2 U2.4 · 我们几点见？ What time shall we meet?",
+   "id": "qibu2-u2-4a",
+   "title": "起步2 U2.4 · 我们几点见？ What time shall we meet? · 1",
    "words": [
+    {
+     "hanzi": "休息",
+     "pinyin": "xiū xi",
+     "pos": "v.",
+     "en": "to rest, take it easy",
+     "id": "qibu2-u2-3:5"
+    },
     {
      "hanzi": "已经",
      "pinyin": "yǐ jīng",
      "pos": "adv.",
-     "en": "already"
+     "en": "already",
+     "id": "qibu2-u2-4:0"
     },
     {
      "hanzi": "分",
      "pinyin": "fēn",
      "pos": "m.",
-     "en": "minute (in clock times)"
+     "en": "minute (in clock times)",
+     "id": "qibu2-u2-4:1"
     },
     {
      "hanzi": "地铁",
      "pinyin": "dì tiě",
      "pos": "n.",
-     "en": "underground, the Tube"
+     "en": "underground, the Tube",
+     "id": "qibu2-u2-4:2"
     },
     {
      "hanzi": "地铁站",
      "pinyin": "dì tiě zhàn",
      "pos": "n.",
-     "en": "Tube station"
+     "en": "Tube station",
+     "id": "qibu2-u2-4:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u2-4b",
+   "title": "起步2 U2.4 · 我们几点见？ What time shall we meet? · 2",
+   "words": [
+    {
+     "hanzi": "晚",
+     "pinyin": "wǎn",
+     "pos": "adj.",
+     "en": "late",
+     "id": "qibu2-u2-4:5"
+    },
+    {
+     "hanzi": "晚饭",
+     "pinyin": "wǎn fàn",
+     "pos": "n.",
+     "en": "dinner, evening meal",
+     "id": "qibu2-u2-3:3"
     },
     {
      "hanzi": "晚点",
      "pinyin": "wǎn diǎn",
      "pos": "v.",
-     "en": "to run late (trains, planes)"
+     "en": "to run late (trains, planes)",
+     "id": "qibu2-u2-4:4"
     },
     {
-     "hanzi": "晚",
-     "pinyin": "wǎn",
-     "pos": "adj.",
-     "en": "late"
-    },
-    {
-     "hanzi": "什么时候",
-     "pinyin": "shén me shí hou",
-     "pos": "q.",
-     "en": "when"
+     "hanzi": "时候",
+     "pinyin": "shí hou",
+     "pos": "n.",
+     "en": "time (…的时候 when …)",
+     "id": "qibu3-u2-2:7"
     },
     {
      "hanzi": "到",
      "pinyin": "dào",
      "pos": "v.",
-     "en": "to arrive, get to"
+     "en": "to arrive, get to",
+     "id": "qibu2-u2-4:7"
     }
    ]
   },
   {
-   "id": "qibu2-u2-5",
-   "title": "起步2 U2.5 · 我们几点见？ What time shall we meet?",
+   "id": "qibu2-u2-5a",
+   "title": "起步2 U2.5 · 我们几点见？ What time shall we meet? · 1",
    "words": [
+    {
+     "hanzi": "什么时候",
+     "pinyin": "shén me shí hou",
+     "pos": "q.",
+     "en": "when",
+     "id": "qibu2-u2-4:6",
+     "parts": [
+      "什么",
+      "时候"
+     ]
+    },
     {
      "hanzi": "开始",
      "pinyin": "kāi shǐ",
      "pos": "v.",
-     "en": "to start"
+     "en": "to start",
+     "id": "qibu2-u2-5:0"
     },
     {
      "hanzi": "分钟",
      "pinyin": "fēn zhōng",
      "pos": "n.",
-     "en": "minute (length of time)"
+     "en": "minute (length of time)",
+     "id": "qibu2-u2-5:1"
     },
     {
      "hanzi": "小时",
      "pinyin": "xiǎo shí",
      "pos": "n.",
-     "en": "hour"
-    },
+     "en": "hour",
+     "id": "qibu2-u2-5:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u2-5b",
+   "title": "起步2 U2.5 · 我们几点见？ What time shall we meet? · 2",
+   "words": [
     {
      "hanzi": "先",
      "pinyin": "xiān",
      "pos": "adv.",
-     "en": "first"
+     "en": "first",
+     "id": "qibu2-u2-5:3"
     },
     {
      "hanzi": "票",
      "pinyin": "piào",
      "pos": "n.",
-     "en": "ticket"
+     "en": "ticket",
+     "id": "qibu2-u2-5:4"
     },
     {
      "hanzi": "门口",
      "pinyin": "mén kǒu",
      "pos": "n.",
-     "en": "entrance, doorway"
+     "en": "entrance, doorway",
+     "id": "qibu2-u2-5:5"
     },
     {
      "hanzi": "等",
      "pinyin": "děng",
      "pos": "v.",
-     "en": "to wait (for)"
-    },
-    {
-     "hanzi": "电影院",
-     "pinyin": "diàn yǐng yuàn",
-     "pos": "n.",
-     "en": "cinema"
+     "en": "to wait (for)",
+     "id": "qibu2-u2-5:6"
     }
    ]
   },
   {
-   "id": "qibu2-u2-6",
-   "title": "起步2 U2.6 · 我们几点见？ What time shall we meet?",
+   "id": "qibu2-u2-6a",
+   "title": "起步2 U2.6 · 我们几点见？ What time shall we meet? · 1",
    "words": [
+    {
+     "hanzi": "电影院",
+     "pinyin": "diàn yǐng yuàn",
+     "pos": "n.",
+     "en": "cinema",
+     "id": "qibu2-u2-5:7"
+    },
     {
      "hanzi": "一会儿",
      "pinyin": "yī huì r",
      "pos": "q.",
-     "en": "a moment; in a moment"
+     "en": "a moment; in a moment",
+     "id": "qibu2-u2-6:0"
     },
     {
      "hanzi": "迟到",
      "pinyin": "chí dào",
      "pos": "v.",
-     "en": "to be late (for something arranged)"
+     "en": "to be late (for something arranged)",
+     "id": "qibu2-u2-6:1"
     },
     {
      "hanzi": "差",
      "pinyin": "chà",
      "pos": "v.",
-     "en": "to be short of (差五分三点 five to three)"
-    },
+     "en": "to be short of (差五分三点 five to three)",
+     "id": "qibu2-u2-6:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u2-6b",
+   "title": "起步2 U2.6 · 我们几点见？ What time shall we meet? · 2",
+   "words": [
     {
      "hanzi": "快",
      "pinyin": "kuài",
      "pos": "adv./adj.",
-     "en": "quick, quickly; fast"
+     "en": "quick, quickly; fast",
+     "id": "qibu2-u2-6:3"
     },
     {
      "hanzi": "走",
      "pinyin": "zǒu",
      "pos": "v.",
-     "en": "to go, to walk, to leave"
+     "en": "to go, to walk, to leave",
+     "id": "qibu2-u2-6:4"
     },
     {
      "hanzi": "店",
      "pinyin": "diàn",
      "pos": "n.",
-     "en": "shop"
+     "en": "shop",
+     "id": "qibu2-u2-6:5"
     },
     {
      "hanzi": "咖啡店",
      "pinyin": "kā fēi diàn",
      "pos": "n.",
-     "en": "café"
+     "en": "café",
+     "id": "qibu2-u2-6:6"
     }
    ]
   },
   {
-   "id": "qibu2-u3-1",
+   "id": "qibu2-u3-1a",
    "title": "起步2 U3.1 · 一杯奶茶！ One bubble tea, please!",
    "words": [
     {
      "hanzi": "点儿",
      "pinyin": "diǎn r",
      "pos": "m.",
-     "en": "a bit (short for 一点儿)"
+     "en": "a bit (short for 一点儿)",
+     "id": "qibu2-u3-1:0"
     },
     {
      "hanzi": "杯",
      "pinyin": "bēi",
      "pos": "m./n.",
-     "en": "cup, glass (of)"
+     "en": "cup, glass (of)",
+     "id": "qibu2-u3-1:1"
     },
     {
      "hanzi": "珍珠",
      "pinyin": "zhēn zhū",
      "pos": "n.",
-     "en": "pearl (the chewy balls in bubble tea)"
+     "en": "pearl (the chewy balls in bubble tea)",
+     "id": "qibu2-u3-1:2"
     },
     {
      "hanzi": "奶茶",
      "pinyin": "nǎi chá",
      "pos": "n.",
-     "en": "milk tea, bubble tea"
+     "en": "milk tea, bubble tea",
+     "id": "qibu2-u3-1:3"
     },
     {
      "hanzi": "少",
      "pinyin": "shǎo",
      "pos": "adj.",
-     "en": "few, little; less"
-    },
-    {
-     "hanzi": "糖",
-     "pinyin": "táng",
-     "pos": "n.",
-     "en": "sugar; sweets"
-    },
-    {
-     "hanzi": "大",
-     "pinyin": "dà",
-     "pos": "adj.",
-     "en": "big, large"
+     "en": "few, little; less",
+     "id": "qibu2-u3-1:4"
     }
    ]
   },
   {
-   "id": "qibu2-u3-2",
+   "id": "qibu2-u3-2a",
    "title": "起步2 U3.2 · 一杯奶茶！ One bubble tea, please!",
    "words": [
+    {
+     "hanzi": "糖",
+     "pinyin": "táng",
+     "pos": "n.",
+     "en": "sugar; sweets",
+     "id": "qibu2-u3-1:5"
+    },
     {
      "hanzi": "中",
      "pinyin": "zhōng",
      "pos": "adj.",
-     "en": "medium, middle"
+     "en": "medium, middle",
+     "id": "qibu2-u3-2:0"
     },
     {
      "hanzi": "小",
      "pinyin": "xiǎo",
      "pos": "adj.",
-     "en": "small"
+     "en": "small",
+     "id": "qibu2-u3-2:1"
     },
     {
      "hanzi": "还是",
      "pinyin": "hái shi",
      "pos": "conj.",
-     "en": "or (in questions)"
+     "en": "or (in questions)",
+     "id": "qibu2-u3-2:2"
     },
     {
      "hanzi": "哪个",
      "pinyin": "nǎ ge",
      "pos": "q.",
-     "en": "which (one)"
-    },
-    {
-     "hanzi": "这个",
-     "pinyin": "zhè ge",
-     "pos": "pron.",
-     "en": "this (one)"
-    },
+     "en": "which (one)",
+     "id": "qibu2-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u3-3a",
+   "title": "起步2 U3.3 · 一杯奶茶！ One bubble tea, please! · 1",
+   "words": [
     {
      "hanzi": "那个",
      "pinyin": "nà ge",
      "pos": "pron.",
-     "en": "that (one)"
+     "en": "that (one)",
+     "id": "qibu2-u3-2:5"
     },
     {
      "hanzi": "芒果",
      "pinyin": "máng guǒ",
      "pos": "n.",
-     "en": "mango"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u3-3",
-   "title": "起步2 U3.3 · 一杯奶茶！ One bubble tea, please!",
-   "words": [
+     "en": "mango",
+     "id": "qibu2-u3-2:6"
+    },
     {
      "hanzi": "绿茶",
      "pinyin": "lǜ chá",
      "pos": "n.",
-     "en": "green tea"
+     "en": "green tea",
+     "id": "qibu2-u3-3:0"
     },
     {
      "hanzi": "好喝",
      "pinyin": "hǎo hē",
      "pos": "adj.",
-     "en": "nice (to drink)"
+     "en": "nice (to drink)",
+     "id": "qibu2-u3-3:1"
     },
     {
      "hanzi": "冰",
      "pinyin": "bīng",
      "pos": "n.",
-     "en": "ice"
-    },
+     "en": "ice",
+     "id": "qibu2-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u3-3b",
+   "title": "起步2 U3.3 · 一杯奶茶！ One bubble tea, please! · 2",
+   "words": [
     {
      "hanzi": "好的",
      "pinyin": "hǎo de",
      "pos": "phr.",
-     "en": "OK, sure"
-    },
-    {
-     "hanzi": "别的",
-     "pinyin": "bié de",
-     "pos": "pron.",
-     "en": "other, anything else"
+     "en": "OK, sure",
+     "id": "qibu2-u3-3:3",
+     "parts": [
+      "好",
+      "的"
+     ]
     },
     {
      "hanzi": "蛋挞",
      "pinyin": "dàn tà",
      "pos": "n.",
-     "en": "egg tart"
+     "en": "egg tart",
+     "id": "qibu2-u3-3:5"
     },
     {
      "hanzi": "一下",
      "pinyin": "yī xià",
      "pos": "q.",
-     "en": "a moment, a bit (等一下 wait a moment)"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u3-4",
-   "title": "起步2 U3.4 · 一杯奶茶！ One bubble tea, please!",
-   "words": [
+     "en": "a moment, a bit (等一下 wait a moment)",
+     "id": "qibu2-u3-3:6"
+    },
     {
      "hanzi": "可乐",
      "pinyin": "kě lè",
      "pos": "n.",
-     "en": "cola"
+     "en": "cola",
+     "id": "qibu2-u3-4:0"
     },
     {
      "hanzi": "瓶",
      "pinyin": "píng",
      "pos": "m./n.",
-     "en": "bottle (of)"
-    },
+     "en": "bottle (of)",
+     "id": "qibu2-u3-4:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u3-4a",
+   "title": "起步2 U3.4 · 一杯奶茶！ One bubble tea, please!",
+   "words": [
     {
      "hanzi": "果汁",
      "pinyin": "guǒ zhī",
      "pos": "n.",
-     "en": "juice"
+     "en": "juice",
+     "id": "qibu2-u3-4:2"
     },
     {
      "hanzi": "月饼",
      "pinyin": "yuè bǐng",
      "pos": "n.",
-     "en": "mooncake"
+     "en": "mooncake",
+     "id": "qibu2-u3-4:3"
     },
     {
      "hanzi": "盒",
      "pinyin": "hé",
      "pos": "m./n.",
-     "en": "box (of)"
+     "en": "box (of)",
+     "id": "qibu2-u3-4:4"
     },
     {
      "hanzi": "张",
      "pinyin": "zhāng",
      "pos": "m.",
-     "en": "for flat things: tickets, cards, photos"
+     "en": "for flat things: tickets, cards, photos",
+     "id": "qibu2-u3-4:5"
     },
     {
      "hanzi": "卡",
      "pinyin": "kǎ",
      "pos": "n.",
-     "en": "card"
-    },
+     "en": "card",
+     "id": "qibu2-u3-4:6"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u3-5a",
+   "title": "起步2 U3.5 · 一杯奶茶！ One bubble tea, please! · 1",
+   "words": [
     {
      "hanzi": "好看",
      "pinyin": "hǎo kàn",
      "pos": "adj.",
-     "en": "nice-looking, pretty"
+     "en": "nice-looking, pretty",
+     "id": "qibu2-u3-4:7"
     },
     {
      "hanzi": "给",
      "pinyin": "gěi",
      "pos": "prep./v.",
-     "en": "for, to; to give"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u3-5",
-   "title": "起步2 U3.5 · 一杯奶茶！ One bubble tea, please!",
-   "words": [
+     "en": "for, to; to give",
+     "id": "qibu2-u3-4:8"
+    },
     {
      "hanzi": "中秋节",
      "pinyin": "Zhōng qiū jié",
      "pos": "n.",
-     "en": "Mid-Autumn Festival"
+     "en": "Mid-Autumn Festival",
+     "id": "qibu2-u3-5:0"
     },
     {
      "hanzi": "生日",
      "pinyin": "shēng rì",
      "pos": "n.",
-     "en": "birthday"
+     "en": "birthday",
+     "id": "qibu2-u3-5:1"
     },
     {
      "hanzi": "送",
      "pinyin": "sòng",
      "pos": "v.",
-     "en": "to give (as a present)"
-    },
+     "en": "to give (as a present)",
+     "id": "qibu2-u3-5:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u3-5b",
+   "title": "起步2 U3.5 · 一杯奶茶！ One bubble tea, please! · 2",
+   "words": [
     {
      "hanzi": "件",
      "pinyin": "jiàn",
      "pos": "m.",
-     "en": "for clothes, presents and matters"
+     "en": "for clothes, presents and matters",
+     "id": "qibu2-u3-5:3"
     },
     {
      "hanzi": "礼物",
      "pinyin": "lǐ wù",
      "pos": "n.",
-     "en": "present, gift"
+     "en": "present, gift",
+     "id": "qibu2-u3-5:4"
     },
     {
      "hanzi": "唱片",
      "pinyin": "chàng piàn",
      "pos": "n.",
-     "en": "record (vinyl)"
+     "en": "record (vinyl)",
+     "id": "qibu2-u3-5:5"
     },
     {
      "hanzi": "条",
      "pinyin": "tiáo",
      "pos": "m.",
-     "en": "for long, thin things: streets, scarves"
+     "en": "for long, thin things: streets, scarves",
+     "id": "qibu2-u3-5:6"
     },
     {
      "hanzi": "街",
      "pinyin": "jiē",
      "pos": "n.",
-     "en": "street"
-    },
-    {
-     "hanzi": "家",
-     "pinyin": "jiā",
-     "pos": "m.",
-     "en": "for shops and restaurants (new meaning)"
+     "en": "street",
+     "id": "qibu2-u3-5:7"
     }
    ]
   },
   {
-   "id": "qibu2-u3-6",
-   "title": "起步2 U3.6 · 一杯奶茶！ One bubble tea, please!",
+   "id": "qibu2-u3-6a",
+   "title": "起步2 U3.6 · 一杯奶茶！ One bubble tea, please! · 1",
    "words": [
+    {
+     "hanzi": "家",
+     "pinyin": "jiā",
+     "pos": "m.",
+     "en": "for shops and restaurants (new meaning)",
+     "id": "qibu2-u3-5:8"
+    },
     {
      "hanzi": "别",
      "pinyin": "bié",
      "pos": "adv.",
-     "en": "don't"
+     "en": "don't",
+     "id": "qibu2-u3-6:0"
+    },
+    {
+     "hanzi": "别的",
+     "pinyin": "bié de",
+     "pos": "pron.",
+     "en": "other, anything else",
+     "id": "qibu2-u3-3:4"
     },
     {
      "hanzi": "告诉",
      "pinyin": "gào su",
      "pos": "v.",
-     "en": "to tell"
+     "en": "to tell",
+     "id": "qibu2-u3-6:1"
     },
     {
      "hanzi": "放心",
      "pinyin": "fàng xīn",
      "pos": "v.",
-     "en": "to stop worrying"
-    },
+     "en": "to stop worrying",
+     "id": "qibu2-u3-6:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u3-6b",
+   "title": "起步2 U3.6 · 一杯奶茶！ One bubble tea, please! · 2",
+   "words": [
     {
      "hanzi": "本",
      "pinyin": "běn",
      "pos": "m.",
-     "en": "for books"
+     "en": "for books",
+     "id": "qibu2-u3-6:3"
     },
     {
      "hanzi": "衣服",
      "pinyin": "yī fu",
      "pos": "n.",
-     "en": "clothes"
+     "en": "clothes",
+     "id": "qibu2-u3-6:4"
     },
     {
      "hanzi": "围巾",
      "pinyin": "wéi jīn",
      "pos": "n.",
-     "en": "scarf"
+     "en": "scarf",
+     "id": "qibu2-u3-6:5"
     },
     {
      "hanzi": "超市",
      "pinyin": "chāo shì",
      "pos": "n.",
-     "en": "supermarket"
+     "en": "supermarket",
+     "id": "qibu2-u3-6:6"
     }
    ]
   },
   {
-   "id": "qibu2-u4-1",
-   "title": "起步2 U4.1 · 中秋节快乐！ Happy Mid-Autumn!",
+   "id": "qibu2-u4-1a",
+   "title": "起步2 U4.1 · 中秋节快乐！ Happy Mid-Autumn! · 1",
    "words": [
     {
      "hanzi": "月",
      "pinyin": "yuè",
      "pos": "n.",
-     "en": "month; moon"
+     "en": "month; moon",
+     "id": "qibu2-u4-1:0"
     },
     {
      "hanzi": "号",
      "pinyin": "hào",
      "pos": "n.",
-     "en": "day of the month (in speech)"
+     "en": "day of the month (in speech)",
+     "id": "qibu2-u4-1:1"
     },
     {
      "hanzi": "日",
      "pinyin": "rì",
      "pos": "n.",
-     "en": "day of the month (in writing)"
+     "en": "day of the month (in writing)",
+     "id": "qibu2-u4-1:2"
     },
     {
      "hanzi": "年",
      "pinyin": "nián",
      "pos": "n.",
-     "en": "year"
+     "en": "year",
+     "id": "qibu2-u4-1:3"
     },
     {
      "hanzi": "打算",
      "pinyin": "dǎ suàn",
      "pos": "v./n.",
-     "en": "to plan to; plan"
-    },
-    {
-     "hanzi": "怎么",
-     "pinyin": "zěn me",
-     "pos": "q.",
-     "en": "how"
-    },
+     "en": "to plan to; plan",
+     "id": "qibu2-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u4-1b",
+   "title": "起步2 U4.1 · 中秋节快乐！ Happy Mid-Autumn! · 2",
+   "words": [
     {
      "hanzi": "过",
      "pinyin": "guò",
      "pos": "v.",
-     "en": "to spend, to celebrate (a festival, a birthday)"
+     "en": "to spend, to celebrate (a festival, a birthday)",
+     "id": "qibu2-u4-1:6"
     },
     {
      "hanzi": "知道",
      "pinyin": "zhī dào",
      "pos": "v.",
-     "en": "to know (a fact)"
+     "en": "to know (a fact)",
+     "id": "qibu2-u4-1:7"
     },
     {
      "hanzi": "派对",
      "pinyin": "pài duì",
      "pos": "n.",
-     "en": "party"
+     "en": "party",
+     "id": "qibu2-u4-1:8"
     },
     {
      "hanzi": "对了",
      "pinyin": "duì le",
      "pos": "phr.",
-     "en": "oh, by the way"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u4-2",
-   "title": "起步2 U4.2 · 中秋节快乐！ Happy Mid-Autumn!",
-   "words": [
+     "en": "oh, by the way",
+     "id": "qibu2-u4-1:9",
+     "parts": [
+      "对",
+      "了"
+     ]
+    },
     {
      "hanzi": "巧",
      "pinyin": "qiǎo",
      "pos": "adj.",
-     "en": "well-timed (太巧了 what a coincidence!)"
-    },
+     "en": "well-timed (太巧了 what a coincidence!)",
+     "id": "qibu2-u4-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u4-2a",
+   "title": "起步2 U4.2 · 中秋节快乐！ Happy Mid-Autumn! · 1",
+   "words": [
     {
      "hanzi": "明年",
      "pinyin": "míng nián",
      "pos": "n.",
-     "en": "next year"
+     "en": "next year",
+     "id": "qibu2-u4-2:1"
     },
     {
      "hanzi": "今年",
      "pinyin": "jīn nián",
      "pos": "n.",
-     "en": "this year"
+     "en": "this year",
+     "id": "qibu2-u4-2:2"
     },
     {
      "hanzi": "去年",
      "pinyin": "qù nián",
      "pos": "n.",
-     "en": "last year"
+     "en": "last year",
+     "id": "qibu2-u4-2:3"
     },
     {
      "hanzi": "回",
      "pinyin": "huí",
      "pos": "v.",
-     "en": "to go back, return"
+     "en": "to go back, return",
+     "id": "qibu2-u4-2:4"
     },
     {
      "hanzi": "家人",
      "pinyin": "jiā rén",
      "pos": "n.",
-     "en": "family (members)"
-    },
+     "en": "family (members)",
+     "id": "qibu2-u4-2:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u4-2b",
+   "title": "起步2 U4.2 · 中秋节快乐！ Happy Mid-Autumn! · 2",
+   "words": [
     {
      "hanzi": "月亮",
      "pinyin": "yuè liang",
      "pos": "n.",
-     "en": "the moon"
+     "en": "the moon",
+     "id": "qibu2-u4-2:6"
     },
     {
      "hanzi": "灯笼",
      "pinyin": "dēng long",
      "pos": "n.",
-     "en": "lantern"
+     "en": "lantern",
+     "id": "qibu2-u4-2:7"
     },
     {
      "hanzi": "节日",
      "pinyin": "jié rì",
      "pos": "n.",
-     "en": "festival"
-    }
-   ]
-  },
-  {
-   "id": "qibu2-u4-3",
-   "title": "起步2 U4.3 · 中秋节快乐！ Happy Mid-Autumn!",
-   "words": [
+     "en": "festival",
+     "id": "qibu2-u4-2:8"
+    },
     {
      "hanzi": "大家",
      "pinyin": "dà jiā",
      "pos": "pron.",
-     "en": "everyone"
+     "en": "everyone",
+     "id": "qibu2-u4-3:0"
     },
     {
      "hanzi": "祝",
      "pinyin": "zhù",
      "pos": "v.",
-     "en": "to wish"
-    },
+     "en": "to wish",
+     "id": "qibu2-u4-3:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u4-3a",
+   "title": "起步2 U4.3 · 中秋节快乐！ Happy Mid-Autumn! · 1",
+   "words": [
     {
      "hanzi": "快乐",
      "pinyin": "kuài lè",
      "pos": "adj.",
-     "en": "happy (in greetings)"
+     "en": "happy (in greetings)",
+     "id": "qibu2-u4-3:2"
     },
     {
      "hanzi": "蛋糕",
      "pinyin": "dàn gāo",
      "pos": "n.",
-     "en": "cake"
+     "en": "cake",
+     "id": "qibu2-u4-3:3"
     },
     {
      "hanzi": "真",
      "pinyin": "zhēn",
      "pos": "adv.",
-     "en": "really, so"
+     "en": "really, so",
+     "id": "qibu2-u4-3:4"
     },
     {
      "hanzi": "圆",
      "pinyin": "yuán",
      "pos": "adj.",
-     "en": "round"
-    },
+     "en": "round",
+     "id": "qibu2-u4-3:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu2-u4-3b",
+   "title": "起步2 U4.3 · 中秋节快乐！ Happy Mid-Autumn! · 2",
+   "words": [
     {
      "hanzi": "新年",
      "pinyin": "xīn nián",
      "pos": "n.",
-     "en": "New Year"
+     "en": "New Year",
+     "id": "qibu2-u4-3:6"
     },
     {
      "hanzi": "春节",
      "pinyin": "Chūn jié",
      "pos": "n.",
-     "en": "Spring Festival, Chinese New Year"
+     "en": "Spring Festival, Chinese New Year",
+     "id": "qibu2-u4-3:7"
     },
     {
      "hanzi": "坐",
      "pinyin": "zuò",
      "pos": "",
-     "en": "to take (a bus, the Tube)"
+     "en": "to take (a bus, the Tube)",
+     "id": "qibu2-u4-3:8"
     },
     {
      "hanzi": "外面",
      "pinyin": "wài miàn",
      "pos": "",
-     "en": "outside"
+     "en": "outside",
+     "id": "qibu2-u4-3:9"
     }
    ]
   },
   {
-   "id": "qibu3-u1-1",
-   "title": "起步3 U1.1 · 你怎么去上班？ How do you get to work?",
+   "id": "qibu3-u1-1a",
+   "title": "起步3 U1.1 · 你怎么去上班？ How do you get to work? · 1",
    "words": [
     {
      "hanzi": "新闻",
      "pinyin": "xīn wén",
      "pos": "n.",
-     "en": "news"
+     "en": "news",
+     "id": "qibu3-u1-1:0"
     },
     {
      "hanzi": "罢工",
      "pinyin": "bà gōng",
      "pos": "v./n.",
-     "en": "to strike; a strike"
+     "en": "to strike; a strike",
+     "id": "qibu3-u1-1:1"
     },
     {
      "hanzi": "骑",
      "pinyin": "qí",
      "pos": "v.",
-     "en": "to ride (a bike, a horse)"
-    },
-    {
-     "hanzi": "自行车",
-     "pinyin": "zì xíng chē",
-     "pos": "n.",
-     "en": "bicycle"
-    },
-    {
-     "hanzi": "骑车",
-     "pinyin": "qí chē",
-     "pos": "v.",
-     "en": "to cycle"
+     "en": "to ride (a bike, a horse)",
+     "id": "qibu3-u1-1:2"
     },
     {
      "hanzi": "车",
      "pinyin": "chē",
      "pos": "n.",
-     "en": "vehicle, car; traffic"
+     "en": "vehicle, car; traffic",
+     "id": "qibu3-u1-1:5"
+    },
+    {
+     "hanzi": "自行车",
+     "pinyin": "zì xíng chē",
+     "pos": "n.",
+     "en": "bicycle",
+     "id": "qibu3-u1-1:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u1-1b",
+   "title": "起步3 U1.1 · 你怎么去上班？ How do you get to work? · 2",
+   "words": [
+    {
+     "hanzi": "骑车",
+     "pinyin": "qí chē",
+     "pos": "v.",
+     "en": "to cycle",
+     "id": "qibu3-u1-1:4"
     },
     {
      "hanzi": "从",
      "pinyin": "cóng",
      "pos": "phr.",
-     "en": "from … to … (从…到…)"
+     "en": "from … to … (从…到…)",
+     "id": "qibu3-u1-1:6"
     },
     {
      "hanzi": "要",
      "pinyin": "yào",
      "pos": "v.",
-     "en": "to take (time) (new meaning)"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u1-2",
-   "title": "起步3 U1.2 · 你怎么去上班？ How do you get to work?",
-   "words": [
+     "en": "to take (time) (new meaning)",
+     "id": "qibu3-u1-1:7"
+    },
     {
      "hanzi": "长",
      "pinyin": "cháng",
      "pos": "adj.",
-     "en": "long"
+     "en": "long",
+     "id": "qibu3-u1-2:0"
     },
     {
      "hanzi": "多长时间",
      "pinyin": "duō cháng shí jiān",
      "pos": "q.",
-     "en": "how long (a length of time)"
-    },
+     "en": "how long (a length of time)",
+     "id": "qibu3-u1-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u1-2a",
+   "title": "起步3 U1.2 · 你怎么去上班？ How do you get to work?",
+   "words": [
     {
      "hanzi": "坐",
      "pinyin": "zuò",
      "pos": "v.",
-     "en": "to travel by (the Tube, a bus, a plane); to sit"
+     "en": "to travel by (the Tube, a bus, a plane); to sit",
+     "id": "qibu3-u1-2:2"
     },
     {
      "hanzi": "公交车",
      "pinyin": "gōng jiāo chē",
      "pos": "n.",
-     "en": "bus"
-    },
-    {
-     "hanzi": "走路",
-     "pinyin": "zǒu lù",
-     "pos": "v.",
-     "en": "to walk, go on foot"
+     "en": "bus",
+     "id": "qibu3-u1-2:3"
     },
     {
      "hanzi": "问题",
      "pinyin": "wèn tí",
      "pos": "n.",
-     "en": "question; problem"
-    },
-    {
-     "hanzi": "没问题",
-     "pinyin": "méi wèn tí",
-     "pos": "phr.",
-     "en": "no problem, fine"
+     "en": "question; problem",
+     "id": "qibu3-u1-2:5"
     },
     {
      "hanzi": "小心",
      "pinyin": "xiǎo xīn",
      "pos": "v.",
-     "en": "to be careful"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u1-3",
-   "title": "起步3 U1.3 · 你怎么去上班？ How do you get to work?",
-   "words": [
+     "en": "to be careful",
+     "id": "qibu3-u1-2:7"
+    },
     {
      "hanzi": "路",
      "pinyin": "lù",
      "pos": "n.",
-     "en": "road, way"
+     "en": "road, way",
+     "id": "qibu3-u1-3:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u1-3a",
+   "title": "起步3 U1.3 · 你怎么去上班？ How do you get to work? · 1",
+   "words": [
+    {
+     "hanzi": "走路",
+     "pinyin": "zǒu lù",
+     "pos": "v.",
+     "en": "to walk, go on foot",
+     "id": "qibu3-u1-2:4"
+    },
+    {
+     "hanzi": "没问题",
+     "pinyin": "méi wèn tí",
+     "pos": "phr.",
+     "en": "no problem, fine",
+     "id": "qibu3-u1-2:6",
+     "parts": [
+      "没",
+      "问题"
+     ]
     },
     {
      "hanzi": "路上",
      "pinyin": "lù shang",
      "pos": "n.",
-     "en": "on the road, on the way"
+     "en": "on the road, on the way",
+     "id": "qibu3-u1-3:1"
     },
     {
      "hanzi": "汽车",
      "pinyin": "qì chē",
      "pos": "n.",
-     "en": "car"
+     "en": "car",
+     "id": "qibu3-u1-3:2"
     },
     {
      "hanzi": "出租车",
      "pinyin": "chū zū chē",
      "pos": "n.",
-     "en": "taxi"
-    },
+     "en": "taxi",
+     "id": "qibu3-u1-3:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u1-3b",
+   "title": "起步3 U1.3 · 你怎么去上班？ How do you get to work? · 2",
+   "words": [
     {
      "hanzi": "飞机",
      "pinyin": "fēi jī",
      "pos": "n.",
-     "en": "plane"
+     "en": "plane",
+     "id": "qibu3-u1-3:4"
     },
     {
      "hanzi": "他们",
      "pinyin": "tā men",
      "pos": "pron.",
-     "en": "they, them"
+     "en": "they, them",
+     "id": "qibu3-u1-3:5"
     },
     {
      "hanzi": "上车",
      "pinyin": "shàng chē",
      "pos": "v.",
-     "en": "to get on (a bus, a train)"
+     "en": "to get on (a bus, a train)",
+     "id": "qibu3-u1-3:6"
     },
     {
      "hanzi": "下车",
      "pinyin": "xià chē",
      "pos": "v.",
-     "en": "to get off"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u1-4",
-   "title": "起步3 U1.4 · 你怎么去上班？ How do you get to work?",
-   "words": [
+     "en": "to get off",
+     "id": "qibu3-u1-3:7"
+    },
     {
      "hanzi": "过",
      "pinyin": "guo",
      "pos": "part.",
-     "en": "after a verb: have ever done (new meaning)"
-    },
+     "en": "after a verb: have ever done (new meaning)",
+     "id": "qibu3-u1-4:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u1-4a",
+   "title": "起步3 U1.4 · 你怎么去上班？ How do you get to work? · 1",
+   "words": [
     {
      "hanzi": "好几",
      "pinyin": "hǎo jǐ",
      "pos": "num.",
-     "en": "quite a few, several (好几次 quite a few times)"
+     "en": "quite a few, several (好几次 quite a few times)",
+     "id": "qibu3-u1-4:1"
     },
     {
      "hanzi": "漂亮",
      "pinyin": "piào liang",
      "pos": "adj.",
-     "en": "beautiful, pretty"
+     "en": "beautiful, pretty",
+     "id": "qibu3-u1-4:2"
     },
     {
      "hanzi": "火车",
      "pinyin": "huǒ chē",
      "pos": "n.",
-     "en": "train"
+     "en": "train",
+     "id": "qibu3-u1-4:3"
     },
     {
      "hanzi": "左右",
      "pinyin": "zuǒ yòu",
      "pos": "n.",
-     "en": "about, or so (after a number)"
+     "en": "about, or so (after a number)",
+     "id": "qibu3-u1-4:4"
     },
     {
      "hanzi": "大巴",
      "pinyin": "dà bā",
      "pos": "n.",
-     "en": "coach, long-distance bus"
-    },
+     "en": "coach, long-distance bus",
+     "id": "qibu3-u1-4:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u1-4b",
+   "title": "起步3 U1.4 · 你怎么去上班？ How do you get to work? · 2",
+   "words": [
     {
      "hanzi": "开",
      "pinyin": "kāi",
      "pos": "v.",
-     "en": "to drive; to open"
+     "en": "to drive; to open",
+     "id": "qibu3-u1-4:6"
     },
     {
      "hanzi": "开车",
      "pinyin": "kāi chē",
      "pos": "v.",
-     "en": "to drive (a car)"
+     "en": "to drive (a car)",
+     "id": "qibu3-u1-4:7"
     },
     {
      "hanzi": "方便",
      "pinyin": "fāng biàn",
      "pos": "adj.",
-     "en": "convenient, easy"
+     "en": "convenient, easy",
+     "id": "qibu3-u1-4:8"
     },
     {
      "hanzi": "船",
      "pinyin": "chuán",
      "pos": "n.",
-     "en": "boat, ship"
+     "en": "boat, ship",
+     "id": "qibu3-u1-4:9"
     }
    ]
   },
   {
-   "id": "qibu3-u2-1",
-   "title": "起步3 U2.1 · 伦敦比成都冷！ London's colder than Chengdu!",
+   "id": "qibu3-u2-1a",
+   "title": "起步3 U2.1 · 伦敦比成都冷！ London's colder than Chengdu! · 1",
    "words": [
     {
      "hanzi": "有点儿",
      "pinyin": "yǒu diǎn r",
      "pos": "adv.",
-     "en": "a bit, rather (before an adjective)"
+     "en": "a bit, rather (before an adjective)",
+     "id": "qibu3-u2-1:0"
     },
     {
      "hanzi": "冷",
      "pinyin": "lěng",
      "pos": "adj.",
-     "en": "cold"
+     "en": "cold",
+     "id": "qibu3-u2-1:1"
     },
     {
      "hanzi": "度",
      "pinyin": "dù",
      "pos": "m.",
-     "en": "degree (temperature)"
+     "en": "degree (temperature)",
+     "id": "qibu3-u2-1:2"
     },
     {
      "hanzi": "比",
      "pinyin": "bǐ",
      "pos": "prep.",
-     "en": "than, compared with"
+     "en": "than, compared with",
+     "id": "qibu3-u2-1:3"
     },
     {
      "hanzi": "暖和",
      "pinyin": "nuǎn huo",
      "pos": "adj.",
-     "en": "warm (weather)"
-    },
+     "en": "warm (weather)",
+     "id": "qibu3-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u2-1b",
+   "title": "起步3 U2.1 · 伦敦比成都冷！ London's colder than Chengdu! · 2",
+   "words": [
     {
      "hanzi": "冬天",
      "pinyin": "dōng tiān",
      "pos": "n.",
-     "en": "winter"
+     "en": "winter",
+     "id": "qibu3-u2-1:5"
     },
     {
      "hanzi": "没有",
      "pinyin": "méi yǒu",
      "pos": "phr.",
-     "en": "not as … as (没有…那么)"
+     "en": "not as … as (没有…那么)",
+     "id": "qibu3-u2-1:6"
     },
     {
      "hanzi": "那么",
      "pinyin": "nà me",
      "pos": "adv.",
-     "en": "so, that (much)"
+     "en": "so, that (much)",
+     "id": "qibu3-u2-1:7"
     },
     {
      "hanzi": "下雪",
      "pinyin": "xià xuě",
      "pos": "v.",
-     "en": "to snow"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u2-2",
-   "title": "起步3 U2.2 · 伦敦比成都冷！ London's colder than Chengdu!",
-   "words": [
+     "en": "to snow",
+     "id": "qibu3-u2-1:8"
+    },
     {
      "hanzi": "下雨",
      "pinyin": "xià yǔ",
      "pos": "v.",
-     "en": "to rain"
-    },
+     "en": "to rain",
+     "id": "qibu3-u2-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u2-2a",
+   "title": "起步3 U2.2 · 伦敦比成都冷！ London's colder than Chengdu!",
+   "words": [
     {
      "hanzi": "阴天",
      "pinyin": "yīn tiān",
      "pos": "n.",
-     "en": "cloudy day, grey weather"
+     "en": "cloudy day, grey weather",
+     "id": "qibu3-u2-2:1"
     },
     {
      "hanzi": "晴天",
      "pinyin": "qíng tiān",
      "pos": "n.",
-     "en": "sunny day"
+     "en": "sunny day",
+     "id": "qibu3-u2-2:2"
     },
     {
      "hanzi": "所以",
      "pinyin": "suǒ yǐ",
      "pos": "conj.",
-     "en": "so, that's why"
+     "en": "so, that's why",
+     "id": "qibu3-u2-2:3"
     },
     {
      "hanzi": "特别",
      "pinyin": "tè bié",
      "pos": "adv.",
-     "en": "especially, really"
+     "en": "especially, really",
+     "id": "qibu3-u2-2:4"
     },
     {
      "hanzi": "晒太阳",
      "pinyin": "shài tài yáng",
      "pos": "v.",
-     "en": "to sit in the sun, sunbathe"
-    },
+     "en": "to sit in the sun, sunbathe",
+     "id": "qibu3-u2-2:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u2-3a",
+   "title": "起步3 U2.3 · 伦敦比成都冷！ London's colder than Chengdu! · 1",
+   "words": [
     {
      "hanzi": "太阳",
      "pinyin": "tài yáng",
      "pos": "n.",
-     "en": "the sun"
-    },
-    {
-     "hanzi": "时候",
-     "pinyin": "shí hou",
-     "pos": "n.",
-     "en": "time (…的时候 when …)"
+     "en": "the sun",
+     "id": "qibu3-u2-2:6"
     },
     {
      "hanzi": "天气",
      "pinyin": "tiān qì",
      "pos": "n.",
-     "en": "weather"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u2-3",
-   "title": "起步3 U2.3 · 伦敦比成都冷！ London's colder than Chengdu!",
-   "words": [
+     "en": "weather",
+     "id": "qibu3-u2-2:8"
+    },
     {
      "hanzi": "热",
      "pinyin": "rè",
      "pos": "adj.",
-     "en": "hot"
+     "en": "hot",
+     "id": "qibu3-u2-3:0"
     },
     {
      "hanzi": "零下",
      "pinyin": "líng xià",
      "pos": "n.",
-     "en": "below zero"
+     "en": "below zero",
+     "id": "qibu3-u2-3:1"
     },
     {
      "hanzi": "春天",
      "pinyin": "chūn tiān",
      "pos": "n.",
-     "en": "spring"
-    },
+     "en": "spring",
+     "id": "qibu3-u2-3:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u2-3b",
+   "title": "起步3 U2.3 · 伦敦比成都冷！ London's colder than Chengdu! · 2",
+   "words": [
     {
      "hanzi": "穿",
      "pinyin": "chuān",
      "pos": "v.",
-     "en": "to wear, put on"
+     "en": "to wear, put on",
+     "id": "qibu3-u2-3:3"
     },
     {
      "hanzi": "带",
      "pinyin": "dài",
      "pos": "v.",
-     "en": "to bring, take along"
+     "en": "to bring, take along",
+     "id": "qibu3-u2-3:4"
     },
     {
      "hanzi": "伞",
      "pinyin": "sǎn",
      "pos": "n.",
-     "en": "umbrella"
+     "en": "umbrella",
+     "id": "qibu3-u2-3:5"
     },
     {
      "hanzi": "夏天",
      "pinyin": "xià tiān",
      "pos": "n.",
-     "en": "summer"
+     "en": "summer",
+     "id": "qibu3-u2-3:6"
     },
     {
      "hanzi": "秋天",
      "pinyin": "qiū tiān",
      "pos": "n.",
-     "en": "autumn"
+     "en": "autumn",
+     "id": "qibu3-u2-3:7"
     }
    ]
   },
   {
-   "id": "qibu3-u2-4",
-   "title": "起步3 U2.4 · 伦敦比成都冷！ London's colder than Chengdu!",
+   "id": "qibu3-u2-4a",
+   "title": "起步3 U2.4 · 伦敦比成都冷！ London's colder than Chengdu! · 1",
    "words": [
     {
      "hanzi": "尝",
      "pinyin": "cháng",
      "pos": "v.",
-     "en": "to taste"
+     "en": "to taste",
+     "id": "qibu3-u2-4:0"
     },
     {
      "hanzi": "辣",
      "pinyin": "là",
      "pos": "adj.",
-     "en": "spicy, hot"
+     "en": "spicy, hot",
+     "id": "qibu3-u2-4:1"
     },
     {
      "hanzi": "四川",
      "pinyin": "Sì chuān",
      "pos": "n.",
-     "en": "Sichuan (Chengdu's province)"
+     "en": "Sichuan (Chengdu's province)",
+     "id": "qibu3-u2-4:2"
     },
     {
      "hanzi": "一点儿也不",
      "pinyin": "yī diǎn r yě bù",
      "pos": "phr.",
-     "en": "not … at all"
+     "en": "not … at all",
+     "id": "qibu3-u2-4:3",
+     "parts": [
+      "一点儿",
+      "也",
+      "不"
+     ]
     },
     {
      "hanzi": "怕",
      "pinyin": "pà",
      "pos": "v.",
-     "en": "to be afraid of; can't take"
-    },
+     "en": "to be afraid of; can't take",
+     "id": "qibu3-u2-4:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u2-4b",
+   "title": "起步3 U2.4 · 伦敦比成都冷！ London's colder than Chengdu! · 2",
+   "words": [
     {
      "hanzi": "咖喱",
      "pinyin": "gā lí",
      "pos": "n.",
-     "en": "curry"
+     "en": "curry",
+     "id": "qibu3-u2-4:5"
     },
     {
      "hanzi": "更",
      "pinyin": "gèng",
      "pos": "adv.",
-     "en": "even more"
+     "en": "even more",
+     "id": "qibu3-u2-4:6"
     },
     {
      "hanzi": "一样",
      "pinyin": "yī yàng",
      "pos": "adj.",
-     "en": "the same (一样好吃 just as tasty)"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u2-5",
-   "title": "起步3 U2.5 · 伦敦比成都冷！ London's colder than Chengdu!",
-   "words": [
+     "en": "the same (一样好吃 just as tasty)",
+     "id": "qibu3-u2-4:7"
+    },
     {
      "hanzi": "甜",
      "pinyin": "tián",
      "pos": "adj.",
-     "en": "sweet"
+     "en": "sweet",
+     "id": "qibu3-u2-5:0"
     },
     {
      "hanzi": "高",
      "pinyin": "gāo",
      "pos": "adj.",
-     "en": "tall, high"
-    },
+     "en": "tall, high",
+     "id": "qibu3-u2-5:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u2-5a",
+   "title": "起步3 U2.5 · 伦敦比成都冷！ London's colder than Chengdu!",
+   "words": [
     {
      "hanzi": "矮",
      "pinyin": "ǎi",
      "pos": "adj.",
-     "en": "short (people)"
+     "en": "short (people)",
+     "id": "qibu3-u2-5:2"
     },
     {
      "hanzi": "胖",
      "pinyin": "pàng",
      "pos": "adj.",
-     "en": "fat, chubby"
+     "en": "fat, chubby",
+     "id": "qibu3-u2-5:3"
     },
     {
      "hanzi": "瘦",
      "pinyin": "shòu",
      "pos": "adj.",
-     "en": "thin, slim"
+     "en": "thin, slim",
+     "id": "qibu3-u2-5:4"
     },
     {
      "hanzi": "年轻",
      "pinyin": "nián qīng",
      "pos": "adj.",
-     "en": "young"
+     "en": "young",
+     "id": "qibu3-u2-5:5"
     },
     {
      "hanzi": "帅",
      "pinyin": "shuài",
      "pos": "adj.",
-     "en": "handsome"
-    },
-    {
-     "hanzi": "慢",
-     "pinyin": "màn",
-     "pos": "adj.",
-     "en": "slow"
+     "en": "handsome",
+     "id": "qibu3-u2-5:6"
     }
    ]
   },
   {
-   "id": "qibu3-u3-1",
-   "title": "起步3 U3.1 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
+   "id": "qibu3-u3-1a",
+   "title": "起步3 U3.1 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown? · 1",
    "words": [
     {
      "hanzi": "阿姨",
      "pinyin": "ā yí",
      "pos": "n.",
-     "en": "auntie (polite for an older woman)"
+     "en": "auntie (polite for an older woman)",
+     "id": "qibu3-u3-1:0"
     },
     {
      "hanzi": "叔叔",
      "pinyin": "shū shu",
      "pos": "n.",
-     "en": "uncle (polite for an older man)"
+     "en": "uncle (polite for an older man)",
+     "id": "qibu3-u3-1:1"
     },
     {
      "hanzi": "您",
      "pinyin": "nín",
      "pos": "pron.",
-     "en": "you (polite)"
+     "en": "you (polite)",
+     "id": "qibu3-u3-1:2"
     },
     {
      "hanzi": "离",
      "pinyin": "lí",
      "pos": "prep.",
-     "en": "from (for distance)"
+     "en": "from (for distance)",
+     "id": "qibu3-u3-1:3"
     },
     {
      "hanzi": "这儿",
      "pinyin": "zhè r",
      "pos": "pron.",
-     "en": "here"
-    },
+     "en": "here",
+     "id": "qibu3-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-1b",
+   "title": "起步3 U3.1 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown? · 2",
+   "words": [
     {
      "hanzi": "那儿",
      "pinyin": "nà r",
      "pos": "pron.",
-     "en": "there"
+     "en": "there",
+     "id": "qibu3-u3-1:5"
     },
     {
      "hanzi": "远",
      "pinyin": "yuǎn",
      "pos": "adj.",
-     "en": "far"
+     "en": "far",
+     "id": "qibu3-u3-1:6"
     },
     {
      "hanzi": "近",
      "pinyin": "jìn",
      "pos": "adj.",
-     "en": "near, close"
+     "en": "near, close",
+     "id": "qibu3-u3-1:7"
     },
     {
      "hanzi": "往",
      "pinyin": "wǎng",
      "pos": "prep.",
-     "en": "towards (往前 straight ahead)"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u3-2",
-   "title": "起步3 U3.2 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
-   "words": [
+     "en": "towards (往前 straight ahead)",
+     "id": "qibu3-u3-1:8"
+    },
     {
      "hanzi": "前",
      "pinyin": "qián",
      "pos": "n.",
-     "en": "front, ahead"
-    },
+     "en": "front, ahead",
+     "id": "qibu3-u3-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-2a",
+   "title": "起步3 U3.2 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown? · 1",
+   "words": [
     {
      "hanzi": "一直",
      "pinyin": "yī zhí",
      "pos": "adv.",
-     "en": "straight on; all the time"
+     "en": "straight on; all the time",
+     "id": "qibu3-u3-2:1"
     },
     {
      "hanzi": "第",
      "pinyin": "dì",
      "pos": "pref.",
-     "en": "turns a number into 'first, second …'"
+     "en": "turns a number into 'first, second …'",
+     "id": "qibu3-u3-2:2"
     },
     {
      "hanzi": "路口",
      "pinyin": "lù kǒu",
      "pos": "n.",
-     "en": "crossing, junction"
+     "en": "crossing, junction",
+     "id": "qibu3-u3-2:3"
     },
     {
      "hanzi": "左",
      "pinyin": "zuǒ",
      "pos": "n.",
-     "en": "left"
+     "en": "left",
+     "id": "qibu3-u3-2:4"
     },
     {
      "hanzi": "拐",
      "pinyin": "guǎi",
      "pos": "v.",
-     "en": "to turn"
-    },
+     "en": "to turn",
+     "id": "qibu3-u3-2:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-2b",
+   "title": "起步3 U3.2 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown? · 2",
+   "words": [
     {
      "hanzi": "右",
      "pinyin": "yòu",
      "pos": "n.",
-     "en": "right"
+     "en": "right",
+     "id": "qibu3-u3-2:6"
     },
     {
      "hanzi": "后",
      "pinyin": "hòu",
      "pos": "n.",
-     "en": "back, behind"
+     "en": "back, behind",
+     "id": "qibu3-u3-2:7"
     },
     {
      "hanzi": "米",
      "pinyin": "mǐ",
      "pos": "m.",
-     "en": "metre"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u3-3",
-   "title": "起步3 U3.3 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
-   "words": [
+     "en": "metre",
+     "id": "qibu3-u3-2:8"
+    },
     {
      "hanzi": "然后",
      "pinyin": "rán hòu",
      "pos": "conj.",
-     "en": "then, after that"
-    },
-    {
-     "hanzi": "再",
-     "pinyin": "zài",
-     "pos": "adv.",
-     "en": "again; then, further"
+     "en": "then, after that",
+     "id": "qibu3-u3-3:0"
     },
     {
      "hanzi": "就",
      "pinyin": "jiù",
      "pos": "adv.",
-     "en": "right, just (就在 right in; 就到了 and you're there)"
-    },
+     "en": "right, just (就在 right in; 就到了 and you're there)",
+     "id": "qibu3-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-3a",
+   "title": "起步3 U3.3 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
+   "words": [
     {
      "hanzi": "小伙子",
      "pinyin": "xiǎo huǒ zi",
      "pos": "n.",
-     "en": "young man (friendly)"
+     "en": "young man (friendly)",
+     "id": "qibu3-u3-3:3"
     },
     {
      "hanzi": "欢迎",
      "pinyin": "huān yíng",
      "pos": "v.",
-     "en": "to welcome"
+     "en": "to welcome",
+     "id": "qibu3-u3-3:4"
     },
     {
      "hanzi": "地图",
      "pinyin": "dì tú",
      "pos": "n.",
-     "en": "map"
+     "en": "map",
+     "id": "qibu3-u3-3:5"
     },
     {
      "hanzi": "洗手间",
      "pinyin": "xǐ shǒu jiān",
      "pos": "n.",
-     "en": "toilet, loo"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u3-4",
-   "title": "起步3 U3.4 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
-   "words": [
+     "en": "toilet, loo",
+     "id": "qibu3-u3-3:6"
+    },
     {
      "hanzi": "又",
      "pinyin": "yòu",
      "pos": "adv.",
-     "en": "again (for something that has happened)"
-    },
+     "en": "again (for something that has happened)",
+     "id": "qibu3-u3-4:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-4a",
+   "title": "起步3 U3.4 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
+   "words": [
     {
      "hanzi": "见面",
      "pinyin": "jiàn miàn",
      "pos": "v.",
-     "en": "to meet, see each other"
+     "en": "to meet, see each other",
+     "id": "qibu3-u3-4:1"
     },
     {
      "hanzi": "老板",
      "pinyin": "lǎo bǎn",
      "pos": "n.",
-     "en": "boss, owner"
+     "en": "boss, owner",
+     "id": "qibu3-u3-4:2"
     },
     {
      "hanzi": "附近",
      "pinyin": "fù jìn",
      "pos": "n.",
-     "en": "nearby, the area around"
+     "en": "nearby, the area around",
+     "id": "qibu3-u3-4:3"
     },
     {
      "hanzi": "银行",
      "pinyin": "yín háng",
      "pos": "n.",
-     "en": "bank"
+     "en": "bank",
+     "id": "qibu3-u3-4:4"
     },
     {
      "hanzi": "旁边",
      "pinyin": "páng biān",
      "pos": "n.",
-     "en": "next to, beside"
-    },
+     "en": "next to, beside",
+     "id": "qibu3-u3-4:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-5a",
+   "title": "起步3 U3.5 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown? · 1",
+   "words": [
     {
      "hanzi": "博物馆",
      "pinyin": "bó wù guǎn",
      "pos": "n.",
-     "en": "museum"
+     "en": "museum",
+     "id": "qibu3-u3-4:6"
     },
     {
      "hanzi": "车站",
      "pinyin": "chē zhàn",
      "pos": "n.",
-     "en": "bus stop, station"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u3-5",
-   "title": "起步3 U3.5 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown?",
-   "words": [
+     "en": "bus stop, station",
+     "id": "qibu3-u3-4:7"
+    },
     {
      "hanzi": "对面",
      "pinyin": "duì miàn",
      "pos": "n.",
-     "en": "opposite, across from"
+     "en": "opposite, across from",
+     "id": "qibu3-u3-5:0"
     },
     {
      "hanzi": "热情",
      "pinyin": "rè qíng",
      "pos": "adj.",
-     "en": "warm, friendly"
+     "en": "warm, friendly",
+     "id": "qibu3-u3-5:1"
     },
     {
      "hanzi": "前面",
      "pinyin": "qián miàn",
      "pos": "n.",
-     "en": "in front"
-    },
+     "en": "in front",
+     "id": "qibu3-u3-5:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u3-5b",
+   "title": "起步3 U3.5 · 请问，唐人街怎么走？ Excuse me, how do I get to Chinatown? · 2",
+   "words": [
     {
      "hanzi": "后面",
      "pinyin": "hòu miàn",
      "pos": "n.",
-     "en": "behind, at the back"
+     "en": "behind, at the back",
+     "id": "qibu3-u3-5:3"
     },
     {
      "hanzi": "左边",
      "pinyin": "zuǒ bian",
      "pos": "n.",
-     "en": "the left side"
+     "en": "the left side",
+     "id": "qibu3-u3-5:4"
     },
     {
      "hanzi": "右边",
      "pinyin": "yòu bian",
      "pos": "n.",
-     "en": "the right side"
+     "en": "the right side",
+     "id": "qibu3-u3-5:5"
     },
     {
      "hanzi": "里面",
      "pinyin": "lǐ miàn",
      "pos": "n.",
-     "en": "inside"
+     "en": "inside",
+     "id": "qibu3-u3-5:6"
     }
    ]
   },
   {
-   "id": "qibu3-u4-1",
+   "id": "qibu3-u4-1a",
    "title": "起步3 U4.1 · 你哪儿不舒服？ What's wrong?",
    "words": [
     {
      "hanzi": "怎么了",
      "pinyin": "zěn me le",
      "pos": "phr.",
-     "en": "what's the matter?"
+     "en": "what's the matter?",
+     "id": "qibu3-u4-1:0",
+     "parts": [
+      "怎么",
+      "了"
+     ]
     },
     {
      "hanzi": "舒服",
      "pinyin": "shū fu",
      "pos": "adj.",
-     "en": "comfortable, well"
+     "en": "comfortable, well",
+     "id": "qibu3-u4-1:1"
     },
     {
      "hanzi": "头",
      "pinyin": "tóu",
      "pos": "n.",
-     "en": "head"
+     "en": "head",
+     "id": "qibu3-u4-1:2"
     },
     {
      "hanzi": "疼",
      "pinyin": "téng",
      "pos": "adj.",
-     "en": "painful, sore"
+     "en": "painful, sore",
+     "id": "qibu3-u4-1:3"
     },
     {
      "hanzi": "头疼",
      "pinyin": "tóu téng",
      "pos": "adj.",
-     "en": "to have a headache"
-    },
+     "en": "to have a headache",
+     "id": "qibu3-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u4-2a",
+   "title": "起步3 U4.2 · 你哪儿不舒服？ What's wrong? · 1",
+   "words": [
     {
      "hanzi": "嗓子",
      "pinyin": "sǎng zi",
      "pos": "n.",
-     "en": "throat"
+     "en": "throat",
+     "id": "qibu3-u4-1:5"
     },
     {
      "hanzi": "发烧",
      "pinyin": "fā shāo",
      "pos": "v.",
-     "en": "to have a temperature, a fever"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u4-2",
-   "title": "起步3 U4.2 · 你哪儿不舒服？ What's wrong?",
-   "words": [
+     "en": "to have a temperature, a fever",
+     "id": "qibu3-u4-1:6"
+    },
     {
      "hanzi": "感冒",
      "pinyin": "gǎn mào",
      "pos": "v./n.",
-     "en": "to catch a cold; a cold"
+     "en": "to catch a cold; a cold",
+     "id": "qibu3-u4-2:0"
     },
     {
      "hanzi": "应该",
      "pinyin": "yīng gāi",
      "pos": "v.",
-     "en": "should, ought to"
+     "en": "should, ought to",
+     "id": "qibu3-u4-2:1"
     },
     {
      "hanzi": "没事儿",
      "pinyin": "méi shì r",
      "pos": "phr.",
-     "en": "it's nothing, I'm fine"
-    },
+     "en": "it's nothing, I'm fine",
+     "id": "qibu3-u4-2:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u4-2b",
+   "title": "起步3 U4.2 · 你哪儿不舒服？ What's wrong? · 2",
+   "words": [
     {
      "hanzi": "热水",
      "pinyin": "rè shuǐ",
      "pos": "n.",
-     "en": "hot water"
+     "en": "hot water",
+     "id": "qibu3-u4-2:3"
     },
     {
      "hanzi": "不行",
      "pinyin": "bù xíng",
      "pos": "phr.",
-     "en": "no way, that won't work"
+     "en": "no way, that won't work",
+     "id": "qibu3-u4-2:4"
     },
     {
      "hanzi": "得",
      "pinyin": "děi",
      "pos": "v.",
-     "en": "must, have to"
+     "en": "must, have to",
+     "id": "qibu3-u4-2:5"
     },
     {
      "hanzi": "不用",
      "pinyin": "bù yòng",
      "pos": "adv.",
-     "en": "don't need to"
-    }
-   ]
-  },
-  {
-   "id": "qibu3-u4-3",
-   "title": "起步3 U4.3 · 你哪儿不舒服？ What's wrong?",
-   "words": [
+     "en": "don't need to",
+     "id": "qibu3-u4-2:6"
+    },
     {
      "hanzi": "药",
      "pinyin": "yào",
      "pos": "n.",
-     "en": "medicine"
-    },
+     "en": "medicine",
+     "id": "qibu3-u4-3:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u4-3a",
+   "title": "起步3 U4.3 · 你哪儿不舒服？ What's wrong?",
+   "words": [
     {
      "hanzi": "肚子",
      "pinyin": "dù zi",
      "pos": "n.",
-     "en": "stomach, tummy"
+     "en": "stomach, tummy",
+     "id": "qibu3-u4-3:1"
     },
     {
      "hanzi": "累",
      "pinyin": "lèi",
      "pos": "adj.",
-     "en": "tired"
+     "en": "tired",
+     "id": "qibu3-u4-3:2"
     },
     {
      "hanzi": "牙",
      "pinyin": "yá",
      "pos": "n.",
-     "en": "tooth"
+     "en": "tooth",
+     "id": "qibu3-u4-3:3"
     },
     {
      "hanzi": "眼睛",
      "pinyin": "yǎn jing",
      "pos": "n.",
-     "en": "eye"
+     "en": "eye",
+     "id": "qibu3-u4-3:4"
     },
     {
      "hanzi": "生病",
      "pinyin": "shēng bìng",
      "pos": "v.",
-     "en": "to be ill, get ill"
-    },
-    {
-     "hanzi": "身体",
-     "pinyin": "shēn tǐ",
-     "pos": "n.",
-     "en": "body; health"
+     "en": "to be ill, get ill",
+     "id": "qibu3-u4-3:5"
     }
    ]
   },
   {
-   "id": "qibu3-u4-4",
-   "title": "起步3 U4.4 · 你哪儿不舒服？ What's wrong?",
+   "id": "qibu3-u4-4a",
+   "title": "起步3 U4.4 · 你哪儿不舒服？ What's wrong? · 1",
    "words": [
+    {
+     "hanzi": "身体",
+     "pinyin": "shēn tǐ",
+     "pos": "n.",
+     "en": "body; health",
+     "id": "qibu3-u4-3:6"
+    },
     {
      "hanzi": "试",
      "pinyin": "shì",
      "pos": "v.",
-     "en": "to try (试试 give it a try)"
+     "en": "to try (试试 give it a try)",
+     "id": "qibu3-u4-4:0"
     },
     {
      "hanzi": "钱",
      "pinyin": "qián",
      "pos": "n.",
-     "en": "money"
+     "en": "money",
+     "id": "qibu3-u4-4:1"
     },
     {
      "hanzi": "多少钱",
      "pinyin": "duō shǎo qián",
      "pos": "phr.",
-     "en": "how much (money)?"
+     "en": "how much (money)?",
+     "id": "qibu3-u4-4:2"
     },
     {
      "hanzi": "块",
      "pinyin": "kuài",
      "pos": "m.",
-     "en": "unit of money: pound, yuan (in speech)"
-    },
+     "en": "unit of money: pound, yuan (in speech)",
+     "id": "qibu3-u4-4:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u4-4b",
+   "title": "起步3 U4.4 · 你哪儿不舒服？ What's wrong? · 2",
+   "words": [
     {
      "hanzi": "卖",
      "pinyin": "mài",
      "pos": "v.",
-     "en": "to sell (怎么卖 how much is it?)"
+     "en": "to sell (怎么卖 how much is it?)",
+     "id": "qibu3-u4-4:4"
     },
     {
      "hanzi": "苹果",
      "pinyin": "píng guǒ",
      "pos": "n.",
-     "en": "apple"
+     "en": "apple",
+     "id": "qibu3-u4-4:5"
     },
     {
      "hanzi": "橙子",
      "pinyin": "chéng zi",
      "pos": "n.",
-     "en": "orange"
+     "en": "orange",
+     "id": "qibu3-u4-4:6"
     },
     {
      "hanzi": "贵",
      "pinyin": "guì",
      "pos": "adj.",
-     "en": "expensive"
+     "en": "expensive",
+     "id": "qibu3-u4-4:7"
     },
     {
      "hanzi": "能",
      "pinyin": "néng",
      "pos": "v.",
-     "en": "can, be able to"
+     "en": "can, be able to",
+     "id": "qibu3-u4-4:8"
     }
    ]
   },
   {
-   "id": "qibu3-u4-5",
-   "title": "起步3 U4.5 · 你哪儿不舒服？ What's wrong?",
+   "id": "qibu3-u4-5a",
+   "title": "起步3 U4.5 · 你哪儿不舒服？ What's wrong? · 1",
    "words": [
     {
      "hanzi": "便宜",
      "pinyin": "pián yi",
      "pos": "adj.",
-     "en": "cheap"
+     "en": "cheap",
+     "id": "qibu3-u4-5:0"
     },
     {
      "hanzi": "一共",
      "pinyin": "yī gòng",
      "pos": "adv.",
-     "en": "altogether, in total"
+     "en": "altogether, in total",
+     "id": "qibu3-u4-5:1"
     },
     {
      "hanzi": "英镑",
      "pinyin": "yīng bàng",
      "pos": "n.",
-     "en": "pound (sterling)"
+     "en": "pound (sterling)",
+     "id": "qibu3-u4-5:2"
     },
     {
      "hanzi": "元",
      "pinyin": "yuán",
      "pos": "m.",
-     "en": "yuan (written)"
+     "en": "yuan (written)",
+     "id": "qibu3-u4-5:3"
     },
     {
      "hanzi": "毛",
      "pinyin": "máo",
      "pos": "m.",
-     "en": "ten pence, ten fen (in speech)"
-    },
+     "en": "ten pence, ten fen (in speech)",
+     "id": "qibu3-u4-5:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu3-u4-5b",
+   "title": "起步3 U4.5 · 你哪儿不舒服？ What's wrong? · 2",
+   "words": [
     {
      "hanzi": "人民币",
      "pinyin": "rén mín bì",
      "pos": "n.",
-     "en": "renminbi, Chinese money"
+     "en": "renminbi, Chinese money",
+     "id": "qibu3-u4-5:5"
     },
     {
      "hanzi": "香蕉",
      "pinyin": "xiāng jiāo",
      "pos": "n.",
-     "en": "banana"
+     "en": "banana",
+     "id": "qibu3-u4-5:6"
     },
     {
      "hanzi": "葡萄",
      "pinyin": "pú tao",
      "pos": "n.",
-     "en": "grapes"
+     "en": "grapes",
+     "id": "qibu3-u4-5:7"
     },
     {
      "hanzi": "药店",
      "pinyin": "yào diàn",
      "pos": "n.",
-     "en": "chemist's, pharmacy"
+     "en": "chemist's, pharmacy",
+     "id": "qibu3-u4-5:8"
     },
     {
      "hanzi": "安静",
      "pinyin": "ān jìng",
      "pos": "",
-     "en": "quiet"
+     "en": "quiet",
+     "id": "qibu3-u4-5:9"
     }
    ]
   },
   {
-   "id": "qibu4-u1-1",
-   "title": "起步4 U1.1 · 服务员，买单！ Waiter, the bill please!",
+   "id": "qibu4-u1-1a",
+   "title": "起步4 U1.1 · 服务员，买单！ Waiter, the bill please! · 1",
    "words": [
     {
      "hanzi": "位",
      "pinyin": "wèi",
      "pos": "m.",
-     "en": "polite measure word for people (几位？ how many of you?)"
+     "en": "polite measure word for people (几位？ how many of you?)",
+     "id": "qibu4-u1-1:0"
     },
     {
      "hanzi": "这边",
      "pinyin": "zhè bian",
      "pos": "pron.",
-     "en": "this side, this way"
+     "en": "this side, this way",
+     "id": "qibu4-u1-1:1"
     },
     {
      "hanzi": "那边",
      "pinyin": "nà bian",
      "pos": "pron.",
-     "en": "that side, over there"
+     "en": "that side, over there",
+     "id": "qibu4-u1-1:2"
     },
     {
      "hanzi": "菜单",
      "pinyin": "cài dān",
      "pos": "n.",
-     "en": "menu"
+     "en": "menu",
+     "id": "qibu4-u1-1:3"
     },
     {
      "hanzi": "点",
      "pinyin": "diǎn",
      "pos": "v.",
-     "en": "to order (food) (new meaning)"
-    },
+     "en": "to order (food) (new meaning)",
+     "id": "qibu4-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-1b",
+   "title": "起步4 U1.1 · 服务员，买单！ Waiter, the bill please! · 2",
+   "words": [
     {
      "hanzi": "点菜",
      "pinyin": "diǎn cài",
      "pos": "v.",
-     "en": "to order (dishes)"
+     "en": "to order (dishes)",
+     "id": "qibu4-u1-1:5"
     },
     {
      "hanzi": "来",
      "pinyin": "lái",
      "pos": "v.",
-     "en": "to have, bring (when ordering: 来一个… one …, please) (new meaning)"
-    },
-    {
-     "hanzi": "水煮鱼",
-     "pinyin": "shuǐ zhǔ yú",
-     "pos": "n.",
-     "en": "Sichuan boiled fish in chilli oil"
+     "en": "to have, bring (when ordering: 来一个… one …, please) (new meaning)",
+     "id": "qibu4-u1-1:6"
     },
     {
      "hanzi": "鱼",
      "pinyin": "yú",
      "pos": "n.",
-     "en": "fish"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u1-2",
-   "title": "起步4 U1.2 · 服务员，买单！ Waiter, the bill please!",
-   "words": [
+     "en": "fish",
+     "id": "qibu4-u1-1:8"
+    },
+    {
+     "hanzi": "水煮鱼",
+     "pinyin": "shuǐ zhǔ yú",
+     "pos": "n.",
+     "en": "Sichuan boiled fish in chilli oil",
+     "id": "qibu4-u1-1:7"
+    },
     {
      "hanzi": "宫保鸡丁",
      "pinyin": "gōng bǎo jī dīng",
      "pos": "n.",
-     "en": "kung pao chicken"
-    },
+     "en": "kung pao chicken",
+     "id": "qibu4-u1-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-2a",
+   "title": "起步4 U1.2 · 服务员，买单！ Waiter, the bill please! · 1",
+   "words": [
     {
      "hanzi": "鸡",
      "pinyin": "jī",
      "pos": "n.",
-     "en": "chicken"
+     "en": "chicken",
+     "id": "qibu4-u1-2:1"
     },
     {
      "hanzi": "微辣",
      "pinyin": "wēi là",
      "pos": "adj.",
-     "en": "mildly spicy"
+     "en": "mildly spicy",
+     "id": "qibu4-u1-2:2"
     },
     {
      "hanzi": "中辣",
      "pinyin": "zhōng là",
      "pos": "adj.",
-     "en": "medium spicy"
+     "en": "medium spicy",
+     "id": "qibu4-u1-2:3",
+     "parts": [
+      "中",
+      "辣"
+     ]
     },
     {
      "hanzi": "特辣",
      "pinyin": "tè là",
      "pos": "adj.",
-     "en": "extra hot"
+     "en": "extra hot",
+     "id": "qibu4-u1-2:4"
     },
     {
      "hanzi": "西红柿",
      "pinyin": "xī hóng shì",
      "pos": "n.",
-     "en": "tomato"
-    },
+     "en": "tomato",
+     "id": "qibu4-u1-2:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-2b",
+   "title": "起步4 U1.2 · 服务员，买单！ Waiter, the bill please! · 2",
+   "words": [
     {
      "hanzi": "鸡蛋",
      "pinyin": "jī dàn",
      "pos": "n.",
-     "en": "egg"
+     "en": "egg",
+     "id": "qibu4-u1-2:6"
     },
     {
      "hanzi": "炒",
      "pinyin": "chǎo",
      "pos": "v.",
-     "en": "to stir-fry"
+     "en": "to stir-fry",
+     "id": "qibu4-u1-2:7"
     },
     {
      "hanzi": "份",
      "pinyin": "fèn",
      "pos": "m.",
-     "en": "portion, serving"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u1-3",
-   "title": "起步4 U1.3 · 服务员，买单！ Waiter, the bill please!",
-   "words": [
+     "en": "portion, serving",
+     "id": "qibu4-u1-2:8"
+    },
     {
      "hanzi": "放",
      "pinyin": "fàng",
      "pos": "v.",
-     "en": "to put, put in"
+     "en": "to put, put in",
+     "id": "qibu4-u1-3:0"
     },
     {
      "hanzi": "辣椒",
      "pinyin": "là jiāo",
      "pos": "n.",
-     "en": "chilli (pepper)"
-    },
+     "en": "chilli (pepper)",
+     "id": "qibu4-u1-3:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-3a",
+   "title": "起步4 U1.3 · 服务员，买单！ Waiter, the bill please!",
+   "words": [
     {
      "hanzi": "哈哈",
      "pinyin": "hā hā",
      "pos": "phr.",
-     "en": "ha ha"
+     "en": "ha ha",
+     "id": "qibu4-u1-3:2"
     },
     {
      "hanzi": "碗",
      "pinyin": "wǎn",
      "pos": "m./n.",
-     "en": "bowl (of)"
+     "en": "bowl (of)",
+     "id": "qibu4-u1-3:3"
     },
     {
      "hanzi": "米饭",
      "pinyin": "mǐ fàn",
      "pos": "n.",
-     "en": "(cooked) rice"
+     "en": "(cooked) rice",
+     "id": "qibu4-u1-3:4"
     },
     {
      "hanzi": "壶",
      "pinyin": "hú",
      "pos": "m./n.",
-     "en": "pot (of)"
+     "en": "pot (of)",
+     "id": "qibu4-u1-3:5"
     },
     {
      "hanzi": "肉",
      "pinyin": "ròu",
      "pos": "n.",
-     "en": "meat"
-    },
+     "en": "meat",
+     "id": "qibu4-u1-3:6"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-4a",
+   "title": "起步4 U1.4 · 服务员，买单！ Waiter, the bill please! · 1",
+   "words": [
     {
      "hanzi": "牛肉",
      "pinyin": "niú ròu",
      "pos": "n.",
-     "en": "beef"
+     "en": "beef",
+     "id": "qibu4-u1-3:7"
     },
     {
      "hanzi": "猪肉",
      "pinyin": "zhū ròu",
      "pos": "n.",
-     "en": "pork"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u1-4",
-   "title": "起步4 U1.4 · 服务员，买单！ Waiter, the bill please!",
-   "words": [
+     "en": "pork",
+     "id": "qibu4-u1-3:8"
+    },
     {
      "hanzi": "青菜",
      "pinyin": "qīng cài",
      "pos": "n.",
-     "en": "green vegetables"
+     "en": "green vegetables",
+     "id": "qibu4-u1-4:0"
     },
     {
      "hanzi": "汤",
      "pinyin": "tāng",
      "pos": "n.",
-     "en": "soup"
+     "en": "soup",
+     "id": "qibu4-u1-4:1"
     },
     {
      "hanzi": "筷子",
      "pinyin": "kuài zi",
      "pos": "n.",
-     "en": "chopsticks"
-    },
+     "en": "chopsticks",
+     "id": "qibu4-u1-4:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-4b",
+   "title": "起步4 U1.4 · 服务员，买单！ Waiter, the bill please! · 2",
+   "words": [
     {
      "hanzi": "饿",
      "pinyin": "è",
      "pos": "adj.",
-     "en": "hungry"
+     "en": "hungry",
+     "id": "qibu4-u1-4:3"
     },
     {
      "hanzi": "渴",
      "pinyin": "kě",
      "pos": "adj.",
-     "en": "thirsty"
+     "en": "thirsty",
+     "id": "qibu4-u1-4:4"
     },
     {
      "hanzi": "饮料",
      "pinyin": "yǐn liào",
      "pos": "n.",
-     "en": "drink, soft drink"
+     "en": "drink, soft drink",
+     "id": "qibu4-u1-4:5"
     },
     {
      "hanzi": "豆腐",
      "pinyin": "dòu fu",
      "pos": "n.",
-     "en": "tofu"
+     "en": "tofu",
+     "id": "qibu4-u1-4:6"
     },
     {
      "hanzi": "面条",
      "pinyin": "miàn tiáo",
      "pos": "n.",
-     "en": "noodles"
-    },
-    {
-     "hanzi": "羊肉",
-     "pinyin": "yáng ròu",
-     "pos": "n.",
-     "en": "lamb"
+     "en": "noodles",
+     "id": "qibu4-u1-4:7"
     }
    ]
   },
   {
-   "id": "qibu4-u1-5",
+   "id": "qibu4-u1-5a",
    "title": "起步4 U1.5 · 服务员，买单！ Waiter, the bill please!",
    "words": [
+    {
+     "hanzi": "羊肉",
+     "pinyin": "yáng ròu",
+     "pos": "n.",
+     "en": "lamb",
+     "id": "qibu4-u1-4:8"
+    },
     {
      "hanzi": "香菜",
      "pinyin": "xiāng cài",
      "pos": "n.",
-     "en": "coriander"
+     "en": "coriander",
+     "id": "qibu4-u1-5:0"
     },
     {
      "hanzi": "酸",
      "pinyin": "suān",
      "pos": "adj.",
-     "en": "sour"
+     "en": "sour",
+     "id": "qibu4-u1-5:1"
     },
     {
      "hanzi": "咸",
      "pinyin": "xián",
      "pos": "adj.",
-     "en": "salty"
+     "en": "salty",
+     "id": "qibu4-u1-5:2"
     },
     {
      "hanzi": "盘",
      "pinyin": "pán",
      "pos": "m./n.",
-     "en": "plate (of)"
-    },
-    {
-     "hanzi": "里",
-     "pinyin": "lǐ",
-     "pos": "n.",
-     "en": "in, inside (汤里 in the soup)"
+     "en": "plate (of)",
+     "id": "qibu4-u1-5:3"
     }
    ]
   },
   {
-   "id": "qibu4-u1-6",
-   "title": "起步4 U1.6 · 服务员，买单！ Waiter, the bill please!",
+   "id": "qibu4-u1-6a",
+   "title": "起步4 U1.6 · 服务员，买单！ Waiter, the bill please! · 1",
    "words": [
+    {
+     "hanzi": "里",
+     "pinyin": "lǐ",
+     "pos": "n.",
+     "en": "in, inside (汤里 in the soup)",
+     "id": "qibu4-u1-5:4"
+    },
     {
      "hanzi": "饱",
      "pinyin": "bǎo",
      "pos": "adj.",
-     "en": "full (after eating)"
+     "en": "full (after eating)",
+     "id": "qibu4-u1-6:0"
     },
     {
      "hanzi": "地道",
      "pinyin": "dì dao",
      "pos": "adj.",
-     "en": "authentic, the real thing"
+     "en": "authentic, the real thing",
+     "id": "qibu4-u1-6:1"
     },
     {
      "hanzi": "买单",
      "pinyin": "mǎi dān",
      "pos": "v.",
-     "en": "to pay the bill (服务员，买单！ the bill, please!)"
+     "en": "to pay the bill (服务员，买单！ the bill, please!)",
+     "id": "qibu4-u1-6:2"
     },
     {
      "hanzi": "请客",
      "pinyin": "qǐng kè",
      "pos": "v.",
-     "en": "to treat, pay for everyone"
-    },
+     "en": "to treat, pay for everyone",
+     "id": "qibu4-u1-6:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-6b",
+   "title": "起步4 U1.6 · 服务员，买单！ Waiter, the bill please! · 2",
+   "words": [
     {
      "hanzi": "争",
      "pinyin": "zhēng",
      "pos": "v.",
-     "en": "to argue, fight over"
+     "en": "to argue, fight over",
+     "id": "qibu4-u1-6:4"
     },
     {
      "hanzi": "意思",
      "pinyin": "yì si",
      "pos": "n.",
-     "en": "meaning (什么意思？ what does it mean?)"
+     "en": "meaning (什么意思？ what does it mean?)",
+     "id": "qibu4-u1-6:5"
     },
     {
      "hanzi": "每",
      "pinyin": "měi",
      "pos": "pron.",
-     "en": "every, each"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u1-7",
-   "title": "起步4 U1.7 · 服务员，买单！ Waiter, the bill please!",
-   "words": [
+     "en": "every, each",
+     "id": "qibu4-u1-6:6"
+    },
     {
      "hanzi": "付",
      "pinyin": "fù",
      "pos": "v.",
-     "en": "to pay"
+     "en": "to pay",
+     "id": "qibu4-u1-7:0"
     },
     {
      "hanzi": "付钱",
      "pinyin": "fù qián",
      "pos": "v.",
-     "en": "to pay"
-    },
+     "en": "to pay",
+     "id": "qibu4-u1-7:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-7a",
+   "title": "起步4 U1.7 · 服务员，买单！ Waiter, the bill please!",
+   "words": [
     {
      "hanzi": "自己",
      "pinyin": "zì jǐ",
      "pos": "pron.",
-     "en": "oneself, your own"
+     "en": "oneself, your own",
+     "id": "qibu4-u1-7:2"
     },
     {
      "hanzi": "先生",
      "pinyin": "xiān sheng",
      "pos": "n.",
-     "en": "Mr; sir, gentleman"
+     "en": "Mr; sir, gentleman",
+     "id": "qibu4-u1-7:3"
     },
     {
      "hanzi": "一定",
      "pinyin": "yī dìng",
      "pos": "adv.",
-     "en": "definitely, certainly"
+     "en": "definitely, certainly",
+     "id": "qibu4-u1-7:4"
     },
     {
      "hanzi": "这样",
      "pinyin": "zhè yàng",
      "pos": "pron.",
-     "en": "like this, this way"
-    },
-    {
-     "hanzi": "刷卡",
-     "pinyin": "shuā kǎ",
-     "pos": "v.",
-     "en": "to pay by card"
+     "en": "like this, this way",
+     "id": "qibu4-u1-7:5"
     }
    ]
   },
   {
-   "id": "qibu4-u1-8",
-   "title": "起步4 U1.8 · 服务员，买单！ Waiter, the bill please!",
+   "id": "qibu4-u1-8a",
+   "title": "起步4 U1.8 · 服务员，买单！ Waiter, the bill please! · 1",
    "words": [
+    {
+     "hanzi": "刷卡",
+     "pinyin": "shuā kǎ",
+     "pos": "v.",
+     "en": "to pay by card",
+     "id": "qibu4-u1-7:6"
+    },
     {
      "hanzi": "现金",
      "pinyin": "xiàn jīn",
      "pos": "n.",
-     "en": "cash"
+     "en": "cash",
+     "id": "qibu4-u1-8:0"
     },
     {
      "hanzi": "小费",
      "pinyin": "xiǎo fèi",
      "pos": "n.",
-     "en": "tip"
+     "en": "tip",
+     "id": "qibu4-u1-8:1"
     },
     {
      "hanzi": "啤酒",
      "pinyin": "pí jiǔ",
      "pos": "n.",
-     "en": "beer"
-    },
+     "en": "beer",
+     "id": "qibu4-u1-8:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u1-8b",
+   "title": "起步4 U1.8 · 服务员，买单！ Waiter, the bill please! · 2",
+   "words": [
     {
      "hanzi": "笑",
      "pinyin": "xiào",
      "pos": "v.",
-     "en": "to laugh, to smile"
+     "en": "to laugh, to smile",
+     "id": "qibu4-u1-8:3"
     },
     {
      "hanzi": "刚才",
      "pinyin": "gāng cái",
      "pos": "n.",
-     "en": "just now, a moment ago"
+     "en": "just now, a moment ago",
+     "id": "qibu4-u1-8:4"
     },
     {
      "hanzi": "打包",
      "pinyin": "dǎ bāo",
      "pos": "v.",
-     "en": "to box up leftovers to take home"
+     "en": "to box up leftovers to take home",
+     "id": "qibu4-u1-8:5"
     },
     {
      "hanzi": "外卖",
      "pinyin": "wài mài",
      "pos": "n.",
-     "en": "takeaway, delivery food"
+     "en": "takeaway, delivery food",
+     "id": "qibu4-u1-8:6"
     }
    ]
   },
   {
-   "id": "qibu4-u2-1",
-   "title": "起步4 U2.1 · 你会打羽毛球吗？ Can you play badminton?",
+   "id": "qibu4-u2-1a",
+   "title": "起步4 U2.1 · 你会打羽毛球吗？ Can you play badminton? · 1",
    "words": [
     {
      "hanzi": "运动",
      "pinyin": "yùn dòng",
      "pos": "n./v.",
-     "en": "sport; to exercise"
+     "en": "sport; to exercise",
+     "id": "qibu4-u2-1:0"
     },
     {
      "hanzi": "游泳",
      "pinyin": "yóu yǒng",
      "pos": "v.",
-     "en": "to swim"
+     "en": "to swim",
+     "id": "qibu4-u2-1:1"
     },
     {
      "hanzi": "游",
      "pinyin": "yóu",
      "pos": "v.",
-     "en": "to swim (游一会儿 swim for a bit)"
+     "en": "to swim (游一会儿 swim for a bit)",
+     "id": "qibu4-u2-1:2"
     },
     {
      "hanzi": "打",
      "pinyin": "dǎ",
      "pos": "v.",
-     "en": "to play (ball games with hands or a racket); to hit"
+     "en": "to play (ball games with hands or a racket); to hit",
+     "id": "qibu4-u2-1:3"
     },
     {
      "hanzi": "羽毛球",
      "pinyin": "yǔ máo qiú",
      "pos": "n.",
-     "en": "badminton"
-    },
+     "en": "badminton",
+     "id": "qibu4-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u2-1b",
+   "title": "起步4 U2.1 · 你会打羽毛球吗？ Can you play badminton? · 2",
+   "words": [
     {
      "hanzi": "体育馆",
      "pinyin": "tǐ yù guǎn",
      "pos": "n.",
-     "en": "sports hall, sports centre"
+     "en": "sports hall, sports centre",
+     "id": "qibu4-u2-1:5"
     },
     {
      "hanzi": "球",
      "pinyin": "qiú",
      "pos": "n.",
-     "en": "ball; ball game"
+     "en": "ball; ball game",
+     "id": "qibu4-u2-1:6"
     },
     {
      "hanzi": "打球",
      "pinyin": "dǎ qiú",
      "pos": "v.",
-     "en": "to play (a ball game)"
+     "en": "to play (a ball game)",
+     "id": "qibu4-u2-1:7"
     },
     {
      "hanzi": "踢",
      "pinyin": "tī",
      "pos": "v.",
-     "en": "to kick; to play (football)"
+     "en": "to kick; to play (football)",
+     "id": "qibu4-u2-1:8"
     },
     {
      "hanzi": "足球",
      "pinyin": "zú qiú",
      "pos": "n.",
-     "en": "football"
+     "en": "football",
+     "id": "qibu4-u2-1:9"
     }
    ]
   },
   {
-   "id": "qibu4-u2-2",
-   "title": "起步4 U2.2 · 你会打羽毛球吗？ Can you play badminton?",
+   "id": "qibu4-u2-2a",
+   "title": "起步4 U2.2 · 你会打羽毛球吗？ Can you play badminton? · 1",
    "words": [
     {
      "hanzi": "难",
      "pinyin": "nán",
      "pos": "adj.",
-     "en": "difficult, hard"
+     "en": "difficult, hard",
+     "id": "qibu4-u2-2:0"
     },
     {
      "hanzi": "教",
      "pinyin": "jiāo",
      "pos": "v.",
-     "en": "to teach"
+     "en": "to teach",
+     "id": "qibu4-u2-2:1"
     },
     {
      "hanzi": "球拍",
      "pinyin": "qiú pāi",
      "pos": "n.",
-     "en": "racket, bat"
-    },
-    {
-     "hanzi": "运动鞋",
-     "pinyin": "yùn dòng xié",
-     "pos": "n.",
-     "en": "trainers"
+     "en": "racket, bat",
+     "id": "qibu4-u2-2:2"
     },
     {
      "hanzi": "鞋",
      "pinyin": "xié",
      "pos": "n.",
-     "en": "shoe"
+     "en": "shoe",
+     "id": "qibu4-u2-2:4"
     },
+    {
+     "hanzi": "运动鞋",
+     "pinyin": "yùn dòng xié",
+     "pos": "n.",
+     "en": "trainers",
+     "id": "qibu4-u2-2:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u2-2b",
+   "title": "起步4 U2.2 · 你会打羽毛球吗？ Can you play badminton? · 2",
+   "words": [
     {
      "hanzi": "行",
      "pinyin": "xíng",
      "pos": "adj.",
-     "en": "OK, fine (就行 that'll do)"
+     "en": "OK, fine (就行 that'll do)",
+     "id": "qibu4-u2-2:5"
     },
     {
      "hanzi": "篮球",
      "pinyin": "lán qiú",
      "pos": "n.",
-     "en": "basketball"
+     "en": "basketball",
+     "id": "qibu4-u2-2:6"
     },
     {
      "hanzi": "网球",
      "pinyin": "wǎng qiú",
      "pos": "n.",
-     "en": "tennis"
+     "en": "tennis",
+     "id": "qibu4-u2-2:7"
     },
     {
      "hanzi": "乒乓球",
      "pinyin": "pīng pāng qiú",
      "pos": "n.",
-     "en": "table tennis, ping-pong"
+     "en": "table tennis, ping-pong",
+     "id": "qibu4-u2-2:8"
     },
     {
      "hanzi": "健身",
      "pinyin": "jiàn shēn",
      "pos": "v.",
-     "en": "to work out (at the gym)"
+     "en": "to work out (at the gym)",
+     "id": "qibu4-u2-2:9"
     }
    ]
   },
   {
-   "id": "qibu4-u2-3",
-   "title": "起步4 U2.3 · 你会打羽毛球吗？ Can you play badminton?",
+   "id": "qibu4-u2-3a",
+   "title": "起步4 U2.3 · 你会打羽毛球吗？ Can you play badminton? · 1",
    "words": [
     {
      "hanzi": "健身房",
      "pinyin": "jiàn shēn fáng",
      "pos": "n.",
-     "en": "gym"
+     "en": "gym",
+     "id": "qibu4-u2-3:0"
     },
     {
      "hanzi": "爬山",
      "pinyin": "pá shān",
      "pos": "v.",
-     "en": "to go hiking, climb a mountain"
+     "en": "to go hiking, climb a mountain",
+     "id": "qibu4-u2-3:1"
     },
     {
      "hanzi": "锻炼",
      "pinyin": "duàn liàn",
      "pos": "v.",
-     "en": "to exercise, keep fit"
+     "en": "to exercise, keep fit",
+     "id": "qibu4-u2-3:2"
     },
     {
      "hanzi": "滑雪",
      "pinyin": "huá xuě",
      "pos": "v.",
-     "en": "to ski"
+     "en": "to ski",
+     "id": "qibu4-u2-3:3"
     },
     {
      "hanzi": "瑜伽",
      "pinyin": "yú jiā",
      "pos": "n.",
-     "en": "yoga"
-    },
+     "en": "yoga",
+     "id": "qibu4-u2-3:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u2-3b",
+   "title": "起步4 U2.3 · 你会打羽毛球吗？ Can you play badminton? · 2",
+   "words": [
     {
      "hanzi": "队",
      "pinyin": "duì",
      "pos": "n.",
-     "en": "team"
+     "en": "team",
+     "id": "qibu4-u2-3:5"
     },
     {
      "hanzi": "球迷",
      "pinyin": "qiú mí",
      "pos": "n.",
-     "en": "fan (of a ball game)"
+     "en": "fan (of a ball game)",
+     "id": "qibu4-u2-3:6"
     },
     {
      "hanzi": "教练",
      "pinyin": "jiào liàn",
      "pos": "n.",
-     "en": "coach, instructor"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u2-4",
-   "title": "起步4 U2.4 · 你会打羽毛球吗？ Can you play badminton?",
-   "words": [
+     "en": "coach, instructor",
+     "id": "qibu4-u2-3:7"
+    },
     {
      "hanzi": "拿",
      "pinyin": "ná",
      "pos": "v.",
-     "en": "to hold, to take"
+     "en": "to hold, to take",
+     "id": "qibu4-u2-4:0"
     },
     {
      "hanzi": "不错",
      "pinyin": "bù cuò",
      "pos": "adj.",
-     "en": "not bad, pretty good"
-    },
+     "en": "not bad, pretty good",
+     "id": "qibu4-u2-4:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u2-4a",
+   "title": "起步4 U2.4 · 你会打羽毛球吗？ Can you play badminton? · 1",
+   "words": [
     {
      "hanzi": "说话",
      "pinyin": "shuō huà",
      "pos": "v.",
-     "en": "to talk, speak"
+     "en": "to talk, speak",
+     "id": "qibu4-u2-4:2"
     },
     {
      "hanzi": "一边",
      "pinyin": "yī biān",
      "pos": "phr.",
-     "en": "doing … while doing … (一边…一边…)"
+     "en": "doing … while doing … (一边…一边…)",
+     "id": "qibu4-u2-4:3"
     },
     {
      "hanzi": "哎呀",
      "pinyin": "āi yā",
      "pos": "phr.",
-     "en": "oh no! oh dear!"
+     "en": "oh no! oh dear!",
+     "id": "qibu4-u2-4:4"
     },
     {
      "hanzi": "掉",
      "pinyin": "diào",
      "pos": "v.",
-     "en": "to drop, fall"
-    },
+     "en": "to drop, fall",
+     "id": "qibu4-u2-4:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u2-4b",
+   "title": "起步4 U2.4 · 你会打羽毛球吗？ Can you play badminton? · 2",
+   "words": [
     {
      "hanzi": "地上",
      "pinyin": "dì shang",
      "pos": "n.",
-     "en": "on the ground, on the floor"
+     "en": "on the ground, on the floor",
+     "id": "qibu4-u2-4:6"
     },
     {
      "hanzi": "坏",
      "pinyin": "huài",
      "pos": "adj.",
-     "en": "broken; bad"
+     "en": "broken; bad",
+     "id": "qibu4-u2-4:7"
     },
     {
      "hanzi": "练习",
      "pinyin": "liàn xí",
      "pos": "v./n.",
-     "en": "to practise; exercise"
+     "en": "to practise; exercise",
+     "id": "qibu4-u2-4:8"
     },
     {
      "hanzi": "出汗",
      "pinyin": "chū hàn",
      "pos": "v.",
-     "en": "to sweat"
+     "en": "to sweat",
+     "id": "qibu4-u2-4:9"
     }
    ]
   },
   {
-   "id": "qibu4-u3-1",
-   "title": "起步4 U3.1 · 我想买个新手机 I need a new phone",
+   "id": "qibu4-u3-1a",
+   "title": "起步4 U3.1 · 我想买个新手机 I need a new phone · 1",
    "words": [
     {
      "hanzi": "旧",
      "pinyin": "jiù",
      "pos": "adj.",
-     "en": "old (things, not people)"
+     "en": "old (things, not people)",
+     "id": "qibu4-u3-1:0"
     },
     {
      "hanzi": "新",
      "pinyin": "xīn",
      "pos": "adj.",
-     "en": "new"
+     "en": "new",
+     "id": "qibu4-u3-1:1"
     },
     {
      "hanzi": "又",
      "pinyin": "yòu",
      "pos": "phr.",
-     "en": "both … and … (又…又…)"
+     "en": "both … and … (又…又…)",
+     "id": "qibu4-u3-1:2"
     },
     {
      "hanzi": "轻",
      "pinyin": "qīng",
      "pos": "adj.",
-     "en": "light (not heavy)"
+     "en": "light (not heavy)",
+     "id": "qibu4-u3-1:3"
     },
     {
      "hanzi": "重",
      "pinyin": "zhòng",
      "pos": "adj.",
-     "en": "heavy"
-    },
+     "en": "heavy",
+     "id": "qibu4-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u3-1b",
+   "title": "起步4 U3.1 · 我想买个新手机 I need a new phone · 2",
+   "words": [
     {
      "hanzi": "屏幕",
      "pinyin": "píng mù",
      "pos": "n.",
-     "en": "screen"
+     "en": "screen",
+     "id": "qibu4-u3-1:5"
     },
     {
      "hanzi": "电池",
      "pinyin": "diàn chí",
      "pos": "n.",
-     "en": "battery"
+     "en": "battery",
+     "id": "qibu4-u3-1:6"
     },
     {
      "hanzi": "多了",
      "pinyin": "duō le",
      "pos": "phr.",
-     "en": "much (more), after an adjective (贵多了 much dearer)"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u3-2",
-   "title": "起步4 U3.2 · 我想买个新手机 I need a new phone",
-   "words": [
+     "en": "much (more), after an adjective (贵多了 much dearer)",
+     "id": "qibu4-u3-1:7",
+     "parts": [
+      "多",
+      "了"
+     ]
+    },
     {
      "hanzi": "不过",
      "pinyin": "bù guò",
      "pos": "conj.",
-     "en": "but, however"
+     "en": "but, however",
+     "id": "qibu4-u3-2:0"
     },
     {
      "hanzi": "最",
      "pinyin": "zuì",
      "pos": "adv.",
-     "en": "most, -est"
-    },
+     "en": "most, -est",
+     "id": "qibu4-u3-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u3-2a",
+   "title": "起步4 U3.2 · 我想买个新手机 I need a new phone",
+   "words": [
     {
      "hanzi": "重要",
      "pinyin": "zhòng yào",
      "pos": "adj.",
-     "en": "important"
-    },
-    {
-     "hanzi": "用",
-     "pinyin": "yòng",
-     "pos": "v.",
-     "en": "to use"
+     "en": "important",
+     "id": "qibu4-u3-2:2"
     },
     {
      "hanzi": "电脑",
      "pinyin": "diàn nǎo",
      "pos": "n.",
-     "en": "computer"
+     "en": "computer",
+     "id": "qibu4-u3-2:4"
     },
     {
      "hanzi": "耳机",
      "pinyin": "ěr jī",
      "pos": "n.",
-     "en": "headphones, earphones"
+     "en": "headphones, earphones",
+     "id": "qibu4-u3-2:5"
     },
     {
      "hanzi": "充电",
      "pinyin": "chōng diàn",
      "pos": "v.",
-     "en": "to charge (a battery)"
+     "en": "to charge (a battery)",
+     "id": "qibu4-u3-2:6"
     },
     {
      "hanzi": "价钱",
      "pinyin": "jià qian",
      "pos": "n.",
-     "en": "price"
+     "en": "price",
+     "id": "qibu4-u3-2:7"
     }
    ]
   },
   {
-   "id": "qibu4-u3-3",
+   "id": "qibu4-u3-3a",
    "title": "起步4 U3.3 · 我想买个新手机 I need a new phone",
    "words": [
     {
      "hanzi": "相机",
      "pinyin": "xiàng jī",
      "pos": "n.",
-     "en": "camera"
+     "en": "camera",
+     "id": "qibu4-u3-3:0"
     },
     {
      "hanzi": "大小",
      "pinyin": "dà xiǎo",
      "pos": "n.",
-     "en": "size"
+     "en": "size",
+     "id": "qibu4-u3-3:1"
     },
     {
      "hanzi": "手表",
      "pinyin": "shǒu biǎo",
      "pos": "n.",
-     "en": "watch"
+     "en": "watch",
+     "id": "qibu4-u3-3:2"
     },
     {
      "hanzi": "平板电脑",
      "pinyin": "píng bǎn diàn nǎo",
      "pos": "n.",
-     "en": "tablet (computer)"
+     "en": "tablet (computer)",
+     "id": "qibu4-u3-3:3"
     },
     {
      "hanzi": "上网",
      "pinyin": "shàng wǎng",
      "pos": "v.",
-     "en": "to go online"
-    },
-    {
-     "hanzi": "修",
-     "pinyin": "xiū",
-     "pos": "v.",
-     "en": "to repair, fix"
+     "en": "to go online",
+     "id": "qibu4-u3-3:4"
     }
    ]
   },
   {
-   "id": "qibu4-u3-4",
-   "title": "起步4 U3.4 · 我想买个新手机 I need a new phone",
+   "id": "qibu4-u3-4a",
+   "title": "起步4 U3.4 · 我想买个新手机 I need a new phone · 1",
    "words": [
+    {
+     "hanzi": "修",
+     "pinyin": "xiū",
+     "pos": "v.",
+     "en": "to repair, fix",
+     "id": "qibu4-u3-3:5"
+    },
     {
      "hanzi": "店员",
      "pinyin": "diàn yuán",
      "pos": "n.",
-     "en": "shop assistant"
+     "en": "shop assistant",
+     "id": "qibu4-u3-4:0"
     },
     {
      "hanzi": "颜色",
      "pinyin": "yán sè",
      "pos": "n.",
-     "en": "colour"
+     "en": "colour",
+     "id": "qibu4-u3-4:1"
     },
     {
      "hanzi": "黑色",
      "pinyin": "hēi sè",
      "pos": "n.",
-     "en": "black"
+     "en": "black",
+     "id": "qibu4-u3-4:2"
     },
     {
      "hanzi": "白色",
      "pinyin": "bái sè",
      "pos": "n.",
-     "en": "white"
-    },
+     "en": "white",
+     "id": "qibu4-u3-4:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u3-4b",
+   "title": "起步4 U3.4 · 我想买个新手机 I need a new phone · 2",
+   "words": [
     {
      "hanzi": "蓝色",
      "pinyin": "lán sè",
      "pos": "n.",
-     "en": "blue"
+     "en": "blue",
+     "id": "qibu4-u3-4:4"
     },
     {
      "hanzi": "红色",
      "pinyin": "hóng sè",
      "pos": "n.",
-     "en": "red"
+     "en": "red",
+     "id": "qibu4-u3-4:5"
     },
     {
      "hanzi": "绿色",
      "pinyin": "lǜ sè",
      "pos": "n.",
-     "en": "green"
+     "en": "green",
+     "id": "qibu4-u3-4:6"
     },
     {
      "hanzi": "或者",
      "pinyin": "huò zhě",
      "pos": "conj.",
-     "en": "or (in statements)"
+     "en": "or (in statements)",
+     "id": "qibu4-u3-4:7"
     }
    ]
   },
   {
-   "id": "qibu4-u3-5",
-   "title": "起步4 U3.5 · 我想买个新手机 I need a new phone",
+   "id": "qibu4-u3-5a",
+   "title": "起步4 U3.5 · 我想买个新手机 I need a new phone · 1",
    "words": [
     {
      "hanzi": "受欢迎",
      "pinyin": "shòu huān yíng",
      "pos": "adj.",
-     "en": "popular"
+     "en": "popular",
+     "id": "qibu4-u3-5:0"
     },
     {
      "hanzi": "送",
      "pinyin": "sòng",
      "pos": "v.",
-     "en": "to throw in, give free (new meaning)"
+     "en": "to throw in, give free (new meaning)",
+     "id": "qibu4-u3-5:1"
     },
     {
-     "hanzi": "手机壳",
-     "pinyin": "shǒu jī ké",
+     "hanzi": "壳",
+     "pinyin": "ké",
      "pos": "n.",
-     "en": "phone case"
+     "en": "case, shell (手机壳 phone case)",
+     "id": "jinbu4-u1-6:2"
     },
     {
      "hanzi": "帮",
      "pinyin": "bāng",
      "pos": "v.",
-     "en": "to help"
+     "en": "to help",
+     "id": "qibu4-u3-5:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u3-5b",
+   "title": "起步4 U3.5 · 我想买个新手机 I need a new phone · 2",
+   "words": [
+    {
+     "hanzi": "手机壳",
+     "pinyin": "shǒu jī ké",
+     "pos": "n.",
+     "en": "phone case",
+     "id": "qibu4-u3-5:2",
+     "parts": [
+      "手机",
+      "壳"
+     ]
     },
     {
      "hanzi": "最后",
      "pinyin": "zuì hòu",
      "pos": "adv.",
-     "en": "in the end, finally"
+     "en": "in the end, finally",
+     "id": "qibu4-u3-5:4"
     },
     {
      "hanzi": "灰色",
      "pinyin": "huī sè",
      "pos": "n.",
-     "en": "grey"
+     "en": "grey",
+     "id": "qibu4-u3-5:5"
     },
     {
      "hanzi": "密码",
      "pinyin": "mì mǎ",
      "pos": "n.",
-     "en": "password, PIN"
+     "en": "password, PIN",
+     "id": "qibu4-u3-5:6"
     }
    ]
   },
   {
-   "id": "qibu4-u4-1",
-   "title": "起步4 U4.1 · 喂，是体育馆吗？ Hello, is that the sports hall?",
+   "id": "qibu4-u4-1a",
+   "title": "起步4 U4.1 · 喂，是体育馆吗？ Hello, is that the sports hall? · 1",
    "words": [
     {
      "hanzi": "喂",
      "pinyin": "wèi",
      "pos": "phr.",
-     "en": "hello (on the phone); hey!"
+     "en": "hello (on the phone); hey!",
+     "id": "qibu4-u4-1:0"
     },
     {
      "hanzi": "哪位",
      "pinyin": "nǎ wèi",
      "pos": "q.",
-     "en": "who (polite)"
+     "en": "who (polite)",
+     "id": "qibu4-u4-1:1"
     },
     {
      "hanzi": "接",
      "pinyin": "jiē",
      "pos": "v.",
-     "en": "to answer (the phone); to pick up (someone)"
+     "en": "to answer (the phone); to pick up (someone)",
+     "id": "qibu4-u4-1:2"
     },
     {
      "hanzi": "可能",
      "pinyin": "kě néng",
      "pos": "adv.",
-     "en": "maybe, probably"
+     "en": "maybe, probably",
+     "id": "qibu4-u4-1:3"
     },
     {
      "hanzi": "听到",
      "pinyin": "tīng dào",
      "pos": "v.",
-     "en": "to hear"
-    },
-    {
-     "hanzi": "打错",
-     "pinyin": "dǎ cuò",
-     "pos": "v.",
-     "en": "to dial the wrong number"
-    },
+     "en": "to hear",
+     "id": "qibu4-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-1b",
+   "title": "起步4 U4.1 · 喂，是体育馆吗？ Hello, is that the sports hall? · 2",
+   "words": [
     {
      "hanzi": "错",
      "pinyin": "cuò",
      "pos": "adj.",
-     "en": "wrong"
+     "en": "wrong",
+     "id": "qibu4-u4-1:6"
     },
     {
      "hanzi": "打电话",
      "pinyin": "dǎ diàn huà",
      "pos": "v.",
-     "en": "to make a phone call (给…打电话 to ring someone)"
+     "en": "to make a phone call (给…打电话 to ring someone)",
+     "id": "qibu4-u4-1:7"
     },
     {
      "hanzi": "找",
      "pinyin": "zhǎo",
      "pos": "v.",
-     "en": "to look for; to want to speak to"
+     "en": "to look for; to want to speak to",
+     "id": "qibu4-u4-1:8"
     },
     {
      "hanzi": "跟",
      "pinyin": "gēn",
      "pos": "prep.",
-     "en": "with (跟…一起 together with)"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u4-2",
-   "title": "起步4 U4.2 · 喂，是体育馆吗？ Hello, is that the sports hall?",
-   "words": [
+     "en": "with (跟…一起 together with)",
+     "id": "qibu4-u4-1:9"
+    },
     {
      "hanzi": "叫上",
      "pinyin": "jiào shang",
      "pos": "v.",
-     "en": "to get (someone) to come along"
+     "en": "to get (someone) to come along",
+     "id": "qibu4-u4-2:0",
+     "parts": [
+      "叫",
+      "上"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-2a",
+   "title": "起步4 U4.2 · 喂，是体育馆吗？ Hello, is that the sports hall? · 1",
+   "words": [
+    {
+     "hanzi": "打错",
+     "pinyin": "dǎ cuò",
+     "pos": "v.",
+     "en": "to dial the wrong number",
+     "id": "qibu4-u4-1:5",
+     "parts": [
+      "打",
+      "错"
+     ]
     },
     {
      "hanzi": "回电话",
      "pinyin": "huí diàn huà",
      "pos": "v.",
-     "en": "to ring back"
+     "en": "to ring back",
+     "id": "qibu4-u4-2:1",
+     "parts": [
+      "回",
+      "电话"
+     ]
     },
     {
      "hanzi": "发",
      "pinyin": "fā",
      "pos": "v.",
-     "en": "to send (a message)"
+     "en": "to send (a message)",
+     "id": "qibu4-u4-2:2"
     },
+    {
+     "hanzi": "占",
+     "pinyin": "zhàn",
+     "pos": "v.",
+     "en": "to take up, occupy (占地方 take up room)",
+     "id": "dabu2-u1-1:0"
+    },
+    {
+     "hanzi": "线",
+     "pinyin": "xiàn",
+     "pos": "n.",
+     "en": "line",
+     "id": "jinbu1-u2-2:10"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-2b",
+   "title": "起步4 U4.2 · 喂，是体育馆吗？ Hello, is that the sports hall? · 2",
+   "words": [
     {
      "hanzi": "占线",
      "pinyin": "zhàn xiàn",
      "pos": "v.",
-     "en": "(of a phone line) to be engaged"
+     "en": "(of a phone line) to be engaged",
+     "id": "qibu4-u4-2:3",
+     "parts": [
+      "占",
+      "线"
+     ]
     },
     {
      "hanzi": "留言",
      "pinyin": "liú yán",
      "pos": "v./n.",
-     "en": "to leave a message; message"
+     "en": "to leave a message; message",
+     "id": "qibu4-u4-2:4"
     },
     {
      "hanzi": "声音",
      "pinyin": "shēng yīn",
      "pos": "n.",
-     "en": "voice, sound"
+     "en": "voice, sound",
+     "id": "qibu4-u4-2:5"
     },
     {
      "hanzi": "大声",
      "pinyin": "dà shēng",
      "pos": "adv.",
-     "en": "loudly"
+     "en": "loudly",
+     "id": "qibu4-u4-2:6"
     },
     {
      "hanzi": "信号",
      "pinyin": "xìn hào",
      "pos": "n.",
-     "en": "signal"
-    },
+     "en": "signal",
+     "id": "qibu4-u4-2:7"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-3a",
+   "title": "起步4 U4.3 · 喂，是体育馆吗？ Hello, is that the sports hall? · 1",
+   "words": [
     {
      "hanzi": "短信",
      "pinyin": "duǎn xìn",
      "pos": "n.",
-     "en": "text message"
+     "en": "text message",
+     "id": "qibu4-u4-2:8"
     },
     {
      "hanzi": "消息",
      "pinyin": "xiāo xi",
      "pos": "n.",
-     "en": "message; news"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u4-3",
-   "title": "起步4 U4.3 · 喂，是体育馆吗？ Hello, is that the sports hall?",
-   "words": [
+     "en": "message; news",
+     "id": "qibu4-u4-2:9"
+    },
     {
      "hanzi": "预订",
      "pinyin": "yù dìng",
      "pos": "v.",
-     "en": "to book, reserve"
+     "en": "to book, reserve",
+     "id": "qibu4-u4-3:0"
     },
     {
      "hanzi": "订",
      "pinyin": "dìng",
      "pos": "v.",
-     "en": "to book (in speech)"
+     "en": "to book (in speech)",
+     "id": "qibu4-u4-3:1"
     },
     {
      "hanzi": "前台",
      "pinyin": "qián tái",
      "pos": "n.",
-     "en": "reception, front desk"
-    },
+     "en": "reception, front desk",
+     "id": "qibu4-u4-3:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-3b",
+   "title": "起步4 U4.3 · 喂，是体育馆吗？ Hello, is that the sports hall? · 2",
+   "words": [
     {
      "hanzi": "场",
      "pinyin": "chǎng",
      "pos": "n./m.",
-     "en": "court, pitch; measure word for matches and games"
+     "en": "court, pitch; measure word for matches and games",
+     "id": "qibu4-u4-3:3"
     },
     {
      "hanzi": "公园",
      "pinyin": "gōng yuán",
      "pos": "n.",
-     "en": "park"
+     "en": "park",
+     "id": "qibu4-u4-3:4"
     },
     {
      "hanzi": "桌子",
      "pinyin": "zhuō zi",
      "pos": "n.",
-     "en": "table"
+     "en": "table",
+     "id": "qibu4-u4-3:5"
     },
     {
      "hanzi": "乒乓球桌",
      "pinyin": "pīng pāng qiú zhuō",
      "pos": "n.",
-     "en": "table-tennis table"
+     "en": "table-tennis table",
+     "id": "qibu4-u4-3:6"
     },
     {
      "hanzi": "很会",
      "pinyin": "hěn huì",
      "pos": "phr.",
-     "en": "to be good at (很会打乒乓球 good at table tennis)"
+     "en": "to be good at (很会打乒乓球 good at table tennis)",
+     "id": "qibu4-u4-3:7",
+     "parts": [
+      "很",
+      "会"
+     ]
     }
    ]
   },
   {
-   "id": "qibu4-u4-4",
+   "id": "qibu4-u4-4a",
    "title": "起步4 U4.4 · 喂，是体育馆吗？ Hello, is that the sports hall?",
    "words": [
     {
      "hanzi": "到时候",
      "pinyin": "dào shí hou",
      "pos": "phr.",
-     "en": "then, when the time comes"
+     "en": "then, when the time comes",
+     "id": "qibu4-u4-4:0"
     },
     {
      "hanzi": "比赛",
      "pinyin": "bǐ sài",
      "pos": "n./v.",
-     "en": "match, competition; to compete"
+     "en": "match, competition; to compete",
+     "id": "qibu4-u4-4:1"
     },
     {
      "hanzi": "赢",
      "pinyin": "yíng",
      "pos": "v.",
-     "en": "to win"
+     "en": "to win",
+     "id": "qibu4-u4-4:2"
     },
     {
      "hanzi": "输",
      "pinyin": "shū",
      "pos": "v.",
-     "en": "to lose"
+     "en": "to lose",
+     "id": "qibu4-u4-4:3"
     },
     {
      "hanzi": "板球",
      "pinyin": "bǎn qiú",
      "pos": "n.",
-     "en": "cricket"
-    },
-    {
-     "hanzi": "懂",
-     "pinyin": "dǒng",
-     "pos": "v.",
-     "en": "to understand"
-    },
+     "en": "cricket",
+     "id": "qibu4-u4-4:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-5a",
+   "title": "起步4 U4.5 · 喂，是体育馆吗？ Hello, is that the sports hall? · 1",
+   "words": [
     {
      "hanzi": "小时候",
      "pinyin": "xiǎo shí hou",
      "pos": "n.",
-     "en": "as a child, when (I was) little"
+     "en": "as a child, when (I was) little",
+     "id": "qibu4-u4-4:6"
     },
     {
      "hanzi": "同学",
      "pinyin": "tóng xué",
      "pos": "n.",
-     "en": "classmate"
-    }
-   ]
-  },
-  {
-   "id": "qibu4-u4-5",
-   "title": "起步4 U4.5 · 喂，是体育馆吗？ Hello, is that the sports hall?",
-   "words": [
+     "en": "classmate",
+     "id": "qibu4-u4-4:7"
+    },
     {
      "hanzi": "取消",
      "pinyin": "qǔ xiāo",
      "pos": "v.",
-     "en": "to cancel"
+     "en": "to cancel",
+     "id": "qibu4-u4-5:0"
     },
     {
      "hanzi": "运动员",
      "pinyin": "yùn dòng yuán",
      "pos": "n.",
-     "en": "athlete, player"
+     "en": "athlete, player",
+     "id": "qibu4-u4-5:1"
     },
     {
      "hanzi": "世界",
      "pinyin": "shì jiè",
      "pos": "n.",
-     "en": "world"
-    },
+     "en": "world",
+     "id": "qibu4-u4-5:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu4-u4-5b",
+   "title": "起步4 U4.5 · 喂，是体育馆吗？ Hello, is that the sports hall? · 2",
+   "words": [
     {
      "hanzi": "冠军",
      "pinyin": "guàn jūn",
      "pos": "n.",
-     "en": "champion"
+     "en": "champion",
+     "id": "qibu4-u4-5:3"
     },
     {
      "hanzi": "有名",
      "pinyin": "yǒu míng",
      "pos": "adj.",
-     "en": "famous"
+     "en": "famous",
+     "id": "qibu4-u4-5:4"
     },
     {
      "hanzi": "奥运会",
      "pinyin": "Ào yùn huì",
      "pos": "n.",
-     "en": "the Olympic Games"
+     "en": "the Olympic Games",
+     "id": "qibu4-u4-5:5"
     },
     {
      "hanzi": "到处",
      "pinyin": "dào chù",
      "pos": "",
-     "en": "everywhere"
+     "en": "everywhere",
+     "id": "qibu4-u4-5:6"
     }
    ]
   },
   {
-   "id": "qibu5-u1-1",
-   "title": "起步5 U1.1 · 演出怎么样？ How was the show?",
+   "id": "qibu5-u1-1a",
+   "title": "起步5 U1.1 · 演出怎么样？ How was the show? · 1",
    "words": [
     {
      "hanzi": "早",
      "pinyin": "zǎo",
      "pos": "adj.",
-     "en": "early; (as a greeting) morning!"
+     "en": "early; (as a greeting) morning!",
+     "id": "qibu5-u1-1:0"
     },
     {
      "hanzi": "演出",
      "pinyin": "yǎn chū",
      "pos": "n./v.",
-     "en": "show, performance; to perform"
+     "en": "show, performance; to perform",
+     "id": "qibu5-u1-1:1"
     },
     {
      "hanzi": "挺",
      "pinyin": "tǐng",
      "pos": "adv.",
-     "en": "quite, pretty (挺好的 pretty good)"
+     "en": "quite, pretty (挺好的 pretty good)",
+     "id": "qibu5-u1-1:2"
     },
     {
      "hanzi": "可惜",
      "pinyin": "kě xī",
      "pos": "adj.",
-     "en": "a pity, a shame (太可惜了 what a shame)"
+     "en": "a pity, a shame (太可惜了 what a shame)",
+     "id": "qibu5-u1-1:3"
     },
     {
      "hanzi": "办法",
      "pinyin": "bàn fǎ",
      "pos": "n.",
-     "en": "way, means (没办法 it can't be helped)"
-    },
+     "en": "way, means (没办法 it can't be helped)",
+     "id": "qibu5-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-1b",
+   "title": "起步5 U1.1 · 演出怎么样？ How was the show? · 2",
+   "words": [
     {
      "hanzi": "首",
      "pinyin": "shǒu",
      "pos": "m.",
-     "en": "for songs and poems"
+     "en": "for songs and poems",
+     "id": "qibu5-u1-1:5"
     },
     {
      "hanzi": "歌",
      "pinyin": "gē",
      "pos": "n.",
-     "en": "song"
+     "en": "song",
+     "id": "qibu5-u1-1:6"
     },
     {
      "hanzi": "四川话",
      "pinyin": "Sì chuān huà",
      "pos": "n.",
-     "en": "Sichuanese, the Sichuan dialect"
+     "en": "Sichuanese, the Sichuan dialect",
+     "id": "qibu5-u1-1:7"
     },
     {
      "hanzi": "紧张",
      "pinyin": "jǐn zhāng",
      "pos": "adj.",
-     "en": "nervous"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u1-2",
-   "title": "起步5 U1.2 · 演出怎么样？ How was the show?",
-   "words": [
+     "en": "nervous",
+     "id": "qibu5-u1-1:8"
+    },
     {
      "hanzi": "后来",
      "pinyin": "hòu lái",
      "pos": "n.",
-     "en": "afterwards, later on (in the past)"
-    },
+     "en": "afterwards, later on (in the past)",
+     "id": "qibu5-u1-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-2a",
+   "title": "起步5 U1.2 · 演出怎么样？ How was the show? · 1",
+   "words": [
     {
      "hanzi": "觉得",
      "pinyin": "jué de",
      "pos": "v.",
-     "en": "to think, to feel"
+     "en": "to think, to feel",
+     "id": "qibu5-u1-2:1"
     },
     {
      "hanzi": "好听",
      "pinyin": "hǎo tīng",
      "pos": "adj.",
-     "en": "nice to listen to, lovely (music, voices)"
+     "en": "nice to listen to, lovely (music, voices)",
+     "id": "qibu5-u1-2:2"
     },
     {
      "hanzi": "句",
      "pinyin": "jù",
      "pos": "m.",
-     "en": "for lines and sentences"
+     "en": "for lines and sentences",
+     "id": "qibu5-u1-2:3"
     },
     {
      "hanzi": "听懂",
      "pinyin": "tīng dǒng",
      "pos": "v.",
-     "en": "to understand (what you hear)"
+     "en": "to understand (what you hear)",
+     "id": "qibu5-u1-2:4"
     },
     {
      "hanzi": "还可以",
      "pinyin": "hái kě yǐ",
      "pos": "phr.",
-     "en": "OK, not bad"
-    },
+     "en": "OK, not bad",
+     "id": "qibu5-u1-2:5",
+     "parts": [
+      "还",
+      "可以"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-2b",
+   "title": "起步5 U1.2 · 演出怎么样？ How was the show? · 2",
+   "words": [
     {
      "hanzi": "一般",
      "pinyin": "yī bān",
      "pos": "adj.",
-     "en": "so-so, average"
+     "en": "so-so, average",
+     "id": "qibu5-u1-2:6"
     },
     {
      "hanzi": "歌手",
      "pinyin": "gē shǒu",
      "pos": "n.",
-     "en": "singer"
+     "en": "singer",
+     "id": "qibu5-u1-2:7"
     },
     {
      "hanzi": "观众",
      "pinyin": "guān zhòng",
      "pos": "n.",
-     "en": "audience"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u1-3",
-   "title": "起步5 U1.3 · 演出怎么样？ How was the show?",
-   "words": [
+     "en": "audience",
+     "id": "qibu5-u1-2:8"
+    },
     {
      "hanzi": "钢琴",
      "pinyin": "gāng qín",
      "pos": "n.",
-     "en": "piano"
+     "en": "piano",
+     "id": "qibu5-u1-3:0"
     },
     {
      "hanzi": "鼓掌",
      "pinyin": "gǔ zhǎng",
      "pos": "v.",
-     "en": "to clap, applaud"
-    },
+     "en": "to clap, applaud",
+     "id": "qibu5-u1-3:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-3a",
+   "title": "起步5 U1.3 · 演出怎么样？ How was the show?",
+   "words": [
     {
      "hanzi": "门票",
      "pinyin": "mén piào",
      "pos": "n.",
-     "en": "(entrance) ticket"
+     "en": "(entrance) ticket",
+     "id": "qibu5-u1-3:2"
     },
     {
      "hanzi": "酒吧",
      "pinyin": "jiǔ bā",
      "pos": "n.",
-     "en": "bar, pub"
+     "en": "bar, pub",
+     "id": "qibu5-u1-3:3"
     },
     {
      "hanzi": "乐队",
      "pinyin": "yuè duì",
      "pos": "n.",
-     "en": "band"
+     "en": "band",
+     "id": "qibu5-u1-3:4"
     },
     {
      "hanzi": "表演",
      "pinyin": "biǎo yǎn",
      "pos": "v./n.",
-     "en": "to perform; performance"
+     "en": "to perform; performance",
+     "id": "qibu5-u1-3:5"
     },
     {
      "hanzi": "热闹",
      "pinyin": "rè nao",
      "pos": "adj.",
-     "en": "lively, busy and fun"
-    },
+     "en": "lively, busy and fun",
+     "id": "qibu5-u1-3:6"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-4a",
+   "title": "起步5 U1.4 · 演出怎么样？ How was the show? · 1",
+   "words": [
     {
      "hanzi": "精彩",
      "pinyin": "jīng cǎi",
      "pos": "adj.",
-     "en": "brilliant, exciting (a show, a match)"
+     "en": "brilliant, exciting (a show, a match)",
+     "id": "qibu5-u1-3:7"
     },
     {
      "hanzi": "有意思",
      "pinyin": "yǒu yì si",
      "pos": "adj.",
-     "en": "interesting, fun"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u1-4",
-   "title": "起步5 U1.4 · 演出怎么样？ How was the show?",
-   "words": [
+     "en": "interesting, fun",
+     "id": "qibu5-u1-3:8"
+    },
     {
      "hanzi": "没意思",
      "pinyin": "méi yì si",
      "pos": "adj.",
-     "en": "boring"
+     "en": "boring",
+     "id": "qibu5-u1-4:0"
     },
     {
      "hanzi": "音乐会",
      "pinyin": "yīn yuè huì",
      "pos": "n.",
-     "en": "concert"
+     "en": "concert",
+     "id": "qibu5-u1-4:1"
     },
     {
      "hanzi": "晚会",
      "pinyin": "wǎn huì",
      "pos": "n.",
-     "en": "evening party, gala night"
-    },
+     "en": "evening party, gala night",
+     "id": "qibu5-u1-4:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-4b",
+   "title": "起步5 U1.4 · 演出怎么样？ How was the show? · 2",
+   "words": [
     {
      "hanzi": "节目",
      "pinyin": "jié mù",
      "pos": "n.",
-     "en": "programme; act, item (in a show)"
+     "en": "programme; act, item (in a show)",
+     "id": "qibu5-u1-4:3"
     },
     {
      "hanzi": "流行",
      "pinyin": "liú xíng",
      "pos": "adj./v.",
-     "en": "popular; to be in fashion (流行歌 pop songs)"
+     "en": "popular; to be in fashion (流行歌 pop songs)",
+     "id": "qibu5-u1-4:4"
     },
     {
      "hanzi": "满意",
      "pinyin": "mǎn yì",
      "pos": "adj.",
-     "en": "satisfied, pleased"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u1-5",
-   "title": "起步5 U1.5 · 演出怎么样？ How was the show?",
-   "words": [
+     "en": "satisfied, pleased",
+     "id": "qibu5-u1-4:5"
+    },
     {
      "hanzi": "说真的",
      "pinyin": "shuō zhēn de",
      "pos": "phr.",
-     "en": "honestly, to be honest"
+     "en": "honestly, to be honest",
+     "id": "qibu5-u1-5:0"
     },
     {
      "hanzi": "其实",
      "pinyin": "qí shí",
      "pos": "adv.",
-     "en": "actually, in fact"
-    },
+     "en": "actually, in fact",
+     "id": "qibu5-u1-5:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u1-5a",
+   "title": "起步5 U1.5 · 演出怎么样？ How was the show?",
+   "words": [
     {
      "hanzi": "唱",
      "pinyin": "chàng",
      "pos": "v.",
-     "en": "to sing (唱一首歌 sing a song)"
+     "en": "to sing (唱一首歌 sing a song)",
+     "id": "qibu5-u1-5:2"
     },
     {
      "hanzi": "棒",
      "pinyin": "bàng",
      "pos": "adj.",
-     "en": "great, brilliant (太棒了！)"
+     "en": "great, brilliant (太棒了！)",
+     "id": "qibu5-u1-5:3"
     },
     {
      "hanzi": "慢慢",
      "pinyin": "màn màn",
      "pos": "adv.",
-     "en": "slowly, bit by bit"
+     "en": "slowly, bit by bit",
+     "id": "qibu5-u1-5:4"
     },
     {
      "hanzi": "同事",
      "pinyin": "tóng shì",
      "pos": "n.",
-     "en": "colleague"
+     "en": "colleague",
+     "id": "qibu5-u1-5:5"
     },
     {
      "hanzi": "感觉",
      "pinyin": "gǎn jué",
      "pos": "n./v.",
-     "en": "feeling; to feel"
+     "en": "feeling; to feel",
+     "id": "qibu5-u1-5:6"
     }
    ]
   },
   {
-   "id": "qibu5-u2-1",
-   "title": "起步5 U2.1 · 你说得真好！ Your Chinese is so good!",
+   "id": "qibu5-u2-1a",
+   "title": "起步5 U2.1 · 你说得真好！ Your Chinese is so good! · 1",
    "words": [
     {
      "hanzi": "香",
      "pinyin": "xiāng",
      "pos": "adj.",
-     "en": "smelling good; tasty (好香啊！ that smells good!)"
+     "en": "smelling good; tasty (好香啊！ that smells good!)",
+     "id": "qibu5-u2-1:0"
     },
     {
      "hanzi": "烤",
      "pinyin": "kǎo",
      "pos": "v.",
-     "en": "to roast, bake, grill"
+     "en": "to roast, bake, grill",
+     "id": "qibu5-u2-1:1"
     },
     {
      "hanzi": "烤鸡",
      "pinyin": "kǎo jī",
      "pos": "n.",
-     "en": "roast chicken"
+     "en": "roast chicken",
+     "id": "qibu5-u2-1:2"
     },
     {
      "hanzi": "土豆",
      "pinyin": "tǔ dòu",
      "pos": "n.",
-     "en": "potato"
+     "en": "potato",
+     "id": "qibu5-u2-1:3"
     },
     {
      "hanzi": "洗",
      "pinyin": "xǐ",
      "pos": "v.",
-     "en": "to wash"
-    },
+     "en": "to wash",
+     "id": "qibu5-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u2-1b",
+   "title": "起步5 U2.1 · 你说得真好！ Your Chinese is so good! · 2",
+   "words": [
     {
      "hanzi": "切",
      "pinyin": "qiē",
      "pos": "v.",
-     "en": "to cut, chop"
+     "en": "to cut, chop",
+     "id": "qibu5-u2-1:5"
     },
     {
      "hanzi": "得",
      "pinyin": "de",
      "pos": "part.",
-     "en": "links a verb to a comment on how it's done (说得很好 speak well) (new meaning)"
+     "en": "links a verb to a comment on how it's done (说得很好 speak well) (new meaning)",
+     "id": "qibu5-u2-1:6"
     },
     {
      "hanzi": "哪里哪里",
      "pinyin": "nǎ lǐ nǎ lǐ",
      "pos": "phr.",
-     "en": "oh, not really (a modest reply to praise)"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u2-2",
-   "title": "起步5 U2.2 · 你说得真好！ Your Chinese is so good!",
-   "words": [
+     "en": "oh, not really (a modest reply to praise)",
+     "id": "qibu5-u2-1:7",
+     "parts": [
+      "哪里"
+     ]
+    },
     {
      "hanzi": "做菜",
      "pinyin": "zuò cài",
      "pos": "v.",
-     "en": "to cook"
+     "en": "to cook",
+     "id": "qibu5-u2-2:0"
     },
     {
      "hanzi": "简单",
      "pinyin": "jiǎn dān",
      "pos": "adj.",
-     "en": "simple, easy"
-    },
+     "en": "simple, easy",
+     "id": "qibu5-u2-2:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u2-2a",
+   "title": "起步5 U2.2 · 你说得真好！ Your Chinese is so good!",
+   "words": [
     {
      "hanzi": "越来越",
      "pinyin": "yuè lái yuè",
      "pos": "adv.",
-     "en": "more and more (越来越好 better and better)"
+     "en": "more and more (越来越好 better and better)",
+     "id": "qibu5-u2-2:2"
     },
     {
      "hanzi": "希望",
      "pinyin": "xī wàng",
      "pos": "v./n.",
-     "en": "to hope; hope"
+     "en": "to hope; hope",
+     "id": "qibu5-u2-2:3"
     },
     {
      "hanzi": "厨房",
      "pinyin": "chú fáng",
      "pos": "n.",
-     "en": "kitchen"
+     "en": "kitchen",
+     "id": "qibu5-u2-2:4"
     },
     {
      "hanzi": "盐",
      "pinyin": "yán",
      "pos": "n.",
-     "en": "salt"
+     "en": "salt",
+     "id": "qibu5-u2-2:5"
     },
     {
      "hanzi": "锅",
      "pinyin": "guō",
      "pos": "n.",
-     "en": "wok, pan, pot"
-    },
-    {
-     "hanzi": "刀",
-     "pinyin": "dāo",
-     "pos": "n.",
-     "en": "knife"
+     "en": "wok, pan, pot",
+     "id": "qibu5-u2-2:6"
     }
    ]
   },
   {
-   "id": "qibu5-u2-3",
-   "title": "起步5 U2.3 · 你说得真好！ Your Chinese is so good!",
+   "id": "qibu5-u2-3a",
+   "title": "起步5 U2.3 · 你说得真好！ Your Chinese is so good! · 1",
    "words": [
+    {
+     "hanzi": "刀",
+     "pinyin": "dāo",
+     "pos": "n.",
+     "en": "knife",
+     "id": "qibu5-u2-2:7"
+    },
     {
      "hanzi": "洗碗",
      "pinyin": "xǐ wǎn",
      "pos": "v.",
-     "en": "to wash up"
+     "en": "to wash up",
+     "id": "qibu5-u2-3:0"
     },
     {
      "hanzi": "烤鸭",
      "pinyin": "kǎo yā",
      "pos": "n.",
-     "en": "roast duck"
+     "en": "roast duck",
+     "id": "qibu5-u2-3:1"
     },
     {
      "hanzi": "帮忙",
      "pinyin": "bāng máng",
      "pos": "v.",
-     "en": "to help, give a hand"
+     "en": "to help, give a hand",
+     "id": "qibu5-u2-3:2"
     },
     {
      "hanzi": "甜点",
      "pinyin": "tián diǎn",
      "pos": "n.",
-     "en": "dessert"
-    },
+     "en": "dessert",
+     "id": "qibu5-u2-3:3"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u2-3b",
+   "title": "起步5 U2.3 · 你说得真好！ Your Chinese is so good! · 2",
+   "words": [
     {
      "hanzi": "油",
      "pinyin": "yóu",
      "pos": "n.",
-     "en": "oil"
+     "en": "oil",
+     "id": "qibu5-u2-3:4"
     },
     {
      "hanzi": "冰箱",
      "pinyin": "bīng xiāng",
      "pos": "n.",
-     "en": "fridge"
+     "en": "fridge",
+     "id": "qibu5-u2-3:5"
     },
     {
      "hanzi": "这些",
      "pinyin": "zhè xiē",
      "pos": "pron.",
-     "en": "these"
+     "en": "these",
+     "id": "qibu5-u2-3:6"
     },
     {
      "hanzi": "那些",
      "pinyin": "nà xiē",
      "pos": "pron.",
-     "en": "those"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u2-4",
-   "title": "起步5 U2.4 · 你说得真好！ Your Chinese is so good!",
-   "words": [
+     "en": "those",
+     "id": "qibu5-u2-3:7"
+    },
     {
      "hanzi": "清楚",
      "pinyin": "qīng chu",
      "pos": "adj.",
-     "en": "clear"
-    },
+     "en": "clear",
+     "id": "qibu5-u2-4:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u2-4a",
+   "title": "起步5 U2.4 · 你说得真好！ Your Chinese is so good!",
+   "words": [
     {
      "hanzi": "差得远",
      "pinyin": "chà de yuǎn",
      "pos": "phr.",
-     "en": "far from it (还差得远呢 I've still got a long way to go)"
-    },
-    {
-     "hanzi": "客气",
-     "pinyin": "kè qi",
-     "pos": "adj.",
-     "en": "polite, modest (别客气 don't be so modest; you're welcome)"
+     "en": "far from it (还差得远呢 I've still got a long way to go)",
+     "id": "qibu5-u2-4:1"
     },
     {
      "hanzi": "进步",
      "pinyin": "jìn bù",
      "pos": "v./n.",
-     "en": "to improve, make progress; progress"
+     "en": "to improve, make progress; progress",
+     "id": "qibu5-u2-4:3"
     },
     {
      "hanzi": "干杯",
      "pinyin": "gān bēi",
      "pos": "v.",
-     "en": "cheers! to drink a toast"
+     "en": "cheers! to drink a toast",
+     "id": "qibu5-u2-4:4"
     },
     {
      "hanzi": "客人",
      "pinyin": "kè rén",
      "pos": "n.",
-     "en": "guest"
+     "en": "guest",
+     "id": "qibu5-u2-4:5"
     },
     {
      "hanzi": "味道",
      "pinyin": "wèi dao",
      "pos": "n.",
-     "en": "taste, flavour"
-    },
+     "en": "taste, flavour",
+     "id": "qibu5-u2-4:6"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u2-5a",
+   "title": "起步5 U2.5 · 你说得真好！ Your Chinese is so good! · 1",
+   "words": [
     {
      "hanzi": "淡",
      "pinyin": "dàn",
      "pos": "adj.",
-     "en": "bland, not salty enough"
+     "en": "bland, not salty enough",
+     "id": "qibu5-u2-4:7"
     },
     {
      "hanzi": "流利",
      "pinyin": "liú lì",
      "pos": "adj.",
-     "en": "fluent"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u2-5",
-   "title": "起步5 U2.5 · 你说得真好！ Your Chinese is so good!",
-   "words": [
+     "en": "fluent",
+     "id": "qibu5-u2-4:8"
+    },
     {
      "hanzi": "认真",
      "pinyin": "rèn zhēn",
      "pos": "adj.",
-     "en": "serious, conscientious"
+     "en": "serious, conscientious",
+     "id": "qibu5-u2-5:0"
     },
     {
      "hanzi": "聪明",
      "pinyin": "cōng ming",
      "pos": "adj.",
-     "en": "clever"
+     "en": "clever",
+     "id": "qibu5-u2-5:1"
     },
     {
      "hanzi": "难吃",
      "pinyin": "nán chī",
      "pos": "adj.",
-     "en": "horrible (to eat)"
-    },
+     "en": "horrible (to eat)",
+     "id": "qibu5-u2-5:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u2-5b",
+   "title": "起步5 U2.5 · 你说得真好！ Your Chinese is so good! · 2",
+   "words": [
     {
      "hanzi": "跑",
      "pinyin": "pǎo",
      "pos": "v.",
-     "en": "to run"
+     "en": "to run",
+     "id": "qibu5-u2-5:3"
     },
     {
      "hanzi": "发音",
      "pinyin": "fā yīn",
      "pos": "n.",
-     "en": "pronunciation"
+     "en": "pronunciation",
+     "id": "qibu5-u2-5:4"
     },
     {
      "hanzi": "口语",
      "pinyin": "kǒu yǔ",
      "pos": "n.",
-     "en": "spoken language, speaking"
+     "en": "spoken language, speaking",
+     "id": "qibu5-u2-5:5"
     },
     {
      "hanzi": "水平",
      "pinyin": "shuǐ píng",
      "pos": "n.",
-     "en": "level, standard"
+     "en": "level, standard",
+     "id": "qibu5-u2-5:6"
     },
     {
      "hanzi": "夸",
      "pinyin": "kuā",
      "pos": "v.",
-     "en": "to praise"
+     "en": "to praise",
+     "id": "qibu5-u2-5:7"
     }
    ]
   },
   {
-   "id": "qibu5-u3-1",
-   "title": "起步5 U3.1 · 你怎么才来？ What took you so long?",
+   "id": "qibu5-u3-1a",
+   "title": "起步5 U3.1 · 你怎么才来？ What took you so long? · 1",
    "words": [
     {
      "hanzi": "火车站",
      "pinyin": "huǒ chē zhàn",
      "pos": "n.",
-     "en": "railway station"
+     "en": "railway station",
+     "id": "qibu5-u3-1:0"
     },
     {
      "hanzi": "起晚",
      "pinyin": "qǐ wǎn",
      "pos": "v.",
-     "en": "to get up late, oversleep"
+     "en": "to get up late, oversleep",
+     "id": "qibu5-u3-1:1"
     },
     {
      "hanzi": "刚",
      "pinyin": "gāng",
      "pos": "adv.",
-     "en": "just (a moment ago)"
+     "en": "just (a moment ago)",
+     "id": "qibu5-u3-1:2"
     },
     {
      "hanzi": "就",
      "pinyin": "jiù",
      "pos": "adv.",
-     "en": "as early as, already; as soon as (七点就到了 here by seven) (new meaning)"
+     "en": "as early as, already; as soon as (七点就到了 here by seven) (new meaning)",
+     "id": "qibu5-u3-1:3"
     },
     {
      "hanzi": "闹钟",
      "pinyin": "nào zhōng",
      "pos": "n.",
-     "en": "alarm clock"
-    },
+     "en": "alarm clock",
+     "id": "qibu5-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u3-1b",
+   "title": "起步5 U3.1 · 你怎么才来？ What took you so long? · 2",
+   "words": [
     {
      "hanzi": "醒",
      "pinyin": "xǐng",
      "pos": "v.",
-     "en": "to wake up"
+     "en": "to wake up",
+     "id": "qibu5-u3-1:5"
     },
     {
      "hanzi": "才",
      "pinyin": "cái",
      "pos": "adv.",
-     "en": "not until, only then (八点才醒 didn't wake up till eight)"
+     "en": "not until, only then (八点才醒 didn't wake up till eight)",
+     "id": "qibu5-u3-1:6"
     },
     {
      "hanzi": "一",
      "pinyin": "yī",
      "pos": "phr.",
-     "en": "as soon as (一…就…)"
+     "en": "as soon as (一…就…)",
+     "id": "qibu5-u3-1:7"
     },
     {
      "hanzi": "肯定",
      "pinyin": "kěn dìng",
      "pos": "adv.",
-     "en": "definitely, certainly"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u3-2",
-   "title": "起步5 U3.2 · 你怎么才来？ What took you so long?",
-   "words": [
+     "en": "definitely, certainly",
+     "id": "qibu5-u3-1:8"
+    },
     {
      "hanzi": "来不及",
      "pinyin": "lái bu jí",
      "pos": "v.",
-     "en": "to not have enough time, be too late"
-    },
+     "en": "to not have enough time, be too late",
+     "id": "qibu5-u3-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u3-2a",
+   "title": "起步5 U3.2 · 你怎么才来？ What took you so long? · 1",
+   "words": [
     {
      "hanzi": "来得及",
      "pinyin": "lái de jí",
      "pos": "v.",
-     "en": "to have enough time, be in time"
+     "en": "to have enough time, be in time",
+     "id": "qibu5-u3-2:1"
     },
     {
      "hanzi": "早就",
      "pinyin": "zǎo jiù",
      "pos": "adv.",
-     "en": "long ago, ages ago"
+     "en": "long ago, ages ago",
+     "id": "qibu5-u3-2:2"
     },
     {
      "hanzi": "班",
      "pinyin": "bān",
      "pos": "m.",
-     "en": "for scheduled trains, buses and flights (下一班 the next one)"
+     "en": "for scheduled trains, buses and flights (下一班 the next one)",
+     "id": "qibu5-u3-2:3"
     },
     {
      "hanzi": "车票",
      "pinyin": "chē piào",
      "pos": "n.",
-     "en": "(train or bus) ticket"
+     "en": "(train or bus) ticket",
+     "id": "qibu5-u3-2:4"
     },
     {
      "hanzi": "站台",
      "pinyin": "zhàn tái",
      "pos": "n.",
-     "en": "platform"
-    },
+     "en": "platform",
+     "id": "qibu5-u3-2:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u3-2b",
+   "title": "起步5 U3.2 · 你怎么才来？ What took you so long? · 2",
+   "words": [
     {
      "hanzi": "座位",
      "pinyin": "zuò wèi",
      "pos": "n.",
-     "en": "seat"
+     "en": "seat",
+     "id": "qibu5-u3-2:6"
     },
     {
      "hanzi": "赶",
      "pinyin": "gǎn",
      "pos": "v.",
-     "en": "to rush (赶火车 rush to catch a train)"
+     "en": "to rush (赶火车 rush to catch a train)",
+     "id": "qibu5-u3-2:7"
     },
     {
      "hanzi": "准时",
      "pinyin": "zhǔn shí",
      "pos": "adj.",
-     "en": "on time, punctual"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u3-3",
-   "title": "起步5 U3.3 · 你怎么才来？ What took you so long?",
-   "words": [
+     "en": "on time, punctual",
+     "id": "qibu5-u3-2:8"
+    },
     {
      "hanzi": "请假",
      "pinyin": "qǐng jià",
      "pos": "v.",
-     "en": "to take time off, ask for leave"
+     "en": "to take time off, ask for leave",
+     "id": "qibu5-u3-3:0"
     },
     {
      "hanzi": "出发",
      "pinyin": "chū fā",
      "pos": "v.",
-     "en": "to set off"
-    },
+     "en": "to set off",
+     "id": "qibu5-u3-3:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u3-3a",
+   "title": "起步5 U3.3 · 你怎么才来？ What took you so long?",
+   "words": [
     {
      "hanzi": "堵车",
      "pinyin": "dǔ chē",
      "pos": "v.",
-     "en": "to be stuck in traffic"
+     "en": "to be stuck in traffic",
+     "id": "qibu5-u3-3:2"
     },
     {
      "hanzi": "着急",
      "pinyin": "zháo jí",
      "pos": "adj.",
-     "en": "worried, anxious, in a hurry"
+     "en": "worried, anxious, in a hurry",
+     "id": "qibu5-u3-3:3"
     },
     {
      "hanzi": "平常",
      "pinyin": "píng cháng",
      "pos": "adv./adj.",
-     "en": "usually; ordinary"
+     "en": "usually; ordinary",
+     "id": "qibu5-u3-3:4"
     },
     {
      "hanzi": "半天",
      "pinyin": "bàn tiān",
      "pos": "n.",
-     "en": "half a day; ages (等了半天 waited for ages)"
+     "en": "half a day; ages (等了半天 waited for ages)",
+     "id": "qibu5-u3-3:5"
     },
     {
      "hanzi": "时刻表",
      "pinyin": "shí kè biǎo",
      "pos": "n.",
-     "en": "timetable"
-    },
-    {
-     "hanzi": "换",
-     "pinyin": "huàn",
-     "pos": "v.",
-     "en": "to change, swap"
+     "en": "timetable",
+     "id": "qibu5-u3-3:6"
     }
    ]
   },
   {
-   "id": "qibu5-u3-4",
-   "title": "起步5 U3.4 · 你怎么才来？ What took you so long?",
+   "id": "qibu5-u3-4a",
+   "title": "起步5 U3.4 · 你怎么才来？ What took you so long? · 1",
    "words": [
+    {
+     "hanzi": "换",
+     "pinyin": "huàn",
+     "pos": "v.",
+     "en": "to change, swap",
+     "id": "qibu5-u3-3:7"
+    },
     {
      "hanzi": "上上个星期",
      "pinyin": "shàng shàng ge xīng qī",
      "pos": "n.",
-     "en": "the week before last"
+     "en": "the week before last",
+     "id": "qibu5-u3-4:0"
     },
     {
      "hanzi": "下下个星期",
      "pinyin": "xià xià ge xīng qī",
      "pos": "n.",
-     "en": "the week after next"
+     "en": "the week after next",
+     "id": "qibu5-u3-4:1"
     },
     {
      "hanzi": "前天",
      "pinyin": "qián tiān",
      "pos": "n.",
-     "en": "the day before yesterday"
-    },
+     "en": "the day before yesterday",
+     "id": "qibu5-u3-4:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u3-4b",
+   "title": "起步5 U3.4 · 你怎么才来？ What took you so long? · 2",
+   "words": [
     {
      "hanzi": "后天",
      "pinyin": "hòu tiān",
      "pos": "n.",
-     "en": "the day after tomorrow"
+     "en": "the day after tomorrow",
+     "id": "qibu5-u3-4:3"
     },
     {
      "hanzi": "大前天",
      "pinyin": "dà qián tiān",
      "pos": "n.",
-     "en": "three days ago"
+     "en": "three days ago",
+     "id": "qibu5-u3-4:4"
     },
     {
      "hanzi": "大后天",
      "pinyin": "dà hòu tiān",
      "pos": "n.",
-     "en": "in three days' time"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u3-5",
-   "title": "起步5 U3.5 · 你怎么才来？ What took you so long?",
-   "words": [
+     "en": "in three days' time",
+     "id": "qibu5-u3-4:5"
+    },
     {
      "hanzi": "好了",
      "pinyin": "hǎo le",
      "pos": "phr.",
-     "en": "all right, that's enough (好了好了 all right, all right)"
-    },
+     "en": "all right, that's enough (好了好了 all right, all right)",
+     "id": "qibu5-u3-5:0",
+     "parts": [
+      "好",
+      "了"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u3-5a",
+   "title": "起步5 U3.5 · 你怎么才来？ What took you so long?",
+   "words": [
     {
      "hanzi": "西边",
      "pinyin": "xī bian",
      "pos": "n.",
-     "en": "the west (side)"
+     "en": "the west (side)",
+     "id": "qibu5-u3-5:1"
     },
     {
      "hanzi": "东边",
      "pinyin": "dōng bian",
      "pos": "n.",
-     "en": "the east (side)"
+     "en": "the east (side)",
+     "id": "qibu5-u3-5:2"
     },
     {
      "hanzi": "出来",
      "pinyin": "chū lai",
      "pos": "v.",
-     "en": "to come out (太阳从西边出来了！ pigs might fly!)"
+     "en": "to come out (太阳从西边出来了！ pigs might fly!)",
+     "id": "qibu5-u3-5:3"
     },
     {
      "hanzi": "终于",
      "pinyin": "zhōng yú",
      "pos": "adv.",
-     "en": "at last, finally"
+     "en": "at last, finally",
+     "id": "qibu5-u3-5:4"
     }
    ]
   },
   {
-   "id": "qibu5-u4-1",
-   "title": "起步5 U4.1 · 亲爱的小雨： Dear Xiaoyu,",
+   "id": "qibu5-u4-1a",
+   "title": "起步5 U4.1 · 亲爱的小雨： Dear Xiaoyu, · 1",
    "words": [
     {
      "hanzi": "暑假",
      "pinyin": "shǔ jià",
      "pos": "n.",
-     "en": "summer holidays"
+     "en": "summer holidays",
+     "id": "qibu5-u4-1:0"
     },
     {
      "hanzi": "待",
      "pinyin": "dāi",
      "pos": "v.",
-     "en": "to stay"
+     "en": "to stay",
+     "id": "qibu5-u4-1:1"
     },
     {
      "hanzi": "底",
      "pinyin": "dǐ",
      "pos": "n.",
-     "en": "end (of a month or year) (九月底 the end of September)"
+     "en": "end (of a month or year) (九月底 the end of September)",
+     "id": "qibu5-u4-1:2"
     },
     {
      "hanzi": "会",
      "pinyin": "huì",
      "pos": "v.",
-     "en": "will (会…的 I'm sure … will) (new meaning)"
+     "en": "will (会…的 I'm sure … will) (new meaning)",
+     "id": "qibu5-u4-1:3"
     },
     {
      "hanzi": "想",
      "pinyin": "xiǎng",
      "pos": "v.",
-     "en": "to miss (someone) (new meaning)"
-    },
+     "en": "to miss (someone) (new meaning)",
+     "id": "qibu5-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-1b",
+   "title": "起步5 U4.1 · 亲爱的小雨： Dear Xiaoyu, · 2",
+   "words": [
     {
      "hanzi": "邮件",
      "pinyin": "yóu jiàn",
      "pos": "n.",
-     "en": "email"
+     "en": "email",
+     "id": "qibu5-u4-1:5"
     },
     {
      "hanzi": "写",
      "pinyin": "xiě",
      "pos": "v.",
-     "en": "to write"
+     "en": "to write",
+     "id": "qibu5-u4-1:6"
     },
     {
      "hanzi": "改",
      "pinyin": "gǎi",
      "pos": "v.",
-     "en": "to correct; to change"
+     "en": "to correct; to change",
+     "id": "qibu5-u4-1:7"
     },
     {
      "hanzi": "日记",
      "pinyin": "rì jì",
      "pos": "n.",
-     "en": "diary"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u4-2",
-   "title": "起步5 U4.2 · 亲爱的小雨： Dear Xiaoyu,",
-   "words": [
+     "en": "diary",
+     "id": "qibu5-u4-1:8"
+    },
     {
      "hanzi": "留",
      "pinyin": "liú",
      "pos": "v.",
-     "en": "to leave; to set (homework)"
-    },
+     "en": "to leave; to set (homework)",
+     "id": "qibu5-u4-2:0"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-2a",
+   "title": "起步5 U4.2 · 亲爱的小雨： Dear Xiaoyu, · 1",
+   "words": [
     {
      "hanzi": "作业",
      "pinyin": "zuò yè",
      "pos": "n.",
-     "en": "homework"
+     "en": "homework",
+     "id": "qibu5-u4-2:1"
     },
     {
      "hanzi": "放假",
      "pinyin": "fàng jià",
      "pos": "v.",
-     "en": "to be on holiday, break up (for the holidays)"
+     "en": "to be on holiday, break up (for the holidays)",
+     "id": "qibu5-u4-2:2"
     },
     {
      "hanzi": "学期",
      "pinyin": "xué qī",
      "pos": "n.",
-     "en": "term, semester"
+     "en": "term, semester",
+     "id": "qibu5-u4-2:3"
     },
     {
      "hanzi": "信",
      "pinyin": "xìn",
      "pos": "n.",
-     "en": "letter"
+     "en": "letter",
+     "id": "qibu5-u4-2:4"
     },
     {
      "hanzi": "回信",
      "pinyin": "huí xìn",
      "pos": "v./n.",
-     "en": "to write back; a reply"
-    },
+     "en": "to write back; a reply",
+     "id": "qibu5-u4-2:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-2b",
+   "title": "起步5 U4.2 · 亲爱的小雨： Dear Xiaoyu, · 2",
+   "words": [
     {
      "hanzi": "寄",
      "pinyin": "jì",
      "pos": "v.",
-     "en": "to post, send (by post)"
+     "en": "to post, send (by post)",
+     "id": "qibu5-u4-2:6"
     },
     {
      "hanzi": "地址",
      "pinyin": "dì zhǐ",
      "pos": "n.",
-     "en": "address"
+     "en": "address",
+     "id": "qibu5-u4-2:7"
     },
     {
      "hanzi": "视频",
      "pinyin": "shì pín",
      "pos": "n.",
-     "en": "video (打视频 make a video call)"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u4-3",
-   "title": "起步5 U4.3 · 亲爱的小雨： Dear Xiaoyu,",
-   "words": [
+     "en": "video (打视频 make a video call)",
+     "id": "qibu5-u4-2:8"
+    },
     {
-     "hanzi": "亲爱的",
-     "pinyin": "qīn ài de",
-     "pos": "phr.",
-     "en": "dear (at the start of a letter or email)"
+     "hanzi": "亲爱",
+     "pinyin": "qīn ài",
+     "pos": "adj.",
+     "en": "dear (亲爱的朋友们 dear friends)",
+     "id": "dabu5-u4-2:0"
     },
     {
      "hanzi": "最近",
      "pinyin": "zuì jìn",
      "pos": "n.",
-     "en": "recently, lately (最近好吗？ how have you been?)"
+     "en": "recently, lately (最近好吗？ how have you been?)",
+     "id": "qibu5-u4-3:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-3a",
+   "title": "起步5 U4.3 · 亲爱的小雨： Dear Xiaoyu, · 1",
+   "words": [
+    {
+     "hanzi": "亲爱的",
+     "pinyin": "qīn ài de",
+     "pos": "phr.",
+     "en": "dear (at the start of a letter or email)",
+     "id": "qibu5-u4-3:0",
+     "parts": [
+      "亲爱",
+      "的"
+     ]
     },
     {
      "hanzi": "机场",
      "pinyin": "jī chǎng",
      "pos": "n.",
-     "en": "airport"
+     "en": "airport",
+     "id": "qibu5-u4-3:2"
     },
     {
      "hanzi": "难过",
      "pinyin": "nán guò",
      "pos": "adj.",
-     "en": "sad, upset"
+     "en": "sad, upset",
+     "id": "qibu5-u4-3:3"
     },
     {
      "hanzi": "篇",
      "pinyin": "piān",
      "pos": "m.",
-     "en": "for diary entries, articles and essays"
+     "en": "for diary entries, articles and essays",
+     "id": "qibu5-u4-3:4"
     },
     {
      "hanzi": "汉字",
      "pinyin": "Hàn zì",
      "pos": "n.",
-     "en": "Chinese character"
-    },
+     "en": "Chinese character",
+     "id": "qibu5-u4-3:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-3b",
+   "title": "起步5 U4.3 · 亲爱的小雨： Dear Xiaoyu, · 2",
+   "words": [
     {
      "hanzi": "还是",
      "pinyin": "hái shi",
      "pos": "adv.",
-     "en": "still, all the same (new meaning)"
+     "en": "still, all the same (new meaning)",
+     "id": "qibu5-u4-3:6"
     },
     {
      "hanzi": "决定",
      "pinyin": "jué dìng",
      "pos": "v./n.",
-     "en": "to decide; decision"
+     "en": "to decide; decision",
+     "id": "qibu5-u4-3:7"
     },
     {
      "hanzi": "久",
      "pinyin": "jiǔ",
      "pos": "adj.",
-     "en": "long (time) (很久 a long time)"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u4-4",
-   "title": "起步5 U4.4 · 亲爱的小雨： Dear Xiaoyu,",
-   "words": [
+     "en": "long (time) (很久 a long time)",
+     "id": "qibu5-u4-3:8"
+    },
     {
      "hanzi": "好好",
      "pinyin": "hǎo hǎo",
      "pos": "adv.",
-     "en": "properly, well (好好休息 have a good rest)"
+     "en": "properly, well (好好休息 have a good rest)",
+     "id": "qibu5-u4-4:0"
     },
     {
      "hanzi": "封",
      "pinyin": "fēng",
      "pos": "m.",
-     "en": "for letters and emails"
-    },
+     "en": "for letters and emails",
+     "id": "qibu5-u4-4:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-4a",
+   "title": "起步5 U4.4 · 亲爱的小雨： Dear Xiaoyu,",
+   "words": [
     {
      "hanzi": "健康",
      "pinyin": "jiàn kāng",
      "pos": "adj./n.",
-     "en": "healthy; health"
+     "en": "healthy; health",
+     "id": "qibu5-u4-4:2"
     },
     {
      "hanzi": "好久不见",
      "pinyin": "hǎo jiǔ bù jiàn",
      "pos": "phr.",
-     "en": "long time no see"
+     "en": "long time no see",
+     "id": "qibu5-u4-4:3"
     },
     {
      "hanzi": "行李箱",
      "pinyin": "xíng li xiāng",
      "pos": "n.",
-     "en": "suitcase"
+     "en": "suitcase",
+     "id": "qibu5-u4-4:4"
     },
     {
      "hanzi": "进去",
      "pinyin": "jìn qu",
      "pos": "v.",
-     "en": "to go in"
+     "en": "to go in",
+     "id": "qibu5-u4-4:5"
     },
     {
      "hanzi": "心里",
      "pinyin": "xīn li",
      "pos": "n.",
-     "en": "in your heart, inside (心里难过 feel sad inside)"
-    },
+     "en": "in your heart, inside (心里难过 feel sad inside)",
+     "id": "qibu5-u4-4:6"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-5a",
+   "title": "起步5 U4.5 · 亲爱的小雨： Dear Xiaoyu, · 1",
+   "words": [
     {
      "hanzi": "收到",
      "pinyin": "shōu dào",
      "pos": "v.",
-     "en": "to receive, get"
+     "en": "to receive, get",
+     "id": "qibu5-u4-4:7"
     },
     {
      "hanzi": "马上",
      "pinyin": "mǎ shàng",
      "pos": "adv.",
-     "en": "at once, straight away"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u4-5",
-   "title": "起步5 U4.5 · 亲爱的小雨： Dear Xiaoyu,",
-   "words": [
+     "en": "at once, straight away",
+     "id": "qibu5-u4-4:8"
+    },
     {
      "hanzi": "网上",
      "pinyin": "wǎng shang",
      "pos": "n.",
-     "en": "online"
+     "en": "online",
+     "id": "qibu5-u4-5:0"
     },
     {
      "hanzi": "机票",
      "pinyin": "jī piào",
      "pos": "n.",
-     "en": "plane ticket"
+     "en": "plane ticket",
+     "id": "qibu5-u4-5:1"
     },
     {
      "hanzi": "火锅",
      "pinyin": "huǒ guō",
      "pos": "n.",
-     "en": "hotpot"
-    },
+     "en": "hotpot",
+     "id": "qibu5-u4-5:2"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-5b",
+   "title": "起步5 U4.5 · 亲爱的小雨： Dear Xiaoyu, · 2",
+   "words": [
     {
      "hanzi": "熊猫",
      "pinyin": "xióng māo",
      "pos": "n.",
-     "en": "panda"
+     "en": "panda",
+     "id": "qibu5-u4-5:3"
     },
     {
      "hanzi": "开心",
      "pinyin": "kāi xīn",
      "pos": "adj.",
-     "en": "happy, having a good time"
+     "en": "happy, having a good time",
+     "id": "qibu5-u4-5:4"
     },
     {
      "hanzi": "护照",
      "pinyin": "hù zhào",
      "pos": "n.",
-     "en": "passport"
+     "en": "passport",
+     "id": "qibu5-u4-5:5"
     },
     {
      "hanzi": "签证",
      "pinyin": "qiān zhèng",
      "pos": "n.",
-     "en": "visa"
-    },
+     "en": "visa",
+     "id": "qibu5-u4-5:6"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-5c",
+   "title": "起步5 U4.5 · 亲爱的小雨： Dear Xiaoyu, · 3",
+   "words": [
     {
      "hanzi": "旅行",
      "pinyin": "lǚ xíng",
      "pos": "v./n.",
-     "en": "to travel; a trip"
+     "en": "to travel; a trip",
+     "id": "qibu5-u4-5:7"
     },
     {
      "hanzi": "城市",
      "pinyin": "chéng shì",
      "pos": "n.",
-     "en": "city"
-    }
-   ]
-  },
-  {
-   "id": "qibu5-u4-6",
-   "title": "起步5 U4.6 · 亲爱的小雨： Dear Xiaoyu,",
-   "words": [
+     "en": "city",
+     "id": "qibu5-u4-5:8"
+    },
     {
      "hanzi": "照顾",
      "pinyin": "zhào gù",
      "pos": "v.",
-     "en": "to look after"
+     "en": "to look after",
+     "id": "qibu5-u4-6:0"
     },
     {
      "hanzi": "开门",
      "pinyin": "kāi mén",
      "pos": "v.",
-     "en": "to open (a door; a shop for business)"
-    },
+     "en": "to open (a door; a shop for business)",
+     "id": "qibu5-u4-6:1"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-6a",
+   "title": "起步5 U4.6 · 亲爱的小雨： Dear Xiaoyu, · 1",
+   "words": [
     {
      "hanzi": "关门",
      "pinyin": "guān mén",
      "pos": "v.",
-     "en": "to close (a door; a shop)"
+     "en": "to close (a door; a shop)",
+     "id": "qibu5-u4-6:2"
     },
     {
      "hanzi": "快",
      "pinyin": "kuài",
      "pos": "phr.",
-     "en": "nearly, almost (快一年了 nearly a year) (快…了)"
+     "en": "nearly, almost (快一年了 nearly a year) (快…了)",
+     "id": "qibu5-u4-6:3"
     },
     {
      "hanzi": "想家",
      "pinyin": "xiǎng jiā",
      "pos": "v.",
-     "en": "to be homesick"
+     "en": "to be homesick",
+     "id": "qibu5-u4-6:4",
+     "parts": [
+      "想",
+      "家"
+     ]
     },
     {
      "hanzi": "老家",
      "pinyin": "lǎo jiā",
      "pos": "n.",
-     "en": "hometown, where your family comes from"
-    },
+     "en": "hometown, where your family comes from",
+     "id": "qibu5-u4-6:5"
+    }
+   ]
+  },
+  {
+   "id": "qibu5-u4-6b",
+   "title": "起步5 U4.6 · 亲爱的小雨： Dear Xiaoyu, · 2",
+   "words": [
     {
      "hanzi": "回国",
      "pinyin": "huí guó",
      "pos": "v.",
-     "en": "to go back to your country"
+     "en": "to go back to your country",
+     "id": "qibu5-u4-6:6"
     },
     {
      "hanzi": "明信片",
      "pinyin": "míng xìn piàn",
      "pos": "n.",
-     "en": "postcard"
+     "en": "postcard",
+     "id": "qibu5-u4-6:7"
     },
     {
      "hanzi": "一路平安",
      "pinyin": "yī lù píng ān",
      "pos": "phr.",
-     "en": "have a safe journey"
+     "en": "have a safe journey",
+     "id": "qibu5-u4-6:8"
     },
     {
      "hanzi": "哭",
      "pinyin": "kū",
      "pos": "",
-     "en": "to cry"
+     "en": "to cry",
+     "id": "qibu5-u4-6:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u1-1",
-   "title": "进步1 U1.1 · 我想订一个房间 I'd like to book a room",
+   "id": "jinbu1-u1-1a",
+   "title": "进步1 U1.1 · 我想订一个房间 I'd like to book a room · 1",
    "words": [
     {
      "hanzi": "酒店",
      "pinyin": "jiǔ diàn",
      "pos": "n.",
-     "en": "hotel"
+     "en": "hotel",
+     "id": "jinbu1-u1-1:0"
     },
     {
      "hanzi": "爸妈",
      "pinyin": "bà mā",
      "pos": "n.",
-     "en": "mum and dad (spoken)"
+     "en": "mum and dad (spoken)",
+     "id": "jinbu1-u1-1:1"
     },
     {
      "hanzi": "麻烦",
      "pinyin": "má fan",
      "pos": "v./adj.",
-     "en": "to trouble, bother; troublesome (太麻烦你们了 it's too much trouble for you)"
+     "en": "to trouble, bother; troublesome (太麻烦你们了 it's too much trouble for you)",
+     "id": "jinbu1-u1-1:2"
     },
     {
      "hanzi": "还是",
      "pinyin": "hái shi",
      "pos": "adv.",
-     "en": "had better (我还是住酒店吧 I'd better stay in a hotel) (new meaning)"
+     "en": "had better (我还是住酒店吧 I'd better stay in a hotel) (new meaning)",
+     "id": "jinbu1-u1-1:3"
     },
     {
      "hanzi": "胡同",
      "pinyin": "hú tòng",
      "pos": "n.",
-     "en": "hutong, a narrow lane in old Beijing"
-    },
+     "en": "hutong, a narrow lane in old Beijing",
+     "id": "jinbu1-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-1b",
+   "title": "进步1 U1.1 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
     {
      "hanzi": "四合院",
      "pinyin": "sì hé yuàn",
      "pos": "n.",
-     "en": "courtyard house (four buildings round a yard)"
+     "en": "courtyard house (four buildings round a yard)",
+     "id": "jinbu1-u1-1:5"
     },
     {
      "hanzi": "老",
      "pinyin": "lǎo",
      "pos": "adj.",
-     "en": "old (老北京 old Beijing)"
+     "en": "old (老北京 old Beijing)",
+     "id": "jinbu1-u1-1:6"
     },
     {
      "hanzi": "成",
      "pinyin": "chéng",
      "pos": "v.",
-     "en": "to become, into (after a verb: 改成 turn into)"
+     "en": "to become, into (after a verb: 改成 turn into)",
+     "id": "jinbu1-u1-1:7"
     },
     {
      "hanzi": "晚",
      "pinyin": "wǎn",
      "pos": "m.",
-     "en": "night (住五晚 stay five nights) (new meaning)"
+     "en": "night (住五晚 stay five nights) (new meaning)",
+     "id": "jinbu1-u1-1:8"
     },
     {
      "hanzi": "订好",
      "pinyin": "dìng hǎo",
      "pos": "v.",
-     "en": "to have booked (verb + 好: done and ready)"
+     "en": "to have booked (verb + 好: done and ready)",
+     "id": "jinbu1-u1-1:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u1-2",
-   "title": "进步1 U1.2 · 我想订一个房间 I'd like to book a room",
+   "id": "jinbu1-u1-2a",
+   "title": "进步1 U1.2 · 我想订一个房间 I'd like to book a room · 1",
    "words": [
     {
      "hanzi": "忘",
      "pinyin": "wàng",
      "pos": "v.",
-     "en": "to forget (别忘了 don't forget)"
+     "en": "to forget (别忘了 don't forget)",
+     "id": "jinbu1-u1-2:0"
     },
     {
      "hanzi": "遍",
      "pinyin": "biàn",
      "pos": "m.",
-     "en": "time, go (from start to finish) (说了一百遍 said it a hundred times)"
+     "en": "time, go (from start to finish) (说了一百遍 said it a hundred times)",
+     "id": "jinbu1-u1-2:1"
     },
     {
      "hanzi": "计划",
      "pinyin": "jì huà",
      "pos": "n./v.",
-     "en": "plan; to plan"
+     "en": "plan; to plan",
+     "id": "jinbu1-u1-2:2"
+    },
+    {
+     "hanzi": "假",
+     "pinyin": "jiǎ",
+     "pos": "adj.",
+     "en": "false, fake (说不心动是假的 I'd be lying if I said I wasn't tempted)",
+     "id": "dabu1-u4-4:2"
     },
     {
      "hanzi": "假期",
      "pinyin": "jià qī",
      "pos": "n.",
-     "en": "holiday, time off"
-    },
+     "en": "holiday, time off",
+     "id": "jinbu1-u1-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-2b",
+   "title": "进步1 U1.2 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
     {
      "hanzi": "年假",
      "pinyin": "nián jià",
      "pos": "n.",
-     "en": "annual leave"
+     "en": "annual leave",
+     "id": "jinbu1-u1-2:4",
+     "parts": [
+      "年",
+      "假"
+     ]
     },
     {
      "hanzi": "行程",
      "pinyin": "xíng chéng",
      "pos": "n.",
-     "en": "itinerary, schedule for a trip"
+     "en": "itinerary, schedule for a trip",
+     "id": "jinbu1-u1-2:5"
     },
     {
      "hanzi": "景点",
      "pinyin": "jǐng diǎn",
      "pos": "n.",
-     "en": "sight, tourist attraction"
+     "en": "sight, tourist attraction",
+     "id": "jinbu1-u1-2:6"
     },
     {
      "hanzi": "导游",
      "pinyin": "dǎo yóu",
      "pos": "n.",
-     "en": "tour guide"
+     "en": "tour guide",
+     "id": "jinbu1-u1-2:7"
     },
     {
      "hanzi": "民宿",
      "pinyin": "mín sù",
      "pos": "n.",
-     "en": "guesthouse, B&B"
-    },
-    {
-     "hanzi": "宾馆",
-     "pinyin": "bīn guǎn",
-     "pos": "n.",
-     "en": "hotel (a slightly older word)"
+     "en": "guesthouse, B&B",
+     "id": "jinbu1-u1-2:8"
     }
    ]
   },
   {
-   "id": "jinbu1-u1-3",
-   "title": "进步1 U1.3 · 我想订一个房间 I'd like to book a room",
+   "id": "jinbu1-u1-3a",
+   "title": "进步1 U1.3 · 我想订一个房间 I'd like to book a room · 1",
    "words": [
+    {
+     "hanzi": "宾馆",
+     "pinyin": "bīn guǎn",
+     "pos": "n.",
+     "en": "hotel (a slightly older word)",
+     "id": "jinbu1-u1-2:9"
+    },
     {
      "hanzi": "住宿",
      "pinyin": "zhù sù",
      "pos": "n.",
-     "en": "accommodation, somewhere to stay"
+     "en": "accommodation, somewhere to stay",
+     "id": "jinbu1-u1-3:0"
     },
     {
      "hanzi": "出差",
      "pinyin": "chū chāi",
      "pos": "v.",
-     "en": "to go on a business trip"
+     "en": "to go on a business trip",
+     "id": "jinbu1-u1-3:1"
     },
     {
      "hanzi": "准备",
      "pinyin": "zhǔn bèi",
      "pos": "v.",
-     "en": "to get ready, prepare"
+     "en": "to get ready, prepare",
+     "id": "jinbu1-u1-3:2"
     },
     {
      "hanzi": "提前",
      "pinyin": "tí qián",
      "pos": "adv.",
-     "en": "in advance, ahead of time"
-    },
+     "en": "in advance, ahead of time",
+     "id": "jinbu1-u1-3:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-3b",
+   "title": "进步1 U1.3 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
     {
      "hanzi": "游客",
      "pinyin": "yóu kè",
      "pos": "n.",
-     "en": "tourist, visitor"
+     "en": "tourist, visitor",
+     "id": "jinbu1-u1-3:4"
     },
     {
      "hanzi": "交通",
      "pinyin": "jiāo tōng",
      "pos": "n.",
-     "en": "transport, getting around"
+     "en": "transport, getting around",
+     "id": "jinbu1-u1-3:5"
     },
     {
      "hanzi": "位置",
      "pinyin": "wèi zhi",
      "pos": "n.",
-     "en": "location, position"
+     "en": "location, position",
+     "id": "jinbu1-u1-3:6"
     },
     {
      "hanzi": "值得",
      "pinyin": "zhí de",
      "pos": "v.",
-     "en": "to be worth (值得去 worth going)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u1-4",
-   "title": "进步1 U1.4 · 我想订一个房间 I'd like to book a room",
-   "words": [
-    {
-     "hanzi": "房间",
-     "pinyin": "fáng jiān",
-     "pos": "n.",
-     "en": "room"
+     "en": "to be worth (值得去 worth going)",
+     "id": "jinbu1-u1-3:7"
     },
     {
      "hanzi": "入住",
      "pinyin": "rù zhù",
      "pos": "v.",
-     "en": "to check in (at a hotel)"
-    },
+     "en": "to check in (at a hotel)",
+     "id": "jinbu1-u1-4:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-4a",
+   "title": "进步1 U1.4 · 我想订一个房间 I'd like to book a room · 1",
+   "words": [
     {
      "hanzi": "单人间",
      "pinyin": "dān rén jiān",
      "pos": "n.",
-     "en": "single room"
+     "en": "single room",
+     "id": "jinbu1-u1-4:2"
     },
     {
      "hanzi": "双人间",
      "pinyin": "shuāng rén jiān",
      "pos": "n.",
-     "en": "twin room (two single beds)"
+     "en": "twin room (two single beds)",
+     "id": "jinbu1-u1-4:3"
     },
     {
-     "hanzi": "大床房",
-     "pinyin": "dà chuáng fáng",
+     "hanzi": "房",
+     "pinyin": "fáng",
      "pos": "n.",
-     "en": "double room (one big bed)"
+     "en": "room; house, flat (一间房 a room; 买房 buy a flat)",
+     "id": "dabu1-u4-3:3"
+    },
+    {
+     "hanzi": "房间",
+     "pinyin": "fáng jiān",
+     "pos": "n.",
+     "en": "room",
+     "id": "jinbu1-u1-4:0"
     },
     {
      "hanzi": "床",
      "pinyin": "chuáng",
      "pos": "n.",
-     "en": "bed"
+     "en": "bed",
+     "id": "jinbu1-u1-4:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-4b",
+   "title": "进步1 U1.4 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
+    {
+     "hanzi": "大床房",
+     "pinyin": "dà chuáng fáng",
+     "pos": "n.",
+     "en": "double room (one big bed)",
+     "id": "jinbu1-u1-4:4",
+     "parts": [
+      "大",
+      "床",
+      "房"
+     ]
     },
     {
      "hanzi": "单人床",
      "pinyin": "dān rén chuáng",
      "pos": "n.",
-     "en": "single bed"
+     "en": "single bed",
+     "id": "jinbu1-u1-4:6"
     },
     {
      "hanzi": "窗户",
      "pinyin": "chuāng hu",
      "pos": "n.",
-     "en": "window"
+     "en": "window",
+     "id": "jinbu1-u1-4:7"
     },
     {
      "hanzi": "院子",
      "pinyin": "yuàn zi",
      "pos": "n.",
-     "en": "courtyard, yard"
+     "en": "courtyard, yard",
+     "id": "jinbu1-u1-4:8"
     },
     {
      "hanzi": "房费",
      "pinyin": "fáng fèi",
      "pos": "n.",
-     "en": "room rate"
-    },
-    {
-     "hanzi": "包括",
-     "pinyin": "bāo kuò",
-     "pos": "v.",
-     "en": "to include"
+     "en": "room rate",
+     "id": "jinbu1-u1-4:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u1-5",
-   "title": "进步1 U1.5 · 我想订一个房间 I'd like to book a room",
+   "id": "jinbu1-u1-5a",
+   "title": "进步1 U1.5 · 我想订一个房间 I'd like to book a room · 1",
    "words": [
+    {
+     "hanzi": "包括",
+     "pinyin": "bāo kuò",
+     "pos": "v.",
+     "en": "to include",
+     "id": "jinbu1-u1-4:10"
+    },
     {
      "hanzi": "早餐",
      "pinyin": "zǎo cān",
      "pos": "n.",
-     "en": "breakfast (in hotels and on menus)"
+     "en": "breakfast (in hotels and on menus)",
+     "id": "jinbu1-u1-5:0"
     },
     {
      "hanzi": "小吃",
      "pinyin": "xiǎo chī",
      "pos": "n.",
-     "en": "snack, street food"
+     "en": "snack, street food",
+     "id": "jinbu1-u1-5:1"
     },
     {
      "hanzi": "豆浆",
      "pinyin": "dòu jiāng",
      "pos": "n.",
-     "en": "soya milk"
+     "en": "soya milk",
+     "id": "jinbu1-u1-5:2"
     },
     {
      "hanzi": "油条",
      "pinyin": "yóu tiáo",
      "pos": "n.",
-     "en": "fried dough stick"
-    },
+     "en": "fried dough stick",
+     "id": "jinbu1-u1-5:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-5b",
+   "title": "进步1 U1.5 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
     {
      "hanzi": "包子",
      "pinyin": "bāo zi",
      "pos": "n.",
-     "en": "steamed bun (with a filling)"
+     "en": "steamed bun (with a filling)",
+     "id": "jinbu1-u1-5:4"
     },
     {
      "hanzi": "楼",
      "pinyin": "lóu",
      "pos": "n.",
-     "en": "floor, storey; building (一楼 ground floor)"
+     "en": "floor, storey; building (一楼 ground floor)",
+     "id": "jinbu1-u1-5:5"
     },
     {
      "hanzi": "餐厅",
      "pinyin": "cān tīng",
      "pos": "n.",
-     "en": "restaurant, dining room"
+     "en": "restaurant, dining room",
+     "id": "jinbu1-u1-5:6"
     },
     {
      "hanzi": "航班",
      "pinyin": "háng bān",
      "pos": "n.",
-     "en": "flight"
+     "en": "flight",
+     "id": "jinbu1-u1-5:7"
     },
     {
      "hanzi": "带好",
      "pinyin": "dài hǎo",
      "pos": "v.",
-     "en": "to make sure you bring (带好护照 bring your passport)"
-    },
+     "en": "to make sure you bring (带好护照 bring your passport)",
+     "id": "jinbu1-u1-5:8",
+     "parts": [
+      "带",
+      "好"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-6a",
+   "title": "进步1 U1.6 · 我想订一个房间 I'd like to book a room · 1",
+   "words": [
     {
      "hanzi": "交",
      "pinyin": "jiāo",
      "pos": "v.",
-     "en": "to hand over, pay (交押金 pay a deposit)"
+     "en": "to hand over, pay (交押金 pay a deposit)",
+     "id": "jinbu1-u1-5:9"
     },
     {
      "hanzi": "押金",
      "pinyin": "yā jīn",
      "pos": "n.",
-     "en": "deposit"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u1-6",
-   "title": "进步1 U1.6 · 我想订一个房间 I'd like to book a room",
-   "words": [
-    {
-     "hanzi": "退房",
-     "pinyin": "tuì fáng",
-     "pos": "v.",
-     "en": "to check out (of a hotel)"
+     "en": "deposit",
+     "id": "jinbu1-u1-5:10"
     },
     {
      "hanzi": "退",
      "pinyin": "tuì",
      "pos": "v.",
-     "en": "to give back, refund; to return (goods)"
+     "en": "to give back, refund; to return (goods)",
+     "id": "jinbu1-u1-6:1"
+    },
+    {
+     "hanzi": "退房",
+     "pinyin": "tuì fáng",
+     "pos": "v.",
+     "en": "to check out (of a hotel)",
+     "id": "jinbu1-u1-6:0"
     },
     {
      "hanzi": "确认",
      "pinyin": "què rèn",
      "pos": "v.",
-     "en": "to confirm"
-    },
+     "en": "to confirm",
+     "id": "jinbu1-u1-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-6b",
+   "title": "进步1 U1.6 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
     {
      "hanzi": "房卡",
      "pinyin": "fáng kǎ",
      "pos": "n.",
-     "en": "key card"
+     "en": "key card",
+     "id": "jinbu1-u1-6:3"
     },
     {
      "hanzi": "电梯",
      "pinyin": "diàn tī",
      "pos": "n.",
-     "en": "lift"
+     "en": "lift",
+     "id": "jinbu1-u1-6:4"
     },
     {
      "hanzi": "行李",
      "pinyin": "xíng li",
      "pos": "n.",
-     "en": "luggage"
+     "en": "luggage",
+     "id": "jinbu1-u1-6:5"
     },
     {
      "hanzi": "洗澡",
      "pinyin": "xǐ zǎo",
      "pos": "v.",
-     "en": "to have a shower or bath"
-    },
+     "en": "to have a shower or bath",
+     "id": "jinbu1-u1-6:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-6c",
+   "title": "进步1 U1.6 · 我想订一个房间 I'd like to book a room · 3",
+   "words": [
     {
      "hanzi": "空调",
      "pinyin": "kōng tiáo",
      "pos": "n.",
-     "en": "air conditioning"
+     "en": "air conditioning",
+     "id": "jinbu1-u1-6:7"
     },
     {
      "hanzi": "干净",
      "pinyin": "gān jìng",
      "pos": "adj.",
-     "en": "clean"
+     "en": "clean",
+     "id": "jinbu1-u1-6:8"
     },
     {
      "hanzi": "吵",
      "pinyin": "chǎo",
      "pos": "adj.",
-     "en": "noisy"
+     "en": "noisy",
+     "id": "jinbu1-u1-6:9"
     },
     {
      "hanzi": "毛巾",
      "pinyin": "máo jīn",
      "pos": "n.",
-     "en": "towel"
+     "en": "towel",
+     "id": "jinbu1-u1-6:10"
     }
    ]
   },
   {
-   "id": "jinbu1-u1-7",
-   "title": "进步1 U1.7 · 我想订一个房间 I'd like to book a room",
+   "id": "jinbu1-u1-7a",
+   "title": "进步1 U1.7 · 我想订一个房间 I'd like to book a room · 1",
    "words": [
     {
      "hanzi": "服务",
      "pinyin": "fú wù",
      "pos": "n./v.",
-     "en": "service; to serve"
+     "en": "service; to serve",
+     "id": "jinbu1-u1-7:0"
     },
     {
      "hanzi": "满",
      "pinyin": "mǎn",
      "pos": "adj.",
-     "en": "full (住满了 fully booked)"
+     "en": "full (住满了 fully booked)",
+     "id": "jinbu1-u1-7:1"
     },
     {
      "hanzi": "根",
      "pinyin": "gēn",
      "pos": "m.",
-     "en": "for long thin things (一根油条 a fried dough stick)"
+     "en": "for long thin things (一根油条 a fried dough stick)",
+     "id": "jinbu1-u1-7:2"
     },
     {
      "hanzi": "标准间",
      "pinyin": "biāo zhǔn jiān",
      "pos": "n.",
-     "en": "standard (twin) room"
-    },
+     "en": "standard (twin) room",
+     "id": "jinbu1-u1-7:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u1-7b",
+   "title": "进步1 U1.7 · 我想订一个房间 I'd like to book a room · 2",
+   "words": [
     {
      "hanzi": "价格",
      "pinyin": "jià gé",
      "pos": "n.",
-     "en": "price (in writing, on websites)"
+     "en": "price (in writing, on websites)",
+     "id": "jinbu1-u1-7:4"
     },
     {
      "hanzi": "付款",
      "pinyin": "fù kuǎn",
      "pos": "v.",
-     "en": "to pay (formal)"
+     "en": "to pay (formal)",
+     "id": "jinbu1-u1-7:5"
     },
     {
      "hanzi": "身份证",
      "pinyin": "shēn fèn zhèng",
      "pos": "n.",
-     "en": "ID card"
+     "en": "ID card",
+     "id": "jinbu1-u1-7:6"
     },
     {
      "hanzi": "接机",
      "pinyin": "jiē jī",
      "pos": "v.",
-     "en": "to meet someone at the airport"
+     "en": "to meet someone at the airport",
+     "id": "jinbu1-u1-7:7"
     }
    ]
   },
   {
-   "id": "jinbu1-u2-1",
-   "title": "进步1 U2.1 · 在春熙路站换乘 Change at Chunxi Road",
+   "id": "jinbu1-u2-1a",
+   "title": "进步1 U2.1 · 在春熙路站换乘 Change at Chunxi Road · 1",
    "words": [
     {
      "hanzi": "动物园",
      "pinyin": "dòng wù yuán",
      "pos": "n.",
-     "en": "zoo"
+     "en": "zoo",
+     "id": "jinbu1-u2-1:0"
     },
     {
      "hanzi": "地方",
      "pinyin": "dì fang",
      "pos": "n.",
-     "en": "place (这个地方 this place)"
+     "en": "place (这个地方 this place)",
+     "id": "jinbu1-u2-1:1"
     },
     {
      "hanzi": "爸",
      "pinyin": "bà",
      "pos": "n.",
-     "en": "dad (spoken)"
+     "en": "dad (spoken)",
+     "id": "jinbu1-u2-1:2"
     },
     {
      "hanzi": "妈",
      "pinyin": "mā",
      "pos": "n.",
-     "en": "mum (spoken)"
+     "en": "mum (spoken)",
+     "id": "jinbu1-u2-1:3"
     },
     {
      "hanzi": "站",
      "pinyin": "zhàn",
      "pos": "n./m.",
-     "en": "station; stop (坐一站 go one stop)"
-    },
+     "en": "station; stop (坐一站 go one stop)",
+     "id": "jinbu1-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-1b",
+   "title": "进步1 U2.1 · 在春熙路站换乘 Change at Chunxi Road · 2",
+   "words": [
     {
      "hanzi": "号线",
      "pinyin": "hào xiàn",
      "pos": "n.",
-     "en": "(metro) line (二号线 Line 2)"
+     "en": "(metro) line (二号线 Line 2)",
+     "id": "jinbu1-u2-1:5",
+     "parts": [
+      "号",
+      "线"
+     ]
     },
     {
      "hanzi": "换乘",
      "pinyin": "huàn chéng",
      "pos": "v.",
-     "en": "to change (lines), transfer"
+     "en": "to change (lines), transfer",
+     "id": "jinbu1-u2-1:6"
     },
     {
-     "hanzi": "出站",
-     "pinyin": "chū zhàn",
+     "hanzi": "出",
+     "pinyin": "chū",
      "pos": "v.",
-     "en": "to go out of a station (through the gates)"
+     "en": "to produce, come up with (出两个版本 do two versions)",
+     "id": "dabu1-u3-2:2"
     },
     {
      "hanzi": "进站",
      "pinyin": "jìn zhàn",
      "pos": "v.",
-     "en": "to go into a station"
+     "en": "to go into a station",
+     "id": "jinbu1-u2-1:8"
     },
     {
      "hanzi": "跟着",
      "pinyin": "gēn zhe",
      "pos": "v.",
-     "en": "to follow"
+     "en": "to follow",
+     "id": "jinbu1-u2-1:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-2a",
+   "title": "进步1 U2.2 · 在春熙路站换乘 Change at Chunxi Road · 1",
+   "words": [
+    {
+     "hanzi": "出站",
+     "pinyin": "chū zhàn",
+     "pos": "v.",
+     "en": "to go out of a station (through the gates)",
+     "id": "jinbu1-u2-1:7",
+     "parts": [
+      "出",
+      "站"
+     ]
     },
     {
      "hanzi": "牌子",
      "pinyin": "pái zi",
      "pos": "n.",
-     "en": "sign; brand"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u2-2",
-   "title": "进步1 U2.2 · 在春熙路站换乘 Change at Chunxi Road",
-   "words": [
+     "en": "sign; brand",
+     "id": "jinbu1-u2-1:10"
+    },
     {
      "hanzi": "地铁卡",
      "pinyin": "dì tiě kǎ",
      "pos": "n.",
-     "en": "metro card"
+     "en": "metro card",
+     "id": "jinbu1-u2-2:0",
+     "parts": [
+      "地铁",
+      "卡"
+     ]
     },
     {
-     "hanzi": "扫码",
-     "pinyin": "sǎo mǎ",
-     "pos": "v.",
-     "en": "to scan a (QR) code"
+     "hanzi": "码",
+     "pinyin": "mǎ",
+     "pos": "n.",
+     "en": "code (扫码 scan a code; 扫不了码 can't scan codes)",
+     "id": "dabu3-u1-6:1"
     },
     {
      "hanzi": "看好",
      "pinyin": "kàn hǎo",
      "pos": "v.",
-     "en": "to look carefully at, check"
+     "en": "to look carefully at, check",
+     "id": "jinbu1-u2-2:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-2b",
+   "title": "进步1 U2.2 · 在春熙路站换乘 Change at Chunxi Road · 2",
+   "words": [
+    {
+     "hanzi": "扫码",
+     "pinyin": "sǎo mǎ",
+     "pos": "v.",
+     "en": "to scan a (QR) code",
+     "id": "jinbu1-u2-2:1",
+     "parts": [
+      "扫",
+      "码"
+     ]
     },
     {
      "hanzi": "方向",
      "pinyin": "fāng xiàng",
      "pos": "n.",
-     "en": "direction"
+     "en": "direction",
+     "id": "jinbu1-u2-2:3"
     },
     {
      "hanzi": "坐反",
      "pinyin": "zuò fǎn",
      "pos": "v.",
-     "en": "to go the wrong way (on a train or bus)"
+     "en": "to go the wrong way (on a train or bus)",
+     "id": "jinbu1-u2-2:4"
     },
     {
      "hanzi": "衬衫",
      "pinyin": "chèn shān",
      "pos": "n.",
-     "en": "shirt"
-    },
-    {
-     "hanzi": "出口",
-     "pinyin": "chū kǒu",
-     "pos": "n.",
-     "en": "exit"
+     "en": "shirt",
+     "id": "jinbu1-u2-2:5"
     },
     {
      "hanzi": "入口",
      "pinyin": "rù kǒu",
      "pos": "n.",
-     "en": "entrance"
-    },
+     "en": "entrance",
+     "id": "jinbu1-u2-2:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-2c",
+   "title": "进步1 U2.2 · 在春熙路站换乘 Change at Chunxi Road · 3",
+   "words": [
     {
      "hanzi": "口",
      "pinyin": "kǒu",
      "pos": "n./m.",
-     "en": "mouth; exit (B口 Exit B); a mouthful (尝一口 try a mouthful)"
+     "en": "mouth; exit (B口 Exit B); a mouthful (尝一口 try a mouthful)",
+     "id": "jinbu1-u2-2:8"
+    },
+    {
+     "hanzi": "出口",
+     "pinyin": "chū kǒu",
+     "pos": "n.",
+     "en": "exit",
+     "id": "jinbu1-u2-2:6"
     },
     {
      "hanzi": "好多",
      "pinyin": "hǎo duō",
      "pos": "adj.",
-     "en": "lots of, loads of"
+     "en": "lots of, loads of",
+     "id": "jinbu1-u2-2:9"
     },
-    {
-     "hanzi": "线",
-     "pinyin": "xiàn",
-     "pos": "n.",
-     "en": "line"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u2-3",
-   "title": "进步1 U2.3 · 在春熙路站换乘 Change at Chunxi Road",
-   "words": [
     {
      "hanzi": "线路图",
      "pinyin": "xiàn lù tú",
      "pos": "n.",
-     "en": "route map"
+     "en": "route map",
+     "id": "jinbu1-u2-3:0"
     },
     {
      "hanzi": "坐过站",
      "pinyin": "zuò guò zhàn",
      "pos": "v.",
-     "en": "to miss your stop"
-    },
+     "en": "to miss your stop",
+     "id": "jinbu1-u2-3:1",
+     "parts": [
+      "坐",
+      "过",
+      "站"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-3a",
+   "title": "进步1 U2.3 · 在春熙路站换乘 Change at Chunxi Road · 1",
+   "words": [
     {
      "hanzi": "终点站",
      "pinyin": "zhōng diǎn zhàn",
      "pos": "n.",
-     "en": "terminus, last stop"
+     "en": "terminus, last stop",
+     "id": "jinbu1-u2-3:2"
     },
     {
      "hanzi": "乘客",
      "pinyin": "chéng kè",
      "pos": "n.",
-     "en": "passenger"
+     "en": "passenger",
+     "id": "jinbu1-u2-3:3"
     },
     {
      "hanzi": "车厢",
      "pinyin": "chē xiāng",
      "pos": "n.",
-     "en": "carriage (of a train)"
+     "en": "carriage (of a train)",
+     "id": "jinbu1-u2-3:4"
     },
     {
      "hanzi": "挤",
      "pinyin": "jǐ",
      "pos": "adj.",
-     "en": "crowded, packed"
+     "en": "crowded, packed",
+     "id": "jinbu1-u2-3:5"
     },
     {
      "hanzi": "高峰",
      "pinyin": "gāo fēng",
      "pos": "n.",
-     "en": "peak (早高峰 the morning rush hour)"
-    },
+     "en": "peak (早高峰 the morning rush hour)",
+     "id": "jinbu1-u2-3:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-3b",
+   "title": "进步1 U2.3 · 在春熙路站换乘 Change at Chunxi Road · 2",
+   "words": [
     {
      "hanzi": "安检",
      "pinyin": "ān jiǎn",
      "pos": "n.",
-     "en": "security check"
+     "en": "security check",
+     "id": "jinbu1-u2-3:7"
     },
     {
      "hanzi": "票价",
      "pinyin": "piào jià",
      "pos": "n.",
-     "en": "fare, ticket price"
+     "en": "fare, ticket price",
+     "id": "jinbu1-u2-3:8"
     },
     {
      "hanzi": "让座",
      "pinyin": "ràng zuò",
      "pos": "v.",
-     "en": "to give up your seat (to someone)"
+     "en": "to give up your seat (to someone)",
+     "id": "jinbu1-u2-3:9"
     },
     {
      "hanzi": "工作人员",
      "pinyin": "gōng zuò rén yuán",
      "pos": "n.",
-     "en": "member of staff"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u2-4",
-   "title": "进步1 U2.4 · 在春熙路站换乘 Change at Chunxi Road",
-   "words": [
+     "en": "member of staff",
+     "id": "jinbu1-u2-3:10"
+    },
     {
      "hanzi": "进来",
      "pinyin": "jìn lai",
      "pos": "v.",
-     "en": "to come in"
-    },
+     "en": "to come in",
+     "id": "jinbu1-u2-4:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-4a",
+   "title": "进步1 U2.4 · 在春熙路站换乘 Change at Chunxi Road · 1",
+   "words": [
     {
      "hanzi": "好找",
      "pinyin": "hǎo zhǎo",
      "pos": "adj.",
-     "en": "easy to find"
+     "en": "easy to find",
+     "id": "jinbu1-u2-4:1"
     },
     {
      "hanzi": "带来",
      "pinyin": "dài lai",
      "pos": "v.",
-     "en": "to bring (here)"
+     "en": "to bring (here)",
+     "id": "jinbu1-u2-4:2"
     },
     {
      "hanzi": "嘛",
      "pinyin": "ma",
      "pos": "part.",
-     "en": "for something obvious (来就来嘛 just coming is enough)"
+     "en": "for something obvious (来就来嘛 just coming is enough)",
+     "id": "jinbu1-u2-4:3"
     },
     {
      "hanzi": "一点点",
      "pinyin": "yī diǎn diǎn",
      "pos": "n.",
-     "en": "a tiny bit"
+     "en": "a tiny bit",
+     "id": "jinbu1-u2-4:4"
     },
     {
      "hanzi": "回锅肉",
      "pinyin": "huí guō ròu",
      "pos": "n.",
-     "en": "twice-cooked pork (a Sichuan dish)"
-    },
+     "en": "twice-cooked pork (a Sichuan dish)",
+     "id": "jinbu1-u2-4:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-4b",
+   "title": "进步1 U2.4 · 在春熙路站换乘 Change at Chunxi Road · 2",
+   "words": [
     {
      "hanzi": "爱",
      "pinyin": "ài",
      "pos": "v.",
-     "en": "to love (爱吃 love eating)"
+     "en": "to love (爱吃 love eating)",
+     "id": "jinbu1-u2-4:6"
     },
     {
      "hanzi": "当",
      "pinyin": "dàng",
      "pos": "v.",
-     "en": "to treat as (就当在自己家 make yourself at home)"
+     "en": "to treat as (就当在自己家 make yourself at home)",
+     "id": "jinbu1-u2-4:7"
     },
     {
      "hanzi": "夹",
      "pinyin": "jiā",
      "pos": "v.",
-     "en": "to pick up with chopsticks (给他夹菜 put food on his plate)"
+     "en": "to pick up with chopsticks (给他夹菜 put food on his plate)",
+     "id": "jinbu1-u2-4:8"
     },
     {
      "hanzi": "精神",
      "pinyin": "jīng shen",
      "pos": "adj.",
-     "en": "lively, full of energy"
+     "en": "lively, full of energy",
+     "id": "jinbu1-u2-4:9"
     },
     {
      "hanzi": "基地",
      "pinyin": "jī dì",
      "pos": "n.",
-     "en": "base, centre (熊猫基地 the panda base)"
-    },
-    {
-     "hanzi": "做客",
-     "pinyin": "zuò kè",
-     "pos": "v.",
-     "en": "to be a guest (at someone's home)"
+     "en": "base, centre (熊猫基地 the panda base)",
+     "id": "jinbu1-u2-4:10"
     }
    ]
   },
   {
-   "id": "jinbu1-u2-5",
-   "title": "进步1 U2.5 · 在春熙路站换乘 Change at Chunxi Road",
+   "id": "jinbu1-u2-5a",
+   "title": "进步1 U2.5 · 在春熙路站换乘 Change at Chunxi Road · 1",
    "words": [
+    {
+     "hanzi": "做客",
+     "pinyin": "zuò kè",
+     "pos": "v.",
+     "en": "to be a guest (at someone's home)",
+     "id": "jinbu1-u2-4:11"
+    },
     {
      "hanzi": "主人",
      "pinyin": "zhǔ rén",
      "pos": "n.",
-     "en": "host"
+     "en": "host",
+     "id": "jinbu1-u2-5:0"
     },
     {
      "hanzi": "拖鞋",
      "pinyin": "tuō xié",
      "pos": "n.",
-     "en": "slippers"
+     "en": "slippers",
+     "id": "jinbu1-u2-5:1"
     },
     {
      "hanzi": "家常菜",
      "pinyin": "jiā cháng cài",
      "pos": "n.",
-     "en": "home cooking"
+     "en": "home cooking",
+     "id": "jinbu1-u2-5:2"
     },
     {
      "hanzi": "拿手菜",
      "pinyin": "ná shǒu cài",
      "pos": "n.",
-     "en": "signature dish, speciality"
-    },
+     "en": "signature dish, speciality",
+     "id": "jinbu1-u2-5:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-5b",
+   "title": "进步1 U2.5 · 在春熙路站换乘 Change at Chunxi Road · 2",
+   "words": [
     {
      "hanzi": "花椒",
      "pinyin": "huā jiāo",
      "pos": "n.",
-     "en": "Sichuan pepper"
+     "en": "Sichuan pepper",
+     "id": "jinbu1-u2-5:4"
     },
     {
      "hanzi": "麻",
      "pinyin": "má",
      "pos": "adj.",
-     "en": "numbing (from Sichuan pepper)"
+     "en": "numbing (from Sichuan pepper)",
+     "id": "jinbu1-u2-5:5"
     },
     {
      "hanzi": "团圆",
      "pinyin": "tuán yuán",
      "pos": "v.",
-     "en": "to be together as a family, have a reunion"
+     "en": "to be together as a family, have a reunion",
+     "id": "jinbu1-u2-5:6"
     },
     {
      "hanzi": "赏月",
      "pinyin": "shǎng yuè",
      "pos": "v.",
-     "en": "to look at the moon (at Mid-Autumn)"
+     "en": "to look at the moon (at Mid-Autumn)",
+     "id": "jinbu1-u2-5:7"
     },
     {
      "hanzi": "过节",
      "pinyin": "guò jié",
      "pos": "v.",
-     "en": "to celebrate a festival"
-    },
+     "en": "to celebrate a festival",
+     "id": "jinbu1-u2-5:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-5c",
+   "title": "进步1 U2.5 · 在春熙路站换乘 Change at Chunxi Road · 3",
+   "words": [
     {
      "hanzi": "一家人",
      "pinyin": "yī jiā rén",
      "pos": "n.",
-     "en": "family, all one family"
+     "en": "family, all one family",
+     "id": "jinbu1-u2-5:9"
     },
     {
      "hanzi": "亲戚",
      "pinyin": "qīn qi",
      "pos": "n.",
-     "en": "relative"
+     "en": "relative",
+     "id": "jinbu1-u2-5:10"
     },
     {
      "hanzi": "邻居",
      "pinyin": "lín jū",
      "pos": "n.",
-     "en": "neighbour"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u2-6",
-   "title": "进步1 U2.6 · 在春熙路站换乘 Change at Chunxi Road",
-   "words": [
+     "en": "neighbour",
+     "id": "jinbu1-u2-5:11"
+    },
     {
      "hanzi": "逛街",
      "pinyin": "guàng jiē",
      "pos": "v.",
-     "en": "to go shopping, wander round the shops"
+     "en": "to go shopping, wander round the shops",
+     "id": "jinbu1-u2-6:0"
     },
     {
      "hanzi": "茶馆",
      "pinyin": "chá guǎn",
      "pos": "n.",
-     "en": "teahouse"
-    },
+     "en": "teahouse",
+     "id": "jinbu1-u2-6:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-6a",
+   "title": "进步1 U2.6 · 在春熙路站换乘 Change at Chunxi Road · 1",
+   "words": [
     {
      "hanzi": "房子",
      "pinyin": "fáng zi",
      "pos": "n.",
-     "en": "house, building"
+     "en": "house, building",
+     "id": "jinbu1-u2-6:2"
     },
     {
      "hanzi": "可爱",
      "pinyin": "kě ài",
      "pos": "adj.",
-     "en": "cute, lovely"
+     "en": "cute, lovely",
+     "id": "jinbu1-u2-6:3"
     },
     {
      "hanzi": "树",
      "pinyin": "shù",
      "pos": "n.",
-     "en": "tree"
+     "en": "tree",
+     "id": "jinbu1-u2-6:4"
     },
     {
      "hanzi": "爬",
      "pinyin": "pá",
      "pos": "v.",
-     "en": "to climb"
-    },
+     "en": "to climb",
+     "id": "jinbu1-u2-6:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u2-6b",
+   "title": "进步1 U2.6 · 在春熙路站换乘 Change at Chunxi Road · 2",
+   "words": [
     {
      "hanzi": "一半",
      "pinyin": "yī bàn",
      "pos": "n.",
-     "en": "half"
+     "en": "half",
+     "id": "jinbu1-u2-6:6"
     },
     {
      "hanzi": "为什么",
      "pinyin": "wèi shén me",
      "pos": "q.",
-     "en": "why"
+     "en": "why",
+     "id": "jinbu1-u2-6:7"
     },
     {
      "hanzi": "因为",
      "pinyin": "yīn wèi",
      "pos": "conj.",
-     "en": "because"
+     "en": "because",
+     "id": "jinbu1-u2-6:8"
     },
     {
      "hanzi": "坐满",
      "pinyin": "zuò mǎn",
      "pos": "v.",
-     "en": "to be full (of people sitting)"
+     "en": "to be full (of people sitting)",
+     "id": "jinbu1-u2-6:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u3-1",
-   "title": "进步1 U3.1 · 这件太小了，能换吗？ It's too small. Can I change it?",
+   "id": "jinbu1-u3-1a",
+   "title": "进步1 U3.1 · 这件太小了，能换吗？ It's too small. Can I change it? · 1",
    "words": [
     {
      "hanzi": "欢迎光临",
      "pinyin": "huān yíng guāng lín",
      "pos": "phr.",
-     "en": "welcome (said by shop staff)"
+     "en": "welcome (said by shop staff)",
+     "id": "jinbu1-u3-1:0"
     },
     {
      "hanzi": "小票",
      "pinyin": "xiǎo piào",
      "pos": "n.",
-     "en": "receipt"
+     "en": "receipt",
+     "id": "jinbu1-u3-1:1"
     },
     {
      "hanzi": "大一号",
      "pinyin": "dà yī hào",
      "pos": "phr.",
-     "en": "one size bigger (号 size: L号 size L)"
+     "en": "one size bigger (号 size: L号 size L)",
+     "id": "jinbu1-u3-1:2"
     },
     {
      "hanzi": "没想到",
      "pinyin": "méi xiǎng dào",
      "pos": "phr.",
-     "en": "didn't expect, never thought"
+     "en": "didn't expect, never thought",
+     "id": "jinbu1-u3-1:3"
     },
     {
      "hanzi": "这么",
      "pinyin": "zhè me",
      "pos": "pron.",
-     "en": "so, this (这么小 so small)"
-    },
+     "en": "so, this (这么小 so small)",
+     "id": "jinbu1-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-1b",
+   "title": "进步1 U3.1 · 这件太小了，能换吗？ It's too small. Can I change it? · 2",
+   "words": [
     {
      "hanzi": "比较",
      "pinyin": "bǐ jiào",
      "pos": "adv.",
-     "en": "fairly, rather, on the … side"
+     "en": "fairly, rather, on the … side",
+     "id": "jinbu1-u3-1:5"
     },
     {
      "hanzi": "我就说吧",
      "pinyin": "wǒ jiù shuō ba",
      "pos": "phr.",
-     "en": "told you so, what did I say"
+     "en": "told you so, what did I say",
+     "id": "jinbu1-u3-1:6",
+     "parts": [
+      "我",
+      "就",
+      "说",
+      "吧"
+     ]
     },
     {
      "hanzi": "试衣间",
      "pinyin": "shì yī jiān",
      "pos": "n.",
-     "en": "fitting room"
+     "en": "fitting room",
+     "id": "jinbu1-u3-1:7"
     },
     {
      "hanzi": "排队",
      "pinyin": "pái duì",
      "pos": "v.",
-     "en": "to queue"
+     "en": "to queue",
+     "id": "jinbu1-u3-1:8"
     },
     {
      "hanzi": "正好",
      "pinyin": "zhèng hǎo",
      "pos": "adj./adv.",
-     "en": "just right; just, as it happens"
+     "en": "just right; just, as it happens",
+     "id": "jinbu1-u3-1:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u3-2",
-   "title": "进步1 U3.2 · 这件太小了，能换吗？ It's too small. Can I change it?",
+   "id": "jinbu1-u3-2a",
+   "title": "进步1 U3.2 · 这件太小了，能换吗？ It's too small. Can I change it? · 1",
    "words": [
     {
      "hanzi": "就是",
      "pinyin": "jiù shì",
      "pos": "conj.",
-     "en": "it's just that, only"
+     "en": "it's just that, only",
+     "id": "jinbu1-u3-2:0"
     },
     {
      "hanzi": "袖子",
      "pinyin": "xiù zi",
      "pos": "n.",
-     "en": "sleeve"
+     "en": "sleeve",
+     "id": "jinbu1-u3-2:1"
     },
     {
      "hanzi": "要是",
      "pinyin": "yào shi",
      "pos": "conj.",
-     "en": "if"
+     "en": "if",
+     "id": "jinbu1-u3-2:2"
     },
     {
      "hanzi": "回去",
      "pinyin": "huí qu",
      "pos": "v.",
-     "en": "to go back"
+     "en": "to go back",
+     "id": "jinbu1-u3-2:3"
     },
     {
      "hanzi": "合适",
      "pinyin": "hé shì",
      "pos": "adj.",
-     "en": "right, suitable; the right fit"
-    },
+     "en": "right, suitable; the right fit",
+     "id": "jinbu1-u3-2:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-2b",
+   "title": "进步1 U3.2 · 这件太小了，能换吗？ It's too small. Can I change it? · 2",
+   "words": [
     {
      "hanzi": "以内",
      "pinyin": "yǐ nèi",
      "pos": "n.",
-     "en": "within (七天以内 within seven days)"
+     "en": "within (七天以内 within seven days)",
+     "id": "jinbu1-u3-2:5"
     },
     {
      "hanzi": "退换",
      "pinyin": "tuì huàn",
      "pos": "v.",
-     "en": "to return or exchange (goods)"
+     "en": "to return or exchange (goods)",
+     "id": "jinbu1-u3-2:6"
     },
     {
      "hanzi": "丢",
      "pinyin": "diū",
      "pos": "v.",
-     "en": "to lose"
+     "en": "to lose",
+     "id": "jinbu1-u3-2:7"
     },
     {
      "hanzi": "大号",
      "pinyin": "dà hào",
      "pos": "n.",
-     "en": "large (size)"
+     "en": "large (size)",
+     "id": "jinbu1-u3-2:8",
+     "parts": [
+      "大",
+      "号"
+     ]
     },
     {
      "hanzi": "中号",
      "pinyin": "zhōng hào",
      "pos": "n.",
-     "en": "medium (size)"
+     "en": "medium (size)",
+     "id": "jinbu1-u3-2:9",
+     "parts": [
+      "中",
+      "号"
+     ]
     }
    ]
   },
   {
-   "id": "jinbu1-u3-3",
-   "title": "进步1 U3.3 · 这件太小了，能换吗？ It's too small. Can I change it?",
+   "id": "jinbu1-u3-3a",
+   "title": "进步1 U3.3 · 这件太小了，能换吗？ It's too small. Can I change it? · 1",
    "words": [
     {
      "hanzi": "小号",
      "pinyin": "xiǎo hào",
      "pos": "n.",
-     "en": "small (size)"
+     "en": "small (size)",
+     "id": "jinbu1-u3-3:0"
     },
     {
      "hanzi": "尺寸",
      "pinyin": "chǐ cùn",
      "pos": "n.",
-     "en": "size, measurements"
+     "en": "size, measurements",
+     "id": "jinbu1-u3-3:1"
     },
     {
      "hanzi": "裤子",
      "pinyin": "kù zi",
      "pos": "n.",
-     "en": "trousers"
+     "en": "trousers",
+     "id": "jinbu1-u3-3:2"
     },
     {
      "hanzi": "裙子",
      "pinyin": "qún zi",
      "pos": "n.",
-     "en": "skirt, dress"
+     "en": "skirt, dress",
+     "id": "jinbu1-u3-3:3"
     },
     {
      "hanzi": "外套",
      "pinyin": "wài tào",
      "pos": "n.",
-     "en": "coat, jacket"
-    },
+     "en": "coat, jacket",
+     "id": "jinbu1-u3-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-3b",
+   "title": "进步1 U3.3 · 这件太小了，能换吗？ It's too small. Can I change it? · 2",
+   "words": [
     {
      "hanzi": "毛衣",
      "pinyin": "máo yī",
      "pos": "n.",
-     "en": "jumper"
+     "en": "jumper",
+     "id": "jinbu1-u3-3:5"
     },
     {
      "hanzi": "短",
      "pinyin": "duǎn",
      "pos": "adj.",
-     "en": "short"
+     "en": "short",
+     "id": "jinbu1-u3-3:6"
     },
     {
      "hanzi": "紧",
      "pinyin": "jǐn",
      "pos": "adj.",
-     "en": "tight"
+     "en": "tight",
+     "id": "jinbu1-u3-3:7"
     },
     {
      "hanzi": "肥",
      "pinyin": "féi",
      "pos": "adj.",
-     "en": "loose, baggy (clothes)"
+     "en": "loose, baggy (clothes)",
+     "id": "jinbu1-u3-3:8"
     },
     {
      "hanzi": "镜子",
      "pinyin": "jìng zi",
      "pos": "n.",
-     "en": "mirror"
+     "en": "mirror",
+     "id": "jinbu1-u3-3:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u3-4",
+   "id": "jinbu1-u3-4a",
    "title": "进步1 U3.4 · 这件太小了，能换吗？ It's too small. Can I change it?",
    "words": [
-    {
-     "hanzi": "图片",
-     "pinyin": "tú piàn",
-     "pos": "n.",
-     "en": "picture, photo (online)"
-    },
     {
      "hanzi": "商场",
      "pinyin": "shāng chǎng",
      "pos": "n.",
-     "en": "shopping centre, mall"
+     "en": "shopping centre, mall",
+     "id": "jinbu1-u3-4:1"
     },
     {
      "hanzi": "打折",
      "pinyin": "dǎ zhé",
      "pos": "v.",
-     "en": "to give a discount, be on sale (打八折 20% off)"
+     "en": "to give a discount, be on sale (打八折 20% off)",
+     "id": "jinbu1-u3-4:2"
     },
     {
      "hanzi": "质量",
      "pinyin": "zhì liàng",
      "pos": "n.",
-     "en": "quality"
+     "en": "quality",
+     "id": "jinbu1-u3-4:3"
     },
     {
      "hanzi": "退货",
      "pinyin": "tuì huò",
      "pos": "v.",
-     "en": "to return goods"
+     "en": "to return goods",
+     "id": "jinbu1-u3-4:4"
     },
     {
      "hanzi": "退钱",
      "pinyin": "tuì qián",
      "pos": "v.",
-     "en": "to give a refund"
-    },
+     "en": "to give a refund",
+     "id": "jinbu1-u3-4:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-5a",
+   "title": "进步1 U3.5 · 这件太小了，能换吗？ It's too small. Can I change it? · 1",
+   "words": [
     {
      "hanzi": "适合",
      "pinyin": "shì hé",
      "pos": "v.",
-     "en": "to suit (这个颜色很适合你 this colour suits you)"
+     "en": "to suit (这个颜色很适合你 this colour suits you)",
+     "id": "jinbu1-u3-4:6"
     },
     {
      "hanzi": "款",
      "pinyin": "kuǎn",
      "pos": "m./n.",
-     "en": "style, model (新款 the new style)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u3-5",
-   "title": "进步1 U3.5 · 这件太小了，能换吗？ It's too small. Can I change it?",
-   "words": [
+     "en": "style, model (新款 the new style)",
+     "id": "jinbu1-u3-4:7"
+    },
     {
      "hanzi": "一模一样",
      "pinyin": "yī mú yī yàng",
      "pos": "phr.",
-     "en": "exactly the same"
+     "en": "exactly the same",
+     "id": "jinbu1-u3-5:0"
     },
     {
      "hanzi": "俩",
      "pinyin": "liǎ",
      "pos": "num.",
-     "en": "two, the two of (你们俩 the two of you)"
+     "en": "two, the two of (你们俩 the two of you)",
+     "id": "jinbu1-u3-5:1"
     },
     {
      "hanzi": "个子",
      "pinyin": "gè zi",
      "pos": "n.",
-     "en": "height, build (个子高 tall)"
-    },
+     "en": "height, build (个子高 tall)",
+     "id": "jinbu1-u3-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-5b",
+   "title": "进步1 U3.5 · 这件太小了，能换吗？ It's too small. Can I change it? · 2",
+   "words": [
     {
      "hanzi": "差不多",
      "pinyin": "chà bu duō",
      "pos": "adj.",
-     "en": "about the same (A 跟 B 差不多) (new meaning)"
+     "en": "about the same (A 跟 B 差不多) (new meaning)",
+     "id": "jinbu1-u3-5:3"
     },
     {
      "hanzi": "站",
      "pinyin": "zhàn",
      "pos": "v.",
-     "en": "to stand (new meaning)"
+     "en": "to stand (new meaning)",
+     "id": "jinbu1-u3-5:4"
     },
     {
      "hanzi": "像",
      "pinyin": "xiàng",
      "pos": "v.",
-     "en": "to look like, be like (像 … 一样 just like)"
+     "en": "to look like, be like (像 … 一样 just like)",
+     "id": "jinbu1-u3-5:5"
     },
     {
      "hanzi": "父子",
      "pinyin": "fù zǐ",
      "pos": "n.",
-     "en": "father and son"
+     "en": "father and son",
+     "id": "jinbu1-u3-5:6"
     },
     {
      "hanzi": "兄弟",
      "pinyin": "xiōng dì",
      "pos": "n.",
-     "en": "brothers"
-    },
+     "en": "brothers",
+     "id": "jinbu1-u3-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-6a",
+   "title": "进步1 U3.6 · 这件太小了，能换吗？ It's too small. Can I change it? · 1",
+   "words": [
     {
      "hanzi": "女儿",
      "pinyin": "nǚ ér",
      "pos": "n.",
-     "en": "daughter"
+     "en": "daughter",
+     "id": "jinbu1-u3-5:8"
     },
     {
      "hanzi": "儿子",
      "pinyin": "ér zi",
      "pos": "n.",
-     "en": "son"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u3-6",
-   "title": "进步1 U3.6 · 这件太小了，能换吗？ It's too small. Can I change it?",
-   "words": [
+     "en": "son",
+     "id": "jinbu1-u3-5:9"
+    },
     {
      "hanzi": "会说话",
      "pinyin": "huì shuō huà",
      "pos": "phr.",
-     "en": "to have a way with words, know the right thing to say"
+     "en": "to have a way with words, know the right thing to say",
+     "id": "jinbu1-u3-6:0",
+     "parts": [
+      "会",
+      "说话"
+     ]
     },
     {
      "hanzi": "锅底",
      "pinyin": "guō dǐ",
      "pos": "n.",
-     "en": "(hotpot) broth"
+     "en": "(hotpot) broth",
+     "id": "jinbu1-u3-6:1"
     },
     {
      "hanzi": "种",
      "pinyin": "zhǒng",
      "pos": "m.",
-     "en": "kind, type (哪种 which kind)"
-    },
+     "en": "kind, type (哪种 which kind)",
+     "id": "jinbu1-u3-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-6b",
+   "title": "进步1 U3.6 · 这件太小了，能换吗？ It's too small. Can I change it? · 2",
+   "words": [
     {
-     "hanzi": "红锅",
-     "pinyin": "hóng guō",
-     "pos": "n.",
-     "en": "spicy (red) hotpot broth"
+     "hanzi": "红",
+     "pinyin": "hóng",
+     "pos": "adj.",
+     "en": "red (脸是红的 the face is red)",
+     "id": "jinbu3-u2-2:4"
     },
     {
      "hanzi": "鸳鸯锅",
      "pinyin": "yuān yang guō",
      "pos": "n.",
-     "en": "split hotpot, half spicy and half mild"
+     "en": "split hotpot, half spicy and half mild",
+     "id": "jinbu1-u3-6:4"
     },
     {
      "hanzi": "清汤",
      "pinyin": "qīng tāng",
      "pos": "n.",
-     "en": "clear broth, mild soup"
+     "en": "clear broth, mild soup",
+     "id": "jinbu1-u3-6:5"
     },
     {
      "hanzi": "哇",
      "pinyin": "wa",
      "pos": "part.",
-     "en": "wow, whoa"
+     "en": "wow, whoa",
+     "id": "jinbu1-u3-6:6"
     },
     {
      "hanzi": "死",
      "pinyin": "sǐ",
      "pos": "v.",
-     "en": "to die (辣死了 so hot I could die)"
+     "en": "to die (辣死了 so hot I could die)",
+     "id": "jinbu1-u3-6:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-6c",
+   "title": "进步1 U3.6 · 这件太小了，能换吗？ It's too small. Can I change it? · 3",
+   "words": [
+    {
+     "hanzi": "红锅",
+     "pinyin": "hóng guō",
+     "pos": "n.",
+     "en": "spicy (red) hotpot broth",
+     "id": "jinbu1-u3-6:3",
+     "parts": [
+      "红",
+      "锅"
+     ]
     },
     {
      "hanzi": "豆奶",
      "pinyin": "dòu nǎi",
      "pos": "n.",
-     "en": "soya milk drink (a hotpot favourite)"
+     "en": "soya milk drink (a hotpot favourite)",
+     "id": "jinbu1-u3-6:8"
     },
     {
      "hanzi": "长得",
      "pinyin": "zhǎng de",
      "pos": "v.",
-     "en": "to look (长 zhǎng: to grow) (他长得像他爸爸 he looks like his dad)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u3-7",
-   "title": "进步1 U3.7 · 这件太小了，能换吗？ It's too small. Can I change it?",
-   "words": [
+     "en": "to look (长 zhǎng: to grow) (他长得像他爸爸 he looks like his dad)",
+     "id": "jinbu1-u3-6:9",
+     "parts": [
+      "长",
+      "得"
+     ]
+    },
     {
      "hanzi": "相同",
      "pinyin": "xiāng tóng",
      "pos": "adj.",
-     "en": "the same (in writing)"
+     "en": "the same (in writing)",
+     "id": "jinbu1-u3-7:0"
     },
     {
      "hanzi": "不同",
      "pinyin": "bù tóng",
      "pos": "adj.",
-     "en": "different"
-    },
+     "en": "different",
+     "id": "jinbu1-u3-7:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-7a",
+   "title": "进步1 U3.7 · 这件太小了，能换吗？ It's too small. Can I change it? · 1",
+   "words": [
     {
      "hanzi": "区别",
      "pinyin": "qū bié",
      "pos": "n.",
-     "en": "difference"
+     "en": "difference",
+     "id": "jinbu1-u3-7:2"
     },
     {
      "hanzi": "片",
      "pinyin": "piàn",
      "pos": "m.",
-     "en": "slice (一片肉 a slice of meat)"
+     "en": "slice (一片肉 a slice of meat)",
+     "id": "jinbu1-u3-7:3"
+    },
+    {
+     "hanzi": "图片",
+     "pinyin": "tú piàn",
+     "pos": "n.",
+     "en": "picture, photo (online)",
+     "id": "jinbu1-u3-4:0"
     },
     {
      "hanzi": "毛肚",
      "pinyin": "máo dǔ",
      "pos": "n.",
-     "en": "beef tripe (a hotpot favourite)"
-    },
+     "en": "beef tripe (a hotpot favourite)",
+     "id": "jinbu1-u3-7:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u3-7b",
+   "title": "进步1 U3.7 · 这件太小了，能换吗？ It's too small. Can I change it? · 2",
+   "words": [
     {
      "hanzi": "葱",
      "pinyin": "cōng",
      "pos": "n.",
-     "en": "spring onion"
+     "en": "spring onion",
+     "id": "jinbu1-u3-7:5"
     },
     {
      "hanzi": "蒜",
      "pinyin": "suàn",
      "pos": "n.",
-     "en": "garlic"
+     "en": "garlic",
+     "id": "jinbu1-u3-7:6"
     },
     {
      "hanzi": "香油",
      "pinyin": "xiāng yóu",
      "pos": "n.",
-     "en": "sesame oil"
+     "en": "sesame oil",
+     "id": "jinbu1-u3-7:7"
     },
     {
      "hanzi": "蘸",
      "pinyin": "zhàn",
      "pos": "v.",
-     "en": "to dip (in a sauce)"
+     "en": "to dip (in a sauce)",
+     "id": "jinbu1-u3-7:8"
     }
    ]
   },
   {
-   "id": "jinbu1-u4-1",
-   "title": "进步1 U4.1 · 谢谢你们的热情招待 Thank you for having me",
+   "id": "jinbu1-u4-1a",
+   "title": "进步1 U4.1 · 谢谢你们的热情招待 Thank you for having me · 1",
    "words": [
     {
      "hanzi": "包",
      "pinyin": "bāo",
      "pos": "m./n.",
-     "en": "bag, packet (这包东西 this bag of things)"
+     "en": "bag, packet (这包东西 this bag of things)",
+     "id": "jinbu1-u4-1:0"
     },
     {
      "hanzi": "带上",
      "pinyin": "dài shang",
      "pos": "v.",
-     "en": "to take with you"
+     "en": "to take with you",
+     "id": "jinbu1-u4-1:1"
     },
     {
      "hanzi": "真是",
      "pinyin": "zhēn shi",
      "pos": "adv.",
-     "en": "really, truly"
+     "en": "really, truly",
+     "id": "jinbu1-u4-1:2"
     },
     {
      "hanzi": "对",
      "pinyin": "duì",
      "pos": "phr.",
-     "en": "good to, kind to (对我这么好 so good to me) (对…好)"
+     "en": "good to, kind to (对我这么好 so good to me) (对…好)",
+     "id": "jinbu1-u4-1:3"
     },
     {
      "hanzi": "让",
      "pinyin": "ràng",
      "pos": "v.",
-     "en": "to make (someone feel), let (让我觉得 made me feel)"
-    },
+     "en": "to make (someone feel), let (让我觉得 made me feel)",
+     "id": "jinbu1-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-1b",
+   "title": "进步1 U4.1 · 谢谢你们的热情招待 Thank you for having me · 2",
+   "words": [
     {
      "hanzi": "难忘",
      "pinyin": "nán wàng",
      "pos": "adj.",
-     "en": "unforgettable (最难忘的 the most memorable)"
+     "en": "unforgettable (最难忘的 the most memorable)",
+     "id": "jinbu1-u4-1:5"
     },
     {
      "hanzi": "舍不得",
      "pinyin": "shě bu de",
      "pos": "v.",
-     "en": "to hate to part with, be sad to see (someone) go"
+     "en": "to hate to part with, be sad to see (someone) go",
+     "id": "jinbu1-u4-1:6"
     },
     {
      "hanzi": "报",
      "pinyin": "bào",
      "pos": "v.",
-     "en": "to report, let (someone) know"
+     "en": "to report, let (someone) know",
+     "id": "jinbu1-u4-1:7"
     },
     {
      "hanzi": "平安",
      "pinyin": "píng ān",
      "pos": "adj.",
-     "en": "safe and sound"
+     "en": "safe and sound",
+     "id": "jinbu1-u4-1:8"
     },
     {
      "hanzi": "报平安",
      "pinyin": "bào píng ān",
      "pos": "v.",
-     "en": "to let people know you've arrived safely"
+     "en": "to let people know you've arrived safely",
+     "id": "jinbu1-u4-1:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u4-2",
-   "title": "进步1 U4.2 · 谢谢你们的热情招待 Thank you for having me",
+   "id": "jinbu1-u4-2a",
+   "title": "进步1 U4.2 · 谢谢你们的热情招待 Thank you for having me · 1",
    "words": [
     {
      "hanzi": "不冷不热",
      "pinyin": "bù lěng bù rè",
      "pos": "phr.",
-     "en": "neither hot nor cold, just right"
+     "en": "neither hot nor cold, just right",
+     "id": "jinbu1-u4-2:0"
     },
     {
      "hanzi": "送",
      "pinyin": "sòng",
      "pos": "v.",
-     "en": "to see (someone) off, take (someone) somewhere (送你去机场 take you to the airport) (new meaning)"
+     "en": "to see (someone) off, take (someone) somewhere (送你去机场 take you to the airport) (new meaning)",
+     "id": "jinbu1-u4-2:1"
     },
     {
      "hanzi": "感动",
      "pinyin": "gǎn dòng",
      "pos": "adj./v.",
-     "en": "moved, touched; to move (someone)"
+     "en": "moved, touched; to move (someone)",
+     "id": "jinbu1-u4-2:2"
     },
     {
      "hanzi": "事",
      "pinyin": "shì",
      "pos": "n.",
-     "en": "thing, matter (这件事 this)"
+     "en": "thing, matter (这件事 this)",
+     "id": "jinbu1-u4-2:3"
     },
     {
      "hanzi": "担心",
      "pinyin": "dān xīn",
      "pos": "v.",
-     "en": "to worry"
-    },
+     "en": "to worry",
+     "id": "jinbu1-u4-2:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-2b",
+   "title": "进步1 U4.2 · 谢谢你们的热情招待 Thank you for having me · 2",
+   "words": [
     {
      "hanzi": "关心",
      "pinyin": "guān xīn",
      "pos": "v./n.",
-     "en": "to care about, look out for; concern"
+     "en": "to care about, look out for; concern",
+     "id": "jinbu1-u4-2:5"
     },
     {
      "hanzi": "打扰",
      "pinyin": "dǎ rǎo",
      "pos": "v.",
-     "en": "to disturb, intrude (打扰了 sorry to bother you)"
+     "en": "to disturb, intrude (打扰了 sorry to bother you)",
+     "id": "jinbu1-u4-2:6"
     },
     {
      "hanzi": "好客",
      "pinyin": "hào kè",
      "pos": "adj.",
-     "en": "hospitable"
+     "en": "hospitable",
+     "id": "jinbu1-u4-2:7"
     },
     {
      "hanzi": "周到",
      "pinyin": "zhōu dào",
      "pos": "adj.",
-     "en": "thoughtful, attentive"
+     "en": "thoughtful, attentive",
+     "id": "jinbu1-u4-2:8"
     },
     {
      "hanzi": "温暖",
      "pinyin": "wēn nuǎn",
      "pos": "adj.",
-     "en": "warm (feelings, a welcome)"
+     "en": "warm (feelings, a welcome)",
+     "id": "jinbu1-u4-2:9"
     }
    ]
   },
   {
-   "id": "jinbu1-u4-3",
-   "title": "进步1 U4.3 · 谢谢你们的热情招待 Thank you for having me",
+   "id": "jinbu1-u4-3a",
+   "title": "进步1 U4.3 · 谢谢你们的热情招待 Thank you for having me · 1",
    "words": [
     {
      "hanzi": "印象",
      "pinyin": "yìn xiàng",
      "pos": "n.",
-     "en": "impression (印象很深 a deep impression)"
+     "en": "impression (印象很深 a deep impression)",
+     "id": "jinbu1-u4-3:0"
     },
     {
      "hanzi": "深",
      "pinyin": "shēn",
      "pos": "adj.",
-     "en": "deep"
+     "en": "deep",
+     "id": "jinbu1-u4-3:1"
     },
     {
      "hanzi": "机会",
      "pinyin": "jī huì",
      "pos": "n.",
-     "en": "chance, opportunity"
+     "en": "chance, opportunity",
+     "id": "jinbu1-u4-3:2"
     },
     {
      "hanzi": "经历",
      "pinyin": "jīng lì",
      "pos": "n./v.",
-     "en": "experience; to go through"
+     "en": "experience; to go through",
+     "id": "jinbu1-u4-3:3"
     },
     {
      "hanzi": "联系",
      "pinyin": "lián xì",
      "pos": "v./n.",
-     "en": "to contact, keep in touch; contact"
-    },
+     "en": "to contact, keep in touch; contact",
+     "id": "jinbu1-u4-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-3b",
+   "title": "进步1 U4.3 · 谢谢你们的热情招待 Thank you for having me · 2",
+   "words": [
     {
      "hanzi": "保持",
      "pinyin": "bǎo chí",
      "pos": "v.",
-     "en": "to keep (保持联系 keep in touch)"
+     "en": "to keep (保持联系 keep in touch)",
+     "id": "jinbu1-u4-3:5"
     },
     {
      "hanzi": "期待",
      "pinyin": "qī dài",
      "pos": "v.",
-     "en": "to look forward to"
+     "en": "to look forward to",
+     "id": "jinbu1-u4-3:6"
     },
     {
      "hanzi": "应该的",
      "pinyin": "yīng gāi de",
      "pos": "phr.",
-     "en": "it was the least I could do (a reply to thanks)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u4-4",
-   "title": "进步1 U4.4 · 谢谢你们的热情招待 Thank you for having me",
-   "words": [
+     "en": "it was the least I could do (a reply to thanks)",
+     "id": "jinbu1-u4-3:7",
+     "parts": [
+      "应该",
+      "的"
+     ]
+    },
     {
      "hanzi": "回到",
      "pinyin": "huí dào",
      "pos": "v.",
-     "en": "to get back to"
-    },
-    {
-     "hanzi": "倒时差",
-     "pinyin": "dǎo shí chā",
-     "pos": "v.",
-     "en": "to get over jet lag"
+     "en": "to get back to",
+     "id": "jinbu1-u4-4:0"
     },
     {
      "hanzi": "时差",
      "pinyin": "shí chā",
      "pos": "n.",
-     "en": "time difference; jet lag"
+     "en": "time difference; jet lag",
+     "id": "jinbu1-u4-4:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-4a",
+   "title": "进步1 U4.4 · 谢谢你们的热情招待 Thank you for having me",
+   "words": [
+    {
+     "hanzi": "倒时差",
+     "pinyin": "dǎo shí chā",
+     "pos": "v.",
+     "en": "to get over jet lag",
+     "id": "jinbu1-u4-4:1"
     },
     {
      "hanzi": "首先",
      "pinyin": "shǒu xiān",
      "pos": "adv.",
-     "en": "first of all"
+     "en": "first of all",
+     "id": "jinbu1-u4-4:3"
     },
     {
      "hanzi": "非常",
      "pinyin": "fēi cháng",
      "pos": "adv.",
-     "en": "very, extremely"
+     "en": "very, extremely",
+     "id": "jinbu1-u4-4:4"
     },
     {
      "hanzi": "感谢",
      "pinyin": "gǎn xiè",
      "pos": "v.",
-     "en": "to thank (more formal than 谢谢)"
+     "en": "to thank (more formal than 谢谢)",
+     "id": "jinbu1-u4-4:5"
     },
     {
      "hanzi": "招待",
      "pinyin": "zhāo dài",
      "pos": "v./n.",
-     "en": "to host, look after (guests); hospitality"
-    },
+     "en": "to host, look after (guests); hospitality",
+     "id": "jinbu1-u4-4:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-5a",
+   "title": "进步1 U4.5 · 谢谢你们的热情招待 Thank you for having me · 1",
+   "words": [
     {
      "hanzi": "特别是",
      "pinyin": "tè bié shì",
      "pos": "phr.",
-     "en": "especially"
+     "en": "especially",
+     "id": "jinbu1-u4-4:7",
+     "parts": [
+      "特别",
+      "是"
+     ]
     },
     {
      "hanzi": "盖碗茶",
      "pinyin": "gài wǎn chá",
      "pos": "n.",
-     "en": "tea in a lidded bowl (a Chengdu teahouse classic)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u4-5",
-   "title": "进步1 U4.5 · 谢谢你们的热情招待 Thank you for having me",
-   "words": [
+     "en": "tea in a lidded bowl (a Chengdu teahouse classic)",
+     "id": "jinbu1-u4-4:8"
+    },
     {
      "hanzi": "记得",
      "pinyin": "jì de",
      "pos": "v.",
-     "en": "to remember"
+     "en": "to remember",
+     "id": "jinbu1-u4-5:0"
     },
     {
      "hanzi": "什么样",
      "pinyin": "shén me yàng",
      "pos": "q.",
-     "en": "what kind, what … is like"
+     "en": "what kind, what … is like",
+     "id": "jinbu1-u4-5:1"
     },
     {
      "hanzi": "不是",
      "pinyin": "bù shì",
      "pos": "phr.",
-     "en": "not … but … (不是…而是…)"
-    },
+     "en": "not … but … (不是…而是…)",
+     "id": "jinbu1-u4-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-5b",
+   "title": "进步1 U4.5 · 谢谢你们的热情招待 Thank you for having me · 2",
+   "words": [
     {
      "hanzi": "而是",
      "pinyin": "ér shì",
      "pos": "phr.",
-     "en": "(in 不是…而是…)"
+     "en": "(in 不是…而是…)",
+     "id": "jinbu1-u4-5:3"
     },
     {
      "hanzi": "家里人",
      "pinyin": "jiā li rén",
      "pos": "n.",
-     "en": "family, one of the family"
+     "en": "family, one of the family",
+     "id": "jinbu1-u4-5:4"
     },
     {
      "hanzi": "离开",
      "pinyin": "lí kāi",
      "pos": "v.",
-     "en": "to leave"
+     "en": "to leave",
+     "id": "jinbu1-u4-5:5"
     },
     {
      "hanzi": "想念",
      "pinyin": "xiǎng niàn",
      "pos": "v.",
-     "en": "to miss (someone or something) (written, warm)"
+     "en": "to miss (someone or something) (written, warm)",
+     "id": "jinbu1-u4-5:6"
     },
     {
      "hanzi": "附件",
      "pinyin": "fù jiàn",
      "pos": "n.",
-     "en": "attachment (in an email)"
-    },
+     "en": "attachment (in an email)",
+     "id": "jinbu1-u4-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-6a",
+   "title": "进步1 U4.6 · 谢谢你们的热情招待 Thank you for having me · 1",
+   "words": [
     {
      "hanzi": "再次",
      "pinyin": "zài cì",
      "pos": "adv.",
-     "en": "once again"
+     "en": "once again",
+     "id": "jinbu1-u4-5:8"
     },
     {
      "hanzi": "万事如意",
      "pinyin": "wàn shì rú yì",
      "pos": "phr.",
-     "en": "may everything go well (at the end of a letter)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu1-u4-6",
-   "title": "进步1 U4.6 · 谢谢你们的热情招待 Thank you for having me",
-   "words": [
+     "en": "may everything go well (at the end of a letter)",
+     "id": "jinbu1-u4-5:9"
+    },
     {
      "hanzi": "感谢信",
      "pinyin": "gǎn xiè xìn",
      "pos": "n.",
-     "en": "thank-you letter"
+     "en": "thank-you letter",
+     "id": "jinbu1-u4-6:0"
     },
     {
      "hanzi": "尊敬",
      "pinyin": "zūn jìng",
      "pos": "adj./v.",
-     "en": "respected; to respect (尊敬的 Dear, in formal letters)"
+     "en": "respected; to respect (尊敬的 Dear, in formal letters)",
+     "id": "jinbu1-u4-6:1"
     },
     {
      "hanzi": "礼貌",
      "pinyin": "lǐ mào",
      "pos": "n./adj.",
-     "en": "manners; polite"
-    },
+     "en": "manners; polite",
+     "id": "jinbu1-u4-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-6b",
+   "title": "进步1 U4.6 · 谢谢你们的热情招待 Thank you for having me · 2",
+   "words": [
     {
      "hanzi": "正式",
      "pinyin": "zhèng shì",
      "pos": "adj.",
-     "en": "formal"
+     "en": "formal",
+     "id": "jinbu1-u4-6:3"
     },
     {
      "hanzi": "回复",
      "pinyin": "huí fù",
      "pos": "v.",
-     "en": "to reply (to a message or email)"
+     "en": "to reply (to a message or email)",
+     "id": "jinbu1-u4-6:4"
     },
     {
      "hanzi": "主题",
      "pinyin": "zhǔ tí",
      "pos": "n.",
-     "en": "subject (of an email); theme"
+     "en": "subject (of an email); theme",
+     "id": "jinbu1-u4-6:5"
     },
     {
      "hanzi": "问好",
      "pinyin": "wèn hǎo",
      "pos": "v.",
-     "en": "to send your regards, say hello (向…问好)"
-    },
+     "en": "to send your regards, say hello (向…问好)",
+     "id": "jinbu1-u4-6:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-6c",
+   "title": "进步1 U4.6 · 谢谢你们的热情招待 Thank you for having me · 3",
+   "words": [
     {
      "hanzi": "祝福",
      "pinyin": "zhù fú",
      "pos": "n./v.",
-     "en": "good wishes; to wish (someone) well"
+     "en": "good wishes; to wish (someone) well",
+     "id": "jinbu1-u4-6:7"
     },
     {
      "hanzi": "回忆",
      "pinyin": "huí yì",
      "pos": "n./v.",
-     "en": "memory; to look back on"
+     "en": "memory; to look back on",
+     "id": "jinbu1-u4-6:8"
     },
     {
      "hanzi": "薄饼",
      "pinyin": "báo bǐng",
      "pos": "",
-     "en": "thin pancake"
+     "en": "thin pancake",
+     "id": "jinbu1-u4-6:9"
     },
     {
      "hanzi": "酱",
      "pinyin": "jiàng",
      "pos": "",
-     "en": "sauce"
-    },
+     "en": "sauce",
+     "id": "jinbu1-u4-6:10"
+    }
+   ]
+  },
+  {
+   "id": "jinbu1-u4-6d",
+   "title": "进步1 U4.6 · 谢谢你们的热情招待 Thank you for having me · 4",
+   "words": [
     {
      "hanzi": "卷",
      "pinyin": "juǎn",
      "pos": "",
-     "en": "to roll up"
+     "en": "to roll up",
+     "id": "jinbu1-u4-6:11"
     },
     {
      "hanzi": "竹子",
      "pinyin": "zhú zi",
      "pos": "",
-     "en": "bamboo"
+     "en": "bamboo",
+     "id": "jinbu1-u4-6:12"
     },
     {
      "hanzi": "它们",
      "pinyin": "tā men",
      "pos": "",
-     "en": "they (animals, things)"
+     "en": "they (animals, things)",
+     "id": "jinbu1-u4-6:13"
     },
     {
      "hanzi": "鸳鸯锅",
      "pinyin": "yuān yang guō",
      "pos": "",
-     "en": "split hotpot"
+     "en": "split hotpot",
+     "id": "jinbu1-u4-6:14"
     }
    ]
   },
   {
-   "id": "jinbu2-u1-1",
-   "title": "进步2 U1.1 · 把画挂上去！ Hang the painting up!",
+   "id": "jinbu2-u1-1a",
+   "title": "进步2 U1.1 · 把画挂上去！ Hang the painting up! · 1",
    "words": [
     {
      "hanzi": "把",
      "pinyin": "bǎ",
      "pos": "prep.",
-     "en": "puts the object before the verb (把画挂上去 hang the painting up)"
+     "en": "puts the object before the verb (把画挂上去 hang the painting up)",
+     "id": "jinbu2-u1-1:0"
     },
     {
      "hanzi": "幅",
      "pinyin": "fú",
      "pos": "m.",
-     "en": "for paintings and pictures (一幅画 a painting)"
+     "en": "for paintings and pictures (一幅画 a painting)",
+     "id": "jinbu2-u1-1:1"
     },
     {
      "hanzi": "画",
      "pinyin": "huà",
      "pos": "n./v.",
-     "en": "painting, picture; to paint, draw"
+     "en": "painting, picture; to paint, draw",
+     "id": "jinbu2-u1-1:2"
     },
     {
      "hanzi": "挂",
      "pinyin": "guà",
      "pos": "v.",
-     "en": "to hang, put up"
+     "en": "to hang, put up",
+     "id": "jinbu2-u1-1:3"
     },
     {
      "hanzi": "上去",
      "pinyin": "shàng qu",
      "pos": "v.",
-     "en": "to go up (after a verb: up, away from the speaker)"
-    },
+     "en": "to go up (after a verb: up, away from the speaker)",
+     "id": "jinbu2-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-1b",
+   "title": "进步2 U1.1 · 把画挂上去！ Hang the painting up! · 2",
+   "words": [
     {
      "hanzi": "面",
      "pinyin": "miàn",
      "pos": "m.",
-     "en": "for walls, mirrors and flags (这面墙 this wall)"
+     "en": "for walls, mirrors and flags (这面墙 this wall)",
+     "id": "jinbu2-u1-1:5"
     },
     {
      "hanzi": "墙",
      "pinyin": "qiáng",
      "pos": "n.",
-     "en": "wall"
+     "en": "wall",
+     "id": "jinbu2-u1-1:6"
     },
     {
      "hanzi": "中间",
      "pinyin": "zhōng jiān",
      "pos": "n.",
-     "en": "middle, centre"
+     "en": "middle, centre",
+     "id": "jinbu2-u1-1:7"
     },
     {
      "hanzi": "低",
      "pinyin": "dī",
      "pos": "adj.",
-     "en": "low"
+     "en": "low",
+     "id": "jinbu2-u1-1:8"
     },
     {
      "hanzi": "歪",
      "pinyin": "wāi",
      "pos": "adj.",
-     "en": "crooked, not straight"
+     "en": "crooked, not straight",
+     "id": "jinbu2-u1-1:9"
     }
    ]
   },
   {
-   "id": "jinbu2-u1-2",
-   "title": "进步2 U1.2 · 把画挂上去！ Hang the painting up!",
+   "id": "jinbu2-u1-2a",
+   "title": "进步2 U1.2 · 把画挂上去！ Hang the painting up! · 1",
    "words": [
     {
      "hanzi": "动",
      "pinyin": "dòng",
      "pos": "v.",
-     "en": "to move (别动 don't move)"
+     "en": "to move (别动 don't move)",
+     "id": "jinbu2-u1-2:0"
     },
     {
      "hanzi": "毕业",
      "pinyin": "bì yè",
      "pos": "v.",
-     "en": "to graduate, finish university"
+     "en": "to graduate, finish university",
+     "id": "jinbu2-u1-2:1"
     },
     {
      "hanzi": "毕业展",
      "pinyin": "bì yè zhǎn",
      "pos": "n.",
-     "en": "graduation show, degree show"
+     "en": "graduation show, degree show",
+     "id": "jinbu2-u1-2:2"
     },
     {
      "hanzi": "当然",
      "pinyin": "dāng rán",
      "pos": "adv.",
-     "en": "of course"
+     "en": "of course",
+     "id": "jinbu2-u1-2:3"
     },
     {
      "hanzi": "过来",
      "pinyin": "guò lai",
      "pos": "v.",
-     "en": "to come over (after a verb: over here, towards the speaker)"
-    },
+     "en": "to come over (after a verb: over here, towards the speaker)",
+     "id": "jinbu2-u1-2:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-2b",
+   "title": "进步2 U1.2 · 把画挂上去！ Hang the painting up! · 2",
+   "words": [
     {
      "hanzi": "楼下",
      "pinyin": "lóu xià",
      "pos": "n.",
-     "en": "downstairs"
+     "en": "downstairs",
+     "id": "jinbu2-u1-2:5"
     },
     {
      "hanzi": "楼上",
      "pinyin": "lóu shàng",
      "pos": "n.",
-     "en": "upstairs"
+     "en": "upstairs",
+     "id": "jinbu2-u1-2:6"
     },
     {
      "hanzi": "下来",
      "pinyin": "xià lai",
      "pos": "v.",
-     "en": "to come down"
+     "en": "to come down",
+     "id": "jinbu2-u1-2:7"
     },
     {
      "hanzi": "下去",
      "pinyin": "xià qu",
      "pos": "v.",
-     "en": "to go down"
+     "en": "to go down",
+     "id": "jinbu2-u1-2:8"
     },
     {
      "hanzi": "上来",
      "pinyin": "shàng lai",
      "pos": "v.",
-     "en": "to come up"
+     "en": "to come up",
+     "id": "jinbu2-u1-2:9"
     }
    ]
   },
   {
-   "id": "jinbu2-u1-3",
-   "title": "进步2 U1.3 · 把画挂上去！ Hang the painting up!",
+   "id": "jinbu2-u1-3a",
+   "title": "进步2 U1.3 · 把画挂上去！ Hang the painting up! · 1",
    "words": [
     {
      "hanzi": "凉",
      "pinyin": "liáng",
      "pos": "adj.",
-     "en": "cold, cool (饺子凉了 the dumplings have gone cold)"
+     "en": "cold, cool (饺子凉了 the dumplings have gone cold)",
+     "id": "jinbu2-u1-3:0"
     },
     {
      "hanzi": "展览",
      "pinyin": "zhǎn lǎn",
      "pos": "n./v.",
-     "en": "exhibition; to exhibit"
+     "en": "exhibition; to exhibit",
+     "id": "jinbu2-u1-3:1"
     },
     {
      "hanzi": "画展",
      "pinyin": "huà zhǎn",
      "pos": "n.",
-     "en": "art exhibition"
+     "en": "art exhibition",
+     "id": "jinbu2-u1-3:2"
     },
     {
      "hanzi": "作品",
      "pinyin": "zuò pǐn",
      "pos": "n.",
-     "en": "work (of art, writing or design)"
+     "en": "work (of art, writing or design)",
+     "id": "jinbu2-u1-3:3"
     },
     {
      "hanzi": "艺术",
      "pinyin": "yì shù",
      "pos": "n.",
-     "en": "art"
-    },
+     "en": "art",
+     "id": "jinbu2-u1-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-3b",
+   "title": "进步2 U1.3 · 把画挂上去！ Hang the painting up! · 2",
+   "words": [
     {
      "hanzi": "布置",
      "pinyin": "bù zhì",
      "pos": "v.",
-     "en": "to set up, arrange (a room, a show)"
+     "en": "to set up, arrange (a room, a show)",
+     "id": "jinbu2-u1-3:5"
     },
     {
      "hanzi": "梯子",
      "pinyin": "tī zi",
      "pos": "n.",
-     "en": "ladder"
+     "en": "ladder",
+     "id": "jinbu2-u1-3:6"
     },
     {
      "hanzi": "钉子",
      "pinyin": "dīng zi",
      "pos": "n.",
-     "en": "nail"
+     "en": "nail",
+     "id": "jinbu2-u1-3:7"
     },
     {
      "hanzi": "画框",
      "pinyin": "huà kuàng",
      "pos": "n.",
-     "en": "picture frame"
+     "en": "picture frame",
+     "id": "jinbu2-u1-3:8"
     },
     {
      "hanzi": "摆",
      "pinyin": "bǎi",
      "pos": "v.",
-     "en": "to put, lay out, arrange"
+     "en": "to put, lay out, arrange",
+     "id": "jinbu2-u1-3:9"
     }
    ]
   },
   {
-   "id": "jinbu2-u1-4",
+   "id": "jinbu2-u1-4a",
    "title": "进步2 U1.4 · 把画挂上去！ Hang the painting up!",
    "words": [
     {
      "hanzi": "平",
      "pinyin": "píng",
      "pos": "adj.",
-     "en": "flat, level, straight (挂平 hang it straight)"
+     "en": "flat, level, straight (挂平 hang it straight)",
+     "id": "jinbu2-u1-4:0"
     },
     {
      "hanzi": "毕业生",
      "pinyin": "bì yè shēng",
      "pos": "n.",
-     "en": "graduate"
+     "en": "graduate",
+     "id": "jinbu2-u1-4:1"
     },
     {
      "hanzi": "哎",
      "pinyin": "āi",
      "pos": "part.",
-     "en": "hey, hmm (to get attention or notice something)"
+     "en": "hey, hmm (to get attention or notice something)",
+     "id": "jinbu2-u1-4:2"
     },
     {
      "hanzi": "锤子",
      "pinyin": "chuí zi",
      "pos": "n.",
-     "en": "hammer"
+     "en": "hammer",
+     "id": "jinbu2-u1-4:3"
     },
     {
      "hanzi": "海报",
      "pinyin": "hǎi bào",
      "pos": "n.",
-     "en": "poster"
-    },
+     "en": "poster",
+     "id": "jinbu2-u1-4:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-5a",
+   "title": "进步2 U1.5 · 把画挂上去！ Hang the painting up! · 1",
+   "words": [
     {
      "hanzi": "邀请",
      "pinyin": "yāo qǐng",
      "pos": "v./n.",
-     "en": "to invite; invitation"
+     "en": "to invite; invitation",
+     "id": "jinbu2-u1-4:5"
     },
     {
      "hanzi": "地点",
      "pinyin": "dì diǎn",
      "pos": "n.",
-     "en": "place, venue (时间和地点 time and place)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u1-5",
-   "title": "进步2 U1.5 · 把画挂上去！ Hang the painting up!",
-   "words": [
+     "en": "place, venue (时间和地点 time and place)",
+     "id": "jinbu2-u1-4:6"
+    },
     {
      "hanzi": "辛苦",
      "pinyin": "xīn kǔ",
      "pos": "adj.",
-     "en": "hard, tiring (辛苦了 thanks for your hard work)"
+     "en": "hard, tiring (辛苦了 thanks for your hard work)",
+     "id": "jinbu2-u1-5:0"
     },
     {
      "hanzi": "搬",
      "pinyin": "bān",
      "pos": "v.",
-     "en": "to move, carry (something heavy)"
+     "en": "to move, carry (something heavy)",
+     "id": "jinbu2-u1-5:1"
     },
     {
      "hanzi": "开幕",
      "pinyin": "kāi mù",
      "pos": "v.",
-     "en": "to open (an exhibition, a festival)"
-    },
+     "en": "to open (an exhibition, a festival)",
+     "id": "jinbu2-u1-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-5b",
+   "title": "进步2 U1.5 · 把画挂上去！ Hang the painting up! · 2",
+   "words": [
     {
      "hanzi": "签名",
      "pinyin": "qiān míng",
      "pos": "v./n.",
-     "en": "to sign your name; signature"
+     "en": "to sign your name; signature",
+     "id": "jinbu2-u1-5:3"
     },
     {
      "hanzi": "空",
      "pinyin": "kōng",
      "pos": "adj.",
-     "en": "empty"
+     "en": "empty",
+     "id": "jinbu2-u1-5:4"
     },
     {
      "hanzi": "箱子",
      "pinyin": "xiāng zi",
      "pos": "n.",
-     "en": "box, case"
+     "en": "box, case",
+     "id": "jinbu2-u1-5:5"
     },
     {
      "hanzi": "出去",
      "pinyin": "chū qu",
      "pos": "v.",
-     "en": "to go out (after a verb: out, away from the speaker)"
+     "en": "to go out (after a verb: out, away from the speaker)",
+     "id": "jinbu2-u1-5:6"
     },
     {
      "hanzi": "门",
      "pinyin": "mén",
      "pos": "n.",
-     "en": "door"
-    },
+     "en": "door",
+     "id": "jinbu2-u1-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-5c",
+   "title": "进步2 U1.5 · 把画挂上去！ Hang the painting up! · 3",
+   "words": [
     {
      "hanzi": "打开",
      "pinyin": "dǎ kāi",
      "pos": "v.",
-     "en": "to open; to turn on"
+     "en": "to open; to turn on",
+     "id": "jinbu2-u1-5:8"
     },
     {
      "hanzi": "灯",
      "pinyin": "dēng",
      "pos": "n.",
-     "en": "light, lamp"
+     "en": "light, lamp",
+     "id": "jinbu2-u1-5:9"
     },
     {
      "hanzi": "效果",
      "pinyin": "xiào guǒ",
      "pos": "n.",
-     "en": "effect, how something looks or works"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u1-6",
-   "title": "进步2 U1.6 · 把画挂上去！ Hang the painting up!",
-   "words": [
+     "en": "effect, how something looks or works",
+     "id": "jinbu2-u1-5:10"
+    },
     {
      "hanzi": "亮",
      "pinyin": "liàng",
      "pos": "adj.",
-     "en": "bright"
+     "en": "bright",
+     "id": "jinbu2-u1-6:0"
     },
     {
      "hanzi": "照",
      "pinyin": "zhào",
      "pos": "v.",
-     "en": "to shine (on)"
-    },
+     "en": "to shine (on)",
+     "id": "jinbu2-u1-6:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-6a",
+   "title": "进步2 U1.6 · 把画挂上去！ Hang the painting up! · 1",
+   "words": [
     {
      "hanzi": "它",
      "pinyin": "tā",
      "pos": "pron.",
-     "en": "it"
+     "en": "it",
+     "id": "jinbu2-u1-6:2"
     },
     {
      "hanzi": "关",
      "pinyin": "guān",
      "pos": "v.",
-     "en": "to close; to turn off (关上 close, turn off)"
+     "en": "to close; to turn off (关上 close, turn off)",
+     "id": "jinbu2-u1-6:3"
     },
     {
      "hanzi": "咦",
      "pinyin": "yí",
      "pos": "part.",
-     "en": "huh? hang on (surprise)"
+     "en": "huh? hang on (surprise)",
+     "id": "jinbu2-u1-6:4"
     },
     {
      "hanzi": "回来",
      "pinyin": "huí lai",
      "pos": "v.",
-     "en": "to come back"
+     "en": "to come back",
+     "id": "jinbu2-u1-6:5"
     },
     {
      "hanzi": "椅子",
      "pinyin": "yǐ zi",
      "pos": "n.",
-     "en": "chair"
-    },
+     "en": "chair",
+     "id": "jinbu2-u1-6:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-6b",
+   "title": "进步2 U1.6 · 把画挂上去！ Hang the painting up! · 2",
+   "words": [
     {
      "hanzi": "本子",
      "pinyin": "běn zi",
      "pos": "n.",
-     "en": "notebook"
+     "en": "notebook",
+     "id": "jinbu2-u1-6:7"
     },
     {
      "hanzi": "日子",
      "pinyin": "rì zi",
      "pos": "n.",
-     "en": "day, date (a special one)"
+     "en": "day, date (a special one)",
+     "id": "jinbu2-u1-6:8"
     },
     {
      "hanzi": "所有",
      "pinyin": "suǒ yǒu",
      "pos": "adj.",
-     "en": "all (所有的画 all the paintings)"
+     "en": "all (所有的画 all the paintings)",
+     "id": "jinbu2-u1-6:9"
     },
     {
      "hanzi": "垃圾",
      "pinyin": "lā jī",
      "pos": "n.",
-     "en": "rubbish"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u1-7",
-   "title": "进步2 U1.7 · 把画挂上去！ Hang the painting up!",
-   "words": [
+     "en": "rubbish",
+     "id": "jinbu2-u1-6:10"
+    },
     {
      "hanzi": "扔",
      "pinyin": "rēng",
      "pos": "v.",
-     "en": "to throw (away)"
-    },
+     "en": "to throw (away)",
+     "id": "jinbu2-u1-7:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-7a",
+   "title": "进步2 U1.7 · 把画挂上去！ Hang the painting up! · 1",
+   "words": [
     {
      "hanzi": "收拾",
      "pinyin": "shōu shi",
      "pos": "v.",
-     "en": "to tidy up, clear away"
+     "en": "to tidy up, clear away",
+     "id": "jinbu2-u1-7:1"
     },
     {
      "hanzi": "锁",
      "pinyin": "suǒ",
      "pos": "v./n.",
-     "en": "to lock; lock"
+     "en": "to lock; lock",
+     "id": "jinbu2-u1-7:2"
     },
     {
      "hanzi": "钥匙",
      "pinyin": "yào shi",
      "pos": "n.",
-     "en": "key"
+     "en": "key",
+     "id": "jinbu2-u1-7:3"
     },
     {
      "hanzi": "开关",
      "pinyin": "kāi guān",
      "pos": "n.",
-     "en": "switch"
+     "en": "switch",
+     "id": "jinbu2-u1-7:4"
     },
     {
      "hanzi": "怎么办",
      "pinyin": "zěn me bàn",
      "pos": "phr.",
-     "en": "what shall we do (with …)? what now?"
-    },
+     "en": "what shall we do (with …)? what now?",
+     "id": "jinbu2-u1-7:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u1-7b",
+   "title": "进步2 U1.7 · 把画挂上去！ Hang the painting up! · 2",
+   "words": [
     {
      "hanzi": "签名本",
      "pinyin": "qiān míng běn",
      "pos": "n.",
-     "en": "visitors' book"
+     "en": "visitors' book",
+     "id": "jinbu2-u1-7:6",
+     "parts": [
+      "签名",
+      "本"
+     ]
     },
     {
      "hanzi": "花篮",
      "pinyin": "huā lán",
      "pos": "n.",
-     "en": "flower basket (sent for an opening)"
+     "en": "flower basket (sent for an opening)",
+     "id": "jinbu2-u1-7:7"
     },
     {
      "hanzi": "剪彩",
      "pinyin": "jiǎn cǎi",
      "pos": "v.",
-     "en": "to cut the ribbon (at an opening)"
+     "en": "to cut the ribbon (at an opening)",
+     "id": "jinbu2-u1-7:8"
     },
     {
      "hanzi": "差点儿",
      "pinyin": "chà diǎn r",
      "pos": "adv.",
-     "en": "nearly, almost (差点儿掉下来 nearly fell down)"
+     "en": "nearly, almost (差点儿掉下来 nearly fell down)",
+     "id": "jinbu2-u1-7:9"
     },
     {
      "hanzi": "掉下来",
      "pinyin": "diào xia lai",
      "pos": "v.",
-     "en": "to fall down, fall off"
+     "en": "to fall down, fall off",
+     "id": "jinbu2-u1-7:10"
     }
    ]
   },
   {
-   "id": "jinbu2-u2-1",
-   "title": "进步2 U2.1 · 旗袍还是汉服？ Qipao or hanfu?",
+   "id": "jinbu2-u2-1a",
+   "title": "进步2 U2.1 · 旗袍还是汉服？ Qipao or hanfu? · 1",
    "words": [
     {
      "hanzi": "虾",
      "pinyin": "xiā",
      "pos": "n.",
-     "en": "shrimp, prawn"
+     "en": "shrimp, prawn",
+     "id": "jinbu2-u2-1:0"
     },
     {
      "hanzi": "旗袍",
      "pinyin": "qí páo",
      "pos": "n.",
-     "en": "qipao, cheongsam (a close-fitting Chinese dress)"
+     "en": "qipao, cheongsam (a close-fitting Chinese dress)",
+     "id": "jinbu2-u2-1:1"
     },
     {
      "hanzi": "汉服",
      "pinyin": "hàn fú",
      "pos": "n.",
-     "en": "hanfu (traditional Han Chinese clothing)"
+     "en": "hanfu (traditional Han Chinese clothing)",
+     "id": "jinbu2-u2-1:2"
     },
     {
      "hanzi": "借",
      "pinyin": "jiè",
      "pos": "v.",
-     "en": "to borrow; to lend"
+     "en": "to borrow; to lend",
+     "id": "jinbu2-u2-1:3"
     },
     {
      "hanzi": "古老",
      "pinyin": "gǔ lǎo",
      "pos": "adj.",
-     "en": "ancient, very old"
-    },
+     "en": "ancient, very old",
+     "id": "jinbu2-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-1b",
+   "title": "进步2 U2.1 · 旗袍还是汉服？ Qipao or hanfu? · 2",
+   "words": [
     {
      "hanzi": "得多",
      "pinyin": "de duō",
      "pos": "phr.",
-     "en": "much (more) (after an adjective: 早得多 much earlier)"
+     "en": "much (more) (after an adjective: 早得多 much earlier)",
+     "id": "jinbu2-u2-1:5",
+     "parts": [
+      "得",
+      "多"
+     ]
     },
     {
      "hanzi": "陪",
      "pinyin": "péi",
      "pos": "v.",
-     "en": "to keep (someone) company, go with"
+     "en": "to keep (someone) company, go with",
+     "id": "jinbu2-u2-1:6"
     },
     {
      "hanzi": "唐装",
      "pinyin": "táng zhuāng",
      "pos": "n.",
-     "en": "Tang jacket (a Chinese-style jacket)"
+     "en": "Tang jacket (a Chinese-style jacket)",
+     "id": "jinbu2-u2-1:7"
     },
     {
      "hanzi": "结婚",
      "pinyin": "jié hūn",
      "pos": "v.",
-     "en": "to get married"
+     "en": "to get married",
+     "id": "jinbu2-u2-1:8"
     },
     {
      "hanzi": "那年",
      "pinyin": "nà nián",
      "pos": "n.",
-     "en": "that year"
-    },
+     "en": "that year",
+     "id": "jinbu2-u2-1:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-2a",
+   "title": "进步2 U2.2 · 旗袍还是汉服？ Qipao or hanfu? · 1",
+   "words": [
     {
      "hanzi": "镑",
      "pinyin": "bàng",
      "pos": "m.",
-     "en": "pound (money) (五十镑 fifty pounds)"
+     "en": "pound (money) (五十镑 fifty pounds)",
+     "id": "jinbu2-u2-1:10"
     },
     {
      "hanzi": "哥哥",
      "pinyin": "gē ge",
      "pos": "n.",
-     "en": "older brother"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u2-2",
-   "title": "进步2 U2.2 · 旗袍还是汉服？ Qipao or hanfu?",
-   "words": [
+     "en": "older brother",
+     "id": "jinbu2-u2-1:11"
+    },
     {
      "hanzi": "姐姐",
      "pinyin": "jiě jie",
      "pos": "n.",
-     "en": "older sister"
+     "en": "older sister",
+     "id": "jinbu2-u2-2:0"
     },
     {
      "hanzi": "弟弟",
      "pinyin": "dì di",
      "pos": "n.",
-     "en": "younger brother"
+     "en": "younger brother",
+     "id": "jinbu2-u2-2:1"
     },
     {
      "hanzi": "妹妹",
      "pinyin": "mèi mei",
      "pos": "n.",
-     "en": "younger sister"
-    },
+     "en": "younger sister",
+     "id": "jinbu2-u2-2:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-2b",
+   "title": "进步2 U2.2 · 旗袍还是汉服？ Qipao or hanfu? · 2",
+   "words": [
     {
      "hanzi": "走来走去",
      "pinyin": "zǒu lái zǒu qù",
      "pos": "phr.",
-     "en": "to walk about, walk up and down"
+     "en": "to walk about, walk up and down",
+     "id": "jinbu2-u2-2:3"
     },
     {
      "hanzi": "也是",
      "pinyin": "yě shì",
      "pos": "phr.",
-     "en": "true, fair point"
+     "en": "true, fair point",
+     "id": "jinbu2-u2-2:4",
+     "parts": [
+      "也",
+      "是"
+     ]
     },
     {
      "hanzi": "服装",
      "pinyin": "fú zhuāng",
      "pos": "n.",
-     "en": "clothing, dress"
+     "en": "clothing, dress",
+     "id": "jinbu2-u2-2:5"
     },
     {
      "hanzi": "打扮",
      "pinyin": "dǎ ban",
      "pos": "v.",
-     "en": "to dress up, get ready (clothes, hair, make-up)"
+     "en": "to dress up, get ready (clothes, hair, make-up)",
+     "id": "jinbu2-u2-2:6"
     },
     {
      "hanzi": "戴",
      "pinyin": "dài",
      "pos": "v.",
-     "en": "to wear (hats, glasses, jewellery, a watch)"
-    },
+     "en": "to wear (hats, glasses, jewellery, a watch)",
+     "id": "jinbu2-u2-2:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-2c",
+   "title": "进步2 U2.2 · 旗袍还是汉服？ Qipao or hanfu? · 3",
+   "words": [
     {
      "hanzi": "帽子",
      "pinyin": "mào zi",
      "pos": "n.",
-     "en": "hat"
+     "en": "hat",
+     "id": "jinbu2-u2-2:8"
     },
     {
      "hanzi": "眼镜",
      "pinyin": "yǎn jìng",
      "pos": "n.",
-     "en": "glasses"
+     "en": "glasses",
+     "id": "jinbu2-u2-2:9"
     },
     {
      "hanzi": "西装",
      "pinyin": "xī zhuāng",
      "pos": "n.",
-     "en": "suit (Western-style)"
+     "en": "suit (Western-style)",
+     "id": "jinbu2-u2-2:10"
     },
     {
      "hanzi": "领带",
      "pinyin": "lǐng dài",
      "pos": "n.",
-     "en": "tie"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u2-3",
-   "title": "进步2 U2.3 · 旗袍还是汉服？ Qipao or hanfu?",
-   "words": [
+     "en": "tie",
+     "id": "jinbu2-u2-2:11"
+    },
     {
      "hanzi": "高跟鞋",
      "pinyin": "gāo gēn xié",
      "pos": "n.",
-     "en": "high heels"
-    },
+     "en": "high heels",
+     "id": "jinbu2-u2-3:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-3a",
+   "title": "进步2 U2.3 · 旗袍还是汉服？ Qipao or hanfu? · 1",
+   "words": [
     {
      "hanzi": "头发",
      "pinyin": "tóu fa",
      "pos": "n.",
-     "en": "hair (on your head)"
+     "en": "hair (on your head)",
+     "id": "jinbu2-u2-3:1"
     },
     {
      "hanzi": "一身",
      "pinyin": "yī shēn",
      "pos": "m.",
-     "en": "a whole outfit (一身汉服 a full hanfu outfit)"
+     "en": "a whole outfit (一身汉服 a full hanfu outfit)",
+     "id": "jinbu2-u2-3:2"
     },
     {
      "hanzi": "丝绸",
      "pinyin": "sī chóu",
      "pos": "n.",
-     "en": "silk"
+     "en": "silk",
+     "id": "jinbu2-u2-3:3"
     },
     {
      "hanzi": "配",
      "pinyin": "pèi",
      "pos": "v.",
-     "en": "to go with, match (这双鞋配这条裙子 these shoes go with this dress)"
+     "en": "to go with, match (这双鞋配这条裙子 these shoes go with this dress)",
+     "id": "jinbu2-u2-3:4"
     },
     {
      "hanzi": "双",
      "pinyin": "shuāng",
      "pos": "m.",
-     "en": "pair (一双鞋 a pair of shoes)"
-    },
+     "en": "pair (一双鞋 a pair of shoes)",
+     "id": "jinbu2-u2-3:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-3b",
+   "title": "进步2 U2.3 · 旗袍还是汉服？ Qipao or hanfu? · 2",
+   "words": [
     {
      "hanzi": "风格",
      "pinyin": "fēng gé",
      "pos": "n.",
-     "en": "style"
+     "en": "style",
+     "id": "jinbu2-u2-3:6"
     },
     {
      "hanzi": "时尚",
      "pinyin": "shí shàng",
      "pos": "adj./n.",
-     "en": "fashionable; fashion"
+     "en": "fashionable; fashion",
+     "id": "jinbu2-u2-3:7"
     },
     {
      "hanzi": "休闲",
      "pinyin": "xiū xián",
      "pos": "adj.",
-     "en": "casual (休闲服 casual clothes)"
+     "en": "casual (休闲服 casual clothes)",
+     "id": "jinbu2-u2-3:8"
     },
     {
      "hanzi": "婚礼",
      "pinyin": "hūn lǐ",
      "pos": "n.",
-     "en": "wedding"
+     "en": "wedding",
+     "id": "jinbu2-u2-3:9"
     },
     {
      "hanzi": "项链",
      "pinyin": "xiàng liàn",
      "pos": "n.",
-     "en": "necklace"
-    },
-    {
-     "hanzi": "袜子",
-     "pinyin": "wà zi",
-     "pos": "n.",
-     "en": "sock"
+     "en": "necklace",
+     "id": "jinbu2-u2-3:10"
     }
    ]
   },
   {
-   "id": "jinbu2-u2-4",
-   "title": "进步2 U2.4 · 旗袍还是汉服？ Qipao or hanfu?",
+   "id": "jinbu2-u2-4a",
+   "title": "进步2 U2.4 · 旗袍还是汉服？ Qipao or hanfu? · 1",
    "words": [
+    {
+     "hanzi": "袜子",
+     "pinyin": "wà zi",
+     "pos": "n.",
+     "en": "sock",
+     "id": "jinbu2-u2-3:11"
+    },
     {
      "hanzi": "历史",
      "pinyin": "lì shǐ",
      "pos": "n.",
-     "en": "history"
+     "en": "history",
+     "id": "jinbu2-u2-4:0"
     },
     {
      "hanzi": "宽",
      "pinyin": "kuān",
      "pos": "adj.",
-     "en": "wide, loose"
+     "en": "wide, loose",
+     "id": "jinbu2-u2-4:1"
     },
     {
      "hanzi": "穿上",
      "pinyin": "chuān shang",
      "pos": "v.",
-     "en": "to put on (clothes)"
+     "en": "to put on (clothes)",
+     "id": "jinbu2-u2-4:2",
+     "parts": [
+      "穿",
+      "上"
+     ]
     },
     {
      "hanzi": "年轻人",
      "pinyin": "nián qīng rén",
      "pos": "n.",
-     "en": "young people"
-    },
+     "en": "young people",
+     "id": "jinbu2-u2-4:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-4b",
+   "title": "进步2 U2.4 · 旗袍还是汉服？ Qipao or hanfu? · 2",
+   "words": [
     {
      "hanzi": "上街",
      "pinyin": "shàng jiē",
      "pos": "v.",
-     "en": "to go out (into the streets)"
+     "en": "to go out (into the streets)",
+     "id": "jinbu2-u2-4:4"
     },
     {
      "hanzi": "领子",
      "pinyin": "lǐng zi",
      "pos": "n.",
-     "en": "collar"
-    },
-    {
-     "hanzi": "女人",
-     "pinyin": "nǚ rén",
-     "pos": "n.",
-     "en": "woman"
-    },
-    {
-     "hanzi": "男人",
-     "pinyin": "nán rén",
-     "pos": "n.",
-     "en": "man"
+     "en": "collar",
+     "id": "jinbu2-u2-4:5"
     },
     {
      "hanzi": "男",
      "pinyin": "nán",
      "pos": "adj.",
-     "en": "male (男的 man)"
+     "en": "male (男的 man)",
+     "id": "jinbu2-u2-4:8"
+    },
+    {
+     "hanzi": "男人",
+     "pinyin": "nán rén",
+     "pos": "n.",
+     "en": "man",
+     "id": "jinbu2-u2-4:7"
     },
     {
      "hanzi": "女",
      "pinyin": "nǚ",
      "pos": "adj.",
-     "en": "female (女的 woman)"
+     "en": "female (女的 woman)",
+     "id": "jinbu2-u2-4:9"
     }
    ]
   },
   {
-   "id": "jinbu2-u2-5",
-   "title": "进步2 U2.5 · 旗袍还是汉服？ Qipao or hanfu?",
+   "id": "jinbu2-u2-5a",
+   "title": "进步2 U2.5 · 旗袍还是汉服？ Qipao or hanfu? · 1",
    "words": [
+    {
+     "hanzi": "女人",
+     "pinyin": "nǚ rén",
+     "pos": "n.",
+     "en": "woman",
+     "id": "jinbu2-u2-4:6"
+    },
     {
      "hanzi": "参加",
      "pinyin": "cān jiā",
      "pos": "v.",
-     "en": "to take part in, go to (an event)"
+     "en": "to take part in, go to (an event)",
+     "id": "jinbu2-u2-5:0"
     },
     {
      "hanzi": "活动",
      "pinyin": "huó dòng",
      "pos": "n.",
-     "en": "event, activity"
+     "en": "event, activity",
+     "id": "jinbu2-u2-5:1"
     },
     {
      "hanzi": "字",
      "pinyin": "zì",
      "pos": "n.",
-     "en": "character, written word"
+     "en": "character, written word",
+     "id": "jinbu2-u2-5:2"
     },
     {
      "hanzi": "关系",
      "pinyin": "guān xi",
      "pos": "n.",
-     "en": "connection, relationship (跟…没有关系 nothing to do with)"
-    },
+     "en": "connection, relationship (跟…没有关系 nothing to do with)",
+     "id": "jinbu2-u2-5:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-5b",
+   "title": "进步2 U2.5 · 旗袍还是汉服？ Qipao or hanfu? · 2",
+   "words": [
     {
      "hanzi": "国外",
      "pinyin": "guó wài",
      "pos": "n.",
-     "en": "abroad, overseas"
+     "en": "abroad, overseas",
+     "id": "jinbu2-u2-5:4"
     },
     {
      "hanzi": "秘密",
      "pinyin": "mì mì",
      "pos": "n.",
-     "en": "secret"
+     "en": "secret",
+     "id": "jinbu2-u2-5:5"
     },
     {
      "hanzi": "传统",
      "pinyin": "chuán tǒng",
      "pos": "n./adj.",
-     "en": "tradition; traditional"
+     "en": "tradition; traditional",
+     "id": "jinbu2-u2-5:6"
     },
     {
      "hanzi": "现代",
      "pinyin": "xiàn dài",
      "pos": "adj.",
-     "en": "modern"
-    },
+     "en": "modern",
+     "id": "jinbu2-u2-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-5c",
+   "title": "进步2 U2.5 · 旗袍还是汉服？ Qipao or hanfu? · 3",
+   "words": [
     {
      "hanzi": "文化",
      "pinyin": "wén huà",
      "pos": "n.",
-     "en": "culture"
+     "en": "culture",
+     "id": "jinbu2-u2-5:8"
     },
     {
      "hanzi": "扣子",
      "pinyin": "kòu zi",
      "pos": "n.",
-     "en": "button"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u2-6",
-   "title": "进步2 U2.6 · 旗袍还是汉服？ Qipao or hanfu?",
-   "words": [
+     "en": "button",
+     "id": "jinbu2-u2-5:9"
+    },
     {
      "hanzi": "长袖",
      "pinyin": "cháng xiù",
      "pos": "n.",
-     "en": "long sleeves"
+     "en": "long sleeves",
+     "id": "jinbu2-u2-6:0"
     },
     {
      "hanzi": "短袖",
      "pinyin": "duǎn xiù",
      "pos": "n.",
-     "en": "short sleeves"
-    },
+     "en": "short sleeves",
+     "id": "jinbu2-u2-6:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-6a",
+   "title": "进步2 U2.6 · 旗袍还是汉服？ Qipao or hanfu? · 1",
+   "words": [
     {
      "hanzi": "身材",
      "pinyin": "shēn cái",
      "pos": "n.",
-     "en": "figure, build"
+     "en": "figure, build",
+     "id": "jinbu2-u2-6:2"
     },
     {
      "hanzi": "色",
      "pinyin": "sè",
      "pos": "n.",
-     "en": "colour (红色 red; 什么色的？ what colour?)"
+     "en": "colour (红色 red; 什么色的？ what colour?)",
+     "id": "jinbu2-u2-6:3"
     },
     {
      "hanzi": "鲜艳",
      "pinyin": "xiān yàn",
      "pos": "adj.",
-     "en": "bright, colourful"
+     "en": "bright, colourful",
+     "id": "jinbu2-u2-6:4"
     },
     {
      "hanzi": "款式",
      "pinyin": "kuǎn shì",
      "pos": "n.",
-     "en": "style, design (of clothes)"
-    },
+     "en": "style, design (of clothes)",
+     "id": "jinbu2-u2-6:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u2-6b",
+   "title": "进步2 U2.6 · 旗袍还是汉服？ Qipao or hanfu? · 2",
+   "words": [
     {
      "hanzi": "化妆",
      "pinyin": "huà zhuāng",
      "pos": "v.",
-     "en": "to put on make-up"
+     "en": "to put on make-up",
+     "id": "jinbu2-u2-6:6"
     },
     {
      "hanzi": "试穿",
      "pinyin": "shì chuān",
      "pos": "v.",
-     "en": "to try on"
+     "en": "to try on",
+     "id": "jinbu2-u2-6:7"
     },
     {
      "hanzi": "显得",
      "pinyin": "xiǎn de",
      "pos": "v.",
-     "en": "to look, seem (显得很年轻 look young)"
+     "en": "to look, seem (显得很年轻 look young)",
+     "id": "jinbu2-u2-6:8"
     },
     {
      "hanzi": "好看是好看",
      "pinyin": "hǎo kàn shì hǎo kàn",
      "pos": "phr.",
-     "en": "it looks nice, but … (A 是 A，就是 …)"
+     "en": "it looks nice, but … (A 是 A，就是 …)",
+     "id": "jinbu2-u2-6:9",
+     "parts": [
+      "好看",
+      "是"
+     ]
     }
    ]
   },
   {
-   "id": "jinbu2-u3-1",
-   "title": "进步2 U3.1 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
+   "id": "jinbu2-u3-1a",
+   "title": "进步2 U3.1 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 1",
    "words": [
     {
      "hanzi": "聊天",
      "pinyin": "liáo tiān",
      "pos": "v.",
-     "en": "to chat"
+     "en": "to chat",
+     "id": "jinbu2-u3-1:0"
     },
     {
      "hanzi": "只",
      "pinyin": "zhī",
      "pos": "m.",
-     "en": "for animals (一只虾 a shrimp) (new meaning)"
+     "en": "for animals (一只虾 a shrimp) (new meaning)",
+     "id": "jinbu2-u3-1:1"
     },
     {
      "hanzi": "活",
      "pinyin": "huó",
      "pos": "adj./v.",
-     "en": "alive, living; to live (活到九十三岁 live to 93)"
+     "en": "alive, living; to live (活到九十三岁 live to 93)",
+     "id": "jinbu2-u3-1:2"
     },
     {
      "hanzi": "画家",
      "pinyin": "huà jiā",
      "pos": "n.",
-     "en": "painter, artist"
+     "en": "painter, artist",
+     "id": "jinbu2-u3-1:3"
     },
     {
      "hanzi": "之一",
      "pinyin": "zhī yī",
      "pos": "phr.",
-     "en": "one of (最有名的画家之一 one of the most famous painters)"
-    },
+     "en": "one of (最有名的画家之一 one of the most famous painters)",
+     "id": "jinbu2-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-1b",
+   "title": "进步2 U3.1 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 2",
+   "words": [
     {
      "hanzi": "纸",
      "pinyin": "zhǐ",
      "pos": "n.",
-     "en": "paper"
+     "en": "paper",
+     "id": "jinbu2-u3-1:5"
     },
     {
      "hanzi": "好像",
      "pinyin": "hǎo xiàng",
      "pos": "adv.",
-     "en": "seem, look as if"
-    },
-    {
-     "hanzi": "留白",
-     "pinyin": "liú bái",
-     "pos": "v./n.",
-     "en": "to leave (part of a picture) empty; empty space"
+     "en": "seem, look as if",
+     "id": "jinbu2-u3-1:6"
     },
     {
      "hanzi": "没错",
      "pinyin": "méi cuò",
      "pos": "phr.",
-     "en": "that's right, exactly"
+     "en": "that's right, exactly",
+     "id": "jinbu2-u3-1:8"
     },
     {
      "hanzi": "秒",
      "pinyin": "miǎo",
      "pos": "m.",
-     "en": "second (几十秒 a few dozen seconds)"
+     "en": "second (几十秒 a few dozen seconds)",
+     "id": "jinbu2-u3-1:9"
     },
     {
      "hanzi": "为了",
      "pinyin": "wèi le",
      "pos": "prep.",
-     "en": "in order to, for"
-    },
-    {
-     "hanzi": "马",
-     "pinyin": "mǎ",
-     "pos": "n.",
-     "en": "horse"
+     "en": "in order to, for",
+     "id": "jinbu2-u3-1:10"
     }
    ]
   },
   {
-   "id": "jinbu2-u3-2",
-   "title": "进步2 U3.2 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
+   "id": "jinbu2-u3-2a",
+   "title": "进步2 U3.2 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 1",
    "words": [
+    {
+     "hanzi": "马",
+     "pinyin": "mǎ",
+     "pos": "n.",
+     "en": "horse",
+     "id": "jinbu2-u3-1:11"
+    },
     {
      "hanzi": "油画",
      "pinyin": "yóu huà",
      "pos": "n.",
-     "en": "oil painting"
+     "en": "oil painting",
+     "id": "jinbu2-u3-2:0"
     },
     {
      "hanzi": "国画",
      "pinyin": "guó huà",
      "pos": "n.",
-     "en": "Chinese painting (ink and brush)"
+     "en": "Chinese painting (ink and brush)",
+     "id": "jinbu2-u3-2:1"
     },
     {
      "hanzi": "中国画",
      "pinyin": "zhōng guó huà",
      "pos": "n.",
-     "en": "Chinese painting"
-    },
-    {
-     "hanzi": "水墨画",
-     "pinyin": "shuǐ mò huà",
-     "pos": "n.",
-     "en": "ink painting"
-    },
-    {
-     "hanzi": "山水画",
-     "pinyin": "shān shuǐ huà",
-     "pos": "n.",
-     "en": "landscape painting (mountains and water)"
+     "en": "Chinese painting",
+     "id": "jinbu2-u3-2:2"
     },
     {
      "hanzi": "山",
      "pinyin": "shān",
      "pos": "n.",
-     "en": "mountain, hill"
+     "en": "mountain, hill",
+     "id": "jinbu2-u3-2:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-2b",
+   "title": "进步2 U3.2 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 2",
+   "words": [
+    {
+     "hanzi": "山水画",
+     "pinyin": "shān shuǐ huà",
+     "pos": "n.",
+     "en": "landscape painting (mountains and water)",
+     "id": "jinbu2-u3-2:4"
     },
     {
      "hanzi": "花",
      "pinyin": "huā",
      "pos": "n.",
-     "en": "flower"
+     "en": "flower",
+     "id": "jinbu2-u3-2:6"
     },
     {
      "hanzi": "鸟",
      "pinyin": "niǎo",
      "pos": "n.",
-     "en": "bird"
+     "en": "bird",
+     "id": "jinbu2-u3-2:7"
     },
     {
      "hanzi": "动物",
      "pinyin": "dòng wù",
      "pos": "n.",
-     "en": "animal"
+     "en": "animal",
+     "id": "jinbu2-u3-2:8"
     },
     {
      "hanzi": "印章",
      "pinyin": "yìn zhāng",
      "pos": "n.",
-     "en": "seal, name stamp"
-    },
+     "en": "seal, name stamp",
+     "id": "jinbu2-u3-2:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-3a",
+   "title": "进步2 U3.3 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 1",
+   "words": [
     {
      "hanzi": "出生",
      "pinyin": "chū shēng",
      "pos": "v.",
-     "en": "to be born"
+     "en": "to be born",
+     "id": "jinbu2-u3-2:10"
     },
     {
      "hanzi": "穷",
      "pinyin": "qióng",
      "pos": "adj.",
-     "en": "poor"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u3-3",
-   "title": "进步2 U3.3 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
-   "words": [
+     "en": "poor",
+     "id": "jinbu2-u3-2:11"
+    },
     {
      "hanzi": "美",
      "pinyin": "měi",
      "pos": "adj.",
-     "en": "beautiful"
+     "en": "beautiful",
+     "id": "jinbu2-u3-3:0"
     },
     {
      "hanzi": "欣赏",
      "pinyin": "xīn shǎng",
      "pos": "v.",
-     "en": "to appreciate, enjoy (art, music)"
+     "en": "to appreciate, enjoy (art, music)",
+     "id": "jinbu2-u3-3:1"
     },
     {
      "hanzi": "想法",
      "pinyin": "xiǎng fǎ",
      "pos": "n.",
-     "en": "idea"
-    },
+     "en": "idea",
+     "id": "jinbu2-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-3b",
+   "title": "进步2 U3.3 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 2",
+   "words": [
     {
      "hanzi": "飞",
      "pinyin": "fēi",
      "pos": "v.",
-     "en": "to fly"
+     "en": "to fly",
+     "id": "jinbu2-u3-3:3"
     },
     {
      "hanzi": "螃蟹",
      "pinyin": "páng xiè",
      "pos": "n.",
-     "en": "crab"
+     "en": "crab",
+     "id": "jinbu2-u3-3:4"
     },
     {
      "hanzi": "著名",
      "pinyin": "zhù míng",
      "pos": "adj.",
-     "en": "famous, well-known (more formal than 有名)"
+     "en": "famous, well-known (more formal than 有名)",
+     "id": "jinbu2-u3-3:5"
     },
     {
      "hanzi": "世纪",
      "pinyin": "shì jì",
      "pos": "n.",
-     "en": "century"
+     "en": "century",
+     "id": "jinbu2-u3-3:6"
     },
     {
      "hanzi": "展厅",
      "pinyin": "zhǎn tīng",
      "pos": "n.",
-     "en": "exhibition room, gallery (in a museum)"
-    },
+     "en": "exhibition room, gallery (in a museum)",
+     "id": "jinbu2-u3-3:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-4a",
+   "title": "进步2 U3.4 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 1",
+   "words": [
     {
      "hanzi": "作者",
      "pinyin": "zuò zhě",
      "pos": "n.",
-     "en": "author; the artist (of a work)"
+     "en": "author; the artist (of a work)",
+     "id": "jinbu2-u3-3:8"
     },
     {
      "hanzi": "收藏",
      "pinyin": "shōu cáng",
      "pos": "v./n.",
-     "en": "to collect; collection"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u3-4",
-   "title": "进步2 U3.4 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
-   "words": [
+     "en": "to collect; collection",
+     "id": "jinbu2-u3-3:9"
+    },
     {
      "hanzi": "美术馆",
      "pinyin": "měi shù guǎn",
      "pos": "n.",
-     "en": "art gallery"
+     "en": "art gallery",
+     "id": "jinbu2-u3-4:0"
     },
     {
      "hanzi": "国家",
      "pinyin": "guó jiā",
      "pos": "n.",
-     "en": "country, nation (国家美术馆 the National Gallery)"
+     "en": "country, nation (国家美术馆 the National Gallery)",
+     "id": "jinbu2-u3-4:1"
     },
     {
      "hanzi": "到底",
      "pinyin": "dào dǐ",
      "pos": "adv.",
-     "en": "exactly, after all (in questions)"
-    },
+     "en": "exactly, after all (in questions)",
+     "id": "jinbu2-u3-4:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-4b",
+   "title": "进步2 U3.4 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 2",
+   "words": [
     {
      "hanzi": "工具",
      "pinyin": "gōng jù",
      "pos": "n.",
-     "en": "tool"
-    },
-    {
-     "hanzi": "毛笔",
-     "pinyin": "máo bǐ",
-     "pos": "n.",
-     "en": "(writing or painting) brush"
+     "en": "tool",
+     "id": "jinbu2-u3-4:3"
     },
     {
      "hanzi": "笔",
      "pinyin": "bǐ",
      "pos": "n.",
-     "en": "pen, brush"
+     "en": "pen, brush",
+     "id": "jinbu2-u3-4:5"
+    },
+    {
+     "hanzi": "毛笔",
+     "pinyin": "máo bǐ",
+     "pos": "n.",
+     "en": "(writing or painting) brush",
+     "id": "jinbu2-u3-4:4"
     },
     {
      "hanzi": "墨",
      "pinyin": "mò",
      "pos": "n.",
-     "en": "ink (Chinese ink)"
+     "en": "ink (Chinese ink)",
+     "id": "jinbu2-u3-4:6"
     },
+    {
+     "hanzi": "水墨画",
+     "pinyin": "shuǐ mò huà",
+     "pos": "n.",
+     "en": "ink painting",
+     "id": "jinbu2-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-4c",
+   "title": "进步2 U3.4 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 3",
+   "words": [
     {
      "hanzi": "用",
      "pinyin": "yòng",
      "pos": "phr.",
-     "en": "to use … to … (用毛笔来画 paint with a brush) (用…来…)"
+     "en": "to use … to … (用毛笔来画 paint with a brush) (用…来…)",
+     "id": "jinbu2-u3-4:7"
     },
     {
      "hanzi": "颜料",
      "pinyin": "yán liào",
      "pos": "n.",
-     "en": "paint (for pictures)"
+     "en": "paint (for pictures)",
+     "id": "jinbu2-u3-4:8"
     },
     {
      "hanzi": "布",
      "pinyin": "bù",
      "pos": "n.",
-     "en": "cloth; canvas"
+     "en": "cloth; canvas",
+     "id": "jinbu2-u3-4:9"
     },
     {
      "hanzi": "浓",
      "pinyin": "nóng",
      "pos": "adj.",
-     "en": "thick, dark, strong (ink, tea, coffee)"
+     "en": "thick, dark, strong (ink, tea, coffee)",
+     "id": "jinbu2-u3-4:10"
     },
     {
      "hanzi": "表现",
      "pinyin": "biǎo xiàn",
      "pos": "v.",
-     "en": "to show, express"
+     "en": "to show, express",
+     "id": "jinbu2-u3-4:11"
     }
    ]
   },
   {
-   "id": "jinbu2-u3-5",
-   "title": "进步2 U3.5 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
+   "id": "jinbu2-u3-5a",
+   "title": "进步2 U3.5 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 1",
    "words": [
     {
      "hanzi": "远近",
      "pinyin": "yuǎn jìn",
      "pos": "n.",
-     "en": "distance, near and far"
+     "en": "distance, near and far",
+     "id": "jinbu2-u3-5:0"
     },
     {
      "hanzi": "整",
      "pinyin": "zhěng",
      "pos": "adj.",
-     "en": "whole (整张 the whole sheet)"
+     "en": "whole (整张 the whole sheet)",
+     "id": "jinbu2-u3-5:1"
     },
     {
      "hanzi": "画布",
      "pinyin": "huà bù",
      "pos": "n.",
-     "en": "canvas"
+     "en": "canvas",
+     "id": "jinbu2-u3-5:2"
     },
     {
      "hanzi": "之间",
      "pinyin": "zhī jiān",
      "pos": "n.",
-     "en": "between"
+     "en": "between",
+     "id": "jinbu2-u3-5:3"
     },
     {
      "hanzi": "西方",
      "pinyin": "xī fāng",
      "pos": "n.",
-     "en": "the West"
-    },
+     "en": "the West",
+     "id": "jinbu2-u3-5:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-5b",
+   "title": "进步2 U3.5 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 2",
+   "words": [
     {
      "hanzi": "东方",
      "pinyin": "dōng fāng",
      "pos": "n.",
-     "en": "the East"
+     "en": "the East",
+     "id": "jinbu2-u3-5:5"
     },
     {
      "hanzi": "方法",
      "pinyin": "fāng fǎ",
      "pos": "n.",
-     "en": "method, way"
+     "en": "method, way",
+     "id": "jinbu2-u3-5:6"
     },
     {
      "hanzi": "真实",
      "pinyin": "zhēn shí",
      "pos": "adj.",
-     "en": "real, true to life"
+     "en": "real, true to life",
+     "id": "jinbu2-u3-5:7"
     },
     {
      "hanzi": "结合",
      "pinyin": "jié hé",
      "pos": "v.",
-     "en": "to combine"
+     "en": "to combine",
+     "id": "jinbu2-u3-5:8"
     },
     {
      "hanzi": "中西结合",
      "pinyin": "zhōng xī jié hé",
      "pos": "phr.",
-     "en": "a mix of Chinese and Western"
-    },
+     "en": "a mix of Chinese and Western",
+     "id": "jinbu2-u3-5:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-6a",
+   "title": "进步2 U3.6 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 1",
+   "words": [
     {
      "hanzi": "画法",
      "pinyin": "huà fǎ",
      "pos": "n.",
-     "en": "way of painting, technique"
+     "en": "way of painting, technique",
+     "id": "jinbu2-u3-5:10"
     },
     {
      "hanzi": "水彩",
      "pinyin": "shuǐ cǎi",
      "pos": "n.",
-     "en": "watercolour"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u3-6",
-   "title": "进步2 U3.6 · 国画和油画有什么不同？ How is Chinese painting different from oil painting?",
-   "words": [
+     "en": "watercolour",
+     "id": "jinbu2-u3-5:11"
+    },
     {
      "hanzi": "素描",
      "pinyin": "sù miáo",
      "pos": "n.",
-     "en": "sketch, drawing"
+     "en": "sketch, drawing",
+     "id": "jinbu2-u3-6:0"
     },
     {
      "hanzi": "风景",
      "pinyin": "fēng jǐng",
      "pos": "n.",
-     "en": "scenery, landscape"
+     "en": "scenery, landscape",
+     "id": "jinbu2-u3-6:1"
     },
     {
      "hanzi": "抽象",
      "pinyin": "chōu xiàng",
      "pos": "adj.",
-     "en": "abstract"
-    },
+     "en": "abstract",
+     "id": "jinbu2-u3-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-6b",
+   "title": "进步2 U3.6 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 2",
+   "words": [
     {
      "hanzi": "黑",
      "pinyin": "hēi",
      "pos": "adj./n.",
-     "en": "black"
+     "en": "black",
+     "id": "jinbu2-u3-6:3"
     },
     {
      "hanzi": "白",
      "pinyin": "bái",
      "pos": "adj./n.",
-     "en": "white; blank (留白 leave blank)"
+     "en": "white; blank (留白 leave blank)",
+     "id": "jinbu2-u3-6:4"
+    },
+    {
+     "hanzi": "留白",
+     "pinyin": "liú bái",
+     "pos": "v./n.",
+     "en": "to leave (part of a picture) empty; empty space",
+     "id": "jinbu2-u3-1:7"
     },
     {
      "hanzi": "浅",
      "pinyin": "qiǎn",
      "pos": "adj.",
-     "en": "light, pale (colours); shallow"
-    },
+     "en": "light, pale (colours); shallow",
+     "id": "jinbu2-u3-6:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u3-6c",
+   "title": "进步2 U3.6 · 国画和油画有什么不同？ How is Chinese painting different from oil painting? · 3",
+   "words": [
     {
      "hanzi": "话",
      "pinyin": "huà",
      "pos": "n.",
-     "en": "words, what someone says (这句话 this sentence)"
+     "en": "words, what someone says (这句话 this sentence)",
+     "id": "jinbu2-u3-6:6"
     },
     {
      "hanzi": "哪些",
      "pinyin": "nǎ xiē",
      "pos": "q.",
-     "en": "which (ones)"
+     "en": "which (ones)",
+     "id": "jinbu2-u3-6:7"
     },
     {
      "hanzi": "书法",
      "pinyin": "shū fǎ",
      "pos": "n.",
-     "en": "calligraphy"
+     "en": "calligraphy",
+     "id": "jinbu2-u3-6:8"
     },
     {
      "hanzi": "诗",
      "pinyin": "shī",
      "pos": "n.",
-     "en": "poem"
+     "en": "poem",
+     "id": "jinbu2-u3-6:9"
     }
    ]
   },
   {
-   "id": "jinbu2-u4-1",
-   "title": "进步2 U4.1 · 做完了！ All done!",
+   "id": "jinbu2-u4-1a",
+   "title": "进步2 U4.1 · 做完了！ All done! · 1",
    "words": [
     {
      "hanzi": "完",
      "pinyin": "wán",
      "pos": "v.",
-     "en": "to finish (after a verb: 做完 finish doing)"
+     "en": "to finish (after a verb: 做完 finish doing)",
+     "id": "jinbu2-u4-1:0"
     },
     {
      "hanzi": "印",
      "pinyin": "yìn",
      "pos": "v.",
-     "en": "to print"
+     "en": "to print",
+     "id": "jinbu2-u4-1:1"
     },
     {
      "hanzi": "就差",
      "pinyin": "jiù chà",
      "pos": "phr.",
-     "en": "there's only … left (就差最后一页 just the last page to go)"
+     "en": "there's only … left (就差最后一页 just the last page to go)",
+     "id": "jinbu2-u4-1:2",
+     "parts": [
+      "就",
+      "差"
+     ]
     },
     {
      "hanzi": "页",
      "pinyin": "yè",
      "pos": "m.",
-     "en": "page"
+     "en": "page",
+     "id": "jinbu2-u4-1:3"
     },
     {
      "hanzi": "看见",
      "pinyin": "kàn jiàn",
      "pos": "v.",
-     "en": "to see, spot"
-    },
+     "en": "to see, spot",
+     "id": "jinbu2-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-1b",
+   "title": "进步2 U4.1 · 做完了！ All done! · 2",
+   "words": [
     {
      "hanzi": "英文",
      "pinyin": "Yīng wén",
      "pos": "n.",
-     "en": "English (especially written)"
+     "en": "English (especially written)",
+     "id": "jinbu2-u4-1:5"
     },
     {
      "hanzi": "菜名",
      "pinyin": "cài míng",
      "pos": "n.",
-     "en": "name of a dish"
+     "en": "name of a dish",
+     "id": "jinbu2-u4-1:6"
     },
     {
      "hanzi": "过去",
      "pinyin": "guò qu",
      "pos": "v.",
-     "en": "to go over (after a verb: over there, away from the speaker)"
+     "en": "to go over (after a verb: over there, away from the speaker)",
+     "id": "jinbu2-u4-1:7"
     },
     {
      "hanzi": "还好",
      "pinyin": "hái hǎo",
      "pos": "adv.",
-     "en": "luckily, fortunately"
+     "en": "luckily, fortunately",
+     "id": "jinbu2-u4-1:8"
     },
     {
      "hanzi": "看懂",
      "pinyin": "kàn dǒng",
      "pos": "v.",
-     "en": "to understand (by reading or watching)"
+     "en": "to understand (by reading or watching)",
+     "id": "jinbu2-u4-1:9",
+     "parts": [
+      "看",
+      "懂"
+     ]
     }
    ]
   },
   {
-   "id": "jinbu2-u4-2",
-   "title": "进步2 U4.2 · 做完了！ All done!",
+   "id": "jinbu2-u4-2a",
+   "title": "进步2 U4.2 · 做完了！ All done! · 1",
    "words": [
     {
      "hanzi": "手工",
      "pinyin": "shǒu gōng",
      "pos": "adj./n.",
-     "en": "handmade, by hand; handicraft"
+     "en": "handmade, by hand; handicraft",
+     "id": "jinbu2-u4-2:0"
     },
     {
      "hanzi": "全部",
      "pinyin": "quán bù",
      "pos": "n./adv.",
-     "en": "all, the whole lot"
+     "en": "all, the whole lot",
+     "id": "jinbu2-u4-2:1"
     },
     {
      "hanzi": "完成",
      "pinyin": "wán chéng",
      "pos": "v.",
-     "en": "to complete, finish (a task)"
+     "en": "to complete, finish (a task)",
+     "id": "jinbu2-u4-2:2"
     },
     {
      "hanzi": "听见",
      "pinyin": "tīng jiàn",
      "pos": "v.",
-     "en": "to hear"
+     "en": "to hear",
+     "id": "jinbu2-u4-2:3"
     },
     {
      "hanzi": "找到",
      "pinyin": "zhǎo dào",
      "pos": "v.",
-     "en": "to find (after looking)"
-    },
+     "en": "to find (after looking)",
+     "id": "jinbu2-u4-2:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-2b",
+   "title": "进步2 U4.2 · 做完了！ All done! · 2",
+   "words": [
     {
      "hanzi": "买到",
      "pinyin": "mǎi dào",
      "pos": "v.",
-     "en": "to manage to buy"
+     "en": "to manage to buy",
+     "id": "jinbu2-u4-2:5",
+     "parts": [
+      "买",
+      "到"
+     ]
     },
     {
      "hanzi": "做好",
      "pinyin": "zuò hǎo",
      "pos": "v.",
-     "en": "to finish, get (something) ready"
+     "en": "to finish, get (something) ready",
+     "id": "jinbu2-u4-2:6"
     },
     {
      "hanzi": "打印",
      "pinyin": "dǎ yìn",
      "pos": "v.",
-     "en": "to print (on a printer)"
+     "en": "to print (on a printer)",
+     "id": "jinbu2-u4-2:7"
     },
     {
      "hanzi": "打印机",
      "pinyin": "dǎ yìn jī",
      "pos": "n.",
-     "en": "printer"
+     "en": "printer",
+     "id": "jinbu2-u4-2:8"
     },
     {
      "hanzi": "文件",
      "pinyin": "wén jiàn",
      "pos": "n.",
-     "en": "file, document"
+     "en": "file, document",
+     "id": "jinbu2-u4-2:9"
     }
    ]
   },
   {
-   "id": "jinbu2-u4-3",
-   "title": "进步2 U4.3 · 做完了！ All done!",
+   "id": "jinbu2-u4-3a",
+   "title": "进步2 U4.3 · 做完了！ All done! · 1",
    "words": [
     {
      "hanzi": "客户",
      "pinyin": "kè hù",
      "pos": "n.",
-     "en": "client, customer"
+     "en": "client, customer",
+     "id": "jinbu2-u4-3:0"
     },
     {
      "hanzi": "项目",
      "pinyin": "xiàng mù",
      "pos": "n.",
-     "en": "project"
+     "en": "project",
+     "id": "jinbu2-u4-3:1"
     },
     {
      "hanzi": "修改",
      "pinyin": "xiū gǎi",
      "pos": "v.",
-     "en": "to revise, make changes"
+     "en": "to revise, make changes",
+     "id": "jinbu2-u4-3:2"
     },
     {
      "hanzi": "加班",
      "pinyin": "jiā bān",
      "pos": "v.",
-     "en": "to work overtime"
+     "en": "to work overtime",
+     "id": "jinbu2-u4-3:3"
     },
     {
      "hanzi": "截止",
      "pinyin": "jié zhǐ",
      "pos": "v.",
-     "en": "to close, have a deadline (截止日期 deadline)"
-    },
+     "en": "to close, have a deadline (截止日期 deadline)",
+     "id": "jinbu2-u4-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-3b",
+   "title": "进步2 U4.3 · 做完了！ All done! · 2",
+   "words": [
     {
      "hanzi": "日期",
      "pinyin": "rì qī",
      "pos": "n.",
-     "en": "date"
+     "en": "date",
+     "id": "jinbu2-u4-3:5"
     },
     {
      "hanzi": "发现",
      "pinyin": "fā xiàn",
      "pos": "v.",
-     "en": "to notice, find out"
+     "en": "to notice, find out",
+     "id": "jinbu2-u4-3:6"
     },
     {
      "hanzi": "明白",
      "pinyin": "míng bai",
      "pos": "v./adj.",
-     "en": "to understand; clear"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u4-4",
-   "title": "进步2 U4.4 · 做完了！ All done!",
-   "words": [
+     "en": "to understand; clear",
+     "id": "jinbu2-u4-3:7"
+    },
     {
      "hanzi": "起来",
      "pinyin": "qǐ lai",
      "pos": "v.",
-     "en": "to get up; (after a verb) up"
+     "en": "to get up; (after a verb) up",
+     "id": "jinbu2-u4-4:0"
     },
     {
      "hanzi": "结束",
      "pinyin": "jié shù",
      "pos": "v.",
-     "en": "to end, be over"
-    },
+     "en": "to end, be over",
+     "id": "jinbu2-u4-4:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-4a",
+   "title": "进步2 U4.4 · 做完了！ All done!",
+   "words": [
     {
      "hanzi": "随便",
      "pinyin": "suí biàn",
      "pos": "adv./adj.",
-     "en": "as you like, casually; whatever"
+     "en": "as you like, casually; whatever",
+     "id": "jinbu2-u4-4:2"
     },
     {
      "hanzi": "聊",
      "pinyin": "liáo",
      "pos": "v.",
-     "en": "to chat (about) (聊工作 talk about work)"
+     "en": "to chat (about) (聊工作 talk about work)",
+     "id": "jinbu2-u4-4:3"
     },
     {
      "hanzi": "圣诞",
      "pinyin": "Shèng dàn",
      "pos": "n.",
-     "en": "Christmas (圣诞市场 Christmas market)"
+     "en": "Christmas (圣诞市场 Christmas market)",
+     "id": "jinbu2-u4-4:4"
     },
     {
      "hanzi": "圣诞节",
      "pinyin": "Shèng dàn jié",
      "pos": "n.",
-     "en": "Christmas"
+     "en": "Christmas",
+     "id": "jinbu2-u4-4:5"
     },
     {
      "hanzi": "听说",
      "pinyin": "tīng shuō",
      "pos": "v.",
-     "en": "to hear (that), be told"
-    },
+     "en": "to hear (that), be told",
+     "id": "jinbu2-u4-4:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-5a",
+   "title": "进步2 U4.5 · 做完了！ All done! · 1",
+   "words": [
     {
      "hanzi": "红酒",
      "pinyin": "hóng jiǔ",
      "pos": "n.",
-     "en": "red wine (热红酒 mulled wine)"
+     "en": "red wine (热红酒 mulled wine)",
+     "id": "jinbu2-u4-4:7"
     },
     {
      "hanzi": "沿着",
      "pinyin": "yán zhe",
      "pos": "prep.",
-     "en": "along"
-    }
-   ]
-  },
-  {
-   "id": "jinbu2-u4-5",
-   "title": "进步2 U4.5 · 做完了！ All done!",
-   "words": [
+     "en": "along",
+     "id": "jinbu2-u4-4:8"
+    },
     {
      "hanzi": "河",
      "pinyin": "hé",
      "pos": "n.",
-     "en": "river"
+     "en": "river",
+     "id": "jinbu2-u4-5:0"
     },
     {
      "hanzi": "河边",
      "pinyin": "hé biān",
      "pos": "n.",
-     "en": "riverside"
+     "en": "riverside",
+     "id": "jinbu2-u4-5:1"
     },
     {
      "hanzi": "散步",
      "pinyin": "sàn bù",
      "pos": "v.",
-     "en": "to go for a walk, stroll"
-    },
+     "en": "to go for a walk, stroll",
+     "id": "jinbu2-u4-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-5b",
+   "title": "进步2 U4.5 · 做完了！ All done! · 2",
+   "words": [
     {
      "hanzi": "散散步",
      "pinyin": "sàn sàn bù",
      "pos": "phr.",
-     "en": "to go for a little walk"
+     "en": "to go for a little walk",
+     "id": "jinbu2-u4-5:3"
     },
     {
      "hanzi": "过年",
      "pinyin": "guò nián",
      "pos": "v.",
-     "en": "to celebrate (Chinese) New Year"
-    },
-    {
-     "hanzi": "睡懒觉",
-     "pinyin": "shuì lǎn jiào",
-     "pos": "v.",
-     "en": "to have a lie-in"
+     "en": "to celebrate (Chinese) New Year",
+     "id": "jinbu2-u4-5:4"
     },
     {
      "hanzi": "懒",
      "pinyin": "lǎn",
      "pos": "adj.",
-     "en": "lazy"
+     "en": "lazy",
+     "id": "jinbu2-u4-5:6"
     },
     {
      "hanzi": "放松",
      "pinyin": "fàng sōng",
      "pos": "v.",
-     "en": "to relax"
+     "en": "to relax",
+     "id": "jinbu2-u4-5:7"
     },
     {
      "hanzi": "无聊",
      "pinyin": "wú liáo",
      "pos": "adj.",
-     "en": "bored, boring"
+     "en": "bored, boring",
+     "id": "jinbu2-u4-5:8"
     }
    ]
   },
   {
-   "id": "jinbu2-u4-6",
-   "title": "进步2 U4.6 · 做完了！ All done!",
+   "id": "jinbu2-u4-6a",
+   "title": "进步2 U4.6 · 做完了！ All done! · 1",
    "words": [
     {
      "hanzi": "宅",
      "pinyin": "zhái",
      "pos": "v./adj.",
-     "en": "to stay in, be a homebody (宅在家 stay in all day)"
+     "en": "to stay in, be a homebody (宅在家 stay in all day)",
+     "id": "jinbu2-u4-6:0"
     },
     {
      "hanzi": "家务",
      "pinyin": "jiā wù",
      "pos": "n.",
-     "en": "housework"
+     "en": "housework",
+     "id": "jinbu2-u4-6:1"
     },
     {
      "hanzi": "书店",
      "pinyin": "shū diàn",
      "pos": "n.",
-     "en": "bookshop"
+     "en": "bookshop",
+     "id": "jinbu2-u4-6:2"
     },
     {
      "hanzi": "睡",
      "pinyin": "shuì",
      "pos": "v.",
-     "en": "to sleep (睡到十点 sleep till ten)"
+     "en": "to sleep (睡到十点 sleep till ten)",
+     "id": "jinbu2-u4-6:3"
     },
+    {
+     "hanzi": "睡懒觉",
+     "pinyin": "shuì lǎn jiào",
+     "pos": "v.",
+     "en": "to have a lie-in",
+     "id": "jinbu2-u4-5:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-6b",
+   "title": "进步2 U4.6 · 做完了！ All done! · 2",
+   "words": [
     {
      "hanzi": "圣诞树",
      "pinyin": "Shèng dàn shù",
      "pos": "n.",
-     "en": "Christmas tree"
+     "en": "Christmas tree",
+     "id": "jinbu2-u4-6:4"
     },
     {
      "hanzi": "购物",
      "pinyin": "gòu wù",
      "pos": "v.",
-     "en": "to shop"
+     "en": "to shop",
+     "id": "jinbu2-u4-6:5"
     },
     {
      "hanzi": "沙发",
      "pinyin": "shā fā",
      "pos": "n.",
-     "en": "sofa"
+     "en": "sofa",
+     "id": "jinbu2-u4-6:6"
     },
     {
      "hanzi": "做梦",
      "pinyin": "zuò mèng",
      "pos": "v.",
-     "en": "to dream"
+     "en": "to dream",
+     "id": "jinbu2-u4-6:7"
     },
     {
      "hanzi": "吃吃喝喝",
      "pinyin": "chī chī hē hē",
      "pos": "phr.",
-     "en": "eating and drinking, snacking"
-    },
+     "en": "eating and drinking, snacking",
+     "id": "jinbu2-u4-6:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu2-u4-6c",
+   "title": "进步2 U4.6 · 做完了！ All done! · 3",
+   "words": [
     {
      "hanzi": "转身",
      "pinyin": "zhuǎn shēn",
      "pos": "",
-     "en": "to turn round"
+     "en": "to turn round",
+     "id": "jinbu2-u4-6:9"
     },
     {
      "hanzi": "碰倒",
      "pinyin": "pèng dǎo",
      "pos": "",
-     "en": "to knock over"
+     "en": "to knock over",
+     "id": "jinbu2-u4-6:10"
     },
     {
      "hanzi": "擦",
      "pinyin": "cā",
      "pos": "",
-     "en": "to wipe"
+     "en": "to wipe",
+     "id": "jinbu2-u4-6:11"
     },
     {
      "hanzi": "木匠",
      "pinyin": "mù jiàng",
      "pos": "",
-     "en": "carpenter"
+     "en": "carpenter",
+     "id": "jinbu2-u4-6:12"
     },
     {
      "hanzi": "养",
      "pinyin": "yǎng",
      "pos": "",
-     "en": "to keep (animals)"
-    },
-    {
-     "hanzi": "它们",
-     "pinyin": "tā men",
-     "pos": "",
-     "en": "they (animals, things)"
+     "en": "to keep (animals)",
+     "id": "jinbu2-u4-6:13"
     }
    ]
   },
   {
-   "id": "jinbu3-u1-1",
-   "title": "进步3 U1.1 · 过年好！ Happy New Year!",
+   "id": "jinbu3-u1-1a",
+   "title": "进步3 U1.1 · 过年好！ Happy New Year! · 1",
    "words": [
     {
      "hanzi": "过年好",
      "pinyin": "guò nián hǎo",
      "pos": "phr.",
-     "en": "Happy New Year! (at Spring Festival)"
+     "en": "Happy New Year! (at Spring Festival)",
+     "id": "jinbu3-u1-1:0",
+     "parts": [
+      "过年",
+      "好"
+     ]
     },
     {
      "hanzi": "哟",
      "pinyin": "yō",
      "pos": "part.",
-     "en": "oh! (pleasant surprise)"
+     "en": "oh! (pleasant surprise)",
+     "id": "jinbu3-u1-1:1"
     },
     {
      "hanzi": "甭",
      "pinyin": "béng",
      "pos": "adv.",
-     "en": "don't, no need to (Beijing speech: 甭客气 don't stand on ceremony)"
+     "en": "don't, no need to (Beijing speech: 甭客气 don't stand on ceremony)",
+     "id": "jinbu3-u1-1:2"
     },
     {
      "hanzi": "说起",
      "pinyin": "shuō qǐ",
      "pos": "v.",
-     "en": "to mention, talk about"
+     "en": "to mention, talk about",
+     "id": "jinbu3-u1-1:3"
     },
     {
      "hanzi": "手",
      "pinyin": "shǒu",
      "pos": "n.",
-     "en": "hand"
-    },
+     "en": "hand",
+     "id": "jinbu3-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-1b",
+   "title": "进步3 U1.1 · 过年好！ Happy New Year! · 2",
+   "words": [
     {
      "hanzi": "洗手",
      "pinyin": "xǐ shǒu",
      "pos": "v.",
-     "en": "to wash your hands"
+     "en": "to wash your hands",
+     "id": "jinbu3-u1-1:5"
     },
     {
      "hanzi": "包",
      "pinyin": "bāo",
      "pos": "v.",
-     "en": "to wrap (包饺子 make dumplings) (new meaning)"
+     "en": "to wrap (包饺子 make dumplings) (new meaning)",
+     "id": "jinbu3-u1-1:6"
     },
     {
      "hanzi": "一块儿",
      "pinyin": "yī kuài r",
      "pos": "adv.",
-     "en": "together (especially in the north)"
+     "en": "together (especially in the north)",
+     "id": "jinbu3-u1-1:7"
     },
     {
      "hanzi": "皮",
      "pinyin": "pí",
      "pos": "n.",
-     "en": "wrapper, skin (饺子皮 dumpling wrapper)"
+     "en": "wrapper, skin (饺子皮 dumpling wrapper)",
+     "id": "jinbu3-u1-1:8"
     },
     {
      "hanzi": "馅儿",
      "pinyin": "xiàn r",
      "pos": "n.",
-     "en": "filling"
-    },
-    {
-     "hanzi": "对折",
-     "pinyin": "duì zhé",
-     "pos": "v.",
-     "en": "to fold in half"
+     "en": "filling",
+     "id": "jinbu3-u1-1:9"
     }
    ]
   },
   {
-   "id": "jinbu3-u1-2",
-   "title": "进步3 U1.2 · 过年好！ Happy New Year!",
+   "id": "jinbu3-u1-2a",
+   "title": "进步3 U1.2 · 过年好！ Happy New Year! · 1",
    "words": [
+    {
+     "hanzi": "对折",
+     "pinyin": "duì zhé",
+     "pos": "v.",
+     "en": "to fold in half",
+     "id": "jinbu3-u1-1:10"
+    },
     {
      "hanzi": "捏",
      "pinyin": "niē",
      "pos": "v.",
-     "en": "to pinch, press together"
+     "en": "to pinch, press together",
+     "id": "jinbu3-u1-2:0"
     },
     {
      "hanzi": "元宝",
      "pinyin": "yuán bǎo",
      "pos": "n.",
-     "en": "gold or silver ingot (old Chinese money)"
+     "en": "gold or silver ingot (old Chinese money)",
+     "id": "jinbu3-u1-2:1"
     },
     {
      "hanzi": "样子",
      "pinyin": "yàng zi",
      "pos": "n.",
-     "en": "shape, look (这个样子 like this)"
+     "en": "shape, look (这个样子 like this)",
+     "id": "jinbu3-u1-2:2"
     },
     {
      "hanzi": "挣钱",
      "pinyin": "zhèng qián",
      "pos": "v.",
-     "en": "to earn money"
-    },
+     "en": "to earn money",
+     "id": "jinbu3-u1-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-2b",
+   "title": "进步3 U1.2 · 过年好！ Happy New Year! · 2",
+   "words": [
     {
      "hanzi": "呗",
      "pinyin": "bei",
      "pos": "part.",
-     "en": "of course, that's all (at the end of an obvious statement)"
+     "en": "of course, that's all (at the end of an obvious statement)",
+     "id": "jinbu3-u1-2:4"
     },
     {
      "hanzi": "硬币",
      "pinyin": "yìng bì",
      "pos": "n.",
-     "en": "coin"
+     "en": "coin",
+     "id": "jinbu3-u1-2:5"
     },
     {
      "hanzi": "谁",
      "pinyin": "shuí",
      "pos": "phr.",
-     "en": "whoever … (谁吃到，谁有福气 whoever gets it is lucky) (谁…谁…)"
+     "en": "whoever … (谁吃到，谁有福气 whoever gets it is lucky) (谁…谁…)",
+     "id": "jinbu3-u1-2:6"
     },
     {
      "hanzi": "福气",
      "pinyin": "fú qi",
      "pos": "n.",
-     "en": "good fortune, luck"
+     "en": "good fortune, luck",
+     "id": "jinbu3-u1-2:7"
     },
     {
      "hanzi": "煮",
      "pinyin": "zhǔ",
      "pos": "v.",
-     "en": "to boil"
-    },
+     "en": "to boil",
+     "id": "jinbu3-u1-2:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-3a",
+   "title": "进步3 U1.3 · 过年好！ Happy New Year! · 1",
+   "words": [
     {
      "hanzi": "破",
      "pinyin": "pò",
      "pos": "v./adj.",
-     "en": "to break, burst; broken"
+     "en": "to break, burst; broken",
+     "id": "jinbu3-u1-2:9"
     },
     {
      "hanzi": "除了",
      "pinyin": "chú le",
      "pos": "phr.",
-     "en": "besides; except (除了…以外)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u1-3",
-   "title": "进步3 U1.3 · 过年好！ Happy New Year!",
-   "words": [
+     "en": "besides; except (除了…以外)",
+     "id": "jinbu3-u1-2:10"
+    },
     {
      "hanzi": "保证",
      "pinyin": "bǎo zhèng",
      "pos": "v.",
-     "en": "to promise, guarantee"
+     "en": "to promise, guarantee",
+     "id": "jinbu3-u1-3:0"
     },
     {
      "hanzi": "年夜饭",
      "pinyin": "nián yè fàn",
      "pos": "n.",
-     "en": "New Year's Eve dinner"
+     "en": "New Year's Eve dinner",
+     "id": "jinbu3-u1-3:1"
     },
     {
      "hanzi": "春晚",
      "pinyin": "chūn wǎn",
      "pos": "n.",
-     "en": "the Spring Festival Gala (on TV on New Year's Eve)"
-    },
+     "en": "the Spring Festival Gala (on TV on New Year's Eve)",
+     "id": "jinbu3-u1-3:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-3b",
+   "title": "进步3 U1.3 · 过年好！ Happy New Year! · 2",
+   "words": [
     {
      "hanzi": "除夕",
      "pinyin": "chú xī",
      "pos": "n.",
-     "en": "Chinese New Year's Eve"
+     "en": "Chinese New Year's Eve",
+     "id": "jinbu3-u1-3:3"
     },
     {
      "hanzi": "大年三十",
      "pinyin": "dà nián sān shí",
      "pos": "n.",
-     "en": "New Year's Eve (the 30th of the last month)"
+     "en": "New Year's Eve (the 30th of the last month)",
+     "id": "jinbu3-u1-3:4"
     },
     {
      "hanzi": "农历",
      "pinyin": "nóng lì",
      "pos": "n.",
-     "en": "the Chinese (lunar) calendar"
+     "en": "the Chinese (lunar) calendar",
+     "id": "jinbu3-u1-3:5"
     },
     {
      "hanzi": "正月",
      "pinyin": "zhēng yuè",
      "pos": "n.",
-     "en": "the first month of the lunar year"
+     "en": "the first month of the lunar year",
+     "id": "jinbu3-u1-3:6"
     },
     {
      "hanzi": "初一",
      "pinyin": "chū yī",
      "pos": "n.",
-     "en": "the first day of a lunar month (大年初一 New Year's Day)"
-    },
+     "en": "the first day of a lunar month (大年初一 New Year's Day)",
+     "id": "jinbu3-u1-3:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-3c",
+   "title": "进步3 U1.3 · 过年好！ Happy New Year! · 3",
+   "words": [
     {
      "hanzi": "初五",
      "pinyin": "chū wǔ",
      "pos": "n.",
-     "en": "the fifth day of a lunar month"
+     "en": "the fifth day of a lunar month",
+     "id": "jinbu3-u1-3:8"
     },
     {
      "hanzi": "春联",
      "pinyin": "chūn lián",
      "pos": "n.",
-     "en": "Spring Festival couplets (pasted by the door)"
+     "en": "Spring Festival couplets (pasted by the door)",
+     "id": "jinbu3-u1-3:9"
     },
     {
      "hanzi": "贴",
      "pinyin": "tiē",
      "pos": "v.",
-     "en": "to stick, paste up"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u1-4",
-   "title": "进步3 U1.4 · 过年好！ Happy New Year!",
-   "words": [
+     "en": "to stick, paste up",
+     "id": "jinbu3-u1-3:10"
+    },
     {
      "hanzi": "福",
      "pinyin": "fú",
      "pos": "n.",
-     "en": "good fortune (the character on doors at New Year)"
+     "en": "good fortune (the character on doors at New Year)",
+     "id": "jinbu3-u1-4:0"
     },
     {
      "hanzi": "倒",
      "pinyin": "dào",
      "pos": "adj./v.",
-     "en": "upside down; to turn upside down"
-    },
+     "en": "upside down; to turn upside down",
+     "id": "jinbu3-u1-4:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-4a",
+   "title": "进步3 U1.4 · 过年好！ Happy New Year! · 1",
+   "words": [
     {
      "hanzi": "醋",
      "pinyin": "cù",
      "pos": "n.",
-     "en": "vinegar"
+     "en": "vinegar",
+     "id": "jinbu3-u1-4:2"
     },
     {
      "hanzi": "剪纸",
      "pinyin": "jiǎn zhǐ",
      "pos": "n.",
-     "en": "paper cut (a decoration)"
+     "en": "paper cut (a decoration)",
+     "id": "jinbu3-u1-4:3"
     },
     {
      "hanzi": "年货",
      "pinyin": "nián huò",
      "pos": "n.",
-     "en": "New Year shopping (food and presents)"
+     "en": "New Year shopping (food and presents)",
+     "id": "jinbu3-u1-4:4"
     },
     {
      "hanzi": "守岁",
      "pinyin": "shǒu suì",
      "pos": "v.",
-     "en": "to stay up to see the New Year in"
+     "en": "to stay up to see the New Year in",
+     "id": "jinbu3-u1-4:5"
     },
     {
      "hanzi": "白菜",
      "pinyin": "bái cài",
      "pos": "n.",
-     "en": "Chinese cabbage (猪肉白菜馅儿 pork and cabbage filling)"
-    },
+     "en": "Chinese cabbage (猪肉白菜馅儿 pork and cabbage filling)",
+     "id": "jinbu3-u1-4:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-4b",
+   "title": "进步3 U1.4 · 过年好！ Happy New Year! · 2",
+   "words": [
     {
      "hanzi": "韭菜",
      "pinyin": "jiǔ cài",
      "pos": "n.",
-     "en": "Chinese chives"
+     "en": "Chinese chives",
+     "id": "jinbu3-u1-4:7"
     },
     {
      "hanzi": "擀",
      "pinyin": "gǎn",
      "pos": "v.",
-     "en": "to roll out (dough)"
+     "en": "to roll out (dough)",
+     "id": "jinbu3-u1-4:8"
     },
     {
      "hanzi": "春运",
      "pinyin": "chūn yùn",
      "pos": "n.",
-     "en": "the Spring Festival travel rush"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u1-5",
-   "title": "进步3 U1.5 · 过年好！ Happy New Year!",
-   "words": [
+     "en": "the Spring Festival travel rush",
+     "id": "jinbu3-u1-4:9"
+    },
     {
      "hanzi": "新年好",
      "pinyin": "xīn nián hǎo",
      "pos": "phr.",
-     "en": "Happy New Year!"
+     "en": "Happy New Year!",
+     "id": "jinbu3-u1-5:0"
     },
     {
      "hanzi": "二位",
      "pinyin": "èr wèi",
      "pos": "phr.",
-     "en": "you two, both of you (polite: 您二位)"
-    },
+     "en": "you two, both of you (polite: 您二位)",
+     "id": "jinbu3-u1-5:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-5a",
+   "title": "进步3 U1.5 · 过年好！ Happy New Year! · 1",
+   "words": [
     {
      "hanzi": "拜年",
      "pinyin": "bài nián",
      "pos": "v.",
-     "en": "to pay a New Year visit, wish someone a happy new year (给您拜年了)"
+     "en": "to pay a New Year visit, wish someone a happy new year (给您拜年了)",
+     "id": "jinbu3-u1-5:2"
     },
     {
      "hanzi": "红包",
      "pinyin": "hóng bāo",
      "pos": "n.",
-     "en": "red envelope (with money inside)"
+     "en": "red envelope (with money inside)",
+     "id": "jinbu3-u1-5:3"
     },
     {
      "hanzi": "收下",
      "pinyin": "shōu xia",
      "pos": "v.",
-     "en": "to accept (a present)"
+     "en": "to accept (a present)",
+     "id": "jinbu3-u1-5:4"
     },
     {
      "hanzi": "压岁钱",
      "pinyin": "yā suì qián",
      "pos": "n.",
-     "en": "New Year money (given to children in red envelopes)"
-    },
-    {
-     "hanzi": "图个吉利",
-     "pinyin": "tú ge jí lì",
-     "pos": "phr.",
-     "en": "for luck, to bring good luck"
-    },
-    {
-     "hanzi": "吉利",
-     "pinyin": "jí lì",
-     "pos": "adj.",
-     "en": "lucky"
-    },
-    {
-     "hanzi": "长辈",
-     "pinyin": "zhǎng bèi",
-     "pos": "n.",
-     "en": "elders, the older generation"
-    },
-    {
-     "hanzi": "晚辈",
-     "pinyin": "wǎn bèi",
-     "pos": "n.",
-     "en": "the younger generation"
-    },
-    {
-     "hanzi": "哎哟",
-     "pinyin": "āi yō",
-     "pos": "part.",
-     "en": "oh! ooh! (surprise, delight or pain)"
-    },
-    {
-     "hanzi": "嘴",
-     "pinyin": "zuǐ",
-     "pos": "n.",
-     "en": "mouth"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u1-6",
-   "title": "进步3 U1.6 · 过年好！ Happy New Year!",
-   "words": [
-    {
-     "hanzi": "嘴甜",
-     "pinyin": "zuǐ tián",
-     "pos": "adj.",
-     "en": "sweet-talking, good at saying nice things"
-    },
-    {
-     "hanzi": "接着",
-     "pinyin": "jiē zhe",
-     "pos": "adv./v.",
-     "en": "to carry on; next, then"
-    },
-    {
-     "hanzi": "相声",
-     "pinyin": "xiàng sheng",
-     "pos": "n.",
-     "en": "crosstalk, comic dialogue"
-    },
-    {
-     "hanzi": "小品",
-     "pinyin": "xiǎo pǐn",
-     "pos": "n.",
-     "en": "comedy sketch"
-    },
-    {
-     "hanzi": "正常",
-     "pinyin": "zhèng cháng",
-     "pos": "adj.",
-     "en": "normal"
-    },
-    {
-     "hanzi": "鞭炮",
-     "pinyin": "biān pào",
-     "pos": "n.",
-     "en": "firecrackers"
-    },
-    {
-     "hanzi": "放鞭炮",
-     "pinyin": "fàng biān pào",
-     "pos": "phr.",
-     "en": "to set off firecrackers"
-    },
-    {
-     "hanzi": "以为",
-     "pinyin": "yǐ wéi",
-     "pos": "v.",
-     "en": "to think (wrongly), assume"
-    },
-    {
-     "hanzi": "城里",
-     "pinyin": "chéng lǐ",
-     "pos": "n.",
-     "en": "in town, in the city"
-    },
-    {
-     "hanzi": "不让",
-     "pinyin": "bù ràng",
-     "pos": "phr.",
-     "en": "not allowed, they don't let you (不让放 you can't set them off)"
-    },
-    {
-     "hanzi": "安全",
-     "pinyin": "ān quán",
-     "pos": "adj./n.",
-     "en": "safe; safety"
-    },
-    {
-     "hanzi": "空气",
-     "pinyin": "kōng qì",
-     "pos": "n.",
-     "en": "air"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u1-7",
-   "title": "进步3 U1.7 · 过年好！ Happy New Year!",
-   "words": [
-    {
-     "hanzi": "的话",
-     "pinyin": "de huà",
-     "pos": "part.",
-     "en": "if (at the end of a condition: 想放的话 if you want to)"
-    },
-    {
-     "hanzi": "烟花",
-     "pinyin": "yān huā",
-     "pos": "n.",
-     "en": "fireworks"
-    },
-    {
-     "hanzi": "恭喜发财",
-     "pinyin": "gōng xǐ fā cái",
-     "pos": "phr.",
-     "en": "wishing you a prosperous new year"
-    },
-    {
-     "hanzi": "心意",
-     "pinyin": "xīn yì",
-     "pos": "n.",
-     "en": "kind thought, token of goodwill"
-    },
-    {
-     "hanzi": "主持人",
-     "pinyin": "zhǔ chí rén",
-     "pos": "n.",
-     "en": "presenter, host (of a show)"
-    },
-    {
-     "hanzi": "规定",
-     "pinyin": "guī dìng",
-     "pos": "n./v.",
-     "en": "rule; to stipulate"
-    },
-    {
-     "hanzi": "禁止",
-     "pinyin": "jìn zhǐ",
-     "pos": "v.",
-     "en": "to ban, forbid"
-    },
-    {
-     "hanzi": "庙会",
-     "pinyin": "miào huì",
-     "pos": "n.",
-     "en": "temple fair"
-    },
-    {
-     "hanzi": "糖葫芦",
-     "pinyin": "táng hú lu",
-     "pos": "n.",
-     "en": "candied haws on a stick"
-    },
-    {
-     "hanzi": "串",
-     "pinyin": "chuàn",
-     "pos": "m.",
-     "en": "a string of, a skewer of (一串糖葫芦)"
-    },
-    {
-     "hanzi": "够",
-     "pinyin": "gòu",
-     "pos": "adj./v.",
-     "en": "enough; to be enough"
-    },
-    {
-     "hanzi": "抢红包",
-     "pinyin": "qiǎng hóng bāo",
-     "pos": "phr.",
-     "en": "to grab red envelopes (in a WeChat group)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u1-8",
-   "title": "进步3 U1.8 · 过年好！ Happy New Year!",
-   "words": [
-    {
-     "hanzi": "元宵节",
-     "pinyin": "Yuán xiāo jié",
-     "pos": "n.",
-     "en": "the Lantern Festival (the 15th of the first month)"
-    },
-    {
-     "hanzi": "汤圆",
-     "pinyin": "tāng yuán",
-     "pos": "n.",
-     "en": "sweet rice balls in soup"
-    },
-    {
-     "hanzi": "舞狮",
-     "pinyin": "wǔ shī",
-     "pos": "n.",
-     "en": "lion dance"
-    },
-    {
-     "hanzi": "生肖",
-     "pinyin": "shēng xiào",
-     "pos": "n.",
-     "en": "Chinese zodiac animal"
-    },
-    {
-     "hanzi": "属",
-     "pinyin": "shǔ",
-     "pos": "v.",
-     "en": "to be born in the year of (我属猴 I'm a Monkey)"
-    },
-    {
-     "hanzi": "猴年",
-     "pinyin": "hóu nián",
-     "pos": "n.",
-     "en": "Year of the Monkey (2028)"
-    },
-    {
-     "hanzi": "爷爷",
-     "pinyin": "yé ye",
-     "pos": "n.",
-     "en": "grandpa (dad's father)"
-    },
-    {
-     "hanzi": "奶奶",
-     "pinyin": "nǎi nai",
-     "pos": "n.",
-     "en": "grandma (dad's mother)"
-    },
-    {
-     "hanzi": "姥姥",
-     "pinyin": "lǎo lao",
-     "pos": "n.",
-     "en": "grandma (mum's mother, in the north)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u2-1",
-   "title": "进步3 U2.1 · 听起来很美！ It sounds beautiful!",
-   "words": [
-    {
-     "hanzi": "台",
-     "pinyin": "tái",
-     "pos": "n.",
-     "en": "stage, platform (台上 on stage)"
-    },
-    {
-     "hanzi": "乐器",
-     "pinyin": "yuè qì",
-     "pos": "n.",
-     "en": "musical instrument"
-    },
-    {
-     "hanzi": "弦",
-     "pinyin": "xián",
-     "pos": "n.",
-     "en": "string (of an instrument)"
-    },
-    {
-     "hanzi": "二胡",
-     "pinyin": "èr hú",
-     "pos": "n.",
-     "en": "erhu, a two-stringed fiddle"
-    },
-    {
-     "hanzi": "听起来",
-     "pinyin": "tīng qi lai",
-     "pos": "phr.",
-     "en": "to sound (听起来很美 it sounds beautiful)"
-    },
-    {
-     "hanzi": "看起来",
-     "pinyin": "kàn qi lai",
-     "pos": "phr.",
-     "en": "to look, seem"
-    },
-    {
-     "hanzi": "古筝",
-     "pinyin": "gǔ zhēng",
-     "pos": "n.",
-     "en": "guzheng, a Chinese zither"
-    },
-    {
-     "hanzi": "京剧",
-     "pinyin": "Jīng jù",
-     "pos": "n.",
-     "en": "Beijing opera, Peking opera"
-    },
-    {
-     "hanzi": "从小",
-     "pinyin": "cóng xiǎo",
-     "pos": "adv.",
-     "en": "since childhood, from a young age"
-    },
-    {
-     "hanzi": "脸谱",
-     "pinyin": "liǎn pǔ",
-     "pos": "n.",
-     "en": "painted face (in Chinese opera)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u2-2",
-   "title": "进步3 U2.2 · 听起来很美！ It sounds beautiful!",
-   "words": [
-    {
-     "hanzi": "字幕",
-     "pinyin": "zì mù",
-     "pos": "n.",
-     "en": "subtitles, captions"
-    },
-    {
-     "hanzi": "看得清楚",
-     "pinyin": "kàn de qīng chu",
-     "pos": "phr.",
-     "en": "can see clearly (看不清楚 can't see clearly)"
-    },
-    {
-     "hanzi": "听得懂",
-     "pinyin": "tīng de dǒng",
-     "pos": "phr.",
-     "en": "can understand (by listening) (听不懂 can't understand)"
-    },
-    {
-     "hanzi": "变",
-     "pinyin": "biàn",
-     "pos": "v.",
-     "en": "to change"
-    },
-    {
-     "hanzi": "红",
-     "pinyin": "hóng",
-     "pos": "adj.",
-     "en": "red (脸是红的 the face is red)"
-    },
-    {
-     "hanzi": "脸",
-     "pinyin": "liǎn",
-     "pos": "n.",
-     "en": "face"
-    },
-    {
-     "hanzi": "川剧",
-     "pinyin": "Chuān jù",
-     "pos": "n.",
-     "en": "Sichuan opera"
-    },
-    {
-     "hanzi": "变脸",
-     "pinyin": "biàn liǎn",
-     "pos": "n./v.",
-     "en": "face-changing (in Sichuan opera)"
-    },
-    {
-     "hanzi": "一会儿",
-     "pinyin": "yī huì r",
-     "pos": "phr.",
-     "en": "now … now …, one moment … the next … (一会儿…一会儿…)"
-    },
-    {
-     "hanzi": "看不出来",
-     "pinyin": "kàn bu chū lai",
-     "pos": "phr.",
-     "en": "can't tell, can't work out (by looking)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u2-3",
-   "title": "进步3 U2.3 · 听起来很美！ It sounds beautiful!",
-   "words": [
-    {
-     "hanzi": "神奇",
-     "pinyin": "shén qí",
-     "pos": "adj.",
-     "en": "amazing, magical"
-    },
-    {
-     "hanzi": "可",
-     "pinyin": "kě",
-     "pos": "adv.",
-     "en": "really, certainly (for emphasis: 这可是秘密 that's a secret, you know)"
-    },
-    {
-     "hanzi": "咱们",
-     "pinyin": "zán men",
-     "pos": "pron.",
-     "en": "we, us (including the listener; common in the north)"
-    },
-    {
-     "hanzi": "猜",
-     "pinyin": "cāi",
-     "pos": "v.",
-     "en": "to guess"
-    },
-    {
-     "hanzi": "演员",
-     "pinyin": "yǎn yuán",
-     "pos": "n.",
-     "en": "actor, performer"
-    },
-    {
-     "hanzi": "戏",
-     "pinyin": "xì",
-     "pos": "n.",
-     "en": "opera, play, show"
-    },
-    {
-     "hanzi": "唱戏",
-     "pinyin": "chàng xì",
-     "pos": "v.",
-     "en": "to sing opera, perform in an opera"
-    },
-    {
-     "hanzi": "戏曲",
-     "pinyin": "xì qǔ",
-     "pos": "n.",
-     "en": "Chinese opera (all the regional kinds)"
-    },
-    {
-     "hanzi": "舞台",
-     "pinyin": "wǔ tái",
-     "pos": "n.",
-     "en": "stage"
-    },
-    {
-     "hanzi": "鼓",
-     "pinyin": "gǔ",
-     "pos": "n.",
-     "en": "drum"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u2-4",
-   "title": "进步3 U2.4 · 听起来很美！ It sounds beautiful!",
-   "words": [
-    {
-     "hanzi": "杂技",
-     "pinyin": "zá jì",
-     "pos": "n.",
-     "en": "acrobatics"
-    },
-    {
-     "hanzi": "功夫",
-     "pinyin": "gōng fu",
-     "pos": "n.",
-     "en": "kung fu; skill"
-    },
-    {
-     "hanzi": "面具",
-     "pinyin": "miàn jù",
-     "pos": "n.",
-     "en": "mask"
-    },
-    {
-     "hanzi": "京胡",
-     "pinyin": "jīng hú",
-     "pos": "n.",
-     "en": "jinghu, the high fiddle that leads a Beijing opera band"
-    },
-    {
-     "hanzi": "锣",
-     "pinyin": "luó",
-     "pos": "n.",
-     "en": "gong"
-    },
-    {
-     "hanzi": "戏迷",
-     "pinyin": "xì mí",
-     "pos": "n.",
-     "en": "opera fan"
-    },
-    {
-     "hanzi": "票友",
-     "pinyin": "piào yǒu",
-     "pos": "n.",
-     "en": "amateur opera singer"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u2-5",
-   "title": "进步3 U2.5 · 听起来很美！ It sounds beautiful!",
-   "words": [
-    {
-     "hanzi": "丰富",
-     "pinyin": "fēng fù",
-     "pos": "adj.",
-     "en": "rich, varied, plentiful"
-    },
-    {
-     "hanzi": "拉",
-     "pinyin": "lā",
-     "pos": "v.",
-     "en": "to play (a bowed instrument); to pull (拉二胡 play the erhu)"
-    },
-    {
-     "hanzi": "段",
-     "pinyin": "duàn",
-     "pos": "m.",
-     "en": "piece, section (一段音乐 a piece of music; 这段长城 this stretch of the Wall)"
-    },
-    {
-     "hanzi": "好久",
-     "pinyin": "hǎo jiǔ",
-     "pos": "adv.",
-     "en": "for a long time, for ages (好久没弹了 haven't played for ages)"
-    },
-    {
-     "hanzi": "外人",
-     "pinyin": "wài rén",
-     "pos": "n.",
-     "en": "outsider"
-    },
-    {
-     "hanzi": "翻译",
-     "pinyin": "fān yì",
-     "pos": "v./n.",
-     "en": "to translate; translator, translation"
-    },
-    {
-     "hanzi": "曲子",
-     "pinyin": "qǔ zi",
-     "pos": "n.",
-     "en": "tune, piece of music"
-    },
-    {
-     "hanzi": "小提琴",
-     "pinyin": "xiǎo tí qín",
-     "pos": "n.",
-     "en": "violin"
-    },
-    {
-     "hanzi": "琵琶",
-     "pinyin": "pí pa",
-     "pos": "n.",
-     "en": "pipa, a Chinese lute"
-    },
-    {
-     "hanzi": "笛子",
-     "pinyin": "dí zi",
-     "pos": "n.",
-     "en": "Chinese flute"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u2-6",
-   "title": "进步3 U2.6 · 听起来很美！ It sounds beautiful!",
-   "words": [
-    {
-     "hanzi": "民乐",
-     "pinyin": "mín yuè",
-     "pos": "n.",
-     "en": "traditional Chinese music"
-    },
-    {
-     "hanzi": "民歌",
-     "pinyin": "mín gē",
-     "pos": "n.",
-     "en": "folk song"
-    },
-    {
-     "hanzi": "古典",
-     "pinyin": "gǔ diǎn",
-     "pos": "adj.",
-     "en": "classical"
-    },
-    {
-     "hanzi": "音乐家",
-     "pinyin": "yīn yuè jiā",
-     "pos": "n.",
-     "en": "musician"
-    },
-    {
-     "hanzi": "演奏",
-     "pinyin": "yǎn zòu",
-     "pos": "v.",
-     "en": "to play, perform (music)"
-    },
-    {
-     "hanzi": "推荐",
-     "pinyin": "tuī jiàn",
-     "pos": "v.",
-     "en": "to recommend"
-    },
-    {
-     "hanzi": "吃起来",
-     "pinyin": "chī qi lai",
-     "pos": "phr.",
-     "en": "to taste (吃起来很香 it tastes good)"
-    },
-    {
-     "hanzi": "拍手",
-     "pinyin": "pāi shǒu",
-     "pos": "v.",
-     "en": "to clap your hands"
-    },
-    {
-     "hanzi": "手指",
-     "pinyin": "shǒu zhǐ",
-     "pos": "n.",
-     "en": "finger"
-    },
-    {
-     "hanzi": "弓",
-     "pinyin": "gōng",
-     "pos": "n.",
-     "en": "bow (for a stringed instrument)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u3-1",
-   "title": "进步3 U3.1 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
-   "words": [
-    {
-     "hanzi": "部",
-     "pinyin": "bù",
-     "pos": "m.",
-     "en": "for films, TV series and long books (一部电视剧 a TV series)"
-    },
-    {
-     "hanzi": "电视剧",
-     "pinyin": "diàn shì jù",
-     "pos": "n.",
-     "en": "TV series, TV drama"
-    },
-    {
-     "hanzi": "虽然",
-     "pinyin": "suī rán",
-     "pos": "phr.",
-     "en": "although …, (but) … (虽然…但是…)"
-    },
-    {
-     "hanzi": "但是",
-     "pinyin": "dàn shì",
-     "pos": "phr.",
-     "en": "(in 虽然…但是…)"
-    },
-    {
-     "hanzi": "讲",
-     "pinyin": "jiǎng",
-     "pos": "v.",
-     "en": "to tell, explain; to be about (讲的是… it's about …)"
-    },
-    {
-     "hanzi": "故事",
-     "pinyin": "gù shi",
-     "pos": "n.",
-     "en": "story"
-    },
-    {
-     "hanzi": "家族",
-     "pinyin": "jiā zú",
-     "pos": "n.",
-     "en": "(big, extended) family, clan"
-    },
-    {
-     "hanzi": "本来",
-     "pinyin": "běn lái",
-     "pos": "adv.",
-     "en": "originally, at first"
-    },
-    {
-     "hanzi": "有钱",
-     "pinyin": "yǒu qián",
-     "pos": "adj.",
-     "en": "rich"
-    },
-    {
-     "hanzi": "爱情",
-     "pinyin": "ài qíng",
-     "pos": "n.",
-     "en": "love (between a couple)"
-    },
-    {
-     "hanzi": "爱哭",
-     "pinyin": "ài kū",
-     "pos": "phr.",
-     "en": "to cry easily, be a crybaby"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u3-2",
-   "title": "进步3 U3.2 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
-   "words": [
-    {
-     "hanzi": "不但",
-     "pinyin": "bù dàn",
-     "pos": "phr.",
-     "en": "not only … but also … (不但…而且…)"
-    },
-    {
-     "hanzi": "而且",
-     "pinyin": "ér qiě",
-     "pos": "phr.",
-     "en": "(in 不但…而且…)"
-    },
-    {
-     "hanzi": "有才",
-     "pinyin": "yǒu cái",
-     "pos": "adj.",
-     "en": "talented"
-    },
-    {
-     "hanzi": "连",
-     "pinyin": "lián",
-     "pos": "phr.",
-     "en": "even … (连…也/都…)"
-    },
-    {
-     "hanzi": "小学生",
-     "pinyin": "xiǎo xué shēng",
-     "pos": "n.",
-     "en": "primary school pupil"
-    },
-    {
-     "hanzi": "读",
-     "pinyin": "dú",
-     "pos": "v.",
-     "en": "to read; to study"
-    },
-    {
-     "hanzi": "原著",
-     "pinyin": "yuán zhù",
-     "pos": "n.",
-     "en": "the original (book)"
-    },
-    {
-     "hanzi": "人物",
-     "pinyin": "rén wù",
-     "pos": "n.",
-     "en": "character (in a story); figure"
-    },
-    {
-     "hanzi": "容易",
-     "pinyin": "róng yì",
-     "pos": "adj.",
-     "en": "easy"
-    },
-    {
-     "hanzi": "先说好",
-     "pinyin": "xiān shuō hǎo",
-     "pos": "phr.",
-     "en": "let's agree now, let's get one thing straight"
-    },
-    {
-     "hanzi": "集",
-     "pinyin": "jí",
-     "pos": "m.",
-     "en": "episode"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u3-3",
-   "title": "进步3 U3.3 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
-   "words": [
-    {
-     "hanzi": "递",
-     "pinyin": "dì",
-     "pos": "v.",
-     "en": "to pass, hand"
-    },
-    {
-     "hanzi": "纸巾",
-     "pinyin": "zhǐ jīn",
-     "pos": "n.",
-     "en": "tissue, paper napkin"
-    },
-    {
-     "hanzi": "小说",
-     "pinyin": "xiǎo shuō",
-     "pos": "n.",
-     "en": "novel"
-    },
-    {
-     "hanzi": "作家",
-     "pinyin": "zuò jiā",
-     "pos": "n.",
-     "en": "writer, author"
-    },
-    {
-     "hanzi": "文学",
-     "pinyin": "wén xué",
-     "pos": "n.",
-     "en": "literature"
-    },
-    {
-     "hanzi": "名著",
-     "pinyin": "míng zhù",
-     "pos": "n.",
-     "en": "classic, famous book"
-    },
-    {
-     "hanzi": "四大名著",
-     "pinyin": "sì dà míng zhù",
-     "pos": "n.",
-     "en": "the four great classical novels"
-    },
-    {
-     "hanzi": "清朝",
-     "pinyin": "Qīng cháo",
-     "pos": "n.",
-     "en": "the Qing dynasty (1644–1911)"
-    },
-    {
-     "hanzi": "朝代",
-     "pinyin": "cháo dài",
-     "pos": "n.",
-     "en": "dynasty"
-    },
-    {
-     "hanzi": "主角",
-     "pinyin": "zhǔ jué",
-     "pos": "n.",
-     "en": "main character, lead"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u3-4",
-   "title": "进步3 U3.4 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
-   "words": [
-    {
-     "hanzi": "结局",
-     "pinyin": "jié jú",
-     "pos": "n.",
-     "en": "ending"
-    },
-    {
-     "hanzi": "悲剧",
-     "pinyin": "bēi jù",
-     "pos": "n.",
-     "en": "tragedy"
-    },
-    {
-     "hanzi": "感人",
-     "pinyin": "gǎn rén",
-     "pos": "adj.",
-     "en": "moving, touching"
-    },
-    {
-     "hanzi": "花园",
-     "pinyin": "huā yuán",
-     "pos": "n.",
-     "en": "garden"
-    },
-    {
-     "hanzi": "长大",
-     "pinyin": "zhǎng dà",
-     "pos": "v.",
-     "en": "to grow up"
-    },
-    {
-     "hanzi": "互相",
-     "pinyin": "hù xiāng",
-     "pos": "adv.",
-     "en": "each other"
-    },
-    {
-     "hanzi": "懂事",
-     "pinyin": "dǒng shì",
-     "pos": "adj.",
-     "en": "sensible, thoughtful (of young people)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u3-5",
-   "title": "进步3 U3.5 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
-   "words": [
-    {
-     "hanzi": "外国",
-     "pinyin": "wài guó",
-     "pos": "n.",
-     "en": "foreign country; foreign"
-    },
-    {
-     "hanzi": "外国人",
-     "pinyin": "wài guó rén",
-     "pos": "n.",
-     "en": "foreigner"
-    },
-    {
-     "hanzi": "中学生",
-     "pinyin": "zhōng xué shēng",
-     "pos": "n.",
-     "en": "secondary school student"
-    },
-    {
-     "hanzi": "句子",
-     "pinyin": "jù zi",
-     "pos": "n.",
-     "en": "sentence"
-    },
-    {
-     "hanzi": "认识",
-     "pinyin": "rèn shi",
-     "pos": "v.",
-     "en": "to recognise, know (characters) (这个字我不认识 I don't know this character) (new meaning)"
-    },
-    {
-     "hanzi": "漫画",
-     "pinyin": "màn huà",
-     "pos": "n.",
-     "en": "comic, cartoon"
-    },
-    {
-     "hanzi": "版",
-     "pinyin": "bǎn",
-     "pos": "n.",
-     "en": "edition, version (英文版 English version)"
+     "en": "New Year money (given to children in red envelopes)",
+     "id": "jinbu3-u1-5:5"
     },
     {
      "hanzi": "图",
      "pinyin": "tú",
      "pos": "n.",
-     "en": "picture, illustration"
+     "en": "picture, illustration",
+     "id": "jinbu3-u3-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-5b",
+   "title": "进步3 U1.5 · 过年好！ Happy New Year! · 2",
+   "words": [
+    {
+     "hanzi": "吉利",
+     "pinyin": "jí lì",
+     "pos": "adj.",
+     "en": "lucky",
+     "id": "jinbu3-u1-5:7"
+    },
+    {
+     "hanzi": "长辈",
+     "pinyin": "zhǎng bèi",
+     "pos": "n.",
+     "en": "elders, the older generation",
+     "id": "jinbu3-u1-5:8"
+    },
+    {
+     "hanzi": "晚辈",
+     "pinyin": "wǎn bèi",
+     "pos": "n.",
+     "en": "the younger generation",
+     "id": "jinbu3-u1-5:9"
+    },
+    {
+     "hanzi": "哎哟",
+     "pinyin": "āi yō",
+     "pos": "part.",
+     "en": "oh! ooh! (surprise, delight or pain)",
+     "id": "jinbu3-u1-5:10"
+    },
+    {
+     "hanzi": "嘴",
+     "pinyin": "zuǐ",
+     "pos": "n.",
+     "en": "mouth",
+     "id": "jinbu3-u1-5:11"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-6a",
+   "title": "进步3 U1.6 · 过年好！ Happy New Year! · 1",
+   "words": [
+    {
+     "hanzi": "图个吉利",
+     "pinyin": "tú ge jí lì",
+     "pos": "phr.",
+     "en": "for luck, to bring good luck",
+     "id": "jinbu3-u1-5:6",
+     "parts": [
+      "图",
+      "个",
+      "吉利"
+     ]
+    },
+    {
+     "hanzi": "嘴甜",
+     "pinyin": "zuǐ tián",
+     "pos": "adj.",
+     "en": "sweet-talking, good at saying nice things",
+     "id": "jinbu3-u1-6:0"
+    },
+    {
+     "hanzi": "接着",
+     "pinyin": "jiē zhe",
+     "pos": "adv./v.",
+     "en": "to carry on; next, then",
+     "id": "jinbu3-u1-6:1"
+    },
+    {
+     "hanzi": "相声",
+     "pinyin": "xiàng sheng",
+     "pos": "n.",
+     "en": "crosstalk, comic dialogue",
+     "id": "jinbu3-u1-6:2"
+    },
+    {
+     "hanzi": "小品",
+     "pinyin": "xiǎo pǐn",
+     "pos": "n.",
+     "en": "comedy sketch",
+     "id": "jinbu3-u1-6:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-6b",
+   "title": "进步3 U1.6 · 过年好！ Happy New Year! · 2",
+   "words": [
+    {
+     "hanzi": "正常",
+     "pinyin": "zhèng cháng",
+     "pos": "adj.",
+     "en": "normal",
+     "id": "jinbu3-u1-6:4"
+    },
+    {
+     "hanzi": "鞭炮",
+     "pinyin": "biān pào",
+     "pos": "n.",
+     "en": "firecrackers",
+     "id": "jinbu3-u1-6:5"
+    },
+    {
+     "hanzi": "放鞭炮",
+     "pinyin": "fàng biān pào",
+     "pos": "phr.",
+     "en": "to set off firecrackers",
+     "id": "jinbu3-u1-6:6"
+    },
+    {
+     "hanzi": "以为",
+     "pinyin": "yǐ wéi",
+     "pos": "v.",
+     "en": "to think (wrongly), assume",
+     "id": "jinbu3-u1-6:7"
+    },
+    {
+     "hanzi": "城里",
+     "pinyin": "chéng lǐ",
+     "pos": "n.",
+     "en": "in town, in the city",
+     "id": "jinbu3-u1-6:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-6c",
+   "title": "进步3 U1.6 · 过年好！ Happy New Year! · 3",
+   "words": [
+    {
+     "hanzi": "不让",
+     "pinyin": "bù ràng",
+     "pos": "phr.",
+     "en": "not allowed, they don't let you (不让放 you can't set them off)",
+     "id": "jinbu3-u1-6:9"
+    },
+    {
+     "hanzi": "安全",
+     "pinyin": "ān quán",
+     "pos": "adj./n.",
+     "en": "safe; safety",
+     "id": "jinbu3-u1-6:10"
+    },
+    {
+     "hanzi": "空气",
+     "pinyin": "kōng qì",
+     "pos": "n.",
+     "en": "air",
+     "id": "jinbu3-u1-6:11"
+    },
+    {
+     "hanzi": "的话",
+     "pinyin": "de huà",
+     "pos": "part.",
+     "en": "if (at the end of a condition: 想放的话 if you want to)",
+     "id": "jinbu3-u1-7:0"
+    },
+    {
+     "hanzi": "烟花",
+     "pinyin": "yān huā",
+     "pos": "n.",
+     "en": "fireworks",
+     "id": "jinbu3-u1-7:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-7a",
+   "title": "进步3 U1.7 · 过年好！ Happy New Year! · 1",
+   "words": [
+    {
+     "hanzi": "恭喜发财",
+     "pinyin": "gōng xǐ fā cái",
+     "pos": "phr.",
+     "en": "wishing you a prosperous new year",
+     "id": "jinbu3-u1-7:2"
+    },
+    {
+     "hanzi": "心意",
+     "pinyin": "xīn yì",
+     "pos": "n.",
+     "en": "kind thought, token of goodwill",
+     "id": "jinbu3-u1-7:3"
+    },
+    {
+     "hanzi": "主持人",
+     "pinyin": "zhǔ chí rén",
+     "pos": "n.",
+     "en": "presenter, host (of a show)",
+     "id": "jinbu3-u1-7:4"
+    },
+    {
+     "hanzi": "规定",
+     "pinyin": "guī dìng",
+     "pos": "n./v.",
+     "en": "rule; to stipulate",
+     "id": "jinbu3-u1-7:5"
+    },
+    {
+     "hanzi": "禁止",
+     "pinyin": "jìn zhǐ",
+     "pos": "v.",
+     "en": "to ban, forbid",
+     "id": "jinbu3-u1-7:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-7b",
+   "title": "进步3 U1.7 · 过年好！ Happy New Year! · 2",
+   "words": [
+    {
+     "hanzi": "庙会",
+     "pinyin": "miào huì",
+     "pos": "n.",
+     "en": "temple fair",
+     "id": "jinbu3-u1-7:7"
+    },
+    {
+     "hanzi": "糖葫芦",
+     "pinyin": "táng hú lu",
+     "pos": "n.",
+     "en": "candied haws on a stick",
+     "id": "jinbu3-u1-7:8"
+    },
+    {
+     "hanzi": "串",
+     "pinyin": "chuàn",
+     "pos": "m.",
+     "en": "a string of, a skewer of (一串糖葫芦)",
+     "id": "jinbu3-u1-7:9"
+    },
+    {
+     "hanzi": "够",
+     "pinyin": "gòu",
+     "pos": "adj./v.",
+     "en": "enough; to be enough",
+     "id": "jinbu3-u1-7:10"
+    },
+    {
+     "hanzi": "抢红包",
+     "pinyin": "qiǎng hóng bāo",
+     "pos": "phr.",
+     "en": "to grab red envelopes (in a WeChat group)",
+     "id": "jinbu3-u1-7:11"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-8a",
+   "title": "进步3 U1.8 · 过年好！ Happy New Year! · 1",
+   "words": [
+    {
+     "hanzi": "元宵节",
+     "pinyin": "Yuán xiāo jié",
+     "pos": "n.",
+     "en": "the Lantern Festival (the 15th of the first month)",
+     "id": "jinbu3-u1-8:0"
+    },
+    {
+     "hanzi": "汤圆",
+     "pinyin": "tāng yuán",
+     "pos": "n.",
+     "en": "sweet rice balls in soup",
+     "id": "jinbu3-u1-8:1"
+    },
+    {
+     "hanzi": "舞狮",
+     "pinyin": "wǔ shī",
+     "pos": "n.",
+     "en": "lion dance",
+     "id": "jinbu3-u1-8:2"
+    },
+    {
+     "hanzi": "生肖",
+     "pinyin": "shēng xiào",
+     "pos": "n.",
+     "en": "Chinese zodiac animal",
+     "id": "jinbu3-u1-8:3"
+    },
+    {
+     "hanzi": "属",
+     "pinyin": "shǔ",
+     "pos": "v.",
+     "en": "to be born in the year of (我属猴 I'm a Monkey)",
+     "id": "jinbu3-u1-8:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u1-8b",
+   "title": "进步3 U1.8 · 过年好！ Happy New Year! · 2",
+   "words": [
+    {
+     "hanzi": "猴年",
+     "pinyin": "hóu nián",
+     "pos": "n.",
+     "en": "Year of the Monkey (2028)",
+     "id": "jinbu3-u1-8:5"
+    },
+    {
+     "hanzi": "爷爷",
+     "pinyin": "yé ye",
+     "pos": "n.",
+     "en": "grandpa (dad's father)",
+     "id": "jinbu3-u1-8:6"
+    },
+    {
+     "hanzi": "奶奶",
+     "pinyin": "nǎi nai",
+     "pos": "n.",
+     "en": "grandma (dad's mother)",
+     "id": "jinbu3-u1-8:7"
+    },
+    {
+     "hanzi": "姥姥",
+     "pinyin": "lǎo lao",
+     "pos": "n.",
+     "en": "grandma (mum's mother, in the north)",
+     "id": "jinbu3-u1-8:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-1a",
+   "title": "进步3 U2.1 · 听起来很美！ It sounds beautiful! · 1",
+   "words": [
+    {
+     "hanzi": "台",
+     "pinyin": "tái",
+     "pos": "n.",
+     "en": "stage, platform (台上 on stage)",
+     "id": "jinbu3-u2-1:0"
+    },
+    {
+     "hanzi": "乐器",
+     "pinyin": "yuè qì",
+     "pos": "n.",
+     "en": "musical instrument",
+     "id": "jinbu3-u2-1:1"
+    },
+    {
+     "hanzi": "弦",
+     "pinyin": "xián",
+     "pos": "n.",
+     "en": "string (of an instrument)",
+     "id": "jinbu3-u2-1:2"
+    },
+    {
+     "hanzi": "二胡",
+     "pinyin": "èr hú",
+     "pos": "n.",
+     "en": "erhu, a two-stringed fiddle",
+     "id": "jinbu3-u2-1:3"
+    },
+    {
+     "hanzi": "听起来",
+     "pinyin": "tīng qi lai",
+     "pos": "phr.",
+     "en": "to sound (听起来很美 it sounds beautiful)",
+     "id": "jinbu3-u2-1:4",
+     "parts": [
+      "听",
+      "起来"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-1b",
+   "title": "进步3 U2.1 · 听起来很美！ It sounds beautiful! · 2",
+   "words": [
+    {
+     "hanzi": "看起来",
+     "pinyin": "kàn qi lai",
+     "pos": "phr.",
+     "en": "to look, seem",
+     "id": "jinbu3-u2-1:5"
+    },
+    {
+     "hanzi": "古筝",
+     "pinyin": "gǔ zhēng",
+     "pos": "n.",
+     "en": "guzheng, a Chinese zither",
+     "id": "jinbu3-u2-1:6"
+    },
+    {
+     "hanzi": "京剧",
+     "pinyin": "Jīng jù",
+     "pos": "n.",
+     "en": "Beijing opera, Peking opera",
+     "id": "jinbu3-u2-1:7"
+    },
+    {
+     "hanzi": "从小",
+     "pinyin": "cóng xiǎo",
+     "pos": "adv.",
+     "en": "since childhood, from a young age",
+     "id": "jinbu3-u2-1:8"
+    },
+    {
+     "hanzi": "脸谱",
+     "pinyin": "liǎn pǔ",
+     "pos": "n.",
+     "en": "painted face (in Chinese opera)",
+     "id": "jinbu3-u2-1:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-2a",
+   "title": "进步3 U2.2 · 听起来很美！ It sounds beautiful! · 1",
+   "words": [
+    {
+     "hanzi": "字幕",
+     "pinyin": "zì mù",
+     "pos": "n.",
+     "en": "subtitles, captions",
+     "id": "jinbu3-u2-2:0"
+    },
+    {
+     "hanzi": "看得清楚",
+     "pinyin": "kàn de qīng chu",
+     "pos": "phr.",
+     "en": "can see clearly (看不清楚 can't see clearly)",
+     "id": "jinbu3-u2-2:1",
+     "parts": [
+      "看",
+      "得",
+      "清楚"
+     ]
+    },
+    {
+     "hanzi": "听得懂",
+     "pinyin": "tīng de dǒng",
+     "pos": "phr.",
+     "en": "can understand (by listening) (听不懂 can't understand)",
+     "id": "jinbu3-u2-2:2"
+    },
+    {
+     "hanzi": "变",
+     "pinyin": "biàn",
+     "pos": "v.",
+     "en": "to change",
+     "id": "jinbu3-u2-2:3"
+    },
+    {
+     "hanzi": "脸",
+     "pinyin": "liǎn",
+     "pos": "n.",
+     "en": "face",
+     "id": "jinbu3-u2-2:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-2b",
+   "title": "进步3 U2.2 · 听起来很美！ It sounds beautiful! · 2",
+   "words": [
+    {
+     "hanzi": "川剧",
+     "pinyin": "Chuān jù",
+     "pos": "n.",
+     "en": "Sichuan opera",
+     "id": "jinbu3-u2-2:6"
+    },
+    {
+     "hanzi": "变脸",
+     "pinyin": "biàn liǎn",
+     "pos": "n./v.",
+     "en": "face-changing (in Sichuan opera)",
+     "id": "jinbu3-u2-2:7"
+    },
+    {
+     "hanzi": "一会儿",
+     "pinyin": "yī huì r",
+     "pos": "phr.",
+     "en": "now … now …, one moment … the next … (一会儿…一会儿…)",
+     "id": "jinbu3-u2-2:8"
+    },
+    {
+     "hanzi": "看不出来",
+     "pinyin": "kàn bu chū lai",
+     "pos": "phr.",
+     "en": "can't tell, can't work out (by looking)",
+     "id": "jinbu3-u2-2:9"
+    },
+    {
+     "hanzi": "神奇",
+     "pinyin": "shén qí",
+     "pos": "adj.",
+     "en": "amazing, magical",
+     "id": "jinbu3-u2-3:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-3a",
+   "title": "进步3 U2.3 · 听起来很美！ It sounds beautiful! · 1",
+   "words": [
+    {
+     "hanzi": "可",
+     "pinyin": "kě",
+     "pos": "adv.",
+     "en": "really, certainly (for emphasis: 这可是秘密 that's a secret, you know)",
+     "id": "jinbu3-u2-3:1"
+    },
+    {
+     "hanzi": "咱们",
+     "pinyin": "zán men",
+     "pos": "pron.",
+     "en": "we, us (including the listener; common in the north)",
+     "id": "jinbu3-u2-3:2"
+    },
+    {
+     "hanzi": "猜",
+     "pinyin": "cāi",
+     "pos": "v.",
+     "en": "to guess",
+     "id": "jinbu3-u2-3:3"
+    },
+    {
+     "hanzi": "演员",
+     "pinyin": "yǎn yuán",
+     "pos": "n.",
+     "en": "actor, performer",
+     "id": "jinbu3-u2-3:4"
+    },
+    {
+     "hanzi": "戏",
+     "pinyin": "xì",
+     "pos": "n.",
+     "en": "opera, play, show",
+     "id": "jinbu3-u2-3:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-3b",
+   "title": "进步3 U2.3 · 听起来很美！ It sounds beautiful! · 2",
+   "words": [
+    {
+     "hanzi": "唱戏",
+     "pinyin": "chàng xì",
+     "pos": "v.",
+     "en": "to sing opera, perform in an opera",
+     "id": "jinbu3-u2-3:6"
+    },
+    {
+     "hanzi": "戏曲",
+     "pinyin": "xì qǔ",
+     "pos": "n.",
+     "en": "Chinese opera (all the regional kinds)",
+     "id": "jinbu3-u2-3:7"
+    },
+    {
+     "hanzi": "舞台",
+     "pinyin": "wǔ tái",
+     "pos": "n.",
+     "en": "stage",
+     "id": "jinbu3-u2-3:8"
+    },
+    {
+     "hanzi": "鼓",
+     "pinyin": "gǔ",
+     "pos": "n.",
+     "en": "drum",
+     "id": "jinbu3-u2-3:9"
+    },
+    {
+     "hanzi": "杂技",
+     "pinyin": "zá jì",
+     "pos": "n.",
+     "en": "acrobatics",
+     "id": "jinbu3-u2-4:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-4a",
+   "title": "进步3 U2.4 · 听起来很美！ It sounds beautiful!",
+   "words": [
+    {
+     "hanzi": "功夫",
+     "pinyin": "gōng fu",
+     "pos": "n.",
+     "en": "kung fu; skill",
+     "id": "jinbu3-u2-4:1"
+    },
+    {
+     "hanzi": "面具",
+     "pinyin": "miàn jù",
+     "pos": "n.",
+     "en": "mask",
+     "id": "jinbu3-u2-4:2"
+    },
+    {
+     "hanzi": "京胡",
+     "pinyin": "jīng hú",
+     "pos": "n.",
+     "en": "jinghu, the high fiddle that leads a Beijing opera band",
+     "id": "jinbu3-u2-4:3"
+    },
+    {
+     "hanzi": "锣",
+     "pinyin": "luó",
+     "pos": "n.",
+     "en": "gong",
+     "id": "jinbu3-u2-4:4"
+    },
+    {
+     "hanzi": "戏迷",
+     "pinyin": "xì mí",
+     "pos": "n.",
+     "en": "opera fan",
+     "id": "jinbu3-u2-4:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-5a",
+   "title": "进步3 U2.5 · 听起来很美！ It sounds beautiful! · 1",
+   "words": [
+    {
+     "hanzi": "票友",
+     "pinyin": "piào yǒu",
+     "pos": "n.",
+     "en": "amateur opera singer",
+     "id": "jinbu3-u2-4:6"
+    },
+    {
+     "hanzi": "丰富",
+     "pinyin": "fēng fù",
+     "pos": "adj.",
+     "en": "rich, varied, plentiful",
+     "id": "jinbu3-u2-5:0"
+    },
+    {
+     "hanzi": "拉",
+     "pinyin": "lā",
+     "pos": "v.",
+     "en": "to play (a bowed instrument); to pull (拉二胡 play the erhu)",
+     "id": "jinbu3-u2-5:1"
+    },
+    {
+     "hanzi": "段",
+     "pinyin": "duàn",
+     "pos": "m.",
+     "en": "piece, section (一段音乐 a piece of music; 这段长城 this stretch of the Wall)",
+     "id": "jinbu3-u2-5:2"
+    },
+    {
+     "hanzi": "好久",
+     "pinyin": "hǎo jiǔ",
+     "pos": "adv.",
+     "en": "for a long time, for ages (好久没弹了 haven't played for ages)",
+     "id": "jinbu3-u2-5:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-5b",
+   "title": "进步3 U2.5 · 听起来很美！ It sounds beautiful! · 2",
+   "words": [
+    {
+     "hanzi": "外人",
+     "pinyin": "wài rén",
+     "pos": "n.",
+     "en": "outsider",
+     "id": "jinbu3-u2-5:4"
+    },
+    {
+     "hanzi": "翻译",
+     "pinyin": "fān yì",
+     "pos": "v./n.",
+     "en": "to translate; translator, translation",
+     "id": "jinbu3-u2-5:5"
+    },
+    {
+     "hanzi": "曲子",
+     "pinyin": "qǔ zi",
+     "pos": "n.",
+     "en": "tune, piece of music",
+     "id": "jinbu3-u2-5:6"
+    },
+    {
+     "hanzi": "小提琴",
+     "pinyin": "xiǎo tí qín",
+     "pos": "n.",
+     "en": "violin",
+     "id": "jinbu3-u2-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-5c",
+   "title": "进步3 U2.5 · 听起来很美！ It sounds beautiful! · 3",
+   "words": [
+    {
+     "hanzi": "琵琶",
+     "pinyin": "pí pa",
+     "pos": "n.",
+     "en": "pipa, a Chinese lute",
+     "id": "jinbu3-u2-5:8"
+    },
+    {
+     "hanzi": "笛子",
+     "pinyin": "dí zi",
+     "pos": "n.",
+     "en": "Chinese flute",
+     "id": "jinbu3-u2-5:9"
+    },
+    {
+     "hanzi": "民乐",
+     "pinyin": "mín yuè",
+     "pos": "n.",
+     "en": "traditional Chinese music",
+     "id": "jinbu3-u2-6:0"
+    },
+    {
+     "hanzi": "民歌",
+     "pinyin": "mín gē",
+     "pos": "n.",
+     "en": "folk song",
+     "id": "jinbu3-u2-6:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-6a",
+   "title": "进步3 U2.6 · 听起来很美！ It sounds beautiful! · 1",
+   "words": [
+    {
+     "hanzi": "古典",
+     "pinyin": "gǔ diǎn",
+     "pos": "adj.",
+     "en": "classical",
+     "id": "jinbu3-u2-6:2"
+    },
+    {
+     "hanzi": "音乐家",
+     "pinyin": "yīn yuè jiā",
+     "pos": "n.",
+     "en": "musician",
+     "id": "jinbu3-u2-6:3"
+    },
+    {
+     "hanzi": "演奏",
+     "pinyin": "yǎn zòu",
+     "pos": "v.",
+     "en": "to play, perform (music)",
+     "id": "jinbu3-u2-6:4"
+    },
+    {
+     "hanzi": "推荐",
+     "pinyin": "tuī jiàn",
+     "pos": "v.",
+     "en": "to recommend",
+     "id": "jinbu3-u2-6:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u2-6b",
+   "title": "进步3 U2.6 · 听起来很美！ It sounds beautiful! · 2",
+   "words": [
+    {
+     "hanzi": "吃起来",
+     "pinyin": "chī qi lai",
+     "pos": "phr.",
+     "en": "to taste (吃起来很香 it tastes good)",
+     "id": "jinbu3-u2-6:6",
+     "parts": [
+      "吃",
+      "起来"
+     ]
+    },
+    {
+     "hanzi": "拍手",
+     "pinyin": "pāi shǒu",
+     "pos": "v.",
+     "en": "to clap your hands",
+     "id": "jinbu3-u2-6:7"
+    },
+    {
+     "hanzi": "手指",
+     "pinyin": "shǒu zhǐ",
+     "pos": "n.",
+     "en": "finger",
+     "id": "jinbu3-u2-6:8"
+    },
+    {
+     "hanzi": "弓",
+     "pinyin": "gōng",
+     "pos": "n.",
+     "en": "bow (for a stringed instrument)",
+     "id": "jinbu3-u2-6:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-1a",
+   "title": "进步3 U3.1 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 1",
+   "words": [
+    {
+     "hanzi": "部",
+     "pinyin": "bù",
+     "pos": "m.",
+     "en": "for films, TV series and long books (一部电视剧 a TV series)",
+     "id": "jinbu3-u3-1:0"
+    },
+    {
+     "hanzi": "电视剧",
+     "pinyin": "diàn shì jù",
+     "pos": "n.",
+     "en": "TV series, TV drama",
+     "id": "jinbu3-u3-1:1"
+    },
+    {
+     "hanzi": "虽然",
+     "pinyin": "suī rán",
+     "pos": "phr.",
+     "en": "although …, (but) … (虽然…但是…)",
+     "id": "jinbu3-u3-1:2"
+    },
+    {
+     "hanzi": "但是",
+     "pinyin": "dàn shì",
+     "pos": "phr.",
+     "en": "(in 虽然…但是…)",
+     "id": "jinbu3-u3-1:3"
+    },
+    {
+     "hanzi": "讲",
+     "pinyin": "jiǎng",
+     "pos": "v.",
+     "en": "to tell, explain; to be about (讲的是… it's about …)",
+     "id": "jinbu3-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-1b",
+   "title": "进步3 U3.1 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 2",
+   "words": [
+    {
+     "hanzi": "故事",
+     "pinyin": "gù shi",
+     "pos": "n.",
+     "en": "story",
+     "id": "jinbu3-u3-1:5"
+    },
+    {
+     "hanzi": "家族",
+     "pinyin": "jiā zú",
+     "pos": "n.",
+     "en": "(big, extended) family, clan",
+     "id": "jinbu3-u3-1:6"
+    },
+    {
+     "hanzi": "本来",
+     "pinyin": "běn lái",
+     "pos": "adv.",
+     "en": "originally, at first",
+     "id": "jinbu3-u3-1:7"
+    },
+    {
+     "hanzi": "有钱",
+     "pinyin": "yǒu qián",
+     "pos": "adj.",
+     "en": "rich",
+     "id": "jinbu3-u3-1:8"
+    },
+    {
+     "hanzi": "爱情",
+     "pinyin": "ài qíng",
+     "pos": "n.",
+     "en": "love (between a couple)",
+     "id": "jinbu3-u3-1:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-2a",
+   "title": "进步3 U3.2 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 1",
+   "words": [
+    {
+     "hanzi": "爱哭",
+     "pinyin": "ài kū",
+     "pos": "phr.",
+     "en": "to cry easily, be a crybaby",
+     "id": "jinbu3-u3-1:10"
+    },
+    {
+     "hanzi": "不但",
+     "pinyin": "bù dàn",
+     "pos": "phr.",
+     "en": "not only … but also … (不但…而且…)",
+     "id": "jinbu3-u3-2:0"
+    },
+    {
+     "hanzi": "而且",
+     "pinyin": "ér qiě",
+     "pos": "phr.",
+     "en": "(in 不但…而且…)",
+     "id": "jinbu3-u3-2:1"
+    },
+    {
+     "hanzi": "有才",
+     "pinyin": "yǒu cái",
+     "pos": "adj.",
+     "en": "talented",
+     "id": "jinbu3-u3-2:2",
+     "parts": [
+      "有",
+      "才"
+     ]
+    },
+    {
+     "hanzi": "连",
+     "pinyin": "lián",
+     "pos": "phr.",
+     "en": "even … (连…也/都…)",
+     "id": "jinbu3-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-2b",
+   "title": "进步3 U3.2 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 2",
+   "words": [
+    {
+     "hanzi": "小学生",
+     "pinyin": "xiǎo xué shēng",
+     "pos": "n.",
+     "en": "primary school pupil",
+     "id": "jinbu3-u3-2:4"
+    },
+    {
+     "hanzi": "读",
+     "pinyin": "dú",
+     "pos": "v.",
+     "en": "to read; to study",
+     "id": "jinbu3-u3-2:5"
+    },
+    {
+     "hanzi": "原著",
+     "pinyin": "yuán zhù",
+     "pos": "n.",
+     "en": "the original (book)",
+     "id": "jinbu3-u3-2:6"
+    },
+    {
+     "hanzi": "人物",
+     "pinyin": "rén wù",
+     "pos": "n.",
+     "en": "character (in a story); figure",
+     "id": "jinbu3-u3-2:7"
+    },
+    {
+     "hanzi": "容易",
+     "pinyin": "róng yì",
+     "pos": "adj.",
+     "en": "easy",
+     "id": "jinbu3-u3-2:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-3a",
+   "title": "进步3 U3.3 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 1",
+   "words": [
+    {
+     "hanzi": "先说好",
+     "pinyin": "xiān shuō hǎo",
+     "pos": "phr.",
+     "en": "let's agree now, let's get one thing straight",
+     "id": "jinbu3-u3-2:9"
+    },
+    {
+     "hanzi": "集",
+     "pinyin": "jí",
+     "pos": "m.",
+     "en": "episode",
+     "id": "jinbu3-u3-2:10"
+    },
+    {
+     "hanzi": "递",
+     "pinyin": "dì",
+     "pos": "v.",
+     "en": "to pass, hand",
+     "id": "jinbu3-u3-3:0"
+    },
+    {
+     "hanzi": "纸巾",
+     "pinyin": "zhǐ jīn",
+     "pos": "n.",
+     "en": "tissue, paper napkin",
+     "id": "jinbu3-u3-3:1"
+    },
+    {
+     "hanzi": "小说",
+     "pinyin": "xiǎo shuō",
+     "pos": "n.",
+     "en": "novel",
+     "id": "jinbu3-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-3b",
+   "title": "进步3 U3.3 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 2",
+   "words": [
+    {
+     "hanzi": "作家",
+     "pinyin": "zuò jiā",
+     "pos": "n.",
+     "en": "writer, author",
+     "id": "jinbu3-u3-3:3"
+    },
+    {
+     "hanzi": "文学",
+     "pinyin": "wén xué",
+     "pos": "n.",
+     "en": "literature",
+     "id": "jinbu3-u3-3:4"
+    },
+    {
+     "hanzi": "名著",
+     "pinyin": "míng zhù",
+     "pos": "n.",
+     "en": "classic, famous book",
+     "id": "jinbu3-u3-3:5"
+    },
+    {
+     "hanzi": "四大名著",
+     "pinyin": "sì dà míng zhù",
+     "pos": "n.",
+     "en": "the four great classical novels",
+     "id": "jinbu3-u3-3:6"
+    },
+    {
+     "hanzi": "清朝",
+     "pinyin": "Qīng cháo",
+     "pos": "n.",
+     "en": "the Qing dynasty (1644–1911)",
+     "id": "jinbu3-u3-3:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-4a",
+   "title": "进步3 U3.4 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 1",
+   "words": [
+    {
+     "hanzi": "朝代",
+     "pinyin": "cháo dài",
+     "pos": "n.",
+     "en": "dynasty",
+     "id": "jinbu3-u3-3:8"
+    },
+    {
+     "hanzi": "主角",
+     "pinyin": "zhǔ jué",
+     "pos": "n.",
+     "en": "main character, lead",
+     "id": "jinbu3-u3-3:9"
+    },
+    {
+     "hanzi": "结局",
+     "pinyin": "jié jú",
+     "pos": "n.",
+     "en": "ending",
+     "id": "jinbu3-u3-4:0"
+    },
+    {
+     "hanzi": "悲剧",
+     "pinyin": "bēi jù",
+     "pos": "n.",
+     "en": "tragedy",
+     "id": "jinbu3-u3-4:1"
+    },
+    {
+     "hanzi": "感人",
+     "pinyin": "gǎn rén",
+     "pos": "adj.",
+     "en": "moving, touching",
+     "id": "jinbu3-u3-4:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-4b",
+   "title": "进步3 U3.4 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 2",
+   "words": [
+    {
+     "hanzi": "花园",
+     "pinyin": "huā yuán",
+     "pos": "n.",
+     "en": "garden",
+     "id": "jinbu3-u3-4:3"
+    },
+    {
+     "hanzi": "长大",
+     "pinyin": "zhǎng dà",
+     "pos": "v.",
+     "en": "to grow up",
+     "id": "jinbu3-u3-4:4"
+    },
+    {
+     "hanzi": "互相",
+     "pinyin": "hù xiāng",
+     "pos": "adv.",
+     "en": "each other",
+     "id": "jinbu3-u3-4:5"
+    },
+    {
+     "hanzi": "懂事",
+     "pinyin": "dǒng shì",
+     "pos": "adj.",
+     "en": "sensible, thoughtful (of young people)",
+     "id": "jinbu3-u3-4:6"
+    },
+    {
+     "hanzi": "外国",
+     "pinyin": "wài guó",
+     "pos": "n.",
+     "en": "foreign country; foreign",
+     "id": "jinbu3-u3-5:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-5a",
+   "title": "进步3 U3.5 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
+   "words": [
+    {
+     "hanzi": "外国人",
+     "pinyin": "wài guó rén",
+     "pos": "n.",
+     "en": "foreigner",
+     "id": "jinbu3-u3-5:1"
+    },
+    {
+     "hanzi": "中学生",
+     "pinyin": "zhōng xué shēng",
+     "pos": "n.",
+     "en": "secondary school student",
+     "id": "jinbu3-u3-5:2"
+    },
+    {
+     "hanzi": "句子",
+     "pinyin": "jù zi",
+     "pos": "n.",
+     "en": "sentence",
+     "id": "jinbu3-u3-5:3"
+    },
+    {
+     "hanzi": "认识",
+     "pinyin": "rèn shi",
+     "pos": "v.",
+     "en": "to recognise, know (characters) (这个字我不认识 I don't know this character) (new meaning)",
+     "id": "jinbu3-u3-5:4"
+    },
+    {
+     "hanzi": "漫画",
+     "pinyin": "màn huà",
+     "pos": "n.",
+     "en": "comic, cartoon",
+     "id": "jinbu3-u3-5:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-6a",
+   "title": "进步3 U3.6 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 1",
+   "words": [
+    {
+     "hanzi": "版",
+     "pinyin": "bǎn",
+     "pos": "n.",
+     "en": "edition, version (英文版 English version)",
+     "id": "jinbu3-u3-5:6"
     },
     {
      "hanzi": "拼音",
      "pinyin": "pīn yīn",
      "pos": "n.",
-     "en": "pinyin"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u3-6",
-   "title": "进步3 U3.6 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
-   "words": [
+     "en": "pinyin",
+     "id": "jinbu3-u3-5:8"
+    },
     {
      "hanzi": "小朋友",
      "pinyin": "xiǎo péng you",
      "pos": "n.",
-     "en": "child, kid (friendly)"
+     "en": "child, kid (friendly)",
+     "id": "jinbu3-u3-6:0"
     },
     {
      "hanzi": "大人",
      "pinyin": "dà ren",
      "pos": "n.",
-     "en": "adult, grown-up"
+     "en": "adult, grown-up",
+     "id": "jinbu3-u3-6:1"
     },
     {
      "hanzi": "外文",
      "pinyin": "wài wén",
      "pos": "n.",
-     "en": "foreign language (外文书 foreign-language books)"
-    },
+     "en": "foreign language (外文书 foreign-language books)",
+     "id": "jinbu3-u3-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-6b",
+   "title": "进步3 U3.6 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 2",
+   "words": [
     {
      "hanzi": "红学家",
      "pinyin": "hóng xué jiā",
      "pos": "n.",
-     "en": "expert on Dream of the Red Chamber (红学 'Redology')"
+     "en": "expert on Dream of the Red Chamber (红学 'Redology')",
+     "id": "jinbu3-u3-6:3"
     },
     {
      "hanzi": "惊喜",
      "pinyin": "jīng xǐ",
      "pos": "n.",
-     "en": "(pleasant) surprise"
+     "en": "(pleasant) surprise",
+     "id": "jinbu3-u3-6:4"
     },
     {
      "hanzi": "书架",
      "pinyin": "shū jià",
      "pos": "n.",
-     "en": "bookshelf"
+     "en": "bookshelf",
+     "id": "jinbu3-u3-6:5"
     },
     {
      "hanzi": "出版",
      "pinyin": "chū bǎn",
      "pos": "v.",
-     "en": "to publish"
+     "en": "to publish",
+     "id": "jinbu3-u3-6:6"
     },
     {
      "hanzi": "电子书",
      "pinyin": "diàn zǐ shū",
      "pos": "n.",
-     "en": "e-book"
-    },
-    {
-     "hanzi": "儿童",
-     "pinyin": "ér tóng",
-     "pos": "n.",
-     "en": "children (儿童书 children's books)"
+     "en": "e-book",
+     "id": "jinbu3-u3-6:7"
     }
    ]
   },
   {
-   "id": "jinbu3-u3-7",
-   "title": "进步3 U3.7 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber?",
+   "id": "jinbu3-u3-7a",
+   "title": "进步3 U3.7 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 1",
    "words": [
+    {
+     "hanzi": "儿童",
+     "pinyin": "ér tóng",
+     "pos": "n.",
+     "en": "children (儿童书 children's books)",
+     "id": "jinbu3-u3-6:8"
+    },
     {
      "hanzi": "封面",
      "pinyin": "fēng miàn",
      "pos": "n.",
-     "en": "cover (of a book)"
+     "en": "cover (of a book)",
+     "id": "jinbu3-u3-7:0"
     },
     {
      "hanzi": "书名",
      "pinyin": "shū míng",
      "pos": "n.",
-     "en": "title (of a book)"
+     "en": "title (of a book)",
+     "id": "jinbu3-u3-7:1"
     },
     {
      "hanzi": "套",
      "pinyin": "tào",
      "pos": "m.",
-     "en": "set (一套书 a set of books)"
-    },
+     "en": "set (一套书 a set of books)",
+     "id": "jinbu3-u3-7:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u3-7b",
+   "title": "进步3 U3.7 · 你看过《红楼梦》吗？ Have you read Dream of the Red Chamber? · 2",
+   "words": [
     {
      "hanzi": "情节",
      "pinyin": "qíng jié",
      "pos": "n.",
-     "en": "plot, storyline"
+     "en": "plot, storyline",
+     "id": "jinbu3-u3-7:3"
     },
     {
      "hanzi": "翻",
      "pinyin": "fān",
      "pos": "v.",
-     "en": "to turn (pages), leaf through"
+     "en": "to turn (pages), leaf through",
+     "id": "jinbu3-u3-7:4"
     },
     {
      "hanzi": "眼泪",
      "pinyin": "yǎn lèi",
      "pos": "n.",
-     "en": "tears"
+     "en": "tears",
+     "id": "jinbu3-u3-7:5"
     },
     {
      "hanzi": "流",
      "pinyin": "liú",
      "pos": "v.",
-     "en": "to flow (流眼泪 shed tears)"
+     "en": "to flow (流眼泪 shed tears)",
+     "id": "jinbu3-u3-7:6"
     }
    ]
   },
   {
-   "id": "jinbu3-u4-1",
-   "title": "进步3 U4.1 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall",
+   "id": "jinbu3-u4-1a",
+   "title": "进步3 U4.1 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 1",
    "words": [
     {
      "hanzi": "缆车",
      "pinyin": "lǎn chē",
      "pos": "n.",
-     "en": "cable car"
+     "en": "cable car",
+     "id": "jinbu3-u4-1:0"
     },
     {
      "hanzi": "膝盖",
      "pinyin": "xī gài",
      "pos": "n.",
-     "en": "knee"
+     "en": "knee",
+     "id": "jinbu3-u4-1:1"
     },
     {
      "hanzi": "注意",
      "pinyin": "zhù yì",
      "pos": "v.",
-     "en": "to pay attention, be careful (注意安全 be careful, stay safe)"
+     "en": "to pay attention, be careful (注意安全 be careful, stay safe)",
+     "id": "jinbu3-u4-1:2"
     },
     {
      "hanzi": "台阶",
      "pinyin": "tái jiē",
      "pos": "n.",
-     "en": "step, steps"
+     "en": "step, steps",
+     "id": "jinbu3-u4-1:3"
     },
     {
      "hanzi": "陡",
      "pinyin": "dǒu",
      "pos": "adj.",
-     "en": "steep"
-    },
+     "en": "steep",
+     "id": "jinbu3-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-1b",
+   "title": "进步3 U4.1 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 2",
+   "words": [
     {
      "hanzi": "越",
      "pinyin": "yuè",
      "pos": "phr.",
-     "en": "the more … the more … (越爬越累 the more you climb, the more tired you get) (越…越…)"
+     "en": "the more … the more … (越爬越累 the more you climb, the more tired you get) (越…越…)",
+     "id": "jinbu3-u4-1:5"
     },
     {
      "hanzi": "烽火台",
      "pinyin": "fēng huǒ tái",
      "pos": "n.",
-     "en": "watchtower, beacon tower (on the Great Wall)"
+     "en": "watchtower, beacon tower (on the Great Wall)",
+     "id": "jinbu3-u4-1:6"
     },
     {
      "hanzi": "龙",
      "pinyin": "lóng",
      "pos": "n.",
-     "en": "dragon"
+     "en": "dragon",
+     "id": "jinbu3-u4-1:7"
     },
     {
      "hanzi": "座",
      "pinyin": "zuò",
      "pos": "m.",
-     "en": "for mountains, bridges and buildings (一座山 a mountain)"
+     "en": "for mountains, bridges and buildings (一座山 a mountain)",
+     "id": "jinbu3-u4-1:8"
     },
     {
      "hanzi": "野长城",
      "pinyin": "yě cháng chéng",
      "pos": "n.",
-     "en": "the 'wild' Great Wall (unrestored sections)"
-    },
-    {
-     "hanzi": "危险",
-     "pinyin": "wēi xiǎn",
-     "pos": "adj./n.",
-     "en": "dangerous; danger"
+     "en": "the 'wild' Great Wall (unrestored sections)",
+     "id": "jinbu3-u4-1:9"
     }
    ]
   },
   {
-   "id": "jinbu3-u4-2",
-   "title": "进步3 U4.2 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall",
+   "id": "jinbu3-u4-2a",
+   "title": "进步3 U4.2 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 1",
    "words": [
+    {
+     "hanzi": "危险",
+     "pinyin": "wēi xiǎn",
+     "pos": "adj./n.",
+     "en": "dangerous; danger",
+     "id": "jinbu3-u4-1:10"
+    },
     {
      "hanzi": "安全第一",
      "pinyin": "ān quán dì yī",
      "pos": "phr.",
-     "en": "safety first"
+     "en": "safety first",
+     "id": "jinbu3-u4-2:0"
     },
     {
      "hanzi": "腿",
      "pinyin": "tuǐ",
      "pos": "n.",
-     "en": "leg"
+     "en": "leg",
+     "id": "jinbu3-u4-2:1"
     },
     {
      "hanzi": "加油",
      "pinyin": "jiā yóu",
      "pos": "phr.",
-     "en": "come on! keep going! (to cheer someone on)"
+     "en": "come on! keep going! (to cheer someone on)",
+     "id": "jinbu3-u4-2:2"
     },
     {
      "hanzi": "累死了",
      "pinyin": "lèi sǐ le",
      "pos": "phr.",
-     "en": "exhausted, dead tired"
-    },
+     "en": "exhausted, dead tired",
+     "id": "jinbu3-u4-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-2b",
+   "title": "进步3 U4.2 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 2",
+   "words": [
     {
      "hanzi": "保温杯",
      "pinyin": "bǎo wēn bēi",
      "pos": "n.",
-     "en": "flask, thermos cup"
+     "en": "flask, thermos cup",
+     "id": "jinbu3-u4-2:4"
     },
     {
      "hanzi": "下山",
      "pinyin": "xià shān",
      "pos": "v.",
-     "en": "to go down a mountain"
+     "en": "to go down a mountain",
+     "id": "jinbu3-u4-2:5"
     },
     {
      "hanzi": "上山",
      "pinyin": "shàng shān",
      "pos": "v.",
-     "en": "to go up a mountain"
+     "en": "to go up a mountain",
+     "id": "jinbu3-u4-2:6"
     },
     {
      "hanzi": "城墙",
      "pinyin": "chéng qiáng",
      "pos": "n.",
-     "en": "city wall; the wall (of the Great Wall)"
+     "en": "city wall; the wall (of the Great Wall)",
+     "id": "jinbu3-u4-2:7"
     },
     {
      "hanzi": "山顶",
      "pinyin": "shān dǐng",
      "pos": "n.",
-     "en": "top of a mountain, summit"
-    },
+     "en": "top of a mountain, summit",
+     "id": "jinbu3-u4-2:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-3a",
+   "title": "进步3 U4.3 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 1",
+   "words": [
     {
      "hanzi": "手套",
      "pinyin": "shǒu tào",
      "pos": "n.",
-     "en": "glove"
+     "en": "glove",
+     "id": "jinbu3-u4-2:9"
     },
     {
      "hanzi": "登山鞋",
      "pinyin": "dēng shān xié",
      "pos": "n.",
-     "en": "walking boots, hiking boots"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u4-3",
-   "title": "进步3 U4.3 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall",
-   "words": [
+     "en": "walking boots, hiking boots",
+     "id": "jinbu3-u4-2:10"
+    },
     {
      "hanzi": "背包",
      "pinyin": "bèi bāo",
      "pos": "n.",
-     "en": "rucksack, backpack"
+     "en": "rucksack, backpack",
+     "id": "jinbu3-u4-3:0"
     },
     {
      "hanzi": "羽绒服",
      "pinyin": "yǔ róng fú",
      "pos": "n.",
-     "en": "down jacket"
+     "en": "down jacket",
+     "id": "jinbu3-u4-3:1"
     },
     {
      "hanzi": "风",
      "pinyin": "fēng",
      "pos": "n.",
-     "en": "wind"
-    },
+     "en": "wind",
+     "id": "jinbu3-u4-3:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-3b",
+   "title": "进步3 U4.3 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 2",
+   "words": [
     {
      "hanzi": "滑",
      "pinyin": "huá",
      "pos": "adj.",
-     "en": "slippery"
+     "en": "slippery",
+     "id": "jinbu3-u4-3:3"
     },
     {
      "hanzi": "公里",
      "pinyin": "gōng lǐ",
      "pos": "m.",
-     "en": "kilometre"
+     "en": "kilometre",
+     "id": "jinbu3-u4-3:4"
     },
     {
      "hanzi": "极了",
      "pinyin": "jí le",
      "pos": "phr.",
-     "en": "extremely (after an adjective: 美极了 absolutely beautiful)"
+     "en": "extremely (after an adjective: 美极了 absolutely beautiful)",
+     "id": "jinbu3-u4-3:5"
     },
     {
      "hanzi": "好玩儿",
      "pinyin": "hǎo wán r",
      "pos": "adj.",
-     "en": "fun, enjoyable"
+     "en": "fun, enjoyable",
+     "id": "jinbu3-u4-3:6"
     },
     {
      "hanzi": "冻",
      "pinyin": "dòng",
      "pos": "v.",
-     "en": "to freeze, be frozen (冻死了 freezing)"
-    },
+     "en": "to freeze, be frozen (冻死了 freezing)",
+     "id": "jinbu3-u4-3:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-4a",
+   "title": "进步3 U4.4 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 1",
+   "words": [
     {
      "hanzi": "摔",
      "pinyin": "shuāi",
      "pos": "v.",
-     "en": "to fall over (摔倒 fall down)"
+     "en": "to fall over (摔倒 fall down)",
+     "id": "jinbu3-u4-3:8"
     },
     {
      "hanzi": "喘气",
      "pinyin": "chuǎn qì",
      "pos": "v.",
-     "en": "to breathe hard, pant"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u4-4",
-   "title": "进步3 U4.4 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall",
-   "words": [
+     "en": "to breathe hard, pant",
+     "id": "jinbu3-u4-3:9"
+    },
     {
      "hanzi": "好汉",
      "pinyin": "hǎo hàn",
      "pos": "n.",
-     "en": "hero, a real man, someone brave"
+     "en": "hero, a real man, someone brave",
+     "id": "jinbu3-u4-4:0"
     },
     {
      "hanzi": "非",
      "pinyin": "fēi",
      "pos": "v.",
-     "en": "is not (written; in set phrases)"
+     "en": "is not (written; in set phrases)",
+     "id": "jinbu3-u4-4:1"
     },
     {
      "hanzi": "不到长城非好汉",
      "pinyin": "bù dào Cháng chéng fēi hǎo hàn",
      "pos": "phr.",
-     "en": "you're not a hero till you've been to the Great Wall"
-    },
+     "en": "you're not a hero till you've been to the Great Wall",
+     "id": "jinbu3-u4-4:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-4b",
+   "title": "进步3 U4.4 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 2",
+   "words": [
     {
      "hanzi": "来自",
      "pinyin": "lái zì",
      "pos": "v.",
-     "en": "to come from"
+     "en": "to come from",
+     "id": "jinbu3-u4-4:3"
     },
     {
      "hanzi": "了不起",
      "pinyin": "liǎo bu qǐ",
      "pos": "adj.",
-     "en": "amazing, remarkable"
+     "en": "amazing, remarkable",
+     "id": "jinbu3-u4-4:4"
     },
     {
      "hanzi": "事情",
      "pinyin": "shì qing",
      "pos": "n.",
-     "en": "thing, matter, something to do"
+     "en": "thing, matter, something to do",
+     "id": "jinbu3-u4-4:5"
     },
     {
      "hanzi": "坚持",
      "pinyin": "jiān chí",
      "pos": "v.",
-     "en": "to keep going, persist, stick at it"
+     "en": "to keep going, persist, stick at it",
+     "id": "jinbu3-u4-4:6"
     },
     {
      "hanzi": "再",
      "pinyin": "zài",
      "pos": "phr.",
-     "en": "however …, still … (再累也值得 however tiring, it's worth it) (再…也…)"
-    },
+     "en": "however …, still … (再累也值得 however tiring, it's worth it) (再…也…)",
+     "id": "jinbu3-u4-4:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-5a",
+   "title": "进步3 U4.5 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 1",
+   "words": [
     {
      "hanzi": "走不了",
      "pinyin": "zǒu bu liǎo",
      "pos": "phr.",
-     "en": "can't walk, can't leave (verb + 不了 can't)"
+     "en": "can't walk, can't leave (verb + 不了 can't)",
+     "id": "jinbu3-u4-4:8"
     },
     {
      "hanzi": "那时候",
      "pinyin": "nà shí hou",
      "pos": "n.",
-     "en": "then, at that time"
-    }
-   ]
-  },
-  {
-   "id": "jinbu3-u4-5",
-   "title": "进步3 U4.5 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall",
-   "words": [
+     "en": "then, at that time",
+     "id": "jinbu3-u4-4:9",
+     "parts": [
+      "那",
+      "时候"
+     ]
+    },
     {
      "hanzi": "非要",
      "pinyin": "fēi yào",
      "pos": "adv.",
-     "en": "insist on (他非要走上去 he insisted on walking up)"
+     "en": "insist on (他非要走上去 he insisted on walking up)",
+     "id": "jinbu3-u4-5:0",
+     "parts": [
+      "非",
+      "要"
+     ]
     },
     {
      "hanzi": "只好",
      "pinyin": "zhǐ hǎo",
      "pos": "adv.",
-     "en": "have no choice but to, have to"
+     "en": "have no choice but to, have to",
+     "id": "jinbu3-u4-5:1"
     },
     {
      "hanzi": "困难",
      "pinyin": "kùn nan",
      "pos": "n./adj.",
-     "en": "difficulty; difficult"
-    },
+     "en": "difficulty; difficult",
+     "id": "jinbu3-u4-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-5b",
+   "title": "进步3 U4.5 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 2",
+   "words": [
     {
      "hanzi": "放弃",
      "pinyin": "fàng qì",
      "pos": "v.",
-     "en": "to give up"
+     "en": "to give up",
+     "id": "jinbu3-u4-5:3"
     },
     {
      "hanzi": "古代",
      "pinyin": "gǔ dài",
      "pos": "n.",
-     "en": "ancient times"
+     "en": "ancient times",
+     "id": "jinbu3-u4-5:4"
     },
     {
      "hanzi": "皇帝",
      "pinyin": "huáng dì",
      "pos": "n.",
-     "en": "emperor"
+     "en": "emperor",
+     "id": "jinbu3-u4-5:5"
     },
     {
      "hanzi": "保护",
      "pinyin": "bǎo hù",
      "pos": "v.",
-     "en": "to protect"
-    },
+     "en": "to protect",
+     "id": "jinbu3-u4-5:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-5c",
+   "title": "进步3 U4.5 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 3",
+   "words": [
     {
      "hanzi": "伟大",
      "pinyin": "wěi dà",
      "pos": "adj.",
-     "en": "great, magnificent"
+     "en": "great, magnificent",
+     "id": "jinbu3-u4-5:7"
     },
     {
      "hanzi": "万里长城",
      "pinyin": "wàn lǐ Cháng chéng",
      "pos": "n.",
-     "en": "the Great Wall (the 'ten-thousand-li Wall')"
+     "en": "the Great Wall (the 'ten-thousand-li Wall')",
+     "id": "jinbu3-u4-5:8"
     },
     {
      "hanzi": "纪念品",
      "pinyin": "jì niàn pǐn",
      "pos": "n.",
-     "en": "souvenir"
+     "en": "souvenir",
+     "id": "jinbu3-u4-5:9"
     },
     {
      "hanzi": "破五",
      "pinyin": "pò wǔ",
      "pos": "",
-     "en": "the fifth day of the New Year"
-    },
+     "en": "the fifth day of the New Year",
+     "id": "jinbu3-u4-5:10"
+    }
+   ]
+  },
+  {
+   "id": "jinbu3-u4-5d",
+   "title": "进步3 U4.5 · 不到长城非好汉 You're not a hero till you've climbed the Great Wall · 4",
+   "words": [
     {
      "hanzi": "咬",
      "pinyin": "yǎo",
      "pos": "",
-     "en": "to bite"
+     "en": "to bite",
+     "id": "jinbu3-u4-5:11"
     },
     {
      "hanzi": "记号",
      "pinyin": "jì hao",
      "pos": "",
-     "en": "a mark"
+     "en": "a mark",
+     "id": "jinbu3-u4-5:12"
     },
     {
      "hanzi": "部分",
      "pinyin": "bù fen",
      "pos": "",
-     "en": "part"
+     "en": "part",
+     "id": "jinbu3-u4-5:13"
     },
     {
      "hanzi": "别人",
      "pinyin": "bié ren",
      "pos": "",
-     "en": "other people, someone else"
+     "en": "other people, someone else",
+     "id": "jinbu3-u4-5:14"
     }
    ]
   },
   {
-   "id": "jinbu4-u1-1",
-   "title": "进步4 U1.1 · 我的手机被偷了！ My phone's been stolen!",
+   "id": "jinbu4-u1-1a",
+   "title": "进步4 U1.1 · 我的手机被偷了！ My phone's been stolen! · 1",
    "words": [
     {
      "hanzi": "脸色",
      "pinyin": "liǎn sè",
      "pos": "n.",
-     "en": "the look on your face, complexion (脸色难看 look awful)"
+     "en": "the look on your face, complexion (脸色难看 look awful)",
+     "id": "jinbu4-u1-1:0"
     },
     {
      "hanzi": "难看",
      "pinyin": "nán kàn",
      "pos": "adj.",
-     "en": "ugly; (of a face) looking unwell or upset"
+     "en": "ugly; (of a face) looking unwell or upset",
+     "id": "jinbu4-u1-1:1"
     },
     {
      "hanzi": "别提了",
      "pinyin": "bié tí le",
      "pos": "phr.",
-     "en": "don't ask! don't even mention it"
+     "en": "don't ask! don't even mention it",
+     "id": "jinbu4-u1-1:2"
     },
     {
      "hanzi": "倒霉",
      "pinyin": "dǎo méi",
      "pos": "adj.",
-     "en": "unlucky, having bad luck"
+     "en": "unlucky, having bad luck",
+     "id": "jinbu4-u1-1:3"
     },
     {
      "hanzi": "被",
      "pinyin": "bèi",
      "pos": "prep.",
-     "en": "by (makes a passive sentence: 手机被偷了 the phone was stolen)"
-    },
+     "en": "by (makes a passive sentence: 手机被偷了 the phone was stolen)",
+     "id": "jinbu4-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-1b",
+   "title": "进步4 U1.1 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "偷",
      "pinyin": "tōu",
      "pos": "v.",
-     "en": "to steal"
+     "en": "to steal",
+     "id": "jinbu4-u1-1:5"
     },
     {
      "hanzi": "要命",
      "pinyin": "yào mìng",
      "pos": "phr.",
-     "en": "terribly, unbearably (after 得: 挤得要命 packed solid)"
+     "en": "terribly, unbearably (after 得: 挤得要命 packed solid)",
+     "id": "jinbu4-u1-1:6"
     },
     {
      "hanzi": "摸",
      "pinyin": "mō",
      "pos": "v.",
-     "en": "to feel, touch"
+     "en": "to feel, touch",
+     "id": "jinbu4-u1-1:7"
     },
     {
      "hanzi": "口袋",
      "pinyin": "kǒu dai",
      "pos": "n.",
-     "en": "pocket"
+     "en": "pocket",
+     "id": "jinbu4-u1-1:8"
     },
     {
      "hanzi": "没了",
      "pinyin": "méi le",
      "pos": "phr.",
-     "en": "gone, disappeared"
-    },
-    {
-     "hanzi": "让",
-     "pinyin": "ràng",
-     "pos": "prep.",
-     "en": "by (spoken passive: 让你说对了 you were right) (new meaning)"
+     "en": "gone, disappeared",
+     "id": "jinbu4-u1-1:9",
+     "parts": [
+      "没",
+      "了"
+     ]
     }
    ]
   },
   {
-   "id": "jinbu4-u1-2",
-   "title": "进步4 U1.2 · 我的手机被偷了！ My phone's been stolen!",
+   "id": "jinbu4-u1-2a",
+   "title": "进步4 U1.2 · 我的手机被偷了！ My phone's been stolen! · 1",
    "words": [
+    {
+     "hanzi": "让",
+     "pinyin": "ràng",
+     "pos": "prep.",
+     "en": "by (spoken passive: 让你说对了 you were right) (new meaning)",
+     "id": "jinbu4-u1-1:10"
+    },
     {
      "hanzi": "说对",
      "pinyin": "shuō duì",
      "pos": "v.",
-     "en": "to say right, be right"
+     "en": "to say right, be right",
+     "id": "jinbu4-u1-2:0",
+     "parts": [
+      "说",
+      "对"
+     ]
     },
     {
      "hanzi": "全身",
      "pinyin": "quán shēn",
      "pos": "n.",
-     "en": "the whole body, from head to toe"
+     "en": "the whole body, from head to toe",
+     "id": "jinbu4-u1-2:1"
     },
     {
      "hanzi": "湿",
      "pinyin": "shī",
      "pos": "adj.",
-     "en": "wet"
+     "en": "wet",
+     "id": "jinbu4-u1-2:2"
     },
     {
      "hanzi": "雨",
      "pinyin": "yǔ",
      "pos": "n.",
-     "en": "rain"
-    },
+     "en": "rain",
+     "id": "jinbu4-u1-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-2b",
+   "title": "进步4 U1.2 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "淋",
      "pinyin": "lín",
      "pos": "v.",
-     "en": "to get soaked (被雨淋湿了 got drenched in the rain)"
+     "en": "to get soaked (被雨淋湿了 got drenched in the rain)",
+     "id": "jinbu4-u1-2:4"
     },
     {
      "hanzi": "批评",
      "pinyin": "pī píng",
      "pos": "v.",
-     "en": "to criticise, tell off"
+     "en": "to criticise, tell off",
+     "id": "jinbu4-u1-2:5"
     },
     {
      "hanzi": "顿",
      "pinyin": "dùn",
      "pos": "m.",
-     "en": "for meals and tellings-off (批评了一顿 gave (him) a telling-off; 这顿我请 this meal's on me)"
+     "en": "for meals and tellings-off (批评了一顿 gave (him) a telling-off; 这顿我请 this meal's on me)",
+     "id": "jinbu4-u1-2:6"
     },
     {
      "hanzi": "倒霉蛋",
      "pinyin": "dǎo méi dàn",
      "pos": "n.",
-     "en": "someone who's always unlucky, someone having a bad day"
+     "en": "someone who's always unlucky, someone having a bad day",
+     "id": "jinbu4-u1-2:7"
     },
     {
      "hanzi": "坐下",
      "pinyin": "zuò xia",
      "pos": "v.",
-     "en": "to sit down"
-    },
+     "en": "to sit down",
+     "id": "jinbu4-u1-2:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-3a",
+   "title": "进步4 U1.3 · 我的手机被偷了！ My phone's been stolen! · 1",
+   "words": [
     {
      "hanzi": "银行卡",
      "pinyin": "yín háng kǎ",
      "pos": "n.",
-     "en": "bank card"
+     "en": "bank card",
+     "id": "jinbu4-u1-2:9"
     },
     {
      "hanzi": "挂失",
      "pinyin": "guà shī",
      "pos": "v.",
-     "en": "to report the loss of (a card, a document)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u1-3",
-   "title": "进步4 U1.3 · 我的手机被偷了！ My phone's been stolen!",
-   "words": [
+     "en": "to report the loss of (a card, a document)",
+     "id": "jinbu4-u1-2:10"
+    },
     {
      "hanzi": "小偷",
      "pinyin": "xiǎo tōu",
      "pos": "n.",
-     "en": "thief, pickpocket"
+     "en": "thief, pickpocket",
+     "id": "jinbu4-u1-3:0"
     },
     {
      "hanzi": "用不了",
      "pinyin": "yòng bu liǎo",
      "pos": "phr.",
-     "en": "can't use"
+     "en": "can't use",
+     "id": "jinbu4-u1-3:1"
     },
     {
      "hanzi": "报警",
      "pinyin": "bào jǐng",
      "pos": "v.",
-     "en": "to report to the police, call the police"
-    },
+     "en": "to report to the police, call the police",
+     "id": "jinbu4-u1-3:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-3b",
+   "title": "进步4 U1.3 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "警察局",
      "pinyin": "jǐng chá jú",
      "pos": "n.",
-     "en": "police station"
+     "en": "police station",
+     "id": "jinbu4-u1-3:3"
     },
     {
      "hanzi": "有用",
      "pinyin": "yǒu yòng",
      "pos": "adj.",
-     "en": "useful, any use"
+     "en": "useful, any use",
+     "id": "jinbu4-u1-3:4"
     },
     {
      "hanzi": "找回来",
      "pinyin": "zhǎo huí lai",
      "pos": "v.",
-     "en": "to get back, recover (找不回来 can't get it back)"
+     "en": "to get back, recover (找不回来 can't get it back)",
+     "id": "jinbu4-u1-3:5",
+     "parts": [
+      "找",
+      "回来"
+     ]
     },
     {
      "hanzi": "记录",
      "pinyin": "jì lù",
      "pos": "n./v.",
-     "en": "record; to record"
+     "en": "record; to record",
+     "id": "jinbu4-u1-3:6"
     },
     {
      "hanzi": "保险",
      "pinyin": "bǎo xiǎn",
      "pos": "n.",
-     "en": "insurance"
-    },
+     "en": "insurance",
+     "id": "jinbu4-u1-3:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-3c",
+   "title": "进步4 U1.3 · 我的手机被偷了！ My phone's been stolen! · 3",
+   "words": [
     {
      "hanzi": "保险公司",
      "pinyin": "bǎo xiǎn gōng sī",
      "pos": "n.",
-     "en": "insurance company"
+     "en": "insurance company",
+     "id": "jinbu4-u1-3:8"
     },
     {
      "hanzi": "赔",
      "pinyin": "péi",
      "pos": "v.",
-     "en": "to pay compensation, pay out"
+     "en": "to pay compensation, pay out",
+     "id": "jinbu4-u1-3:9"
     },
     {
      "hanzi": "警察",
      "pinyin": "jǐng chá",
      "pos": "n.",
-     "en": "police officer; the police"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u1-4",
-   "title": "进步4 U1.4 · 我的手机被偷了！ My phone's been stolen!",
-   "words": [
+     "en": "police officer; the police",
+     "id": "jinbu4-u1-3:10"
+    },
     {
      "hanzi": "钱包",
      "pinyin": "qián bāo",
      "pos": "n.",
-     "en": "wallet, purse"
+     "en": "wallet, purse",
+     "id": "jinbu4-u1-4:0"
     },
     {
      "hanzi": "骗",
      "pinyin": "piàn",
      "pos": "v.",
-     "en": "to cheat, con, fool (又被他骗了 fooled by him again)"
-    },
+     "en": "to cheat, con, fool (又被他骗了 fooled by him again)",
+     "id": "jinbu4-u1-4:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-4a",
+   "title": "进步4 U1.4 · 我的手机被偷了！ My phone's been stolen! · 1",
+   "words": [
     {
      "hanzi": "抢",
      "pinyin": "qiǎng",
      "pos": "v.",
-     "en": "to snatch, rob"
+     "en": "to snatch, rob",
+     "id": "jinbu4-u1-4:2"
     },
     {
      "hanzi": "撞",
      "pinyin": "zhuàng",
      "pos": "v.",
-     "en": "to bump into, crash into"
+     "en": "to bump into, crash into",
+     "id": "jinbu4-u1-4:3"
     },
     {
      "hanzi": "吵醒",
      "pinyin": "chǎo xǐng",
      "pos": "v.",
-     "en": "to wake (someone) up with noise"
+     "en": "to wake (someone) up with noise",
+     "id": "jinbu4-u1-4:4"
     },
     {
      "hanzi": "蚊子",
      "pinyin": "wén zi",
      "pos": "n.",
-     "en": "mosquito"
+     "en": "mosquito",
+     "id": "jinbu4-u1-4:5"
     },
     {
      "hanzi": "弄",
      "pinyin": "nòng",
      "pos": "v.",
-     "en": "to do, make, handle (弄坏 break; 弄脏 make dirty)"
-    },
+     "en": "to do, make, handle (弄坏 break; 弄脏 make dirty)",
+     "id": "jinbu4-u1-4:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-4b",
+   "title": "进步4 U1.4 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "弄丢",
      "pinyin": "nòng diū",
      "pos": "v.",
-     "en": "to lose (something)"
+     "en": "to lose (something)",
+     "id": "jinbu4-u1-4:7",
+     "parts": [
+      "弄",
+      "丢"
+     ]
     },
     {
      "hanzi": "脏",
      "pinyin": "zāng",
      "pos": "adj.",
-     "en": "dirty"
+     "en": "dirty",
+     "id": "jinbu4-u1-4:8"
     },
     {
      "hanzi": "罚款",
      "pinyin": "fá kuǎn",
      "pos": "v./n.",
-     "en": "to fine; a fine"
+     "en": "to fine; a fine",
+     "id": "jinbu4-u1-4:9"
     },
     {
      "hanzi": "不小心",
      "pinyin": "bù xiǎo xīn",
      "pos": "phr.",
-     "en": "by accident, carelessly"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u1-5",
-   "title": "进步4 U1.5 · 我的手机被偷了！ My phone's been stolen!",
-   "words": [
+     "en": "by accident, carelessly",
+     "id": "jinbu4-u1-4:10",
+     "parts": [
+      "不",
+      "小心"
+     ]
+    },
     {
      "hanzi": "裤子口袋",
      "pinyin": "kù zi kǒu dai",
      "pos": "n.",
-     "en": "trouser pocket"
-    },
+     "en": "trouser pocket",
+     "id": "jinbu4-u1-5:0",
+     "parts": [
+      "裤子",
+      "口袋"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-5a",
+   "title": "进步4 U1.5 · 我的手机被偷了！ My phone's been stolen!",
+   "words": [
     {
      "hanzi": "粗心",
      "pinyin": "cū xīn",
      "pos": "adj.",
-     "en": "careless"
+     "en": "careless",
+     "id": "jinbu4-u1-5:1"
     },
     {
      "hanzi": "马虎",
      "pinyin": "mǎ hu",
      "pos": "adj.",
-     "en": "careless, sloppy"
+     "en": "careless, sloppy",
+     "id": "jinbu4-u1-5:2"
     },
     {
      "hanzi": "骂",
      "pinyin": "mà",
      "pos": "v.",
-     "en": "to scold, tell off; to swear at"
+     "en": "to scold, tell off; to swear at",
+     "id": "jinbu4-u1-5:3"
     },
     {
      "hanzi": "雨伞",
      "pinyin": "yǔ sǎn",
      "pos": "n.",
-     "en": "umbrella"
+     "en": "umbrella",
+     "id": "jinbu4-u1-5:4"
     },
     {
      "hanzi": "早高峰",
      "pinyin": "zǎo gāo fēng",
      "pos": "n.",
-     "en": "morning rush hour"
-    },
+     "en": "morning rush hour",
+     "id": "jinbu4-u1-5:5",
+     "parts": [
+      "早",
+      "高峰"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-6a",
+   "title": "进步4 U1.6 · 我的手机被偷了！ My phone's been stolen! · 1",
+   "words": [
     {
      "hanzi": "故意",
      "pinyin": "gù yì",
      "pos": "adv.",
-     "en": "on purpose"
+     "en": "on purpose",
+     "id": "jinbu4-u1-5:6"
     },
     {
      "hanzi": "运气",
      "pinyin": "yùn qi",
      "pos": "n.",
-     "en": "luck (运气不好 bad luck)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u1-6",
-   "title": "进步4 U1.6 · 我的手机被偷了！ My phone's been stolen!",
-   "words": [
+     "en": "luck (运气不好 bad luck)",
+     "id": "jinbu4-u1-5:7"
+    },
     {
      "hanzi": "警官",
      "pinyin": "jǐng guān",
      "pos": "n.",
-     "en": "police officer (polite form of address)"
+     "en": "police officer (polite form of address)",
+     "id": "jinbu4-u1-6:0"
     },
     {
      "hanzi": "报案",
      "pinyin": "bào àn",
      "pos": "v.",
-     "en": "to report a crime (to the police)"
-    },
-    {
-     "hanzi": "壳",
-     "pinyin": "ké",
-     "pos": "n.",
-     "en": "case, shell (手机壳 phone case)"
+     "en": "to report a crime (to the police)",
+     "id": "jinbu4-u1-6:1"
     },
     {
      "hanzi": "当时",
      "pinyin": "dāng shí",
      "pos": "n.",
-     "en": "at the time, then"
-    },
+     "en": "at the time, then",
+     "id": "jinbu4-u1-6:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-6b",
+   "title": "进步4 U1.6 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "注意到",
      "pinyin": "zhù yì dào",
      "pos": "v.",
-     "en": "to notice"
+     "en": "to notice",
+     "id": "jinbu4-u1-6:4",
+     "parts": [
+      "注意",
+      "到"
+     ]
     },
     {
      "hanzi": "身边",
      "pinyin": "shēn biān",
      "pos": "n.",
-     "en": "beside you, near you"
+     "en": "beside you, near you",
+     "id": "jinbu4-u1-6:5"
     },
     {
      "hanzi": "奇怪",
      "pinyin": "qí guài",
      "pos": "adj.",
-     "en": "strange, odd"
+     "en": "strange, odd",
+     "id": "jinbu4-u1-6:6"
     },
     {
      "hanzi": "叫",
      "pinyin": "jiào",
      "pos": "prep.",
-     "en": "by (spoken passive: 叫人偷了 got stolen) (new meaning)"
+     "en": "by (spoken passive: 叫人偷了 got stolen) (new meaning)",
+     "id": "jinbu4-u1-6:7"
     },
     {
      "hanzi": "下手",
      "pinyin": "xià shǒu",
      "pos": "v.",
-     "en": "to make a move, strike (of a thief)"
-    },
+     "en": "to make a move, strike (of a thief)",
+     "id": "jinbu4-u1-6:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-6c",
+   "title": "进步4 U1.6 · 我的手机被偷了！ My phone's been stolen! · 3",
+   "words": [
     {
      "hanzi": "说实话",
      "pinyin": "shuō shí huà",
      "pos": "phr.",
-     "en": "to be honest, to tell the truth"
+     "en": "to be honest, to tell the truth",
+     "id": "jinbu4-u1-6:9"
     },
     {
      "hanzi": "表",
      "pinyin": "biǎo",
      "pos": "n.",
-     "en": "form (填表 fill in a form)"
+     "en": "form (填表 fill in a form)",
+     "id": "jinbu4-u1-6:10"
     },
     {
      "hanzi": "填",
      "pinyin": "tián",
      "pos": "v.",
-     "en": "to fill in"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u1-7",
-   "title": "进步4 U1.7 · 我的手机被偷了！ My phone's been stolen!",
-   "words": [
+     "en": "to fill in",
+     "id": "jinbu4-u1-6:11"
+    },
     {
      "hanzi": "通知",
      "pinyin": "tōng zhī",
      "pos": "v./n.",
-     "en": "to let (someone) know, notify; notice"
+     "en": "to let (someone) know, notify; notice",
+     "id": "jinbu4-u1-7:0"
     },
     {
      "hanzi": "考",
      "pinyin": "kǎo",
      "pos": "v.",
-     "en": "to sit, take (an exam)"
-    },
+     "en": "to sit, take (an exam)",
+     "id": "jinbu4-u1-7:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-7a",
+   "title": "进步4 U1.7 · 我的手机被偷了！ My phone's been stolen! · 1",
+   "words": [
     {
      "hanzi": "考试",
      "pinyin": "kǎo shì",
      "pos": "n./v.",
-     "en": "exam; to take an exam"
+     "en": "exam; to take an exam",
+     "id": "jinbu4-u1-7:2"
     },
     {
      "hanzi": "级",
      "pinyin": "jí",
      "pos": "n.",
-     "en": "level, grade (一级 level one)"
+     "en": "level, grade (一级 level one)",
+     "id": "jinbu4-u1-7:3"
     },
     {
      "hanzi": "顺利",
      "pinyin": "shùn lì",
      "pos": "adj.",
-     "en": "smooth, without a hitch (祝你一切顺利 hope it all goes well)"
+     "en": "smooth, without a hitch (祝你一切顺利 hope it all goes well)",
+     "id": "jinbu4-u1-7:4"
     },
     {
      "hanzi": "学会",
      "pinyin": "xué huì",
      "pos": "v.",
-     "en": "to learn (and be able to), master"
+     "en": "to learn (and be able to), master",
+     "id": "jinbu4-u1-7:5"
     },
     {
      "hanzi": "偷不走",
      "pinyin": "tōu bu zǒu",
      "pos": "phr.",
-     "en": "can't be stolen"
-    },
+     "en": "can't be stolen",
+     "id": "jinbu4-u1-7:6",
+     "parts": [
+      "偷",
+      "不",
+      "走"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-7b",
+   "title": "进步4 U1.7 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "经过",
      "pinyin": "jīng guò",
      "pos": "n.",
-     "en": "what happened, the course of events"
+     "en": "what happened, the course of events",
+     "id": "jinbu4-u1-7:7"
     },
     {
      "hanzi": "证件",
      "pinyin": "zhèng jiàn",
      "pos": "n.",
-     "en": "ID, identity documents"
+     "en": "ID, identity documents",
+     "id": "jinbu4-u1-7:8"
     },
     {
      "hanzi": "驾照",
      "pinyin": "jià zhào",
      "pos": "n.",
-     "en": "driving licence"
+     "en": "driving licence",
+     "id": "jinbu4-u1-7:9"
     },
     {
      "hanzi": "信用卡",
      "pinyin": "xìn yòng kǎ",
      "pos": "n.",
-     "en": "credit card"
+     "en": "credit card",
+     "id": "jinbu4-u1-7:10"
     },
     {
      "hanzi": "监控",
      "pinyin": "jiān kòng",
      "pos": "n.",
-     "en": "CCTV, security camera"
+     "en": "CCTV, security camera",
+     "id": "jinbu4-u1-7:11"
     }
    ]
   },
   {
-   "id": "jinbu4-u1-8",
-   "title": "进步4 U1.8 · 我的手机被偷了！ My phone's been stolen!",
+   "id": "jinbu4-u1-8a",
+   "title": "进步4 U1.8 · 我的手机被偷了！ My phone's been stolen! · 1",
    "words": [
     {
      "hanzi": "手续",
      "pinyin": "shǒu xù",
      "pos": "n.",
-     "en": "procedure, paperwork"
+     "en": "procedure, paperwork",
+     "id": "jinbu4-u1-8:0"
     },
     {
      "hanzi": "失物招领",
      "pinyin": "shī wù zhāo lǐng",
      "pos": "phr.",
-     "en": "lost property"
+     "en": "lost property",
+     "id": "jinbu4-u1-8:1"
     },
     {
      "hanzi": "丢失",
      "pinyin": "diū shī",
      "pos": "v.",
-     "en": "to lose (formal)"
+     "en": "to lose (formal)",
+     "id": "jinbu4-u1-8:2"
     },
     {
      "hanzi": "登记",
      "pinyin": "dēng jì",
      "pos": "v.",
-     "en": "to register, sign in"
+     "en": "to register, sign in",
+     "id": "jinbu4-u1-8:3"
     },
     {
      "hanzi": "联系方式",
      "pinyin": "lián xì fāng shì",
      "pos": "n.",
-     "en": "contact details"
-    },
+     "en": "contact details",
+     "id": "jinbu4-u1-8:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u1-8b",
+   "title": "进步4 U1.8 · 我的手机被偷了！ My phone's been stolen! · 2",
+   "words": [
     {
      "hanzi": "紧急",
      "pinyin": "jǐn jí",
      "pos": "adj.",
-     "en": "urgent, emergency"
+     "en": "urgent, emergency",
+     "id": "jinbu4-u1-8:5"
     },
     {
      "hanzi": "补办",
      "pinyin": "bǔ bàn",
      "pos": "v.",
-     "en": "to get a replacement (card, ID)"
+     "en": "to get a replacement (card, ID)",
+     "id": "jinbu4-u1-8:6"
     },
     {
      "hanzi": "派出所",
      "pinyin": "pài chū suǒ",
      "pos": "n.",
-     "en": "local police station (in China)"
+     "en": "local police station (in China)",
+     "id": "jinbu4-u1-8:7"
     },
     {
      "hanzi": "描述",
      "pinyin": "miáo shù",
      "pos": "v.",
-     "en": "to describe"
+     "en": "to describe",
+     "id": "jinbu4-u1-8:8"
     },
     {
      "hanzi": "型号",
      "pinyin": "xíng hào",
      "pos": "n.",
-     "en": "model (of a phone, a car)"
+     "en": "model (of a phone, a car)",
+     "id": "jinbu4-u1-8:9"
     }
    ]
   },
   {
-   "id": "jinbu4-u2-1",
-   "title": "进步4 U2.1 · 我的方案通过了！ My proposal's been approved!",
+   "id": "jinbu4-u2-1a",
+   "title": "进步4 U2.1 · 我的方案通过了！ My proposal's been approved! · 1",
    "words": [
     {
      "hanzi": "记住",
      "pinyin": "jì zhù",
      "pos": "v.",
-     "en": "to remember, memorise (记得住 can remember; 记不住 can't remember)"
+     "en": "to remember, memorise (记得住 can remember; 记不住 can't remember)",
+     "id": "jinbu4-u2-1:0"
     },
     {
      "hanzi": "晕",
      "pinyin": "yūn",
      "pos": "adj.",
-     "en": "dizzy (头晕 my head's spinning)"
+     "en": "dizzy (头晕 my head's spinning)",
+     "id": "jinbu4-u2-1:1"
     },
     {
      "hanzi": "经理",
      "pinyin": "jīng lǐ",
      "pos": "n.",
-     "en": "manager (王经理 Manager Wang)"
+     "en": "manager (王经理 Manager Wang)",
+     "id": "jinbu4-u2-1:2"
     },
     {
      "hanzi": "方案",
      "pinyin": "fāng àn",
      "pos": "n.",
-     "en": "proposal, plan, design concept (讲方案 present a proposal)"
+     "en": "proposal, plan, design concept (讲方案 present a proposal)",
+     "id": "jinbu4-u2-1:3"
     },
     {
      "hanzi": "点心",
      "pinyin": "diǎn xin",
      "pos": "n.",
-     "en": "pastries, cakes, snacks"
-    },
+     "en": "pastries, cakes, snacks",
+     "id": "jinbu4-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-1b",
+   "title": "进步4 U2.1 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "听力",
      "pinyin": "tīng lì",
      "pos": "n.",
-     "en": "listening (as a skill, or in an exam)"
+     "en": "listening (as a skill, or in an exam)",
+     "id": "jinbu4-u2-1:5"
     },
     {
      "hanzi": "还行",
      "pinyin": "hái xíng",
      "pos": "phr.",
-     "en": "not bad, OK"
+     "en": "not bad, OK",
+     "id": "jinbu4-u2-1:6",
+     "parts": [
+      "还",
+      "行"
+     ]
     },
     {
      "hanzi": "阅读",
      "pinyin": "yuè dú",
      "pos": "n./v.",
-     "en": "reading; to read"
+     "en": "reading; to read",
+     "id": "jinbu4-u2-1:7"
     },
     {
      "hanzi": "书写",
      "pinyin": "shū xiě",
      "pos": "n.",
-     "en": "writing (as a skill, or in an exam)"
+     "en": "writing (as a skill, or in an exam)",
+     "id": "jinbu4-u2-1:8"
     },
     {
      "hanzi": "写出来",
      "pinyin": "xiě chu lai",
      "pos": "v.",
-     "en": "to write down, write out"
-    },
+     "en": "to write down, write out",
+     "id": "jinbu4-u2-1:9",
+     "parts": [
+      "写",
+      "出来"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-2a",
+   "title": "进步4 U2.2 · 我的方案通过了！ My proposal's been approved! · 1",
+   "words": [
     {
      "hanzi": "大部分",
      "pinyin": "dà bù fen",
      "pos": "n.",
-     "en": "most, the greater part"
+     "en": "most, the greater part",
+     "id": "jinbu4-u2-1:10"
     },
     {
      "hanzi": "明明",
      "pinyin": "míng míng",
      "pos": "adv.",
-     "en": "clearly, obviously (but…)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u2-2",
-   "title": "进步4 U2.2 · 我的方案通过了！ My proposal's been approved!",
-   "words": [
+     "en": "clearly, obviously (but…)",
+     "id": "jinbu4-u2-1:11"
+    },
     {
      "hanzi": "想不起来",
      "pinyin": "xiǎng bu qǐ lai",
      "pos": "phr.",
-     "en": "can't remember, can't think of"
+     "en": "can't remember, can't think of",
+     "id": "jinbu4-u2-2:0"
     },
     {
      "hanzi": "想起来",
      "pinyin": "xiǎng qi lai",
      "pos": "v.",
-     "en": "to remember, think of"
+     "en": "to remember, think of",
+     "id": "jinbu4-u2-2:1",
+     "parts": [
+      "想",
+      "起来"
+     ]
     },
     {
      "hanzi": "背",
      "pinyin": "bèi",
      "pos": "v.",
-     "en": "to learn by heart"
-    },
+     "en": "to learn by heart",
+     "id": "jinbu4-u2-2:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-2b",
+   "title": "进步4 U2.2 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "生词",
      "pinyin": "shēng cí",
      "pos": "n.",
-     "en": "new words, vocabulary"
+     "en": "new words, vocabulary",
+     "id": "jinbu4-u2-2:3"
     },
     {
      "hanzi": "题",
      "pinyin": "tí",
      "pos": "n.",
-     "en": "question (in an exam or exercise) (做题 do exercises)"
+     "en": "question (in an exam or exercise) (做题 do exercises)",
+     "id": "jinbu4-u2-2:4"
     },
     {
      "hanzi": "对",
      "pinyin": "duì",
      "pos": "phr.",
-     "en": "to be interested in … (对…感兴趣)"
+     "en": "to be interested in … (对…感兴趣)",
+     "id": "jinbu4-u2-2:5"
     },
     {
      "hanzi": "感兴趣",
      "pinyin": "gǎn xìng qù",
      "pos": "phr.",
-     "en": "(in 对…感兴趣)"
+     "en": "(in 对…感兴趣)",
+     "id": "jinbu4-u2-2:6"
     },
     {
      "hanzi": "感兴趣",
      "pinyin": "gǎn xìng qù",
      "pos": "v.",
-     "en": "to be interested"
-    },
+     "en": "to be interested",
+     "id": "jinbu4-u2-2:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-2c",
+   "title": "进步4 U2.2 · 我的方案通过了！ My proposal's been approved! · 3",
+   "words": [
     {
      "hanzi": "兴趣",
      "pinyin": "xìng qù",
      "pos": "n.",
-     "en": "interest"
+     "en": "interest",
+     "id": "jinbu4-u2-2:8"
     },
     {
      "hanzi": "努力",
      "pinyin": "nǔ lì",
      "pos": "adj./v.",
-     "en": "hard-working; to work hard"
+     "en": "hard-working; to work hard",
+     "id": "jinbu4-u2-2:9"
     },
     {
      "hanzi": "通过",
      "pinyin": "tōng guò",
      "pos": "v.",
-     "en": "to get through, be approved, pass (方案通过了 the proposal was approved); by way of, through"
+     "en": "to get through, be approved, pass (方案通过了 the proposal was approved); by way of, through",
+     "id": "jinbu4-u2-2:10"
     },
     {
      "hanzi": "面子",
      "pinyin": "miàn zi",
      "pos": "n.",
-     "en": "face, reputation, how others see you"
+     "en": "face, reputation, how others see you",
+     "id": "jinbu4-u2-2:11"
     },
     {
      "hanzi": "没面子",
      "pinyin": "méi miàn zi",
      "pos": "phr.",
-     "en": "to lose face, be embarrassing"
+     "en": "to lose face, be embarrassing",
+     "id": "jinbu4-u2-2:12"
     }
    ]
   },
   {
-   "id": "jinbu4-u2-3",
-   "title": "进步4 U2.3 · 我的方案通过了！ My proposal's been approved!",
+   "id": "jinbu4-u2-3a",
+   "title": "进步4 U2.3 · 我的方案通过了！ My proposal's been approved! · 1",
    "words": [
     {
      "hanzi": "给面子",
      "pinyin": "gěi miàn zi",
      "pos": "phr.",
-     "en": "to show (someone) respect, give face"
+     "en": "to show (someone) respect, give face",
+     "id": "jinbu4-u2-3:0"
     },
     {
      "hanzi": "考过",
      "pinyin": "kǎo guò",
      "pos": "v.",
-     "en": "to pass (an exam) (没考过 failed)"
+     "en": "to pass (an exam) (没考过 failed)",
+     "id": "jinbu4-u2-3:1",
+     "parts": [
+      "考",
+      "过"
+     ]
     },
     {
      "hanzi": "成绩",
      "pinyin": "chéng jì",
      "pos": "n.",
-     "en": "results, marks"
+     "en": "results, marks",
+     "id": "jinbu4-u2-3:2"
     },
     {
      "hanzi": "查",
      "pinyin": "chá",
      "pos": "v.",
-     "en": "to check, look up"
+     "en": "to check, look up",
+     "id": "jinbu4-u2-3:3"
     },
     {
      "hanzi": "面试",
      "pinyin": "miàn shì",
      "pos": "n./v.",
-     "en": "interview; to interview"
-    },
+     "en": "interview; to interview",
+     "id": "jinbu4-u2-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-3b",
+   "title": "进步4 U2.3 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "庆祝",
      "pinyin": "qìng zhù",
      "pos": "v.",
-     "en": "to celebrate"
+     "en": "to celebrate",
+     "id": "jinbu4-u2-3:5"
     },
     {
      "hanzi": "复习",
      "pinyin": "fù xí",
      "pos": "v.",
-     "en": "to revise, go over"
+     "en": "to revise, go over",
+     "id": "jinbu4-u2-3:6"
     },
     {
      "hanzi": "报名",
      "pinyin": "bào míng",
      "pos": "v.",
-     "en": "to sign up, enter (for a course or an exam)"
+     "en": "to sign up, enter (for a course or an exam)",
+     "id": "jinbu4-u2-3:7"
     },
     {
      "hanzi": "考场",
      "pinyin": "kǎo chǎng",
      "pos": "n.",
-     "en": "exam room"
+     "en": "exam room",
+     "id": "jinbu4-u2-3:8"
     },
     {
      "hanzi": "考生",
      "pinyin": "kǎo shēng",
      "pos": "n.",
-     "en": "candidate (in an exam)"
-    },
+     "en": "candidate (in an exam)",
+     "id": "jinbu4-u2-3:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-4a",
+   "title": "进步4 U2.4 · 我的方案通过了！ My proposal's been approved! · 1",
+   "words": [
     {
      "hanzi": "及格",
      "pinyin": "jí gé",
      "pos": "v.",
-     "en": "to pass, reach the pass mark"
+     "en": "to pass, reach the pass mark",
+     "id": "jinbu4-u2-3:10"
     },
     {
      "hanzi": "口试",
      "pinyin": "kǒu shì",
      "pos": "n.",
-     "en": "speaking test, oral exam"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u2-4",
-   "title": "进步4 U2.4 · 我的方案通过了！ My proposal's been approved!",
-   "words": [
+     "en": "speaking test, oral exam",
+     "id": "jinbu4-u2-3:11"
+    },
     {
      "hanzi": "笔试",
      "pinyin": "bǐ shì",
      "pos": "n.",
-     "en": "written exam"
+     "en": "written exam",
+     "id": "jinbu4-u2-4:0"
     },
     {
      "hanzi": "词典",
      "pinyin": "cí diǎn",
      "pos": "n.",
-     "en": "dictionary"
+     "en": "dictionary",
+     "id": "jinbu4-u2-4:1"
     },
     {
      "hanzi": "语法",
      "pinyin": "yǔ fǎ",
      "pos": "n.",
-     "en": "grammar"
-    },
+     "en": "grammar",
+     "id": "jinbu4-u2-4:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-4b",
+   "title": "进步4 U2.4 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "声调",
      "pinyin": "shēng diào",
      "pos": "n.",
-     "en": "tone (of a syllable)"
+     "en": "tone (of a syllable)",
+     "id": "jinbu4-u2-4:3"
     },
     {
      "hanzi": "练",
      "pinyin": "liàn",
      "pos": "v.",
-     "en": "to practise (练口语 practise speaking)"
+     "en": "to practise (练口语 practise speaking)",
+     "id": "jinbu4-u2-4:4"
     },
     {
      "hanzi": "试卷",
      "pinyin": "shì juàn",
      "pos": "n.",
-     "en": "exam paper"
+     "en": "exam paper",
+     "id": "jinbu4-u2-4:5"
     },
     {
      "hanzi": "答案",
      "pinyin": "dá àn",
      "pos": "n.",
-     "en": "answer"
+     "en": "answer",
+     "id": "jinbu4-u2-4:6"
     },
     {
      "hanzi": "难题",
      "pinyin": "nán tí",
      "pos": "n.",
-     "en": "hard question, difficult problem"
-    },
-    {
-     "hanzi": "分数",
-     "pinyin": "fēn shù",
-     "pos": "n.",
-     "en": "score, mark"
+     "en": "hard question, difficult problem",
+     "id": "jinbu4-u2-4:7"
     }
    ]
   },
   {
-   "id": "jinbu4-u2-5",
-   "title": "进步4 U2.5 · 我的方案通过了！ My proposal's been approved!",
+   "id": "jinbu4-u2-5a",
+   "title": "进步4 U2.5 · 我的方案通过了！ My proposal's been approved! · 1",
    "words": [
+    {
+     "hanzi": "分数",
+     "pinyin": "fēn shù",
+     "pos": "n.",
+     "en": "score, mark",
+     "id": "jinbu4-u2-4:8"
+    },
     {
      "hanzi": "敢",
      "pinyin": "gǎn",
      "pos": "v.",
-     "en": "to dare"
+     "en": "to dare",
+     "id": "jinbu4-u2-5:0"
     },
     {
      "hanzi": "分",
      "pinyin": "fēn",
      "pos": "m.",
-     "en": "point, mark (打分 give marks) (new meaning)"
+     "en": "point, mark (打分 give marks) (new meaning)",
+     "id": "jinbu4-u2-5:1"
     },
     {
      "hanzi": "满分",
      "pinyin": "mǎn fēn",
      "pos": "n.",
-     "en": "full marks (打满分 give full marks)"
+     "en": "full marks (打满分 give full marks)",
+     "id": "jinbu4-u2-5:2"
     },
     {
      "hanzi": "语言",
      "pinyin": "yǔ yán",
      "pos": "n.",
-     "en": "language"
-    },
+     "en": "language",
+     "id": "jinbu4-u2-5:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-5b",
+   "title": "进步4 U2.5 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "交换",
      "pinyin": "jiāo huàn",
      "pos": "v.",
-     "en": "to exchange"
-    },
-    {
-     "hanzi": "语言交换",
-     "pinyin": "yǔ yán jiāo huàn",
-     "pos": "n.",
-     "en": "language exchange"
+     "en": "to exchange",
+     "id": "jinbu4-u2-5:4"
     },
     {
      "hanzi": "经验",
      "pinyin": "jīng yàn",
      "pos": "n.",
-     "en": "experience; what you've learned from doing something"
+     "en": "experience; what you've learned from doing something",
+     "id": "jinbu4-u2-5:6"
     },
     {
      "hanzi": "介绍",
      "pinyin": "jiè shào",
      "pos": "v.",
-     "en": "to introduce; to tell (someone) about"
+     "en": "to introduce; to tell (someone) about",
+     "id": "jinbu4-u2-5:7"
     },
     {
      "hanzi": "停",
      "pinyin": "tíng",
      "pos": "v.",
-     "en": "to stop"
+     "en": "to stop",
+     "id": "jinbu4-u2-5:8"
     },
     {
      "hanzi": "说得容易",
      "pinyin": "shuō de róng yì",
      "pos": "phr.",
-     "en": "easy for you to say"
+     "en": "easy for you to say",
+     "id": "jinbu4-u2-5:9",
+     "parts": [
+      "说",
+      "得",
+      "容易"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-6a",
+   "title": "进步4 U2.6 · 我的方案通过了！ My proposal's been approved! · 1",
+   "words": [
+    {
+     "hanzi": "语言交换",
+     "pinyin": "yǔ yán jiāo huàn",
+     "pos": "n.",
+     "en": "language exchange",
+     "id": "jinbu4-u2-5:5",
+     "parts": [
+      "语言",
+      "交换"
+     ]
     },
     {
      "hanzi": "上哪儿",
      "pinyin": "shàng nǎ r",
      "pos": "phr.",
-     "en": "where (would you go) (上哪儿找 where would we find)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u2-6",
-   "title": "进步4 U2.6 · 我的方案通过了！ My proposal's been approved!",
-   "words": [
+     "en": "where (would you go) (上哪儿找 where would we find)",
+     "id": "jinbu4-u2-5:10",
+     "parts": [
+      "上",
+      "哪儿"
+     ]
+    },
     {
      "hanzi": "优点",
      "pinyin": "yōu diǎn",
      "pos": "n.",
-     "en": "strong point, strength"
+     "en": "strong point, strength",
+     "id": "jinbu4-u2-6:0"
     },
     {
      "hanzi": "缺点",
      "pinyin": "quē diǎn",
      "pos": "n.",
-     "en": "weakness, shortcoming"
+     "en": "weakness, shortcoming",
+     "id": "jinbu4-u2-6:1"
     },
     {
      "hanzi": "说错",
      "pinyin": "shuō cuò",
      "pos": "v.",
-     "en": "to say (something) wrong, make a mistake"
-    },
+     "en": "to say (something) wrong, make a mistake",
+     "id": "jinbu4-u2-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-6b",
+   "title": "进步4 U2.6 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "改过来",
      "pinyin": "gǎi guo lai",
      "pos": "v.",
-     "en": "to put right, correct"
+     "en": "to put right, correct",
+     "id": "jinbu4-u2-6:3"
     },
     {
      "hanzi": "水饺",
      "pinyin": "shuǐ jiǎo",
      "pos": "n.",
-     "en": "boiled dumplings"
+     "en": "boiled dumplings",
+     "id": "jinbu4-u2-6:4"
     },
     {
      "hanzi": "说成",
      "pinyin": "shuō chéng",
      "pos": "v.",
-     "en": "to say (A) as (B) by mistake"
+     "en": "to say (A) as (B) by mistake",
+     "id": "jinbu4-u2-6:5",
+     "parts": [
+      "说",
+      "成"
+     ]
     },
     {
      "hanzi": "试用期",
      "pinyin": "shì yòng qī",
      "pos": "n.",
-     "en": "probation, trial period (通过了试用期 passed probation)"
+     "en": "probation, trial period (通过了试用期 passed probation)",
+     "id": "jinbu4-u2-6:6"
     },
     {
      "hanzi": "证书",
      "pinyin": "zhèng shū",
      "pos": "n.",
-     "en": "certificate"
-    },
+     "en": "certificate",
+     "id": "jinbu4-u2-6:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-6c",
+   "title": "进步4 U2.6 · 我的方案通过了！ My proposal's been approved! · 3",
+   "words": [
     {
      "hanzi": "过奖",
      "pinyin": "guò jiǎng",
      "pos": "v.",
-     "en": "to overpraise (过奖了 you flatter me)"
+     "en": "to overpraise (过奖了 you flatter me)",
+     "id": "jinbu4-u2-6:8"
     },
     {
      "hanzi": "谦虚",
      "pinyin": "qiān xū",
      "pos": "adj.",
-     "en": "modest"
+     "en": "modest",
+     "id": "jinbu4-u2-6:9"
     },
     {
      "hanzi": "骄傲",
      "pinyin": "jiāo ào",
      "pos": "adj.",
-     "en": "proud; arrogant"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u2-7",
-   "title": "进步4 U2.7 · 我的方案通过了！ My proposal's been approved!",
-   "words": [
+     "en": "proud; arrogant",
+     "id": "jinbu4-u2-6:10"
+    },
     {
      "hanzi": "羡慕",
      "pinyin": "xiàn mù",
      "pos": "v.",
-     "en": "to envy, admire"
+     "en": "to envy, admire",
+     "id": "jinbu4-u2-7:0"
     },
     {
      "hanzi": "鼓励",
      "pinyin": "gǔ lì",
      "pos": "v.",
-     "en": "to encourage"
-    },
+     "en": "to encourage",
+     "id": "jinbu4-u2-7:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-7a",
+   "title": "进步4 U2.7 · 我的方案通过了！ My proposal's been approved! · 1",
+   "words": [
     {
      "hanzi": "目标",
      "pinyin": "mù biāo",
      "pos": "n.",
-     "en": "goal, target"
+     "en": "goal, target",
+     "id": "jinbu4-u2-7:2"
     },
     {
      "hanzi": "实现",
      "pinyin": "shí xiàn",
      "pos": "v.",
-     "en": "to achieve, realise (a goal)"
+     "en": "to achieve, realise (a goal)",
+     "id": "jinbu4-u2-7:3"
     },
     {
      "hanzi": "恭喜",
      "pinyin": "gōng xǐ",
      "pos": "v.",
-     "en": "congratulations (恭喜你！)"
+     "en": "congratulations (恭喜你！)",
+     "id": "jinbu4-u2-7:4"
     },
     {
      "hanzi": "了不得",
      "pinyin": "liǎo bu de",
      "pos": "adj.",
-     "en": "amazing, terrific"
-    },
+     "en": "amazing, terrific",
+     "id": "jinbu4-u2-7:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u2-7b",
+   "title": "进步4 U2.7 · 我的方案通过了！ My proposal's been approved! · 2",
+   "words": [
     {
      "hanzi": "成就",
      "pinyin": "chéng jiù",
      "pos": "n.",
-     "en": "achievement"
+     "en": "achievement",
+     "id": "jinbu4-u2-7:6"
     },
     {
      "hanzi": "祝贺",
      "pinyin": "zhù hè",
      "pos": "v.",
-     "en": "to congratulate"
+     "en": "to congratulate",
+     "id": "jinbu4-u2-7:7"
     },
     {
      "hanzi": "成功",
      "pinyin": "chéng gōng",
      "pos": "v./adj.",
-     "en": "to succeed; successful"
+     "en": "to succeed; successful",
+     "id": "jinbu4-u2-7:8"
     },
     {
      "hanzi": "失败",
      "pinyin": "shī bài",
      "pos": "v./n.",
-     "en": "to fail; failure"
+     "en": "to fail; failure",
+     "id": "jinbu4-u2-7:9"
     }
    ]
   },
   {
-   "id": "jinbu4-u3-1",
-   "title": "进步4 U3.1 · 改天聚聚吧 Let's get together some time",
+   "id": "jinbu4-u3-1a",
+   "title": "进步4 U3.1 · 改天聚聚吧 Let's get together some time · 1",
    "words": [
     {
      "hanzi": "调料",
      "pinyin": "tiáo liào",
      "pos": "n.",
-     "en": "seasoning, spices, sauces"
+     "en": "seasoning, spices, sauces",
+     "id": "jinbu4-u3-1:0"
     },
     {
      "hanzi": "厉害",
      "pinyin": "lì hai",
      "pos": "adj.",
-     "en": "impressive, amazing; fierce"
+     "en": "impressive, amazing; fierce",
+     "id": "jinbu4-u3-1:1"
     },
     {
      "hanzi": "论文",
      "pinyin": "lùn wén",
      "pos": "n.",
-     "en": "dissertation, essay, thesis"
+     "en": "dissertation, essay, thesis",
+     "id": "jinbu4-u3-1:2"
     },
     {
      "hanzi": "聚",
      "pinyin": "jù",
      "pos": "v.",
-     "en": "to get together, meet up"
+     "en": "to get together, meet up",
+     "id": "jinbu4-u3-1:3"
     },
     {
      "hanzi": "改天",
      "pinyin": "gǎi tiān",
      "pos": "adv.",
-     "en": "another day, some other time"
-    },
+     "en": "another day, some other time",
+     "id": "jinbu4-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-1b",
+   "title": "进步4 U3.1 · 改天聚聚吧 Let's get together some time · 2",
+   "words": [
     {
      "hanzi": "聚聚",
      "pinyin": "jù ju",
      "pos": "phr.",
-     "en": "to get together, have a catch-up"
+     "en": "to get together, have a catch-up",
+     "id": "jinbu4-u3-1:5"
     },
     {
      "hanzi": "聚成",
      "pinyin": "jù chéng",
      "pos": "v.",
-     "en": "to manage to meet up (没聚成 it didn't happen)"
+     "en": "to manage to meet up (没聚成 it didn't happen)",
+     "id": "jinbu4-u3-1:6",
+     "parts": [
+      "聚",
+      "成"
+     ]
     },
     {
      "hanzi": "约",
      "pinyin": "yuē",
      "pos": "v.",
-     "en": "to arrange (to meet), make a date (约个时间 fix a time)"
+     "en": "to arrange (to meet), make a date (约个时间 fix a time)",
+     "id": "jinbu4-u3-1:7"
     },
     {
      "hanzi": "有事",
      "pinyin": "yǒu shì",
      "pos": "phr.",
-     "en": "to have something on, be busy"
+     "en": "to have something on, be busy",
+     "id": "jinbu4-u3-1:8"
     },
     {
      "hanzi": "再说",
      "pinyin": "zài shuō",
      "pos": "phr.",
-     "en": "we'll see, let's talk about it later"
+     "en": "we'll see, let's talk about it later",
+     "id": "jinbu4-u3-1:9",
+     "parts": [
+      "再",
+      "说"
+     ]
     }
    ]
   },
   {
-   "id": "jinbu4-u3-2",
-   "title": "进步4 U3.2 · 改天聚聚吧 Let's get together some time",
+   "id": "jinbu4-u3-2a",
+   "title": "进步4 U3.2 · 改天聚聚吧 Let's get together some time · 1",
    "words": [
     {
      "hanzi": "有空再说",
      "pinyin": "yǒu kòng zài shuō",
      "pos": "phr.",
-     "en": "let's see when I'm free (often a polite 'probably not')"
+     "en": "let's see when I'm free (often a polite 'probably not')",
+     "id": "jinbu4-u3-2:0",
+     "parts": [
+      "有空",
+      "再",
+      "说"
+     ]
     },
     {
      "hanzi": "送行",
      "pinyin": "sòng xíng",
      "pos": "v.",
-     "en": "to see (someone) off, give a send-off"
+     "en": "to see (someone) off, give a send-off",
+     "id": "jinbu4-u3-2:1"
     },
     {
      "hanzi": "定",
      "pinyin": "dìng",
      "pos": "v.",
-     "en": "to decide, fix (就这么定了 that's settled)"
+     "en": "to decide, fix (就这么定了 that's settled)",
+     "id": "jinbu4-u3-2:2"
     },
     {
      "hanzi": "不见不散",
      "pinyin": "bù jiàn bù sàn",
      "pos": "phr.",
-     "en": "be there! (we won't leave till we've met)"
+     "en": "be there! (we won't leave till we've met)",
+     "id": "jinbu4-u3-2:3"
     },
     {
      "hanzi": "回头见",
      "pinyin": "huí tóu jiàn",
      "pos": "phr.",
-     "en": "see you later, see you soon"
-    },
+     "en": "see you later, see you soon",
+     "id": "jinbu4-u3-2:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-2b",
+   "title": "进步4 U3.2 · 改天聚聚吧 Let's get together some time · 2",
+   "words": [
     {
      "hanzi": "聚会",
      "pinyin": "jù huì",
      "pos": "n.",
-     "en": "get-together, party"
+     "en": "get-together, party",
+     "id": "jinbu4-u3-2:5"
     },
     {
      "hanzi": "约好",
      "pinyin": "yuē hǎo",
      "pos": "v.",
-     "en": "to arrange, agree (a time)"
+     "en": "to arrange, agree (a time)",
+     "id": "jinbu4-u3-2:6",
+     "parts": [
+      "约",
+      "好"
+     ]
     },
     {
      "hanzi": "有约",
      "pinyin": "yǒu yuē",
      "pos": "phr.",
-     "en": "to have plans, have an appointment"
+     "en": "to have plans, have an appointment",
+     "id": "jinbu4-u3-2:7",
+     "parts": [
+      "有",
+      "约"
+     ]
     },
     {
      "hanzi": "放鸽子",
      "pinyin": "fàng gē zi",
      "pos": "phr.",
-     "en": "to stand (someone) up"
+     "en": "to stand (someone) up",
+     "id": "jinbu4-u3-2:8"
     },
     {
      "hanzi": "推迟",
      "pinyin": "tuī chí",
      "pos": "v.",
-     "en": "to put off, postpone"
+     "en": "to put off, postpone",
+     "id": "jinbu4-u3-2:9"
     }
    ]
   },
   {
-   "id": "jinbu4-u3-3",
-   "title": "进步4 U3.3 · 改天聚聚吧 Let's get together some time",
+   "id": "jinbu4-u3-3a",
+   "title": "进步4 U3.3 · 改天聚聚吧 Let's get together some time · 1",
    "words": [
     {
      "hanzi": "提醒",
      "pinyin": "tí xǐng",
      "pos": "v.",
-     "en": "to remind"
+     "en": "to remind",
+     "id": "jinbu4-u3-3:0"
     },
     {
      "hanzi": "一言为定",
      "pinyin": "yī yán wéi dìng",
      "pos": "phr.",
-     "en": "it's a deal"
+     "en": "it's a deal",
+     "id": "jinbu4-u3-3:1"
     },
     {
      "hanzi": "就这么定了",
      "pinyin": "jiù zhè me dìng le",
      "pos": "phr.",
-     "en": "that's settled, it's a plan"
+     "en": "that's settled, it's a plan",
+     "id": "jinbu4-u3-3:2",
+     "parts": [
+      "就",
+      "这么",
+      "定",
+      "了"
+     ]
     },
     {
      "hanzi": "群",
      "pinyin": "qún",
      "pos": "n.",
-     "en": "group (on WeChat)"
+     "en": "group (on WeChat)",
+     "id": "jinbu4-u3-3:3"
     },
     {
      "hanzi": "群聊",
      "pinyin": "qún liáo",
      "pos": "n.",
-     "en": "group chat"
-    },
+     "en": "group chat",
+     "id": "jinbu4-u3-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-3b",
+   "title": "进步4 U3.3 · 改天聚聚吧 Let's get together some time · 2",
+   "words": [
     {
      "hanzi": "接龙",
      "pinyin": "jiē lóng",
      "pos": "v.",
-     "en": "to add your name to a list (in a group chat)"
+     "en": "to add your name to a list (in a group chat)",
+     "id": "jinbu4-u3-3:5"
     },
     {
      "hanzi": "到时候见",
      "pinyin": "dào shí hou jiàn",
      "pos": "phr.",
-     "en": "see you then"
+     "en": "see you then",
+     "id": "jinbu4-u3-3:6",
+     "parts": [
+      "到时候",
+      "见"
+     ]
     },
     {
      "hanzi": "约会",
      "pinyin": "yuē huì",
      "pos": "n./v.",
-     "en": "date, appointment; to go on a date"
+     "en": "date, appointment; to go on a date",
+     "id": "jinbu4-u3-3:7"
     },
     {
      "hanzi": "空儿",
      "pinyin": "kòng r",
      "pos": "n.",
-     "en": "free time (有空儿吗？ are you free?)"
+     "en": "free time (有空儿吗？ are you free?)",
+     "id": "jinbu4-u3-3:8"
     },
     {
      "hanzi": "愉快",
      "pinyin": "yú kuài",
      "pos": "adj.",
-     "en": "pleasant, happy (周末愉快！ have a nice weekend!)"
+     "en": "pleasant, happy (周末愉快！ have a nice weekend!)",
+     "id": "jinbu4-u3-3:9"
     }
    ]
   },
   {
-   "id": "jinbu4-u3-4",
-   "title": "进步4 U3.4 · 改天聚聚吧 Let's get together some time",
+   "id": "jinbu4-u3-4a",
+   "title": "进步4 U3.4 · 改天聚聚吧 Let's get together some time · 1",
    "words": [
     {
      "hanzi": "着",
      "pinyin": "zhe",
      "pos": "part.",
-     "en": "after a verb: a state that lasts, or an action going on (门开着 the door is open)"
+     "en": "after a verb: a state that lasts, or an action going on (门开着 the door is open)",
+     "id": "jinbu4-u3-4:0"
     },
     {
      "hanzi": "楼梯",
      "pinyin": "lóu tī",
      "pos": "n.",
-     "en": "stairs"
+     "en": "stairs",
+     "id": "jinbu4-u3-4:1"
     },
     {
      "hanzi": "楼梯口",
      "pinyin": "lóu tī kǒu",
      "pos": "n.",
-     "en": "the foot (or top) of the stairs"
+     "en": "the foot (or top) of the stairs",
+     "id": "jinbu4-u3-4:2"
     },
     {
      "hanzi": "包间",
      "pinyin": "bāo jiān",
      "pos": "n.",
-     "en": "private room (in a restaurant)"
+     "en": "private room (in a restaurant)",
+     "id": "jinbu4-u3-4:3"
     },
     {
      "hanzi": "直接",
      "pinyin": "zhí jiē",
      "pos": "adv./adj.",
-     "en": "straight, directly; direct"
-    },
+     "en": "straight, directly; direct",
+     "id": "jinbu4-u3-4:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-4b",
+   "title": "进步4 U3.4 · 改天聚聚吧 Let's get together some time · 2",
+   "words": [
     {
      "hanzi": "来不了",
      "pinyin": "lái bu liǎo",
      "pos": "phr.",
-     "en": "can't come"
+     "en": "can't come",
+     "id": "jinbu4-u3-4:5"
     },
     {
      "hanzi": "替",
      "pinyin": "tì",
      "pos": "prep.",
-     "en": "for, in place of (替他吃 eat for him)"
+     "en": "for, in place of (替他吃 eat for him)",
+     "id": "jinbu4-u3-4:6"
     },
     {
      "hanzi": "典礼",
      "pinyin": "diǎn lǐ",
      "pos": "n.",
-     "en": "ceremony"
+     "en": "ceremony",
+     "id": "jinbu4-u3-4:7"
     },
     {
      "hanzi": "毕业典礼",
      "pinyin": "bì yè diǎn lǐ",
      "pos": "n.",
-     "en": "graduation ceremony"
+     "en": "graduation ceremony",
+     "id": "jinbu4-u3-4:8"
     },
     {
      "hanzi": "手里",
      "pinyin": "shǒu li",
      "pos": "n.",
-     "en": "in your hand(s)"
-    },
+     "en": "in your hand(s)",
+     "id": "jinbu4-u3-4:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-5a",
+   "title": "进步4 U3.5 · 改天聚聚吧 Let's get together some time · 1",
+   "words": [
     {
      "hanzi": "太阳从西边出来了",
      "pinyin": "tài yáng cóng xī biān chū lai le",
      "pos": "phr.",
-     "en": "wonders will never cease (the sun rose in the west)"
+     "en": "wonders will never cease (the sun rose in the west)",
+     "id": "jinbu4-u3-4:10",
+     "parts": [
+      "太阳",
+      "从",
+      "西边",
+      "出来",
+      "了"
+     ]
     },
     {
      "hanzi": "靠",
      "pinyin": "kào",
      "pos": "v.",
-     "en": "to be next to; to lean on (靠窗户 by the window)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u3-5",
-   "title": "进步4 U3.5 · 改天聚聚吧 Let's get together some time",
-   "words": [
+     "en": "to be next to; to lean on (靠窗户 by the window)",
+     "id": "jinbu4-u3-4:11"
+    },
     {
      "hanzi": "躺",
      "pinyin": "tǎng",
      "pos": "v.",
-     "en": "to lie down"
+     "en": "to lie down",
+     "id": "jinbu4-u3-5:0"
     },
     {
      "hanzi": "空位",
      "pinyin": "kòng wèi",
      "pos": "n.",
-     "en": "free seat, empty place"
+     "en": "free seat, empty place",
+     "id": "jinbu4-u3-5:1"
     },
     {
      "hanzi": "墙上",
      "pinyin": "qiáng shang",
      "pos": "n.",
-     "en": "on the wall"
-    },
+     "en": "on the wall",
+     "id": "jinbu4-u3-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-5b",
+   "title": "进步4 U3.5 · 改天聚聚吧 Let's get together some time · 2",
+   "words": [
     {
      "hanzi": "说到做到",
      "pinyin": "shuō dào zuò dào",
      "pos": "phr.",
-     "en": "to keep your word, do what you say"
+     "en": "to keep your word, do what you say",
+     "id": "jinbu4-u3-5:3"
     },
     {
      "hanzi": "保重",
      "pinyin": "bǎo zhòng",
      "pos": "v.",
-     "en": "to take care (of yourself)"
+     "en": "to take care (of yourself)",
+     "id": "jinbu4-u3-5:4"
     },
     {
      "hanzi": "送别",
      "pinyin": "sòng bié",
      "pos": "v.",
-     "en": "to say goodbye to (someone who's leaving)"
+     "en": "to say goodbye to (someone who's leaving)",
+     "id": "jinbu4-u3-5:5"
     },
     {
-     "hanzi": "常联系",
-     "pinyin": "cháng lián xì",
-     "pos": "phr.",
-     "en": "keep in touch"
+     "hanzi": "常",
+     "pinyin": "cháng",
+     "pos": "adv.",
+     "en": "often (常说 always saying)",
+     "id": "jinbu5-u1-8:0"
     },
     {
      "hanzi": "工作机会",
      "pinyin": "gōng zuò jī huì",
      "pos": "n.",
-     "en": "job offer, job opportunity"
+     "en": "job offer, job opportunity",
+     "id": "jinbu4-u3-5:7",
+     "parts": [
+      "工作",
+      "机会"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u3-5c",
+   "title": "进步4 U3.5 · 改天聚聚吧 Let's get together some time · 3",
+   "words": [
+    {
+     "hanzi": "常联系",
+     "pinyin": "cháng lián xì",
+     "pos": "phr.",
+     "en": "keep in touch",
+     "id": "jinbu4-u3-5:6",
+     "parts": [
+      "常",
+      "联系"
+     ]
     },
     {
      "hanzi": "今晚",
      "pinyin": "jīn wǎn",
      "pos": "n.",
-     "en": "tonight"
+     "en": "tonight",
+     "id": "jinbu4-u3-5:8"
     },
     {
      "hanzi": "酒",
      "pinyin": "jiǔ",
      "pos": "n.",
-     "en": "alcohol, a drink (一杯酒 a glass of wine)"
+     "en": "alcohol, a drink (一杯酒 a glass of wine)",
+     "id": "jinbu4-u3-5:9"
     },
     {
      "hanzi": "碰杯",
      "pinyin": "pèng bēi",
      "pos": "v.",
-     "en": "to clink glasses"
+     "en": "to clink glasses",
+     "id": "jinbu4-u3-5:10"
     }
    ]
   },
   {
-   "id": "jinbu4-u4-1",
-   "title": "进步4 U4.1 · 学中文的秘诀 The secret of learning Chinese",
+   "id": "jinbu4-u4-1a",
+   "title": "进步4 U4.1 · 学中文的秘诀 The secret of learning Chinese · 1",
    "words": [
     {
      "hanzi": "秘诀",
      "pinyin": "mì jué",
      "pos": "n.",
-     "en": "secret (of success), key"
+     "en": "secret (of success), key",
+     "id": "jinbu4-u4-1:0"
     },
     {
      "hanzi": "走过来",
      "pinyin": "zǒu guo lai",
      "pos": "v.",
-     "en": "to walk over (towards the speaker)"
+     "en": "to walk over (towards the speaker)",
+     "id": "jinbu4-u4-1:1",
+     "parts": [
+      "走",
+      "过来"
+     ]
     },
     {
      "hanzi": "说不出话来",
      "pinyin": "shuō bu chū huà lai",
      "pos": "phr.",
-     "en": "to be unable to get a word out, be lost for words"
+     "en": "to be unable to get a word out, be lost for words",
+     "id": "jinbu4-u4-1:2",
+     "parts": [
+      "话",
+      "来"
+     ]
     },
     {
      "hanzi": "播客",
      "pinyin": "bō kè",
      "pos": "n.",
-     "en": "podcast"
+     "en": "podcast",
+     "id": "jinbu4-u4-1:3"
     },
     {
      "hanzi": "记得住",
      "pinyin": "jì de zhù",
      "pos": "phr.",
-     "en": "can remember"
-    },
+     "en": "can remember",
+     "id": "jinbu4-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-1b",
+   "title": "进步4 U4.1 · 学中文的秘诀 The secret of learning Chinese · 2",
+   "words": [
     {
      "hanzi": "记不住",
      "pinyin": "jì bu zhù",
      "pos": "phr.",
-     "en": "can't remember"
+     "en": "can't remember",
+     "id": "jinbu4-u4-1:5"
     },
     {
      "hanzi": "老是",
      "pinyin": "lǎo shi",
      "pos": "adv.",
-     "en": "always, keep (doing something annoying)"
+     "en": "always, keep (doing something annoying)",
+     "id": "jinbu4-u4-1:6",
+     "parts": [
+      "老",
+      "是"
+     ]
     },
     {
      "hanzi": "一个一个",
      "pinyin": "yī gè yī gè",
      "pos": "phr.",
-     "en": "one by one, one at a time"
+     "en": "one by one, one at a time",
+     "id": "jinbu4-u4-1:7"
     },
     {
      "hanzi": "轮到",
      "pinyin": "lún dào",
      "pos": "v.",
-     "en": "to be (someone's) turn"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u4-2",
-   "title": "进步4 U4.2 · 学中文的秘诀 The secret of learning Chinese",
-   "words": [
+     "en": "to be (someone's) turn",
+     "id": "jinbu4-u4-1:8"
+    },
     {
      "hanzi": "初学者",
      "pinyin": "chū xué zhě",
      "pos": "n.",
-     "en": "beginner"
-    },
+     "en": "beginner",
+     "id": "jinbu4-u4-2:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-2a",
+   "title": "进步4 U4.2 · 学中文的秘诀 The secret of learning Chinese · 1",
+   "words": [
     {
      "hanzi": "跟读",
      "pinyin": "gēn dú",
      "pos": "v.",
-     "en": "to repeat after (a recording), read along"
+     "en": "to repeat after (a recording), read along",
+     "id": "jinbu4-u4-2:1"
     },
     {
      "hanzi": "模仿",
      "pinyin": "mó fǎng",
      "pos": "v.",
-     "en": "to copy, imitate"
+     "en": "to copy, imitate",
+     "id": "jinbu4-u4-2:2"
     },
     {
      "hanzi": "录音",
      "pinyin": "lù yīn",
      "pos": "n./v.",
-     "en": "recording; to record"
+     "en": "recording; to record",
+     "id": "jinbu4-u4-2:3"
     },
     {
      "hanzi": "纠正",
      "pinyin": "jiū zhèng",
      "pos": "v.",
-     "en": "to correct"
+     "en": "to correct",
+     "id": "jinbu4-u4-2:4"
     },
     {
      "hanzi": "耐心",
      "pinyin": "nài xīn",
      "pos": "adj./n.",
-     "en": "patient; patience"
-    },
+     "en": "patient; patience",
+     "id": "jinbu4-u4-2:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-2b",
+   "title": "进步4 U4.2 · 学中文的秘诀 The secret of learning Chinese · 2",
+   "words": [
     {
      "hanzi": "害羞",
      "pinyin": "hài xiū",
      "pos": "adj.",
-     "en": "shy"
+     "en": "shy",
+     "id": "jinbu4-u4-2:6"
     },
     {
      "hanzi": "口音",
      "pinyin": "kǒu yīn",
      "pos": "n.",
-     "en": "accent"
+     "en": "accent",
+     "id": "jinbu4-u4-2:7"
     },
     {
      "hanzi": "母语",
      "pinyin": "mǔ yǔ",
      "pos": "n.",
-     "en": "mother tongue, first language"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u4-3",
-   "title": "进步4 U4.3 · 学中文的秘诀 The secret of learning Chinese",
-   "words": [
+     "en": "mother tongue, first language",
+     "id": "jinbu4-u4-2:8"
+    },
     {
      "hanzi": "语伴",
      "pinyin": "yǔ bàn",
      "pos": "n.",
-     "en": "language partner"
+     "en": "language partner",
+     "id": "jinbu4-u4-3:0"
     },
     {
      "hanzi": "词汇",
      "pinyin": "cí huì",
      "pos": "n.",
-     "en": "vocabulary"
-    },
+     "en": "vocabulary",
+     "id": "jinbu4-u4-3:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-3a",
+   "title": "进步4 U4.3 · 学中文的秘诀 The secret of learning Chinese",
+   "words": [
     {
      "hanzi": "护士",
      "pinyin": "hù shi",
      "pos": "n.",
-     "en": "nurse"
+     "en": "nurse",
+     "id": "jinbu4-u4-3:2"
     },
     {
      "hanzi": "补语",
      "pinyin": "bǔ yǔ",
      "pos": "n.",
-     "en": "complement (in grammar)"
+     "en": "complement (in grammar)",
+     "id": "jinbu4-u4-3:3"
     },
     {
      "hanzi": "哦",
      "pinyin": "ó",
      "pos": "part.",
-     "en": "oh? oh! (surprise, or checking you heard right)"
+     "en": "oh? oh! (surprise, or checking you heard right)",
+     "id": "jinbu4-u4-3:4"
     },
     {
      "hanzi": "好笑",
      "pinyin": "hǎo xiào",
      "pos": "adj.",
-     "en": "funny"
+     "en": "funny",
+     "id": "jinbu4-u4-3:5"
     },
     {
      "hanzi": "反复",
      "pinyin": "fǎn fù",
      "pos": "adv.",
-     "en": "again and again"
-    },
-    {
-     "hanzi": "重复",
-     "pinyin": "chóng fù",
-     "pos": "v.",
-     "en": "to repeat"
+     "en": "again and again",
+     "id": "jinbu4-u4-3:6"
     }
    ]
   },
   {
-   "id": "jinbu4-u4-4",
-   "title": "进步4 U4.4 · 学中文的秘诀 The secret of learning Chinese",
+   "id": "jinbu4-u4-4a",
+   "title": "进步4 U4.4 · 学中文的秘诀 The secret of learning Chinese · 1",
    "words": [
+    {
+     "hanzi": "重复",
+     "pinyin": "chóng fù",
+     "pos": "v.",
+     "en": "to repeat",
+     "id": "jinbu4-u4-3:7"
+    },
     {
      "hanzi": "博客",
      "pinyin": "bó kè",
      "pos": "n.",
-     "en": "blog"
+     "en": "blog",
+     "id": "jinbu4-u4-4:0"
     },
     {
      "hanzi": "下来",
      "pinyin": "xià lai",
      "pos": "v.",
-     "en": "(after a time: over a period) (一年下来 over a year) (new meaning)"
+     "en": "(after a time: over a period) (一年下来 over a year) (new meaning)",
+     "id": "jinbu4-u4-4:1"
     },
     {
      "hanzi": "再也",
      "pinyin": "zài yě",
      "pos": "adv.",
-     "en": "(with a negative) never again, not any more (再也忘不了 will never forget)"
+     "en": "(with a negative) never again, not any more (再也忘不了 will never forget)",
+     "id": "jinbu4-u4-4:2"
     },
     {
      "hanzi": "忘不了",
      "pinyin": "wàng bu liǎo",
      "pos": "phr.",
-     "en": "can't forget, will never forget"
-    },
+     "en": "can't forget, will never forget",
+     "id": "jinbu4-u4-4:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-4b",
+   "title": "进步4 U4.4 · 学中文的秘诀 The secret of learning Chinese · 2",
+   "words": [
     {
      "hanzi": "从来",
      "pinyin": "cóng lái",
      "pos": "adv.",
-     "en": "always, ever (从来没 … 过 never ever)"
+     "en": "always, ever (从来没 … 过 never ever)",
+     "id": "jinbu4-u4-4:4"
     },
     {
      "hanzi": "笑话",
      "pinyin": "xiào hua",
      "pos": "v./n.",
-     "en": "to laugh at, make fun of; joke"
+     "en": "to laugh at, make fun of; joke",
+     "id": "jinbu4-u4-4:5"
     },
     {
      "hanzi": "最先",
      "pinyin": "zuì xiān",
      "pos": "adv.",
-     "en": "first of all, earliest"
+     "en": "first of all, earliest",
+     "id": "jinbu4-u4-4:6"
     },
     {
      "hanzi": "正在",
      "pinyin": "zhèng zài",
      "pos": "adv.",
-     "en": "in the middle of (doing), right now"
+     "en": "in the middle of (doing), right now",
+     "id": "jinbu4-u4-4:7"
     },
     {
      "hanzi": "习惯",
      "pinyin": "xí guàn",
      "pos": "n./v.",
-     "en": "habit; to be used to"
-    },
+     "en": "habit; to be used to",
+     "id": "jinbu4-u4-4:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-4c",
+   "title": "进步4 U4.4 · 学中文的秘诀 The secret of learning Chinese · 3",
+   "words": [
     {
      "hanzi": "养成",
      "pinyin": "yǎng chéng",
      "pos": "v.",
-     "en": "to form (a habit)"
+     "en": "to form (a habit)",
+     "id": "jinbu4-u4-4:9"
     },
     {
      "hanzi": "动力",
      "pinyin": "dòng lì",
      "pos": "n.",
-     "en": "motivation, drive"
-    }
-   ]
-  },
-  {
-   "id": "jinbu4-u4-5",
-   "title": "进步4 U4.5 · 学中文的秘诀 The secret of learning Chinese",
-   "words": [
+     "en": "motivation, drive",
+     "id": "jinbu4-u4-4:10"
+    },
     {
      "hanzi": "成就感",
      "pinyin": "chéng jiù gǎn",
      "pos": "n.",
-     "en": "sense of achievement"
+     "en": "sense of achievement",
+     "id": "jinbu4-u4-5:0"
     },
     {
      "hanzi": "自信",
      "pinyin": "zì xìn",
      "pos": "adj.",
-     "en": "confident"
-    },
+     "en": "confident",
+     "id": "jinbu4-u4-5:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-5a",
+   "title": "进步4 U4.5 · 学中文的秘诀 The secret of learning Chinese · 1",
+   "words": [
     {
      "hanzi": "分享",
      "pinyin": "fēn xiǎng",
      "pos": "v.",
-     "en": "to share"
+     "en": "to share",
+     "id": "jinbu4-u4-5:2"
     },
     {
      "hanzi": "评论",
      "pinyin": "píng lùn",
      "pos": "n./v.",
-     "en": "comment; to comment"
+     "en": "comment; to comment",
+     "id": "jinbu4-u4-5:3"
     },
     {
      "hanzi": "点赞",
      "pinyin": "diǎn zàn",
      "pos": "v.",
-     "en": "to like (a post)"
+     "en": "to like (a post)",
+     "id": "jinbu4-u4-5:4"
     },
     {
      "hanzi": "方式",
      "pinyin": "fāng shì",
      "pos": "n.",
-     "en": "way, method"
-    },
+     "en": "way, method",
+     "id": "jinbu4-u4-5:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-5b",
+   "title": "进步4 U4.5 · 学中文的秘诀 The secret of learning Chinese · 2",
+   "words": [
     {
      "hanzi": "效率",
      "pinyin": "xiào lǜ",
      "pos": "n.",
-     "en": "efficiency"
+     "en": "efficiency",
+     "id": "jinbu4-u4-5:6"
     },
     {
      "hanzi": "单词",
      "pinyin": "dān cí",
      "pos": "n.",
-     "en": "word (in a vocabulary list)"
+     "en": "word (in a vocabulary list)",
+     "id": "jinbu4-u4-5:7"
     },
     {
      "hanzi": "们",
      "pinyin": "men",
      "pos": "part.",
-     "en": "plural ending for people (朋友们 friends)"
+     "en": "plural ending for people (朋友们 friends)",
+     "id": "jinbu4-u4-5:8"
     },
     {
      "hanzi": "拿出",
      "pinyin": "ná chū",
      "pos": "v.",
-     "en": "to take out, bring out"
-    },
+     "en": "to take out, bring out",
+     "id": "jinbu4-u4-5:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu4-u4-5c",
+   "title": "进步4 U4.5 · 学中文的秘诀 The secret of learning Chinese · 3",
+   "words": [
     {
      "hanzi": "亲手",
      "pinyin": "qīn shǒu",
      "pos": "",
-     "en": "with your own hands"
+     "en": "with your own hands",
+     "id": "jinbu4-u4-5:10"
     },
     {
      "hanzi": "收获",
      "pinyin": "shōu huò",
      "pos": "",
-     "en": "what you gain, the best thing you take away"
+     "en": "what you gain, the best thing you take away",
+     "id": "jinbu4-u4-5:11"
     },
     {
      "hanzi": "不管",
      "pinyin": "bù guǎn",
      "pos": "",
-     "en": "no matter (how)"
+     "en": "no matter (how)",
+     "id": "jinbu4-u4-5:12"
     },
     {
      "hanzi": "连",
      "pinyin": "lián",
      "pos": "",
-     "en": "to link, connect"
+     "en": "to link, connect",
+     "id": "jinbu4-u4-5:13"
     }
    ]
   },
   {
-   "id": "jinbu5-u1-1",
-   "title": "进步5 U1.1 · 墨尔本还是伦敦？ Melbourne or London?",
+   "id": "jinbu5-u1-1a",
+   "title": "进步5 U1.1 · 墨尔本还是伦敦？ Melbourne or London? · 1",
    "words": [
     {
      "hanzi": "咖啡馆",
      "pinyin": "kā fēi guǎn",
      "pos": "n.",
-     "en": "café"
+     "en": "café",
+     "id": "jinbu5-u1-1:0"
     },
     {
      "hanzi": "澳白",
      "pinyin": "ào bái",
      "pos": "n.",
-     "en": "flat white (coffee) (literally 'Australian white')"
+     "en": "flat white (coffee) (literally 'Australian white')",
+     "id": "jinbu5-u1-1:1"
     },
     {
      "hanzi": "在",
      "pinyin": "zài",
      "pos": "phr.",
-     "en": "in …'s view (在我看来 as I see it) (在…看来)"
+     "en": "in …'s view (在我看来 as I see it) (在…看来)",
+     "id": "jinbu5-u1-1:2"
     },
     {
      "hanzi": "比",
      "pinyin": "bǐ",
      "pos": "phr.",
-     "en": "more … than any … (比哪儿都好 better than anywhere) (比…都…)"
+     "en": "more … than any … (比哪儿都好 better than anywhere) (比…都…)",
+     "id": "jinbu5-u1-1:3"
     },
     {
      "hanzi": "拿",
      "pinyin": "ná",
      "pos": "phr.",
-     "en": "take … for example, as far as … goes (拿…来说)"
-    },
+     "en": "take … for example, as far as … goes (拿…来说)",
+     "id": "jinbu5-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-1b",
+   "title": "进步5 U1.1 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
     {
      "hanzi": "排长队",
      "pinyin": "pái cháng duì",
      "pos": "phr.",
-     "en": "to queue for ages, there's a long queue"
+     "en": "to queue for ages, there's a long queue",
+     "id": "jinbu5-u1-1:5"
     },
     {
      "hanzi": "不见得",
      "pinyin": "bù jiàn de",
      "pos": "adv.",
-     "en": "not necessarily (那不见得 I'm not so sure)"
+     "en": "not necessarily (那不见得 I'm not so sure)",
+     "id": "jinbu5-u1-1:6"
     },
     {
      "hanzi": "说明",
      "pinyin": "shuō míng",
      "pos": "v.",
-     "en": "to show, prove; to explain"
+     "en": "to show, prove; to explain",
+     "id": "jinbu5-u1-1:7"
     },
     {
      "hanzi": "讲究",
      "pinyin": "jiǎng jiu",
      "pos": "adj./n.",
-     "en": "particular, fussy (about); dos and don'ts"
+     "en": "particular, fussy (about); dos and don'ts",
+     "id": "jinbu5-u1-1:8"
     },
     {
      "hanzi": "比如",
      "pinyin": "bǐ rú",
      "pos": "conj.",
-     "en": "for example, such as (比如说 for instance)"
-    },
-    {
-     "hanzi": "牛奶",
-     "pinyin": "niú nǎi",
-     "pos": "n.",
-     "en": "milk"
+     "en": "for example, such as (比如说 for instance)",
+     "id": "jinbu5-u1-1:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u1-2",
-   "title": "进步5 U1.2 · 墨尔本还是伦敦？ Melbourne or London?",
+   "id": "jinbu5-u1-2a",
+   "title": "进步5 U1.2 · 墨尔本还是伦敦？ Melbourne or London? · 1",
    "words": [
+    {
+     "hanzi": "牛奶",
+     "pinyin": "niú nǎi",
+     "pos": "n.",
+     "en": "milk",
+     "id": "jinbu5-u1-1:10"
+    },
     {
      "hanzi": "要求",
      "pinyin": "yāo qiú",
      "pos": "n./v.",
-     "en": "requirement, what you want; to ask for, require"
+     "en": "requirement, what you want; to ask for, require",
+     "id": "jinbu5-u1-2:0"
     },
     {
      "hanzi": "凉快",
      "pinyin": "liáng kuai",
      "pos": "adj.",
-     "en": "pleasantly cool"
+     "en": "pleasantly cool",
+     "id": "jinbu5-u1-2:1"
     },
     {
      "hanzi": "四季",
      "pinyin": "sì jì",
      "pos": "n.",
-     "en": "the four seasons"
+     "en": "the four seasons",
+     "id": "jinbu5-u1-2:2"
     },
     {
      "hanzi": "最好",
      "pinyin": "zuì hǎo",
      "pos": "adv.",
-     "en": "had better, it's best to"
-    },
+     "en": "had better, it's best to",
+     "id": "jinbu5-u1-2:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-2b",
+   "title": "进步5 U1.2 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
     {
      "hanzi": "说变就变",
      "pinyin": "shuō biàn jiù biàn",
      "pos": "phr.",
-     "en": "to change at the drop of a hat"
+     "en": "to change at the drop of a hat",
+     "id": "jinbu5-u1-2:4",
+     "parts": [
+      "说",
+      "变",
+      "就"
+     ]
     },
     {
      "hanzi": "阳光",
      "pinyin": "yáng guāng",
      "pos": "n.",
-     "en": "sunshine"
-    },
-    {
-     "hanzi": "海边",
-     "pinyin": "hǎi biān",
-     "pos": "n.",
-     "en": "the seaside, the beach"
+     "en": "sunshine",
+     "id": "jinbu5-u1-2:5"
     },
     {
      "hanzi": "想象",
      "pinyin": "xiǎng xiàng",
      "pos": "v.",
-     "en": "to imagine"
+     "en": "to imagine",
+     "id": "jinbu5-u1-2:7"
     },
     {
      "hanzi": "认为",
      "pinyin": "rèn wéi",
      "pos": "v.",
-     "en": "to think, believe (a considered opinion)"
-    },
-    {
-     "hanzi": "各有各的好",
-     "pinyin": "gè yǒu gè de hǎo",
-     "pos": "phr.",
-     "en": "each has its good points"
+     "en": "to think, believe (a considered opinion)",
+     "id": "jinbu5-u1-2:8"
     },
     {
      "hanzi": "免费",
      "pinyin": "miǎn fèi",
      "pos": "adj./v.",
-     "en": "free (of charge)"
+     "en": "free (of charge)",
+     "id": "jinbu5-u1-2:10"
     }
    ]
   },
   {
-   "id": "jinbu5-u1-3",
-   "title": "进步5 U1.3 · 墨尔本还是伦敦？ Melbourne or London?",
+   "id": "jinbu5-u1-3a",
+   "title": "进步5 U1.3 · 墨尔本还是伦敦？ Melbourne or London? · 1",
    "words": [
     {
      "hanzi": "生活",
      "pinyin": "shēng huó",
      "pos": "n./v.",
-     "en": "life; to live"
+     "en": "life; to live",
+     "id": "jinbu5-u1-3:0"
     },
     {
      "hanzi": "节奏",
      "pinyin": "jié zòu",
      "pos": "n.",
-     "en": "pace, rhythm (生活节奏 pace of life)"
-    },
-    {
-     "hanzi": "有道理",
-     "pinyin": "yǒu dào li",
-     "pos": "phr.",
-     "en": "that makes sense, fair point"
+     "en": "pace, rhythm (生活节奏 pace of life)",
+     "id": "jinbu5-u1-3:1"
     },
     {
      "hanzi": "房租",
      "pinyin": "fáng zū",
      "pos": "n.",
-     "en": "rent"
+     "en": "rent",
+     "id": "jinbu5-u1-3:3"
     },
     {
      "hanzi": "没有比",
      "pinyin": "méi yǒu bǐ",
      "pos": "phr.",
-     "en": "nothing is more … than … (没有比…更…的了)"
+     "en": "nothing is more … than … (没有比…更…的了)",
+     "id": "jinbu5-u1-3:4",
+     "parts": [
+      "没有",
+      "比"
+     ]
     },
     {
      "hanzi": "这一点",
      "pinyin": "zhè yī diǎn",
      "pos": "phr.",
-     "en": "on this point, in this respect"
-    },
-    {
-     "hanzi": "完全",
-     "pinyin": "wán quán",
-     "pos": "adv.",
-     "en": "completely"
-    },
+     "en": "on this point, in this respect",
+     "id": "jinbu5-u1-3:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-3b",
+   "title": "进步5 U1.3 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
     {
      "hanzi": "同意",
      "pinyin": "tóng yì",
      "pos": "v.",
-     "en": "to agree"
+     "en": "to agree",
+     "id": "jinbu5-u1-3:7"
     },
     {
      "hanzi": "电车",
      "pinyin": "diàn chē",
      "pos": "n.",
-     "en": "tram"
+     "en": "tram",
+     "id": "jinbu5-u1-3:8"
     },
     {
      "hanzi": "市中心",
      "pinyin": "shì zhōng xīn",
      "pos": "n.",
-     "en": "city centre"
+     "en": "city centre",
+     "id": "jinbu5-u1-3:9"
     },
     {
      "hanzi": "再",
      "pinyin": "zài",
      "pos": "phr.",
-     "en": "couldn't be more … (再好不过了 that's perfect) (再…不过了)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u1-4",
-   "title": "进步5 U1.4 · 墨尔本还是伦敦？ Melbourne or London?",
-   "words": [
+     "en": "couldn't be more … (再好不过了 that's perfect) (再…不过了)",
+     "id": "jinbu5-u1-3:10"
+    },
     {
      "hanzi": "道理",
      "pinyin": "dào li",
      "pos": "n.",
-     "en": "reason, sense"
+     "en": "reason, sense",
+     "id": "jinbu5-u1-4:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-4a",
+   "title": "进步5 U1.4 · 墨尔本还是伦敦？ Melbourne or London? · 1",
+   "words": [
+    {
+     "hanzi": "有道理",
+     "pinyin": "yǒu dào li",
+     "pos": "phr.",
+     "en": "that makes sense, fair point",
+     "id": "jinbu5-u1-3:2",
+     "parts": [
+      "有",
+      "道理"
+     ]
     },
     {
      "hanzi": "海",
      "pinyin": "hǎi",
      "pos": "n.",
-     "en": "sea"
+     "en": "sea",
+     "id": "jinbu5-u1-4:1"
+    },
+    {
+     "hanzi": "海边",
+     "pinyin": "hǎi biān",
+     "pos": "n.",
+     "en": "the seaside, the beach",
+     "id": "jinbu5-u1-2:6"
     },
     {
      "hanzi": "海滩",
      "pinyin": "hǎi tān",
      "pos": "n.",
-     "en": "beach"
+     "en": "beach",
+     "id": "jinbu5-u1-4:2"
     },
     {
      "hanzi": "冲浪",
      "pinyin": "chōng làng",
      "pos": "v.",
-     "en": "to surf"
-    },
+     "en": "to surf",
+     "id": "jinbu5-u1-4:3"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-4b",
+   "title": "进步5 U1.4 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
     {
      "hanzi": "防晒霜",
      "pinyin": "fáng shài shuāng",
      "pos": "n.",
-     "en": "sunscreen"
+     "en": "sunscreen",
+     "id": "jinbu5-u1-4:4"
     },
     {
      "hanzi": "拿铁",
      "pinyin": "ná tiě",
      "pos": "n.",
-     "en": "latte"
+     "en": "latte",
+     "id": "jinbu5-u1-4:5"
     },
     {
      "hanzi": "咖啡师",
      "pinyin": "kā fēi shī",
      "pos": "n.",
-     "en": "barista"
+     "en": "barista",
+     "id": "jinbu5-u1-4:6"
     },
     {
      "hanzi": "袋鼠",
      "pinyin": "dài shǔ",
      "pos": "n.",
-     "en": "kangaroo"
+     "en": "kangaroo",
+     "id": "jinbu5-u1-4:7"
     },
     {
      "hanzi": "考拉",
      "pinyin": "kǎo lā",
      "pos": "n.",
-     "en": "koala"
-    },
+     "en": "koala",
+     "id": "jinbu5-u1-4:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-5a",
+   "title": "进步5 U1.5 · 墨尔本还是伦敦？ Melbourne or London? · 1",
+   "words": [
     {
      "hanzi": "物价",
      "pinyin": "wù jià",
      "pos": "n.",
-     "en": "prices, the cost of living"
+     "en": "prices, the cost of living",
+     "id": "jinbu5-u1-4:9"
     },
     {
      "hanzi": "工资",
      "pinyin": "gōng zī",
      "pos": "n.",
-     "en": "wages, salary"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u1-5",
-   "title": "进步5 U1.5 · 墨尔本还是伦敦？ Melbourne or London?",
-   "words": [
+     "en": "wages, salary",
+     "id": "jinbu5-u1-4:10"
+    },
     {
      "hanzi": "看法",
      "pinyin": "kàn fǎ",
      "pos": "n.",
-     "en": "view, opinion (你的看法呢？ what's your view?)"
+     "en": "view, opinion (你的看法呢？ what's your view?)",
+     "id": "jinbu5-u1-5:0"
     },
     {
      "hanzi": "意见",
      "pinyin": "yì jiàn",
      "pos": "n.",
-     "en": "opinion; objection"
+     "en": "opinion; objection",
+     "id": "jinbu5-u1-5:1"
     },
     {
      "hanzi": "反对",
      "pinyin": "fǎn duì",
      "pos": "v.",
-     "en": "to be against, oppose"
-    },
+     "en": "to be against, oppose",
+     "id": "jinbu5-u1-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-5b",
+   "title": "进步5 U1.5 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
     {
      "hanzi": "总的来说",
      "pinyin": "zǒng de lái shuō",
      "pos": "phr.",
-     "en": "all in all, on the whole"
+     "en": "all in all, on the whole",
+     "id": "jinbu5-u1-5:3"
     },
     {
      "hanzi": "嗯",
      "pinyin": "ǹg",
      "pos": "part.",
-     "en": "mm, hmm (thinking, or agreeing)"
+     "en": "mm, hmm (thinking, or agreeing)",
+     "id": "jinbu5-u1-5:4"
     },
     {
      "hanzi": "如果",
      "pinyin": "rú guǒ",
      "pos": "conj.",
-     "en": "if (a little more formal than 要是)"
+     "en": "if (a little more formal than 要是)",
+     "id": "jinbu5-u1-5:5"
     },
     {
      "hanzi": "其他",
      "pinyin": "qí tā",
      "pos": "pron.",
-     "en": "other, the others"
-    },
-    {
-     "hanzi": "各种",
-     "pinyin": "gè zhǒng",
-     "pos": "pron.",
-     "en": "all kinds of"
+     "en": "other, the others",
+     "id": "jinbu5-u1-5:6"
     },
     {
      "hanzi": "选择",
      "pinyin": "xuǎn zé",
      "pos": "v./n.",
-     "en": "to choose; choice"
-    },
+     "en": "to choose; choice",
+     "id": "jinbu5-u1-5:8"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-6a",
+   "title": "进步5 U1.6 · 墨尔本还是伦敦？ Melbourne or London? · 1",
+   "words": [
     {
      "hanzi": "例子",
      "pinyin": "lì zi",
      "pos": "n.",
-     "en": "example"
+     "en": "example",
+     "id": "jinbu5-u1-5:9"
     },
     {
      "hanzi": "举例",
      "pinyin": "jǔ lì",
      "pos": "v.",
-     "en": "to give an example (举个例子 for example)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u1-6",
-   "title": "进步5 U1.6 · 墨尔本还是伦敦？ Melbourne or London?",
-   "words": [
+     "en": "to give an example (举个例子 for example)",
+     "id": "jinbu5-u1-5:10"
+    },
     {
      "hanzi": "看得见",
      "pinyin": "kàn de jiàn",
      "pos": "phr.",
-     "en": "can see (看不见 can't see)"
+     "en": "can see (看不见 can't see)",
+     "id": "jinbu5-u1-6:0"
     },
     {
      "hanzi": "室友",
      "pinyin": "shì yǒu",
      "pos": "n.",
-     "en": "flatmate, roommate"
+     "en": "flatmate, roommate",
+     "id": "jinbu5-u1-6:1"
     },
     {
      "hanzi": "全",
      "pinyin": "quán",
      "pos": "adj.",
-     "en": "whole, all (全伦敦 the whole of London)"
+     "en": "whole, all (全伦敦 the whole of London)",
+     "id": "jinbu5-u1-6:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-6b",
+   "title": "进步5 U1.6 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
+    {
+     "hanzi": "完全",
+     "pinyin": "wán quán",
+     "pos": "adv.",
+     "en": "completely",
+     "id": "jinbu5-u1-3:6"
     },
     {
      "hanzi": "吹",
      "pinyin": "chuī",
      "pos": "v.",
-     "en": "to blow; to brag (不是我吹 I'm not bragging, but…)"
+     "en": "to blow; to brag (不是我吹 I'm not bragging, but…)",
+     "id": "jinbu5-u1-6:3"
     },
     {
      "hanzi": "讨论",
      "pinyin": "tǎo lùn",
      "pos": "v.",
-     "en": "to discuss"
+     "en": "to discuss",
+     "id": "jinbu5-u1-6:4"
     },
     {
      "hanzi": "这还用问",
      "pinyin": "zhè hái yòng wèn",
      "pos": "phr.",
-     "en": "need you ask? (of course)"
-    },
-    {
-     "hanzi": "各地",
-     "pinyin": "gè dì",
-     "pos": "n.",
-     "en": "everywhere (世界各地 all over the world)"
+     "en": "need you ask? (of course)",
+     "id": "jinbu5-u1-6:5",
+     "parts": [
+      "这",
+      "还",
+      "用",
+      "问"
+     ]
     },
     {
      "hanzi": "各",
      "pinyin": "gè",
      "pos": "pron.",
-     "en": "each, every"
+     "en": "each, every",
+     "id": "jinbu5-u1-6:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-6c",
+   "title": "进步5 U1.6 · 墨尔本还是伦敦？ Melbourne or London? · 3",
+   "words": [
+    {
+     "hanzi": "各有各的好",
+     "pinyin": "gè yǒu gè de hǎo",
+     "pos": "phr.",
+     "en": "each has its good points",
+     "id": "jinbu5-u1-2:9",
+     "parts": [
+      "各",
+      "有",
+      "的",
+      "好"
+     ]
+    },
+    {
+     "hanzi": "各种",
+     "pinyin": "gè zhǒng",
+     "pos": "pron.",
+     "en": "all kinds of",
+     "id": "jinbu5-u1-5:7"
+    },
+    {
+     "hanzi": "各地",
+     "pinyin": "gè dì",
+     "pos": "n.",
+     "en": "everywhere (世界各地 all over the world)",
+     "id": "jinbu5-u1-6:6"
     },
     {
      "hanzi": "意大利",
      "pinyin": "Yì dà lì",
      "pos": "n.",
-     "en": "Italy"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u1-7",
-   "title": "进步5 U1.7 · 墨尔本还是伦敦？ Melbourne or London?",
-   "words": [
+     "en": "Italy",
+     "id": "jinbu5-u1-6:8"
+    },
     {
      "hanzi": "希腊",
      "pinyin": "Xī là",
      "pos": "n.",
-     "en": "Greece"
-    },
+     "en": "Greece",
+     "id": "jinbu5-u1-7:0"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-7a",
+   "title": "进步5 U1.7 · 墨尔本还是伦敦？ Melbourne or London? · 1",
+   "words": [
     {
      "hanzi": "越南",
      "pinyin": "Yuè nán",
      "pos": "n.",
-     "en": "Vietnam"
+     "en": "Vietnam",
+     "id": "jinbu5-u1-7:1"
     },
     {
      "hanzi": "淘金",
      "pinyin": "táo jīn",
      "pos": "v.",
-     "en": "to pan for gold (淘金的时候 in the gold rush)"
+     "en": "to pan for gold (淘金的时候 in the gold rush)",
+     "id": "jinbu5-u1-7:2"
     },
     {
      "hanzi": "华人",
      "pinyin": "huá rén",
      "pos": "n.",
-     "en": "ethnic Chinese, Chinese people (especially outside China)"
+     "en": "ethnic Chinese, Chinese people (especially outside China)",
+     "id": "jinbu5-u1-7:3"
     },
     {
      "hanzi": "建",
      "pinyin": "jiàn",
      "pos": "v.",
-     "en": "to build"
+     "en": "to build",
+     "id": "jinbu5-u1-7:4"
     },
     {
      "hanzi": "还真",
      "pinyin": "hái zhēn",
      "pos": "adv.",
-     "en": "really, honestly (我还真不知道 I honestly didn't know)"
-    },
+     "en": "really, honestly (我还真不知道 I honestly didn't know)",
+     "id": "jinbu5-u1-7:5",
+     "parts": [
+      "还",
+      "真"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-7b",
+   "title": "进步5 U1.7 · 墨尔本还是伦敦？ Melbourne or London? · 2",
+   "words": [
     {
      "hanzi": "受不了",
      "pinyin": "shòu bu liǎo",
      "pos": "phr.",
-     "en": "can't stand, unbearable (热得受不了 unbearably hot)"
+     "en": "can't stand, unbearable (热得受不了 unbearably hot)",
+     "id": "jinbu5-u1-7:6"
     },
     {
      "hanzi": "那倒是",
      "pinyin": "nà dào shì",
      "pos": "phr.",
-     "en": "that's true, fair enough"
+     "en": "that's true, fair enough",
+     "id": "jinbu5-u1-7:7",
+     "parts": [
+      "那",
+      "倒",
+      "是"
+     ]
     },
     {
      "hanzi": "有时候",
      "pinyin": "yǒu shí hou",
      "pos": "adv.",
-     "en": "sometimes"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u1-8",
-   "title": "进步5 U1.8 · 墨尔本还是伦敦？ Melbourne or London?",
-   "words": [
-    {
-     "hanzi": "常",
-     "pinyin": "cháng",
-     "pos": "adv.",
-     "en": "often (常说 always saying)"
+     "en": "sometimes",
+     "id": "jinbu5-u1-7:8"
     },
     {
      "hanzi": "移民",
      "pinyin": "yí mín",
      "pos": "n./v.",
-     "en": "immigrant; to emigrate"
+     "en": "immigrant; to emigrate",
+     "id": "jinbu5-u1-8:1"
     },
     {
      "hanzi": "人口",
      "pinyin": "rén kǒu",
      "pos": "n.",
-     "en": "population"
-    },
+     "en": "population",
+     "id": "jinbu5-u1-8:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u1-8a",
+   "title": "进步5 U1.8 · 墨尔本还是伦敦？ Melbourne or London?",
+   "words": [
     {
      "hanzi": "比不上",
      "pinyin": "bǐ bu shàng",
      "pos": "phr.",
-     "en": "can't compare with, not as good as"
+     "en": "can't compare with, not as good as",
+     "id": "jinbu5-u1-8:3"
     },
     {
      "hanzi": "宜居",
      "pinyin": "yí jū",
      "pos": "adj.",
-     "en": "liveable, good to live in"
+     "en": "liveable, good to live in",
+     "id": "jinbu5-u1-8:4"
     },
     {
      "hanzi": "金子",
      "pinyin": "jīn zi",
      "pos": "n.",
-     "en": "gold"
+     "en": "gold",
+     "id": "jinbu5-u1-8:5"
     },
     {
      "hanzi": "欧洲",
      "pinyin": "Ōu zhōu",
      "pos": "n.",
-     "en": "Europe"
+     "en": "Europe",
+     "id": "jinbu5-u1-8:6"
     },
     {
      "hanzi": "美食",
      "pinyin": "měi shí",
      "pos": "n.",
-     "en": "good food, delicious food"
+     "en": "good food, delicious food",
+     "id": "jinbu5-u1-8:7"
     }
    ]
   },
   {
-   "id": "jinbu5-u2-1",
-   "title": "进步5 U2.1 · 汉字是怎么造出来的？ How were characters made?",
+   "id": "jinbu5-u2-1a",
+   "title": "进步5 U2.1 · 汉字是怎么造出来的？ How were characters made? · 1",
    "words": [
     {
      "hanzi": "班",
      "pinyin": "bān",
      "pos": "n.",
-     "en": "class (at school) (我们班 our class) (new meaning)"
+     "en": "class (at school) (我们班 our class) (new meaning)",
+     "id": "jinbu5-u2-1:0"
     },
     {
      "hanzi": "老外",
      "pinyin": "lǎo wài",
      "pos": "n.",
-     "en": "foreigner (informal)"
+     "en": "foreigner (informal)",
+     "id": "jinbu5-u2-1:1"
     },
     {
      "hanzi": "年纪",
      "pinyin": "nián jì",
      "pos": "n.",
-     "en": "age (年纪大 old)"
+     "en": "age (年纪大 old)",
+     "id": "jinbu5-u2-1:2"
     },
     {
      "hanzi": "拆",
      "pinyin": "chāi",
      "pos": "v.",
-     "en": "to take apart; to open (a present)"
+     "en": "to take apart; to open (a present)",
+     "id": "jinbu5-u2-1:3"
     },
     {
      "hanzi": "词",
      "pinyin": "cí",
      "pos": "n.",
-     "en": "word"
-    },
+     "en": "word",
+     "id": "jinbu5-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-1b",
+   "title": "进步5 U2.1 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "组成",
      "pinyin": "zǔ chéng",
      "pos": "v.",
-     "en": "to make up, be made up of"
+     "en": "to make up, be made up of",
+     "id": "jinbu5-u2-1:5"
     },
     {
      "hanzi": "电",
      "pinyin": "diàn",
      "pos": "n.",
-     "en": "electricity"
+     "en": "electricity",
+     "id": "jinbu5-u2-1:6"
     },
     {
      "hanzi": "脑",
      "pinyin": "nǎo",
      "pos": "n.",
-     "en": "brain"
+     "en": "brain",
+     "id": "jinbu5-u2-1:7"
     },
     {
      "hanzi": "机器",
      "pinyin": "jī qì",
      "pos": "n.",
-     "en": "machine"
+     "en": "machine",
+     "id": "jinbu5-u2-1:8"
     },
     {
      "hanzi": "机",
      "pinyin": "jī",
      "pos": "n.",
-     "en": "machine (in words: 手机, 飞机, 相机)"
+     "en": "machine (in words: 手机, 飞机, 相机)",
+     "id": "jinbu5-u2-1:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u2-2",
-   "title": "进步5 U2.2 · 汉字是怎么造出来的？ How were characters made?",
+   "id": "jinbu5-u2-2a",
+   "title": "进步5 U2.2 · 汉字是怎么造出来的？ How were characters made? · 1",
    "words": [
     {
      "hanzi": "火",
      "pinyin": "huǒ",
      "pos": "n.",
-     "en": "fire"
+     "en": "fire",
+     "id": "jinbu5-u2-2:0"
     },
     {
      "hanzi": "烧",
      "pinyin": "shāo",
      "pos": "v.",
-     "en": "to burn"
+     "en": "to burn",
+     "id": "jinbu5-u2-2:1"
     },
     {
      "hanzi": "熊",
      "pinyin": "xióng",
      "pos": "n.",
-     "en": "bear"
+     "en": "bear",
+     "id": "jinbu5-u2-2:2"
     },
     {
      "hanzi": "猫",
      "pinyin": "māo",
      "pos": "n.",
-     "en": "cat"
+     "en": "cat",
+     "id": "jinbu5-u2-2:3"
     },
     {
      "hanzi": "问得好",
      "pinyin": "wèn de hǎo",
      "pos": "phr.",
-     "en": "good question"
-    },
+     "en": "good question",
+     "id": "jinbu5-u2-2:4",
+     "parts": [
+      "问",
+      "得",
+      "好"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-2b",
+   "title": "进步5 U2.2 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "造",
      "pinyin": "zào",
      "pos": "v.",
-     "en": "to make, create (造字 create characters)"
+     "en": "to make, create (造字 create characters)",
+     "id": "jinbu5-u2-2:5"
     },
     {
      "hanzi": "影",
      "pinyin": "yǐng",
      "pos": "n.",
-     "en": "shadow, image (电影 'electric shadows', film)"
+     "en": "shadow, image (电影 'electric shadows', film)",
+     "id": "jinbu5-u2-2:6"
     },
     {
      "hanzi": "木",
      "pinyin": "mù",
      "pos": "n.",
-     "en": "wood, tree (in writing)"
+     "en": "wood, tree (in writing)",
+     "id": "jinbu5-u2-2:7"
     },
     {
      "hanzi": "心",
      "pinyin": "xīn",
      "pos": "n.",
-     "en": "heart"
+     "en": "heart",
+     "id": "jinbu5-u2-2:8"
     },
     {
      "hanzi": "森",
      "pinyin": "sēn",
      "pos": "adj.",
-     "en": "full of trees (in 森林 forest)"
+     "en": "full of trees (in 森林 forest)",
+     "id": "jinbu5-u2-2:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u2-3",
-   "title": "进步5 U2.3 · 汉字是怎么造出来的？ How were characters made?",
+   "id": "jinbu5-u2-3a",
+   "title": "进步5 U2.3 · 汉字是怎么造出来的？ How were characters made? · 1",
    "words": [
     {
      "hanzi": "休",
      "pinyin": "xiū",
      "pos": "v.",
-     "en": "to rest (in 休息)"
+     "en": "to rest (in 休息)",
+     "id": "jinbu5-u2-3:0"
     },
     {
      "hanzi": "明",
      "pinyin": "míng",
      "pos": "adj.",
-     "en": "bright (in 明天, 明白)"
+     "en": "bright (in 明天, 明白)",
+     "id": "jinbu5-u2-3:1"
     },
     {
      "hanzi": "两边",
      "pinyin": "liǎng biān",
      "pos": "n.",
-     "en": "both sides"
+     "en": "both sides",
+     "id": "jinbu5-u2-3:2"
     },
     {
      "hanzi": "意义",
      "pinyin": "yì yì",
      "pos": "n.",
-     "en": "meaning, significance"
+     "en": "meaning, significance",
+     "id": "jinbu5-u2-3:3"
     },
     {
      "hanzi": "森林",
      "pinyin": "sēn lín",
      "pos": "n.",
-     "en": "forest"
-    },
+     "en": "forest",
+     "id": "jinbu5-u2-3:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-3b",
+   "title": "进步5 U2.3 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "棵",
      "pinyin": "kē",
      "pos": "m.",
-     "en": "for trees and plants (一棵树 a tree)"
+     "en": "for trees and plants (一棵树 a tree)",
+     "id": "jinbu5-u2-3:5"
     },
     {
      "hanzi": "象形字",
      "pinyin": "xiàng xíng zì",
      "pos": "n.",
-     "en": "pictograph, a character that began as a picture"
+     "en": "pictograph, a character that began as a picture",
+     "id": "jinbu5-u2-3:6"
     },
     {
      "hanzi": "形声字",
      "pinyin": "xíng shēng zì",
      "pos": "n.",
-     "en": "a character with a meaning part and a sound part"
+     "en": "a character with a meaning part and a sound part",
+     "id": "jinbu5-u2-3:7"
     },
     {
      "hanzi": "表示",
      "pinyin": "biǎo shì",
      "pos": "v.",
-     "en": "to show, stand for, mean"
+     "en": "to show, stand for, mean",
+     "id": "jinbu5-u2-3:8"
     },
     {
      "hanzi": "读音",
      "pinyin": "dú yīn",
      "pos": "n.",
-     "en": "pronunciation, how a character is read"
+     "en": "pronunciation, how a character is read",
+     "id": "jinbu5-u2-3:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u2-4",
-   "title": "进步5 U2.4 · 汉字是怎么造出来的？ How were characters made?",
+   "id": "jinbu5-u2-4a",
+   "title": "进步5 U2.4 · 汉字是怎么造出来的？ How were characters made? · 1",
    "words": [
     {
      "hanzi": "狗",
      "pinyin": "gǒu",
      "pos": "n.",
-     "en": "dog"
+     "en": "dog",
+     "id": "jinbu5-u2-4:0"
     },
     {
      "hanzi": "牛",
      "pinyin": "niú",
      "pos": "n.",
-     "en": "cow, ox"
+     "en": "cow, ox",
+     "id": "jinbu5-u2-4:1"
     },
     {
      "hanzi": "部首",
      "pinyin": "bù shǒu",
      "pos": "n.",
-     "en": "radical (the part a dictionary sorts a character by)"
+     "en": "radical (the part a dictionary sorts a character by)",
+     "id": "jinbu5-u2-4:2"
     },
     {
      "hanzi": "笔画",
      "pinyin": "bǐ huà",
      "pos": "n.",
-     "en": "stroke (of a character)"
+     "en": "stroke (of a character)",
+     "id": "jinbu5-u2-4:3"
     },
     {
      "hanzi": "组词",
      "pinyin": "zǔ cí",
      "pos": "v.",
-     "en": "to make words (with a character)"
-    },
+     "en": "to make words (with a character)",
+     "id": "jinbu5-u2-4:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-4b",
+   "title": "进步5 U2.4 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "学习",
      "pinyin": "xué xí",
      "pos": "v./n.",
-     "en": "to study, learn; study"
+     "en": "to study, learn; study",
+     "id": "jinbu5-u2-4:5"
     },
     {
      "hanzi": "火山",
      "pinyin": "huǒ shān",
      "pos": "n.",
-     "en": "volcano"
+     "en": "volcano",
+     "id": "jinbu5-u2-4:6"
     },
     {
      "hanzi": "电灯",
      "pinyin": "diàn dēng",
      "pos": "n.",
-     "en": "electric light"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u2-5",
-   "title": "进步5 U2.5 · 汉字是怎么造出来的？ How were characters made?",
-   "words": [
+     "en": "electric light",
+     "id": "jinbu5-u2-4:7"
+    },
     {
      "hanzi": "广东话",
      "pinyin": "Guǎng dōng huà",
      "pos": "n.",
-     "en": "Cantonese"
+     "en": "Cantonese",
+     "id": "jinbu5-u2-5:0"
     },
     {
      "hanzi": "普通话",
      "pinyin": "pǔ tōng huà",
      "pos": "n.",
-     "en": "Mandarin, standard Chinese"
-    },
+     "en": "Mandarin, standard Chinese",
+     "id": "jinbu5-u2-5:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-5a",
+   "title": "进步5 U2.5 · 汉字是怎么造出来的？ How were characters made? · 1",
+   "words": [
     {
      "hanzi": "怪不得",
      "pinyin": "guài bu de",
      "pos": "adv.",
-     "en": "no wonder"
+     "en": "no wonder",
+     "id": "jinbu5-u2-5:2"
     },
     {
      "hanzi": "念",
      "pinyin": "niàn",
      "pos": "v.",
-     "en": "to read aloud, pronounce"
+     "en": "to read aloud, pronounce",
+     "id": "jinbu5-u2-5:3"
     },
     {
      "hanzi": "原来",
      "pinyin": "yuán lái",
      "pos": "adv.",
-     "en": "so (that's how it is) (原来是这样 I see)"
+     "en": "so (that's how it is) (原来是这样 I see)",
+     "id": "jinbu5-u2-5:4"
     },
     {
      "hanzi": "眼里",
      "pinyin": "yǎn li",
      "pos": "n.",
-     "en": "in (someone's) eyes"
+     "en": "in (someone's) eyes",
+     "id": "jinbu5-u2-5:5"
     },
     {
      "hanzi": "永远",
      "pinyin": "yǒng yuǎn",
      "pos": "adv.",
-     "en": "for ever, always"
-    },
+     "en": "for ever, always",
+     "id": "jinbu5-u2-5:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-5b",
+   "title": "进步5 U2.5 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "老虎",
      "pinyin": "lǎo hǔ",
      "pos": "n.",
-     "en": "tiger"
+     "en": "tiger",
+     "id": "jinbu5-u2-5:7"
     },
     {
      "hanzi": "老鼠",
      "pinyin": "lǎo shǔ",
      "pos": "n.",
-     "en": "mouse, rat"
+     "en": "mouse, rat",
+     "id": "jinbu5-u2-5:8"
     },
     {
      "hanzi": "词头",
      "pinyin": "cí tóu",
      "pos": "n.",
-     "en": "prefix"
+     "en": "prefix",
+     "id": "jinbu5-u2-5:9"
     },
     {
      "hanzi": "词尾",
      "pinyin": "cí wěi",
      "pos": "n.",
-     "en": "suffix"
+     "en": "suffix",
+     "id": "jinbu5-u2-5:10"
     },
     {
      "hanzi": "家",
      "pinyin": "jiā",
      "pos": "suffix",
-     "en": "-ist, expert (画家 painter, 作家 writer) (new meaning)"
+     "en": "-ist, expert (画家 painter, 作家 writer) (new meaning)",
+     "id": "jinbu5-u2-5:11"
     }
    ]
   },
   {
-   "id": "jinbu5-u2-6",
-   "title": "进步5 U2.6 · 汉字是怎么造出来的？ How were characters made?",
+   "id": "jinbu5-u2-6a",
+   "title": "进步5 U2.6 · 汉字是怎么造出来的？ How were characters made? · 1",
    "words": [
     {
      "hanzi": "科学",
      "pinyin": "kē xué",
      "pos": "n.",
-     "en": "science"
+     "en": "science",
+     "id": "jinbu5-u2-6:0"
     },
     {
      "hanzi": "科学家",
      "pinyin": "kē xué jiā",
      "pos": "n.",
-     "en": "scientist"
+     "en": "scientist",
+     "id": "jinbu5-u2-6:1"
     },
     {
      "hanzi": "者",
      "pinyin": "zhě",
      "pos": "suffix",
-     "en": "someone who… (作者 author, 读者 reader)"
+     "en": "someone who… (作者 author, 读者 reader)",
+     "id": "jinbu5-u2-6:2"
     },
     {
      "hanzi": "读者",
      "pinyin": "dú zhě",
      "pos": "n.",
-     "en": "reader"
+     "en": "reader",
+     "id": "jinbu5-u2-6:3"
     },
     {
      "hanzi": "记者",
      "pinyin": "jì zhě",
      "pos": "n.",
-     "en": "journalist, reporter"
-    },
+     "en": "journalist, reporter",
+     "id": "jinbu5-u2-6:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-6b",
+   "title": "进步5 U2.6 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "化",
      "pinyin": "huà",
      "pos": "suffix",
-     "en": "-ise, -isation (现代化 modernisation)"
+     "en": "-ise, -isation (现代化 modernisation)",
+     "id": "jinbu5-u2-6:5"
     },
     {
      "hanzi": "性",
      "pinyin": "xìng",
      "pos": "suffix",
-     "en": "-ness, -ity (重要性 importance)"
+     "en": "-ness, -ity (重要性 importance)",
+     "id": "jinbu5-u2-6:6"
     },
     {
      "hanzi": "加上",
      "pinyin": "jiā shàng",
      "pos": "v.",
-     "en": "to add, plus"
+     "en": "to add, plus",
+     "id": "jinbu5-u2-6:7"
     },
     {
      "hanzi": "现代化",
      "pinyin": "xiàn dài huà",
      "pos": "n./adj.",
-     "en": "modernisation; modern(ised)"
+     "en": "modernisation; modern(ised)",
+     "id": "jinbu5-u2-6:8"
     },
     {
      "hanzi": "国际",
      "pinyin": "guó jì",
      "pos": "adj.",
-     "en": "international"
-    },
+     "en": "international",
+     "id": "jinbu5-u2-6:9"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-7a",
+   "title": "进步5 U2.7 · 汉字是怎么造出来的？ How were characters made? · 1",
+   "words": [
     {
      "hanzi": "国际化",
      "pinyin": "guó jì huà",
      "pos": "adj./n.",
-     "en": "international, cosmopolitan; internationalisation"
+     "en": "international, cosmopolitan; internationalisation",
+     "id": "jinbu5-u2-6:10"
     },
     {
      "hanzi": "重要性",
      "pinyin": "zhòng yào xìng",
      "pos": "n.",
-     "en": "importance"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u2-7",
-   "title": "进步5 U2.7 · 汉字是怎么造出来的？ How were characters made?",
-   "words": [
+     "en": "importance",
+     "id": "jinbu5-u2-6:11"
+    },
     {
      "hanzi": "可能性",
      "pinyin": "kě néng xìng",
      "pos": "n.",
-     "en": "possibility, likelihood"
+     "en": "possibility, likelihood",
+     "id": "jinbu5-u2-7:0"
     },
     {
      "hanzi": "猜出",
      "pinyin": "cāi chū",
      "pos": "v.",
-     "en": "to work out, guess (correctly) (猜出意思来 work out the meaning)"
+     "en": "to work out, guess (correctly) (猜出意思来 work out the meaning)",
+     "id": "jinbu5-u2-7:1",
+     "parts": [
+      "猜",
+      "出"
+     ]
     },
     {
      "hanzi": "艺术家",
      "pinyin": "yì shù jiā",
      "pos": "n.",
-     "en": "artist"
-    },
+     "en": "artist",
+     "id": "jinbu5-u2-7:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-7b",
+   "title": "进步5 U2.7 · 汉字是怎么造出来的？ How were characters made? · 2",
+   "words": [
     {
      "hanzi": "专家",
      "pinyin": "zhuān jiā",
      "pos": "n.",
-     "en": "expert"
+     "en": "expert",
+     "id": "jinbu5-u2-7:3"
     },
     {
      "hanzi": "爱好者",
      "pinyin": "ài hào zhě",
      "pos": "n.",
-     "en": "fan, enthusiast (音乐爱好者 music lover)"
+     "en": "fan, enthusiast (音乐爱好者 music lover)",
+     "id": "jinbu5-u2-7:4"
     },
     {
      "hanzi": "安全性",
      "pinyin": "ān quán xìng",
      "pos": "n.",
-     "en": "safety"
+     "en": "safety",
+     "id": "jinbu5-u2-7:5"
     },
     {
      "hanzi": "全球化",
      "pinyin": "quán qiú huà",
      "pos": "n.",
-     "en": "globalisation"
-    },
+     "en": "globalisation",
+     "id": "jinbu5-u2-7:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u2-7c",
+   "title": "进步5 U2.7 · 汉字是怎么造出来的？ How were characters made? · 3",
+   "words": [
     {
      "hanzi": "名词",
      "pinyin": "míng cí",
      "pos": "n.",
-     "en": "noun"
+     "en": "noun",
+     "id": "jinbu5-u2-7:7"
     },
     {
      "hanzi": "动词",
      "pinyin": "dòng cí",
      "pos": "n.",
-     "en": "verb"
+     "en": "verb",
+     "id": "jinbu5-u2-7:8"
     },
     {
      "hanzi": "形容词",
      "pinyin": "xíng róng cí",
      "pos": "n.",
-     "en": "adjective"
+     "en": "adjective",
+     "id": "jinbu5-u2-7:9"
     },
     {
      "hanzi": "老百姓",
      "pinyin": "lǎo bǎi xìng",
      "pos": "n.",
-     "en": "ordinary people"
+     "en": "ordinary people",
+     "id": "jinbu5-u2-7:10"
     }
    ]
   },
   {
-   "id": "jinbu5-u3-1",
-   "title": "进步5 U3.1 · 送什么礼物好？ What makes a good present?",
+   "id": "jinbu5-u3-1a",
+   "title": "进步5 U3.1 · 送什么礼物好？ What makes a good present? · 1",
    "words": [
     {
      "hanzi": "实用",
      "pinyin": "shí yòng",
      "pos": "adj.",
-     "en": "practical, useful"
+     "en": "practical, useful",
+     "id": "jinbu5-u3-1:0"
     },
     {
      "hanzi": "钟",
      "pinyin": "zhōng",
      "pos": "n.",
-     "en": "clock"
+     "en": "clock",
+     "id": "jinbu5-u3-1:1"
     },
     {
      "hanzi": "只",
      "pinyin": "zhī",
      "pos": "m.",
-     "en": "for animals and birds (一只鸡 a chicken) (new meaning)"
+     "en": "for animals and birds (一只鸡 a chicken) (new meaning)",
+     "id": "jinbu5-u3-1:2"
     },
     {
      "hanzi": "金色",
      "pinyin": "jīn sè",
      "pos": "n.",
-     "en": "gold (colour)"
+     "en": "gold (colour)",
+     "id": "jinbu5-u3-1:3"
     },
     {
      "hanzi": "鸡年",
      "pinyin": "jī nián",
      "pos": "n.",
-     "en": "the Year of the Rooster"
-    },
+     "en": "the Year of the Rooster",
+     "id": "jinbu5-u3-1:4",
+     "parts": [
+      "鸡",
+      "年"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-1b",
+   "title": "进步5 U3.1 · 送什么礼物好？ What makes a good present? · 2",
+   "words": [
     {
      "hanzi": "千万",
      "pinyin": "qiān wàn",
      "pos": "adv.",
-     "en": "whatever you do, be sure to (千万别 never, ever)"
+     "en": "whatever you do, be sure to (千万别 never, ever)",
+     "id": "jinbu5-u3-1:5"
     },
     {
      "hanzi": "老人",
      "pinyin": "lǎo rén",
      "pos": "n.",
-     "en": "old person, the elderly"
+     "en": "old person, the elderly",
+     "id": "jinbu5-u3-1:6"
     },
     {
      "hanzi": "送终",
      "pinyin": "sòng zhōng",
      "pos": "v.",
-     "en": "to be with a parent or elder at the end of their life"
+     "en": "to be with a parent or elder at the end of their life",
+     "id": "jinbu5-u3-1:7"
     },
     {
      "hanzi": "去世",
      "pinyin": "qù shì",
      "pos": "v.",
-     "en": "to die, pass away"
+     "en": "to die, pass away",
+     "id": "jinbu5-u3-1:8"
     },
     {
      "hanzi": "好险",
      "pinyin": "hǎo xiǎn",
      "pos": "phr.",
-     "en": "that was close!"
+     "en": "that was close!",
+     "id": "jinbu5-u3-1:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u3-2",
-   "title": "进步5 U3.2 · 送什么礼物好？ What makes a good present?",
+   "id": "jinbu5-u3-2a",
+   "title": "进步5 U3.2 · 送什么礼物好？ What makes a good present? · 1",
    "words": [
     {
      "hanzi": "把",
      "pinyin": "bǎ",
      "pos": "m.",
-     "en": "for things with a handle (一把伞 an umbrella) (new meaning)"
+     "en": "for things with a handle (一把伞 an umbrella) (new meaning)",
+     "id": "jinbu5-u3-2:0"
     },
     {
      "hanzi": "用得上",
      "pinyin": "yòng de shàng",
      "pos": "phr.",
-     "en": "will come in handy, can use"
+     "en": "will come in handy, can use",
+     "id": "jinbu5-u3-2:1"
     },
     {
      "hanzi": "散",
      "pinyin": "sàn",
      "pos": "v.",
-     "en": "to break up, scatter"
+     "en": "to break up, scatter",
+     "id": "jinbu5-u3-2:2"
     },
     {
      "hanzi": "分开",
      "pinyin": "fēn kāi",
      "pos": "v.",
-     "en": "to separate, split up"
+     "en": "to separate, split up",
+     "id": "jinbu5-u3-2:3"
     },
     {
      "hanzi": "总",
      "pinyin": "zǒng",
      "pos": "adv.",
-     "en": "surely, at least (总可以吧？ surely that's OK?)"
-    },
+     "en": "surely, at least (总可以吧？ surely that's OK?)",
+     "id": "jinbu5-u3-2:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-2b",
+   "title": "进步5 U3.2 · 送什么礼物好？ What makes a good present? · 2",
+   "words": [
     {
      "hanzi": "新鲜",
      "pinyin": "xīn xiān",
      "pos": "adj.",
-     "en": "fresh"
+     "en": "fresh",
+     "id": "jinbu5-u3-2:5"
     },
     {
      "hanzi": "梨",
      "pinyin": "lí",
      "pos": "n.",
-     "en": "pear"
+     "en": "pear",
+     "id": "jinbu5-u3-2:6"
     },
     {
      "hanzi": "离",
      "pinyin": "lí",
      "pos": "v.",
-     "en": "to leave, be apart (new meaning)"
+     "en": "to leave, be apart (new meaning)",
+     "id": "jinbu5-u3-2:7"
     },
     {
      "hanzi": "橘子",
      "pinyin": "jú zi",
      "pos": "n.",
-     "en": "mandarin, tangerine"
+     "en": "mandarin, tangerine",
+     "id": "jinbu5-u3-2:8"
     },
     {
      "hanzi": "橘",
      "pinyin": "jú",
      "pos": "n.",
-     "en": "mandarin (in writing, and in 橘子)"
+     "en": "mandarin (in writing, and in 橘子)",
+     "id": "jinbu5-u3-2:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u3-3",
-   "title": "进步5 U3.3 · 送什么礼物好？ What makes a good present?",
+   "id": "jinbu5-u3-3a",
+   "title": "进步5 U3.3 · 送什么礼物好？ What makes a good present? · 1",
    "words": [
     {
      "hanzi": "吉",
      "pinyin": "jí",
      "pos": "adj.",
-     "en": "lucky (in 吉利)"
+     "en": "lucky (in 吉利)",
+     "id": "jinbu5-u3-3:0"
     },
     {
      "hanzi": "你又来了",
      "pinyin": "nǐ yòu lái le",
      "pos": "phr.",
-     "en": "there you go again"
+     "en": "there you go again",
+     "id": "jinbu5-u3-3:1",
+     "parts": [
+      "你",
+      "又",
+      "来",
+      "了"
+     ]
     },
     {
      "hanzi": "好事成双",
      "pinyin": "hǎo shì chéng shuāng",
      "pos": "phr.",
-     "en": "good things come in pairs"
+     "en": "good things come in pairs",
+     "id": "jinbu5-u3-3:2"
     },
     {
      "hanzi": "换钱",
      "pinyin": "huàn qián",
      "pos": "v.",
-     "en": "to change money (换新钱 get new notes)"
-    },
-    {
-     "hanzi": "送礼",
-     "pinyin": "sòng lǐ",
-     "pos": "v.",
-     "en": "to give presents"
+     "en": "to change money (换新钱 get new notes)",
+     "id": "jinbu5-u3-3:3"
     },
     {
      "hanzi": "礼",
      "pinyin": "lǐ",
      "pos": "n.",
-     "en": "gift; courtesy"
+     "en": "gift; courtesy",
+     "id": "jinbu5-u3-3:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-3b",
+   "title": "进步5 U3.3 · 送什么礼物好？ What makes a good present? · 2",
+   "words": [
+    {
+     "hanzi": "送礼",
+     "pinyin": "sòng lǐ",
+     "pos": "v.",
+     "en": "to give presents",
+     "id": "jinbu5-u3-3:4"
     },
     {
      "hanzi": "双数",
      "pinyin": "shuāng shù",
      "pos": "n.",
-     "en": "even number"
+     "en": "even number",
+     "id": "jinbu5-u3-3:6"
     },
     {
      "hanzi": "单数",
      "pinyin": "dān shù",
      "pos": "n.",
-     "en": "odd number"
+     "en": "odd number",
+     "id": "jinbu5-u3-3:7"
     },
     {
      "hanzi": "数字",
      "pinyin": "shù zì",
      "pos": "n.",
-     "en": "number, figure"
+     "en": "number, figure",
+     "id": "jinbu5-u3-3:8"
     },
     {
      "hanzi": "谐音",
      "pinyin": "xié yīn",
      "pos": "n.",
-     "en": "a word that sounds like another, a pun"
+     "en": "a word that sounds like another, a pun",
+     "id": "jinbu5-u3-3:9"
     }
    ]
   },
   {
-   "id": "jinbu5-u3-4",
+   "id": "jinbu5-u3-4a",
    "title": "进步5 U3.4 · 送什么礼物好？ What makes a good present?",
    "words": [
     {
      "hanzi": "忌讳",
      "pinyin": "jì huì",
      "pos": "n./v.",
-     "en": "taboo; to avoid (as unlucky)"
+     "en": "taboo; to avoid (as unlucky)",
+     "id": "jinbu5-u3-4:0"
     },
     {
      "hanzi": "吉祥",
      "pinyin": "jí xiáng",
      "pos": "adj.",
-     "en": "lucky, auspicious"
+     "en": "lucky, auspicious",
+     "id": "jinbu5-u3-4:1"
     },
     {
      "hanzi": "茶叶",
      "pinyin": "chá yè",
      "pos": "n.",
-     "en": "tea (leaves)"
+     "en": "tea (leaves)",
+     "id": "jinbu5-u3-4:2"
     },
     {
      "hanzi": "巧克力",
      "pinyin": "qiǎo kè lì",
      "pos": "n.",
-     "en": "chocolate"
+     "en": "chocolate",
+     "id": "jinbu5-u3-4:3"
     },
     {
      "hanzi": "礼盒",
      "pinyin": "lǐ hé",
      "pos": "n.",
-     "en": "gift box"
-    },
+     "en": "gift box",
+     "id": "jinbu5-u3-4:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-5a",
+   "title": "进步5 U3.5 · 送什么礼物好？ What makes a good present? · 1",
+   "words": [
     {
      "hanzi": "包装",
      "pinyin": "bāo zhuāng",
      "pos": "n./v.",
-     "en": "wrapping, packaging; to wrap"
+     "en": "wrapping, packaging; to wrap",
+     "id": "jinbu5-u3-4:5"
     },
     {
      "hanzi": "剪刀",
      "pinyin": "jiǎn dāo",
      "pos": "n.",
-     "en": "scissors"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u3-5",
-   "title": "进步5 U3.5 · 送什么礼物好？ What makes a good present?",
-   "words": [
+     "en": "scissors",
+     "id": "jinbu5-u3-4:6"
+    },
     {
      "hanzi": "来就来吧",
      "pinyin": "lái jiù lái ba",
      "pos": "phr.",
-     "en": "you shouldn't have (来就来吧，还带什么东西 coming is enough, why bring anything?)"
+     "en": "you shouldn't have (来就来吧，还带什么东西 coming is enough, why bring anything?)",
+     "id": "jinbu5-u3-5:0",
+     "parts": [
+      "来",
+      "就",
+      "吧"
+     ]
     },
     {
      "hanzi": "身体健康",
      "pinyin": "shēn tǐ jiàn kāng",
      "pos": "phr.",
-     "en": "(wishing you) good health"
+     "en": "(wishing you) good health",
+     "id": "jinbu5-u3-5:1"
     },
     {
      "hanzi": "发财",
      "pinyin": "fā cái",
      "pos": "v.",
-     "en": "to get rich"
-    },
+     "en": "to get rich",
+     "id": "jinbu5-u3-5:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-5b",
+   "title": "进步5 U3.5 · 送什么礼物好？ What makes a good present? · 2",
+   "words": [
     {
      "hanzi": "乖",
      "pinyin": "guāi",
      "pos": "adj.",
-     "en": "good, well-behaved (of children)"
+     "en": "good, well-behaved (of children)",
+     "id": "jinbu5-u3-5:3"
     },
     {
      "hanzi": "当着",
      "pinyin": "dāng zhe",
      "pos": "phr.",
-     "en": "in front of (someone), in (someone's) presence (当着…的面)"
+     "en": "in front of (someone), in (someone's) presence (当着…的面)",
+     "id": "jinbu5-u3-5:4"
     },
     {
      "hanzi": "保管",
      "pinyin": "bǎo guǎn",
      "pos": "v.",
-     "en": "to look after, keep safe"
+     "en": "to look after, keep safe",
+     "id": "jinbu5-u3-5:5"
     },
     {
      "hanzi": "到手",
      "pinyin": "dào shǒu",
      "pos": "v.",
-     "en": "to get hold of, get your hands on"
+     "en": "to get hold of, get your hands on",
+     "id": "jinbu5-u3-5:6"
     },
     {
      "hanzi": "正想",
      "pinyin": "zhèng xiǎng",
      "pos": "phr.",
-     "en": "was just going to, have been meaning to"
-    },
+     "en": "was just going to, have been meaning to",
+     "id": "jinbu5-u3-5:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-5c",
+   "title": "进步5 U3.5 · 送什么礼物好？ What makes a good present? · 3",
+   "words": [
     {
      "hanzi": "看",
      "pinyin": "kàn",
      "pos": "v.",
-     "en": "to depend on (看关系 it depends on the relationship) (new meaning)"
-    },
-    {
-     "hanzi": "开玩笑",
-     "pinyin": "kāi wán xiào",
-     "pos": "v.",
-     "en": "to joke, be joking"
+     "en": "to depend on (看关系 it depends on the relationship) (new meaning)",
+     "id": "jinbu5-u3-5:8"
     },
     {
      "hanzi": "玩笑",
      "pinyin": "wán xiào",
      "pos": "n.",
-     "en": "joke"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u3-6",
-   "title": "进步5 U3.6 · 送什么礼物好？ What makes a good present?",
-   "words": [
+     "en": "joke",
+     "id": "jinbu5-u3-5:10"
+    },
+    {
+     "hanzi": "开玩笑",
+     "pinyin": "kāi wán xiào",
+     "pos": "v.",
+     "en": "to joke, be joking",
+     "id": "jinbu5-u3-5:9"
+    },
     {
      "hanzi": "当面",
      "pinyin": "dāng miàn",
      "pos": "adv.",
-     "en": "in person, to (someone's) face"
+     "en": "in person, to (someone's) face",
+     "id": "jinbu5-u3-6:0"
     },
     {
      "hanzi": "收礼",
      "pinyin": "shōu lǐ",
      "pos": "v.",
-     "en": "to accept a present"
-    },
+     "en": "to accept a present",
+     "id": "jinbu5-u3-6:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-6a",
+   "title": "进步5 U3.6 · 送什么礼物好？ What makes a good present? · 1",
+   "words": [
     {
      "hanzi": "情况",
      "pinyin": "qíng kuàng",
      "pos": "n.",
-     "en": "situation (看情况 it depends)"
+     "en": "situation (看情况 it depends)",
+     "id": "jinbu5-u3-6:2"
     },
     {
      "hanzi": "长寿",
      "pinyin": "cháng shòu",
      "pos": "adj./n.",
-     "en": "long-lived; long life"
+     "en": "long-lived; long life",
+     "id": "jinbu5-u3-6:3"
     },
     {
      "hanzi": "学习进步",
      "pinyin": "xué xí jìn bù",
      "pos": "phr.",
-     "en": "(wishing you) good progress at school"
+     "en": "(wishing you) good progress at school",
+     "id": "jinbu5-u3-6:4",
+     "parts": [
+      "学习",
+      "进步"
+     ]
     },
     {
      "hanzi": "心想事成",
      "pinyin": "xīn xiǎng shì chéng",
      "pos": "phr.",
-     "en": "may all your wishes come true"
+     "en": "may all your wishes come true",
+     "id": "jinbu5-u3-6:5"
     },
     {
      "hanzi": "好运",
      "pinyin": "hǎo yùn",
      "pos": "n.",
-     "en": "good luck"
-    },
+     "en": "good luck",
+     "id": "jinbu5-u3-6:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u3-6b",
+   "title": "进步5 U3.6 · 送什么礼物好？ What makes a good present? · 2",
+   "words": [
     {
      "hanzi": "新钱",
      "pinyin": "xīn qián",
      "pos": "n.",
-     "en": "new, crisp banknotes"
+     "en": "new, crisp banknotes",
+     "id": "jinbu5-u3-6:7"
     },
     {
      "hanzi": "大吉大利",
      "pinyin": "dà jí dà lì",
      "pos": "phr.",
-     "en": "good luck and good fortune (a New Year wish)"
+     "en": "good luck and good fortune (a New Year wish)",
+     "id": "jinbu5-u3-6:8"
     },
     {
      "hanzi": "碎",
      "pinyin": "suì",
      "pos": "v.",
-     "en": "to break into pieces"
+     "en": "to break into pieces",
+     "id": "jinbu5-u3-6:9"
     },
     {
      "hanzi": "岁岁平安",
      "pinyin": "suì suì píng ān",
      "pos": "phr.",
-     "en": "peace year after year (said when something breaks at New Year)"
+     "en": "peace year after year (said when something breaks at New Year)",
+     "id": "jinbu5-u3-6:10",
+     "parts": [
+      "岁",
+      "平安"
+     ]
     }
    ]
   },
   {
-   "id": "jinbu5-u4-1",
-   "title": "进步5 U4.1 · 谢谢你的礼物！ Thank you for the present!",
+   "id": "jinbu5-u4-1a",
+   "title": "进步5 U4.1 · 谢谢你的礼物！ Thank you for the present! · 1",
    "words": [
     {
      "hanzi": "全家",
      "pinyin": "quán jiā",
      "pos": "n.",
-     "en": "the whole family"
+     "en": "the whole family",
+     "id": "jinbu5-u4-1:0"
     },
     {
      "hanzi": "破费",
      "pinyin": "pò fèi",
      "pos": "v.",
-     "en": "to spend money (on someone) (让你破费了 you shouldn't have spent so much)"
+     "en": "to spend money (on someone) (让你破费了 you shouldn't have spent so much)",
+     "id": "jinbu5-u4-1:1"
     },
     {
      "hanzi": "值",
      "pinyin": "zhí",
      "pos": "v.",
-     "en": "to be worth (不值什么钱 it's not worth much)"
+     "en": "to be worth (不值什么钱 it's not worth much)",
+     "id": "jinbu5-u4-1:2"
     },
     {
      "hanzi": "小意思",
      "pinyin": "xiǎo yì si",
      "pos": "n.",
-     "en": "a small token, nothing much"
+     "en": "a small token, nothing much",
+     "id": "jinbu5-u4-1:3"
     },
     {
      "hanzi": "相册",
      "pinyin": "xiàng cè",
      "pos": "n.",
-     "en": "photo album"
-    },
+     "en": "photo album",
+     "id": "jinbu5-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-1b",
+   "title": "进步5 U4.1 · 谢谢你的礼物！ Thank you for the present! · 2",
+   "words": [
     {
      "hanzi": "选",
      "pinyin": "xuǎn",
      "pos": "v.",
-     "en": "to choose, pick"
+     "en": "to choose, pick",
+     "id": "jinbu5-u4-1:5"
     },
     {
      "hanzi": "有心",
      "pinyin": "yǒu xīn",
      "pos": "adj.",
-     "en": "thoughtful (你真有心 how thoughtful of you)"
+     "en": "thoughtful (你真有心 how thoughtful of you)",
+     "id": "jinbu5-u4-1:6"
     },
     {
      "hanzi": "织",
      "pinyin": "zhī",
      "pos": "v.",
-     "en": "to knit, weave"
+     "en": "to knit, weave",
+     "id": "jinbu5-u4-1:7"
     },
     {
      "hanzi": "珍贵",
      "pinyin": "zhēn guì",
      "pos": "adj.",
-     "en": "precious, valuable"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u4-2",
-   "title": "进步5 U4.2 · 谢谢你的礼物！ Thank you for the present!",
-   "words": [
+     "en": "precious, valuable",
+     "id": "jinbu5-u4-1:8"
+    },
     {
      "hanzi": "喜欢就好",
      "pinyin": "xǐ huan jiù hǎo",
      "pos": "phr.",
-     "en": "as long as you like it"
-    },
+     "en": "as long as you like it",
+     "id": "jinbu5-u4-2:0",
+     "parts": [
+      "喜欢",
+      "就",
+      "好"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-2a",
+   "title": "进步5 U4.2 · 谢谢你的礼物！ Thank you for the present! · 1",
+   "words": [
     {
      "hanzi": "见一面",
      "pinyin": "jiàn yī miàn",
      "pos": "phr.",
-     "en": "to see each other, meet up (once)"
+     "en": "to see each other, meet up (once)",
+     "id": "jinbu5-u4-2:1"
     },
     {
      "hanzi": "小心意",
      "pinyin": "xiǎo xīn yì",
      "pos": "n.",
-     "en": "a little something, a small token"
+     "en": "a little something, a small token",
+     "id": "jinbu5-u4-2:2",
+     "parts": [
+      "小",
+      "心意"
+     ]
     },
     {
      "hanzi": "每一站",
      "pinyin": "měi yī zhàn",
      "pos": "phr.",
-     "en": "every station, every stop"
+     "en": "every station, every stop",
+     "id": "jinbu5-u4-2:3"
     },
     {
      "hanzi": "珍惜",
      "pinyin": "zhēn xī",
      "pos": "v.",
-     "en": "to treasure, value"
+     "en": "to treasure, value",
+     "id": "jinbu5-u4-2:4"
     },
     {
      "hanzi": "纪念",
      "pinyin": "jì niàn",
      "pos": "n./v.",
-     "en": "keepsake, souvenir; to remember"
-    },
+     "en": "keepsake, souvenir; to remember",
+     "id": "jinbu5-u4-2:5"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-2b",
+   "title": "进步5 U4.2 · 谢谢你的礼物！ Thank you for the present! · 2",
+   "words": [
     {
      "hanzi": "回礼",
      "pinyin": "huí lǐ",
      "pos": "n./v.",
-     "en": "a present in return; to give one"
+     "en": "a present in return; to give one",
+     "id": "jinbu5-u4-2:6"
     },
     {
      "hanzi": "礼尚往来",
      "pinyin": "lǐ shàng wǎng lái",
      "pos": "phr.",
-     "en": "kindness should be returned"
+     "en": "kindness should be returned",
+     "id": "jinbu5-u4-2:7"
     },
     {
      "hanzi": "贺卡",
      "pinyin": "hè kǎ",
      "pos": "n.",
-     "en": "greeting card"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u4-3",
-   "title": "进步5 U4.3 · 谢谢你的礼物！ Thank you for the present!",
-   "words": [
+     "en": "greeting card",
+     "id": "jinbu5-u4-2:8"
+    },
     {
      "hanzi": "卡片",
      "pinyin": "kǎ piàn",
      "pos": "n.",
-     "en": "card"
+     "en": "card",
+     "id": "jinbu5-u4-3:0"
     },
     {
      "hanzi": "包装纸",
      "pinyin": "bāo zhuāng zhǐ",
      "pos": "n.",
-     "en": "wrapping paper"
-    },
+     "en": "wrapping paper",
+     "id": "jinbu5-u4-3:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-3a",
+   "title": "进步5 U4.3 · 谢谢你的礼物！ Thank you for the present!",
+   "words": [
     {
      "hanzi": "拆开",
      "pinyin": "chāi kāi",
      "pos": "v.",
-     "en": "to open (something wrapped)"
+     "en": "to open (something wrapped)",
+     "id": "jinbu5-u4-3:2"
     },
     {
      "hanzi": "双手",
      "pinyin": "shuāng shǒu",
      "pos": "n.",
-     "en": "both hands (用双手接 take it with both hands)"
+     "en": "both hands (用双手接 take it with both hands)",
+     "id": "jinbu5-u4-3:3"
     },
     {
      "hanzi": "推",
      "pinyin": "tuī",
      "pos": "v.",
-     "en": "to push; to turn down (推来推去 push it back and forth)"
+     "en": "to push; to turn down (推来推去 push it back and forth)",
+     "id": "jinbu5-u4-3:4"
     },
     {
      "hanzi": "实在",
      "pinyin": "shí zài",
      "pos": "adv.",
-     "en": "really, truly"
+     "en": "really, truly",
+     "id": "jinbu5-u4-3:5"
     },
     {
      "hanzi": "感激",
      "pinyin": "gǎn jī",
      "pos": "v.",
-     "en": "to be grateful"
-    },
+     "en": "to be grateful",
+     "id": "jinbu5-u4-3:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-4a",
+   "title": "进步5 U4.4 · 谢谢你的礼物！ Thank you for the present! · 1",
+   "words": [
     {
      "hanzi": "道谢",
      "pinyin": "dào xiè",
      "pos": "v.",
-     "en": "to say thank you"
+     "en": "to say thank you",
+     "id": "jinbu5-u4-3:7"
     },
     {
      "hanzi": "想起",
      "pinyin": "xiǎng qǐ",
      "pos": "v.",
-     "en": "to think of, remember (想起你 think of you)"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u4-4",
-   "title": "进步5 U4.4 · 谢谢你的礼物！ Thank you for the present!",
-   "words": [
+     "en": "to think of, remember (想起你 think of you)",
+     "id": "jinbu5-u4-3:8"
+    },
     {
      "hanzi": "算了",
      "pinyin": "suàn le",
      "pos": "phr.",
-     "en": "never mind, forget it"
+     "en": "never mind, forget it",
+     "id": "jinbu5-u4-4:0"
     },
     {
      "hanzi": "杯子",
      "pinyin": "bēi zi",
      "pos": "n.",
-     "en": "cup, mug, glass"
+     "en": "cup, mug, glass",
+     "id": "jinbu5-u4-4:1"
     },
     {
      "hanzi": "创意",
      "pinyin": "chuàng yì",
      "pos": "n.",
-     "en": "creativity, creative idea (有创意 creative)"
-    },
+     "en": "creativity, creative idea (有创意 creative)",
+     "id": "jinbu5-u4-4:2"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-4b",
+   "title": "进步5 U4.4 · 谢谢你的礼物！ Thank you for the present! · 2",
+   "words": [
     {
      "hanzi": "办公室",
      "pinyin": "bàn gōng shì",
      "pos": "n.",
-     "en": "office"
+     "en": "office",
+     "id": "jinbu5-u4-4:3"
     },
     {
      "hanzi": "派",
      "pinyin": "pài",
      "pos": "v.",
-     "en": "to send (someone to do a job)"
+     "en": "to send (someone to do a job)",
+     "id": "jinbu5-u4-4:4"
     },
     {
      "hanzi": "至少",
      "pinyin": "zhì shǎo",
      "pos": "adv.",
-     "en": "at least"
+     "en": "at least",
+     "id": "jinbu5-u4-4:5"
     },
     {
      "hanzi": "而且",
      "pinyin": "ér qiě",
      "pos": "conj.",
-     "en": "and besides, what's more"
+     "en": "and besides, what's more",
+     "id": "jinbu5-u4-4:6"
     },
     {
      "hanzi": "难得",
      "pinyin": "nán dé",
      "pos": "adj.",
-     "en": "rare, hard to come by"
-    },
+     "en": "rare, hard to come by",
+     "id": "jinbu5-u4-4:7"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-4c",
+   "title": "进步5 U4.4 · 谢谢你的礼物！ Thank you for the present! · 3",
+   "words": [
     {
      "hanzi": "最多",
      "pinyin": "zuì duō",
      "pos": "adv.",
-     "en": "at most"
+     "en": "at most",
+     "id": "jinbu5-u4-4:8",
+     "parts": [
+      "最",
+      "多"
+     ]
     },
     {
      "hanzi": "外派",
      "pinyin": "wài pài",
      "pos": "v.",
-     "en": "to post (someone) abroad"
+     "en": "to post (someone) abroad",
+     "id": "jinbu5-u4-4:9"
     },
     {
      "hanzi": "考虑",
      "pinyin": "kǎo lǜ",
      "pos": "v.",
-     "en": "to think about, consider"
-    }
-   ]
-  },
-  {
-   "id": "jinbu5-u4-5",
-   "title": "进步5 U4.5 · 谢谢你的礼物！ Thank you for the present!",
-   "words": [
+     "en": "to think about, consider",
+     "id": "jinbu5-u4-4:10"
+    },
     {
      "hanzi": "答应",
      "pinyin": "dā ying",
      "pos": "v.",
-     "en": "to say yes, agree to"
+     "en": "to say yes, agree to",
+     "id": "jinbu5-u4-5:0"
     },
     {
      "hanzi": "支持",
      "pinyin": "zhī chí",
      "pos": "v.",
-     "en": "to support"
-    },
+     "en": "to support",
+     "id": "jinbu5-u4-5:1"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-5a",
+   "title": "进步5 U4.5 · 谢谢你的礼物！ Thank you for the present! · 1",
+   "words": [
     {
      "hanzi": "距离",
      "pinyin": "jù lí",
      "pos": "n.",
-     "en": "distance"
+     "en": "distance",
+     "id": "jinbu5-u4-5:2"
     },
     {
      "hanzi": "分公司",
      "pinyin": "fēn gōng sī",
      "pos": "n.",
-     "en": "branch (of a company)"
+     "en": "branch (of a company)",
+     "id": "jinbu5-u4-5:3"
     },
     {
      "hanzi": "说不定",
      "pinyin": "shuō bu dìng",
      "pos": "adv.",
-     "en": "maybe, perhaps, who knows"
+     "en": "maybe, perhaps, who knows",
+     "id": "jinbu5-u4-5:4"
     },
     {
      "hanzi": "恭喜你",
      "pinyin": "gōng xǐ nǐ",
      "pos": "phr.",
-     "en": "congratulations"
+     "en": "congratulations",
+     "id": "jinbu5-u4-5:5",
+     "parts": [
+      "恭喜",
+      "你"
+     ]
     },
     {
      "hanzi": "阳台",
      "pinyin": "yáng tái",
      "pos": "n.",
-     "en": "balcony"
-    },
+     "en": "balcony",
+     "id": "jinbu5-u4-5:6"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-5b",
+   "title": "进步5 U4.5 · 谢谢你的礼物！ Thank you for the present! · 2",
+   "words": [
     {
      "hanzi": "一下子",
      "pinyin": "yī xià zi",
      "pos": "adv.",
-     "en": "all at once, suddenly"
+     "en": "all at once, suddenly",
+     "id": "jinbu5-u4-5:7"
     },
     {
      "hanzi": "告",
      "pinyin": "gào",
      "pos": "v.",
-     "en": "to tell (in 告诉)"
+     "en": "to tell (in 告诉)",
+     "id": "jinbu5-u4-5:8"
     },
     {
      "hanzi": "升职",
      "pinyin": "shēng zhí",
      "pos": "v.",
-     "en": "to be promoted"
+     "en": "to be promoted",
+     "id": "jinbu5-u4-5:9"
     },
     {
      "hanzi": "小笼包",
      "pinyin": "xiǎo lóng bāo",
      "pos": "",
-     "en": "soup dumplings, a Shanghai speciality"
-    },
+     "en": "soup dumplings, a Shanghai speciality",
+     "id": "jinbu5-u4-5:10"
+    }
+   ]
+  },
+  {
+   "id": "jinbu5-u4-5c",
+   "title": "进步5 U4.5 · 谢谢你的礼物！ Thank you for the present! · 3",
+   "words": [
     {
      "hanzi": "灯谜",
      "pinyin": "dēng mí",
      "pos": "",
-     "en": "lantern riddle"
+     "en": "lantern riddle",
+     "id": "jinbu5-u4-5:11"
     },
     {
      "hanzi": "尾巴",
      "pinyin": "wěi ba",
      "pos": "",
-     "en": "tail"
+     "en": "tail",
+     "id": "jinbu5-u4-5:12"
     },
     {
      "hanzi": "突然",
      "pinyin": "tū rán",
      "pos": "",
-     "en": "suddenly"
+     "en": "suddenly",
+     "id": "jinbu5-u4-5:13"
     },
     {
      "hanzi": "画不出来",
      "pinyin": "huà bu chū lai",
      "pos": "",
-     "en": "can't be drawn"
+     "en": "can't be drawn",
+     "id": "jinbu5-u4-5:14",
+     "parts": [
+      "画",
+      "不",
+      "出来"
+     ]
     }
    ]
   },
   {
-   "id": "dabu1-u1-1",
-   "title": "大步1 U1.1 · 今天我是面试官 On the other side of the table",
+   "id": "dabu1-u1-1a",
+   "title": "大步1 U1.1 · 今天我是面试官 On the other side of the table · 1",
    "words": [
     {
      "hanzi": "所",
      "pinyin": "suǒ",
      "pos": "m.",
-     "en": "for schools and hospitals (一所大学 a university)"
+     "en": "for schools and hospitals (一所大学 a university)",
+     "id": "dabu1-u1-1:0"
     },
     {
      "hanzi": "视觉",
      "pinyin": "shì jué",
      "pos": "n.",
-     "en": "vision, the visual"
+     "en": "vision, the visual",
+     "id": "dabu1-u1-1:1"
     },
     {
      "hanzi": "传达",
      "pinyin": "chuán dá",
      "pos": "v.",
-     "en": "to convey, get across"
-    },
-    {
-     "hanzi": "视觉传达",
-     "pinyin": "shì jué chuán dá",
-     "pos": "n.",
-     "en": "visual communication (a design degree)"
+     "en": "to convey, get across",
+     "id": "dabu1-u1-1:2"
     },
     {
      "hanzi": "专业",
      "pinyin": "zhuān yè",
      "pos": "n./adj.",
-     "en": "subject, major (at university); professional"
+     "en": "subject, major (at university); professional",
+     "id": "dabu1-u1-1:4"
     },
     {
      "hanzi": "期间",
      "pinyin": "qī jiān",
      "pos": "n.",
-     "en": "period, time (formal: 在…期间 during)"
+     "en": "period, time (formal: 在…期间 during)",
+     "id": "dabu1-u1-1:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-1b",
+   "title": "大步1 U1.1 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
+    {
+     "hanzi": "视觉传达",
+     "pinyin": "shì jué chuán dá",
+     "pos": "n.",
+     "en": "visual communication (a design degree)",
+     "id": "dabu1-u1-1:3",
+     "parts": [
+      "视觉",
+      "传达"
+     ]
     },
     {
      "hanzi": "在校期间",
      "pinyin": "zài xiào qī jiān",
      "pos": "phr.",
-     "en": "while at university, during my studies (formal)"
+     "en": "while at university, during my studies (formal)",
+     "id": "dabu1-u1-1:6"
     },
     {
      "hanzi": "曾",
      "pinyin": "céng",
      "pos": "adv.",
-     "en": "once, in the past (written; 曾在… once worked at…)"
+     "en": "once, in the past (written; 曾在… once worked at…)",
+     "id": "dabu1-u1-1:7"
     },
     {
      "hanzi": "曾经",
      "pinyin": "céng jīng",
      "pos": "adv.",
-     "en": "once, at one time"
+     "en": "once, at one time",
+     "id": "dabu1-u1-1:8"
     },
     {
      "hanzi": "广告",
      "pinyin": "guǎng gào",
      "pos": "n.",
-     "en": "advertisement, advertising"
-    },
+     "en": "advertisement, advertising",
+     "id": "dabu1-u1-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-1c",
+   "title": "大步1 U1.1 · 今天我是面试官 On the other side of the table · 3",
+   "words": [
     {
      "hanzi": "实习",
      "pinyin": "shí xí",
      "pos": "v./n.",
-     "en": "to do an internship; internship"
+     "en": "to do an internship; internship",
+     "id": "dabu1-u1-1:10"
     },
     {
      "hanzi": "主要",
      "pinyin": "zhǔ yào",
      "pos": "adj./adv.",
-     "en": "main; mainly"
+     "en": "main; mainly",
+     "id": "dabu1-u1-1:11"
     },
     {
      "hanzi": "负责",
      "pinyin": "fù zé",
      "pos": "v.",
-     "en": "to be in charge of, be responsible for"
+     "en": "to be in charge of, be responsible for",
+     "id": "dabu1-u1-1:12"
     },
     {
      "hanzi": "社交媒体",
      "pinyin": "shè jiāo méi tǐ",
      "pos": "n.",
-     "en": "social media"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u1-2",
-   "title": "大步1 U1.2 · 今天我是面试官 On the other side of the table",
-   "words": [
+     "en": "social media",
+     "id": "dabu1-u1-1:13"
+    },
     {
      "hanzi": "具体",
      "pinyin": "jù tǐ",
      "pos": "adj.",
-     "en": "specific, detailed (具体说说 go into detail)"
-    },
+     "en": "specific, detailed (具体说说 go into detail)",
+     "id": "dabu1-u1-2:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-2a",
+   "title": "大步1 U1.2 · 今天我是面试官 On the other side of the table · 1",
+   "words": [
     {
      "hanzi": "品牌",
      "pinyin": "pǐn pái",
      "pos": "n.",
-     "en": "brand"
+     "en": "brand",
+     "id": "dabu1-u1-2:1"
     },
     {
      "hanzi": "推广",
      "pinyin": "tuī guǎng",
      "pos": "v./n.",
-     "en": "to promote; promotion, campaign"
+     "en": "to promote; promotion, campaign",
+     "id": "dabu1-u1-2:2"
     },
     {
      "hanzi": "公众号",
      "pinyin": "gōng zhòng hào",
      "pos": "n.",
-     "en": "WeChat official account"
+     "en": "WeChat official account",
+     "id": "dabu1-u1-2:3"
     },
     {
      "hanzi": "了解",
      "pinyin": "liǎo jiě",
      "pos": "v./n.",
-     "en": "to know about, understand; understanding"
+     "en": "to know about, understand; understanding",
+     "id": "dabu1-u1-2:4"
     },
     {
      "hanzi": "关注",
      "pinyin": "guān zhù",
      "pos": "v.",
-     "en": "to follow, keep an eye on"
-    },
+     "en": "to follow, keep an eye on",
+     "id": "dabu1-u1-2:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-2b",
+   "title": "大步1 U1.2 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "贵公司",
      "pinyin": "guì gōng sī",
      "pos": "phr.",
-     "en": "your company (formal and polite)"
+     "en": "your company (formal and polite)",
+     "id": "dabu1-u1-2:6",
+     "parts": [
+      "贵",
+      "公司"
+     ]
     },
     {
      "hanzi": "尤其",
      "pinyin": "yóu qí",
      "pos": "adv.",
-     "en": "especially"
+     "en": "especially",
+     "id": "dabu1-u1-2:7"
     },
     {
      "hanzi": "老字号",
      "pinyin": "lǎo zì hào",
      "pos": "n.",
-     "en": "time-honoured brand, an old firm with a famous name"
+     "en": "time-honoured brand, an old firm with a famous name",
+     "id": "dabu1-u1-2:8"
     },
     {
      "hanzi": "既",
      "pinyin": "jì",
      "pos": "phr.",
-     "en": "both … and …, … as well as … (既…又…)"
+     "en": "both … and …, … as well as … (既…又…)",
+     "id": "dabu1-u1-2:9"
     },
     {
      "hanzi": "团队",
      "pinyin": "tuán duì",
      "pos": "n.",
-     "en": "team"
-    },
+     "en": "team",
+     "id": "dabu1-u1-2:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-2c",
+   "title": "大步1 U1.2 · 今天我是面试官 On the other side of the table · 3",
+   "words": [
     {
      "hanzi": "成长",
      "pinyin": "chéng zhǎng",
      "pos": "v.",
-     "en": "to grow, develop"
+     "en": "to grow, develop",
+     "id": "dabu1-u1-2:11"
     },
     {
      "hanzi": "对于",
      "pinyin": "duì yú",
      "pos": "prep.",
-     "en": "about, regarding, as for (more formal than 对)"
+     "en": "about, regarding, as for (more formal than 对)",
+     "id": "dabu1-u1-2:12"
     },
     {
      "hanzi": "理解",
      "pinyin": "lǐ jiě",
      "pos": "v.",
-     "en": "to understand (and accept)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u1-3",
-   "title": "大步1 U1.3 · 今天我是面试官 On the other side of the table",
-   "words": [
+     "en": "to understand (and accept)",
+     "id": "dabu1-u1-2:13"
+    },
     {
      "hanzi": "行",
      "pinyin": "háng",
      "pos": "n.",
-     "en": "line of work, trade (这一行 this line of work) (new meaning)"
+     "en": "line of work, trade (这一行 this line of work) (new meaning)",
+     "id": "dabu1-u1-3:0"
     },
     {
      "hanzi": "提高",
      "pinyin": "tí gāo",
      "pos": "v.",
-     "en": "to raise, improve"
-    },
+     "en": "to raise, improve",
+     "id": "dabu1-u1-3:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-3a",
+   "title": "大步1 U1.3 · 今天我是面试官 On the other side of the table · 1",
+   "words": [
     {
      "hanzi": "延长",
      "pinyin": "yán cháng",
      "pos": "v.",
-     "en": "to extend, make longer"
+     "en": "to extend, make longer",
+     "id": "dabu1-u1-3:2"
     },
     {
      "hanzi": "追求",
      "pinyin": "zhuī qiú",
      "pos": "v.",
-     "en": "to strive for, pursue"
+     "en": "to strive for, pursue",
+     "id": "dabu1-u1-3:3"
     },
     {
      "hanzi": "完美",
      "pinyin": "wán měi",
      "pos": "adj.",
-     "en": "perfect"
+     "en": "perfect",
+     "id": "dabu1-u1-3:4"
     },
     {
      "hanzi": "之内",
      "pinyin": "zhī nèi",
      "pos": "n.",
-     "en": "within (一周之内 within a week)"
+     "en": "within (一周之内 within a week)",
+     "id": "dabu1-u1-3:5"
     },
     {
      "hanzi": "结果",
      "pinyin": "jié guǒ",
      "pos": "n.",
-     "en": "result, outcome"
-    },
+     "en": "result, outcome",
+     "id": "dabu1-u1-3:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-3b",
+   "title": "大步1 U1.3 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "新人",
      "pinyin": "xīn rén",
      "pos": "n.",
-     "en": "newcomer, new starter"
+     "en": "newcomer, new starter",
+     "id": "dabu1-u1-3:7"
     },
     {
      "hanzi": "入职",
      "pinyin": "rù zhí",
      "pos": "v.",
-     "en": "to start a job, join a company"
+     "en": "to start a job, join a company",
+     "id": "dabu1-u1-3:8"
     },
     {
      "hanzi": "带",
      "pinyin": "dài",
      "pos": "v.",
-     "en": "to mentor, train (a new starter) (new meaning)"
+     "en": "to mentor, train (a new starter) (new meaning)",
+     "id": "dabu1-u1-3:9"
     },
     {
      "hanzi": "经验丰富",
      "pinyin": "jīng yàn fēng fù",
      "pos": "phr.",
-     "en": "experienced"
+     "en": "experienced",
+     "id": "dabu1-u1-3:10"
     },
     {
      "hanzi": "简历",
      "pinyin": "jiǎn lì",
      "pos": "n.",
-     "en": "CV, résumé"
-    },
+     "en": "CV, résumé",
+     "id": "dabu1-u1-3:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-4a",
+   "title": "大步1 U1.4 · 今天我是面试官 On the other side of the table · 1",
+   "words": [
     {
      "hanzi": "平时",
      "pinyin": "píng shí",
      "pos": "n.",
-     "en": "usually, normally"
+     "en": "usually, normally",
+     "id": "dabu1-u1-3:12"
     },
     {
      "hanzi": "面试官",
      "pinyin": "miàn shì guān",
      "pos": "n.",
-     "en": "interviewer"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u1-4",
-   "title": "大步1 U1.4 · 今天我是面试官 On the other side of the table",
-   "words": [
+     "en": "interviewer",
+     "id": "dabu1-u1-3:13"
+    },
     {
      "hanzi": "应聘",
      "pinyin": "yìng pìn",
      "pos": "v.",
-     "en": "to apply for a job"
+     "en": "to apply for a job",
+     "id": "dabu1-u1-4:0"
     },
     {
      "hanzi": "应聘者",
      "pinyin": "yìng pìn zhě",
      "pos": "n.",
-     "en": "applicant"
+     "en": "applicant",
+     "id": "dabu1-u1-4:1"
     },
     {
      "hanzi": "求职",
      "pinyin": "qiú zhí",
      "pos": "v.",
-     "en": "to look for a job"
-    },
+     "en": "to look for a job",
+     "id": "dabu1-u1-4:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-4b",
+   "title": "大步1 U1.4 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "求职信",
      "pinyin": "qiú zhí xìn",
      "pos": "n.",
-     "en": "cover letter"
+     "en": "cover letter",
+     "id": "dabu1-u1-4:3"
     },
     {
      "hanzi": "职位",
      "pinyin": "zhí wèi",
      "pos": "n.",
-     "en": "post, position"
+     "en": "post, position",
+     "id": "dabu1-u1-4:4"
     },
     {
      "hanzi": "优势",
      "pinyin": "yōu shì",
      "pos": "n.",
-     "en": "strength, advantage"
+     "en": "strength, advantage",
+     "id": "dabu1-u1-4:5"
     },
     {
      "hanzi": "自我介绍",
      "pinyin": "zì wǒ jiè shào",
      "pos": "n./v.",
-     "en": "self-introduction; to introduce yourself"
+     "en": "self-introduction; to introduce yourself",
+     "id": "dabu1-u1-4:6"
     },
     {
      "hanzi": "打招呼",
      "pinyin": "dǎ zhāo hu",
      "pos": "v.",
-     "en": "to say hello, greet"
-    },
+     "en": "to say hello, greet",
+     "id": "dabu1-u1-4:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-4c",
+   "title": "大步1 U1.4 · 今天我是面试官 On the other side of the table · 3",
+   "words": [
     {
      "hanzi": "握手",
      "pinyin": "wò shǒu",
      "pos": "v.",
-     "en": "to shake hands"
+     "en": "to shake hands",
+     "id": "dabu1-u1-4:8"
     },
     {
      "hanzi": "正装",
      "pinyin": "zhèng zhuāng",
      "pos": "n.",
-     "en": "formal wear, business clothes"
+     "en": "formal wear, business clothes",
+     "id": "dabu1-u1-4:9"
     },
     {
      "hanzi": "写字楼",
      "pinyin": "xiě zì lóu",
      "pos": "n.",
-     "en": "office building"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u1-5",
-   "title": "大步1 U1.5 · 今天我是面试官 On the other side of the table",
-   "words": [
+     "en": "office building",
+     "id": "dabu1-u1-4:10"
+    },
     {
      "hanzi": "招聘启事",
      "pinyin": "zhāo pìn qǐ shì",
      "pos": "n.",
-     "en": "job advert"
+     "en": "job advert",
+     "id": "dabu1-u1-5:0"
     },
     {
      "hanzi": "招聘",
      "pinyin": "zhāo pìn",
      "pos": "v.",
-     "en": "to recruit, advertise a job"
-    },
+     "en": "to recruit, advertise a job",
+     "id": "dabu1-u1-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-5a",
+   "title": "大步1 U1.5 · 今天我是面试官 On the other side of the table · 1",
+   "words": [
     {
      "hanzi": "初级",
      "pinyin": "chū jí",
      "pos": "adj.",
-     "en": "junior, elementary"
+     "en": "junior, elementary",
+     "id": "dabu1-u1-5:2"
     },
     {
      "hanzi": "成立",
      "pinyin": "chéng lì",
      "pos": "v.",
-     "en": "to found, set up"
+     "en": "to found, set up",
+     "id": "dabu1-u1-5:3"
     },
     {
      "hanzi": "位于",
      "pinyin": "wèi yú",
      "pos": "v.",
-     "en": "to be located in (written)"
+     "en": "to be located in (written)",
+     "id": "dabu1-u1-5:4"
     },
     {
      "hanzi": "边",
      "pinyin": "biān",
      "pos": "n.",
-     "en": "side, edge (苏州河边 by Suzhou Creek)"
+     "en": "side, edge (苏州河边 by Suzhou Creek)",
+     "id": "dabu1-u1-5:5"
     },
     {
      "hanzi": "为",
      "pinyin": "wèi",
      "pos": "prep.",
-     "en": "for (为客户提供服务 provide services for clients)"
-    },
+     "en": "for (为客户提供服务 provide services for clients)",
+     "id": "dabu1-u1-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-5b",
+   "title": "大步1 U1.5 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "国内外",
      "pinyin": "guó nèi wài",
      "pos": "n.",
-     "en": "at home and abroad, in China and overseas"
+     "en": "at home and abroad, in China and overseas",
+     "id": "dabu1-u1-5:7"
     },
     {
      "hanzi": "提供",
      "pinyin": "tí gōng",
      "pos": "v.",
-     "en": "to provide, offer"
+     "en": "to provide, offer",
+     "id": "dabu1-u1-5:8"
     },
     {
      "hanzi": "策划",
      "pinyin": "cè huà",
      "pos": "n./v.",
-     "en": "planning, strategy; to plan"
+     "en": "planning, strategy; to plan",
+     "id": "dabu1-u1-5:9"
     },
     {
      "hanzi": "合作",
      "pinyin": "hé zuò",
      "pos": "v./n.",
-     "en": "to work together, cooperate; cooperation"
+     "en": "to work together, cooperate; cooperation",
+     "id": "dabu1-u1-5:10"
     },
     {
      "hanzi": "起步",
      "pinyin": "qǐ bù",
      "pos": "v.",
-     "en": "to start out (刚刚起步 just starting out)"
-    },
+     "en": "to start out (刚刚起步 just starting out)",
+     "id": "dabu1-u1-5:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-6a",
+   "title": "大步1 U1.6 · 今天我是面试官 On the other side of the table · 1",
+   "words": [
     {
      "hanzi": "因",
      "pinyin": "yīn",
      "pos": "conj.",
-     "en": "because of, owing to (written 因为)"
+     "en": "because of, owing to (written 因为)",
+     "id": "dabu1-u1-5:12"
     },
     {
      "hanzi": "业务",
      "pinyin": "yè wù",
      "pos": "n.",
-     "en": "business, work"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u1-6",
-   "title": "大步1 U1.6 · 今天我是面试官 On the other side of the table",
-   "words": [
+     "en": "business, work",
+     "id": "dabu1-u1-5:13"
+    },
     {
      "hanzi": "发展",
      "pinyin": "fā zhǎn",
      "pos": "v./n.",
-     "en": "to develop, grow; development"
+     "en": "to develop, grow; development",
+     "id": "dabu1-u1-6:0"
     },
     {
      "hanzi": "需要",
      "pinyin": "xū yào",
      "pos": "v./n.",
-     "en": "to need; need"
+     "en": "to need; need",
+     "id": "dabu1-u1-6:1"
     },
     {
      "hanzi": "现",
      "pinyin": "xiàn",
      "pos": "adv.",
-     "en": "now, currently (written 现在)"
-    },
+     "en": "now, currently (written 现在)",
+     "id": "dabu1-u1-6:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-6b",
+   "title": "大步1 U1.6 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "名",
      "pinyin": "míng",
      "pos": "m.",
-     "en": "for people (formal: 设计师一名 one designer)"
+     "en": "for people (formal: 设计师一名 one designer)",
+     "id": "dabu1-u1-6:3"
     },
     {
      "hanzi": "岗位",
      "pinyin": "gǎng wèi",
      "pos": "n.",
-     "en": "post, job"
+     "en": "post, job",
+     "id": "dabu1-u1-6:4"
     },
     {
      "hanzi": "职责",
      "pinyin": "zhí zé",
      "pos": "n.",
-     "en": "duties, responsibilities"
+     "en": "duties, responsibilities",
+     "id": "dabu1-u1-6:5"
     },
     {
      "hanzi": "配合",
      "pinyin": "pèi hé",
      "pos": "v.",
-     "en": "to work with, support"
+     "en": "to work with, support",
+     "id": "dabu1-u1-6:6"
     },
     {
      "hanzi": "资深",
      "pinyin": "zī shēn",
      "pos": "adj.",
-     "en": "senior, highly experienced"
-    },
+     "en": "senior, highly experienced",
+     "id": "dabu1-u1-6:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-6c",
+   "title": "大步1 U1.6 · 今天我是面试官 On the other side of the table · 3",
+   "words": [
     {
      "hanzi": "并",
      "pinyin": "bìng",
      "pos": "conj./adv.",
-     "en": "and also (written); (before a negative) actually not"
+     "en": "and also (written); (before a negative) actually not",
+     "id": "dabu1-u1-6:8"
     },
     {
      "hanzi": "参与",
      "pinyin": "cān yù",
      "pos": "v.",
-     "en": "to take part in"
+     "en": "to take part in",
+     "id": "dabu1-u1-6:9"
     },
     {
      "hanzi": "与",
      "pinyin": "yǔ",
      "pos": "prep./conj.",
-     "en": "with; and (written 跟, 和)"
+     "en": "with; and (written 跟, 和)",
+     "id": "dabu1-u1-6:10"
     },
     {
      "hanzi": "良好",
      "pinyin": "liáng hǎo",
      "pos": "adj.",
-     "en": "good (written)"
+     "en": "good (written)",
+     "id": "dabu1-u1-6:11"
     },
     {
      "hanzi": "沟通",
      "pinyin": "gōu tōng",
      "pos": "v./n.",
-     "en": "to communicate; communication"
-    },
-    {
-     "hanzi": "按时",
-     "pinyin": "àn shí",
-     "pos": "adv.",
-     "en": "on time, on schedule"
+     "en": "to communicate; communication",
+     "id": "dabu1-u1-6:12"
     }
    ]
   },
   {
-   "id": "dabu1-u1-7",
-   "title": "大步1 U1.7 · 今天我是面试官 On the other side of the table",
+   "id": "dabu1-u1-7a",
+   "title": "大步1 U1.7 · 今天我是面试官 On the other side of the table · 1",
    "words": [
+    {
+     "hanzi": "按时",
+     "pinyin": "àn shí",
+     "pos": "adv.",
+     "en": "on time, on schedule",
+     "id": "dabu1-u1-6:13"
+    },
     {
      "hanzi": "任职要求",
      "pinyin": "rèn zhí yāo qiú",
      "pos": "n.",
-     "en": "requirements (in a job advert)"
+     "en": "requirements (in a job advert)",
+     "id": "dabu1-u1-7:0"
     },
     {
      "hanzi": "及",
      "pinyin": "jí",
      "pos": "conj.",
-     "en": "and (written)"
+     "en": "and (written)",
+     "id": "dabu1-u1-7:1"
     },
     {
      "hanzi": "或",
      "pinyin": "huò",
      "pos": "conj.",
-     "en": "or (written 或者)"
+     "en": "or (written 或者)",
+     "id": "dabu1-u1-7:2"
     },
     {
      "hanzi": "相关",
      "pinyin": "xiāng guān",
      "pos": "adj.",
-     "en": "related, relevant"
-    },
+     "en": "related, relevant",
+     "id": "dabu1-u1-7:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-7b",
+   "title": "大步1 U1.7 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "本科",
      "pinyin": "běn kē",
      "pos": "n.",
-     "en": "undergraduate degree"
+     "en": "undergraduate degree",
+     "id": "dabu1-u1-7:4"
     },
     {
      "hanzi": "以上",
      "pinyin": "yǐ shàng",
      "pos": "n.",
-     "en": "or above, more than"
+     "en": "or above, more than",
+     "id": "dabu1-u1-7:5"
     },
     {
      "hanzi": "学历",
      "pinyin": "xué lì",
      "pos": "n.",
-     "en": "education, qualifications"
+     "en": "education, qualifications",
+     "id": "dabu1-u1-7:6"
     },
     {
      "hanzi": "应届毕业生",
      "pinyin": "yīng jiè bì yè shēng",
      "pos": "n.",
-     "en": "this year's graduates"
+     "en": "this year's graduates",
+     "id": "dabu1-u1-7:7"
     },
     {
      "hanzi": "熟练",
      "pinyin": "shú liàn",
      "pos": "adj.",
-     "en": "skilled, proficient"
-    },
+     "en": "skilled, proficient",
+     "id": "dabu1-u1-7:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-7c",
+   "title": "大步1 U1.7 · 今天我是面试官 On the other side of the table · 3",
+   "words": [
     {
      "hanzi": "使用",
      "pinyin": "shǐ yòng",
      "pos": "v.",
-     "en": "to use (formal 用)"
+     "en": "to use (formal 用)",
+     "id": "dabu1-u1-7:9"
     },
     {
      "hanzi": "软件",
      "pinyin": "ruǎn jiàn",
      "pos": "n.",
-     "en": "software"
+     "en": "software",
+     "id": "dabu1-u1-7:10"
     },
     {
      "hanzi": "具备",
      "pinyin": "jù bèi",
      "pos": "v.",
-     "en": "to have, possess (skills, qualities; formal)"
+     "en": "to have, possess (skills, qualities; formal)",
+     "id": "dabu1-u1-7:11"
     },
     {
      "hanzi": "审美",
      "pinyin": "shěn měi",
      "pos": "n.",
-     "en": "aesthetic sense, taste"
+     "en": "aesthetic sense, taste",
+     "id": "dabu1-u1-7:12"
     },
     {
      "hanzi": "能力",
      "pinyin": "néng lì",
      "pos": "n.",
-     "en": "ability, skill"
+     "en": "ability, skill",
+     "id": "dabu1-u1-7:13"
     }
    ]
   },
   {
-   "id": "dabu1-u1-8",
-   "title": "大步1 U1.8 · 今天我是面试官 On the other side of the table",
+   "id": "dabu1-u1-8a",
+   "title": "大步1 U1.8 · 今天我是面试官 On the other side of the table · 1",
    "words": [
     {
      "hanzi": "责任心",
      "pinyin": "zé rèn xīn",
      "pos": "n.",
-     "en": "sense of responsibility"
+     "en": "sense of responsibility",
+     "id": "dabu1-u1-8:0"
     },
     {
      "hanzi": "适应",
      "pinyin": "shì yìng",
      "pos": "v.",
-     "en": "to adapt to, get used to"
+     "en": "to adapt to, get used to",
+     "id": "dabu1-u1-8:1"
     },
     {
      "hanzi": "较",
      "pinyin": "jiào",
      "pos": "adv.",
-     "en": "fairly, comparatively (written 比较)"
+     "en": "fairly, comparatively (written 比较)",
+     "id": "dabu1-u1-8:2"
     },
     {
      "hanzi": "优先",
      "pinyin": "yōu xiān",
      "pos": "v.",
-     "en": "to have priority (…者优先 … preferred)"
+     "en": "to have priority (…者优先 … preferred)",
+     "id": "dabu1-u1-8:3"
     },
     {
      "hanzi": "资料",
      "pinyin": "zī liào",
      "pos": "n.",
-     "en": "materials, information, documents"
-    },
+     "en": "materials, information, documents",
+     "id": "dabu1-u1-8:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-8b",
+   "title": "大步1 U1.8 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "薪资",
      "pinyin": "xīn zī",
      "pos": "n.",
-     "en": "salary, pay"
+     "en": "salary, pay",
+     "id": "dabu1-u1-8:5"
     },
     {
      "hanzi": "竞争力",
      "pinyin": "jìng zhēng lì",
      "pos": "n.",
-     "en": "competitiveness (有竞争力的 competitive)"
+     "en": "competitiveness (有竞争力的 competitive)",
+     "id": "dabu1-u1-8:6"
     },
     {
      "hanzi": "五险一金",
      "pinyin": "wǔ xiǎn yī jīn",
      "pos": "n.",
-     "en": "social insurance and housing fund (the standard benefits in China)"
+     "en": "social insurance and housing fund (the standard benefits in China)",
+     "id": "dabu1-u1-8:7"
     },
     {
      "hanzi": "带薪",
      "pinyin": "dài xīn",
      "pos": "adj.",
-     "en": "paid (带薪年假 paid annual leave)"
+     "en": "paid (带薪年假 paid annual leave)",
+     "id": "dabu1-u1-8:8"
     },
     {
      "hanzi": "弹性",
      "pinyin": "tán xìng",
      "pos": "n.",
-     "en": "flexibility (弹性工作时间 flexitime)"
-    },
+     "en": "flexibility (弹性工作时间 flexitime)",
+     "id": "dabu1-u1-8:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-8c",
+   "title": "大步1 U1.8 · 今天我是面试官 On the other side of the table · 3",
+   "words": [
     {
      "hanzi": "以及",
      "pinyin": "yǐ jí",
      "pos": "conj.",
-     "en": "as well as, and"
+     "en": "as well as, and",
+     "id": "dabu1-u1-8:10"
     },
     {
      "hanzi": "员工",
      "pinyin": "yuán gōng",
      "pos": "n.",
-     "en": "employee, member of staff"
+     "en": "employee, member of staff",
+     "id": "dabu1-u1-8:11"
     },
     {
      "hanzi": "一对一",
      "pinyin": "yī duì yī",
      "pos": "phr.",
-     "en": "one-to-one"
+     "en": "one-to-one",
+     "id": "dabu1-u1-8:12"
     },
     {
      "hanzi": "指导",
      "pinyin": "zhǐ dǎo",
      "pos": "v./n.",
-     "en": "to guide, mentor; guidance"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u1-9",
-   "title": "大步1 U1.9 · 今天我是面试官 On the other side of the table",
-   "words": [
+     "en": "to guide, mentor; guidance",
+     "id": "dabu1-u1-8:13"
+    },
     {
      "hanzi": "有意者",
      "pinyin": "yǒu yì zhě",
      "pos": "n.",
-     "en": "anyone interested (written)"
-    },
+     "en": "anyone interested (written)",
+     "id": "dabu1-u1-9:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-9a",
+   "title": "大步1 U1.9 · 今天我是面试官 On the other side of the table · 1",
+   "words": [
     {
      "hanzi": "发送",
      "pinyin": "fā sòng",
      "pos": "v.",
-     "en": "to send (formal)"
+     "en": "to send (formal)",
+     "id": "dabu1-u1-9:1"
     },
     {
      "hanzi": "作品集",
      "pinyin": "zuò pǐn jí",
      "pos": "n.",
-     "en": "portfolio"
+     "en": "portfolio",
+     "id": "dabu1-u1-9:2"
     },
     {
      "hanzi": "至",
      "pinyin": "zhì",
      "pos": "prep.",
-     "en": "to, until (written: 发送至 send to)"
+     "en": "to, until (written: 发送至 send to)",
+     "id": "dabu1-u1-9:3"
     },
     {
      "hanzi": "邮箱",
      "pinyin": "yóu xiāng",
      "pos": "n.",
-     "en": "email address, inbox"
+     "en": "email address, inbox",
+     "id": "dabu1-u1-9:4"
     },
     {
      "hanzi": "注明",
      "pinyin": "zhù míng",
      "pos": "v.",
-     "en": "to state clearly, mark"
-    },
+     "en": "to state clearly, mark",
+     "id": "dabu1-u1-9:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u1-9b",
+   "title": "大步1 U1.9 · 今天我是面试官 On the other side of the table · 2",
+   "words": [
     {
      "hanzi": "姓名",
      "pinyin": "xìng míng",
      "pos": "n.",
-     "en": "full name"
+     "en": "full name",
+     "id": "dabu1-u1-9:6"
     },
     {
      "hanzi": "材料",
      "pinyin": "cái liào",
      "pos": "n.",
-     "en": "documents, materials"
+     "en": "documents, materials",
+     "id": "dabu1-u1-9:7"
     },
     {
      "hanzi": "候选人",
      "pinyin": "hòu xuǎn rén",
      "pos": "n.",
-     "en": "candidate"
+     "en": "candidate",
+     "id": "dabu1-u1-9:8"
     },
     {
      "hanzi": "内",
      "pinyin": "nèi",
      "pos": "n.",
-     "en": "within, inside (written: 一周内 within a week)"
+     "en": "within, inside (written: 一周内 within a week)",
+     "id": "dabu1-u1-9:9"
     }
    ]
   },
   {
-   "id": "dabu1-u2-1",
-   "title": "大步1 U2.1 · 加班文化 Working late",
+   "id": "dabu1-u2-1a",
+   "title": "大步1 U2.1 · 加班文化 Working late · 1",
    "words": [
     {
      "hanzi": "估计",
      "pinyin": "gū jì",
      "pos": "v.",
-     "en": "to reckon, estimate"
+     "en": "to reckon, estimate",
+     "id": "dabu1-u2-1:0"
     },
     {
      "hanzi": "受得了",
      "pinyin": "shòu de liǎo",
      "pos": "phr.",
-     "en": "can stand, can take it (受不了 can't stand)"
+     "en": "can stand, can take it (受不了 can't stand)",
+     "id": "dabu1-u2-1:1"
     },
     {
      "hanzi": "互联网",
      "pinyin": "hù lián wǎng",
      "pos": "n.",
-     "en": "the internet (互联网公司 tech company)"
+     "en": "the internet (互联网公司 tech company)",
+     "id": "dabu1-u2-1:2"
     },
     {
      "hanzi": "大厂",
      "pinyin": "dà chǎng",
      "pos": "n.",
-     "en": "big tech company (informal)"
+     "en": "big tech company (informal)",
+     "id": "dabu1-u2-1:3"
     },
     {
      "hanzi": "标准",
      "pinyin": "biāo zhǔn",
      "pos": "adj./n.",
-     "en": "standard, textbook; a standard"
-    },
+     "en": "standard, textbook; a standard",
+     "id": "dabu1-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-1b",
+   "title": "大步1 U2.1 · 加班文化 Working late · 2",
+   "words": [
     {
      "hanzi": "违法",
      "pinyin": "wéi fǎ",
      "pos": "v.",
-     "en": "to break the law, be illegal"
+     "en": "to break the law, be illegal",
+     "id": "dabu1-u2-1:5"
     },
     {
      "hanzi": "法律",
      "pinyin": "fǎ lǜ",
      "pos": "n.",
-     "en": "law (从法律上说 legally speaking)"
+     "en": "law (从法律上说 legally speaking)",
+     "id": "dabu1-u2-1:6"
     },
     {
      "hanzi": "自愿",
      "pinyin": "zì yuàn",
      "pos": "adj./adv.",
-     "en": "voluntary; voluntarily"
+     "en": "voluntary; voluntarily",
+     "id": "dabu1-u2-1:7"
     },
     {
      "hanzi": "一方面",
      "pinyin": "yī fāng miàn",
      "pos": "phr.",
-     "en": "on the one hand … on the other hand … (一方面…另一方面…)"
+     "en": "on the one hand … on the other hand … (一方面…另一方面…)",
+     "id": "dabu1-u2-1:8"
     },
     {
      "hanzi": "另一方面",
      "pinyin": "lìng yī fāng miàn",
      "pos": "phr.",
-     "en": "(in 一方面…另一方面…)"
-    },
+     "en": "(in 一方面…另一方面…)",
+     "id": "dabu1-u2-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-2a",
+   "title": "大步1 U2.2 · 加班文化 Working late · 1",
+   "words": [
     {
      "hanzi": "吃不消",
      "pinyin": "chī bu xiāo",
      "pos": "phr.",
-     "en": "can't take it, be too much for someone"
+     "en": "can't take it, be too much for someone",
+     "id": "dabu1-u2-1:10"
     },
     {
      "hanzi": "基本上",
      "pinyin": "jī běn shang",
      "pos": "adv.",
-     "en": "basically, mostly"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u2-2",
-   "title": "大步1 U2.2 · 加班文化 Working late",
-   "words": [
-    {
-     "hanzi": "补觉",
-     "pinyin": "bǔ jiào",
-     "pos": "v.",
-     "en": "to catch up on sleep"
-    },
-    {
-     "hanzi": "响",
-     "pinyin": "xiǎng",
-     "pos": "v.",
-     "en": "to ring, go off, make a sound"
-    },
-    {
-     "hanzi": "却",
-     "pinyin": "què",
-     "pos": "adv.",
-     "en": "but, yet (after the subject: 心却还在公司 yet your mind's still at work)"
-    },
-    {
-     "hanzi": "有权",
-     "pinyin": "yǒu quán",
-     "pos": "phr.",
-     "en": "to have the right to"
-    },
-    {
-     "hanzi": "需求",
-     "pinyin": "xū qiú",
-     "pos": "n.",
-     "en": "needs, requirements (a client's brief)"
-    },
-    {
-     "hanzi": "说不准",
-     "pinyin": "shuō bu zhǔn",
-     "pos": "phr.",
-     "en": "can't say for sure, hard to tell"
-    },
-    {
-     "hanzi": "难免",
-     "pinyin": "nán miǎn",
-     "pos": "adj.",
-     "en": "hard to avoid, bound to happen"
-    },
-    {
-     "hanzi": "式",
-     "pinyin": "shì",
-     "pos": "suffix",
-     "en": "-style, type (表演式加班 overtime for show)"
-    },
-    {
-     "hanzi": "算",
-     "pinyin": "suàn",
-     "pos": "v.",
-     "en": "to count as (就算是 let's call it)"
-    },
-    {
-     "hanzi": "加班费",
-     "pinyin": "jiā bān fèi",
-     "pos": "n.",
-     "en": "overtime pay"
-    },
-    {
-     "hanzi": "调休",
-     "pinyin": "tiáo xiū",
-     "pos": "v./n.",
-     "en": "to take time off in lieu; a day off in lieu"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u2-3",
-   "title": "大步1 U2.3 · 加班文化 Working late",
-   "words": [
-    {
-     "hanzi": "打卡",
-     "pinyin": "dǎ kǎ",
-     "pos": "v.",
-     "en": "to clock in, clock out"
-    },
-    {
-     "hanzi": "工作群",
-     "pinyin": "gōng zuò qún",
-     "pos": "n.",
-     "en": "work group chat"
-    },
-    {
-     "hanzi": "提神",
-     "pinyin": "tí shén",
-     "pos": "v.",
-     "en": "to perk up, wake yourself up"
-    },
-    {
-     "hanzi": "熬夜",
-     "pinyin": "áo yè",
-     "pos": "v.",
-     "en": "to stay up late"
-    },
-    {
-     "hanzi": "劳动法",
-     "pinyin": "láo dòng fǎ",
-     "pos": "n.",
-     "en": "labour law"
-    },
-    {
-     "hanzi": "权利",
-     "pinyin": "quán lì",
-     "pos": "n.",
-     "en": "right(s)"
-    },
-    {
-     "hanzi": "遇到",
-     "pinyin": "yù dào",
-     "pos": "v.",
-     "en": "to come across, run into"
-    },
-    {
-     "hanzi": "上海话",
-     "pinyin": "Shàng hǎi huà",
-     "pos": "n.",
-     "en": "Shanghainese"
-    },
-    {
-     "hanzi": "打工人",
-     "pinyin": "dǎ gōng rén",
-     "pos": "n.",
-     "en": "worker, wage slave (a self-mocking word)"
-    },
-    {
-     "hanzi": "好处",
-     "pinyin": "hǎo chu",
-     "pos": "n.",
-     "en": "advantage, benefit"
-    },
-    {
-     "hanzi": "坏处",
-     "pinyin": "huài chu",
-     "pos": "n.",
-     "en": "disadvantage, harm"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u2-4",
-   "title": "大步1 U2.4 · 加班文化 Working late",
-   "words": [
-    {
-     "hanzi": "依然",
-     "pinyin": "yī rán",
-     "pos": "adv.",
-     "en": "still (written)"
-    },
-    {
-     "hanzi": "灯火通明",
-     "pinyin": "dēng huǒ tōng míng",
-     "pos": "phr.",
-     "en": "brightly lit, ablaze with light"
-    },
-    {
-     "hanzi": "甚至",
-     "pinyin": "shèn zhì",
-     "pos": "adv.",
-     "en": "even, so much so that"
-    },
-    {
-     "hanzi": "说到",
-     "pinyin": "shuō dào",
-     "pos": "v.",
-     "en": "speaking of, when it comes to"
-    },
-    {
-     "hanzi": "提",
-     "pinyin": "tí",
-     "pos": "v.",
-     "en": "to mention, bring up (提意见 make a suggestion)"
-    },
-    {
-     "hanzi": "十分",
-     "pinyin": "shí fēn",
-     "pos": "adv.",
-     "en": "very, extremely (written)"
-    },
-    {
-     "hanzi": "常见",
-     "pinyin": "cháng jiàn",
-     "pos": "adj.",
-     "en": "common"
-    },
-    {
-     "hanzi": "存在",
-     "pinyin": "cún zài",
-     "pos": "v.",
-     "en": "to exist, be present"
-    },
-    {
-     "hanzi": "争议",
-     "pinyin": "zhēng yì",
-     "pos": "n.",
-     "en": "controversy, dispute"
-    },
-    {
-     "hanzi": "吃苦",
-     "pinyin": "chī kǔ",
-     "pos": "v.",
-     "en": "to put up with hardship, work hard (多吃点儿苦 put up with more)"
-    },
-    {
-     "hanzi": "苦",
-     "pinyin": "kǔ",
-     "pos": "adj./n.",
-     "en": "bitter; hardship"
-    },
-    {
-     "hanzi": "地",
-     "pinyin": "de",
-     "pos": "part.",
-     "en": "(between an adjective and a verb) -ly (更快地升职 get promoted faster)"
-    },
-    {
-     "hanzi": "不仅",
-     "pinyin": "bù jǐn",
-     "pos": "phr.",
-     "en": "not only … but also … (written 不但…而且) (不仅…还…)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u2-5",
-   "title": "大步1 U2.5 · 加班文化 Working late",
-   "words": [
-    {
-     "hanzi": "加薪",
-     "pinyin": "jiā xīn",
-     "pos": "v.",
-     "en": "to get a pay rise, raise pay"
-    },
-    {
-     "hanzi": "竞争",
-     "pinyin": "jìng zhēng",
-     "pos": "v./n.",
-     "en": "to compete; competition"
-    },
-    {
-     "hanzi": "激烈",
-     "pinyin": "jī liè",
-     "pos": "adj.",
-     "en": "fierce, intense"
-    },
-    {
-     "hanzi": "行业",
-     "pinyin": "háng yè",
-     "pos": "n.",
-     "en": "industry, sector"
-    },
-    {
-     "hanzi": "关系到",
-     "pinyin": "guān xi dào",
-     "pos": "v.",
-     "en": "to affect, have a bearing on"
-    },
-    {
-     "hanzi": "整个",
-     "pinyin": "zhěng gè",
-     "pos": "adj.",
-     "en": "whole, entire"
-    },
-    {
-     "hanzi": "则",
-     "pinyin": "zé",
-     "pos": "conj.",
-     "en": "whereas, on the other hand (written)"
-    },
-    {
-     "hanzi": "陪伴",
-     "pinyin": "péi bàn",
-     "pos": "v.",
-     "en": "to keep someone company, be there for"
-    },
-    {
-     "hanzi": "下降",
-     "pinyin": "xià jiàng",
-     "pos": "v.",
-     "en": "to fall, go down"
-    },
-    {
-     "hanzi": "等于",
-     "pinyin": "děng yú",
-     "pos": "v.",
-     "en": "to equal, amount to"
-    },
-    {
-     "hanzi": "成果",
-     "pinyin": "chéng guǒ",
-     "pos": "n.",
-     "en": "results, achievements"
-    },
-    {
-     "hanzi": "明确",
-     "pinyin": "míng què",
-     "pos": "adj.",
-     "en": "clear, explicit"
-    },
-    {
-     "hanzi": "一定",
-     "pinyin": "yī dìng",
-     "pos": "adj.",
-     "en": "certain, some (一定的限制 certain limits) (new meaning)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u2-6",
-   "title": "大步1 U2.6 · 加班文化 Working late",
-   "words": [
-    {
-     "hanzi": "限制",
-     "pinyin": "xiàn zhì",
-     "pos": "n./v.",
-     "en": "limit, restriction; to limit"
-    },
-    {
-     "hanzi": "应当",
-     "pinyin": "yīng dāng",
-     "pos": "v.",
-     "en": "should, ought to (written)"
-    },
-    {
-     "hanzi": "支付",
-     "pinyin": "zhī fù",
-     "pos": "v.",
-     "en": "to pay (formal)"
-    },
-    {
-     "hanzi": "安排",
-     "pinyin": "ān pái",
-     "pos": "v./n.",
-     "en": "to arrange; arrangement"
-    },
-    {
-     "hanzi": "受到",
-     "pinyin": "shòu dào",
-     "pos": "v.",
-     "en": "to receive, meet with (受到批评 be criticised)"
-    },
-    {
-     "hanzi": "有关部门",
-     "pinyin": "yǒu guān bù mén",
-     "pos": "phr.",
-     "en": "the relevant authorities"
-    },
-    {
-     "hanzi": "部门",
-     "pinyin": "bù mén",
-     "pos": "n.",
-     "en": "department"
-    },
-    {
-     "hanzi": "强调",
-     "pinyin": "qiáng diào",
-     "pos": "v.",
-     "en": "to stress, emphasise"
-    },
-    {
-     "hanzi": "企业",
-     "pinyin": "qǐ yè",
-     "pos": "n.",
-     "en": "company, business, enterprise"
-    },
-    {
-     "hanzi": "必须",
-     "pinyin": "bì xū",
-     "pos": "adv.",
-     "en": "must"
-    },
-    {
-     "hanzi": "符合",
-     "pinyin": "fú hé",
-     "pos": "v.",
-     "en": "to comply with, be in line with"
-    },
-    {
-     "hanzi": "看待",
-     "pinyin": "kàn dài",
-     "pos": "v.",
-     "en": "to view, regard"
-    },
-    {
-     "hanzi": "怎样",
-     "pinyin": "zěn yàng",
-     "pos": "pron.",
-     "en": "how (written 怎么)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u2-7",
-   "title": "大步1 U2.7 · 加班文化 Working late",
-   "words": [
-    {
-     "hanzi": "偶尔",
-     "pinyin": "ǒu ěr",
-     "pos": "adv.",
-     "en": "occasionally, now and then"
-    },
-    {
-     "hanzi": "大多数",
-     "pinyin": "dà duō shù",
-     "pos": "n.",
-     "en": "the majority, most"
-    },
-    {
-     "hanzi": "常态",
-     "pinyin": "cháng tài",
-     "pos": "n.",
-     "en": "the norm"
-    },
-    {
-     "hanzi": "经常",
-     "pinyin": "jīng cháng",
-     "pos": "adv.",
-     "en": "often"
-    },
-    {
-     "hanzi": "评论区",
-     "pinyin": "píng lùn qū",
-     "pos": "n.",
-     "en": "comments section"
-    },
-    {
-     "hanzi": "内卷",
-     "pinyin": "nèi juǎn",
-     "pos": "n./v.",
-     "en": "'involution', an exhausting race where everyone works harder for no gain"
-    },
-    {
-     "hanzi": "躺平",
-     "pinyin": "tǎng píng",
-     "pos": "v.",
-     "en": "to 'lie flat', opt out of the rat race"
-    },
-    {
-     "hanzi": "平衡",
-     "pinyin": "píng héng",
-     "pos": "n./v.",
-     "en": "balance; to balance"
-    },
-    {
-     "hanzi": "工作日",
-     "pinyin": "gōng zuò rì",
-     "pos": "n.",
-     "en": "working day"
-    },
-    {
-     "hanzi": "清明节",
-     "pinyin": "Qīng míng jié",
-     "pos": "n.",
-     "en": "Qingming Festival (Tomb-Sweeping Day, early April)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u3-1",
-   "title": "大步1 U3.1 · 开个短会 A quick meeting",
-   "words": [
-    {
-     "hanzi": "到齐",
-     "pinyin": "dào qí",
-     "pos": "v.",
-     "en": "to be all here, all arrive"
-    },
-    {
-     "hanzi": "会",
-     "pinyin": "huì",
-     "pos": "n.",
-     "en": "meeting (开会 hold a meeting; 会上 at the meeting) (new meaning)"
-    },
-    {
-     "hanzi": "开会",
-     "pinyin": "kāi huì",
-     "pos": "v.",
-     "en": "to have a meeting"
-    },
-    {
-     "hanzi": "甲方",
-     "pinyin": "jiǎ fāng",
-     "pos": "n.",
-     "en": "the client ('party A' in a contract)"
-    },
-    {
-     "hanzi": "乙方",
-     "pinyin": "yǐ fāng",
-     "pos": "n.",
-     "en": "the supplier, the agency ('party B')"
-    },
-    {
-     "hanzi": "反馈",
-     "pinyin": "fǎn kuì",
-     "pos": "n./v.",
-     "en": "feedback; to give feedback"
-    },
-    {
-     "hanzi": "主色调",
-     "pinyin": "zhǔ sè diào",
-     "pos": "n.",
-     "en": "main colour, dominant colour"
-    },
-    {
-     "hanzi": "中秋",
-     "pinyin": "Zhōng qiū",
-     "pos": "n.",
-     "en": "Mid-Autumn (short for 中秋节)"
-    },
-    {
-     "hanzi": "截止日期",
-     "pinyin": "jié zhǐ rì qī",
-     "pos": "n.",
-     "en": "deadline"
-    },
-    {
-     "hanzi": "印刷",
-     "pinyin": "yìn shuā",
-     "pos": "v./n.",
-     "en": "to print; printing"
-    },
-    {
-     "hanzi": "印刷厂",
-     "pinyin": "yìn shuā chǎng",
-     "pos": "n.",
-     "en": "printer's, printing works"
-    },
-    {
-     "hanzi": "按照",
-     "pinyin": "àn zhào",
-     "pos": "prep.",
-     "en": "according to, following (a rule, request or plan)"
-    },
-    {
-     "hanzi": "调",
-     "pinyin": "tiáo",
-     "pos": "v.",
-     "en": "to adjust (调一下 tweak it)"
-    },
-    {
-     "hanzi": "调整",
-     "pinyin": "tiáo zhěng",
-     "pos": "v.",
-     "en": "to adjust"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u3-2",
-   "title": "大步1 U3.2 · 开个短会 A quick meeting",
-   "words": [
-    {
-     "hanzi": "根据",
-     "pinyin": "gēn jù",
-     "pos": "prep./n.",
-     "en": "on the basis of, according to (facts, data); basis"
-    },
-    {
-     "hanzi": "调查",
-     "pinyin": "diào chá",
-     "pos": "n./v.",
-     "en": "survey, investigation; to investigate"
-    },
-    {
-     "hanzi": "出",
-     "pinyin": "chū",
-     "pos": "v.",
-     "en": "to produce, come up with (出两个版本 do two versions)"
-    },
-    {
-     "hanzi": "版本",
-     "pinyin": "bǎn běn",
-     "pos": "n.",
-     "en": "version"
-    },
-    {
-     "hanzi": "补充",
-     "pinyin": "bǔ chōng",
-     "pos": "v.",
-     "en": "to add (a point), supplement"
-    },
-    {
-     "hanzi": "成本",
-     "pinyin": "chéng běn",
-     "pos": "n.",
-     "en": "cost"
-    },
-    {
-     "hanzi": "对接",
-     "pinyin": "duì jiē",
-     "pos": "v.",
-     "en": "to liaise with, be the contact for"
-    },
-    {
-     "hanzi": "对接人",
-     "pinyin": "duì jiē rén",
-     "pos": "n.",
-     "en": "contact person"
-    },
-    {
-     "hanzi": "交货",
-     "pinyin": "jiāo huò",
-     "pos": "v.",
-     "en": "to deliver (goods)"
-    },
-    {
-     "hanzi": "整理",
-     "pinyin": "zhěng lǐ",
-     "pos": "v.",
-     "en": "to sort out, write up"
-    },
-    {
-     "hanzi": "说一声",
-     "pinyin": "shuō yī shēng",
-     "pos": "phr.",
-     "en": "to let (someone) know, drop (someone) a line"
-    },
-    {
-     "hanzi": "书面",
-     "pinyin": "shū miàn",
-     "pos": "adj.",
-     "en": "written, in writing"
-    },
-    {
-     "hanzi": "万一",
-     "pinyin": "wàn yī",
-     "pos": "conj.",
-     "en": "just in case, if by any chance"
-    },
-    {
-     "hanzi": "已",
-     "pinyin": "yǐ",
-     "pos": "adv.",
-     "en": "already (written 已经)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u3-3",
-   "title": "大步1 U3.3 · 开个短会 A quick meeting",
-   "words": [
-    {
-     "hanzi": "查收",
-     "pinyin": "chá shōu",
-     "pos": "v.",
-     "en": "to check and receive (请查收 please find attached)"
-    },
-    {
-     "hanzi": "口语化",
-     "pinyin": "kǒu yǔ huà",
-     "pos": "adj.",
-     "en": "colloquial, too chatty"
-    },
-    {
-     "hanzi": "参考",
-     "pinyin": "cān kǎo",
-     "pos": "v./n.",
-     "en": "to refer to, consult; reference"
-    },
-    {
-     "hanzi": "结尾",
-     "pinyin": "jié wěi",
-     "pos": "n.",
-     "en": "ending, the end (of a letter)"
-    },
-    {
-     "hanzi": "固定",
-     "pinyin": "gù dìng",
-     "pos": "adj.",
-     "en": "fixed, set"
-    },
-    {
-     "hanzi": "说法",
-     "pinyin": "shuō fǎ",
-     "pos": "n.",
-     "en": "way of saying something, expression"
-    },
-    {
-     "hanzi": "散会",
-     "pinyin": "sàn huì",
-     "pos": "v.",
-     "en": "to end a meeting (散会！ meeting over!)"
-    },
-    {
-     "hanzi": "超时",
-     "pinyin": "chāo shí",
-     "pos": "v.",
-     "en": "to run over time"
-    },
-    {
-     "hanzi": "会议",
-     "pinyin": "huì yì",
-     "pos": "n.",
-     "en": "meeting, conference"
-    },
-    {
-     "hanzi": "会议室",
-     "pinyin": "huì yì shì",
-     "pos": "n.",
-     "en": "meeting room"
-    },
-    {
-     "hanzi": "会议纪要",
-     "pinyin": "huì yì jì yào",
-     "pos": "n.",
-     "en": "minutes (of a meeting)"
-    },
-    {
-     "hanzi": "主持",
-     "pinyin": "zhǔ chí",
-     "pos": "v.",
-     "en": "to chair, host"
-    },
-    {
-     "hanzi": "发言",
-     "pinyin": "fā yán",
-     "pos": "v./n.",
-     "en": "to speak (at a meeting); a speech"
-    },
-    {
-     "hanzi": "领导",
-     "pinyin": "lǐng dǎo",
-     "pos": "n./v.",
-     "en": "boss, manager, leader; to lead"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u3-4",
-   "title": "大步1 U3.4 · 开个短会 A quick meeting",
-   "words": [
-    {
-     "hanzi": "关于",
-     "pinyin": "guān yú",
-     "pos": "prep.",
-     "en": "about, concerning"
-    },
-    {
-     "hanzi": "总经理",
-     "pinyin": "zǒng jīng lǐ",
-     "pos": "n.",
-     "en": "managing director, general manager"
-    },
-    {
-     "hanzi": "宝贵",
-     "pinyin": "bǎo guì",
-     "pos": "adj.",
-     "en": "valuable, precious"
-    },
-    {
-     "hanzi": "于",
-     "pinyin": "yú",
-     "pos": "prep.",
-     "en": "at, on, in (written 在: 于4月6日 on 6 April)"
-    },
-    {
-     "hanzi": "提出",
-     "pinyin": "tí chū",
-     "pos": "v.",
-     "en": "to put forward, raise"
-    },
-    {
-     "hanzi": "就",
-     "pinyin": "jiù",
-     "pos": "prep.",
-     "en": "on, about (written: 就…召开会议 hold a meeting on…) (new meaning)"
-    },
-    {
-     "hanzi": "召开",
-     "pinyin": "zhào kāi",
-     "pos": "v.",
-     "en": "to hold, convene (a meeting)"
-    },
-    {
-     "hanzi": "专门",
-     "pinyin": "zhuān mén",
-     "pos": "adj./adv.",
-     "en": "special; especially, specifically"
-    },
-    {
-     "hanzi": "将",
-     "pinyin": "jiāng",
-     "pos": "adv./prep.",
-     "en": "will (written 会); (written 把)"
-    },
-    {
-     "hanzi": "汇报",
-     "pinyin": "huì bào",
-     "pos": "v.",
-     "en": "to report (to a boss or client)"
-    },
-    {
-     "hanzi": "如下",
-     "pinyin": "rú xià",
-     "pos": "phr.",
-     "en": "as follows"
-    },
-    {
-     "hanzi": "适当",
-     "pinyin": "shì dàng",
-     "pos": "adj.",
-     "en": "appropriate, suitable"
-    },
-    {
-     "hanzi": "市场",
-     "pinyin": "shì chǎng",
-     "pos": "n.",
-     "en": "market (市场调查 market research) (new meaning)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u3-5",
-   "title": "大步1 U3.5 · 开个短会 A quick meeting",
-   "words": [
-    {
-     "hanzi": "供",
-     "pinyin": "gōng",
-     "pos": "v.",
-     "en": "for (someone) to (供您选择 for you to choose from)"
-    },
-    {
-     "hanzi": "名称",
-     "pinyin": "míng chēng",
-     "pos": "n.",
-     "en": "name (of a thing or brand)"
-    },
-    {
-     "hanzi": "放大",
-     "pinyin": "fàng dà",
-     "pos": "v.",
-     "en": "to enlarge"
-    },
-    {
-     "hanzi": "使",
-     "pinyin": "shǐ",
-     "pos": "v.",
-     "en": "to make, cause (written 让)"
-    },
-    {
-     "hanzi": "更加",
-     "pinyin": "gèng jiā",
-     "pos": "adv.",
-     "en": "even more (written 更)"
-    },
-    {
-     "hanzi": "醒目",
-     "pinyin": "xǐng mù",
-     "pos": "adj.",
-     "en": "eye-catching"
-    },
-    {
-     "hanzi": "生产",
-     "pinyin": "shēng chǎn",
-     "pos": "v./n.",
-     "en": "to produce; production"
-    },
-    {
-     "hanzi": "另行",
-     "pinyin": "lìng xíng",
-     "pos": "adv.",
-     "en": "separately, at another time (written)"
-    },
-    {
-     "hanzi": "本",
-     "pinyin": "běn",
-     "pos": "pron.",
-     "en": "this, our (written: 本次 this time) (new meaning)"
-    },
-    {
-     "hanzi": "建议",
-     "pinyin": "jiàn yì",
-     "pos": "v./n.",
-     "en": "to suggest; suggestion"
-    },
-    {
-     "hanzi": "双方",
-     "pinyin": "shuāng fāng",
-     "pos": "n.",
-     "en": "both sides, both parties"
-    },
-    {
-     "hanzi": "视频会议",
-     "pinyin": "shì pín huì yì",
-     "pos": "n.",
-     "en": "video conference"
-    },
-    {
-     "hanzi": "进行",
-     "pinyin": "jìn xíng",
-     "pos": "v.",
-     "en": "to carry out, conduct"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u3-6",
-   "title": "大步1 U3.6 · 开个短会 A quick meeting",
-   "words": [
-    {
-     "hanzi": "可",
-     "pinyin": "kě",
-     "pos": "v.",
-     "en": "can, may (written 可以) (new meaning)"
-    },
-    {
-     "hanzi": "如",
-     "pinyin": "rú",
-     "pos": "conj.",
-     "en": "if (written: 如有问题 if you have any questions)"
-    },
-    {
-     "hanzi": "任何",
-     "pinyin": "rèn hé",
-     "pos": "pron.",
-     "en": "any"
-    },
-    {
-     "hanzi": "随时",
-     "pinyin": "suí shí",
-     "pos": "adv.",
-     "en": "at any time"
-    },
-    {
-     "hanzi": "信任",
-     "pinyin": "xìn rèn",
-     "pos": "v./n.",
-     "en": "to trust; trust"
-    },
-    {
-     "hanzi": "继续",
-     "pinyin": "jì xù",
-     "pos": "v.",
-     "en": "to continue, carry on"
-    },
-    {
-     "hanzi": "此致",
-     "pinyin": "cǐ zhì",
-     "pos": "phr.",
-     "en": "(closing a formal letter) with this I convey…"
-    },
-    {
-     "hanzi": "敬礼",
-     "pinyin": "jìng lǐ",
-     "pos": "phr.",
-     "en": "(on the line after 此致) respectful greetings"
-    },
-    {
-     "hanzi": "抄送",
-     "pinyin": "chāo sòng",
-     "pos": "v.",
-     "en": "to cc"
-    },
-    {
-     "hanzi": "转发",
-     "pinyin": "zhuǎn fā",
-     "pos": "v.",
-     "en": "to forward"
-    },
-    {
-     "hanzi": "收件人",
-     "pinyin": "shōu jiàn rén",
-     "pos": "n.",
-     "en": "recipient"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u4-1",
-   "title": "大步1 U4.1 · 跳槽还是坚持？ Move on or stay put?",
-   "words": [
-    {
-     "hanzi": "猎头",
-     "pinyin": "liè tóu",
-     "pos": "n.",
-     "en": "headhunter"
-    },
-    {
-     "hanzi": "应用",
-     "pinyin": "yìng yòng",
-     "pos": "n./v.",
-     "en": "app, application; to apply"
-    },
-    {
-     "hanzi": "界面",
-     "pinyin": "jiè miàn",
-     "pos": "n.",
-     "en": "interface, screen layout"
-    },
-    {
-     "hanzi": "犹豫",
-     "pinyin": "yóu yù",
-     "pos": "v.",
-     "en": "to hesitate"
-    },
-    {
-     "hanzi": "与其",
-     "pinyin": "yǔ qí",
-     "pos": "phr.",
-     "en": "rather than … it's better to … (与其…不如…)"
-    },
-    {
-     "hanzi": "话是这么说",
-     "pinyin": "huà shì zhè me shuō",
-     "pos": "phr.",
-     "en": "that's all very well, but…"
-    },
-    {
-     "hanzi": "攒钱",
-     "pinyin": "zǎn qián",
-     "pos": "v.",
-     "en": "to save money, save up"
-    },
-    {
-     "hanzi": "买房",
-     "pinyin": "mǎi fáng",
-     "pos": "v.",
-     "en": "to buy a flat, buy property"
-    },
-    {
-     "hanzi": "跳槽",
-     "pinyin": "tiào cáo",
-     "pos": "v.",
-     "en": "to change jobs, move to another company"
-    },
-    {
-     "hanzi": "三心二意",
-     "pinyin": "sān xīn èr yì",
-     "pos": "phr.",
-     "en": "half-hearted, unable to settle on one thing"
-    },
-    {
-     "hanzi": "宁可",
-     "pinyin": "nìng kě",
-     "pos": "phr.",
-     "en": "would rather … (and put up with the cost) (宁可…也…)"
-    },
-    {
-     "hanzi": "宁愿",
-     "pinyin": "nìng yuàn",
-     "pos": "adv.",
-     "en": "would rather"
-    },
-    {
-     "hanzi": "挣",
-     "pinyin": "zhèng",
-     "pos": "v.",
-     "en": "to earn"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u4-2",
-   "title": "大步1 U4.2 · 跳槽还是坚持？ Move on or stay put?",
-   "words": [
-    {
-     "hanzi": "房价",
-     "pinyin": "fáng jià",
-     "pos": "n.",
-     "en": "house prices, property prices"
-    },
-    {
-     "hanzi": "时代",
-     "pinyin": "shí dài",
-     "pos": "n.",
-     "en": "times, era"
-    },
-    {
-     "hanzi": "谈",
-     "pinyin": "tán",
-     "pos": "v.",
-     "en": "to talk, discuss (谈成 reach a deal)"
-    },
-    {
-     "hanzi": "一举两得",
-     "pinyin": "yī jǔ liǎng dé",
-     "pos": "phr.",
-     "en": "to kill two birds with one stone"
-    },
-    {
-     "hanzi": "开口",
-     "pinyin": "kāi kǒu",
-     "pos": "v.",
-     "en": "to open your mouth, bring something up (开不了口 can't bring yourself to say it)"
-    },
-    {
-     "hanzi": "心里有数",
-     "pinyin": "xīn li yǒu shù",
-     "pos": "phr.",
-     "en": "to know full well"
-    },
-    {
-     "hanzi": "半途而废",
-     "pinyin": "bàn tú ér fèi",
-     "pos": "phr.",
-     "en": "to give up halfway"
-    },
-    {
-     "hanzi": "纠结",
-     "pinyin": "jiū jié",
-     "pos": "adj./v.",
-     "en": "torn, agonising; to agonise over"
-    },
-    {
-     "hanzi": "生气",
-     "pinyin": "shēng qì",
-     "pos": "v./adj.",
-     "en": "to get angry; angry"
-    },
-    {
-     "hanzi": "后悔",
-     "pinyin": "hòu huǐ",
-     "pos": "v.",
-     "en": "to regret"
-    },
-    {
-     "hanzi": "成语",
-     "pinyin": "chéng yǔ",
-     "pos": "n.",
-     "en": "set phrase, four-character idiom"
-    },
-    {
-     "hanzi": "一心一意",
-     "pinyin": "yī xīn yī yì",
-     "pos": "phr.",
-     "en": "wholeheartedly"
-    },
-    {
-     "hanzi": "弄堂",
-     "pinyin": "lòng táng",
-     "pos": "n.",
-     "en": "lane, alley (in Shanghai)"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u4-3",
-   "title": "大步1 U4.3 · 跳槽还是坚持？ Move on or stay put?",
-   "words": [
-    {
-     "hanzi": "面馆",
-     "pinyin": "miàn guǎn",
-     "pos": "n.",
-     "en": "noodle shop"
-    },
-    {
-     "hanzi": "公寓",
-     "pinyin": "gōng yù",
-     "pos": "n.",
-     "en": "flat, apartment"
-    },
-    {
-     "hanzi": "租",
-     "pinyin": "zū",
-     "pos": "v.",
-     "en": "to rent"
-    },
-    {
-     "hanzi": "房",
-     "pinyin": "fáng",
-     "pos": "n.",
-     "en": "room; house, flat (一间房 a room; 买房 buy a flat)"
-    },
-    {
-     "hanzi": "间",
-     "pinyin": "jiān",
-     "pos": "m.",
-     "en": "for rooms (一间房 a room)"
-    },
-    {
-     "hanzi": "辞职",
-     "pinyin": "cí zhí",
-     "pos": "v.",
-     "en": "to resign"
-    },
-    {
-     "hanzi": "稳定",
-     "pinyin": "wěn dìng",
-     "pos": "adj.",
-     "en": "stable, steady"
-    },
-    {
-     "hanzi": "铁饭碗",
-     "pinyin": "tiě fàn wǎn",
-     "pos": "n.",
-     "en": "'iron rice bowl', a job for life"
-    },
-    {
-     "hanzi": "创业",
-     "pinyin": "chuàng yè",
-     "pos": "v.",
-     "en": "to start a business"
-    },
-    {
-     "hanzi": "自由职业",
-     "pinyin": "zì yóu zhí yè",
-     "pos": "n.",
-     "en": "freelancing"
-    },
-    {
-     "hanzi": "职业",
-     "pinyin": "zhí yè",
-     "pos": "n.",
-     "en": "occupation, career"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u4-4",
-   "title": "大步1 U4.4 · 跳槽还是坚持？ Move on or stay put?",
-   "words": [
-    {
-     "hanzi": "朋友圈",
-     "pinyin": "péng you quān",
-     "pos": "n.",
-     "en": "WeChat Moments"
-    },
-    {
-     "hanzi": "心动",
-     "pinyin": "xīn dòng",
-     "pos": "v.",
-     "en": "to be tempted"
-    },
-    {
-     "hanzi": "假",
-     "pinyin": "jiǎ",
-     "pos": "adj.",
-     "en": "false, fake (说不心动是假的 I'd be lying if I said I wasn't tempted)"
-    },
-    {
-     "hanzi": "哪样",
-     "pinyin": "nǎ yàng",
-     "pos": "pron.",
-     "en": "which, what (哪样不要钱？ what doesn't cost money?)"
-    },
-    {
-     "hanzi": "劝",
-     "pinyin": "quàn",
-     "pos": "v.",
-     "en": "to urge, advise, try to persuade"
-    },
-    {
-     "hanzi": "趁",
-     "pinyin": "chèn",
-     "pos": "prep.",
-     "en": "while, taking the chance (趁年轻 while you're young)"
-    },
-    {
-     "hanzi": "冷静",
-     "pinyin": "lěng jìng",
-     "pos": "adj./v.",
-     "en": "calm; to calm down"
-    },
-    {
-     "hanzi": "一致",
-     "pinyin": "yī zhì",
-     "pos": "adj.",
-     "en": "consistent, in line"
-    },
-    {
-     "hanzi": "属于",
-     "pinyin": "shǔ yú",
-     "pos": "v.",
-     "en": "to belong to"
-    },
-    {
-     "hanzi": "按钮",
-     "pinyin": "àn niǔ",
-     "pos": "n.",
-     "en": "button"
-    },
-    {
-     "hanzi": "收入",
-     "pinyin": "shōu rù",
-     "pos": "n.",
-     "en": "income"
-    }
-   ]
-  },
-  {
-   "id": "dabu1-u4-5",
-   "title": "大步1 U4.5 · 跳槽还是坚持？ Move on or stay put?",
-   "words": [
-    {
-     "hanzi": "领域",
-     "pinyin": "lǐng yù",
-     "pos": "n.",
-     "en": "field, area"
-    },
-    {
-     "hanzi": "光",
-     "pinyin": "guāng",
-     "pos": "adv.",
-     "en": "only, just (光有热爱 love alone)"
-    },
-    {
-     "hanzi": "热爱",
-     "pinyin": "rè ài",
-     "pos": "v./n.",
-     "en": "to love (a job, a cause); passion"
-    },
-    {
-     "hanzi": "鼓起勇气",
-     "pinyin": "gǔ qǐ yǒng qì",
-     "pos": "phr.",
-     "en": "to pluck up courage"
-    },
-    {
-     "hanzi": "勇气",
-     "pinyin": "yǒng qì",
-     "pos": "n.",
-     "en": "courage"
-    },
-    {
-     "hanzi": "本身",
-     "pinyin": "běn shēn",
-     "pos": "n.",
-     "en": "itself, in itself"
-    },
-    {
-     "hanzi": "烦",
-     "pinyin": "fán",
-     "pos": "adj.",
-     "en": "fed up, annoyed"
-    },
-    {
-     "hanzi": "大胆",
-     "pinyin": "dà dǎn",
-     "pos": "adj.",
-     "en": "bold, brave"
-    },
-    {
-     "hanzi": "至于",
-     "pinyin": "zhì yú",
-     "pos": "prep.",
-     "en": "as for"
-    },
-    {
-     "hanzi": "而",
-     "pinyin": "ér",
-     "pos": "conj.",
-     "en": "and, but (written; 为了…而… in order to)"
-    },
-    {
-     "hanzi": "仓库",
-     "pinyin": "cāng kù",
-     "pos": "",
-     "en": "warehouse"
-    },
-    {
-     "hanzi": "葱油拌面",
-     "pinyin": "cōng yóu bàn miàn",
-     "pos": "",
-     "en": "noodles with scallion oil, a Shanghai favourite"
-    },
-    {
-     "hanzi": "江",
-     "pinyin": "jiāng",
-     "pos": "",
-     "en": "(big) river"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-1",
-   "title": "大步2 U1.1 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "占",
-     "pinyin": "zhàn",
-     "pos": "v.",
-     "en": "to take up, occupy (占地方 take up room)"
-    },
-    {
-     "hanzi": "侬",
-     "pinyin": "nóng",
-     "pos": "pron.",
-     "en": "you (Shanghainese: 侬好 hello)"
-    },
-    {
-     "hanzi": "当心",
-     "pinyin": "dāng xīn",
-     "pos": "v.",
-     "en": "to watch out, mind (当心头 mind your head)"
-    },
-    {
-     "hanzi": "窄",
-     "pinyin": "zhǎi",
-     "pos": "adj.",
-     "en": "narrow"
-    },
-    {
-     "hanzi": "木头",
-     "pinyin": "mù tou",
-     "pos": "n.",
-     "en": "wood"
-    },
-    {
-     "hanzi": "阿拉",
-     "pinyin": "ā lā",
-     "pos": "pron.",
-     "en": "we, us; I (Shanghainese)"
-    },
-    {
-     "hanzi": "代",
-     "pinyin": "dài",
-     "pos": "m./n.",
-     "en": "generation (三代人 three generations)"
-    },
-    {
-     "hanzi": "朝",
-     "pinyin": "cháo",
-     "pos": "prep./v.",
-     "en": "towards; to face (朝南 face south)"
-    },
-    {
-     "hanzi": "朝南",
-     "pinyin": "cháo nán",
-     "pos": "adj.",
-     "en": "south-facing"
-    },
-    {
-     "hanzi": "梧桐树",
-     "pinyin": "wú tóng shù",
-     "pos": "n.",
-     "en": "plane tree (in Shanghai, the 'French plane'); parasol tree"
-    },
-    {
-     "hanzi": "梧桐",
-     "pinyin": "wú tóng",
-     "pos": "n.",
-     "en": "plane tree, parasol tree (in names: 法国梧桐)"
-    },
-    {
-     "hanzi": "挡",
-     "pinyin": "dǎng",
-     "pos": "v.",
-     "en": "to block, keep off"
-    },
-    {
-     "hanzi": "叶子",
-     "pinyin": "yè zi",
-     "pos": "n.",
-     "en": "leaf"
-    },
-    {
-     "hanzi": "光",
-     "pinyin": "guāng",
-     "pos": "adj.",
-     "en": "used up, all gone (掉光了 all fallen) (new meaning)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-2",
-   "title": "大步2 U1.2 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "毛病",
-     "pinyin": "máo bìng",
-     "pos": "n.",
-     "en": "fault, problem, bad habit"
-    },
-    {
-     "hanzi": "隔音",
-     "pinyin": "gé yīn",
-     "pos": "n./v.",
-     "en": "soundproofing; to keep out noise (隔音一般 you can hear the neighbours)"
-    },
-    {
-     "hanzi": "卫生间",
-     "pinyin": "wèi shēng jiān",
-     "pos": "n.",
-     "en": "bathroom"
-    },
-    {
-     "hanzi": "合用",
-     "pinyin": "hé yòng",
-     "pos": "v.",
-     "en": "to share (a kitchen, a bathroom)"
-    },
-    {
-     "hanzi": "另",
-     "pinyin": "lìng",
-     "pos": "pron./adv.",
-     "en": "other, another (另一间 the other room); separately (另算 charged separately)"
-    },
-    {
-     "hanzi": "夜班",
-     "pinyin": "yè bān",
-     "pos": "n.",
-     "en": "night shift (上夜班 work nights)"
-    },
-    {
-     "hanzi": "押一付三",
-     "pinyin": "yā yī fù sān",
-     "pos": "phr.",
-     "en": "one month's deposit and three months' rent up front"
-    },
-    {
-     "hanzi": "押",
-     "pinyin": "yā",
-     "pos": "v.",
-     "en": "to leave as a deposit"
-    },
-    {
-     "hanzi": "水电煤",
-     "pinyin": "shuǐ diàn méi",
-     "pos": "n.",
-     "en": "water, electricity and gas (the bills)"
-    },
-    {
-     "hanzi": "包",
-     "pinyin": "bāo",
-     "pos": "v.",
-     "en": "to cover, take care of (the cost) (网费我包了 I'll pay the internet) (new meaning)"
-    },
-    {
-     "hanzi": "网费",
-     "pinyin": "wǎng fèi",
-     "pos": "n.",
-     "en": "internet bill"
-    },
-    {
-     "hanzi": "费",
-     "pinyin": "fèi",
-     "pos": "n.",
-     "en": "fee, charge, bill"
-    },
-    {
-     "hanzi": "中介",
-     "pinyin": "zhōng jiè",
-     "pos": "n.",
-     "en": "(estate) agent, letting agency"
-    },
-    {
-     "hanzi": "中介费",
-     "pinyin": "zhōng jiè fèi",
-     "pos": "n.",
-     "en": "agent's fee"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-3",
-   "title": "大步2 U1.3 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "省",
-     "pinyin": "shěng",
-     "pos": "v.",
-     "en": "to save (money, time)"
-    },
-    {
-     "hanzi": "算下来",
-     "pinyin": "suàn xià lái",
-     "pos": "phr.",
-     "en": "all told, when you add it up"
-    },
-    {
-     "hanzi": "规矩",
-     "pinyin": "guī ju",
-     "pos": "n.",
-     "en": "rule, custom, the way things are done"
-    },
-    {
-     "hanzi": "套",
-     "pinyin": "tào",
-     "pos": "m.",
-     "en": "for flats (一套公寓 a flat) (new meaning)"
-    },
-    {
-     "hanzi": "小区",
-     "pinyin": "xiǎo qū",
-     "pos": "n.",
-     "en": "housing estate, residential compound"
-    },
-    {
-     "hanzi": "层",
-     "pinyin": "céng",
-     "pos": "m.",
-     "en": "floor, storey (二十几层 the twenty-somethingth floor)"
-    },
-    {
-     "hanzi": "对着",
-     "pinyin": "duì zhe",
-     "pos": "v.",
-     "en": "to face, look onto"
-    },
-    {
-     "hanzi": "各有各的",
-     "pinyin": "gè yǒu gè de",
-     "pos": "phr.",
-     "en": "each has its own (各有各的好 each has its good points)"
-    },
-    {
-     "hanzi": "味道",
-     "pinyin": "wèi dao",
-     "pos": "n.",
-     "en": "character, charm, atmosphere (有味道 has character) (new meaning)"
-    },
-    {
-     "hanzi": "倒是",
-     "pinyin": "dào shì",
-     "pos": "phr.",
-     "en": "… is fine, it's just that … (倒是…就是…)"
-    },
-    {
-     "hanzi": "不到哪里去",
-     "pinyin": "bù dào nǎ li qù",
-     "pos": "phr.",
-     "en": "(after an adjective) not all that … (冷不到哪里去 not that cold)"
-    },
-    {
-     "hanzi": "房东",
-     "pinyin": "fáng dōng",
-     "pos": "n.",
-     "en": "landlord, landlady"
-    },
-    {
-     "hanzi": "打着灯笼都难找",
-     "pinyin": "dǎ zhe dēng long dōu nán zhǎo",
-     "pos": "phr.",
-     "en": "you couldn't find one with a lantern: very rare"
-    },
-    {
-     "hanzi": "签",
-     "pinyin": "qiān",
-     "pos": "v.",
-     "en": "to sign"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-4",
-   "title": "大步2 U1.4 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "合同",
-     "pinyin": "hé tong",
-     "pos": "n.",
-     "en": "contract"
-    },
-    {
-     "hanzi": "看房",
-     "pinyin": "kàn fáng",
-     "pos": "v.",
-     "en": "to view a flat or room"
-    },
-    {
-     "hanzi": "记",
-     "pinyin": "jì",
-     "pos": "n.",
-     "en": "account, record (in titles: 租房记 a renting story)"
-    },
-    {
-     "hanzi": "大概",
-     "pinyin": "dà gài",
-     "pos": "adv.",
-     "en": "about, probably"
-    },
-    {
-     "hanzi": "老洋房",
-     "pinyin": "lǎo yáng fáng",
-     "pos": "n.",
-     "en": "old Western-style house (in Shanghai, mostly from the 1920s–40s)"
-    },
-    {
-     "hanzi": "高楼",
-     "pinyin": "gāo lóu",
-     "pos": "n.",
-     "en": "tall building, high-rise"
-    },
-    {
-     "hanzi": "卧室",
-     "pinyin": "wò shì",
-     "pos": "n.",
-     "en": "bedroom"
-    },
-    {
-     "hanzi": "客厅",
-     "pinyin": "kè tīng",
-     "pos": "n.",
-     "en": "living room"
-    },
-    {
-     "hanzi": "家具",
-     "pinyin": "jiā jù",
-     "pos": "n.",
-     "en": "furniture"
-    },
-    {
-     "hanzi": "搬家",
-     "pinyin": "bān jiā",
-     "pos": "v.",
-     "en": "to move house"
-    },
-    {
-     "hanzi": "整租",
-     "pinyin": "zhěng zū",
-     "pos": "v.",
-     "en": "to rent a whole flat"
-    },
-    {
-     "hanzi": "合租",
-     "pinyin": "hé zū",
-     "pos": "v.",
-     "en": "to share a flat, rent a room in a shared flat"
-    },
-    {
-     "hanzi": "通勤",
-     "pinyin": "tōng qín",
-     "pos": "v./n.",
-     "en": "to commute; commute"
-    },
-    {
-     "hanzi": "划算",
-     "pinyin": "huá suàn",
-     "pos": "adj.",
-     "en": "good value, worth it"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-5",
-   "title": "大步2 U1.5 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "房屋",
-     "pinyin": "fáng wū",
-     "pos": "n.",
-     "en": "house, property (formal)"
-    },
-    {
-     "hanzi": "租赁",
-     "pinyin": "zū lìn",
-     "pos": "v.",
-     "en": "to lease, rent (formal)"
-    },
-    {
-     "hanzi": "节选",
-     "pinyin": "jié xuǎn",
-     "pos": "n.",
-     "en": "extract, excerpt"
-    },
-    {
-     "hanzi": "出租",
-     "pinyin": "chū zū",
-     "pos": "v.",
-     "en": "to let, rent out"
-    },
-    {
-     "hanzi": "承租",
-     "pinyin": "chéng zū",
-     "pos": "v.",
-     "en": "to rent, take a lease on (formal)"
-    },
-    {
-     "hanzi": "方",
-     "pinyin": "fāng",
-     "pos": "n.",
-     "en": "side, party (出租方 the landlord; 承租方 the tenant)"
-    },
-    {
-     "hanzi": "经",
-     "pinyin": "jīng",
-     "pos": "prep.",
-     "en": "after, through (written: 经协商 after discussion)"
-    },
-    {
-     "hanzi": "友好",
-     "pinyin": "yǒu hǎo",
-     "pos": "adj.",
-     "en": "friendly"
-    },
-    {
-     "hanzi": "协商",
-     "pinyin": "xié shāng",
-     "pos": "v.",
-     "en": "to discuss and agree, negotiate"
-    },
-    {
-     "hanzi": "租用",
-     "pinyin": "zū yòng",
-     "pos": "v.",
-     "en": "to rent, hire"
-    },
-    {
-     "hanzi": "达成",
-     "pinyin": "dá chéng",
-     "pos": "v.",
-     "en": "to reach (an agreement)"
-    },
-    {
-     "hanzi": "协议",
-     "pinyin": "xié yì",
-     "pos": "n.",
-     "en": "agreement"
-    },
-    {
-     "hanzi": "市",
-     "pinyin": "shì",
-     "pos": "n.",
-     "en": "city (上海市 the City of Shanghai)"
-    },
-    {
-     "hanzi": "某",
-     "pinyin": "mǒu",
-     "pos": "pron.",
-     "en": "a certain, such-and-such (某弄某号 No. —, Lane —)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-6",
-   "title": "大步2 U1.6 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "弄",
-     "pinyin": "lòng",
-     "pos": "n.",
-     "en": "lane (in Shanghai addresses) (new meaning)"
-    },
-    {
-     "hanzi": "面积",
-     "pinyin": "miàn jī",
-     "pos": "n.",
-     "en": "area, size"
-    },
-    {
-     "hanzi": "约",
-     "pinyin": "yuē",
-     "pos": "adv.",
-     "en": "about, approximately (written 大概) (new meaning)"
-    },
-    {
-     "hanzi": "平方米",
-     "pinyin": "píng fāng mǐ",
-     "pos": "m.",
-     "en": "square metre"
-    },
-    {
-     "hanzi": "租客",
-     "pinyin": "zū kè",
-     "pos": "n.",
-     "en": "tenant"
-    },
-    {
-     "hanzi": "租期",
-     "pinyin": "zū qī",
-     "pos": "n.",
-     "en": "tenancy, term of a lease"
-    },
-    {
-     "hanzi": "自",
-     "pinyin": "zì",
-     "pos": "phr.",
-     "en": "from … on (written) (自…起)"
-    },
-    {
-     "hanzi": "止",
-     "pinyin": "zhǐ",
-     "pos": "v.",
-     "en": "to end, stop (至…止 until …)"
-    },
-    {
-     "hanzi": "共",
-     "pinyin": "gòng",
-     "pos": "adv.",
-     "en": "in all, altogether (written 一共)"
-    },
-    {
-     "hanzi": "租金",
-     "pinyin": "zū jīn",
-     "pos": "n.",
-     "en": "rent (formal 房租)"
-    },
-    {
-     "hanzi": "即",
-     "pinyin": "jí",
-     "pos": "adv.",
-     "en": "that is, namely (written)"
-    },
-    {
-     "hanzi": "须",
-     "pinyin": "xū",
-     "pos": "v.",
-     "en": "must (written 必须)"
-    },
-    {
-     "hanzi": "期",
-     "pinyin": "qī",
-     "pos": "n./m.",
-     "en": "period, instalment, phase"
-    },
-    {
-     "hanzi": "付清",
-     "pinyin": "fù qīng",
-     "pos": "v.",
-     "en": "to pay in full, pay off"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-7",
-   "title": "大步2 U1.7 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "费用",
-     "pinyin": "fèi yòng",
-     "pos": "n.",
-     "en": "costs, charges"
-    },
-    {
-     "hanzi": "燃气",
-     "pinyin": "rán qì",
-     "pos": "n.",
-     "en": "gas (for cooking and heating)"
-    },
-    {
-     "hanzi": "按",
-     "pinyin": "àn",
-     "pos": "prep.",
-     "en": "according to, by (按规定 by the rules; shorter 按照)"
-    },
-    {
-     "hanzi": "由",
-     "pinyin": "yóu",
-     "pos": "prep.",
-     "en": "by (who does or pays: 由乙方承担 borne by Party B)"
-    },
-    {
-     "hanzi": "实际",
-     "pinyin": "shí jì",
-     "pos": "adj./n.",
-     "en": "actual, real; reality"
-    },
-    {
-     "hanzi": "量",
-     "pinyin": "liàng",
-     "pos": "n.",
-     "en": "amount, quantity (使用量 amount used)"
-    },
-    {
-     "hanzi": "承担",
-     "pinyin": "chéng dān",
-     "pos": "v.",
-     "en": "to bear, take on (costs, responsibility)"
-    },
-    {
-     "hanzi": "爱护",
-     "pinyin": "ài hù",
-     "pos": "v.",
-     "en": "to take good care of, look after"
-    },
-    {
-     "hanzi": "应",
-     "pinyin": "yīng",
-     "pos": "v.",
-     "en": "shall, should (written 应该)"
-    },
-    {
-     "hanzi": "电器",
-     "pinyin": "diàn qì",
-     "pos": "n.",
-     "en": "electrical appliance"
-    },
-    {
-     "hanzi": "不当",
-     "pinyin": "bù dàng",
-     "pos": "adj.",
-     "en": "improper, wrong (written)"
-    },
-    {
-     "hanzi": "造成",
-     "pinyin": "zào chéng",
-     "pos": "v.",
-     "en": "to cause (something bad)"
-    },
-    {
-     "hanzi": "损坏",
-     "pinyin": "sǔn huài",
-     "pos": "v./n.",
-     "en": "to damage; damage"
-    },
-    {
-     "hanzi": "维修",
-     "pinyin": "wéi xiū",
-     "pos": "v.",
-     "en": "to repair, maintain"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-8",
-   "title": "大步2 U1.8 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "赔偿",
-     "pinyin": "péi cháng",
-     "pos": "v./n.",
-     "en": "to compensate; compensation"
-    },
-    {
-     "hanzi": "未经",
-     "pinyin": "wèi jīng",
-     "pos": "phr.",
-     "en": "without (permission) (未经同意 without consent)"
-    },
-    {
-     "hanzi": "不得",
-     "pinyin": "bù dé",
-     "pos": "v.",
-     "en": "must not, may not (written)"
-    },
-    {
-     "hanzi": "转租",
-     "pinyin": "zhuǎn zū",
-     "pos": "v.",
-     "en": "to sublet"
-    },
-    {
-     "hanzi": "他人",
-     "pinyin": "tā rén",
-     "pos": "pron.",
-     "en": "other people (written)"
-    },
-    {
-     "hanzi": "改变",
-     "pinyin": "gǎi biàn",
-     "pos": "v.",
-     "en": "to change, alter"
-    },
-    {
-     "hanzi": "结构",
-     "pinyin": "jié gòu",
-     "pos": "n.",
-     "en": "structure"
-    },
-    {
-     "hanzi": "退租",
-     "pinyin": "tuì zū",
-     "pos": "v.",
-     "en": "to end a tenancy, move out"
-    },
-    {
-     "hanzi": "一方",
-     "pinyin": "yī fāng",
-     "pos": "n.",
-     "en": "one side, one party (任何一方 either party)"
-    },
-    {
-     "hanzi": "需",
-     "pinyin": "xū",
-     "pos": "v.",
-     "en": "to need (written 需要: 如需 if you need)"
-    },
-    {
-     "hanzi": "未",
-     "pinyin": "wèi",
-     "pos": "adv.",
-     "en": "not, not yet (written 没: 如未 if … not)"
-    },
-    {
-     "hanzi": "向",
-     "pinyin": "xiàng",
-     "pos": "prep.",
-     "en": "to, towards (向对方支付 pay to the other party)"
-    },
-    {
-     "hanzi": "解除",
-     "pinyin": "jiě chú",
-     "pos": "v.",
-     "en": "to end, cancel (a contract)"
-    },
-    {
-     "hanzi": "对方",
-     "pinyin": "duì fāng",
-     "pos": "n.",
-     "en": "the other side, the other party"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u1-9",
-   "title": "大步2 U1.9 · 租房记 A room with a tree",
-   "words": [
-    {
-     "hanzi": "作为",
-     "pinyin": "zuò wéi",
-     "pos": "prep./v.",
-     "en": "as; to serve as"
-    },
-    {
-     "hanzi": "违约金",
-     "pinyin": "wéi yuē jīn",
-     "pos": "n.",
-     "en": "penalty for breaking a contract"
-    },
-    {
-     "hanzi": "退还",
-     "pinyin": "tuì huán",
-     "pos": "v.",
-     "en": "to give back, return (money)"
-    },
-    {
-     "hanzi": "检查",
-     "pinyin": "jiǎn chá",
-     "pos": "v./n.",
-     "en": "to check, inspect; check"
-    },
-    {
-     "hanzi": "无",
-     "pinyin": "wú",
-     "pos": "v.",
-     "en": "to have no, be without (written 没有)"
-    },
-    {
-     "hanzi": "一式两份",
-     "pinyin": "yī shì liǎng fèn",
-     "pos": "phr.",
-     "en": "in duplicate, in two copies"
-    },
-    {
-     "hanzi": "各执一份",
-     "pinyin": "gè zhí yī fèn",
-     "pos": "phr.",
-     "en": "each party keeps one copy"
-    },
-    {
-     "hanzi": "之日",
-     "pinyin": "zhī rì",
-     "pos": "n.",
-     "en": "the day (written: 签字之日 the day of signing)"
-    },
-    {
-     "hanzi": "遵守",
-     "pinyin": "zūn shǒu",
-     "pos": "v.",
-     "en": "to follow, keep to (rules)"
-    },
-    {
-     "hanzi": "所在",
-     "pinyin": "suǒ zài",
-     "pos": "adj.",
-     "en": "where (something) is (所在弄堂 the lane it's in; written)"
-    },
-    {
-     "hanzi": "现有",
-     "pinyin": "xiàn yǒu",
-     "pos": "adj.",
-     "en": "existing, present"
-    },
-    {
-     "hanzi": "清单",
-     "pinyin": "qīng dān",
-     "pos": "n.",
-     "en": "list, inventory"
-    },
-    {
-     "hanzi": "生效",
-     "pinyin": "shēng xiào",
-     "pos": "v.",
-     "en": "to take effect"
-    },
-    {
-     "hanzi": "签字",
-     "pinyin": "qiān zì",
-     "pos": "v.",
-     "en": "to sign (your name)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-1",
-   "title": "大步2 U2.1 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "袋",
-     "pinyin": "dài",
-     "pos": "m./n.",
-     "en": "bag (一袋垃圾 a bag of rubbish)"
-    },
-    {
-     "hanzi": "剩",
-     "pinyin": "shèng",
-     "pos": "v.",
-     "en": "to be left over (吃剩的 leftovers)"
-    },
-    {
-     "hanzi": "普通",
-     "pinyin": "pǔ tōng",
-     "pos": "adj.",
-     "en": "ordinary, common (普通人 ordinary people)"
-    },
-    {
-     "hanzi": "湿垃圾",
-     "pinyin": "shī lā jī",
-     "pos": "n.",
-     "en": "wet rubbish, food waste (Shanghai's term)"
-    },
-    {
-     "hanzi": "干垃圾",
-     "pinyin": "gān lā jī",
-     "pos": "n.",
-     "en": "dry rubbish, general waste (Shanghai's term)"
-    },
-    {
-     "hanzi": "否则",
-     "pinyin": "fǒu zé",
-     "pos": "conj.",
-     "en": "otherwise, or else"
-    },
-    {
-     "hanzi": "志愿者",
-     "pinyin": "zhì yuàn zhě",
-     "pos": "n.",
-     "en": "volunteer"
-    },
-    {
-     "hanzi": "白",
-     "pinyin": "bái",
-     "pos": "adv.",
-     "en": "in vain, for nothing (白当了 all for nothing) (new meaning)"
-    },
-    {
-     "hanzi": "回收",
-     "pinyin": "huí shōu",
-     "pos": "v.",
-     "en": "to recycle, collect for recycling"
-    },
-    {
-     "hanzi": "纸盒",
-     "pinyin": "zhǐ hé",
-     "pos": "n.",
-     "en": "cardboard box, carton"
-    },
-    {
-     "hanzi": "报纸",
-     "pinyin": "bào zhǐ",
-     "pos": "n.",
-     "en": "newspaper"
-    },
-    {
-     "hanzi": "可回收物",
-     "pinyin": "kě huí shōu wù",
-     "pos": "n.",
-     "en": "recyclables"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-2",
-   "title": "大步2 U2.2 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "复杂",
-     "pinyin": "fù zá",
-     "pos": "adj.",
-     "en": "complicated"
-    },
-    {
-     "hanzi": "塑料袋",
-     "pinyin": "sù liào dài",
-     "pos": "n.",
-     "en": "plastic bag"
-    },
-    {
-     "hanzi": "塑料",
-     "pinyin": "sù liào",
-     "pos": "n.",
-     "en": "plastic"
-    },
-    {
-     "hanzi": "破袋",
-     "pinyin": "pò dài",
-     "pos": "v.",
-     "en": "to open the bag and empty it (for wet rubbish)"
-    },
-    {
-     "hanzi": "袋子",
-     "pinyin": "dài zi",
-     "pos": "n.",
-     "en": "bag"
-    },
-    {
-     "hanzi": "倒",
-     "pinyin": "dào",
-     "pos": "v.",
-     "en": "to pour, tip out (倒掉 pour away) (new meaning)"
-    },
-    {
-     "hanzi": "进",
-     "pinyin": "jìn",
-     "pos": "v.",
-     "en": "to enter, go into (倒进 tip into; 扔进 throw into)"
-    },
-    {
-     "hanzi": "垃圾桶",
-     "pinyin": "lā jī tǒng",
-     "pos": "n.",
-     "en": "rubbish bin"
-    },
-    {
-     "hanzi": "桶",
-     "pinyin": "tǒng",
-     "pos": "n.",
-     "en": "bin, bucket"
-    },
-    {
-     "hanzi": "盖子",
-     "pinyin": "gài zi",
-     "pos": "n.",
-     "en": "lid"
-    },
-    {
-     "hanzi": "糊涂",
-     "pinyin": "hú tu",
-     "pos": "adj.",
-     "en": "confused, muddled"
-    },
-    {
-     "hanzi": "口诀",
-     "pinyin": "kǒu jué",
-     "pos": "n.",
-     "en": "rhyme or saying to help you remember"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-3",
-   "title": "大步2 U2.3 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "猪",
-     "pinyin": "zhū",
-     "pos": "n.",
-     "en": "pig"
-    },
-    {
-     "hanzi": "有害垃圾",
-     "pinyin": "yǒu hài lā jī",
-     "pos": "n.",
-     "en": "hazardous waste"
-    },
-    {
-     "hanzi": "有害",
-     "pinyin": "yǒu hài",
-     "pos": "adj.",
-     "en": "harmful"
-    },
-    {
-     "hanzi": "好记",
-     "pinyin": "hǎo jì",
-     "pos": "adj.",
-     "en": "easy to remember"
-    },
-    {
-     "hanzi": "骨头",
-     "pinyin": "gǔ tou",
-     "pos": "n.",
-     "en": "bone"
-    },
-    {
-     "hanzi": "硬",
-     "pinyin": "yìng",
-     "pos": "adj.",
-     "en": "hard"
-    },
-    {
-     "hanzi": "万能",
-     "pinyin": "wàn néng",
-     "pos": "adj.",
-     "en": "all-purpose, able to do anything"
-    },
-    {
-     "hanzi": "分类",
-     "pinyin": "fēn lèi",
-     "pos": "v./n.",
-     "en": "to sort, classify; sorting"
-    },
-    {
-     "hanzi": "搞",
-     "pinyin": "gǎo",
-     "pos": "v.",
-     "en": "to do, get (informal: 搞不清楚 can't work out)"
-    },
-    {
-     "hanzi": "研究",
-     "pinyin": "yán jiū",
-     "pos": "v./n.",
-     "en": "to study, look into; research"
-    },
-    {
-     "hanzi": "嫌",
-     "pinyin": "xián",
-     "pos": "v.",
-     "en": "to find (something) annoying, mind (嫌麻烦 find it a hassle)"
-    },
-    {
-     "hanzi": "产生",
-     "pinyin": "chǎn shēng",
-     "pos": "v.",
-     "en": "to produce, give rise to"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-4",
-   "title": "大步2 U2.4 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "由于",
-     "pinyin": "yóu yú",
-     "pos": "conj./prep.",
-     "en": "because of, owing to (written)"
-    },
-    {
-     "hanzi": "埋",
-     "pinyin": "mái",
-     "pos": "v.",
-     "en": "to bury"
-    },
-    {
-     "hanzi": "肥料",
-     "pinyin": "féi liào",
-     "pos": "n.",
-     "en": "fertiliser, compost"
-    },
-    {
-     "hanzi": "利用",
-     "pinyin": "lì yòng",
-     "pos": "v.",
-     "en": "to use, make use of (再利用 reuse)"
-    },
-    {
-     "hanzi": "压扁",
-     "pinyin": "yā biǎn",
-     "pos": "v.",
-     "en": "to flatten, squash flat"
-    },
-    {
-     "hanzi": "不然",
-     "pinyin": "bù rán",
-     "pos": "conj.",
-     "en": "otherwise, or else (spoken)"
-    },
-    {
-     "hanzi": "红马甲",
-     "pinyin": "hóng mǎ jiǎ",
-     "pos": "n.",
-     "en": "red waistcoat (worn by volunteers)"
-    },
-    {
-     "hanzi": "环保",
-     "pinyin": "huán bǎo",
-     "pos": "n./adj.",
-     "en": "environmental protection; eco-friendly"
-    },
-    {
-     "hanzi": "快递",
-     "pinyin": "kuài dì",
-     "pos": "n.",
-     "en": "parcel delivery, a parcel"
-    },
-    {
-     "hanzi": "不必",
-     "pinyin": "bù bì",
-     "pos": "adv.",
-     "en": "needn't, don't have to"
-    },
-    {
-     "hanzi": "过期",
-     "pinyin": "guò qī",
-     "pos": "v.",
-     "en": "to expire, go out of date"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-5",
-   "title": "大步2 U2.5 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "生活垃圾",
-     "pinyin": "shēng huó lā jī",
-     "pos": "n.",
-     "en": "household waste"
-    },
-    {
-     "hanzi": "管理",
-     "pinyin": "guǎn lǐ",
-     "pos": "v./n.",
-     "en": "to manage, run; management"
-    },
-    {
-     "hanzi": "条例",
-     "pinyin": "tiáo lì",
-     "pos": "n.",
-     "en": "regulations"
-    },
-    {
-     "hanzi": "实施",
-     "pinyin": "shí shī",
-     "pos": "v.",
-     "en": "to put into effect, implement"
-    },
-    {
-     "hanzi": "成为",
-     "pinyin": "chéng wéi",
-     "pos": "v.",
-     "en": "to become"
-    },
-    {
-     "hanzi": "全国",
-     "pinyin": "quán guó",
-     "pos": "n.",
-     "en": "the whole country, nationwide"
-    },
-    {
-     "hanzi": "强制",
-     "pinyin": "qiáng zhì",
-     "pos": "v./adj.",
-     "en": "to force; compulsory"
-    },
-    {
-     "hanzi": "实行",
-     "pinyin": "shí xíng",
-     "pos": "v.",
-     "en": "to put into practice, carry out"
-    },
-    {
-     "hanzi": "日常",
-     "pinyin": "rì cháng",
-     "pos": "adj.",
-     "en": "everyday, daily"
-    },
-    {
-     "hanzi": "分为",
-     "pinyin": "fēn wéi",
-     "pos": "v.",
-     "en": "to divide into"
-    },
-    {
-     "hanzi": "类",
-     "pinyin": "lèi",
-     "pos": "m./n.",
-     "en": "kind, type, category"
-    },
-    {
-     "hanzi": "居民",
-     "pinyin": "jū mín",
-     "pos": "n.",
-     "en": "resident"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-6",
-   "title": "大步2 U2.6 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "投放",
-     "pinyin": "tóu fàng",
-     "pos": "v.",
-     "en": "to put in, drop off (rubbish; formal)"
-    },
-    {
-     "hanzi": "处理",
-     "pinyin": "chǔ lǐ",
-     "pos": "v.",
-     "en": "to deal with, process, handle"
-    },
-    {
-     "hanzi": "每家每户",
-     "pinyin": "měi jiā měi hù",
-     "pos": "phr.",
-     "en": "every household"
-    },
-    {
-     "hanzi": "一度",
-     "pinyin": "yī dù",
-     "pos": "adv.",
-     "en": "for a time, at one point"
-    },
-    {
-     "hanzi": "下载",
-     "pinyin": "xià zài",
-     "pos": "v.",
-     "en": "to download"
-    },
-    {
-     "hanzi": "定时定点",
-     "pinyin": "dìng shí dìng diǎn",
-     "pos": "phr.",
-     "en": "at set times and places"
-    },
-    {
-     "hanzi": "垃圾箱房",
-     "pinyin": "lā jī xiāng fáng",
-     "pos": "n.",
-     "en": "bin store, the rubbish point for a lane or estate"
-    },
-    {
-     "hanzi": "解释",
-     "pinyin": "jiě shì",
-     "pos": "v./n.",
-     "en": "to explain; explanation"
-    },
-    {
-     "hanzi": "运",
-     "pinyin": "yùn",
-     "pos": "v.",
-     "en": "to transport, carry"
-    },
-    {
-     "hanzi": "工厂",
-     "pinyin": "gōng chǎng",
-     "pos": "n.",
-     "en": "factory, plant"
-    },
-    {
-     "hanzi": "能源",
-     "pinyin": "néng yuán",
-     "pos": "n.",
-     "en": "energy, power"
-    },
-    {
-     "hanzi": "加工",
-     "pinyin": "jiā gōng",
-     "pos": "v.",
-     "en": "to process"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-7",
-   "title": "大步2 U2.7 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "填埋",
-     "pinyin": "tián mái",
-     "pos": "v.",
-     "en": "to put in landfill"
-    },
-    {
-     "hanzi": "大大",
-     "pinyin": "dà dà",
-     "pos": "adv.",
-     "en": "greatly, a great deal"
-    },
-    {
-     "hanzi": "减少",
-     "pinyin": "jiǎn shǎo",
-     "pos": "v.",
-     "en": "to reduce, cut down"
-    },
-    {
-     "hanzi": "街道",
-     "pinyin": "jiē dào",
-     "pos": "n.",
-     "en": "street, streets"
-    },
-    {
-     "hanzi": "思考",
-     "pinyin": "sī kǎo",
-     "pos": "v.",
-     "en": "to think, reflect"
-    },
-    {
-     "hanzi": "一次性",
-     "pinyin": "yī cì xìng",
-     "pos": "adj.",
-     "en": "disposable, single-use"
-    },
-    {
-     "hanzi": "饭盒",
-     "pinyin": "fàn hé",
-     "pos": "n.",
-     "en": "food box, lunch box"
-    },
-    {
-     "hanzi": "纸箱",
-     "pinyin": "zhǐ xiāng",
-     "pos": "n.",
-     "en": "cardboard box"
-    },
-    {
-     "hanzi": "增加",
-     "pinyin": "zēng jiā",
-     "pos": "v.",
-     "en": "to increase, grow"
-    },
-    {
-     "hanzi": "源头",
-     "pinyin": "yuán tóu",
-     "pos": "n.",
-     "en": "source (从源头上 at the source)"
-    },
-    {
-     "hanzi": "关键",
-     "pinyin": "guān jiàn",
-     "pos": "n./adj.",
-     "en": "key, crux; crucial"
-    },
-    {
-     "hanzi": "以便",
-     "pinyin": "yǐ biàn",
-     "pos": "conj.",
-     "en": "so that, in order to (written)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u2-8",
-   "title": "大步2 U2.8 · 垃圾分类 Which bin?",
-   "words": [
-    {
-     "hanzi": "用品",
-     "pinyin": "yòng pǐn",
-     "pos": "n.",
-     "en": "articles, things for use (一次性用品 disposables)"
-    },
-    {
-     "hanzi": "餐具",
-     "pinyin": "cān jù",
-     "pos": "n.",
-     "en": "cutlery, tableware"
-    },
-    {
-     "hanzi": "时",
-     "pinyin": "shí",
-     "pos": "n.",
-     "en": "when, time (written 的时候: 点外卖时 when ordering takeaway)"
-    },
-    {
-     "hanzi": "步",
-     "pinyin": "bù",
-     "pos": "n.",
-     "en": "step (第一步 the first step)"
-    },
-    {
-     "hanzi": "节省",
-     "pinyin": "jié shěng",
-     "pos": "v.",
-     "en": "to save (space, money, time)"
-    },
-    {
-     "hanzi": "不只",
-     "pinyin": "bù zhǐ",
-     "pos": "conj.",
-     "en": "not only"
-    },
-    {
-     "hanzi": "资源",
-     "pinyin": "zī yuán",
-     "pos": "n.",
-     "en": "resources"
-    },
-    {
-     "hanzi": "浪费",
-     "pinyin": "làng fèi",
-     "pos": "v./n.",
-     "en": "to waste; waste"
-    },
-    {
-     "hanzi": "污染",
-     "pinyin": "wū rǎn",
-     "pos": "v./n.",
-     "en": "to pollute; pollution"
-    },
-    {
-     "hanzi": "环境",
-     "pinyin": "huán jìng",
-     "pos": "n.",
-     "en": "environment"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u3-1",
-   "title": "大步2 U3.1 · 城市和乡村 The village in the bamboo",
-   "words": [
-    {
-     "hanzi": "乡村",
-     "pinyin": "xiāng cūn",
-     "pos": "n.",
-     "en": "the countryside, rural areas"
-    },
-    {
-     "hanzi": "说来听听",
-     "pinyin": "shuō lái tīng ting",
-     "pos": "phr.",
-     "en": "let's hear it, tell us"
-    },
-    {
-     "hanzi": "村子",
-     "pinyin": "cūn zi",
-     "pos": "n.",
-     "en": "village"
-    },
-    {
-     "hanzi": "村",
-     "pinyin": "cūn",
-     "pos": "n.",
-     "en": "village (村里 in the village)"
-    },
-    {
-     "hanzi": "编",
-     "pinyin": "biān",
-     "pos": "v.",
-     "en": "to weave, plait"
-    },
-    {
-     "hanzi": "篮子",
-     "pinyin": "lán zi",
-     "pos": "n.",
-     "en": "basket"
-    },
-    {
-     "hanzi": "辛辛苦苦",
-     "pinyin": "xīn xīn kǔ kǔ",
-     "pos": "adv.",
-     "en": "painstakingly, with great effort"
-    },
-    {
-     "hanzi": "打工",
-     "pinyin": "dǎ gōng",
-     "pos": "v.",
-     "en": "to work (away from home, often in a factory or for wages)"
-    },
-    {
-     "hanzi": "门",
-     "pinyin": "mén",
-     "pos": "m.",
-     "en": "for crafts, skills and subjects (一门手艺 a craft) (new meaning)"
-    },
-    {
-     "hanzi": "手艺",
-     "pinyin": "shǒu yì",
-     "pos": "n.",
-     "en": "craft, craftsmanship"
-    },
-    {
-     "hanzi": "合作社",
-     "pinyin": "hé zuò shè",
-     "pos": "n.",
-     "en": "co-operative"
-    },
-    {
-     "hanzi": "竹编",
-     "pinyin": "zhú biān",
-     "pos": "n.",
-     "en": "bamboo weaving; woven bamboo ware"
-    },
-    {
-     "hanzi": "预算",
-     "pinyin": "yù suàn",
-     "pos": "n.",
-     "en": "budget"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u3-2",
-   "title": "大步2 U3.2 · 城市和乡村 The village in the bamboo",
-   "words": [
-    {
-     "hanzi": "赚",
-     "pinyin": "zhuàn",
-     "pos": "v.",
-     "en": "to earn, make (money)"
-    },
-    {
-     "hanzi": "赚钱",
-     "pinyin": "zhuàn qián",
-     "pos": "v.",
-     "en": "to make money"
-    },
-    {
-     "hanzi": "跟上",
-     "pinyin": "gēn shàng",
-     "pos": "v.",
-     "en": "to keep up with"
-    },
-    {
-     "hanzi": "活路",
-     "pinyin": "huó lù",
-     "pos": "n.",
-     "en": "a way to survive, a way out"
-    },
-    {
-     "hanzi": "好事",
-     "pinyin": "hǎo shì",
-     "pos": "n.",
-     "en": "good thing, good deed"
-    },
-    {
-     "hanzi": "留守儿童",
-     "pinyin": "liú shǒu ér tóng",
-     "pos": "n.",
-     "en": "'left-behind child', raised at home while parents work far away"
-    },
-    {
-     "hanzi": "留守",
-     "pinyin": "liú shǒu",
-     "pos": "v.",
-     "en": "to stay behind"
-    },
-    {
-     "hanzi": "难受",
-     "pinyin": "nán shòu",
-     "pos": "adj.",
-     "en": "hard to bear, upset, unwell"
-    },
-    {
-     "hanzi": "确实",
-     "pinyin": "què shí",
-     "pos": "adv.",
-     "en": "really, indeed"
-    },
-    {
-     "hanzi": "躲",
-     "pinyin": "duǒ",
-     "pos": "v.",
-     "en": "to hide"
-    },
-    {
-     "hanzi": "身后",
-     "pinyin": "shēn hòu",
-     "pos": "n.",
-     "en": "behind (someone)"
-    },
-    {
-     "hanzi": "农村",
-     "pinyin": "nóng cūn",
-     "pos": "n.",
-     "en": "the countryside, village (as opposed to the city)"
-    },
-    {
-     "hanzi": "随着",
-     "pinyin": "suí zhe",
-     "pos": "prep.",
-     "en": "along with, as (things change)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u3-3",
-   "title": "大步2 U3.3 · 城市和乡村 The village in the bamboo",
-   "words": [
-    {
-     "hanzi": "直播",
-     "pinyin": "zhí bō",
-     "pos": "v./n.",
-     "en": "to livestream; livestream"
-    },
-    {
-     "hanzi": "有些",
-     "pinyin": "yǒu xiē",
-     "pos": "pron.",
-     "en": "some"
-    },
-    {
-     "hanzi": "表弟",
-     "pinyin": "biǎo dì",
-     "pos": "n.",
-     "en": "(younger male) cousin (son of your mother's sibling or your father's sister)"
-    },
-    {
-     "hanzi": "高兴坏了",
-     "pinyin": "gāo xìng huài le",
-     "pos": "phr.",
-     "en": "over the moon, thrilled"
-    },
-    {
-     "hanzi": "进城",
-     "pinyin": "jìn chéng",
-     "pos": "v.",
-     "en": "to go to town, go into the city"
-    },
-    {
-     "hanzi": "城市化",
-     "pinyin": "chéng shì huà",
-     "pos": "n.",
-     "en": "urbanisation"
-    },
-    {
-     "hanzi": "农民工",
-     "pinyin": "nóng mín gōng",
-     "pos": "n.",
-     "en": "migrant worker (from the countryside)"
-    },
-    {
-     "hanzi": "农民",
-     "pinyin": "nóng mín",
-     "pos": "n.",
-     "en": "farmer, peasant"
-    },
-    {
-     "hanzi": "种地",
-     "pinyin": "zhòng dì",
-     "pos": "v.",
-     "en": "to farm, work the land"
-    },
-    {
-     "hanzi": "回乡",
-     "pinyin": "huí xiāng",
-     "pos": "v.",
-     "en": "to return to your home village"
-    },
-    {
-     "hanzi": "失去",
-     "pinyin": "shī qù",
-     "pos": "v.",
-     "en": "to lose"
-    },
-    {
-     "hanzi": "长途汽车",
-     "pinyin": "cháng tú qì chē",
-     "pos": "n.",
-     "en": "long-distance bus, coach"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u3-4",
-   "title": "大步2 U3.4 · 城市和乡村 The village in the bamboo",
-   "words": [
-    {
-     "hanzi": "西部",
-     "pinyin": "xī bù",
-     "pos": "n.",
-     "en": "the west, western part"
-    },
-    {
-     "hanzi": "四周",
-     "pinyin": "sì zhōu",
-     "pos": "n.",
-     "en": "all around"
-    },
-    {
-     "hanzi": "竹林",
-     "pinyin": "zhú lín",
-     "pos": "n.",
-     "en": "bamboo grove, bamboo forest"
-    },
-    {
-     "hanzi": "竹叶",
-     "pinyin": "zhú yè",
-     "pos": "n.",
-     "en": "bamboo leaves"
-    },
-    {
-     "hanzi": "沙沙",
-     "pinyin": "shā shā",
-     "pos": "phr.",
-     "en": "(the sound of) rustling"
-    },
-    {
-     "hanzi": "竹篮",
-     "pinyin": "zhú lán",
-     "pos": "n.",
-     "en": "bamboo basket"
-    },
-    {
-     "hanzi": "砍",
-     "pinyin": "kǎn",
-     "pos": "v.",
-     "en": "to cut, chop"
-    },
-    {
-     "hanzi": "板凳",
-     "pinyin": "bǎn dèng",
-     "pos": "n.",
-     "en": "wooden stool, bench"
-    },
-    {
-     "hanzi": "竹条",
-     "pinyin": "zhú tiáo",
-     "pos": "n.",
-     "en": "strip of bamboo"
-    },
-    {
-     "hanzi": "零食",
-     "pinyin": "líng shí",
-     "pos": "n.",
-     "en": "snacks"
-    },
-    {
-     "hanzi": "叫作",
-     "pinyin": "jiào zuò",
-     "pos": "v.",
-     "en": "to be called, call (A 叫作 B)"
-    },
-    {
-     "hanzi": "考上",
-     "pinyin": "kǎo shàng",
-     "pos": "v.",
-     "en": "to get into (a school, by passing the exam)"
-    },
-    {
-     "hanzi": "县",
-     "pinyin": "xiàn",
-     "pos": "n.",
-     "en": "county"
-    },
-    {
-     "hanzi": "中学",
-     "pinyin": "zhōng xué",
-     "pos": "n.",
-     "en": "secondary school"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u3-5",
-   "title": "大步2 U3.5 · 城市和乡村 The village in the bamboo",
-   "words": [
-    {
-     "hanzi": "一",
-     "pinyin": "yī",
-     "pos": "phr.",
-     "en": "once … it's (a long time, a lot) (一…就是…)"
-    },
-    {
-     "hanzi": "小学",
-     "pinyin": "xiǎo xué",
-     "pos": "n.",
-     "en": "primary school"
-    },
-    {
-     "hanzi": "剩下",
-     "pinyin": "shèng xià",
-     "pos": "v.",
-     "en": "to be left, remain"
-    },
-    {
-     "hanzi": "寻找",
-     "pinyin": "xún zhǎo",
-     "pos": "v.",
-     "en": "to look for, seek"
-    },
-    {
-     "hanzi": "家庭",
-     "pinyin": "jiā tíng",
-     "pos": "n.",
-     "en": "family, household"
-    },
-    {
-     "hanzi": "过上",
-     "pinyin": "guò shàng",
-     "pos": "v.",
-     "en": "to come to lead (a life) (过上好日子 have a better life)"
-    },
-    {
-     "hanzi": "错",
-     "pinyin": "cuò",
-     "pos": "n.",
-     "en": "fault, mistake (这不是谁的错 it's nobody's fault) (new meaning)"
-    },
-    {
-     "hanzi": "组织",
-     "pinyin": "zǔ zhī",
-     "pos": "v./n.",
-     "en": "to organise; organisation"
-    },
-    {
-     "hanzi": "统一",
-     "pinyin": "tǒng yī",
-     "pos": "adj./v.",
-     "en": "unified, all together; to unify"
-    },
-    {
-     "hanzi": "收购",
-     "pinyin": "shōu gòu",
-     "pos": "v.",
-     "en": "to buy up, purchase (from producers)"
-    },
-    {
-     "hanzi": "销售",
-     "pinyin": "xiāo shòu",
-     "pos": "v./n.",
-     "en": "to sell; sales"
-    },
-    {
-     "hanzi": "合不拢嘴",
-     "pinyin": "hé bu lǒng zuǐ",
-     "pos": "phr.",
-     "en": "(smiling) from ear to ear, can't stop smiling"
-    },
-    {
-     "hanzi": "提",
-     "pinyin": "tí",
-     "pos": "v.",
-     "en": "to carry, pick up (by a handle) (new meaning)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u4-1",
-   "title": "大步2 U4.1 · 我的上海 My Shanghai",
-   "words": [
-    {
-     "hanzi": "晓得",
-     "pinyin": "xiǎo de",
-     "pos": "v.",
-     "en": "to know (southern and Shanghainese: 侬晓得伐？ did you know?)"
-    },
-    {
-     "hanzi": "伐",
-     "pinyin": "fá",
-     "pos": "part.",
-     "en": "(Shanghainese) question particle, like 吗"
-    },
-    {
-     "hanzi": "摊子",
-     "pinyin": "tān zi",
-     "pos": "n.",
-     "en": "stall"
-    },
-    {
-     "hanzi": "摊",
-     "pinyin": "tān",
-     "pos": "n.",
-     "en": "stall, stand (早饭摊 breakfast stall)"
-    },
-    {
-     "hanzi": "大饼",
-     "pinyin": "dà bǐng",
-     "pos": "n.",
-     "en": "sesame flatbread"
-    },
-    {
-     "hanzi": "粢饭",
-     "pinyin": "cí fàn",
-     "pos": "n.",
-     "en": "sticky rice roll, often wrapped round a fried dough stick"
-    },
-    {
-     "hanzi": "四大金刚",
-     "pinyin": "sì dà jīn gāng",
-     "pos": "phr.",
-     "en": "'the Four Guardians': the four classic items of a Shanghai breakfast"
-    },
-    {
-     "hanzi": "区",
-     "pinyin": "qū",
-     "pos": "n.",
-     "en": "district (区里 the district)"
-    },
-    {
-     "hanzi": "办",
-     "pinyin": "bàn",
-     "pos": "v.",
-     "en": "to run, hold, organise (办比赛 hold a competition)"
-    },
-    {
-     "hanzi": "征文",
-     "pinyin": "zhēng wén",
-     "pos": "n./v.",
-     "en": "essay competition; to invite essays"
-    },
-    {
-     "hanzi": "题目",
-     "pinyin": "tí mù",
-     "pos": "n.",
-     "en": "title, topic"
-    },
-    {
-     "hanzi": "晾",
-     "pinyin": "liàng",
-     "pos": "v.",
-     "en": "to hang out to dry"
-    },
-    {
-     "hanzi": "排",
-     "pinyin": "pái",
-     "pos": "m.",
-     "en": "row, line (一整排衣服 a whole row of clothes)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u4-2",
-   "title": "大步2 U4.2 · 我的上海 My Shanghai",
-   "words": [
-    {
-     "hanzi": "不禁",
-     "pinyin": "bù jīn",
-     "pos": "adv.",
-     "en": "can't help (doing), find yourself (doing)"
-    },
-    {
-     "hanzi": "仿佛",
-     "pinyin": "fǎng fú",
-     "pos": "adv.",
-     "en": "as if, seemingly (written 好像)"
-    },
-    {
-     "hanzi": "法国梧桐",
-     "pinyin": "Fǎ guó wú tóng",
-     "pos": "n.",
-     "en": "'French plane tree', the plane trees of Shanghai (in English, the London plane)"
-    },
-    {
-     "hanzi": "写不出",
-     "pinyin": "xiě bu chū",
-     "pos": "phr.",
-     "en": "can't put into writing"
-    },
-    {
-     "hanzi": "文章",
-     "pinyin": "wén zhāng",
-     "pos": "n.",
-     "en": "essay, article, piece of writing"
-    },
-    {
-     "hanzi": "漂亮话",
-     "pinyin": "piào liang huà",
-     "pos": "n.",
-     "en": "fine words, fancy phrases"
-    },
-    {
-     "hanzi": "真正",
-     "pinyin": "zhēn zhèng",
-     "pos": "adj./adv.",
-     "en": "real, true; truly"
-    },
-    {
-     "hanzi": "大闸蟹",
-     "pinyin": "dà zhá xiè",
-     "pos": "n.",
-     "en": "hairy crab (an autumn delicacy)"
-    },
-    {
-     "hanzi": "上海人",
-     "pinyin": "Shàng hǎi rén",
-     "pos": "n.",
-     "en": "Shanghai person, Shanghainese"
-    },
-    {
-     "hanzi": "海派",
-     "pinyin": "hǎi pài",
-     "pos": "n./adj.",
-     "en": "Shanghai style (of culture, cooking and taste)"
-    },
-    {
-     "hanzi": "嗲",
-     "pinyin": "diǎ",
-     "pos": "adj.",
-     "en": "(Shanghainese) lovely, charming; coy"
-    },
-    {
-     "hanzi": "描写",
-     "pinyin": "miáo xiě",
-     "pos": "v./n.",
-     "en": "to describe; description (in writing)"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u4-3",
-   "title": "大步2 U4.3 · 我的上海 My Shanghai",
-   "words": [
-    {
-     "hanzi": "一条条",
-     "pinyin": "yī tiáo tiáo",
-     "pos": "phr.",
-     "en": "one after another (of lanes, streets)"
-    },
-    {
-     "hanzi": "铃声",
-     "pinyin": "líng shēng",
-     "pos": "n.",
-     "en": "ring, bell (自行车的铃声 bicycle bells)"
-    },
-    {
-     "hanzi": "炒菜",
-     "pinyin": "chǎo cài",
-     "pos": "v.",
-     "en": "to stir-fry, cook"
-    },
-    {
-     "hanzi": "涌",
-     "pinyin": "yǒng",
-     "pos": "v.",
-     "en": "to pour, surge (涌进来 pour in)"
-    },
-    {
-     "hanzi": "软",
-     "pinyin": "ruǎn",
-     "pos": "adj.",
-     "en": "soft"
-    },
-    {
-     "hanzi": "谢谢侬",
-     "pinyin": "xiè xie nóng",
-     "pos": "phr.",
-     "en": "thank you (Shanghainese)"
-    },
-    {
-     "hanzi": "管家",
-     "pinyin": "guǎn jiā",
-     "pos": "n.",
-     "en": "housekeeper, steward (the one who runs things)"
-    },
-    {
-     "hanzi": "拦",
-     "pinyin": "lán",
-     "pos": "v.",
-     "en": "to stop, block (someone)"
-    },
-    {
-     "hanzi": "端",
-     "pinyin": "duān",
-     "pos": "v.",
-     "en": "to carry (level, with both hands)"
-    },
-    {
-     "hanzi": "热乎乎",
-     "pinyin": "rè hū hū",
-     "pos": "adj.",
-     "en": "nice and hot, steaming"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u4-4",
-   "title": "大步2 U4.4 · 我的上海 My Shanghai",
-   "words": [
-    {
-     "hanzi": "鸡汤",
-     "pinyin": "jī tāng",
-     "pos": "n.",
-     "en": "chicken soup"
-    },
-    {
-     "hanzi": "面前",
-     "pinyin": "miàn qián",
-     "pos": "n.",
-     "en": "in front of, in someone's presence"
-    },
-    {
-     "hanzi": "孙子",
-     "pinyin": "sūn zi",
-     "pos": "n.",
-     "en": "grandson"
-    },
-    {
-     "hanzi": "片",
-     "pinyin": "piàn",
-     "pos": "m.",
-     "en": "for leaves (一片一片 leaf by leaf) (new meaning)"
-    },
-    {
-     "hanzi": "落",
-     "pinyin": "luò",
-     "pos": "v.",
-     "en": "to fall, drop"
-    },
-    {
-     "hanzi": "种",
-     "pinyin": "zhòng",
-     "pos": "v.",
-     "en": "to plant (种满了树 lined with trees) (new meaning)"
-    },
-    {
-     "hanzi": "同样",
-     "pinyin": "tóng yàng",
-     "pos": "adj.",
-     "en": "the same"
-    },
-    {
-     "hanzi": "连",
-     "pinyin": "lián",
-     "pos": "v.",
-     "en": "to join, link (连在一起 join together) (new meaning)"
-    },
-    {
-     "hanzi": "闷",
-     "pinyin": "mēn",
-     "pos": "adj.",
-     "en": "stuffy, muggy"
-    },
-    {
-     "hanzi": "动不了",
-     "pinyin": "dòng bu liǎo",
-     "pos": "phr.",
-     "en": "can't move"
-    }
-   ]
-  },
-  {
-   "id": "dabu2-u4-5",
-   "title": "大步2 U4.5 · 我的上海 My Shanghai",
-   "words": [
-    {
-     "hanzi": "心疼",
-     "pinyin": "xīn téng",
-     "pos": "v./adj.",
-     "en": "to feel the pinch, hate to part with; to feel for (someone)"
-    },
-    {
-     "hanzi": "每当",
-     "pinyin": "měi dāng",
-     "pos": "conj.",
-     "en": "whenever, every time (written)"
-    },
-    {
-     "hanzi": "一切",
-     "pinyin": "yī qiè",
-     "pos": "pron.",
-     "en": "everything, all"
-    },
-    {
-     "hanzi": "陌生",
-     "pinyin": "mò shēng",
-     "pos": "adj.",
-     "en": "unfamiliar, strange"
-    },
-    {
-     "hanzi": "无论",
-     "pinyin": "wú lùn",
-     "pos": "conj.",
-     "en": "no matter (what, where), whatever"
-    },
-    {
-     "hanzi": "但",
-     "pinyin": "dàn",
-     "pos": "conj.",
-     "en": "but (written 但是)"
-    },
-    {
-     "hanzi": "忍不住",
-     "pinyin": "rěn bu zhù",
-     "pos": "phr.",
-     "en": "can't help (doing), can't resist"
-    },
-    {
-     "hanzi": "季节",
-     "pinyin": "jì jié",
-     "pos": "n.",
-     "en": "season"
-    },
-    {
-     "hanzi": "熟悉",
-     "pinyin": "shú xī",
-     "pos": "adj./v.",
-     "en": "familiar; to know well"
-    },
-    {
-     "hanzi": "鲜肉月饼",
-     "pinyin": "xiān ròu yuè bing",
-     "pos": "",
-     "en": "Shanghai-style mooncake filled with fresh pork, eaten hot"
-    },
-    {
-     "hanzi": "栗子",
-     "pinyin": "lì zi",
-     "pos": "",
-     "en": "chestnut"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-1",
-   "title": "大步3 U1.1 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "刷手机",
-     "pinyin": "shuā shǒu jī",
-     "pos": "v.",
-     "en": "to scroll through your phone"
-    },
-    {
-     "hanzi": "菜场",
-     "pinyin": "cài chǎng",
-     "pos": "n.",
-     "en": "food market, wet market (Shanghai; also 菜市场)"
-    },
-    {
-     "hanzi": "菜市场",
-     "pinyin": "cài shì chǎng",
-     "pos": "n.",
-     "en": "food market, wet market"
-    },
-    {
-     "hanzi": "馄饨",
-     "pinyin": "hún tun",
-     "pos": "n.",
-     "en": "wonton"
-    },
-    {
-     "hanzi": "馄饨皮",
-     "pinyin": "hún tun pí",
-     "pos": "n.",
-     "en": "wonton wrappers"
-    },
-    {
-     "hanzi": "小馄饨",
-     "pinyin": "xiǎo hún tun",
-     "pos": "n.",
-     "en": "little wontons in broth (a Shanghai breakfast and snack)"
-    },
-    {
-     "hanzi": "摊主",
-     "pinyin": "tān zhǔ",
-     "pos": "n.",
-     "en": "stallholder"
-    },
-    {
-     "hanzi": "斤",
-     "pinyin": "jīn",
-     "pos": "m.",
-     "en": "jin, half a kilo (一斤 a jin; 半斤 half a jin)"
-    },
-    {
-     "hanzi": "荠菜",
-     "pinyin": "jì cài",
-     "pos": "n.",
-     "en": "shepherd's purse (a wild green, a classic wonton filling)"
-    },
-    {
-     "hanzi": "黑屏",
-     "pinyin": "hēi píng",
-     "pos": "v./n.",
-     "en": "(of a screen) to go black; black screen"
-    },
-    {
-     "hanzi": "糟糕",
-     "pinyin": "zāo gāo",
-     "pos": "adj.",
-     "en": "oh no; terrible, a mess"
-    },
-    {
-     "hanzi": "没电",
-     "pinyin": "méi diàn",
-     "pos": "phr.",
-     "en": "(of a battery) flat, dead"
-    },
-    {
-     "hanzi": "身上",
-     "pinyin": "shēn shang",
-     "pos": "n.",
-     "en": "on you, on your person (身上带现金 have cash on you)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-2",
-   "title": "大步3 U1.2 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "零钱",
-     "pinyin": "líng qián",
-     "pos": "n.",
-     "en": "small change"
-    },
-    {
-     "hanzi": "找",
-     "pinyin": "zhǎo",
-     "pos": "v.",
-     "en": "to give change (找我两块 give me two back) (new meaning)"
-    },
-    {
-     "hanzi": "转",
-     "pinyin": "zhuǎn",
-     "pos": "v.",
-     "en": "to transfer (money) (转给您 transfer it to you)"
-    },
-    {
-     "hanzi": "靠",
-     "pinyin": "kào",
-     "pos": "v.",
-     "en": "to rely on, depend on; by means of (new meaning)"
-    },
-    {
-     "hanzi": "全靠",
-     "pinyin": "quán kào",
-     "pos": "phr.",
-     "en": "to depend entirely on"
-    },
-    {
-     "hanzi": "寸步难行",
-     "pinyin": "cùn bù nán xíng",
-     "pos": "phr.",
-     "en": "can't move a step, be stuck (a 成语)"
-    },
-    {
-     "hanzi": "开通",
-     "pinyin": "kāi tōng",
-     "pos": "v.",
-     "en": "to activate, set up (a service or account)"
-    },
-    {
-     "hanzi": "肯",
-     "pinyin": "kěn",
-     "pos": "v.",
-     "en": "to be willing to (不肯 refuse to)"
-    },
-    {
-     "hanzi": "绑",
-     "pinyin": "bǎng",
-     "pos": "v.",
-     "en": "to tie; to link (a bank card to an app)"
-    },
-    {
-     "hanzi": "隔壁",
-     "pinyin": "gé bì",
-     "pos": "n.",
-     "en": "next door"
-    },
-    {
-     "hanzi": "账户",
-     "pinyin": "zhàng hù",
-     "pos": "n.",
-     "en": "(bank) account"
-    },
-    {
-     "hanzi": "验证码",
-     "pinyin": "yàn zhèng mǎ",
-     "pos": "n.",
-     "en": "verification code (sent by text)"
-    },
-    {
-     "hanzi": "可怕",
-     "pinyin": "kě pà",
-     "pos": "adj.",
-     "en": "frightening, terrible"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-3",
-   "title": "大步3 U1.3 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "轻松",
-     "pinyin": "qīng sōng",
-     "pos": "adj.",
-     "en": "easy, relaxed (讲得轻松 easy for you to say)"
-    },
-    {
-     "hanzi": "按",
-     "pinyin": "àn",
-     "pos": "v.",
-     "en": "to press (a button) (按错 press the wrong one) (new meaning)"
-    },
-    {
-     "hanzi": "一不小心",
-     "pinyin": "yī bù xiǎo xīn",
-     "pos": "phr.",
-     "en": "one slip, if you're not careful"
-    },
-    {
-     "hanzi": "看得见摸得着",
-     "pinyin": "kàn de jiàn mō de zháo",
-     "pos": "phr.",
-     "en": "you can see it and touch it; tangible"
-    },
-    {
-     "hanzi": "一天到晚",
-     "pinyin": "yī tiān dào wǎn",
-     "pos": "phr.",
-     "en": "from morning to night, all day long"
-    },
-    {
-     "hanzi": "算账",
-     "pinyin": "suàn zhàng",
-     "pos": "v.",
-     "en": "to do the accounts, add up the money"
-    },
-    {
-     "hanzi": "心眼",
-     "pinyin": "xīn yǎn",
-     "pos": "n.",
-     "en": "mind, wits (留个心眼 keep your wits about you)"
-    },
-    {
-     "hanzi": "的同时",
-     "pinyin": "de tóng shí",
-     "pos": "phr.",
-     "en": "while, at the same time as (方便的同时 for all the convenience)"
-    },
-    {
-     "hanzi": "同时",
-     "pinyin": "tóng shí",
-     "pos": "n./conj.",
-     "en": "the same time; at the same time, meanwhile"
-    },
-    {
-     "hanzi": "收款码",
-     "pinyin": "shōu kuǎn mǎ",
-     "pos": "n.",
-     "en": "payment QR code (the one a shop shows you)"
-    },
-    {
-     "hanzi": "转账",
-     "pinyin": "zhuǎn zhàng",
-     "pos": "v.",
-     "en": "to transfer money"
-    },
-    {
-     "hanzi": "刷脸",
-     "pinyin": "shuā liǎn",
-     "pos": "v.",
-     "en": "to pay or pass by face scan"
-    },
-    {
-     "hanzi": "取款机",
-     "pinyin": "qǔ kuǎn jī",
-     "pos": "n.",
-     "en": "cash machine, ATM"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-4",
-   "title": "大步3 U1.4 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "余额",
-     "pinyin": "yú é",
-     "pos": "n.",
-     "en": "balance (of an account)"
-    },
-    {
-     "hanzi": "诈骗",
-     "pinyin": "zhà piàn",
-     "pos": "v./n.",
-     "en": "to defraud; fraud, scam"
-    },
-    {
-     "hanzi": "骗子",
-     "pinyin": "piàn zi",
-     "pos": "n.",
-     "en": "swindler, con artist"
-    },
-    {
-     "hanzi": "老年人",
-     "pinyin": "lǎo nián rén",
-     "pos": "n.",
-     "en": "older people, the elderly"
-    },
-    {
-     "hanzi": "付款码",
-     "pinyin": "fù kuǎn mǎ",
-     "pos": "n.",
-     "en": "payment code (the one on your phone that the till scans)"
-    },
-    {
-     "hanzi": "手续费",
-     "pinyin": "shǒu xù fèi",
-     "pos": "n.",
-     "en": "handling fee, service charge"
-    },
-    {
-     "hanzi": "账单",
-     "pinyin": "zhàng dān",
-     "pos": "n.",
-     "en": "bill, statement"
-    },
-    {
-     "hanzi": "纸币",
-     "pinyin": "zhǐ bì",
-     "pos": "n.",
-     "en": "banknote"
-    },
-    {
-     "hanzi": "找零",
-     "pinyin": "zhǎo líng",
-     "pos": "v.",
-     "en": "to give change (written)"
-    },
-    {
-     "hanzi": "充电宝",
-     "pinyin": "chōng diàn bǎo",
-     "pos": "n.",
-     "en": "power bank, portable charger"
-    },
-    {
-     "hanzi": "隐私",
-     "pinyin": "yǐn sī",
-     "pos": "n.",
-     "en": "privacy"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-5",
-   "title": "大步3 U1.5 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "窗口",
-     "pinyin": "chuāng kǒu",
-     "pos": "n.",
-     "en": "window; counter (at a bank, hospital or station)"
-    },
-    {
-     "hanzi": "老爷爷",
-     "pinyin": "lǎo yé ye",
-     "pos": "n.",
-     "en": "grandpa, old man (polite, for any old man)"
-    },
-    {
-     "hanzi": "门诊",
-     "pinyin": "mén zhěn",
-     "pos": "n.",
-     "en": "outpatients' department"
-    },
-    {
-     "hanzi": "病人",
-     "pinyin": "bìng rén",
-     "pos": "n.",
-     "en": "patient"
-    },
-    {
-     "hanzi": "大厅",
-     "pinyin": "dà tīng",
-     "pos": "n.",
-     "en": "hall, lobby"
-    },
-    {
-     "hanzi": "挤满",
-     "pinyin": "jǐ mǎn",
-     "pos": "v.",
-     "en": "to be packed with, crowded with"
-    },
-    {
-     "hanzi": "信封",
-     "pinyin": "xìn fēng",
-     "pos": "n.",
-     "en": "envelope"
-    },
-    {
-     "hanzi": "自助机",
-     "pinyin": "zì zhù jī",
-     "pos": "n.",
-     "en": "self-service machine"
-    },
-    {
-     "hanzi": "叠",
-     "pinyin": "dié",
-     "pos": "m./v.",
-     "en": "a stack, a pile (of paper or notes); to fold"
-    },
-    {
-     "hanzi": "整整齐齐",
-     "pinyin": "zhěng zhěng qí qí",
-     "pos": "adj.",
-     "en": "neat and tidy, in good order"
-    },
-    {
-     "hanzi": "纸条",
-     "pinyin": "zhǐ tiáo",
-     "pos": "n.",
-     "en": "slip of paper, note"
-    },
-    {
-     "hanzi": "挂号",
-     "pinyin": "guà hào",
-     "pos": "v.",
-     "en": "to register (at a hospital)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-6",
-   "title": "大步3 U1.6 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "老人机",
-     "pinyin": "lǎo rén jī",
-     "pos": "n.",
-     "en": "phone for the elderly (big buttons, no apps)"
-    },
-    {
-     "hanzi": "码",
-     "pinyin": "mǎ",
-     "pos": "n.",
-     "en": "code (扫码 scan a code; 扫不了码 can't scan codes)"
-    },
-    {
-     "hanzi": "根本",
-     "pinyin": "gēn běn",
-     "pos": "adv.",
-     "en": "at all, simply (before a negative)"
-    },
-    {
-     "hanzi": "人工",
-     "pinyin": "rén gōng",
-     "pos": "adj./n.",
-     "en": "manual, staffed by people; artificial; labour"
-    },
-    {
-     "hanzi": "数",
-     "pinyin": "shǔ",
-     "pos": "v.",
-     "en": "to count"
-    },
-    {
-     "hanzi": "添麻烦",
-     "pinyin": "tiān má fan",
-     "pos": "phr.",
-     "en": "to cause (someone) trouble"
-    },
-    {
-     "hanzi": "跟不上",
-     "pinyin": "gēn bu shàng",
-     "pos": "phr.",
-     "en": "can't keep up"
-    },
-    {
-     "hanzi": "不是滋味",
-     "pinyin": "bù shì zī wèi",
-     "pos": "phr.",
-     "en": "to feel bad, feel upset"
-    },
-    {
-     "hanzi": "移动支付",
-     "pinyin": "yí dòng zhī fù",
-     "pos": "n.",
-     "en": "mobile payment"
-    },
-    {
-     "hanzi": "移动",
-     "pinyin": "yí dòng",
-     "pos": "v./adj.",
-     "en": "to move; mobile"
-    },
-    {
-     "hanzi": "巨大",
-     "pinyin": "jù dà",
-     "pos": "adj.",
-     "en": "huge, enormous"
-    },
-    {
-     "hanzi": "享受",
-     "pinyin": "xiǎng shòu",
-     "pos": "v./n.",
-     "en": "to enjoy; enjoyment"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-7",
-   "title": "大步3 U1.7 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "甩",
-     "pinyin": "shuǎi",
-     "pos": "v.",
-     "en": "to fling, throw off (甩在后面 leave behind)"
-    },
-    {
-     "hanzi": "超过",
-     "pinyin": "chāo guò",
-     "pos": "v.",
-     "en": "to exceed, be more than"
-    },
-    {
-     "hanzi": "亿",
-     "pinyin": "yì",
-     "pos": "num.",
-     "en": "a hundred million (三亿 three hundred million)"
-    },
-    {
-     "hanzi": "其中",
-     "pinyin": "qí zhōng",
-     "pos": "pron.",
-     "en": "among them, of which"
-    },
-    {
-     "hanzi": "智能手机",
-     "pinyin": "zhì néng shǒu jī",
-     "pos": "n.",
-     "en": "smartphone"
-    },
-    {
-     "hanzi": "智能",
-     "pinyin": "zhì néng",
-     "pos": "adj./n.",
-     "en": "smart, intelligent; intelligence"
-    },
-    {
-     "hanzi": "小小",
-     "pinyin": "xiǎo xiǎo",
-     "pos": "adj.",
-     "en": "little, tiny"
-    },
-    {
-     "hanzi": "道",
-     "pinyin": "dào",
-     "pos": "m.",
-     "en": "for barriers, doors and walls (一道门槛 a barrier)"
-    },
-    {
-     "hanzi": "门槛",
-     "pinyin": "mén kǎn",
-     "pos": "n.",
-     "en": "threshold, barrier"
-    },
-    {
-     "hanzi": "先进",
-     "pinyin": "xiān jìn",
-     "pos": "adj.",
-     "en": "advanced"
-    },
-    {
-     "hanzi": "技术",
-     "pinyin": "jì shù",
-     "pos": "n.",
-     "en": "technology, technique"
-    },
-    {
-     "hanzi": "好在",
-     "pinyin": "hǎo zài",
-     "pos": "adv.",
-     "en": "luckily, fortunately"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u1-8",
-   "title": "大步3 U1.8 · 没有现金的生活 Life without cash",
-   "words": [
-    {
-     "hanzi": "商家",
-     "pinyin": "shāng jiā",
-     "pos": "n.",
-     "en": "shops, businesses, merchants"
-    },
-    {
-     "hanzi": "拒收",
-     "pinyin": "jù shōu",
-     "pos": "v.",
-     "en": "to refuse (to accept)"
-    },
-    {
-     "hanzi": "保留",
-     "pinyin": "bǎo liú",
-     "pos": "v.",
-     "en": "to keep, retain"
-    },
-    {
-     "hanzi": "姑娘",
-     "pinyin": "gū niang",
-     "pos": "n.",
-     "en": "girl, young woman"
-    },
-    {
-     "hanzi": "未必",
-     "pinyin": "wèi bì",
-     "pos": "adv.",
-     "en": "not necessarily (written)"
-    },
-    {
-     "hanzi": "离不开",
-     "pinyin": "lí bu kāi",
-     "pos": "phr.",
-     "en": "can't do without"
-    },
-    {
-     "hanzi": "依赖",
-     "pinyin": "yī lài",
-     "pos": "v./n.",
-     "en": "to depend on; dependence (formal)"
-    },
-    {
-     "hanzi": "严重",
-     "pinyin": "yán zhòng",
-     "pos": "adj.",
-     "en": "serious, severe"
-    },
-    {
-     "hanzi": "便利",
-     "pinyin": "biàn lì",
-     "pos": "adj./n.",
-     "en": "convenient; convenience (written)"
-    },
-    {
-     "hanzi": "数字人民币",
-     "pinyin": "shù zì rén mín bì",
-     "pos": "n.",
-     "en": "digital renminbi"
-    },
-    {
-     "hanzi": "普及",
-     "pinyin": "pǔ jí",
-     "pos": "v./adj.",
-     "en": "to spread, become common; widespread"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-1",
-   "title": "大步3 U2.1 · 刷手机 Just one more video",
-   "words": [
-    {
-     "hanzi": "刷",
-     "pinyin": "shuā",
-     "pos": "v.",
-     "en": "to scroll, swipe (刷手机 scroll through your phone; 刷视频 scroll videos)"
-    },
-    {
-     "hanzi": "在线",
-     "pinyin": "zài xiàn",
-     "pos": "adj./v.",
-     "en": "online (在线的人 people watching live)"
-    },
-    {
-     "hanzi": "短视频",
-     "pinyin": "duǎn shì pín",
-     "pos": "n.",
-     "en": "short video"
-    },
-    {
-     "hanzi": "火",
-     "pinyin": "huǒ",
-     "pos": "adj.",
-     "en": "popular, a hit (一下子就火了 took off overnight) (new meaning)"
-    },
-    {
-     "hanzi": "播放量",
-     "pinyin": "bō fàng liàng",
-     "pos": "n.",
-     "en": "number of views, plays"
-    },
-    {
-     "hanzi": "播放",
-     "pinyin": "bō fàng",
-     "pos": "v.",
-     "en": "to play (a video); to broadcast"
-    },
-    {
-     "hanzi": "网红",
-     "pinyin": "wǎng hóng",
-     "pos": "n.",
-     "en": "internet celebrity, influencer"
-    },
-    {
-     "hanzi": "流量",
-     "pinyin": "liú liàng",
-     "pos": "n.",
-     "en": "(web) traffic, views; mobile data"
-    },
-    {
-     "hanzi": "订单",
-     "pinyin": "dìng dān",
-     "pos": "n.",
-     "en": "order (for goods)"
-    },
-    {
-     "hanzi": "忙不过来",
-     "pinyin": "máng bu guò lái",
-     "pos": "phr.",
-     "en": "to have more than you can handle"
-    },
-    {
-     "hanzi": "平均",
-     "pinyin": "píng jūn",
-     "pos": "adj./adv.",
-     "en": "average; on average"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-2",
-   "title": "大步3 U2.2 · 刷手机 Just one more video",
-   "words": [
-    {
-     "hanzi": "抬头",
-     "pinyin": "tái tóu",
-     "pos": "v.",
-     "en": "to look up, raise your head"
-    },
-    {
-     "hanzi": "午休",
-     "pinyin": "wǔ xiū",
-     "pos": "n./v.",
-     "en": "lunch break; to have a midday rest"
-    },
-    {
-     "hanzi": "声",
-     "pinyin": "shēng",
-     "pos": "n./m.",
-     "en": "sound, voice (笑出了声 laughed out loud; 几声 a few bangs)"
-    },
-    {
-     "hanzi": "推",
-     "pinyin": "tuī",
-     "pos": "v.",
-     "en": "to push; to recommend, show (an app shows you content) (new meaning)"
-    },
-    {
-     "hanzi": "算法",
-     "pinyin": "suàn fǎ",
-     "pos": "n.",
-     "en": "algorithm"
-    },
-    {
-     "hanzi": "停不下来",
-     "pinyin": "tíng bu xià lái",
-     "pos": "phr.",
-     "en": "can't stop"
-    },
-    {
-     "hanzi": "即使",
-     "pinyin": "jí shǐ",
-     "pos": "phr.",
-     "en": "even if … still … (即使…也…)"
-    },
-    {
-     "hanzi": "即使",
-     "pinyin": "jí shǐ",
-     "pos": "conj.",
-     "en": "even if"
-    },
-    {
-     "hanzi": "上瘾",
-     "pinyin": "shàng yǐn",
-     "pos": "v.",
-     "en": "to get hooked, be addicted"
-    },
-    {
-     "hanzi": "行",
-     "pinyin": "háng",
-     "pos": "m.",
-     "en": "line (of text) (三行 three lines) (new meaning)"
-    },
-    {
-     "hanzi": "碎片",
-     "pinyin": "suì piàn",
-     "pos": "n.",
-     "en": "fragment, scrap, bits"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-3",
-   "title": "大步3 U2.3 · 刷手机 Just one more video",
-   "words": [
-    {
-     "hanzi": "所谓",
-     "pinyin": "suǒ wèi",
-     "pos": "adj.",
-     "en": "so-called, what's known as"
-    },
-    {
-     "hanzi": "碎片化",
-     "pinyin": "suì piàn huà",
-     "pos": "n./adj.",
-     "en": "fragmentation; fragmented"
-    },
-    {
-     "hanzi": "戒",
-     "pinyin": "jiè",
-     "pos": "v.",
-     "en": "to give up, quit (a habit)"
-    },
-    {
-     "hanzi": "打赌",
-     "pinyin": "dǎ dǔ",
-     "pos": "v.",
-     "en": "to bet, make a bet"
-    },
-    {
-     "hanzi": "赌",
-     "pinyin": "dǔ",
-     "pos": "v.",
-     "en": "to bet, gamble (赌就赌 you're on)"
-    },
-    {
-     "hanzi": "粉丝",
-     "pinyin": "fěn sī",
-     "pos": "n.",
-     "en": "fans, followers"
-    },
-    {
-     "hanzi": "主播",
-     "pinyin": "zhǔ bō",
-     "pos": "n.",
-     "en": "(livestream) host, streamer"
-    },
-    {
-     "hanzi": "带货",
-     "pinyin": "dài huò",
-     "pos": "v.",
-     "en": "to sell products (on a livestream or video)"
-    },
-    {
-     "hanzi": "博主",
-     "pinyin": "bó zhǔ",
-     "pos": "n.",
-     "en": "blogger, content creator"
-    },
-    {
-     "hanzi": "刷屏",
-     "pinyin": "shuā píng",
-     "pos": "v.",
-     "en": "to flood everyone's feed"
-    },
-    {
-     "hanzi": "刷到",
-     "pinyin": "shuā dào",
-     "pos": "v.",
-     "en": "to come across (while scrolling)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-4",
-   "title": "大步3 U2.4 · 刷手机 Just one more video",
-   "words": [
-    {
-     "hanzi": "点击",
-     "pinyin": "diǎn jī",
-     "pos": "v./n.",
-     "en": "to click; click"
-    },
-    {
-     "hanzi": "种草",
-     "pinyin": "zhòng cǎo",
-     "pos": "v.",
-     "en": "to make someone want to buy something (by recommending it online)"
-    },
-    {
-     "hanzi": "爆款",
-     "pinyin": "bào kuǎn",
-     "pos": "n.",
-     "en": "a hit product, bestseller"
-    },
-    {
-     "hanzi": "弹幕",
-     "pinyin": "dàn mù",
-     "pos": "n.",
-     "en": "'bullet comments' that fly across a video"
-    },
-    {
-     "hanzi": "表情包",
-     "pinyin": "biǎo qíng bāo",
-     "pos": "n.",
-     "en": "stickers, memes (in chats)"
-    },
-    {
-     "hanzi": "私信",
-     "pinyin": "sī xìn",
-     "pos": "n./v.",
-     "en": "private message, DM; to message privately"
-    },
-    {
-     "hanzi": "视频通话",
-     "pinyin": "shì pín tōng huà",
-     "pos": "n.",
-     "en": "video call"
-    },
-    {
-     "hanzi": "语音",
-     "pinyin": "yǔ yīn",
-     "pos": "n.",
-     "en": "voice message; voice"
-    },
-    {
-     "hanzi": "平台",
-     "pinyin": "píng tái",
-     "pos": "n.",
-     "en": "platform (online)"
-    },
-    {
-     "hanzi": "用户",
-     "pinyin": "yòng hù",
-     "pos": "n.",
-     "en": "user (of an app or service)"
-    },
-    {
-     "hanzi": "沉迷",
-     "pinyin": "chén mí",
-     "pos": "v.",
-     "en": "to be hooked on, lose yourself in (written)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-5",
-   "title": "大步3 U2.5 · 刷手机 Just one more video",
-   "words": [
-    {
-     "hanzi": "整整",
-     "pinyin": "zhěng zhěng",
-     "pos": "adv.",
-     "en": "a whole, fully (整整三十天 a whole thirty days)"
-    },
-    {
-     "hanzi": "起因",
-     "pinyin": "qǐ yīn",
-     "pos": "n.",
-     "en": "cause, how something started"
-    },
-    {
-     "hanzi": "宣布",
-     "pinyin": "xuān bù",
-     "pos": "v.",
-     "en": "to announce"
-    },
-    {
-     "hanzi": "难熬",
-     "pinyin": "nán áo",
-     "pos": "adj.",
-     "en": "hard to get through, hard to bear"
-    },
-    {
-     "hanzi": "删",
-     "pinyin": "shān",
-     "pos": "v.",
-     "en": "to delete"
-    },
-    {
-     "hanzi": "解锁",
-     "pinyin": "jiě suǒ",
-     "pos": "v.",
-     "en": "to unlock"
-    },
-    {
-     "hanzi": "发呆",
-     "pinyin": "fā dāi",
-     "pos": "v.",
-     "en": "to stare blankly, be in a daze"
-    },
-    {
-     "hanzi": "意识到",
-     "pinyin": "yì shi dào",
-     "pos": "v.",
-     "en": "to realise, become aware"
-    },
-    {
-     "hanzi": "睡着",
-     "pinyin": "shuì zháo",
-     "pos": "v.",
-     "en": "to fall asleep"
-    },
-    {
-     "hanzi": "代价",
-     "pinyin": "dài jià",
-     "pos": "n.",
-     "en": "price, cost (of doing something)"
-    },
-    {
-     "hanzi": "插不上话",
-     "pinyin": "chā bu shàng huà",
-     "pos": "phr.",
-     "en": "can't get a word in, can't join in"
-    },
-    {
-     "hanzi": "何况",
-     "pinyin": "hé kuàng",
-     "pos": "conj.",
-     "en": "besides, moreover; let alone"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u2-6",
-   "title": "大步3 U2.6 · 刷手机 Just one more video",
-   "words": [
-    {
-     "hanzi": "在于",
-     "pinyin": "zài yú",
-     "pos": "v.",
-     "en": "to lie in, rest on (written)"
-    },
-    {
-     "hanzi": "不在于",
-     "pinyin": "bù zài yú",
-     "pos": "phr.",
-     "en": "it's not a question of … but of … (不在于…而在于…)"
-    },
-    {
-     "hanzi": "控制",
-     "pinyin": "kòng zhì",
-     "pos": "v./n.",
-     "en": "to control; control"
-    },
-    {
-     "hanzi": "重新",
-     "pinyin": "chóng xīn",
-     "pos": "adv.",
-     "en": "again, anew"
-    },
-    {
-     "hanzi": "斗",
-     "pinyin": "dòu",
-     "pos": "v.",
-     "en": "to fight, struggle with"
-    },
-    {
-     "hanzi": "条件",
-     "pinyin": "tiáo jiàn",
-     "pos": "n.",
-     "en": "condition, terms (讲好条件 agree terms)"
-    },
-    {
-     "hanzi": "说白了",
-     "pinyin": "shuō bái le",
-     "pos": "phr.",
-     "en": "to put it plainly, in plain words"
-    },
-    {
-     "hanzi": "焦虑",
-     "pinyin": "jiāo lǜ",
-     "pos": "adj./n.",
-     "en": "anxious; anxiety"
-    },
-    {
-     "hanzi": "注意力",
-     "pinyin": "zhù yì lì",
-     "pos": "n.",
-     "en": "attention, concentration"
-    },
-    {
-     "hanzi": "专注",
-     "pinyin": "zhuān zhù",
-     "pos": "adj./v.",
-     "en": "focused; to concentrate"
-    },
-    {
-     "hanzi": "自拍",
-     "pinyin": "zì pāi",
-     "pos": "v./n.",
-     "en": "to take a selfie; selfie"
-    },
-    {
-     "hanzi": "滤镜",
-     "pinyin": "lǜ jìng",
-     "pos": "n.",
-     "en": "(photo) filter"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u3-1",
-   "title": "大步3 U3.1 · 人工智能会取代我们吗？ Will AI replace us?",
-   "words": [
-    {
-     "hanzi": "人工智能",
-     "pinyin": "rén gōng zhì néng",
-     "pos": "n.",
-     "en": "artificial intelligence, AI"
-    },
-    {
-     "hanzi": "取代",
-     "pinyin": "qǔ dài",
-     "pos": "v.",
-     "en": "to replace, take the place of"
-    },
-    {
-     "hanzi": "上百",
-     "pinyin": "shàng bǎi",
-     "pos": "phr.",
-     "en": "a hundred or more"
-    },
-    {
-     "hanzi": "初稿",
-     "pinyin": "chū gǎo",
-     "pos": "n.",
-     "en": "first draft"
-    },
-    {
-     "hanzi": "生成",
-     "pinyin": "shēng chéng",
-     "pos": "v.",
-     "en": "to generate, produce"
-    },
-    {
-     "hanzi": "挑",
-     "pinyin": "tiāo",
-     "pos": "v.",
-     "en": "to pick, choose"
-    },
-    {
-     "hanzi": "入行",
-     "pinyin": "rù háng",
-     "pos": "v.",
-     "en": "to enter a profession, start out"
-    },
-    {
-     "hanzi": "基础",
-     "pinyin": "jī chǔ",
-     "pos": "n./adj.",
-     "en": "foundation, basics; basic"
-    },
-    {
-     "hanzi": "草图",
-     "pinyin": "cǎo tú",
-     "pos": "n.",
-     "en": "sketch, rough drawing"
-    },
-    {
-     "hanzi": "照相机",
-     "pinyin": "zhào xiàng jī",
-     "pos": "n.",
-     "en": "camera"
-    },
-    {
-     "hanzi": "发明",
-     "pinyin": "fā míng",
-     "pos": "v./n.",
-     "en": "to invent; invention"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u3-2",
-   "title": "大步3 U3.2 · 人工智能会取代我们吗？ Will AI replace us?",
-   "words": [
-    {
-     "hanzi": "失业",
-     "pinyin": "shī yè",
-     "pos": "v.",
-     "en": "to lose your job, be unemployed"
-    },
-    {
-     "hanzi": "消失",
-     "pinyin": "xiāo shī",
-     "pos": "v.",
-     "en": "to disappear"
-    },
-    {
-     "hanzi": "摄影师",
-     "pinyin": "shè yǐng shī",
-     "pos": "n.",
-     "en": "photographer"
-    },
-    {
-     "hanzi": "话虽如此",
-     "pinyin": "huà suī rú cǐ",
-     "pos": "phr.",
-     "en": "that may be so, but…; that said"
-    },
-    {
-     "hanzi": "成千上万",
-     "pinyin": "chéng qiān shàng wàn",
-     "pos": "phr.",
-     "en": "thousands upon thousands"
-    },
-    {
-     "hanzi": "版权",
-     "pinyin": "bǎn quán",
-     "pos": "n.",
-     "en": "copyright"
-    },
-    {
-     "hanzi": "对错",
-     "pinyin": "duì cuò",
-     "pos": "n.",
-     "en": "right and wrong"
-    },
-    {
-     "hanzi": "反过来说",
-     "pinyin": "fǎn guò lái shuō",
-     "pos": "phr.",
-     "en": "conversely, looked at the other way round"
-    },
-    {
-     "hanzi": "交给",
-     "pinyin": "jiāo gěi",
-     "pos": "v.",
-     "en": "to hand over to, leave to"
-    },
-    {
-     "hanzi": "当年",
-     "pinyin": "dāng nián",
-     "pos": "n.",
-     "en": "back then, in those days"
-    },
-    {
-     "hanzi": "捷径",
-     "pinyin": "jié jìng",
-     "pos": "n.",
-     "en": "shortcut"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u3-3",
-   "title": "大步3 U3.3 · 人工智能会取代我们吗？ Will AI replace us?",
-   "words": [
-    {
-     "hanzi": "归根结底",
-     "pinyin": "guī gēn jié dǐ",
-     "pos": "phr.",
-     "en": "in the final analysis, when all's said and done"
-    },
-    {
-     "hanzi": "缺少",
-     "pinyin": "quē shǎo",
-     "pos": "v.",
-     "en": "to lack, be short of"
-    },
-    {
-     "hanzi": "温度",
-     "pinyin": "wēn dù",
-     "pos": "n.",
-     "en": "temperature; warmth, human feeling"
-    },
-    {
-     "hanzi": "速度",
-     "pinyin": "sù dù",
-     "pos": "n.",
-     "en": "speed"
-    },
-    {
-     "hanzi": "纯",
-     "pinyin": "chún",
-     "pos": "adj.",
-     "en": "pure, entirely (纯手工 entirely by hand)"
-    },
-    {
-     "hanzi": "辅助",
-     "pinyin": "fǔ zhù",
-     "pos": "v.",
-     "en": "to assist, help (用AI辅助 with AI's help)"
-    },
-    {
-     "hanzi": "票",
-     "pinyin": "piào",
-     "pos": "n.",
-     "en": "vote (new meaning)"
-    },
-    {
-     "hanzi": "投",
-     "pinyin": "tóu",
-     "pos": "v.",
-     "en": "to cast (a vote); to throw"
-    },
-    {
-     "hanzi": "投票",
-     "pinyin": "tóu piào",
-     "pos": "v.",
-     "en": "to vote"
-    },
-    {
-     "hanzi": "机器人",
-     "pinyin": "jī qì rén",
-     "pos": "n.",
-     "en": "robot"
-    },
-    {
-     "hanzi": "辩论",
-     "pinyin": "biàn lùn",
-     "pos": "v./n.",
-     "en": "to debate; debate"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u3-4",
-   "title": "大步3 U3.4 · 人工智能会取代我们吗？ Will AI replace us?",
-   "words": [
-    {
-     "hanzi": "观点",
-     "pinyin": "guān diǎn",
-     "pos": "n.",
-     "en": "point of view"
-    },
-    {
-     "hanzi": "代替",
-     "pinyin": "dài tì",
-     "pos": "v.",
-     "en": "to replace, stand in for"
-    },
-    {
-     "hanzi": "替代",
-     "pinyin": "tì dài",
-     "pos": "v.",
-     "en": "to substitute, replace (written)"
-    },
-    {
-     "hanzi": "大模型",
-     "pinyin": "dà mó xíng",
-     "pos": "n.",
-     "en": "large (AI) model"
-    },
-    {
-     "hanzi": "数据",
-     "pinyin": "shù jù",
-     "pos": "n.",
-     "en": "data"
-    },
-    {
-     "hanzi": "插画师",
-     "pinyin": "chā huà shī",
-     "pos": "n.",
-     "en": "illustrator"
-    },
-    {
-     "hanzi": "程序员",
-     "pinyin": "chéng xù yuán",
-     "pos": "n.",
-     "en": "programmer"
-    },
-    {
-     "hanzi": "原创",
-     "pinyin": "yuán chuàng",
-     "pos": "adj./n.",
-     "en": "original; original work"
-    },
-    {
-     "hanzi": "正方",
-     "pinyin": "zhèng fāng",
-     "pos": "n.",
-     "en": "the side for the motion (in a debate)"
-    },
-    {
-     "hanzi": "反方",
-     "pinyin": "fǎn fāng",
-     "pos": "n.",
-     "en": "the side against the motion (in a debate)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u3-5",
-   "title": "大步3 U3.5 · 人工智能会取代我们吗？ Will AI replace us?",
-   "words": [
-    {
-     "hanzi": "论坛",
-     "pinyin": "lùn tán",
-     "pos": "n.",
-     "en": "forum"
-    },
-    {
-     "hanzi": "同行",
-     "pinyin": "tóng háng",
-     "pos": "n.",
-     "en": "people in the same profession, colleagues"
-    },
-    {
-     "hanzi": "意味着",
-     "pinyin": "yì wèi zhe",
-     "pos": "v.",
-     "en": "to mean, signify"
-    },
-    {
-     "hanzi": "事实",
-     "pinyin": "shì shí",
-     "pos": "n.",
-     "en": "fact"
-    },
-    {
-     "hanzi": "前所未有",
-     "pinyin": "qián suǒ wèi yǒu",
-     "pos": "phr.",
-     "en": "unprecedented, never seen before"
-    },
-    {
-     "hanzi": "压力",
-     "pinyin": "yā lì",
-     "pos": "n.",
-     "en": "pressure"
-    },
-    {
-     "hanzi": "打字员",
-     "pinyin": "dǎ zì yuán",
-     "pos": "n.",
-     "en": "typist"
-    },
-    {
-     "hanzi": "淘汰",
-     "pinyin": "táo tài",
-     "pos": "v.",
-     "en": "to eliminate, phase out, do away with"
-    },
-    {
-     "hanzi": "创造",
-     "pinyin": "chuàng zào",
-     "pos": "v.",
-     "en": "to create"
-    },
-    {
-     "hanzi": "假装",
-     "pinyin": "jiǎ zhuāng",
-     "pos": "v.",
-     "en": "to pretend"
-    },
-    {
-     "hanzi": "发生",
-     "pinyin": "fā shēng",
-     "pos": "v.",
-     "en": "to happen"
-    },
-    {
-     "hanzi": "往往",
-     "pinyin": "wǎng wǎng",
-     "pos": "adv.",
-     "en": "often, tend to"
-    },
-    {
-     "hanzi": "擅长",
-     "pinyin": "shàn cháng",
-     "pos": "v.",
-     "en": "to be good at"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u3-6",
-   "title": "大步3 U3.6 · 人工智能会取代我们吗？ Will AI replace us?",
-   "words": [
-    {
-     "hanzi": "恰恰",
-     "pinyin": "qià qià",
-     "pos": "adv.",
-     "en": "precisely, exactly"
-    },
-    {
-     "hanzi": "重复性",
-     "pinyin": "chóng fù xìng",
-     "pos": "adj.",
-     "en": "repetitive"
-    },
-    {
-     "hanzi": "提问",
-     "pinyin": "tí wèn",
-     "pos": "v.",
-     "en": "to ask a question"
-    },
-    {
-     "hanzi": "判断",
-     "pinyin": "pàn duàn",
-     "pos": "v./n.",
-     "en": "to judge; judgement"
-    },
-    {
-     "hanzi": "责任",
-     "pinyin": "zé rèn",
-     "pos": "n.",
-     "en": "responsibility, duty"
-    },
-    {
-     "hanzi": "练手",
-     "pinyin": "liàn shǒu",
-     "pos": "v.",
-     "en": "to practise, get your hand in"
-    },
-    {
-     "hanzi": "得到",
-     "pinyin": "dé dào",
-     "pos": "v.",
-     "en": "to get, receive"
-    },
-    {
-     "hanzi": "回答",
-     "pinyin": "huí dá",
-     "pos": "v./n.",
-     "en": "to answer; answer"
-    },
-    {
-     "hanzi": "强大",
-     "pinyin": "qiáng dà",
-     "pos": "adj.",
-     "en": "powerful, strong"
-    },
-    {
-     "hanzi": "演讲",
-     "pinyin": "yǎn jiǎng",
-     "pos": "n./v.",
-     "en": "speech, talk; to give a speech"
-    },
-    {
-     "hanzi": "各位",
-     "pinyin": "gè wèi",
-     "pos": "pron.",
-     "en": "everyone (in a speech: 各位同行 colleagues)"
-    },
-    {
-     "hanzi": "其次",
-     "pinyin": "qí cì",
-     "pos": "adv.",
-     "en": "secondly, next"
-    },
-    {
-     "hanzi": "争论",
-     "pinyin": "zhēng lùn",
-     "pos": "v./n.",
-     "en": "to argue, dispute; argument"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-1",
-   "title": "大步3 U4.1 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "全市",
-     "pinyin": "quán shì",
-     "pos": "n.",
-     "en": "the whole city"
-    },
-    {
-     "hanzi": "商店",
-     "pinyin": "shāng diàn",
-     "pos": "n.",
-     "en": "shop"
-    },
-    {
-     "hanzi": "一律",
-     "pinyin": "yī lǜ",
-     "pos": "adv.",
-     "en": "all, without exception"
-    },
-    {
-     "hanzi": "收",
-     "pinyin": "shōu",
-     "pos": "v.",
-     "en": "to accept, take (不收现金 don't take cash)"
-    },
-    {
-     "hanzi": "发布",
-     "pinyin": "fā bù",
-     "pos": "v.",
-     "en": "to issue, publish, post"
-    },
-    {
-     "hanzi": "感叹号",
-     "pinyin": "gǎn tàn hào",
-     "pos": "n.",
-     "en": "exclamation mark"
-    },
-    {
-     "hanzi": "越是",
-     "pinyin": "yuè shì",
-     "pos": "phr.",
-     "en": "the more … the more … (越是…越…)"
-    },
-    {
-     "hanzi": "搜",
-     "pinyin": "sōu",
-     "pos": "v.",
-     "en": "to search (online)"
-    },
-    {
-     "hanzi": "官方",
-     "pinyin": "guān fāng",
-     "pos": "n./adj.",
-     "en": "the authorities; official"
-    },
-    {
-     "hanzi": "辟谣",
-     "pinyin": "pì yáo",
-     "pos": "v./n.",
-     "en": "to refute a rumour; a rebuttal"
-    },
-    {
-     "hanzi": "据",
-     "pinyin": "jù",
-     "pos": "prep.",
-     "en": "according to (written)"
-    },
-    {
-     "hanzi": "据报道",
-     "pinyin": "jù bào dào",
-     "pos": "phr.",
-     "en": "according to reports, it is reported that"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-2",
-   "title": "大步3 U4.2 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "报道",
-     "pinyin": "bào dào",
-     "pos": "n./v.",
-     "en": "(news) report; to report"
-    },
-    {
-     "hanzi": "流传",
-     "pinyin": "liú chuán",
-     "pos": "v.",
-     "en": "to circulate, go round"
-    },
-    {
-     "hanzi": "表示",
-     "pinyin": "biǎo shì",
-     "pos": "v.",
-     "en": "to state, say (formally) (new meaning)"
-    },
-    {
-     "hanzi": "谣言",
-     "pinyin": "yáo yán",
-     "pos": "n.",
-     "en": "rumour"
-    },
-    {
-     "hanzi": "违规",
-     "pinyin": "wéi guī",
-     "pos": "v.",
-     "en": "to break the rules"
-    },
-    {
-     "hanzi": "吓",
-     "pinyin": "xià",
-     "pos": "v.",
-     "en": "to frighten (吓得… so frightened that…)"
-    },
-    {
-     "hanzi": "取",
-     "pinyin": "qǔ",
-     "pos": "v.",
-     "en": "to take out, withdraw (取钱 withdraw money)"
-    },
-    {
-     "hanzi": "来源",
-     "pinyin": "lái yuán",
-     "pos": "n.",
-     "en": "source"
-    },
-    {
-     "hanzi": "正规",
-     "pinyin": "zhèng guī",
-     "pos": "adj.",
-     "en": "proper, official, regular"
-    },
-    {
-     "hanzi": "媒体",
-     "pinyin": "méi tǐ",
-     "pos": "n.",
-     "en": "the media"
-    },
-    {
-     "hanzi": "标题",
-     "pinyin": "biāo tí",
-     "pos": "n.",
-     "en": "headline, title"
-    },
-    {
-     "hanzi": "传",
-     "pinyin": "chuán",
-     "pos": "v.",
-     "en": "to pass on, spread"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-3",
-   "title": "大步3 U4.3 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "急",
-     "pinyin": "jí",
-     "pos": "adj.",
-     "en": "anxious, in a hurry (别急 don't panic; 急着 in a hurry to)"
-    },
-    {
-     "hanzi": "正事",
-     "pinyin": "zhèng shì",
-     "pos": "n.",
-     "en": "the matter in hand, business"
-    },
-    {
-     "hanzi": "揭晓",
-     "pinyin": "jiē xiǎo",
-     "pos": "v.",
-     "en": "to announce (results)"
-    },
-    {
-     "hanzi": "据悉",
-     "pinyin": "jù xī",
-     "pos": "phr.",
-     "en": "it is understood that, it is learned that (written)"
-    },
-    {
-     "hanzi": "来稿",
-     "pinyin": "lái gǎo",
-     "pos": "n.",
-     "en": "submissions, entries (to a paper or competition)"
-    },
-    {
-     "hanzi": "余",
-     "pinyin": "yú",
-     "pos": "num.",
-     "en": "more than, odd (after a number: 一千二百余篇 1,200-odd; written)"
-    },
-    {
-     "hanzi": "外籍",
-     "pinyin": "wài jí",
-     "pos": "adj.",
-     "en": "foreign (of nationality) (外籍居民 foreign resident)"
-    },
-    {
-     "hanzi": "获",
-     "pinyin": "huò",
-     "pos": "v.",
-     "en": "to win, obtain (written 得到)"
-    },
-    {
-     "hanzi": "奖",
-     "pinyin": "jiǎng",
-     "pos": "n.",
-     "en": "prize, award"
-    },
-    {
-     "hanzi": "二等奖",
-     "pinyin": "èr děng jiǎng",
-     "pos": "n.",
-     "en": "second prize"
-    },
-    {
-     "hanzi": "获奖",
-     "pinyin": "huò jiǎng",
-     "pos": "v.",
-     "en": "to win a prize"
-    },
-    {
-     "hanzi": "评委",
-     "pinyin": "píng wěi",
-     "pos": "n.",
-     "en": "judge (on a panel), jury member"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-4",
-   "title": "大步3 U4.4 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "称",
-     "pinyin": "chēng",
-     "pos": "v.",
-     "en": "to say, state, claim (written)"
-    },
-    {
-     "hanzi": "过季",
-     "pinyin": "guò jì",
-     "pos": "v.",
-     "en": "to be out of season"
-    },
-    {
-     "hanzi": "八宝饭",
-     "pinyin": "bā bǎo fàn",
-     "pos": "n.",
-     "en": "eight-treasure rice (a sweet sticky-rice pudding for New Year)"
-    },
-    {
-     "hanzi": "假新闻",
-     "pinyin": "jiǎ xīn wén",
-     "pos": "n.",
-     "en": "fake news"
-    },
-    {
-     "hanzi": "自媒体",
-     "pinyin": "zì méi tǐ",
-     "pos": "n.",
-     "en": "'self-media', independent online accounts"
-    },
-    {
-     "hanzi": "标题党",
-     "pinyin": "biāo tí dǎng",
-     "pos": "n.",
-     "en": "clickbait; people who write clickbait headlines"
-    },
-    {
-     "hanzi": "截",
-     "pinyin": "jié",
-     "pos": "v.",
-     "en": "to cut off; to capture (截个图 take a screenshot)"
-    },
-    {
-     "hanzi": "截图",
-     "pinyin": "jié tú",
-     "pos": "v./n.",
-     "en": "to take a screenshot; screenshot"
-    },
-    {
-     "hanzi": "核实",
-     "pinyin": "hé shí",
-     "pos": "v.",
-     "en": "to verify, check"
-    },
-    {
-     "hanzi": "转载",
-     "pinyin": "zhuǎn zǎi",
-     "pos": "v.",
-     "en": "to repost, reprint (an article)"
-    },
-    {
-     "hanzi": "官方媒体",
-     "pinyin": "guān fāng méi tǐ",
-     "pos": "n.",
-     "en": "official media"
-    },
-    {
-     "hanzi": "信息",
-     "pinyin": "xìn xī",
-     "pos": "n.",
-     "en": "information; message"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-5",
-   "title": "大步3 U4.5 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "走俏",
-     "pinyin": "zǒu qiào",
-     "pos": "v.",
-     "en": "to sell well, be in demand (news)"
-    },
-    {
-     "hanzi": "山村",
-     "pinyin": "shān cūn",
-     "pos": "n.",
-     "en": "mountain village"
-    },
-    {
-     "hanzi": "本报讯",
-     "pinyin": "běn bào xùn",
-     "pos": "phr.",
-     "en": "'this paper reports' (the opening of a news report)"
-    },
-    {
-     "hanzi": "年关",
-     "pinyin": "nián guān",
-     "pos": "n.",
-     "en": "the end of the (lunar) year"
-    },
-    {
-     "hanzi": "将近",
-     "pinyin": "jiāng jìn",
-     "pos": "v./adv.",
-     "en": "to be approaching; nearly"
-    },
-    {
-     "hanzi": "山区",
-     "pinyin": "shān qū",
-     "pos": "n.",
-     "en": "hilly area, mountains"
-    },
-    {
-     "hanzi": "往年",
-     "pinyin": "wǎng nián",
-     "pos": "n.",
-     "en": "previous years, other years"
-    },
-    {
-     "hanzi": "截至",
-     "pinyin": "jié zhì",
-     "pos": "prep.",
-     "en": "as of, up to (a date)"
-    },
-    {
-     "hanzi": "近",
-     "pinyin": "jìn",
-     "pos": "adv.",
-     "en": "nearly, almost (written: 近一个月 nearly a month) (new meaning)"
-    },
-    {
-     "hanzi": "网络",
-     "pinyin": "wǎng luò",
-     "pos": "n.",
-     "en": "the internet, network, online"
-    },
-    {
-     "hanzi": "果盘",
-     "pinyin": "guǒ pán",
-     "pos": "n.",
-     "en": "fruit tray, fruit bowl"
-    },
-    {
-     "hanzi": "产品",
-     "pinyin": "chǎn pǐn",
-     "pos": "n.",
-     "en": "product"
-    },
-    {
-     "hanzi": "销售额",
-     "pinyin": "xiāo shòu é",
-     "pos": "n.",
-     "en": "sales (figure), turnover"
-    },
-    {
-     "hanzi": "同期",
-     "pinyin": "tóng qī",
-     "pos": "n.",
-     "en": "the same period (去年同期 this time last year)"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-6",
-   "title": "大步3 U4.6 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "倍",
-     "pinyin": "bèi",
-     "pos": "m.",
-     "en": "times, -fold (五倍 five times)"
-    },
-    {
-     "hanzi": "村民",
-     "pinyin": "cūn mín",
-     "pos": "n.",
-     "en": "villager"
-    },
-    {
-     "hanzi": "外出",
-     "pinyin": "wài chū",
-     "pos": "v.",
-     "en": "to go out; to go away (for work)"
-    },
-    {
-     "hanzi": "面临",
-     "pinyin": "miàn lín",
-     "pos": "v.",
-     "en": "to face, be faced with"
-    },
-    {
-     "hanzi": "失传",
-     "pinyin": "shī chuán",
-     "pos": "v.",
-     "en": "to be lost, die out (of a craft or skill)"
-    },
-    {
-     "hanzi": "转机",
-     "pinyin": "zhuǎn jī",
-     "pos": "n.",
-     "en": "turning point, a turn for the better"
-    },
-    {
-     "hanzi": "外婆",
-     "pinyin": "wài pó",
-     "pos": "n.",
-     "en": "grandma (mum's mother)"
-    },
-    {
-     "hanzi": "月初",
-     "pinyin": "yuè chū",
-     "pos": "n.",
-     "en": "the beginning of the month"
-    },
-    {
-     "hanzi": "迅速",
-     "pinyin": "xùn sù",
-     "pos": "adv./adj.",
-     "en": "rapidly; rapid"
-    },
-    {
-     "hanzi": "突破",
-     "pinyin": "tū pò",
-     "pos": "v.",
-     "en": "to break through, pass (a figure)"
-    },
-    {
-     "hanzi": "据了解",
-     "pinyin": "jù liǎo jiě",
-     "pos": "phr.",
-     "en": "it is understood that, we understand that"
-    },
-    {
-     "hanzi": "大增",
-     "pinyin": "dà zēng",
-     "pos": "v.",
-     "en": "to rise sharply, surge"
-    },
-    {
-     "hanzi": "发货",
-     "pinyin": "fā huò",
-     "pos": "v.",
-     "en": "to ship, send out (goods)"
-    },
-    {
-     "hanzi": "负责人",
-     "pinyin": "fù zé rén",
-     "pos": "n.",
-     "en": "person in charge, head"
-    }
-   ]
-  },
-  {
-   "id": "dabu3-u4-7",
-   "title": "大步3 U4.7 · 新闻怎么读 Reading the news",
-   "words": [
-    {
-     "hanzi": "目前",
-     "pinyin": "mù qián",
-     "pos": "n.",
-     "en": "at present, so far"
-    },
-    {
-     "hanzi": "长久",
-     "pinyin": "cháng jiǔ",
-     "pos": "adj.",
-     "en": "lasting, long-term"
-    },
-    {
-     "hanzi": "开设",
-     "pinyin": "kāi shè",
-     "pos": "v.",
-     "en": "to open, set up (a course, a service)"
-    },
-    {
-     "hanzi": "体验",
-     "pinyin": "tǐ yàn",
-     "pos": "v./n.",
-     "en": "to experience, try out; experience"
-    },
-    {
-     "hanzi": "前来",
-     "pinyin": "qián lái",
-     "pos": "v.",
-     "en": "to come (written)"
-    },
-    {
-     "hanzi": "头条",
-     "pinyin": "tóu tiáo",
-     "pos": "n.",
-     "en": "headline story, top story"
-    },
-    {
-     "hanzi": "热搜",
-     "pinyin": "rè sōu",
-     "pos": "n.",
-     "en": "trending searches, trending topics"
-    },
-    {
-     "hanzi": "采访",
-     "pinyin": "cǎi fǎng",
-     "pos": "v./n.",
-     "en": "to interview (as a reporter); interview"
-    },
-    {
-     "hanzi": "编辑",
-     "pinyin": "biān jí",
-     "pos": "n./v.",
-     "en": "editor; to edit"
-    },
-    {
-     "hanzi": "报社",
-     "pinyin": "bào shè",
-     "pos": "n.",
-     "en": "newspaper office"
-    },
-    {
-     "hanzi": "副标题",
-     "pinyin": "fù biāo tí",
-     "pos": "n.",
-     "en": "subtitle, subheading"
-    },
-    {
-     "hanzi": "高铁",
-     "pinyin": "gāo tiě",
-     "pos": "n.",
-     "en": "high-speed train"
-    },
-    {
-     "hanzi": "熏鱼",
-     "pinyin": "xūn yú",
-     "pos": "",
-     "en": "Shanghai 'smoked' fish: fried, then soaked in a sweet soy sauce"
-    },
-    {
-     "hanzi": "蛋饺",
-     "pinyin": "dàn jiǎo",
-     "pos": "",
-     "en": "egg dumplings, a thin omelette folded round pork"
-    },
-    {
-     "hanzi": "崭新",
-     "pinyin": "zhǎn xīn",
-     "pos": "",
-     "en": "brand new"
-    },
-    {
-     "hanzi": "舞狮",
-     "pinyin": "wǔ shī",
-     "pos": "",
-     "en": "lion dance"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-1",
-   "title": "大步4 U1.1 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "失眠",
-     "pinyin": "shī mián",
-     "pos": "v./n.",
-     "en": "to be unable to sleep; insomnia"
-    },
-    {
-     "hanzi": "催婚",
-     "pinyin": "cuī hūn",
-     "pos": "v.",
-     "en": "to pressure someone to get married"
-    },
-    {
-     "hanzi": "催",
-     "pinyin": "cuī",
-     "pos": "v.",
-     "en": "to hurry, urge, press (someone to do something)"
-    },
-    {
-     "hanzi": "相亲",
-     "pinyin": "xiāng qīn",
-     "pos": "v./n.",
-     "en": "to go on an arranged date (with a view to marriage); a blind date"
-    },
-    {
-     "hanzi": "战友",
-     "pinyin": "zhàn yǒu",
-     "pos": "n.",
-     "en": "comrade-in-arms, old army friend"
-    },
-    {
-     "hanzi": "侄子",
-     "pinyin": "zhí zi",
-     "pos": "n.",
-     "en": "nephew (a brother's son)"
-    },
-    {
-     "hanzi": "小姨",
-     "pinyin": "xiǎo yí",
-     "pos": "n.",
-     "en": "aunt (your mother's younger sister)"
-    },
-    {
-     "hanzi": "相亲角",
-     "pinyin": "xiāng qīn jiǎo",
-     "pos": "n.",
-     "en": "'matchmaking corner' (in a park, where parents advertise their children)"
-    },
-    {
-     "hanzi": "角",
-     "pinyin": "jiǎo",
-     "pos": "n.",
-     "en": "corner"
-    },
-    {
-     "hanzi": "抓紧",
-     "pinyin": "zhuā jǐn",
-     "pos": "v.",
-     "en": "to hurry up, make the most of (time)"
-    },
-    {
-     "hanzi": "年龄",
-     "pinyin": "nián líng",
-     "pos": "n.",
-     "en": "age"
-    },
-    {
-     "hanzi": "身高",
-     "pinyin": "shēn gāo",
-     "pos": "n.",
-     "en": "height (of a person)"
-    },
-    {
-     "hanzi": "表姐",
-     "pinyin": "biǎo jiě",
-     "pos": "n.",
-     "en": "(older female) cousin"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-2",
-   "title": "大步4 U1.2 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "背后",
-     "pinyin": "bèi hòu",
-     "pos": "n.",
-     "en": "behind (someone's back)"
-    },
-    {
-     "hanzi": "剩女",
-     "pinyin": "shèng nǚ",
-     "pos": "n.",
-     "en": "'leftover woman' (a contested label for an unmarried woman over about 27)"
-    },
-    {
-     "hanzi": "讨厌",
-     "pinyin": "tǎo yàn",
-     "pos": "v./adj.",
-     "en": "to hate, dislike; annoying"
-    },
-    {
-     "hanzi": "难道",
-     "pinyin": "nán dào",
-     "pos": "adv.",
-     "en": "surely not, do you mean to say (in a rhetorical question)"
-    },
-    {
-     "hanzi": "话说回来",
-     "pinyin": "huà shuō huí lái",
-     "pos": "phr.",
-     "en": "that said, mind you, then again"
-    },
-    {
-     "hanzi": "说到底",
-     "pinyin": "shuō dào dǐ",
-     "pos": "phr.",
-     "en": "when it comes down to it, in the end"
-    },
-    {
-     "hanzi": "为了",
-     "pinyin": "wèi le",
-     "pos": "phr.",
-     "en": "to (do something) for the sake of … (为了…而…)"
-    },
-    {
-     "hanzi": "何必",
-     "pinyin": "hé bì",
-     "pos": "adv.",
-     "en": "why bother, there's no need (in a rhetorical question)"
-    },
-    {
-     "hanzi": "人生",
-     "pinyin": "rén shēng",
-     "pos": "n.",
-     "en": "life (a person's life as a whole)"
-    },
-    {
-     "hanzi": "任务",
-     "pinyin": "rèn wu",
-     "pos": "n.",
-     "en": "task, job, mission"
-    },
-    {
-     "hanzi": "事业",
-     "pinyin": "shì yè",
-     "pos": "n.",
-     "en": "career, life's work"
-    },
-    {
-     "hanzi": "上升期",
-     "pinyin": "shàng shēng qī",
-     "pos": "n.",
-     "en": "a rising phase (事业上升期 when your career is taking off)"
-    },
-    {
-     "hanzi": "毕竟",
-     "pinyin": "bì jìng",
-     "pos": "adv.",
-     "en": "after all"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-3",
-   "title": "大步4 U1.3 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "两代人",
-     "pinyin": "liǎng dài rén",
-     "pos": "phr.",
-     "en": "two generations"
-    },
-    {
-     "hanzi": "父母",
-     "pinyin": "fù mǔ",
-     "pos": "n.",
-     "en": "parents"
-    },
-    {
-     "hanzi": "对象",
-     "pinyin": "duì xiàng",
-     "pos": "n.",
-     "en": "partner, boyfriend or girlfriend (with a view to marriage) (有对象了吗？ seeing anyone?)"
-    },
-    {
-     "hanzi": "单身",
-     "pinyin": "dān shēn",
-     "pos": "adj./n.",
-     "en": "single, unmarried"
-    },
-    {
-     "hanzi": "婚姻",
-     "pinyin": "hūn yīn",
-     "pos": "n.",
-     "en": "marriage"
-    },
-    {
-     "hanzi": "恋爱",
-     "pinyin": "liàn ài",
-     "pos": "n./v.",
-     "en": "romantic love; to be in love"
-    },
-    {
-     "hanzi": "谈恋爱",
-     "pinyin": "tán liàn ài",
-     "pos": "v.",
-     "en": "to be going out with someone, date"
-    },
-    {
-     "hanzi": "离婚",
-     "pinyin": "lí hūn",
-     "pos": "v.",
-     "en": "to divorce"
-    },
-    {
-     "hanzi": "彩礼",
-     "pinyin": "cǎi lǐ",
-     "pos": "n.",
-     "en": "betrothal gift (money from the groom's family to the bride's)"
-    },
-    {
-     "hanzi": "大龄",
-     "pinyin": "dà líng",
-     "pos": "adj.",
-     "en": "older (than usual for marrying) (大龄青年 older single people)"
-    },
-    {
-     "hanzi": "青年",
-     "pinyin": "qīng nián",
-     "pos": "n.",
-     "en": "young people, youth"
-    },
-    {
-     "hanzi": "缘分",
-     "pinyin": "yuán fèn",
-     "pos": "n.",
-     "en": "fate that brings people together (有缘分 meant to be)"
-    },
-    {
-     "hanzi": "幸福",
-     "pinyin": "xìng fú",
-     "pos": "adj./n.",
-     "en": "happy (of a life); happiness"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-4",
-   "title": "大步4 U1.4 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "管",
-     "pinyin": "guǎn",
-     "pos": "v.",
-     "en": "to interfere, concern yourself with (不怎么管 don't really interfere)"
-    },
-    {
-     "hanzi": "怪",
-     "pinyin": "guài",
-     "pos": "v.",
-     "en": "to blame"
-    },
-    {
-     "hanzi": "原因",
-     "pinyin": "yuán yīn",
-     "pos": "n.",
-     "en": "reason, cause"
-    },
-    {
-     "hanzi": "伴侣",
-     "pinyin": "bàn lǚ",
-     "pos": "n.",
-     "en": "partner, companion (formal)"
-    },
-    {
-     "hanzi": "红娘",
-     "pinyin": "hóng niáng",
-     "pos": "n.",
-     "en": "matchmaker (after a character in a classic play)"
-    },
-    {
-     "hanzi": "领证",
-     "pinyin": "lǐng zhèng",
-     "pos": "v.",
-     "en": "to get your marriage certificate, marry officially"
-    },
-    {
-     "hanzi": "结婚证",
-     "pinyin": "jié hūn zhèng",
-     "pos": "n.",
-     "en": "marriage certificate"
-    },
-    {
-     "hanzi": "安全感",
-     "pinyin": "ān quán gǎn",
-     "pos": "n.",
-     "en": "sense of security"
-    },
-    {
-     "hanzi": "独立",
-     "pinyin": "dú lì",
-     "pos": "adj./v.",
-     "en": "independent; to stand on your own feet"
-    },
-    {
-     "hanzi": "尊重",
-     "pinyin": "zūn zhòng",
-     "pos": "v./n.",
-     "en": "to respect; respect"
-    },
-    {
-     "hanzi": "观念",
-     "pinyin": "guān niàn",
-     "pos": "n.",
-     "en": "ideas, values, way of thinking"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-5",
-   "title": "大步4 U1.5 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "心里话",
-     "pinyin": "xīn lǐ huà",
-     "pos": "n.",
-     "en": "what's in your heart, your true feelings"
-    },
-    {
-     "hanzi": "说不出口",
-     "pinyin": "shuō bu chū kǒu",
-     "pos": "phr.",
-     "en": "can't bring yourself to say"
-    },
-    {
-     "hanzi": "心急",
-     "pinyin": "xīn jí",
-     "pos": "adj.",
-     "en": "impatient, in too much of a hurry"
-    },
-    {
-     "hanzi": "换了谁",
-     "pinyin": "huàn le shéi",
-     "pos": "phr.",
-     "en": "whoever it was, anyone (换了谁都受不了 anyone would have had enough)"
-    },
-    {
-     "hanzi": "思想",
-     "pinyin": "sī xiǎng",
-     "pos": "n.",
-     "en": "thinking, ideas, outlook (思想老 old-fashioned)"
-    },
-    {
-     "hanzi": "厂",
-     "pinyin": "chǎng",
-     "pos": "n.",
-     "en": "factory, works (厂里 at the factory)"
-    },
-    {
-     "hanzi": "会计",
-     "pinyin": "kuài jì",
-     "pos": "n.",
-     "en": "accountant; accounting"
-    },
-    {
-     "hanzi": "年代",
-     "pinyin": "nián dài",
-     "pos": "n.",
-     "en": "era, time; decade (六十年代 the sixties)"
-    },
-    {
-     "hanzi": "一辈子",
-     "pinyin": "yī bèi zi",
-     "pos": "n.",
-     "en": "all your life, a lifetime"
-    },
-    {
-     "hanzi": "吵架",
-     "pinyin": "chǎo jià",
-     "pos": "v.",
-     "en": "to quarrel, have a row (吵过不少架 had plenty of rows)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-6",
-   "title": "大步4 U1.6 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "回头",
-     "pinyin": "huí tóu",
-     "pos": "v.",
-     "en": "to look back (回头看 looking back)"
-    },
-    {
-     "hanzi": "踏实",
-     "pinyin": "tā shi",
-     "pos": "adj.",
-     "en": "at ease, secure; steady, down-to-earth"
-    },
-    {
-     "hanzi": "睡不着",
-     "pinyin": "shuì bu zháo",
-     "pos": "phr.",
-     "en": "can't get to sleep"
-    },
-    {
-     "hanzi": "打拼",
-     "pinyin": "dǎ pīn",
-     "pos": "v.",
-     "en": "to work hard to make your way, strive"
-    },
-    {
-     "hanzi": "本事",
-     "pinyin": "běn shi",
-     "pos": "n.",
-     "en": "ability, skill (靠自己的本事 by your own efforts)"
-    },
-    {
-     "hanzi": "不在",
-     "pinyin": "bù zài",
-     "pos": "v.",
-     "en": "to be gone, have passed away (euphemism) (new meaning)"
-    },
-    {
-     "hanzi": "逼",
-     "pinyin": "bī",
-     "pos": "v.",
-     "en": "to force, pressure, push"
-    },
-    {
-     "hanzi": "嫁",
-     "pinyin": "jià",
-     "pos": "v.",
-     "en": "(of a woman) to marry"
-    },
-    {
-     "hanzi": "娶",
-     "pinyin": "qǔ",
-     "pos": "v.",
-     "en": "(of a man) to marry, take a wife"
-    },
-    {
-     "hanzi": "晚婚",
-     "pinyin": "wǎn hūn",
-     "pos": "n./v.",
-     "en": "late marriage; to marry late"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u1-7",
-   "title": "大步4 U1.7 · 催婚 So when are you getting married?",
-   "words": [
-    {
-     "hanzi": "夫妻",
-     "pinyin": "fū qī",
-     "pos": "n.",
-     "en": "husband and wife, married couple"
-    },
-    {
-     "hanzi": "丈夫",
-     "pinyin": "zhàng fu",
-     "pos": "n.",
-     "en": "husband"
-    },
-    {
-     "hanzi": "妻子",
-     "pinyin": "qī zi",
-     "pos": "n.",
-     "en": "wife"
-    },
-    {
-     "hanzi": "门当户对",
-     "pinyin": "mén dāng hù duì",
-     "pos": "phr.",
-     "en": "well matched in family background (a 成语)"
-    },
-    {
-     "hanzi": "孤单",
-     "pinyin": "gū dān",
-     "pos": "adj.",
-     "en": "lonely, on your own"
-    },
-    {
-     "hanzi": "孤独",
-     "pinyin": "gū dú",
-     "pos": "adj./n.",
-     "en": "lonely; loneliness"
-    },
-    {
-     "hanzi": "唠叨",
-     "pinyin": "láo dao",
-     "pos": "v./adj.",
-     "en": "to nag, go on and on; nagging"
-    },
-    {
-     "hanzi": "牵挂",
-     "pinyin": "qiān guà",
-     "pos": "v.",
-     "en": "to worry about, keep (someone) in your thoughts"
-    },
-    {
-     "hanzi": "自由",
-     "pinyin": "zì yóu",
-     "pos": "n./adj.",
-     "en": "freedom; free"
-    },
-    {
-     "hanzi": "平等",
-     "pinyin": "píng děng",
-     "pos": "adj./n.",
-     "en": "equal; equality"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u2-1",
-   "title": "大步4 U2.1 · 高考 The race to the exam",
-   "words": [
-    {
-     "hanzi": "高考",
-     "pinyin": "gāo kǎo",
-     "pos": "n.",
-     "en": "the gaokao, the national university entrance exam"
-    },
-    {
-     "hanzi": "生煎",
-     "pinyin": "shēng jiān",
-     "pos": "n.",
-     "en": "pan-fried pork bun (a Shanghai breakfast)"
-    },
-    {
-     "hanzi": "奥数",
-     "pinyin": "ào shù",
-     "pos": "n.",
-     "en": "Olympiad maths (competition maths classes for children)"
-    },
-    {
-     "hanzi": "作文",
-     "pinyin": "zuò wén",
-     "pos": "n.",
-     "en": "composition, essay (at school)"
-    },
-    {
-     "hanzi": "节",
-     "pinyin": "jié",
-     "pos": "m.",
-     "en": "for lessons and classes (四节课 four classes) (new meaning)"
-    },
-    {
-     "hanzi": "同桌",
-     "pinyin": "tóng zhuō",
-     "pos": "n.",
-     "en": "desk-mate (the classmate who shares your desk)"
-    },
-    {
-     "hanzi": "编程",
-     "pinyin": "biān chéng",
-     "pos": "n./v.",
-     "en": "programming, coding; to code"
-    },
-    {
-     "hanzi": "动画片",
-     "pinyin": "dòng huà piàn",
-     "pos": "n.",
-     "en": "cartoon, animated film"
-    },
-    {
-     "hanzi": "疯",
-     "pinyin": "fēng",
-     "pos": "adj.",
-     "en": "mad, wild (疯跑 run about wildly)"
-    },
-    {
-     "hanzi": "鸡娃",
-     "pinyin": "jī wá",
-     "pos": "v./n.",
-     "en": "to push your child hard ('inject the child with chicken blood'); a pushed child"
-    },
-    {
-     "hanzi": "依我看",
-     "pinyin": "yī wǒ kàn",
-     "pos": "phr.",
-     "en": "the way I see it, in my view"
-    },
-    {
-     "hanzi": "要紧",
-     "pinyin": "yào jǐn",
-     "pos": "adj.",
-     "en": "important, what matters (身体最要紧 health comes first)"
-    },
-    {
-     "hanzi": "小升初",
-     "pinyin": "xiǎo shēng chū",
-     "pos": "n.",
-     "en": "the move from primary to junior secondary school"
-    },
-    {
-     "hanzi": "初中",
-     "pinyin": "chū zhōng",
-     "pos": "n.",
-     "en": "junior secondary school (ages 12 to 15)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u2-2",
-   "title": "大步4 U2.2 · 高考 The race to the exam",
-   "words": [
-    {
-     "hanzi": "不得不",
-     "pinyin": "bù dé bù",
-     "pos": "phr.",
-     "en": "to have no choice but to, have to"
-    },
-    {
-     "hanzi": "高三",
-     "pinyin": "gāo sān",
-     "pos": "n.",
-     "en": "the final year of senior secondary school"
-    },
-    {
-     "hanzi": "做题",
-     "pinyin": "zuò tí",
-     "pos": "v.",
-     "en": "to do exercises, practice questions"
-    },
-    {
-     "hanzi": "教室",
-     "pinyin": "jiào shì",
-     "pos": "n.",
-     "en": "classroom"
-    },
-    {
-     "hanzi": "黑板",
-     "pinyin": "hēi bǎn",
-     "pos": "n.",
-     "en": "blackboard"
-    },
-    {
-     "hanzi": "非",
-     "pinyin": "fēi",
-     "pos": "phr.",
-     "en": "must, simply have to (非…不可)"
-    },
-    {
-     "hanzi": "打基础",
-     "pinyin": "dǎ jī chǔ",
-     "pos": "phr.",
-     "en": "to lay the foundations"
-    },
-    {
-     "hanzi": "步步",
-     "pinyin": "bù bù",
-     "pos": "adv.",
-     "en": "at every step, step by step"
-    },
-    {
-     "hanzi": "算分",
-     "pinyin": "suàn fēn",
-     "pos": "v.",
-     "en": "to count towards your marks"
-    },
-    {
-     "hanzi": "补习班",
-     "pinyin": "bǔ xí bān",
-     "pos": "n.",
-     "en": "cram class, after-school tutoring class"
-    },
-    {
-     "hanzi": "占满",
-     "pinyin": "zhàn mǎn",
-     "pos": "v.",
-     "en": "to fill up completely, take up all of"
-    },
-    {
-     "hanzi": "当妈的",
-     "pinyin": "dāng mā de",
-     "pos": "phr.",
-     "en": "a mother, someone who's a mum"
-    },
-    {
-     "hanzi": "教育",
-     "pinyin": "jiào yù",
-     "pos": "n./v.",
-     "en": "education; to educate"
-    },
-    {
-     "hanzi": "数学",
-     "pinyin": "shù xué",
-     "pos": "n.",
-     "en": "mathematics"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u2-3",
-   "title": "大步4 U2.3 · 高考 The race to the exam",
-   "words": [
-    {
-     "hanzi": "家长",
-     "pinyin": "jiā zhǎng",
-     "pos": "n.",
-     "en": "parent (of a pupil)"
-    },
-    {
-     "hanzi": "高中",
-     "pinyin": "gāo zhōng",
-     "pos": "n.",
-     "en": "senior secondary school (ages 15 to 18)"
-    },
-    {
-     "hanzi": "中考",
-     "pinyin": "zhōng kǎo",
-     "pos": "n.",
-     "en": "the exam for entry to senior secondary school"
-    },
-    {
-     "hanzi": "学区房",
-     "pinyin": "xué qū fáng",
-     "pos": "n.",
-     "en": "a flat bought to get into a good school's catchment area"
-    },
-    {
-     "hanzi": "辅导",
-     "pinyin": "fǔ dǎo",
-     "pos": "v.",
-     "en": "to tutor, coach"
-    },
-    {
-     "hanzi": "兴趣班",
-     "pinyin": "xìng qù bān",
-     "pos": "n.",
-     "en": "hobby class (music, art, sport)"
-    },
-    {
-     "hanzi": "起跑线",
-     "pinyin": "qǐ pǎo xiàn",
-     "pos": "n.",
-     "en": "starting line (输在起跑线上 lose at the starting line)"
-    },
-    {
-     "hanzi": "攀比",
-     "pinyin": "pān bǐ",
-     "pos": "v.",
-     "en": "to compete with others, keep up with the Joneses"
-    },
-    {
-     "hanzi": "班主任",
-     "pinyin": "bān zhǔ rèn",
-     "pos": "n.",
-     "en": "form teacher (in charge of a class)"
-    },
-    {
-     "hanzi": "课外",
-     "pinyin": "kè wài",
-     "pos": "adj.",
-     "en": "extracurricular, after-school"
-    },
-    {
-     "hanzi": "名校",
-     "pinyin": "míng xiào",
-     "pos": "n.",
-     "en": "top school, famous university"
-    },
-    {
-     "hanzi": "学霸",
-     "pinyin": "xué bà",
-     "pos": "n.",
-     "en": "star student, top of the class"
-    },
-    {
-     "hanzi": "童年",
-     "pinyin": "tóng nián",
-     "pos": "n.",
-     "en": "childhood"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u2-4",
-   "title": "大步4 U2.4 · 高考 The race to the exam",
-   "words": [
-    {
-     "hanzi": "桥",
-     "pinyin": "qiáo",
-     "pos": "n.",
-     "en": "bridge"
-    },
-    {
-     "hanzi": "县城",
-     "pinyin": "xiàn chéng",
-     "pos": "n.",
-     "en": "county town"
-    },
-    {
-     "hanzi": "透明",
-     "pinyin": "tòu míng",
-     "pos": "adj.",
-     "en": "transparent, clear"
-    },
-    {
-     "hanzi": "文件袋",
-     "pinyin": "wén jiàn dài",
-     "pos": "n.",
-     "en": "document folder, document wallet"
-    },
-    {
-     "hanzi": "准考证",
-     "pinyin": "zhǔn kǎo zhèng",
-     "pos": "n.",
-     "en": "exam admission ticket"
-    },
-    {
-     "hanzi": "头",
-     "pinyin": "tóu",
-     "pos": "n.",
-     "en": "end (of a bridge, road or line) (这一头 this end) (new meaning)"
-    },
-    {
-     "hanzi": "家教",
-     "pinyin": "jiā jiào",
-     "pos": "n.",
-     "en": "private tutor; home tutoring"
-    },
-    {
-     "hanzi": "凭",
-     "pinyin": "píng",
-     "pos": "prep./v.",
-     "en": "by virtue of, on the strength of; to rely on"
-    },
-    {
-     "hanzi": "公平",
-     "pinyin": "gōng píng",
-     "pos": "adj.",
-     "en": "fair"
-    },
-    {
-     "hanzi": "卷子",
-     "pinyin": "juàn zi",
-     "pos": "n.",
-     "en": "exam paper"
-    },
-    {
-     "hanzi": "熄灯",
-     "pinyin": "xī dēng",
-     "pos": "v.",
-     "en": "to put the lights out (lights out)"
-    },
-    {
-     "hanzi": "倒计时",
-     "pinyin": "dào jì shí",
-     "pos": "n./v.",
-     "en": "countdown; to count down"
-    },
-    {
-     "hanzi": "分",
-     "pinyin": "fēn",
-     "pos": "m.",
-     "en": "a bit, a degree (压力就多一分 a little more pressure) (new meaning)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u2-5",
-   "title": "大步4 U2.5 · 高考 The race to the exam",
-   "words": [
-    {
-     "hanzi": "整夜",
-     "pinyin": "zhěng yè",
-     "pos": "n.",
-     "en": "all night, the whole night"
-    },
-    {
-     "hanzi": "病倒",
-     "pinyin": "bìng dǎo",
-     "pos": "v.",
-     "en": "to fall ill, be laid low"
-    },
-    {
-     "hanzi": "拼命",
-     "pinyin": "pīn mìng",
-     "pos": "adv./v.",
-     "en": "as hard as you can, desperately"
-    },
-    {
-     "hanzi": "出台",
-     "pinyin": "chū tái",
-     "pos": "v.",
-     "en": "to bring in, introduce (a policy)"
-    },
-    {
-     "hanzi": "双减",
-     "pinyin": "shuāng jiǎn",
-     "pos": "n.",
-     "en": "'double reduction' (the 2021 policy cutting homework and tutoring)"
-    },
-    {
-     "hanzi": "政策",
-     "pinyin": "zhèng cè",
-     "pos": "n.",
-     "en": "policy"
-    },
-    {
-     "hanzi": "校外",
-     "pinyin": "xiào wài",
-     "pos": "adj.",
-     "en": "outside school"
-    },
-    {
-     "hanzi": "培训",
-     "pinyin": "péi xùn",
-     "pos": "v./n.",
-     "en": "to train; training, tutoring"
-    },
-    {
-     "hanzi": "升学",
-     "pinyin": "shēng xué",
-     "pos": "v.",
-     "en": "to go on to a higher school"
-    },
-    {
-     "hanzi": "大山",
-     "pinyin": "dà shān",
-     "pos": "n.",
-     "en": "the mountains, the hills"
-    },
-    {
-     "hanzi": "唯一",
-     "pinyin": "wéi yī",
-     "pos": "adj.",
-     "en": "only, sole"
-    },
-    {
-     "hanzi": "尽力",
-     "pinyin": "jìn lì",
-     "pos": "v.",
-     "en": "to do your best"
-    },
-    {
-     "hanzi": "尽管",
-     "pinyin": "jǐn guǎn",
-     "pos": "conj.",
-     "en": "although, even though (written)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u2-6",
-   "title": "大步4 U2.6 · 高考 The race to the exam",
-   "words": [
-    {
-     "hanzi": "志愿",
-     "pinyin": "zhì yuàn",
-     "pos": "n.",
-     "en": "wish; choice of universities (填志愿 fill in your choices)"
-    },
-    {
-     "hanzi": "录取",
-     "pinyin": "lù qǔ",
-     "pos": "v.",
-     "en": "to admit, accept (a student)"
-    },
-    {
-     "hanzi": "应试教育",
-     "pinyin": "yìng shì jiào yù",
-     "pos": "n.",
-     "en": "exam-oriented education, teaching to the test"
-    },
-    {
-     "hanzi": "素质教育",
-     "pinyin": "sù zhì jiào yù",
-     "pos": "n.",
-     "en": "all-round education"
-    },
-    {
-     "hanzi": "命运",
-     "pinyin": "mìng yùn",
-     "pos": "n.",
-     "en": "fate, destiny"
-    },
-    {
-     "hanzi": "落后",
-     "pinyin": "luò hòu",
-     "pos": "v./adj.",
-     "en": "to fall behind; backward"
-    },
-    {
-     "hanzi": "支",
-     "pinyin": "zhī",
-     "pos": "m.",
-     "en": "for pens and pencils (两支笔 two pens)"
-    },
-    {
-     "hanzi": "女生",
-     "pinyin": "nǚ shēng",
-     "pos": "n.",
-     "en": "girl (at school), female student"
-    },
-    {
-     "hanzi": "分数线",
-     "pinyin": "fēn shù xiàn",
-     "pos": "n.",
-     "en": "cut-off score"
-    },
-    {
-     "hanzi": "复读",
-     "pinyin": "fù dú",
-     "pos": "v.",
-     "en": "to repeat a year (to resit the gaokao)"
-    },
-    {
-     "hanzi": "状元",
-     "pinyin": "zhuàng yuan",
-     "pos": "n.",
-     "en": "top scorer (in the gaokao)"
-    },
-    {
-     "hanzi": "心态",
-     "pinyin": "xīn tài",
-     "pos": "n.",
-     "en": "state of mind, attitude"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-1",
-   "title": "大步4 U3.1 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "乱",
-     "pinyin": "luàn",
-     "pos": "adj.",
-     "en": "in a mess, confused (心里乱 all over the place)"
-    },
-    {
-     "hanzi": "姨父",
-     "pinyin": "yí fu",
-     "pos": "n.",
-     "en": "uncle (your mother's sister's husband)"
-    },
-    {
-     "hanzi": "姨妈",
-     "pinyin": "yí mā",
-     "pos": "n.",
-     "en": "aunt (your mother's sister)"
-    },
-    {
-     "hanzi": "跤",
-     "pinyin": "jiāo",
-     "pos": "n.",
-     "en": "a fall (摔跤 to fall over)"
-    },
-    {
-     "hanzi": "肿",
-     "pinyin": "zhǒng",
-     "pos": "adj./v.",
-     "en": "swollen; to swell"
-    },
-    {
-     "hanzi": "磨",
-     "pinyin": "mó",
-     "pos": "v.",
-     "en": "to wear down, grind"
-    },
-    {
-     "hanzi": "尽快",
-     "pinyin": "jǐn kuài",
-     "pos": "adv.",
-     "en": "as soon as possible"
-    },
-    {
-     "hanzi": "关节",
-     "pinyin": "guān jié",
-     "pos": "n.",
-     "en": "joint (换关节 have a joint replaced)"
-    },
-    {
-     "hanzi": "手术",
-     "pinyin": "shǒu shù",
-     "pos": "n.",
-     "en": "operation, surgery (做手术 have an operation)"
-    },
-    {
-     "hanzi": "挨",
-     "pinyin": "ái",
-     "pos": "v.",
-     "en": "to suffer, endure (挨一刀 go under the knife)"
-    },
-    {
-     "hanzi": "住院",
-     "pinyin": "zhù yuàn",
-     "pos": "v.",
-     "en": "to be in hospital, be admitted"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-2",
-   "title": "大步4 U3.2 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "扛",
-     "pinyin": "káng",
-     "pos": "v.",
-     "en": "to carry on your shoulder; to shoulder, cope alone"
-    },
-    {
-     "hanzi": "撑不住",
-     "pinyin": "chēng bu zhù",
-     "pos": "phr.",
-     "en": "can't hold out, be close to breaking point"
-    },
-    {
-     "hanzi": "扶",
-     "pinyin": "fú",
-     "pos": "v.",
-     "en": "to support with your hand, help (someone) walk"
-    },
-    {
-     "hanzi": "腰",
-     "pinyin": "yāo",
-     "pos": "n.",
-     "en": "the small of the back, waist (腰不好 a bad back)"
-    },
-    {
-     "hanzi": "独生子",
-     "pinyin": "dú shēng zǐ",
-     "pos": "n.",
-     "en": "only son, only child"
-    },
-    {
-     "hanzi": "独生子女",
-     "pinyin": "dú shēng zǐ nǚ",
-     "pos": "n.",
-     "en": "only child (the one-child generation)"
-    },
-    {
-     "hanzi": "师傅",
-     "pinyin": "shī fu",
-     "pos": "n.",
-     "en": "master, skilled worker (here: the chefs)"
-    },
-    {
-     "hanzi": "总不能",
-     "pinyin": "zǒng bù néng",
-     "pos": "phr.",
-     "en": "can hardly, can't very well"
-    },
-    {
-     "hanzi": "护工",
-     "pinyin": "hù gōng",
-     "pos": "n.",
-     "en": "care worker, carer"
-    },
-    {
-     "hanzi": "养老院",
-     "pinyin": "yǎng lǎo yuàn",
-     "pos": "n.",
-     "en": "care home, old people's home"
-    },
-    {
-     "hanzi": "康复",
-     "pinyin": "kāng fù",
-     "pos": "v./n.",
-     "en": "to recover; rehabilitation"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-3",
-   "title": "大步4 U3.3 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "当场",
-     "pinyin": "dāng chǎng",
-     "pos": "adv.",
-     "en": "on the spot, there and then"
-    },
-    {
-     "hanzi": "火",
-     "pinyin": "huǒ",
-     "pos": "v.",
-     "en": "to flare up, get angry (new meaning)"
-    },
-    {
-     "hanzi": "人家",
-     "pinyin": "rén jia",
-     "pos": "pron.",
-     "en": "other people, people"
-    },
-    {
-     "hanzi": "孝顺",
-     "pinyin": "xiào shùn",
-     "pos": "adj./v.",
-     "en": "dutiful to your parents; to be a good son or daughter"
-    },
-    {
-     "hanzi": "儿女",
-     "pinyin": "ér nǚ",
-     "pos": "n.",
-     "en": "sons and daughters, children"
-    },
-    {
-     "hanzi": "与其说",
-     "pinyin": "yǔ qí shuō",
-     "pos": "phr.",
-     "en": "it's not so much … as … (与其说…不如说…)"
-    },
-    {
-     "hanzi": "退休",
-     "pinyin": "tuì xiū",
-     "pos": "v.",
-     "en": "to retire"
-    },
-    {
-     "hanzi": "养老",
-     "pinyin": "yǎng lǎo",
-     "pos": "v./n.",
-     "en": "to live in retirement, be cared for in old age; elder care"
-    },
-    {
-     "hanzi": "孝",
-     "pinyin": "xiào",
-     "pos": "n.",
-     "en": "filial piety, duty to your parents"
-    },
-    {
-     "hanzi": "不孝",
-     "pinyin": "bù xiào",
-     "pos": "adj.",
-     "en": "unfilial, failing in your duty to your parents"
-    },
-    {
-     "hanzi": "拐杖",
-     "pinyin": "guǎi zhàng",
-     "pos": "n.",
-     "en": "walking stick"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-4",
-   "title": "大步4 U3.4 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "轮椅",
-     "pinyin": "lún yǐ",
-     "pos": "n.",
-     "en": "wheelchair"
-    },
-    {
-     "hanzi": "出院",
-     "pinyin": "chū yuàn",
-     "pos": "v.",
-     "en": "to leave hospital, be discharged"
-    },
-    {
-     "hanzi": "保姆",
-     "pinyin": "bǎo mǔ",
-     "pos": "n.",
-     "en": "live-in helper, nanny"
-    },
-    {
-     "hanzi": "养老金",
-     "pinyin": "yǎng lǎo jīn",
-     "pos": "n.",
-     "en": "pension"
-    },
-    {
-     "hanzi": "该",
-     "pinyin": "gāi",
-     "pos": "v.",
-     "en": "should, ought to; be due (也该轮到你了 it's your turn now)"
-    },
-    {
-     "hanzi": "愿意",
-     "pinyin": "yuàn yì",
-     "pos": "v.",
-     "en": "to be willing, want to"
-    },
-    {
-     "hanzi": "负担",
-     "pinyin": "fù dān",
-     "pos": "n./v.",
-     "en": "burden; to bear (a cost)"
-    },
-    {
-     "hanzi": "体检",
-     "pinyin": "tǐ jiǎn",
-     "pos": "n./v.",
-     "en": "health check, medical"
-    },
-    {
-     "hanzi": "看病",
-     "pinyin": "kàn bìng",
-     "pos": "v.",
-     "en": "to see a doctor"
-    },
-    {
-     "hanzi": "医药费",
-     "pinyin": "yī yào fèi",
-     "pos": "n.",
-     "en": "medical bills"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-5",
-   "title": "大步4 U3.5 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "病房",
-     "pinyin": "bìng fáng",
-     "pos": "n.",
-     "en": "ward (in a hospital)"
-    },
-    {
-     "hanzi": "骨科",
-     "pinyin": "gǔ kē",
-     "pos": "n.",
-     "en": "orthopaedics (骨科病房 orthopaedic ward)"
-    },
-    {
-     "hanzi": "各种各样",
-     "pinyin": "gè zhǒng gè yàng",
-     "pos": "phr.",
-     "en": "all kinds of, every sort of"
-    },
-    {
-     "hanzi": "长假",
-     "pinyin": "cháng jià",
-     "pos": "n.",
-     "en": "long leave, extended time off"
-    },
-    {
-     "hanzi": "病床",
-     "pinyin": "bìng chuáng",
-     "pos": "n.",
-     "en": "hospital bed"
-    },
-    {
-     "hanzi": "折叠椅",
-     "pinyin": "zhé dié yǐ",
-     "pos": "n.",
-     "en": "folding chair"
-    },
-    {
-     "hanzi": "母亲",
-     "pinyin": "mǔ qīn",
-     "pos": "n.",
-     "en": "mother (formal)"
-    },
-    {
-     "hanzi": "降压药",
-     "pinyin": "jiàng yā yào",
-     "pos": "n.",
-     "en": "blood-pressure pills"
-    },
-    {
-     "hanzi": "步入",
-     "pinyin": "bù rù",
-     "pos": "v.",
-     "en": "to step into, enter (a stage of life) (written)"
-    },
-    {
-     "hanzi": "中年",
-     "pinyin": "zhōng nián",
-     "pos": "n.",
-     "en": "middle age"
-    },
-    {
-     "hanzi": "上有老下有小",
-     "pinyin": "shàng yǒu lǎo xià yǒu xiǎo",
-     "pos": "phr.",
-     "en": "with old parents above and young children below (the sandwich generation)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-6",
-   "title": "大步4 U3.6 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "讲究",
-     "pinyin": "jiǎng jiu",
-     "pos": "v.",
-     "en": "to set great store by, believe in (new meaning)"
-    },
-    {
-     "hanzi": "养儿防老",
-     "pinyin": "yǎng ér fáng lǎo",
-     "pos": "phr.",
-     "en": "raise children to provide for your old age"
-    },
-    {
-     "hanzi": "守",
-     "pinyin": "shǒu",
-     "pos": "v.",
-     "en": "to stay by, keep watch over"
-    },
-    {
-     "hanzi": "外地",
-     "pinyin": "wài dì",
-     "pos": "n.",
-     "en": "another part of the country, somewhere else"
-    },
-    {
-     "hanzi": "于是",
-     "pinyin": "yú shì",
-     "pos": "conj.",
-     "en": "so, and so, as a result"
-    },
-    {
-     "hanzi": "空巢老人",
-     "pinyin": "kōng cháo lǎo rén",
-     "pos": "n.",
-     "en": "'empty-nest elderly', older people whose children have left"
-    },
-    {
-     "hanzi": "老两口",
-     "pinyin": "lǎo liǎng kǒu",
-     "pos": "n.",
-     "en": "an old couple"
-    },
-    {
-     "hanzi": "坎",
-     "pinyin": "kǎn",
-     "pos": "n.",
-     "en": "hurdle, sticking point (过不了这道坎 can't get over it)"
-    },
-    {
-     "hanzi": "护理",
-     "pinyin": "hù lǐ",
-     "pos": "v./n.",
-     "en": "to nurse, care for; nursing"
-    },
-    {
-     "hanzi": "固然",
-     "pinyin": "gù rán",
-     "pos": "conj.",
-     "en": "admittedly, it's true that (written)"
-    },
-    {
-     "hanzi": "累垮",
-     "pinyin": "lèi kuǎ",
-     "pos": "v.",
-     "en": "to wear yourself out, collapse from exhaustion"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-7",
-   "title": "大步4 U3.7 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "街道",
-     "pinyin": "jiē dào",
-     "pos": "n.",
-     "en": "neighbourhood, sub-district (the local authority) (new meaning)"
-    },
-    {
-     "hanzi": "居家养老",
-     "pinyin": "jū jiā yǎng lǎo",
-     "pos": "n.",
-     "en": "care at home (for older people)"
-    },
-    {
-     "hanzi": "社区",
-     "pinyin": "shè qū",
-     "pos": "n.",
-     "en": "community, neighbourhood"
-    },
-    {
-     "hanzi": "送餐",
-     "pinyin": "sòng cān",
-     "pos": "v.",
-     "en": "to deliver meals"
-    },
-    {
-     "hanzi": "上门",
-     "pinyin": "shàng mén",
-     "pos": "v.",
-     "en": "to come to your home (上门护理 home nursing)"
-    },
-    {
-     "hanzi": "日间照料",
-     "pinyin": "rì jiān zhào liào",
-     "pos": "n.",
-     "en": "day care (for older people)"
-    },
-    {
-     "hanzi": "照料",
-     "pinyin": "zhào liào",
-     "pos": "v.",
-     "en": "to take care of (written)"
-    },
-    {
-     "hanzi": "长者食堂",
-     "pinyin": "zhǎng zhě shí táng",
-     "pos": "n.",
-     "en": "community canteen for older people"
-    },
-    {
-     "hanzi": "长者",
-     "pinyin": "zhǎng zhě",
-     "pos": "n.",
-     "en": "older person, senior (respectful)"
-    },
-    {
-     "hanzi": "折中",
-     "pinyin": "zhé zhōng",
-     "pos": "adj./v.",
-     "en": "compromise, middle-way; to meet halfway"
-    },
-    {
-     "hanzi": "小姑",
-     "pinyin": "xiǎo gū",
-     "pos": "n.",
-     "en": "aunt (your father's younger sister)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u3-8",
-   "title": "大步4 U3.8 · 养老 Who looks after Mum and Dad?",
-   "words": [
-    {
-     "hanzi": "护士站",
-     "pinyin": "hù shi zhàn",
-     "pos": "n.",
-     "en": "nurses' station"
-    },
-    {
-     "hanzi": "标准答案",
-     "pinyin": "biāo zhǔn dá àn",
-     "pos": "n.",
-     "en": "model answer, the right answer"
-    },
-    {
-     "hanzi": "哪怕",
-     "pinyin": "nǎ pà",
-     "pos": "conj.",
-     "en": "even if"
-    },
-    {
-     "hanzi": "社会",
-     "pinyin": "shè huì",
-     "pos": "n.",
-     "en": "society"
-    },
-    {
-     "hanzi": "老龄化",
-     "pinyin": "lǎo líng huà",
-     "pos": "n.",
-     "en": "population ageing"
-    },
-    {
-     "hanzi": "独居",
-     "pinyin": "dú jū",
-     "pos": "v.",
-     "en": "to live alone"
-    },
-    {
-     "hanzi": "看望",
-     "pinyin": "kàn wàng",
-     "pos": "v.",
-     "en": "to visit (someone old or ill)"
-    },
-    {
-     "hanzi": "医保",
-     "pinyin": "yī bǎo",
-     "pos": "n.",
-     "en": "medical insurance"
-    },
-    {
-     "hanzi": "陪护",
-     "pinyin": "péi hù",
-     "pos": "v./n.",
-     "en": "to stay with and look after (a patient); hospital carer"
-    },
-    {
-     "hanzi": "赡养",
-     "pinyin": "shàn yǎng",
-     "pos": "v.",
-     "en": "to support (your parents) (a legal duty)"
-    },
-    {
-     "hanzi": "年迈",
-     "pinyin": "nián mài",
-     "pos": "adj.",
-     "en": "aged, elderly (written)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-1",
-   "title": "大步4 U4.1 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "录音笔",
-     "pinyin": "lù yīn bǐ",
-     "pos": "n.",
-     "en": "voice recorder, digital recorder"
-    },
-    {
-     "hanzi": "想到哪儿说到哪儿",
-     "pinyin": "xiǎng dào nǎ r shuō dào nǎ r",
-     "pos": "phr.",
-     "en": "to say whatever comes to mind"
-    },
-    {
-     "hanzi": "不许",
-     "pinyin": "bù xǔ",
-     "pos": "v.",
-     "en": "not allowed to, mustn't"
-    },
-    {
-     "hanzi": "幢",
-     "pinyin": "zhuàng",
-     "pos": "m.",
-     "en": "for buildings (一幢房子 a house)"
-    },
-    {
-     "hanzi": "户",
-     "pinyin": "hù",
-     "pos": "m./n.",
-     "en": "household (五户人家 five households)"
-    },
-    {
-     "hanzi": "人家",
-     "pinyin": "rén jiā",
-     "pos": "n.",
-     "en": "household, family (new meaning)"
-    },
-    {
-     "hanzi": "煤炉",
-     "pinyin": "méi lú",
-     "pos": "n.",
-     "en": "coal stove"
-    },
-    {
-     "hanzi": "家家户户",
-     "pinyin": "jiā jiā hù hù",
-     "pos": "phr.",
-     "en": "every household, every family"
-    },
-    {
-     "hanzi": "生炉子",
-     "pinyin": "shēng lú zi",
-     "pos": "phr.",
-     "en": "to light a stove"
-    },
-    {
-     "hanzi": "炉子",
-     "pinyin": "lú zi",
-     "pos": "n.",
-     "en": "stove"
-    },
-    {
-     "hanzi": "烟",
-     "pinyin": "yān",
-     "pos": "n.",
-     "en": "smoke"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-2",
-   "title": "大步4 U4.2 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "粮票",
-     "pinyin": "liáng piào",
-     "pos": "n.",
-     "en": "grain coupon (ration coupon for rice and flour)"
-    },
-    {
-     "hanzi": "肉票",
-     "pinyin": "ròu piào",
-     "pos": "n.",
-     "en": "meat coupon"
-    },
-    {
-     "hanzi": "吃上",
-     "pinyin": "chī shàng",
-     "pos": "v.",
-     "en": "to get to eat, manage to have (a meal)"
-    },
-    {
-     "hanzi": "竹椅子",
-     "pinyin": "zhú yǐ zi",
-     "pos": "n.",
-     "en": "bamboo chair"
-    },
-    {
-     "hanzi": "乘凉",
-     "pinyin": "chéng liáng",
-     "pos": "v.",
-     "en": "to sit out in the cool"
-    },
-    {
-     "hanzi": "回想起来",
-     "pinyin": "huí xiǎng qǐ lái",
-     "pos": "phr.",
-     "en": "looking back, in hindsight"
-    },
-    {
-     "hanzi": "马桶",
-     "pinyin": "mǎ tǒng",
-     "pos": "n.",
-     "en": "chamber pot; toilet (倒马桶 empty the chamber pot)"
-    },
-    {
-     "hanzi": "人和人",
-     "pinyin": "rén hé rén",
-     "pos": "phr.",
-     "en": "people, people and each other"
-    },
-    {
-     "hanzi": "纺织厂",
-     "pinyin": "fǎng zhī chǎng",
-     "pos": "n.",
-     "en": "textile mill"
-    },
-    {
-     "hanzi": "纺织",
-     "pinyin": "fǎng zhī",
-     "pos": "n./v.",
-     "en": "textiles; spinning and weaving"
-    },
-    {
-     "hanzi": "三班倒",
-     "pinyin": "sān bān dǎo",
-     "pos": "phr.",
-     "en": "to work three rotating shifts round the clock"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-3",
-   "title": "大步4 U4.3 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "厂子",
-     "pinyin": "chǎng zi",
-     "pos": "n.",
-     "en": "factory, mill (spoken)"
-    },
-    {
-     "hanzi": "下岗",
-     "pinyin": "xià gǎng",
-     "pos": "v.",
-     "en": "to be laid off (from a state enterprise)"
-    },
-    {
-     "hanzi": "天塌下来",
-     "pinyin": "tiān tā xià lái",
-     "pos": "phr.",
-     "en": "the sky falls in"
-    },
-    {
-     "hanzi": "摆摊",
-     "pinyin": "bǎi tān",
-     "pos": "v.",
-     "en": "to run a stall"
-    },
-    {
-     "hanzi": "收银员",
-     "pinyin": "shōu yín yuán",
-     "pos": "n.",
-     "en": "cashier, checkout assistant"
-    },
-    {
-     "hanzi": "力气",
-     "pinyin": "lì qi",
-     "pos": "n.",
-     "en": "strength, energy"
-    },
-    {
-     "hanzi": "父亲",
-     "pinyin": "fù qīn",
-     "pos": "n.",
-     "en": "father (formal)"
-    },
-    {
-     "hanzi": "发愁",
-     "pinyin": "fā chóu",
-     "pos": "v.",
-     "en": "to worry, fret"
-    },
-    {
-     "hanzi": "缺",
-     "pinyin": "quē",
-     "pos": "v.",
-     "en": "to lack, be short of"
-    },
-    {
-     "hanzi": "礼拜",
-     "pinyin": "lǐ bài",
-     "pos": "n.",
-     "en": "week (spoken, southern: 下个礼拜三 next Wednesday)"
-    },
-    {
-     "hanzi": "端午节",
-     "pinyin": "Duān wǔ jié",
-     "pos": "n.",
-     "en": "the Dragon Boat Festival (5th day of the 5th lunar month)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-4",
-   "title": "大步4 U4.4 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "粽子",
-     "pinyin": "zòng zi",
-     "pos": "n.",
-     "en": "zongzi (sticky rice wrapped in leaves)"
-    },
-    {
-     "hanzi": "老照片",
-     "pinyin": "lǎo zhào piàn",
-     "pos": "n.",
-     "en": "old photograph"
-    },
-    {
-     "hanzi": "口述历史",
-     "pinyin": "kǒu shù lì shǐ",
-     "pos": "n.",
-     "en": "oral history"
-    },
-    {
-     "hanzi": "口述",
-     "pinyin": "kǒu shù",
-     "pos": "v.",
-     "en": "to give an oral account"
-    },
-    {
-     "hanzi": "知青",
-     "pinyin": "zhī qīng",
-     "pos": "n.",
-     "en": "'educated youth' (sent to the countryside, 1960s–70s)"
-    },
-    {
-     "hanzi": "上山下乡",
-     "pinyin": "shàng shān xià xiāng",
-     "pos": "phr.",
-     "en": "being sent to the countryside (1960s–70s)"
-    },
-    {
-     "hanzi": "布票",
-     "pinyin": "bù piào",
-     "pos": "n.",
-     "en": "cloth coupon"
-    },
-    {
-     "hanzi": "邻里",
-     "pinyin": "lín lǐ",
-     "pos": "n.",
-     "en": "neighbours, the neighbourhood"
-    },
-    {
-     "hanzi": "生",
-     "pinyin": "shēng",
-     "pos": "v.",
-     "en": "to be born; give birth (在…生的 was born in …)"
-    },
-    {
-     "hanzi": "石库门",
-     "pinyin": "shí kù mén",
-     "pos": "n.",
-     "en": "shikumen, Shanghai's stone-gated lane houses"
-    },
-    {
-     "hanzi": "拆迁",
-     "pinyin": "chāi qiān",
-     "pos": "v.",
-     "en": "to demolish and rehouse"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-5",
-   "title": "大步4 U4.5 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "旁",
-     "pinyin": "páng",
-     "pos": "n.",
-     "en": "side (written 旁边: 愚园路旁 off Yuyuan Road)"
-    },
-    {
-     "hanzi": "恰好",
-     "pinyin": "qià hǎo",
-     "pos": "adv.",
-     "en": "as it happens, just, exactly"
-    },
-    {
-     "hanzi": "据",
-     "pinyin": "jù",
-     "pos": "phr.",
-     "en": "as (someone) remembers it, according to (someone's) memories (据…回忆)"
-    },
-    {
-     "hanzi": "小楼",
-     "pinyin": "xiǎo lóu",
-     "pos": "n.",
-     "en": "small house (of two or three storeys)"
-    },
-    {
-     "hanzi": "口",
-     "pinyin": "kǒu",
-     "pos": "m.",
-     "en": "for people in a household (二十多口人 over twenty people) (new meaning)"
-    },
-    {
-     "hanzi": "记忆",
-     "pinyin": "jì yì",
-     "pos": "n.",
-     "en": "memory"
-    },
-    {
-     "hanzi": "竹椅",
-     "pinyin": "zhú yǐ",
-     "pos": "n.",
-     "en": "bamboo chair"
-    },
-    {
-     "hanzi": "用",
-     "pinyin": "yòng",
-     "pos": "phr.",
-     "en": "in (someone's) words (用…的话说)"
-    },
-    {
-     "hanzi": "与此同时",
-     "pinyin": "yǔ cǐ tóng shí",
-     "pos": "phr.",
-     "en": "meanwhile, at the same time (written)"
-    },
-    {
-     "hanzi": "改革开放",
-     "pinyin": "gǎi gé kāi fàng",
-     "pos": "n.",
-     "en": "reform and opening up (from 1978)"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-6",
-   "title": "大步4 U4.6 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "开发",
-     "pinyin": "kāi fā",
-     "pos": "v./n.",
-     "en": "to develop (land, a region); development"
-    },
-    {
-     "hanzi": "接",
-     "pinyin": "jiē",
-     "pos": "v.",
-     "en": "to follow on (一幢接一幢 one after another) (new meaning)"
-    },
-    {
-     "hanzi": "盖",
-     "pinyin": "gài",
-     "pos": "v.",
-     "en": "to build, put up (a building)"
-    },
-    {
-     "hanzi": "停产",
-     "pinyin": "tíng chǎn",
-     "pos": "v.",
-     "en": "to stop production"
-    },
-    {
-     "hanzi": "提起",
-     "pinyin": "tí qǐ",
-     "pos": "v.",
-     "en": "to mention, bring up"
-    },
-    {
-     "hanzi": "摆手",
-     "pinyin": "bǎi shǒu",
-     "pos": "v.",
-     "en": "to wave your hand (to say no, or never mind)"
-    },
-    {
-     "hanzi": "姐妹",
-     "pinyin": "jiě mèi",
-     "pos": "n.",
-     "en": "sisters; (among women) friends, fellow workers"
-    },
-    {
-     "hanzi": "如今",
-     "pinyin": "rú jīn",
-     "pos": "n.",
-     "en": "nowadays, today (written)"
-    },
-    {
-     "hanzi": "起身",
-     "pinyin": "qǐ shēn",
-     "pos": "v.",
-     "en": "to get up, rise"
-    },
-    {
-     "hanzi": "原处",
-     "pinyin": "yuán chù",
-     "pos": "n.",
-     "en": "the original place, where it was"
-    }
-   ]
-  },
-  {
-   "id": "dabu4-u4-7",
-   "title": "大步4 U4.7 · 两代人 Two generations",
-   "words": [
-    {
-     "hanzi": "不由得",
-     "pinyin": "bù yóu de",
-     "pos": "adv.",
-     "en": "can't help (doing)"
-    },
-    {
-     "hanzi": "盏",
-     "pinyin": "zhǎn",
-     "pos": "m.",
-     "en": "for lamps (一盏灯 a lamp)"
-    },
-    {
-     "hanzi": "采访者",
-     "pinyin": "cǎi fǎng zhě",
-     "pos": "n.",
-     "en": "interviewer"
-    },
-    {
-     "hanzi": "受访者",
-     "pinyin": "shòu fǎng zhě",
-     "pos": "n.",
-     "en": "interviewee"
-    },
-    {
-     "hanzi": "专访",
-     "pinyin": "zhuān fǎng",
-     "pos": "n.",
-     "en": "exclusive interview, profile (人物专访 a profile)"
-    },
-    {
-     "hanzi": "老伴",
-     "pinyin": "lǎo bàn",
-     "pos": "n.",
-     "en": "(of an old couple) husband or wife, other half"
-    },
-    {
-     "hanzi": "回忆录",
-     "pinyin": "huí yì lù",
-     "pos": "n.",
-     "en": "memoir"
-    },
-    {
-     "hanzi": "岁月",
-     "pinyin": "suì yuè",
-     "pos": "n.",
-     "en": "years, time (literary)"
-    },
-    {
-     "hanzi": "时光",
-     "pinyin": "shí guāng",
-     "pos": "n.",
-     "en": "time, days (literary)"
-    },
-    {
-     "hanzi": "感慨",
-     "pinyin": "gǎn kǎi",
-     "pos": "v./n.",
-     "en": "to reflect with feeling; mixed feelings"
-    },
-    {
-     "hanzi": "糯米",
-     "pinyin": "nuò mǐ",
-     "pos": "",
-     "en": "sticky rice, glutinous rice"
-    },
-    {
-     "hanzi": "粽叶",
-     "pinyin": "zòng yè",
-     "pos": "",
-     "en": "bamboo leaves for wrapping zongzi"
-    },
-    {
-     "hanzi": "龙舟",
-     "pinyin": "lóng zhōu",
-     "pos": "",
-     "en": "dragon boat"
-    },
-    {
-     "hanzi": "粥",
-     "pinyin": "zhōu",
-     "pos": "",
-     "en": "rice porridge, congee"
-    },
-    {
-     "hanzi": "解开",
-     "pinyin": "jiě kāi",
-     "pos": "",
-     "en": "to untie, undo"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-1",
-   "title": "大步5 U1.1 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "三伏天",
-     "pinyin": "sān fú tiān",
-     "pos": "n.",
-     "en": "the dog days, the hottest weeks of summer"
-    },
-    {
-     "hanzi": "入伏",
-     "pinyin": "rù fú",
-     "pos": "v.",
-     "en": "to enter the dog days (the first day of 三伏天)"
-    },
-    {
-     "hanzi": "绿豆",
-     "pinyin": "lǜ dòu",
-     "pos": "n.",
-     "en": "mung bean"
-    },
-    {
-     "hanzi": "绿豆汤",
-     "pinyin": "lǜ dòu tāng",
-     "pos": "n.",
-     "en": "mung bean soup (a summer cooler)"
-    },
-    {
-     "hanzi": "消",
-     "pinyin": "xiāo",
-     "pos": "v.",
-     "en": "to dispel, get rid of"
-    },
-    {
-     "hanzi": "消暑",
-     "pinyin": "xiāo shǔ",
-     "pos": "v.",
-     "en": "to beat the heat, cool down (消消暑 cool down a bit)"
-    },
-    {
-     "hanzi": "伤",
-     "pinyin": "shāng",
-     "pos": "v./n.",
-     "en": "to harm, be bad for (伤胃 bad for the stomach); injury"
-    },
-    {
-     "hanzi": "胃",
-     "pinyin": "wèi",
-     "pos": "n.",
-     "en": "stomach"
-    },
-    {
-     "hanzi": "炖",
-     "pinyin": "dùn",
-     "pos": "v.",
-     "en": "to stew, simmer"
-    },
-    {
-     "hanzi": "骨头汤",
-     "pinyin": "gǔ tou tāng",
-     "pos": "n.",
-     "en": "bone broth, bone soup"
+     "en": "basically, mostly",
+     "id": "dabu1-u2-1:11"
     },
     {
      "hanzi": "补",
      "pinyin": "bǔ",
      "pos": "v.",
-     "en": "to build up, nourish (with food or medicine); to make up for"
-    },
-    {
-     "hanzi": "吃什么补什么",
-     "pinyin": "chī shén me bǔ shén me",
-     "pos": "phr.",
-     "en": "'eat a part to build up the same part' (a folk belief)"
-    },
-    {
-     "hanzi": "伤筋动骨",
-     "pinyin": "shāng jīn dòng gǔ",
-     "pos": "phr.",
-     "en": "to injure bones and sinews (伤筋动骨一百天 a broken bone takes a hundred days)"
-    },
-    {
-     "hanzi": "说句实话",
-     "pinyin": "shuō jù shí huà",
-     "pos": "phr.",
-     "en": "to be honest, to tell you the truth"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-2",
-   "title": "大步5 U1.2 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "尽早",
-     "pinyin": "jǐn zǎo",
-     "pos": "adv.",
-     "en": "as early as possible"
-    },
-    {
-     "hanzi": "下地",
-     "pinyin": "xià dì",
-     "pos": "v.",
-     "en": "to get out of bed (after illness), be up and about"
-    },
-    {
-     "hanzi": "康复训练",
-     "pinyin": "kāng fù xùn liàn",
-     "pos": "n.",
-     "en": "rehabilitation exercises, rehab"
-    },
-    {
-     "hanzi": "训练",
-     "pinyin": "xùn liàn",
-     "pos": "v./n.",
-     "en": "to train; training"
-    },
-    {
-     "hanzi": "僵硬",
-     "pinyin": "jiāng yìng",
-     "pos": "adj.",
-     "en": "stiff, rigid"
-    },
-    {
-     "hanzi": "僵",
-     "pinyin": "jiāng",
-     "pos": "adj.",
-     "en": "stiff (关节僵了 the joint has stiffened)"
-    },
-    {
-     "hanzi": "静养",
-     "pinyin": "jìng yǎng",
-     "pos": "v.",
-     "en": "to rest quietly, convalesce"
-    },
-    {
-     "hanzi": "补钙",
-     "pinyin": "bǔ gài",
-     "pos": "v.",
-     "en": "to take calcium, build up calcium"
-    },
-    {
-     "hanzi": "钙",
-     "pinyin": "gài",
-     "pos": "n.",
-     "en": "calcium"
-    },
-    {
-     "hanzi": "可怜",
-     "pinyin": "kě lián",
-     "pos": "adj.",
-     "en": "pitiful (少得可怜 pitifully little)"
-    },
-    {
-     "hanzi": "靠谱",
-     "pinyin": "kào pǔ",
-     "pos": "adj.",
-     "en": "reliable, sensible, trustworthy (spoken)"
-    },
-    {
-     "hanzi": "空调病",
-     "pinyin": "kōng tiáo bìng",
-     "pos": "n.",
-     "en": "'air-con sickness' (colds and aches blamed on air conditioning)"
-    },
-    {
-     "hanzi": "寒气",
-     "pinyin": "hán qì",
-     "pos": "n.",
-     "en": "cold, chill (in traditional medicine, cold that gets into the body)"
-    },
-    {
-     "hanzi": "三伏贴",
-     "pinyin": "sān fú tiē",
-     "pos": "n.",
-     "en": "dog-day plaster (a herbal plaster put on in the dog days)"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-3",
-   "title": "大步5 U1.3 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "冬病夏治",
-     "pinyin": "dōng bìng xià zhì",
-     "pos": "phr.",
-     "en": "to treat winter illnesses in summer (a TCM idea)"
-    },
-    {
-     "hanzi": "屋",
-     "pinyin": "wū",
-     "pos": "n.",
-     "en": "room, house (屋里 indoors)"
-    },
-    {
-     "hanzi": "西瓜",
-     "pinyin": "xī guā",
-     "pos": "n.",
-     "en": "watermelon"
-    },
-    {
-     "hanzi": "汗",
-     "pinyin": "hàn",
-     "pos": "n.",
-     "en": "sweat (出了一身汗 covered in sweat)"
-    },
-    {
-     "hanzi": "中暑",
-     "pinyin": "zhòng shǔ",
-     "pos": "v./n.",
-     "en": "to get heatstroke; heatstroke"
-    },
-    {
-     "hanzi": "开窗",
-     "pinyin": "kāi chuāng",
-     "pos": "v.",
-     "en": "to open the window"
-    },
-    {
-     "hanzi": "通风",
-     "pinyin": "tōng fēng",
-     "pos": "v.",
-     "en": "to air, let air through, ventilate"
-    },
-    {
-     "hanzi": "电费",
-     "pinyin": "diàn fèi",
-     "pos": "n.",
-     "en": "electricity bill"
-    },
-    {
-     "hanzi": "养生",
-     "pinyin": "yǎng shēng",
-     "pos": "v./n.",
-     "en": "to look after your health; staying healthy, 'nourishing life'"
-    },
-    {
-     "hanzi": "老话",
-     "pinyin": "lǎo huà",
-     "pos": "n.",
-     "en": "old saying (老话说 as the old saying goes)"
-    },
-    {
-     "hanzi": "早睡早起",
-     "pinyin": "zǎo shuì zǎo qǐ",
-     "pos": "phr.",
-     "en": "early to bed and early to rise"
-    },
-    {
-     "hanzi": "七分饱",
-     "pinyin": "qī fēn bǎo",
-     "pos": "phr.",
-     "en": "seventy per cent full (stopping before you're full)"
-    },
-    {
-     "hanzi": "证据",
-     "pinyin": "zhèng jù",
-     "pos": "n.",
-     "en": "evidence"
-    },
-    {
-     "hanzi": "圈",
-     "pinyin": "quān",
-     "pos": "m./n.",
-     "en": "lap, circle (走两圈 do two laps)"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-4",
-   "title": "大步5 U1.4 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "中医",
-     "pinyin": "zhōng yī",
-     "pos": "n.",
-     "en": "traditional Chinese medicine (TCM); a TCM doctor"
-    },
-    {
-     "hanzi": "西医",
-     "pinyin": "xī yī",
-     "pos": "n.",
-     "en": "Western medicine; a doctor of Western medicine"
-    },
-    {
-     "hanzi": "针灸",
-     "pinyin": "zhēn jiǔ",
-     "pos": "n.",
-     "en": "acupuncture"
-    },
-    {
-     "hanzi": "偏方",
-     "pinyin": "piān fāng",
-     "pos": "n.",
-     "en": "folk remedy, home remedy"
-    },
-    {
-     "hanzi": "保健",
-     "pinyin": "bǎo jiàn",
-     "pos": "n./v.",
-     "en": "health care; to keep fit and well"
-    },
-    {
-     "hanzi": "营养",
-     "pinyin": "yíng yǎng",
-     "pos": "n.",
-     "en": "nutrition, nourishment"
-    },
-    {
-     "hanzi": "体温",
-     "pinyin": "tǐ wēn",
-     "pos": "n.",
-     "en": "body temperature"
-    },
-    {
-     "hanzi": "闷热",
-     "pinyin": "mēn rè",
-     "pos": "adj.",
-     "en": "hot and humid, muggy"
-    },
-    {
-     "hanzi": "降温",
-     "pinyin": "jiàng wēn",
-     "pos": "v.",
-     "en": "to cool down; (of weather) to get cooler"
-    },
-    {
-     "hanzi": "防晒",
-     "pinyin": "fáng shài",
-     "pos": "v.",
-     "en": "to protect against the sun (防晒霜 sunscreen)"
-    },
-    {
-     "hanzi": "冰镇",
-     "pinyin": "bīng zhèn",
-     "pos": "adj.",
-     "en": "iced, chilled"
-    },
-    {
-     "hanzi": "桑拿天",
-     "pinyin": "sāng ná tiān",
-     "pos": "n.",
-     "en": "'sauna weather', hot and humid days"
-    },
-    {
-     "hanzi": "热射病",
-     "pinyin": "rè shè bìng",
-     "pos": "n.",
-     "en": "severe heatstroke"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-5",
-   "title": "大步5 U1.5 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "血管",
-     "pinyin": "xuè guǎn",
-     "pos": "n.",
-     "en": "blood vessel"
-    },
-    {
-     "hanzi": "中毒",
-     "pinyin": "zhòng dú",
-     "pos": "v.",
-     "en": "to be poisoned"
-    },
-    {
-     "hanzi": "泡",
-     "pinyin": "pào",
-     "pos": "v.",
-     "en": "to soak, steep (泡枸杞 soak goji berries)"
-    },
-    {
-     "hanzi": "枸杞",
-     "pinyin": "gǒu qǐ",
-     "pos": "n.",
-     "en": "goji berry, wolfberry"
-    },
-    {
-     "hanzi": "朋克养生",
-     "pinyin": "péng kè yǎng shēng",
-     "pos": "n.",
-     "en": "'punk wellness' (healthy habits on top of unhealthy ones)"
-    },
-    {
-     "hanzi": "重视",
-     "pinyin": "zhòng shì",
-     "pos": "v.",
-     "en": "to take seriously, attach importance to"
-    },
-    {
-     "hanzi": "害",
-     "pinyin": "hài",
-     "pos": "v.",
-     "en": "to harm, do harm to (害人 harm people)"
-    },
-    {
-     "hanzi": "血脂",
-     "pinyin": "xuè zhī",
-     "pos": "n.",
-     "en": "blood fat, blood lipids"
-    },
-    {
-     "hanzi": "反而",
-     "pinyin": "fǎn ér",
-     "pos": "adv.",
-     "en": "on the contrary, instead"
-    },
-    {
-     "hanzi": "恢复",
-     "pinyin": "huī fù",
-     "pos": "v.",
-     "en": "to recover, get back"
-    },
-    {
-     "hanzi": "事实上",
-     "pinyin": "shì shí shàng",
-     "pos": "phr.",
-     "en": "in fact, actually"
-    },
-    {
-     "hanzi": "大量",
-     "pinyin": "dà liàng",
-     "pos": "adj.",
-     "en": "a great deal of, large numbers of"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-6",
-   "title": "大步5 U1.6 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "研究表明",
-     "pinyin": "yán jiū biǎo míng",
-     "pos": "phr.",
-     "en": "research shows"
-    },
-    {
-     "hanzi": "表明",
-     "pinyin": "biǎo míng",
-     "pos": "v.",
-     "en": "to show, make clear"
-    },
-    {
-     "hanzi": "并非",
-     "pinyin": "bìng fēi",
-     "pos": "v.",
-     "en": "is not at all, is by no means (written)"
-    },
-    {
-     "hanzi": "如此",
-     "pinyin": "rú cǐ",
-     "pos": "pron.",
-     "en": "so, like this (written) (并非如此 that isn't so)"
-    },
-    {
-     "hanzi": "医学",
-     "pinyin": "yī xué",
-     "pos": "n.",
-     "en": "medicine (the science)"
-    },
-    {
-     "hanzi": "证明",
-     "pinyin": "zhèng míng",
-     "pos": "v./n.",
-     "en": "to prove, show; proof, certificate"
-    },
-    {
-     "hanzi": "有效",
-     "pinyin": "yǒu xiào",
-     "pos": "adj.",
-     "en": "effective"
-    },
-    {
-     "hanzi": "充分",
-     "pinyin": "chōng fèn",
-     "pos": "adj.",
-     "en": "full, sufficient, ample"
-    },
-    {
-     "hanzi": "因人而异",
-     "pinyin": "yīn rén ér yì",
-     "pos": "phr.",
-     "en": "to vary from person to person"
-    },
-    {
-     "hanzi": "态度",
-     "pinyin": "tài du",
-     "pos": "n.",
-     "en": "attitude"
-    },
-    {
-     "hanzi": "盲目",
-     "pinyin": "máng mù",
-     "pos": "adj.",
-     "en": "blind, blindly"
-    },
-    {
-     "hanzi": "相信",
-     "pinyin": "xiāng xìn",
-     "pos": "v.",
-     "en": "to believe, trust"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u1-7",
-   "title": "大步5 U1.7 · 健康生活 Keeping well in the dog days",
-   "words": [
-    {
-     "hanzi": "一概",
-     "pinyin": "yī gài",
-     "pos": "adv.",
-     "en": "all, without exception (一概否定 dismiss out of hand)"
-    },
-    {
-     "hanzi": "否定",
-     "pinyin": "fǒu dìng",
-     "pos": "v.",
-     "en": "to deny, reject, dismiss"
-    },
-    {
-     "hanzi": "绝对",
-     "pinyin": "jué duì",
-     "pos": "adj./adv.",
-     "en": "absolute; absolutely"
-    },
-    {
-     "hanzi": "包治百病",
-     "pinyin": "bāo zhì bǎi bìng",
-     "pos": "phr.",
-     "en": "to cure every illness"
-    },
-    {
-     "hanzi": "高温",
-     "pinyin": "gāo wēn",
-     "pos": "n.",
-     "en": "high temperatures, heat"
-    },
-    {
-     "hanzi": "慢性病",
-     "pinyin": "màn xìng bìng",
-     "pos": "n.",
-     "en": "chronic illness, long-term illness"
-    },
-    {
-     "hanzi": "秘方",
-     "pinyin": "mì fāng",
-     "pos": "n.",
-     "en": "secret recipe, secret remedy"
+     "en": "to build up, nourish (with food or medicine); to make up for",
+     "id": "dabu5-u1-1:10"
     },
     {
      "hanzi": "觉",
      "pinyin": "jiào",
      "pos": "n.",
-     "en": "sleep (睡够觉 get enough sleep)"
+     "en": "sleep (睡够觉 get enough sleep)",
+     "id": "dabu5-u1-7:7"
     },
     {
-     "hanzi": "适量",
-     "pinyin": "shì liàng",
-     "pos": "adj.",
-     "en": "in moderation, a moderate amount"
-    },
-    {
-     "hanzi": "饮食",
-     "pinyin": "yǐn shí",
-     "pos": "n.",
-     "en": "diet, food and drink"
-    },
-    {
-     "hanzi": "心情",
-     "pinyin": "xīn qíng",
-     "pos": "n.",
-     "en": "mood, state of mind"
-    },
-    {
-     "hanzi": "显示",
-     "pinyin": "xiǎn shì",
+     "hanzi": "响",
+     "pinyin": "xiǎng",
      "pos": "v.",
-     "en": "to show, display (数据显示 the data show)"
+     "en": "to ring, go off, make a sound",
+     "id": "dabu1-u2-2:1"
     }
    ]
   },
   {
-   "id": "dabu5-u1-8",
-   "title": "大步5 U1.8 · 健康生活 Keeping well in the dog days",
+   "id": "dabu1-u2-2b",
+   "title": "大步1 U2.2 · 加班文化 Working late · 2",
    "words": [
     {
-     "hanzi": "保健品",
-     "pinyin": "bǎo jiàn pǐn",
-     "pos": "n.",
-     "en": "health supplement"
-    },
-    {
-     "hanzi": "过度",
-     "pinyin": "guò dù",
-     "pos": "adj./adv.",
-     "en": "excessive; too much"
-    },
-    {
-     "hanzi": "劳累",
-     "pinyin": "láo lèi",
-     "pos": "adj.",
-     "en": "overworked, worn out"
-    },
-    {
-     "hanzi": "睡眠",
-     "pinyin": "shuì mián",
-     "pos": "n.",
-     "en": "sleep"
-    },
-    {
-     "hanzi": "清淡",
-     "pinyin": "qīng dàn",
-     "pos": "adj.",
-     "en": "light (of food), not rich or spicy"
-    },
-    {
-     "hanzi": "以",
-     "pinyin": "yǐ",
-     "pos": "phr.",
-     "en": "to consist mainly of, be mostly (以…为主)"
-    },
-    {
-     "hanzi": "迷信",
-     "pinyin": "mí xìn",
-     "pos": "n./v.",
-     "en": "superstition; to have blind faith in"
-    },
-    {
-     "hanzi": "常识",
-     "pinyin": "cháng shí",
-     "pos": "n.",
-     "en": "common sense; general knowledge"
-    },
-    {
-     "hanzi": "免疫力",
-     "pinyin": "miǎn yì lì",
-     "pos": "n.",
-     "en": "immunity, resistance to illness"
-    },
-    {
-     "hanzi": "体质",
-     "pinyin": "tǐ zhì",
-     "pos": "n.",
-     "en": "constitution, physique"
-    },
-    {
-     "hanzi": "血压",
-     "pinyin": "xuè yā",
-     "pos": "n.",
-     "en": "blood pressure"
-    },
-    {
-     "hanzi": "减肥",
-     "pinyin": "jiǎn féi",
+     "hanzi": "补觉",
+     "pinyin": "bǔ jiào",
      "pos": "v.",
-     "en": "to lose weight, go on a diet"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u2-1",
-   "title": "大步5 U2.1 · 旅行的意义 What travel is for",
-   "words": [
-    {
-     "hanzi": "冷漠",
-     "pinyin": "lěng mò",
-     "pos": "adj.",
-     "en": "cold, indifferent, aloof"
+     "en": "to catch up on sleep",
+     "id": "dabu1-u2-2:0",
+     "parts": [
+      "补",
+      "觉"
+     ]
     },
     {
-     "hanzi": "之前",
-     "pinyin": "zhī qián",
-     "pos": "n.",
-     "en": "before, previously"
-    },
-    {
-     "hanzi": "洞",
-     "pinyin": "dòng",
-     "pos": "n.",
-     "en": "cave, hole"
-    },
-    {
-     "hanzi": "壁画",
-     "pinyin": "bì huà",
-     "pos": "n.",
-     "en": "mural, wall painting"
-    },
-    {
-     "hanzi": "脑子",
-     "pinyin": "nǎo zi",
-     "pos": "n.",
-     "en": "brain, head, mind"
-    },
-    {
-     "hanzi": "研究生",
-     "pinyin": "yán jiū shēng",
-     "pos": "n.",
-     "en": "postgraduate student (读研究生 do a master's)"
-    },
-    {
-     "hanzi": "表面上",
-     "pinyin": "biǎo miàn shang",
-     "pos": "phr.",
-     "en": "on the surface, outwardly"
-    },
-    {
-     "hanzi": "表面",
-     "pinyin": "biǎo miàn",
-     "pos": "n.",
-     "en": "surface"
-    },
-    {
-     "hanzi": "交朋友",
-     "pinyin": "jiāo péng you",
-     "pos": "v.",
-     "en": "to make friends"
-    },
-    {
-     "hanzi": "没法",
-     "pinyin": "méi fǎ",
-     "pos": "phr.",
-     "en": "can't, there's no way to (spoken)"
-    },
-    {
-     "hanzi": "反驳",
-     "pinyin": "fǎn bó",
-     "pos": "v.",
-     "en": "to argue against, refute"
-    },
-    {
-     "hanzi": "以偏概全",
-     "pinyin": "yǐ piān gài quán",
-     "pos": "phr.",
-     "en": "to take a part for the whole, generalise from too little (a 成语)"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u2-2",
-   "title": "大步5 U2.2 · 旅行的意义 What travel is for",
-   "words": [
-    {
-     "hanzi": "严肃",
-     "pinyin": "yán sù",
-     "pos": "adj.",
-     "en": "serious, solemn"
-    },
-    {
-     "hanzi": "刻板印象",
-     "pinyin": "kè bǎn yìn xiàng",
-     "pos": "n.",
-     "en": "stereotype"
-    },
-    {
-     "hanzi": "刻板",
-     "pinyin": "kè bǎn",
-     "pos": "adj.",
-     "en": "rigid, stereotyped"
-    },
-    {
-     "hanzi": "酸酸甜甜",
-     "pinyin": "suān suān tián tián",
-     "pos": "adj.",
-     "en": "sweet and sour"
-    },
-    {
-     "hanzi": "中餐馆",
-     "pinyin": "zhōng cān guǎn",
-     "pos": "n.",
-     "en": "Chinese restaurant"
-    },
-    {
-     "hanzi": "那样",
-     "pinyin": "nà yàng",
-     "pos": "pron.",
-     "en": "like that, that way"
-    },
-    {
-     "hanzi": "下午茶",
-     "pinyin": "xià wǔ chá",
-     "pos": "n.",
-     "en": "afternoon tea"
-    },
-    {
-     "hanzi": "三明治",
-     "pinyin": "sān míng zhì",
-     "pos": "n.",
-     "en": "sandwich"
-    },
-    {
-     "hanzi": "标签",
-     "pinyin": "biāo qiān",
-     "pos": "n.",
-     "en": "label, tag"
-    },
-    {
-     "hanzi": "而言",
-     "pinyin": "ér yán",
-     "pos": "part.",
-     "en": "as far as … goes (对…而言 for …)"
-    },
-    {
-     "hanzi": "对",
-     "pinyin": "duì",
-     "pos": "phr.",
-     "en": "for, as far as … is concerned (written) (对…而言)"
-    },
-    {
-     "hanzi": "撕",
-     "pinyin": "sī",
-     "pos": "v.",
-     "en": "to tear, peel off"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u2-3",
-   "title": "大步5 U2.3 · 旅行的意义 What travel is for",
-   "words": [
-    {
-     "hanzi": "前提",
-     "pinyin": "qián tí",
-     "pos": "n.",
-     "en": "precondition (前提是… as long as …)"
-    },
-    {
-     "hanzi": "当地",
-     "pinyin": "dāng dì",
-     "pos": "n.",
-     "en": "local, the place in question"
-    },
-    {
-     "hanzi": "当地人",
-     "pinyin": "dāng dì rén",
-     "pos": "n.",
-     "en": "local people, locals"
-    },
-    {
-     "hanzi": "聊不起来",
-     "pinyin": "liáo bu qǐ lái",
-     "pos": "phr.",
-     "en": "can't get a conversation going"
-    },
-    {
-     "hanzi": "顺便",
-     "pinyin": "shùn biàn",
+     "hanzi": "却",
+     "pinyin": "què",
      "pos": "adv.",
-     "en": "while you're at it, on the way"
+     "en": "but, yet (after the subject: 心却还在公司 yet your mind's still at work)",
+     "id": "dabu1-u2-2:2"
     },
     {
-     "hanzi": "留学",
-     "pinyin": "liú xué",
-     "pos": "v.",
-     "en": "to study abroad"
-    },
-    {
-     "hanzi": "留学生",
-     "pinyin": "liú xué shēng",
-     "pos": "n.",
-     "en": "overseas student, international student"
-    },
-    {
-     "hanzi": "沙漠",
-     "pinyin": "shā mò",
-     "pos": "n.",
-     "en": "desert"
-    },
-    {
-     "hanzi": "骆驼",
-     "pinyin": "luò tuo",
-     "pos": "n.",
-     "en": "camel"
-    },
-    {
-     "hanzi": "眼界",
-     "pinyin": "yǎn jiè",
-     "pos": "n.",
-     "en": "horizons, outlook (开阔眼界 broaden your horizons)"
-    },
-    {
-     "hanzi": "一概而论",
-     "pinyin": "yī gài ér lùn",
+     "hanzi": "有权",
+     "pinyin": "yǒu quán",
      "pos": "phr.",
-     "en": "to lump everything together (不能一概而论 you can't generalise)"
+     "en": "to have the right to",
+     "id": "dabu1-u2-2:3"
     },
     {
-     "hanzi": "结论",
-     "pinyin": "jié lùn",
+     "hanzi": "需求",
+     "pinyin": "xū qiú",
      "pos": "n.",
-     "en": "conclusion"
+     "en": "needs, requirements (a client's brief)",
+     "id": "dabu1-u2-2:4"
+    },
+    {
+     "hanzi": "说不准",
+     "pinyin": "shuō bu zhǔn",
+     "pos": "phr.",
+     "en": "can't say for sure, hard to tell",
+     "id": "dabu1-u2-2:5"
     }
    ]
   },
   {
-   "id": "dabu5-u2-4",
-   "title": "大步5 U2.4 · 旅行的意义 What travel is for",
+   "id": "dabu1-u2-2c",
+   "title": "大步1 U2.2 · 加班文化 Working late · 3",
    "words": [
     {
-     "hanzi": "下结论",
-     "pinyin": "xià jié lùn",
-     "pos": "phr.",
-     "en": "to draw a conclusion"
-    },
-    {
-     "hanzi": "南方",
-     "pinyin": "nán fāng",
-     "pos": "n.",
-     "en": "the south"
-    },
-    {
-     "hanzi": "北方",
-     "pinyin": "běi fāng",
-     "pos": "n.",
-     "en": "the north"
-    },
-    {
-     "hanzi": "口味",
-     "pinyin": "kǒu wèi",
-     "pos": "n.",
-     "en": "taste, flavour, what you like to eat"
-    },
-    {
-     "hanzi": "韩国",
-     "pinyin": "Hán guó",
-     "pos": "n.",
-     "en": "South Korea"
-    },
-    {
-     "hanzi": "偏见",
-     "pinyin": "piān jiàn",
-     "pos": "n.",
-     "en": "prejudice, bias"
-    },
-    {
-     "hanzi": "误会",
-     "pinyin": "wù huì",
-     "pos": "v./n.",
-     "en": "to misunderstand; misunderstanding"
-    },
-    {
-     "hanzi": "陌生人",
-     "pinyin": "mò shēng rén",
-     "pos": "n.",
-     "en": "stranger"
-    },
-    {
-     "hanzi": "个人",
-     "pinyin": "gè rén",
-     "pos": "n.",
-     "en": "individual; personal (我个人的看法 my own view)"
-    },
-    {
-     "hanzi": "开眼界",
-     "pinyin": "kāi yǎn jiè",
-     "pos": "v.",
-     "en": "to broaden your horizons, see something new (开开眼界 see a bit of the world)"
-    },
-    {
-     "hanzi": "文化冲击",
-     "pinyin": "wén huà chōng jī",
-     "pos": "n.",
-     "en": "culture shock"
-    },
-    {
-     "hanzi": "背包客",
-     "pinyin": "bēi bāo kè",
-     "pos": "n.",
-     "en": "backpacker"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u2-5",
-   "title": "大步5 U2.5 · 旅行的意义 What travel is for",
-   "words": [
-    {
-     "hanzi": "几乎",
-     "pinyin": "jī hū",
-     "pos": "adv.",
-     "en": "almost, nearly"
-    },
-    {
-     "hanzi": "甜酸肉",
-     "pinyin": "tián suān ròu",
-     "pos": "n.",
-     "en": "sweet and sour pork"
-    },
-    {
-     "hanzi": "一路",
-     "pinyin": "yī lù",
-     "pos": "n.",
-     "en": "the whole way, all along the road"
-    },
-    {
-     "hanzi": "胡子",
-     "pinyin": "hú zi",
-     "pos": "n.",
-     "en": "beard, moustache"
-    },
-    {
-     "hanzi": "尖",
-     "pinyin": "jiān",
+     "hanzi": "难免",
+     "pinyin": "nán miǎn",
      "pos": "adj.",
-     "en": "pointed, sharp"
+     "en": "hard to avoid, bound to happen",
+     "id": "dabu1-u2-2:6"
     },
     {
-     "hanzi": "商人",
-     "pinyin": "shāng rén",
+     "hanzi": "式",
+     "pinyin": "shì",
+     "pos": "suffix",
+     "en": "-style, type (表演式加班 overtime for show)",
+     "id": "dabu1-u2-2:7"
+    },
+    {
+     "hanzi": "算",
+     "pinyin": "suàn",
+     "pos": "v.",
+     "en": "to count as (就算是 let's call it)",
+     "id": "dabu1-u2-2:8"
+    },
+    {
+     "hanzi": "加班费",
+     "pinyin": "jiā bān fèi",
      "pos": "n.",
-     "en": "merchant, trader, businessman"
+     "en": "overtime pay",
+     "id": "dabu1-u2-2:9"
     },
     {
-     "hanzi": "飞天",
-     "pinyin": "fēi tiān",
-     "pos": "n.",
-     "en": "flying spirit (in Buddhist art, as at Dunhuang)"
-    },
-    {
-     "hanzi": "丝绸之路",
-     "pinyin": "Sī chóu zhī lù",
-     "pos": "n.",
-     "en": "the Silk Road"
-    },
-    {
-     "hanzi": "宗教",
-     "pinyin": "zōng jiào",
-     "pos": "n.",
-     "en": "religion"
-    },
-    {
-     "hanzi": "文化交流",
-     "pinyin": "wén huà jiāo liú",
-     "pos": "n.",
-     "en": "cultural exchange"
-    },
-    {
-     "hanzi": "交流",
-     "pinyin": "jiāo liú",
+     "hanzi": "调休",
+     "pinyin": "tiáo xiū",
      "pos": "v./n.",
-     "en": "to exchange, communicate; exchange"
-    },
-    {
-     "hanzi": "制造",
-     "pinyin": "zhì zào",
-     "pos": "v.",
-     "en": "to make, manufacture, create"
-    },
-    {
-     "hanzi": "犯",
-     "pinyin": "fàn",
-     "pos": "v.",
-     "en": "to make (a mistake), commit (犯错误 make a mistake)"
+     "en": "to take time off in lieu; a day off in lieu",
+     "id": "dabu1-u2-2:10"
     }
    ]
   },
   {
-   "id": "dabu5-u2-6",
-   "title": "大步5 U2.6 · 旅行的意义 What travel is for",
+   "id": "dabu1-u2-3a",
+   "title": "大步1 U2.3 · 加班文化 Working late · 1",
    "words": [
     {
-     "hanzi": "错误",
-     "pinyin": "cuò wù",
-     "pos": "n./adj.",
-     "en": "mistake, error; wrong"
+     "hanzi": "打卡",
+     "pinyin": "dǎ kǎ",
+     "pos": "v.",
+     "en": "to clock in, clock out",
+     "id": "dabu1-u2-3:0"
     },
     {
-     "hanzi": "开阔",
-     "pinyin": "kāi kuò",
-     "pos": "adj./v.",
-     "en": "wide, open; to widen (开阔眼界 broaden your horizons)"
-    },
-    {
-     "hanzi": "读万卷书",
-     "pinyin": "dú wàn juàn shū",
-     "pos": "phr.",
-     "en": "read ten thousand books (读万卷书，行万里路)"
-    },
-    {
-     "hanzi": "行万里路",
-     "pinyin": "xíng wàn lǐ lù",
-     "pos": "phr.",
-     "en": "travel ten thousand miles (读万卷书，行万里路)"
-    },
-    {
-     "hanzi": "而已",
-     "pinyin": "ér yǐ",
-     "pos": "part.",
-     "en": "that's all, merely (只是…而已 just …, that's all)"
-    },
-    {
-     "hanzi": "视野",
-     "pinyin": "shì yě",
+     "hanzi": "工作群",
+     "pinyin": "gōng zuò qún",
      "pos": "n.",
-     "en": "field of vision, outlook"
+     "en": "work group chat",
+     "id": "dabu1-u2-3:1",
+     "parts": [
+      "工作",
+      "群"
+     ]
     },
     {
-     "hanzi": "入乡随俗",
-     "pinyin": "rù xiāng suí sú",
-     "pos": "phr.",
-     "en": "when in Rome, do as the Romans do (a 成语)"
+     "hanzi": "提神",
+     "pinyin": "tí shén",
+     "pos": "v.",
+     "en": "to perk up, wake yourself up",
+     "id": "dabu1-u2-3:2"
     },
     {
-     "hanzi": "百闻不如一见",
-     "pinyin": "bǎi wén bù rú yī jiàn",
-     "pos": "phr.",
-     "en": "seeing once is better than hearing a hundred times"
+     "hanzi": "熬夜",
+     "pinyin": "áo yè",
+     "pos": "v.",
+     "en": "to stay up late",
+     "id": "dabu1-u2-3:3"
     },
     {
-     "hanzi": "井底之蛙",
-     "pinyin": "jǐng dǐ zhī wā",
-     "pos": "phr.",
-     "en": "a frog at the bottom of a well, someone with a narrow view (a 成语)"
-    },
-    {
-     "hanzi": "游记",
-     "pinyin": "yóu jì",
+     "hanzi": "劳动法",
+     "pinyin": "láo dòng fǎ",
      "pos": "n.",
-     "en": "travel writing, travel notes"
-    },
-    {
-     "hanzi": "文明",
-     "pinyin": "wén míng",
-     "pos": "n./adj.",
-     "en": "civilisation; civilised"
-    },
-    {
-     "hanzi": "出境游",
-     "pinyin": "chū jìng yóu",
-     "pos": "n.",
-     "en": "travel abroad, outbound tourism"
-    },
-    {
-     "hanzi": "攻略",
-     "pinyin": "gōng lüè",
-     "pos": "n.",
-     "en": "guide, tips (旅游攻略 a travel guide)"
+     "en": "labour law",
+     "id": "dabu1-u2-3:4"
     }
    ]
   },
   {
-   "id": "dabu5-u3-1",
-   "title": "大步5 U3.1 · 全球化 A basket for the world",
+   "id": "dabu1-u2-3b",
+   "title": "大步1 U2.3 · 加班文化 Working late · 2",
    "words": [
     {
-     "hanzi": "北欧",
-     "pinyin": "Běi ōu",
+     "hanzi": "权利",
+     "pinyin": "quán lì",
      "pos": "n.",
-     "en": "the Nordic countries, Scandinavia"
+     "en": "right(s)",
+     "id": "dabu1-u2-3:5"
     },
     {
-     "hanzi": "家居",
-     "pinyin": "jiā jū",
-     "pos": "n.",
-     "en": "home furnishings, homeware"
-    },
-    {
-     "hanzi": "上市",
-     "pinyin": "shàng shì",
+     "hanzi": "遇到",
+     "pinyin": "yù dào",
      "pos": "v.",
-     "en": "to come on the market, go on sale"
+     "en": "to come across, run into",
+     "id": "dabu1-u2-3:6"
     },
     {
-     "hanzi": "产量",
-     "pinyin": "chǎn liàng",
+     "hanzi": "上海话",
+     "pinyin": "Shàng hǎi huà",
      "pos": "n.",
-     "en": "output, production"
-    },
-    {
-     "hanzi": "国内",
-     "pinyin": "guó nèi",
-     "pos": "n.",
-     "en": "within the country, at home"
-    },
-    {
-     "hanzi": "三成",
-     "pinyin": "sān chéng",
-     "pos": "phr.",
-     "en": "thirty per cent (成 ten per cent)"
-    },
-    {
-     "hanzi": "贴牌",
-     "pinyin": "tiē pái",
-     "pos": "v./n.",
-     "en": "to make goods under another company's brand; OEM production"
-    },
-    {
-     "hanzi": "出现",
-     "pinyin": "chū xiàn",
-     "pos": "v.",
-     "en": "to appear"
-    },
-    {
-     "hanzi": "不可否认",
-     "pinyin": "bù kě fǒu rèn",
-     "pos": "phr.",
-     "en": "it can't be denied, there's no denying"
-    },
-    {
-     "hanzi": "正是",
-     "pinyin": "zhèng shì",
-     "pos": "v.",
-     "en": "to be precisely, be exactly"
-    },
-    {
-     "hanzi": "要么",
-     "pinyin": "yào me",
-     "pos": "phr.",
-     "en": "either … or … (要么…要么…)"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u3-2",
-   "title": "大步5 U3.2 · 全球化 A basket for the world",
-   "words": [
-    {
-     "hanzi": "脾气",
-     "pinyin": "pí qi",
-     "pos": "n.",
-     "en": "temper, temperament"
-    },
-    {
-     "hanzi": "进入",
-     "pinyin": "jìn rù",
-     "pos": "v.",
-     "en": "to enter, get into"
-    },
-    {
-     "hanzi": "生意",
-     "pinyin": "shēng yi",
-     "pos": "n.",
-     "en": "business, trade (做生意 do business)"
-    },
-    {
-     "hanzi": "让步",
-     "pinyin": "ràng bù",
-     "pos": "v./n.",
-     "en": "to give way, make concessions; concession"
-    },
-    {
-     "hanzi": "民族",
-     "pinyin": "mín zú",
-     "pos": "n.",
-     "en": "nation, ethnic group"
-    },
-    {
-     "hanzi": "越是民族的越是世界的",
-     "pinyin": "yuè shì mín zú de yuè shì shì jiè de",
-     "pos": "phr.",
-     "en": "the more something is a nation's own, the more it belongs to the world"
-    },
-    {
-     "hanzi": "中国制造",
-     "pinyin": "Zhōng guó zhì zào",
-     "pos": "n.",
-     "en": "Made in China"
-    },
-    {
-     "hanzi": "好用",
-     "pinyin": "hǎo yòng",
-     "pos": "adj.",
-     "en": "easy to use, practical"
-    },
-    {
-     "hanzi": "顾客",
-     "pinyin": "gù kè",
-     "pos": "n.",
-     "en": "customer"
-    },
-    {
-     "hanzi": "值钱",
-     "pinyin": "zhí qián",
-     "pos": "adj.",
-     "en": "valuable, worth a lot"
-    },
-    {
-     "hanzi": "思路",
-     "pinyin": "sī lù",
-     "pos": "n.",
-     "en": "way of thinking, line of thought (换个思路 look at it differently)"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u3-3",
-   "title": "大步5 U3.3 · 全球化 A basket for the world",
-   "words": [
-    {
-     "hanzi": "联名",
-     "pinyin": "lián míng",
-     "pos": "adj./v.",
-     "en": "joint, co-branded; to co-brand"
-    },
-    {
-     "hanzi": "数量",
-     "pinyin": "shù liàng",
-     "pos": "n.",
-     "en": "quantity, number"
-    },
-    {
-     "hanzi": "批",
-     "pinyin": "pī",
-     "pos": "m.",
-     "en": "batch, lot (第一批 the first batch)"
-    },
-    {
-     "hanzi": "低于",
-     "pinyin": "dī yú",
-     "pos": "v.",
-     "en": "to be lower than, below"
-    },
-    {
-     "hanzi": "接受",
-     "pinyin": "jiē shòu",
-     "pos": "v.",
-     "en": "to accept"
-    },
-    {
-     "hanzi": "剪",
-     "pinyin": "jiǎn",
-     "pos": "v.",
-     "en": "to cut; to edit (a video)"
-    },
-    {
-     "hanzi": "英文版",
-     "pinyin": "Yīng wén bǎn",
-     "pos": "n.",
-     "en": "English version"
-    },
-    {
-     "hanzi": "识货",
-     "pinyin": "shí huò",
-     "pos": "v.",
-     "en": "to know quality, know a good thing when you see it"
-    },
-    {
-     "hanzi": "进口",
-     "pinyin": "jìn kǒu",
-     "pos": "v./n.",
-     "en": "to import; imports"
-    },
-    {
-     "hanzi": "海外",
-     "pinyin": "hǎi wài",
-     "pos": "n.",
-     "en": "overseas, abroad"
-    },
-    {
-     "hanzi": "本土",
-     "pinyin": "běn tǔ",
-     "pos": "adj./n.",
-     "en": "local, home-grown; home soil"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u3-4",
-   "title": "大步5 U3.4 · 全球化 A basket for the world",
-   "words": [
-    {
-     "hanzi": "外贸",
-     "pinyin": "wài mào",
-     "pos": "n.",
-     "en": "foreign trade"
-    },
-    {
-     "hanzi": "关税",
-     "pinyin": "guān shuì",
-     "pos": "n.",
-     "en": "tariff, customs duty"
-    },
-    {
-     "hanzi": "物流",
-     "pinyin": "wù liú",
-     "pos": "n.",
-     "en": "logistics, delivery"
-    },
-    {
-     "hanzi": "汇率",
-     "pinyin": "huì lǜ",
-     "pos": "n.",
-     "en": "exchange rate"
-    },
-    {
-     "hanzi": "供应链",
-     "pinyin": "gōng yìng liàn",
-     "pos": "n.",
-     "en": "supply chain"
-    },
-    {
-     "hanzi": "双赢",
-     "pinyin": "shuāng yíng",
-     "pos": "adj./n.",
-     "en": "win-win"
-    },
-    {
-     "hanzi": "电商",
-     "pinyin": "diàn shāng",
-     "pos": "n.",
-     "en": "e-commerce, online retail"
-    },
-    {
-     "hanzi": "跨境电商",
-     "pinyin": "kuà jìng diàn shāng",
-     "pos": "n.",
-     "en": "cross-border e-commerce"
-    },
-    {
-     "hanzi": "压价",
-     "pinyin": "yā jià",
-     "pos": "v.",
-     "en": "to force the price down"
-    },
-    {
-     "hanzi": "谈判",
-     "pinyin": "tán pàn",
-     "pos": "v./n.",
-     "en": "to negotiate; negotiations"
-    },
-    {
-     "hanzi": "性价比",
-     "pinyin": "xìng jià bǐ",
-     "pos": "n.",
-     "en": "value for money"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u3-5",
-   "title": "大步5 U3.5 · 全球化 A basket for the world",
-   "words": [
-    {
-     "hanzi": "连锁",
-     "pinyin": "lián suǒ",
-     "pos": "adj.",
-     "en": "chain (连锁咖啡店 a coffee chain)"
-    },
-    {
-     "hanzi": "连锁店",
-     "pinyin": "lián suǒ diàn",
-     "pos": "n.",
-     "en": "chain store"
-    },
-    {
-     "hanzi": "底料",
-     "pinyin": "dǐ liào",
-     "pos": "n.",
-     "en": "base (火锅底料 hotpot soup base)"
-    },
-    {
-     "hanzi": "经济",
-     "pinyin": "jīng jì",
-     "pos": "n./adj.",
-     "en": "economy; economic"
-    },
-    {
-     "hanzi": "显而易见",
-     "pinyin": "xiǎn ér yì jiàn",
-     "pos": "phr.",
-     "en": "obvious, plain to see"
-    },
-    {
-     "hanzi": "贸易",
-     "pinyin": "mào yì",
-     "pos": "n.",
-     "en": "trade"
-    },
-    {
-     "hanzi": "商品",
-     "pinyin": "shāng pǐn",
-     "pos": "n.",
-     "en": "goods, commodities"
-    },
-    {
-     "hanzi": "地区",
-     "pinyin": "dì qū",
-     "pos": "n.",
-     "en": "region, area"
-    },
-    {
-     "hanzi": "就业",
-     "pinyin": "jiù yè",
-     "pos": "v./n.",
-     "en": "to find work; employment (就业机会 job opportunities)"
-    },
-    {
-     "hanzi": "知识",
-     "pinyin": "zhī shi",
-     "pos": "n.",
-     "en": "knowledge"
-    },
-    {
-     "hanzi": "流动",
-     "pinyin": "liú dòng",
-     "pos": "v./n.",
-     "en": "to flow, circulate; flow"
-    },
-    {
-     "hanzi": "后来者",
-     "pinyin": "hòu lái zhě",
-     "pos": "n.",
-     "en": "latecomer"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u3-6",
-   "title": "大步5 U3.6 · 全球化 A basket for the world",
-   "words": [
-    {
-     "hanzi": "赶上",
-     "pinyin": "gǎn shàng",
-     "pos": "v.",
-     "en": "to catch up with"
-    },
-    {
-     "hanzi": "然而",
-     "pinyin": "rán ér",
-     "pos": "conj.",
-     "en": "however (written)"
-    },
-    {
-     "hanzi": "全球",
-     "pinyin": "quán qiú",
-     "pos": "n.",
-     "en": "the whole world, global"
-    },
-    {
-     "hanzi": "买方",
-     "pinyin": "mǎi fāng",
-     "pos": "n.",
-     "en": "the buyer"
-    },
-    {
-     "hanzi": "卖方",
-     "pinyin": "mài fāng",
-     "pos": "n.",
-     "en": "the seller"
-    },
-    {
-     "hanzi": "生产者",
-     "pinyin": "shēng chǎn zhě",
-     "pos": "n.",
-     "en": "producer"
-    },
-    {
-     "hanzi": "讨价还价",
-     "pinyin": "tǎo jià huán jià",
-     "pos": "phr.",
-     "en": "to haggle, bargain"
-    },
-    {
-     "hanzi": "降低",
-     "pinyin": "jiàng dī",
-     "pos": "v.",
-     "en": "to lower, reduce"
-    },
-    {
-     "hanzi": "牺牲",
-     "pinyin": "xī shēng",
-     "pos": "v./n.",
-     "en": "to sacrifice; sacrifice"
+     "en": "Shanghainese",
+     "id": "dabu1-u2-3:7"
     },
     {
      "hanzi": "工人",
      "pinyin": "gōng rén",
      "pos": "n.",
-     "en": "worker"
+     "en": "worker",
+     "id": "dabu5-u3-6:9"
     },
     {
-     "hanzi": "利益",
-     "pinyin": "lì yì",
+     "hanzi": "好处",
+     "pinyin": "hǎo chu",
      "pos": "n.",
-     "en": "interests, benefit"
+     "en": "advantage, benefit",
+     "id": "dabu1-u2-3:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-4a",
+   "title": "大步1 U2.4 · 加班文化 Working late · 1",
+   "words": [
+    {
+     "hanzi": "打工人",
+     "pinyin": "dǎ gōng rén",
+     "pos": "n.",
+     "en": "worker, wage slave (a self-mocking word)",
+     "id": "dabu1-u2-3:8",
+     "parts": [
+      "打",
+      "工人"
+     ]
+    },
+    {
+     "hanzi": "坏处",
+     "pinyin": "huài chu",
+     "pos": "n.",
+     "en": "disadvantage, harm",
+     "id": "dabu1-u2-3:10"
+    },
+    {
+     "hanzi": "依然",
+     "pinyin": "yī rán",
+     "pos": "adv.",
+     "en": "still (written)",
+     "id": "dabu1-u2-4:0"
+    },
+    {
+     "hanzi": "灯火通明",
+     "pinyin": "dēng huǒ tōng míng",
+     "pos": "phr.",
+     "en": "brightly lit, ablaze with light",
+     "id": "dabu1-u2-4:1"
+    },
+    {
+     "hanzi": "甚至",
+     "pinyin": "shèn zhì",
+     "pos": "adv.",
+     "en": "even, so much so that",
+     "id": "dabu1-u2-4:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-4b",
+   "title": "大步1 U2.4 · 加班文化 Working late · 2",
+   "words": [
+    {
+     "hanzi": "说到",
+     "pinyin": "shuō dào",
+     "pos": "v.",
+     "en": "speaking of, when it comes to",
+     "id": "dabu1-u2-4:3",
+     "parts": [
+      "说",
+      "到"
+     ]
+    },
+    {
+     "hanzi": "提",
+     "pinyin": "tí",
+     "pos": "v.",
+     "en": "to mention, bring up (提意见 make a suggestion)",
+     "id": "dabu1-u2-4:4"
+    },
+    {
+     "hanzi": "十分",
+     "pinyin": "shí fēn",
+     "pos": "adv.",
+     "en": "very, extremely (written)",
+     "id": "dabu1-u2-4:5"
+    },
+    {
+     "hanzi": "常见",
+     "pinyin": "cháng jiàn",
+     "pos": "adj.",
+     "en": "common",
+     "id": "dabu1-u2-4:6"
+    },
+    {
+     "hanzi": "存在",
+     "pinyin": "cún zài",
+     "pos": "v.",
+     "en": "to exist, be present",
+     "id": "dabu1-u2-4:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-4c",
+   "title": "大步1 U2.4 · 加班文化 Working late · 3",
+   "words": [
+    {
+     "hanzi": "争议",
+     "pinyin": "zhēng yì",
+     "pos": "n.",
+     "en": "controversy, dispute",
+     "id": "dabu1-u2-4:8"
+    },
+    {
+     "hanzi": "苦",
+     "pinyin": "kǔ",
+     "pos": "adj./n.",
+     "en": "bitter; hardship",
+     "id": "dabu1-u2-4:10"
+    },
+    {
+     "hanzi": "吃苦",
+     "pinyin": "chī kǔ",
+     "pos": "v.",
+     "en": "to put up with hardship, work hard (多吃点儿苦 put up with more)",
+     "id": "dabu1-u2-4:9"
+    },
+    {
+     "hanzi": "地",
+     "pinyin": "de",
+     "pos": "part.",
+     "en": "(between an adjective and a verb) -ly (更快地升职 get promoted faster)",
+     "id": "dabu1-u2-4:11"
+    },
+    {
+     "hanzi": "不仅",
+     "pinyin": "bù jǐn",
+     "pos": "phr.",
+     "en": "not only … but also … (written 不但…而且) (不仅…还…)",
+     "id": "dabu1-u2-4:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-5a",
+   "title": "大步1 U2.5 · 加班文化 Working late · 1",
+   "words": [
+    {
+     "hanzi": "加薪",
+     "pinyin": "jiā xīn",
+     "pos": "v.",
+     "en": "to get a pay rise, raise pay",
+     "id": "dabu1-u2-5:0"
+    },
+    {
+     "hanzi": "竞争",
+     "pinyin": "jìng zhēng",
+     "pos": "v./n.",
+     "en": "to compete; competition",
+     "id": "dabu1-u2-5:1"
+    },
+    {
+     "hanzi": "激烈",
+     "pinyin": "jī liè",
+     "pos": "adj.",
+     "en": "fierce, intense",
+     "id": "dabu1-u2-5:2"
+    },
+    {
+     "hanzi": "行业",
+     "pinyin": "háng yè",
+     "pos": "n.",
+     "en": "industry, sector",
+     "id": "dabu1-u2-5:3"
+    },
+    {
+     "hanzi": "关系到",
+     "pinyin": "guān xi dào",
+     "pos": "v.",
+     "en": "to affect, have a bearing on",
+     "id": "dabu1-u2-5:4",
+     "parts": [
+      "关系",
+      "到"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-5b",
+   "title": "大步1 U2.5 · 加班文化 Working late · 2",
+   "words": [
+    {
+     "hanzi": "整个",
+     "pinyin": "zhěng gè",
+     "pos": "adj.",
+     "en": "whole, entire",
+     "id": "dabu1-u2-5:5"
+    },
+    {
+     "hanzi": "则",
+     "pinyin": "zé",
+     "pos": "conj.",
+     "en": "whereas, on the other hand (written)",
+     "id": "dabu1-u2-5:6"
+    },
+    {
+     "hanzi": "陪伴",
+     "pinyin": "péi bàn",
+     "pos": "v.",
+     "en": "to keep someone company, be there for",
+     "id": "dabu1-u2-5:7"
+    },
+    {
+     "hanzi": "下降",
+     "pinyin": "xià jiàng",
+     "pos": "v.",
+     "en": "to fall, go down",
+     "id": "dabu1-u2-5:8"
+    },
+    {
+     "hanzi": "等于",
+     "pinyin": "děng yú",
+     "pos": "v.",
+     "en": "to equal, amount to",
+     "id": "dabu1-u2-5:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-5c",
+   "title": "大步1 U2.5 · 加班文化 Working late · 3",
+   "words": [
+    {
+     "hanzi": "成果",
+     "pinyin": "chéng guǒ",
+     "pos": "n.",
+     "en": "results, achievements",
+     "id": "dabu1-u2-5:10"
+    },
+    {
+     "hanzi": "明确",
+     "pinyin": "míng què",
+     "pos": "adj.",
+     "en": "clear, explicit",
+     "id": "dabu1-u2-5:11"
+    },
+    {
+     "hanzi": "一定",
+     "pinyin": "yī dìng",
+     "pos": "adj.",
+     "en": "certain, some (一定的限制 certain limits) (new meaning)",
+     "id": "dabu1-u2-5:12"
+    },
+    {
+     "hanzi": "限制",
+     "pinyin": "xiàn zhì",
+     "pos": "n./v.",
+     "en": "limit, restriction; to limit",
+     "id": "dabu1-u2-6:0"
+    },
+    {
+     "hanzi": "应当",
+     "pinyin": "yīng dāng",
+     "pos": "v.",
+     "en": "should, ought to (written)",
+     "id": "dabu1-u2-6:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-6a",
+   "title": "大步1 U2.6 · 加班文化 Working late · 1",
+   "words": [
+    {
+     "hanzi": "支付",
+     "pinyin": "zhī fù",
+     "pos": "v.",
+     "en": "to pay (formal)",
+     "id": "dabu1-u2-6:2"
+    },
+    {
+     "hanzi": "安排",
+     "pinyin": "ān pái",
+     "pos": "v./n.",
+     "en": "to arrange; arrangement",
+     "id": "dabu1-u2-6:3"
+    },
+    {
+     "hanzi": "受到",
+     "pinyin": "shòu dào",
+     "pos": "v.",
+     "en": "to receive, meet with (受到批评 be criticised)",
+     "id": "dabu1-u2-6:4"
+    },
+    {
+     "hanzi": "部门",
+     "pinyin": "bù mén",
+     "pos": "n.",
+     "en": "department",
+     "id": "dabu1-u2-6:6"
+    },
+    {
+     "hanzi": "有关部门",
+     "pinyin": "yǒu guān bù mén",
+     "pos": "phr.",
+     "en": "the relevant authorities",
+     "id": "dabu1-u2-6:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-6b",
+   "title": "大步1 U2.6 · 加班文化 Working late · 2",
+   "words": [
+    {
+     "hanzi": "强调",
+     "pinyin": "qiáng diào",
+     "pos": "v.",
+     "en": "to stress, emphasise",
+     "id": "dabu1-u2-6:7"
+    },
+    {
+     "hanzi": "企业",
+     "pinyin": "qǐ yè",
+     "pos": "n.",
+     "en": "company, business, enterprise",
+     "id": "dabu1-u2-6:8"
+    },
+    {
+     "hanzi": "必须",
+     "pinyin": "bì xū",
+     "pos": "adv.",
+     "en": "must",
+     "id": "dabu1-u2-6:9"
+    },
+    {
+     "hanzi": "符合",
+     "pinyin": "fú hé",
+     "pos": "v.",
+     "en": "to comply with, be in line with",
+     "id": "dabu1-u2-6:10"
+    },
+    {
+     "hanzi": "看待",
+     "pinyin": "kàn dài",
+     "pos": "v.",
+     "en": "to view, regard",
+     "id": "dabu1-u2-6:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-7a",
+   "title": "大步1 U2.7 · 加班文化 Working late · 1",
+   "words": [
+    {
+     "hanzi": "怎样",
+     "pinyin": "zěn yàng",
+     "pos": "pron.",
+     "en": "how (written 怎么)",
+     "id": "dabu1-u2-6:12"
+    },
+    {
+     "hanzi": "偶尔",
+     "pinyin": "ǒu ěr",
+     "pos": "adv.",
+     "en": "occasionally, now and then",
+     "id": "dabu1-u2-7:0"
+    },
+    {
+     "hanzi": "大多数",
+     "pinyin": "dà duō shù",
+     "pos": "n.",
+     "en": "the majority, most",
+     "id": "dabu1-u2-7:1"
+    },
+    {
+     "hanzi": "常态",
+     "pinyin": "cháng tài",
+     "pos": "n.",
+     "en": "the norm",
+     "id": "dabu1-u2-7:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-7b",
+   "title": "大步1 U2.7 · 加班文化 Working late · 2",
+   "words": [
+    {
+     "hanzi": "经常",
+     "pinyin": "jīng cháng",
+     "pos": "adv.",
+     "en": "often",
+     "id": "dabu1-u2-7:3"
+    },
+    {
+     "hanzi": "区",
+     "pinyin": "qū",
+     "pos": "n.",
+     "en": "district (区里 the district)",
+     "id": "dabu2-u4-1:7"
+    },
+    {
+     "hanzi": "内卷",
+     "pinyin": "nèi juǎn",
+     "pos": "n./v.",
+     "en": "'involution', an exhausting race where everyone works harder for no gain",
+     "id": "dabu1-u2-7:5",
+     "parts": [
+      "内",
+      "卷"
+     ]
+    },
+    {
+     "hanzi": "躺平",
+     "pinyin": "tǎng píng",
+     "pos": "v.",
+     "en": "to 'lie flat', opt out of the rat race",
+     "id": "dabu1-u2-7:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u2-7c",
+   "title": "大步1 U2.7 · 加班文化 Working late · 3",
+   "words": [
+    {
+     "hanzi": "评论区",
+     "pinyin": "píng lùn qū",
+     "pos": "n.",
+     "en": "comments section",
+     "id": "dabu1-u2-7:4",
+     "parts": [
+      "评论",
+      "区"
+     ]
+    },
+    {
+     "hanzi": "平衡",
+     "pinyin": "píng héng",
+     "pos": "n./v.",
+     "en": "balance; to balance",
+     "id": "dabu1-u2-7:7"
+    },
+    {
+     "hanzi": "工作日",
+     "pinyin": "gōng zuò rì",
+     "pos": "n.",
+     "en": "working day",
+     "id": "dabu1-u2-7:8"
+    },
+    {
+     "hanzi": "清明节",
+     "pinyin": "Qīng míng jié",
+     "pos": "n.",
+     "en": "Qingming Festival (Tomb-Sweeping Day, early April)",
+     "id": "dabu1-u2-7:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-1a",
+   "title": "大步1 U3.1 · 开个短会 A quick meeting · 1",
+   "words": [
+    {
+     "hanzi": "到齐",
+     "pinyin": "dào qí",
+     "pos": "v.",
+     "en": "to be all here, all arrive",
+     "id": "dabu1-u3-1:0"
+    },
+    {
+     "hanzi": "会",
+     "pinyin": "huì",
+     "pos": "n.",
+     "en": "meeting (开会 hold a meeting; 会上 at the meeting) (new meaning)",
+     "id": "dabu1-u3-1:1"
+    },
+    {
+     "hanzi": "开会",
+     "pinyin": "kāi huì",
+     "pos": "v.",
+     "en": "to have a meeting",
+     "id": "dabu1-u3-1:2"
+    },
+    {
+     "hanzi": "甲方",
+     "pinyin": "jiǎ fāng",
+     "pos": "n.",
+     "en": "the client ('party A' in a contract)",
+     "id": "dabu1-u3-1:3"
+    },
+    {
+     "hanzi": "乙方",
+     "pinyin": "yǐ fāng",
+     "pos": "n.",
+     "en": "the supplier, the agency ('party B')",
+     "id": "dabu1-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-1b",
+   "title": "大步1 U3.1 · 开个短会 A quick meeting · 2",
+   "words": [
+    {
+     "hanzi": "反馈",
+     "pinyin": "fǎn kuì",
+     "pos": "n./v.",
+     "en": "feedback; to give feedback",
+     "id": "dabu1-u3-1:5"
+    },
+    {
+     "hanzi": "主色调",
+     "pinyin": "zhǔ sè diào",
+     "pos": "n.",
+     "en": "main colour, dominant colour",
+     "id": "dabu1-u3-1:6"
+    },
+    {
+     "hanzi": "中秋",
+     "pinyin": "Zhōng qiū",
+     "pos": "n.",
+     "en": "Mid-Autumn (short for 中秋节)",
+     "id": "dabu1-u3-1:7"
+    },
+    {
+     "hanzi": "截止日期",
+     "pinyin": "jié zhǐ rì qī",
+     "pos": "n.",
+     "en": "deadline",
+     "id": "dabu1-u3-1:8",
+     "parts": [
+      "截止",
+      "日期"
+     ]
+    },
+    {
+     "hanzi": "印刷",
+     "pinyin": "yìn shuā",
+     "pos": "v./n.",
+     "en": "to print; printing",
+     "id": "dabu1-u3-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-1c",
+   "title": "大步1 U3.1 · 开个短会 A quick meeting · 3",
+   "words": [
+    {
+     "hanzi": "印刷厂",
+     "pinyin": "yìn shuā chǎng",
+     "pos": "n.",
+     "en": "printer's, printing works",
+     "id": "dabu1-u3-1:10"
+    },
+    {
+     "hanzi": "按照",
+     "pinyin": "àn zhào",
+     "pos": "prep.",
+     "en": "according to, following (a rule, request or plan)",
+     "id": "dabu1-u3-1:11"
+    },
+    {
+     "hanzi": "调",
+     "pinyin": "tiáo",
+     "pos": "v.",
+     "en": "to adjust (调一下 tweak it)",
+     "id": "dabu1-u3-1:12"
+    },
+    {
+     "hanzi": "调整",
+     "pinyin": "tiáo zhěng",
+     "pos": "v.",
+     "en": "to adjust",
+     "id": "dabu1-u3-1:13"
+    },
+    {
+     "hanzi": "根据",
+     "pinyin": "gēn jù",
+     "pos": "prep./n.",
+     "en": "on the basis of, according to (facts, data); basis",
+     "id": "dabu1-u3-2:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-2a",
+   "title": "大步1 U3.2 · 开个短会 A quick meeting · 1",
+   "words": [
+    {
+     "hanzi": "调查",
+     "pinyin": "diào chá",
+     "pos": "n./v.",
+     "en": "survey, investigation; to investigate",
+     "id": "dabu1-u3-2:1"
+    },
+    {
+     "hanzi": "版本",
+     "pinyin": "bǎn běn",
+     "pos": "n.",
+     "en": "version",
+     "id": "dabu1-u3-2:3"
+    },
+    {
+     "hanzi": "补充",
+     "pinyin": "bǔ chōng",
+     "pos": "v.",
+     "en": "to add (a point), supplement",
+     "id": "dabu1-u3-2:4"
+    },
+    {
+     "hanzi": "成本",
+     "pinyin": "chéng běn",
+     "pos": "n.",
+     "en": "cost",
+     "id": "dabu1-u3-2:5"
+    },
+    {
+     "hanzi": "对接",
+     "pinyin": "duì jiē",
+     "pos": "v.",
+     "en": "to liaise with, be the contact for",
+     "id": "dabu1-u3-2:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-2b",
+   "title": "大步1 U3.2 · 开个短会 A quick meeting · 2",
+   "words": [
+    {
+     "hanzi": "对接人",
+     "pinyin": "duì jiē rén",
+     "pos": "n.",
+     "en": "contact person",
+     "id": "dabu1-u3-2:7",
+     "parts": [
+      "对接",
+      "人"
+     ]
+    },
+    {
+     "hanzi": "交货",
+     "pinyin": "jiāo huò",
+     "pos": "v.",
+     "en": "to deliver (goods)",
+     "id": "dabu1-u3-2:8"
+    },
+    {
+     "hanzi": "整理",
+     "pinyin": "zhěng lǐ",
+     "pos": "v.",
+     "en": "to sort out, write up",
+     "id": "dabu1-u3-2:9"
+    },
+    {
+     "hanzi": "说一声",
+     "pinyin": "shuō yī shēng",
+     "pos": "phr.",
+     "en": "to let (someone) know, drop (someone) a line",
+     "id": "dabu1-u3-2:10"
+    },
+    {
+     "hanzi": "书面",
+     "pinyin": "shū miàn",
+     "pos": "adj.",
+     "en": "written, in writing",
+     "id": "dabu1-u3-2:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-3a",
+   "title": "大步1 U3.3 · 开个短会 A quick meeting · 1",
+   "words": [
+    {
+     "hanzi": "万一",
+     "pinyin": "wàn yī",
+     "pos": "conj.",
+     "en": "just in case, if by any chance",
+     "id": "dabu1-u3-2:12"
+    },
+    {
+     "hanzi": "已",
+     "pinyin": "yǐ",
+     "pos": "adv.",
+     "en": "already (written 已经)",
+     "id": "dabu1-u3-2:13"
+    },
+    {
+     "hanzi": "查收",
+     "pinyin": "chá shōu",
+     "pos": "v.",
+     "en": "to check and receive (请查收 please find attached)",
+     "id": "dabu1-u3-3:0"
+    },
+    {
+     "hanzi": "口语化",
+     "pinyin": "kǒu yǔ huà",
+     "pos": "adj.",
+     "en": "colloquial, too chatty",
+     "id": "dabu1-u3-3:1"
+    },
+    {
+     "hanzi": "参考",
+     "pinyin": "cān kǎo",
+     "pos": "v./n.",
+     "en": "to refer to, consult; reference",
+     "id": "dabu1-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-3b",
+   "title": "大步1 U3.3 · 开个短会 A quick meeting · 2",
+   "words": [
+    {
+     "hanzi": "结尾",
+     "pinyin": "jié wěi",
+     "pos": "n.",
+     "en": "ending, the end (of a letter)",
+     "id": "dabu1-u3-3:3"
+    },
+    {
+     "hanzi": "固定",
+     "pinyin": "gù dìng",
+     "pos": "adj.",
+     "en": "fixed, set",
+     "id": "dabu1-u3-3:4"
+    },
+    {
+     "hanzi": "说法",
+     "pinyin": "shuō fǎ",
+     "pos": "n.",
+     "en": "way of saying something, expression",
+     "id": "dabu1-u3-3:5"
+    },
+    {
+     "hanzi": "散会",
+     "pinyin": "sàn huì",
+     "pos": "v.",
+     "en": "to end a meeting (散会！ meeting over!)",
+     "id": "dabu1-u3-3:6"
+    },
+    {
+     "hanzi": "超时",
+     "pinyin": "chāo shí",
+     "pos": "v.",
+     "en": "to run over time",
+     "id": "dabu1-u3-3:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-3c",
+   "title": "大步1 U3.3 · 开个短会 A quick meeting · 3",
+   "words": [
+    {
+     "hanzi": "会议",
+     "pinyin": "huì yì",
+     "pos": "n.",
+     "en": "meeting, conference",
+     "id": "dabu1-u3-3:8"
+    },
+    {
+     "hanzi": "会议室",
+     "pinyin": "huì yì shì",
+     "pos": "n.",
+     "en": "meeting room",
+     "id": "dabu1-u3-3:9"
+    },
+    {
+     "hanzi": "会议纪要",
+     "pinyin": "huì yì jì yào",
+     "pos": "n.",
+     "en": "minutes (of a meeting)",
+     "id": "dabu1-u3-3:10"
+    },
+    {
+     "hanzi": "主持",
+     "pinyin": "zhǔ chí",
+     "pos": "v.",
+     "en": "to chair, host",
+     "id": "dabu1-u3-3:11"
+    },
+    {
+     "hanzi": "发言",
+     "pinyin": "fā yán",
+     "pos": "v./n.",
+     "en": "to speak (at a meeting); a speech",
+     "id": "dabu1-u3-3:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-4a",
+   "title": "大步1 U3.4 · 开个短会 A quick meeting · 1",
+   "words": [
+    {
+     "hanzi": "领导",
+     "pinyin": "lǐng dǎo",
+     "pos": "n./v.",
+     "en": "boss, manager, leader; to lead",
+     "id": "dabu1-u3-3:13"
+    },
+    {
+     "hanzi": "总经理",
+     "pinyin": "zǒng jīng lǐ",
+     "pos": "n.",
+     "en": "managing director, general manager",
+     "id": "dabu1-u3-4:1"
+    },
+    {
+     "hanzi": "宝贵",
+     "pinyin": "bǎo guì",
+     "pos": "adj.",
+     "en": "valuable, precious",
+     "id": "dabu1-u3-4:2"
+    },
+    {
+     "hanzi": "于",
+     "pinyin": "yú",
+     "pos": "prep.",
+     "en": "at, on, in (written 在: 于4月6日 on 6 April)",
+     "id": "dabu1-u3-4:3"
+    },
+    {
+     "hanzi": "关于",
+     "pinyin": "guān yú",
+     "pos": "prep.",
+     "en": "about, concerning",
+     "id": "dabu1-u3-4:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-4b",
+   "title": "大步1 U3.4 · 开个短会 A quick meeting · 2",
+   "words": [
+    {
+     "hanzi": "提出",
+     "pinyin": "tí chū",
+     "pos": "v.",
+     "en": "to put forward, raise",
+     "id": "dabu1-u3-4:4"
+    },
+    {
+     "hanzi": "就",
+     "pinyin": "jiù",
+     "pos": "prep.",
+     "en": "on, about (written: 就…召开会议 hold a meeting on…) (new meaning)",
+     "id": "dabu1-u3-4:5"
+    },
+    {
+     "hanzi": "召开",
+     "pinyin": "zhào kāi",
+     "pos": "v.",
+     "en": "to hold, convene (a meeting)",
+     "id": "dabu1-u3-4:6"
+    },
+    {
+     "hanzi": "专门",
+     "pinyin": "zhuān mén",
+     "pos": "adj./adv.",
+     "en": "special; especially, specifically",
+     "id": "dabu1-u3-4:7"
+    },
+    {
+     "hanzi": "将",
+     "pinyin": "jiāng",
+     "pos": "adv./prep.",
+     "en": "will (written 会); (written 把)",
+     "id": "dabu1-u3-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-4c",
+   "title": "大步1 U3.4 · 开个短会 A quick meeting · 3",
+   "words": [
+    {
+     "hanzi": "汇报",
+     "pinyin": "huì bào",
+     "pos": "v.",
+     "en": "to report (to a boss or client)",
+     "id": "dabu1-u3-4:9"
+    },
+    {
+     "hanzi": "适当",
+     "pinyin": "shì dàng",
+     "pos": "adj.",
+     "en": "appropriate, suitable",
+     "id": "dabu1-u3-4:11"
+    },
+    {
+     "hanzi": "市场",
+     "pinyin": "shì chǎng",
+     "pos": "n.",
+     "en": "market (市场调查 market research) (new meaning)",
+     "id": "dabu1-u3-4:12"
+    },
+    {
+     "hanzi": "供",
+     "pinyin": "gōng",
+     "pos": "v.",
+     "en": "for (someone) to (供您选择 for you to choose from)",
+     "id": "dabu1-u3-5:0"
+    },
+    {
+     "hanzi": "名称",
+     "pinyin": "míng chēng",
+     "pos": "n.",
+     "en": "name (of a thing or brand)",
+     "id": "dabu1-u3-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-5a",
+   "title": "大步1 U3.5 · 开个短会 A quick meeting · 1",
+   "words": [
+    {
+     "hanzi": "放大",
+     "pinyin": "fàng dà",
+     "pos": "v.",
+     "en": "to enlarge",
+     "id": "dabu1-u3-5:2"
+    },
+    {
+     "hanzi": "使",
+     "pinyin": "shǐ",
+     "pos": "v.",
+     "en": "to make, cause (written 让)",
+     "id": "dabu1-u3-5:3"
+    },
+    {
+     "hanzi": "更加",
+     "pinyin": "gèng jiā",
+     "pos": "adv.",
+     "en": "even more (written 更)",
+     "id": "dabu1-u3-5:4"
+    },
+    {
+     "hanzi": "醒目",
+     "pinyin": "xǐng mù",
+     "pos": "adj.",
+     "en": "eye-catching",
+     "id": "dabu1-u3-5:5"
+    },
+    {
+     "hanzi": "生产",
+     "pinyin": "shēng chǎn",
+     "pos": "v./n.",
+     "en": "to produce; production",
+     "id": "dabu1-u3-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-5b",
+   "title": "大步1 U3.5 · 开个短会 A quick meeting · 2",
+   "words": [
+    {
+     "hanzi": "另行",
+     "pinyin": "lìng xíng",
+     "pos": "adv.",
+     "en": "separately, at another time (written)",
+     "id": "dabu1-u3-5:7"
+    },
+    {
+     "hanzi": "本",
+     "pinyin": "běn",
+     "pos": "pron.",
+     "en": "this, our (written: 本次 this time) (new meaning)",
+     "id": "dabu1-u3-5:8"
+    },
+    {
+     "hanzi": "建议",
+     "pinyin": "jiàn yì",
+     "pos": "v./n.",
+     "en": "to suggest; suggestion",
+     "id": "dabu1-u3-5:9"
+    },
+    {
+     "hanzi": "双方",
+     "pinyin": "shuāng fāng",
+     "pos": "n.",
+     "en": "both sides, both parties",
+     "id": "dabu1-u3-5:10"
+    },
+    {
+     "hanzi": "视频会议",
+     "pinyin": "shì pín huì yì",
+     "pos": "n.",
+     "en": "video conference",
+     "id": "dabu1-u3-5:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-6a",
+   "title": "大步1 U3.6 · 开个短会 A quick meeting · 1",
+   "words": [
+    {
+     "hanzi": "进行",
+     "pinyin": "jìn xíng",
+     "pos": "v.",
+     "en": "to carry out, conduct",
+     "id": "dabu1-u3-5:12"
+    },
+    {
+     "hanzi": "可",
+     "pinyin": "kě",
+     "pos": "v.",
+     "en": "can, may (written 可以) (new meaning)",
+     "id": "dabu1-u3-6:0"
+    },
+    {
+     "hanzi": "如",
+     "pinyin": "rú",
+     "pos": "conj.",
+     "en": "if (written: 如有问题 if you have any questions)",
+     "id": "dabu1-u3-6:1"
+    },
+    {
+     "hanzi": "如下",
+     "pinyin": "rú xià",
+     "pos": "phr.",
+     "en": "as follows",
+     "id": "dabu1-u3-4:10"
+    },
+    {
+     "hanzi": "任何",
+     "pinyin": "rèn hé",
+     "pos": "pron.",
+     "en": "any",
+     "id": "dabu1-u3-6:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-6b",
+   "title": "大步1 U3.6 · 开个短会 A quick meeting · 2",
+   "words": [
+    {
+     "hanzi": "随时",
+     "pinyin": "suí shí",
+     "pos": "adv.",
+     "en": "at any time",
+     "id": "dabu1-u3-6:3"
+    },
+    {
+     "hanzi": "信任",
+     "pinyin": "xìn rèn",
+     "pos": "v./n.",
+     "en": "to trust; trust",
+     "id": "dabu1-u3-6:4"
+    },
+    {
+     "hanzi": "继续",
+     "pinyin": "jì xù",
+     "pos": "v.",
+     "en": "to continue, carry on",
+     "id": "dabu1-u3-6:5"
+    },
+    {
+     "hanzi": "此致",
+     "pinyin": "cǐ zhì",
+     "pos": "phr.",
+     "en": "(closing a formal letter) with this I convey…",
+     "id": "dabu1-u3-6:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u3-6c",
+   "title": "大步1 U3.6 · 开个短会 A quick meeting · 3",
+   "words": [
+    {
+     "hanzi": "敬礼",
+     "pinyin": "jìng lǐ",
+     "pos": "phr.",
+     "en": "(on the line after 此致) respectful greetings",
+     "id": "dabu1-u3-6:7"
+    },
+    {
+     "hanzi": "抄送",
+     "pinyin": "chāo sòng",
+     "pos": "v.",
+     "en": "to cc",
+     "id": "dabu1-u3-6:8"
+    },
+    {
+     "hanzi": "转发",
+     "pinyin": "zhuǎn fā",
+     "pos": "v.",
+     "en": "to forward",
+     "id": "dabu1-u3-6:9"
+    },
+    {
+     "hanzi": "收件人",
+     "pinyin": "shōu jiàn rén",
+     "pos": "n.",
+     "en": "recipient",
+     "id": "dabu1-u3-6:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-1a",
+   "title": "大步1 U4.1 · 跳槽还是坚持？ Move on or stay put? · 1",
+   "words": [
+    {
+     "hanzi": "猎头",
+     "pinyin": "liè tóu",
+     "pos": "n.",
+     "en": "headhunter",
+     "id": "dabu1-u4-1:0"
+    },
+    {
+     "hanzi": "应用",
+     "pinyin": "yìng yòng",
+     "pos": "n./v.",
+     "en": "app, application; to apply",
+     "id": "dabu1-u4-1:1"
+    },
+    {
+     "hanzi": "界面",
+     "pinyin": "jiè miàn",
+     "pos": "n.",
+     "en": "interface, screen layout",
+     "id": "dabu1-u4-1:2"
+    },
+    {
+     "hanzi": "犹豫",
+     "pinyin": "yóu yù",
+     "pos": "v.",
+     "en": "to hesitate",
+     "id": "dabu1-u4-1:3"
+    },
+    {
+     "hanzi": "与其",
+     "pinyin": "yǔ qí",
+     "pos": "phr.",
+     "en": "rather than … it's better to … (与其…不如…)",
+     "id": "dabu1-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-1b",
+   "title": "大步1 U4.1 · 跳槽还是坚持？ Move on or stay put? · 2",
+   "words": [
+    {
+     "hanzi": "话是这么说",
+     "pinyin": "huà shì zhè me shuō",
+     "pos": "phr.",
+     "en": "that's all very well, but…",
+     "id": "dabu1-u4-1:5",
+     "parts": [
+      "话",
+      "是",
+      "这么",
+      "说"
+     ]
+    },
+    {
+     "hanzi": "攒钱",
+     "pinyin": "zǎn qián",
+     "pos": "v.",
+     "en": "to save money, save up",
+     "id": "dabu1-u4-1:6"
+    },
+    {
+     "hanzi": "买房",
+     "pinyin": "mǎi fáng",
+     "pos": "v.",
+     "en": "to buy a flat, buy property",
+     "id": "dabu1-u4-1:7"
+    },
+    {
+     "hanzi": "跳槽",
+     "pinyin": "tiào cáo",
+     "pos": "v.",
+     "en": "to change jobs, move to another company",
+     "id": "dabu1-u4-1:8"
+    },
+    {
+     "hanzi": "三心二意",
+     "pinyin": "sān xīn èr yì",
+     "pos": "phr.",
+     "en": "half-hearted, unable to settle on one thing",
+     "id": "dabu1-u4-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-1c",
+   "title": "大步1 U4.1 · 跳槽还是坚持？ Move on or stay put? · 3",
+   "words": [
+    {
+     "hanzi": "宁可",
+     "pinyin": "nìng kě",
+     "pos": "phr.",
+     "en": "would rather … (and put up with the cost) (宁可…也…)",
+     "id": "dabu1-u4-1:10"
+    },
+    {
+     "hanzi": "宁愿",
+     "pinyin": "nìng yuàn",
+     "pos": "adv.",
+     "en": "would rather",
+     "id": "dabu1-u4-1:11"
+    },
+    {
+     "hanzi": "挣",
+     "pinyin": "zhèng",
+     "pos": "v.",
+     "en": "to earn",
+     "id": "dabu1-u4-1:12"
+    },
+    {
+     "hanzi": "房价",
+     "pinyin": "fáng jià",
+     "pos": "n.",
+     "en": "house prices, property prices",
+     "id": "dabu1-u4-2:0"
+    },
+    {
+     "hanzi": "时代",
+     "pinyin": "shí dài",
+     "pos": "n.",
+     "en": "times, era",
+     "id": "dabu1-u4-2:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-2a",
+   "title": "大步1 U4.2 · 跳槽还是坚持？ Move on or stay put? · 1",
+   "words": [
+    {
+     "hanzi": "谈",
+     "pinyin": "tán",
+     "pos": "v.",
+     "en": "to talk, discuss (谈成 reach a deal)",
+     "id": "dabu1-u4-2:2"
+    },
+    {
+     "hanzi": "一举两得",
+     "pinyin": "yī jǔ liǎng dé",
+     "pos": "phr.",
+     "en": "to kill two birds with one stone",
+     "id": "dabu1-u4-2:3"
+    },
+    {
+     "hanzi": "开口",
+     "pinyin": "kāi kǒu",
+     "pos": "v.",
+     "en": "to open your mouth, bring something up (开不了口 can't bring yourself to say it)",
+     "id": "dabu1-u4-2:4"
+    },
+    {
+     "hanzi": "心里有数",
+     "pinyin": "xīn li yǒu shù",
+     "pos": "phr.",
+     "en": "to know full well",
+     "id": "dabu1-u4-2:5"
+    },
+    {
+     "hanzi": "半途而废",
+     "pinyin": "bàn tú ér fèi",
+     "pos": "phr.",
+     "en": "to give up halfway",
+     "id": "dabu1-u4-2:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-2b",
+   "title": "大步1 U4.2 · 跳槽还是坚持？ Move on or stay put? · 2",
+   "words": [
+    {
+     "hanzi": "纠结",
+     "pinyin": "jiū jié",
+     "pos": "adj./v.",
+     "en": "torn, agonising; to agonise over",
+     "id": "dabu1-u4-2:7"
+    },
+    {
+     "hanzi": "生气",
+     "pinyin": "shēng qì",
+     "pos": "v./adj.",
+     "en": "to get angry; angry",
+     "id": "dabu1-u4-2:8"
+    },
+    {
+     "hanzi": "后悔",
+     "pinyin": "hòu huǐ",
+     "pos": "v.",
+     "en": "to regret",
+     "id": "dabu1-u4-2:9"
+    },
+    {
+     "hanzi": "成语",
+     "pinyin": "chéng yǔ",
+     "pos": "n.",
+     "en": "set phrase, four-character idiom",
+     "id": "dabu1-u4-2:10"
+    },
+    {
+     "hanzi": "一心一意",
+     "pinyin": "yī xīn yī yì",
+     "pos": "phr.",
+     "en": "wholeheartedly",
+     "id": "dabu1-u4-2:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-3a",
+   "title": "大步1 U4.3 · 跳槽还是坚持？ Move on or stay put? · 1",
+   "words": [
+    {
+     "hanzi": "弄堂",
+     "pinyin": "lòng táng",
+     "pos": "n.",
+     "en": "lane, alley (in Shanghai)",
+     "id": "dabu1-u4-2:12"
+    },
+    {
+     "hanzi": "面馆",
+     "pinyin": "miàn guǎn",
+     "pos": "n.",
+     "en": "noodle shop",
+     "id": "dabu1-u4-3:0"
+    },
+    {
+     "hanzi": "公寓",
+     "pinyin": "gōng yù",
+     "pos": "n.",
+     "en": "flat, apartment",
+     "id": "dabu1-u4-3:1"
+    },
+    {
+     "hanzi": "租",
+     "pinyin": "zū",
+     "pos": "v.",
+     "en": "to rent",
+     "id": "dabu1-u4-3:2"
+    },
+    {
+     "hanzi": "间",
+     "pinyin": "jiān",
+     "pos": "m.",
+     "en": "for rooms (一间房 a room)",
+     "id": "dabu1-u4-3:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-3b",
+   "title": "大步1 U4.3 · 跳槽还是坚持？ Move on or stay put? · 2",
+   "words": [
+    {
+     "hanzi": "辞职",
+     "pinyin": "cí zhí",
+     "pos": "v.",
+     "en": "to resign",
+     "id": "dabu1-u4-3:5"
+    },
+    {
+     "hanzi": "稳定",
+     "pinyin": "wěn dìng",
+     "pos": "adj.",
+     "en": "stable, steady",
+     "id": "dabu1-u4-3:6"
+    },
+    {
+     "hanzi": "铁饭碗",
+     "pinyin": "tiě fàn wǎn",
+     "pos": "n.",
+     "en": "'iron rice bowl', a job for life",
+     "id": "dabu1-u4-3:7"
+    },
+    {
+     "hanzi": "创业",
+     "pinyin": "chuàng yè",
+     "pos": "v.",
+     "en": "to start a business",
+     "id": "dabu1-u4-3:8"
+    },
+    {
+     "hanzi": "职业",
+     "pinyin": "zhí yè",
+     "pos": "n.",
+     "en": "occupation, career",
+     "id": "dabu1-u4-3:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-4a",
+   "title": "大步1 U4.4 · 跳槽还是坚持？ Move on or stay put? · 1",
+   "words": [
+    {
+     "hanzi": "自由职业",
+     "pinyin": "zì yóu zhí yè",
+     "pos": "n.",
+     "en": "freelancing",
+     "id": "dabu1-u4-3:9"
+    },
+    {
+     "hanzi": "朋友圈",
+     "pinyin": "péng you quān",
+     "pos": "n.",
+     "en": "WeChat Moments",
+     "id": "dabu1-u4-4:0"
+    },
+    {
+     "hanzi": "心动",
+     "pinyin": "xīn dòng",
+     "pos": "v.",
+     "en": "to be tempted",
+     "id": "dabu1-u4-4:1"
+    },
+    {
+     "hanzi": "哪样",
+     "pinyin": "nǎ yàng",
+     "pos": "pron.",
+     "en": "which, what (哪样不要钱？ what doesn't cost money?)",
+     "id": "dabu1-u4-4:3"
+    },
+    {
+     "hanzi": "劝",
+     "pinyin": "quàn",
+     "pos": "v.",
+     "en": "to urge, advise, try to persuade",
+     "id": "dabu1-u4-4:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-4b",
+   "title": "大步1 U4.4 · 跳槽还是坚持？ Move on or stay put? · 2",
+   "words": [
+    {
+     "hanzi": "趁",
+     "pinyin": "chèn",
+     "pos": "prep.",
+     "en": "while, taking the chance (趁年轻 while you're young)",
+     "id": "dabu1-u4-4:5"
+    },
+    {
+     "hanzi": "冷静",
+     "pinyin": "lěng jìng",
+     "pos": "adj./v.",
+     "en": "calm; to calm down",
+     "id": "dabu1-u4-4:6"
+    },
+    {
+     "hanzi": "一致",
+     "pinyin": "yī zhì",
+     "pos": "adj.",
+     "en": "consistent, in line",
+     "id": "dabu1-u4-4:7"
+    },
+    {
+     "hanzi": "属于",
+     "pinyin": "shǔ yú",
+     "pos": "v.",
+     "en": "to belong to",
+     "id": "dabu1-u4-4:8"
+    },
+    {
+     "hanzi": "按钮",
+     "pinyin": "àn niǔ",
+     "pos": "n.",
+     "en": "button",
+     "id": "dabu1-u4-4:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-5a",
+   "title": "大步1 U4.5 · 跳槽还是坚持？ Move on or stay put? · 1",
+   "words": [
+    {
+     "hanzi": "收入",
+     "pinyin": "shōu rù",
+     "pos": "n.",
+     "en": "income",
+     "id": "dabu1-u4-4:10"
+    },
+    {
+     "hanzi": "领域",
+     "pinyin": "lǐng yù",
+     "pos": "n.",
+     "en": "field, area",
+     "id": "dabu1-u4-5:0"
+    },
+    {
+     "hanzi": "光",
+     "pinyin": "guāng",
+     "pos": "adv.",
+     "en": "only, just (光有热爱 love alone)",
+     "id": "dabu1-u4-5:1"
+    },
+    {
+     "hanzi": "热爱",
+     "pinyin": "rè ài",
+     "pos": "v./n.",
+     "en": "to love (a job, a cause); passion",
+     "id": "dabu1-u4-5:2"
+    },
+    {
+     "hanzi": "鼓起勇气",
+     "pinyin": "gǔ qǐ yǒng qì",
+     "pos": "phr.",
+     "en": "to pluck up courage",
+     "id": "dabu1-u4-5:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-5b",
+   "title": "大步1 U4.5 · 跳槽还是坚持？ Move on or stay put? · 2",
+   "words": [
+    {
+     "hanzi": "勇气",
+     "pinyin": "yǒng qì",
+     "pos": "n.",
+     "en": "courage",
+     "id": "dabu1-u4-5:4"
+    },
+    {
+     "hanzi": "本身",
+     "pinyin": "běn shēn",
+     "pos": "n.",
+     "en": "itself, in itself",
+     "id": "dabu1-u4-5:5"
+    },
+    {
+     "hanzi": "烦",
+     "pinyin": "fán",
+     "pos": "adj.",
+     "en": "fed up, annoyed",
+     "id": "dabu1-u4-5:6"
+    },
+    {
+     "hanzi": "大胆",
+     "pinyin": "dà dǎn",
+     "pos": "adj.",
+     "en": "bold, brave",
+     "id": "dabu1-u4-5:7"
+    },
+    {
+     "hanzi": "至于",
+     "pinyin": "zhì yú",
+     "pos": "prep.",
+     "en": "as for",
+     "id": "dabu1-u4-5:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu1-u4-5c",
+   "title": "大步1 U4.5 · 跳槽还是坚持？ Move on or stay put? · 3",
+   "words": [
+    {
+     "hanzi": "而",
+     "pinyin": "ér",
+     "pos": "conj.",
+     "en": "and, but (written; 为了…而… in order to)",
+     "id": "dabu1-u4-5:9"
+    },
+    {
+     "hanzi": "仓库",
+     "pinyin": "cāng kù",
+     "pos": "",
+     "en": "warehouse",
+     "id": "dabu1-u4-5:10"
+    },
+    {
+     "hanzi": "葱油拌面",
+     "pinyin": "cōng yóu bàn miàn",
+     "pos": "",
+     "en": "noodles with scallion oil, a Shanghai favourite",
+     "id": "dabu1-u4-5:11"
+    },
+    {
+     "hanzi": "江",
+     "pinyin": "jiāng",
+     "pos": "",
+     "en": "(big) river",
+     "id": "dabu1-u4-5:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-1a",
+   "title": "大步2 U1.1 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "侬",
+     "pinyin": "nóng",
+     "pos": "pron.",
+     "en": "you (Shanghainese: 侬好 hello)",
+     "id": "dabu2-u1-1:1"
+    },
+    {
+     "hanzi": "当心",
+     "pinyin": "dāng xīn",
+     "pos": "v.",
+     "en": "to watch out, mind (当心头 mind your head)",
+     "id": "dabu2-u1-1:2"
+    },
+    {
+     "hanzi": "窄",
+     "pinyin": "zhǎi",
+     "pos": "adj.",
+     "en": "narrow",
+     "id": "dabu2-u1-1:3"
+    },
+    {
+     "hanzi": "木头",
+     "pinyin": "mù tou",
+     "pos": "n.",
+     "en": "wood",
+     "id": "dabu2-u1-1:4"
+    },
+    {
+     "hanzi": "阿拉",
+     "pinyin": "ā lā",
+     "pos": "pron.",
+     "en": "we, us; I (Shanghainese)",
+     "id": "dabu2-u1-1:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-1b",
+   "title": "大步2 U1.1 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "代",
+     "pinyin": "dài",
+     "pos": "m./n.",
+     "en": "generation (三代人 three generations)",
+     "id": "dabu2-u1-1:6"
+    },
+    {
+     "hanzi": "朝",
+     "pinyin": "cháo",
+     "pos": "prep./v.",
+     "en": "towards; to face (朝南 face south)",
+     "id": "dabu2-u1-1:7"
+    },
+    {
+     "hanzi": "朝南",
+     "pinyin": "cháo nán",
+     "pos": "adj.",
+     "en": "south-facing",
+     "id": "dabu2-u1-1:8"
+    },
+    {
+     "hanzi": "梧桐",
+     "pinyin": "wú tóng",
+     "pos": "n.",
+     "en": "plane tree, parasol tree (in names: 法国梧桐)",
+     "id": "dabu2-u1-1:10"
+    },
+    {
+     "hanzi": "梧桐树",
+     "pinyin": "wú tóng shù",
+     "pos": "n.",
+     "en": "plane tree (in Shanghai, the 'French plane'); parasol tree",
+     "id": "dabu2-u1-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-1c",
+   "title": "大步2 U1.1 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "挡",
+     "pinyin": "dǎng",
+     "pos": "v.",
+     "en": "to block, keep off",
+     "id": "dabu2-u1-1:11"
+    },
+    {
+     "hanzi": "叶子",
+     "pinyin": "yè zi",
+     "pos": "n.",
+     "en": "leaf",
+     "id": "dabu2-u1-1:12"
+    },
+    {
+     "hanzi": "光",
+     "pinyin": "guāng",
+     "pos": "adj.",
+     "en": "used up, all gone (掉光了 all fallen) (new meaning)",
+     "id": "dabu2-u1-1:13"
+    },
+    {
+     "hanzi": "毛病",
+     "pinyin": "máo bìng",
+     "pos": "n.",
+     "en": "fault, problem, bad habit",
+     "id": "dabu2-u1-2:0"
+    },
+    {
+     "hanzi": "隔音",
+     "pinyin": "gé yīn",
+     "pos": "n./v.",
+     "en": "soundproofing; to keep out noise (隔音一般 you can hear the neighbours)",
+     "id": "dabu2-u1-2:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-2a",
+   "title": "大步2 U1.2 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "卫生间",
+     "pinyin": "wèi shēng jiān",
+     "pos": "n.",
+     "en": "bathroom",
+     "id": "dabu2-u1-2:2"
+    },
+    {
+     "hanzi": "合用",
+     "pinyin": "hé yòng",
+     "pos": "v.",
+     "en": "to share (a kitchen, a bathroom)",
+     "id": "dabu2-u1-2:3"
+    },
+    {
+     "hanzi": "另",
+     "pinyin": "lìng",
+     "pos": "pron./adv.",
+     "en": "other, another (另一间 the other room); separately (另算 charged separately)",
+     "id": "dabu2-u1-2:4"
+    },
+    {
+     "hanzi": "夜班",
+     "pinyin": "yè bān",
+     "pos": "n.",
+     "en": "night shift (上夜班 work nights)",
+     "id": "dabu2-u1-2:5"
+    },
+    {
+     "hanzi": "押",
+     "pinyin": "yā",
+     "pos": "v.",
+     "en": "to leave as a deposit",
+     "id": "dabu2-u1-2:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-2b",
+   "title": "大步2 U1.2 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "押一付三",
+     "pinyin": "yā yī fù sān",
+     "pos": "phr.",
+     "en": "one month's deposit and three months' rent up front",
+     "id": "dabu2-u1-2:6",
+     "parts": [
+      "押",
+      "一",
+      "付",
+      "三"
+     ]
+    },
+    {
+     "hanzi": "水电煤",
+     "pinyin": "shuǐ diàn méi",
+     "pos": "n.",
+     "en": "water, electricity and gas (the bills)",
+     "id": "dabu2-u1-2:8"
+    },
+    {
+     "hanzi": "包",
+     "pinyin": "bāo",
+     "pos": "v.",
+     "en": "to cover, take care of (the cost) (网费我包了 I'll pay the internet) (new meaning)",
+     "id": "dabu2-u1-2:9"
+    },
+    {
+     "hanzi": "网费",
+     "pinyin": "wǎng fèi",
+     "pos": "n.",
+     "en": "internet bill",
+     "id": "dabu2-u1-2:10"
+    },
+    {
+     "hanzi": "费",
+     "pinyin": "fèi",
+     "pos": "n.",
+     "en": "fee, charge, bill",
+     "id": "dabu2-u1-2:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-3a",
+   "title": "大步2 U1.3 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "中介",
+     "pinyin": "zhōng jiè",
+     "pos": "n.",
+     "en": "(estate) agent, letting agency",
+     "id": "dabu2-u1-2:12"
+    },
+    {
+     "hanzi": "中介费",
+     "pinyin": "zhōng jiè fèi",
+     "pos": "n.",
+     "en": "agent's fee",
+     "id": "dabu2-u1-2:13"
+    },
+    {
+     "hanzi": "省",
+     "pinyin": "shěng",
+     "pos": "v.",
+     "en": "to save (money, time)",
+     "id": "dabu2-u1-3:0"
+    },
+    {
+     "hanzi": "算下来",
+     "pinyin": "suàn xià lái",
+     "pos": "phr.",
+     "en": "all told, when you add it up",
+     "id": "dabu2-u1-3:1"
+    },
+    {
+     "hanzi": "规矩",
+     "pinyin": "guī ju",
+     "pos": "n.",
+     "en": "rule, custom, the way things are done",
+     "id": "dabu2-u1-3:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-3b",
+   "title": "大步2 U1.3 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "套",
+     "pinyin": "tào",
+     "pos": "m.",
+     "en": "for flats (一套公寓 a flat) (new meaning)",
+     "id": "dabu2-u1-3:3"
+    },
+    {
+     "hanzi": "小区",
+     "pinyin": "xiǎo qū",
+     "pos": "n.",
+     "en": "housing estate, residential compound",
+     "id": "dabu2-u1-3:4"
+    },
+    {
+     "hanzi": "层",
+     "pinyin": "céng",
+     "pos": "m.",
+     "en": "floor, storey (二十几层 the twenty-somethingth floor)",
+     "id": "dabu2-u1-3:5"
+    },
+    {
+     "hanzi": "对着",
+     "pinyin": "duì zhe",
+     "pos": "v.",
+     "en": "to face, look onto",
+     "id": "dabu2-u1-3:6",
+     "parts": [
+      "对",
+      "着"
+     ]
+    },
+    {
+     "hanzi": "各有各的",
+     "pinyin": "gè yǒu gè de",
+     "pos": "phr.",
+     "en": "each has its own (各有各的好 each has its good points)",
+     "id": "dabu2-u1-3:7",
+     "parts": [
+      "各",
+      "有",
+      "的"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-3c",
+   "title": "大步2 U1.3 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "味道",
+     "pinyin": "wèi dao",
+     "pos": "n.",
+     "en": "character, charm, atmosphere (有味道 has character) (new meaning)",
+     "id": "dabu2-u1-3:8"
+    },
+    {
+     "hanzi": "倒是",
+     "pinyin": "dào shì",
+     "pos": "phr.",
+     "en": "… is fine, it's just that … (倒是…就是…)",
+     "id": "dabu2-u1-3:9",
+     "parts": [
+      "倒",
+      "是"
+     ]
+    },
+    {
+     "hanzi": "不到哪里去",
+     "pinyin": "bù dào nǎ li qù",
+     "pos": "phr.",
+     "en": "(after an adjective) not all that … (冷不到哪里去 not that cold)",
+     "id": "dabu2-u1-3:10",
+     "parts": [
+      "哪里",
+      "去"
+     ]
+    },
+    {
+     "hanzi": "房东",
+     "pinyin": "fáng dōng",
+     "pos": "n.",
+     "en": "landlord, landlady",
+     "id": "dabu2-u1-3:11"
+    },
+    {
+     "hanzi": "打着灯笼都难找",
+     "pinyin": "dǎ zhe dēng long dōu nán zhǎo",
+     "pos": "phr.",
+     "en": "you couldn't find one with a lantern: very rare",
+     "id": "dabu2-u1-3:12",
+     "parts": [
+      "都",
+      "难",
+      "找"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-4a",
+   "title": "大步2 U1.4 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "签",
+     "pinyin": "qiān",
+     "pos": "v.",
+     "en": "to sign",
+     "id": "dabu2-u1-3:13"
+    },
+    {
+     "hanzi": "合同",
+     "pinyin": "hé tong",
+     "pos": "n.",
+     "en": "contract",
+     "id": "dabu2-u1-4:0"
+    },
+    {
+     "hanzi": "看房",
+     "pinyin": "kàn fáng",
+     "pos": "v.",
+     "en": "to view a flat or room",
+     "id": "dabu2-u1-4:1",
+     "parts": [
+      "看",
+      "房"
+     ]
+    },
+    {
+     "hanzi": "记",
+     "pinyin": "jì",
+     "pos": "n.",
+     "en": "account, record (in titles: 租房记 a renting story)",
+     "id": "dabu2-u1-4:2"
+    },
+    {
+     "hanzi": "大概",
+     "pinyin": "dà gài",
+     "pos": "adv.",
+     "en": "about, probably",
+     "id": "dabu2-u1-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-4b",
+   "title": "大步2 U1.4 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "老洋房",
+     "pinyin": "lǎo yáng fáng",
+     "pos": "n.",
+     "en": "old Western-style house (in Shanghai, mostly from the 1920s–40s)",
+     "id": "dabu2-u1-4:4"
+    },
+    {
+     "hanzi": "高楼",
+     "pinyin": "gāo lóu",
+     "pos": "n.",
+     "en": "tall building, high-rise",
+     "id": "dabu2-u1-4:5"
+    },
+    {
+     "hanzi": "卧室",
+     "pinyin": "wò shì",
+     "pos": "n.",
+     "en": "bedroom",
+     "id": "dabu2-u1-4:6"
+    },
+    {
+     "hanzi": "客厅",
+     "pinyin": "kè tīng",
+     "pos": "n.",
+     "en": "living room",
+     "id": "dabu2-u1-4:7"
+    },
+    {
+     "hanzi": "家具",
+     "pinyin": "jiā jù",
+     "pos": "n.",
+     "en": "furniture",
+     "id": "dabu2-u1-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-4c",
+   "title": "大步2 U1.4 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "搬家",
+     "pinyin": "bān jiā",
+     "pos": "v.",
+     "en": "to move house",
+     "id": "dabu2-u1-4:9"
+    },
+    {
+     "hanzi": "整租",
+     "pinyin": "zhěng zū",
+     "pos": "v.",
+     "en": "to rent a whole flat",
+     "id": "dabu2-u1-4:10",
+     "parts": [
+      "整",
+      "租"
+     ]
+    },
+    {
+     "hanzi": "合租",
+     "pinyin": "hé zū",
+     "pos": "v.",
+     "en": "to share a flat, rent a room in a shared flat",
+     "id": "dabu2-u1-4:11"
+    },
+    {
+     "hanzi": "通勤",
+     "pinyin": "tōng qín",
+     "pos": "v./n.",
+     "en": "to commute; commute",
+     "id": "dabu2-u1-4:12"
+    },
+    {
+     "hanzi": "划算",
+     "pinyin": "huá suàn",
+     "pos": "adj.",
+     "en": "good value, worth it",
+     "id": "dabu2-u1-4:13"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-5a",
+   "title": "大步2 U1.5 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "房屋",
+     "pinyin": "fáng wū",
+     "pos": "n.",
+     "en": "house, property (formal)",
+     "id": "dabu2-u1-5:0"
+    },
+    {
+     "hanzi": "租赁",
+     "pinyin": "zū lìn",
+     "pos": "v.",
+     "en": "to lease, rent (formal)",
+     "id": "dabu2-u1-5:1"
+    },
+    {
+     "hanzi": "节选",
+     "pinyin": "jié xuǎn",
+     "pos": "n.",
+     "en": "extract, excerpt",
+     "id": "dabu2-u1-5:2"
+    },
+    {
+     "hanzi": "出租",
+     "pinyin": "chū zū",
+     "pos": "v.",
+     "en": "to let, rent out",
+     "id": "dabu2-u1-5:3"
+    },
+    {
+     "hanzi": "承租",
+     "pinyin": "chéng zū",
+     "pos": "v.",
+     "en": "to rent, take a lease on (formal)",
+     "id": "dabu2-u1-5:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-5b",
+   "title": "大步2 U1.5 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "方",
+     "pinyin": "fāng",
+     "pos": "n.",
+     "en": "side, party (出租方 the landlord; 承租方 the tenant)",
+     "id": "dabu2-u1-5:5"
+    },
+    {
+     "hanzi": "经",
+     "pinyin": "jīng",
+     "pos": "prep.",
+     "en": "after, through (written: 经协商 after discussion)",
+     "id": "dabu2-u1-5:6"
+    },
+    {
+     "hanzi": "友好",
+     "pinyin": "yǒu hǎo",
+     "pos": "adj.",
+     "en": "friendly",
+     "id": "dabu2-u1-5:7"
+    },
+    {
+     "hanzi": "协商",
+     "pinyin": "xié shāng",
+     "pos": "v.",
+     "en": "to discuss and agree, negotiate",
+     "id": "dabu2-u1-5:8"
+    },
+    {
+     "hanzi": "租用",
+     "pinyin": "zū yòng",
+     "pos": "v.",
+     "en": "to rent, hire",
+     "id": "dabu2-u1-5:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-5c",
+   "title": "大步2 U1.5 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "达成",
+     "pinyin": "dá chéng",
+     "pos": "v.",
+     "en": "to reach (an agreement)",
+     "id": "dabu2-u1-5:10"
+    },
+    {
+     "hanzi": "协议",
+     "pinyin": "xié yì",
+     "pos": "n.",
+     "en": "agreement",
+     "id": "dabu2-u1-5:11"
+    },
+    {
+     "hanzi": "市",
+     "pinyin": "shì",
+     "pos": "n.",
+     "en": "city (上海市 the City of Shanghai)",
+     "id": "dabu2-u1-5:12"
+    },
+    {
+     "hanzi": "某",
+     "pinyin": "mǒu",
+     "pos": "pron.",
+     "en": "a certain, such-and-such (某弄某号 No. —, Lane —)",
+     "id": "dabu2-u1-5:13"
+    },
+    {
+     "hanzi": "弄",
+     "pinyin": "lòng",
+     "pos": "n.",
+     "en": "lane (in Shanghai addresses) (new meaning)",
+     "id": "dabu2-u1-6:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-6a",
+   "title": "大步2 U1.6 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "面积",
+     "pinyin": "miàn jī",
+     "pos": "n.",
+     "en": "area, size",
+     "id": "dabu2-u1-6:1"
+    },
+    {
+     "hanzi": "约",
+     "pinyin": "yuē",
+     "pos": "adv.",
+     "en": "about, approximately (written 大概) (new meaning)",
+     "id": "dabu2-u1-6:2"
+    },
+    {
+     "hanzi": "平方米",
+     "pinyin": "píng fāng mǐ",
+     "pos": "m.",
+     "en": "square metre",
+     "id": "dabu2-u1-6:3"
+    },
+    {
+     "hanzi": "租客",
+     "pinyin": "zū kè",
+     "pos": "n.",
+     "en": "tenant",
+     "id": "dabu2-u1-6:4"
+    },
+    {
+     "hanzi": "自",
+     "pinyin": "zì",
+     "pos": "phr.",
+     "en": "from … on (written) (自…起)",
+     "id": "dabu2-u1-6:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-6b",
+   "title": "大步2 U1.6 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "止",
+     "pinyin": "zhǐ",
+     "pos": "v.",
+     "en": "to end, stop (至…止 until …)",
+     "id": "dabu2-u1-6:7"
+    },
+    {
+     "hanzi": "共",
+     "pinyin": "gòng",
+     "pos": "adv.",
+     "en": "in all, altogether (written 一共)",
+     "id": "dabu2-u1-6:8"
+    },
+    {
+     "hanzi": "租金",
+     "pinyin": "zū jīn",
+     "pos": "n.",
+     "en": "rent (formal 房租)",
+     "id": "dabu2-u1-6:9"
+    },
+    {
+     "hanzi": "即",
+     "pinyin": "jí",
+     "pos": "adv.",
+     "en": "that is, namely (written)",
+     "id": "dabu2-u1-6:10"
+    },
+    {
+     "hanzi": "须",
+     "pinyin": "xū",
+     "pos": "v.",
+     "en": "must (written 必须)",
+     "id": "dabu2-u1-6:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-6c",
+   "title": "大步2 U1.6 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "期",
+     "pinyin": "qī",
+     "pos": "n./m.",
+     "en": "period, instalment, phase",
+     "id": "dabu2-u1-6:12"
+    },
+    {
+     "hanzi": "租期",
+     "pinyin": "zū qī",
+     "pos": "n.",
+     "en": "tenancy, term of a lease",
+     "id": "dabu2-u1-6:5"
+    },
+    {
+     "hanzi": "付清",
+     "pinyin": "fù qīng",
+     "pos": "v.",
+     "en": "to pay in full, pay off",
+     "id": "dabu2-u1-6:13"
+    },
+    {
+     "hanzi": "费用",
+     "pinyin": "fèi yòng",
+     "pos": "n.",
+     "en": "costs, charges",
+     "id": "dabu2-u1-7:0"
+    },
+    {
+     "hanzi": "燃气",
+     "pinyin": "rán qì",
+     "pos": "n.",
+     "en": "gas (for cooking and heating)",
+     "id": "dabu2-u1-7:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-7a",
+   "title": "大步2 U1.7 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "按",
+     "pinyin": "àn",
+     "pos": "prep.",
+     "en": "according to, by (按规定 by the rules; shorter 按照)",
+     "id": "dabu2-u1-7:2"
+    },
+    {
+     "hanzi": "由",
+     "pinyin": "yóu",
+     "pos": "prep.",
+     "en": "by (who does or pays: 由乙方承担 borne by Party B)",
+     "id": "dabu2-u1-7:3"
+    },
+    {
+     "hanzi": "实际",
+     "pinyin": "shí jì",
+     "pos": "adj./n.",
+     "en": "actual, real; reality",
+     "id": "dabu2-u1-7:4"
+    },
+    {
+     "hanzi": "量",
+     "pinyin": "liàng",
+     "pos": "n.",
+     "en": "amount, quantity (使用量 amount used)",
+     "id": "dabu2-u1-7:5"
+    },
+    {
+     "hanzi": "承担",
+     "pinyin": "chéng dān",
+     "pos": "v.",
+     "en": "to bear, take on (costs, responsibility)",
+     "id": "dabu2-u1-7:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-7b",
+   "title": "大步2 U1.7 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "爱护",
+     "pinyin": "ài hù",
+     "pos": "v.",
+     "en": "to take good care of, look after",
+     "id": "dabu2-u1-7:7"
+    },
+    {
+     "hanzi": "应",
+     "pinyin": "yīng",
+     "pos": "v.",
+     "en": "shall, should (written 应该)",
+     "id": "dabu2-u1-7:8"
+    },
+    {
+     "hanzi": "电器",
+     "pinyin": "diàn qì",
+     "pos": "n.",
+     "en": "electrical appliance",
+     "id": "dabu2-u1-7:9"
+    },
+    {
+     "hanzi": "不当",
+     "pinyin": "bù dàng",
+     "pos": "adj.",
+     "en": "improper, wrong (written)",
+     "id": "dabu2-u1-7:10"
+    },
+    {
+     "hanzi": "造成",
+     "pinyin": "zào chéng",
+     "pos": "v.",
+     "en": "to cause (something bad)",
+     "id": "dabu2-u1-7:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-8a",
+   "title": "大步2 U1.8 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "损坏",
+     "pinyin": "sǔn huài",
+     "pos": "v./n.",
+     "en": "to damage; damage",
+     "id": "dabu2-u1-7:12"
+    },
+    {
+     "hanzi": "维修",
+     "pinyin": "wéi xiū",
+     "pos": "v.",
+     "en": "to repair, maintain",
+     "id": "dabu2-u1-7:13"
+    },
+    {
+     "hanzi": "赔偿",
+     "pinyin": "péi cháng",
+     "pos": "v./n.",
+     "en": "to compensate; compensation",
+     "id": "dabu2-u1-8:0"
+    },
+    {
+     "hanzi": "不得",
+     "pinyin": "bù dé",
+     "pos": "v.",
+     "en": "must not, may not (written)",
+     "id": "dabu2-u1-8:2"
+    },
+    {
+     "hanzi": "转租",
+     "pinyin": "zhuǎn zū",
+     "pos": "v.",
+     "en": "to sublet",
+     "id": "dabu2-u1-8:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-8b",
+   "title": "大步2 U1.8 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "他人",
+     "pinyin": "tā rén",
+     "pos": "pron.",
+     "en": "other people (written)",
+     "id": "dabu2-u1-8:4"
+    },
+    {
+     "hanzi": "改变",
+     "pinyin": "gǎi biàn",
+     "pos": "v.",
+     "en": "to change, alter",
+     "id": "dabu2-u1-8:5"
+    },
+    {
+     "hanzi": "结构",
+     "pinyin": "jié gòu",
+     "pos": "n.",
+     "en": "structure",
+     "id": "dabu2-u1-8:6"
+    },
+    {
+     "hanzi": "退租",
+     "pinyin": "tuì zū",
+     "pos": "v.",
+     "en": "to end a tenancy, move out",
+     "id": "dabu2-u1-8:7"
+    },
+    {
+     "hanzi": "一方",
+     "pinyin": "yī fāng",
+     "pos": "n.",
+     "en": "one side, one party (任何一方 either party)",
+     "id": "dabu2-u1-8:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-8c",
+   "title": "大步2 U1.8 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "需",
+     "pinyin": "xū",
+     "pos": "v.",
+     "en": "to need (written 需要: 如需 if you need)",
+     "id": "dabu2-u1-8:9"
+    },
+    {
+     "hanzi": "未",
+     "pinyin": "wèi",
+     "pos": "adv.",
+     "en": "not, not yet (written 没: 如未 if … not)",
+     "id": "dabu2-u1-8:10"
+    },
+    {
+     "hanzi": "未经",
+     "pinyin": "wèi jīng",
+     "pos": "phr.",
+     "en": "without (permission) (未经同意 without consent)",
+     "id": "dabu2-u1-8:1"
+    },
+    {
+     "hanzi": "向",
+     "pinyin": "xiàng",
+     "pos": "prep.",
+     "en": "to, towards (向对方支付 pay to the other party)",
+     "id": "dabu2-u1-8:11"
+    },
+    {
+     "hanzi": "解除",
+     "pinyin": "jiě chú",
+     "pos": "v.",
+     "en": "to end, cancel (a contract)",
+     "id": "dabu2-u1-8:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-9a",
+   "title": "大步2 U1.9 · 租房记 A room with a tree · 1",
+   "words": [
+    {
+     "hanzi": "对方",
+     "pinyin": "duì fāng",
+     "pos": "n.",
+     "en": "the other side, the other party",
+     "id": "dabu2-u1-8:13"
+    },
+    {
+     "hanzi": "作为",
+     "pinyin": "zuò wéi",
+     "pos": "prep./v.",
+     "en": "as; to serve as",
+     "id": "dabu2-u1-9:0"
+    },
+    {
+     "hanzi": "违约金",
+     "pinyin": "wéi yuē jīn",
+     "pos": "n.",
+     "en": "penalty for breaking a contract",
+     "id": "dabu2-u1-9:1"
+    },
+    {
+     "hanzi": "退还",
+     "pinyin": "tuì huán",
+     "pos": "v.",
+     "en": "to give back, return (money)",
+     "id": "dabu2-u1-9:2"
+    },
+    {
+     "hanzi": "检查",
+     "pinyin": "jiǎn chá",
+     "pos": "v./n.",
+     "en": "to check, inspect; check",
+     "id": "dabu2-u1-9:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-9b",
+   "title": "大步2 U1.9 · 租房记 A room with a tree · 2",
+   "words": [
+    {
+     "hanzi": "无",
+     "pinyin": "wú",
+     "pos": "v.",
+     "en": "to have no, be without (written 没有)",
+     "id": "dabu2-u1-9:4"
+    },
+    {
+     "hanzi": "一式两份",
+     "pinyin": "yī shì liǎng fèn",
+     "pos": "phr.",
+     "en": "in duplicate, in two copies",
+     "id": "dabu2-u1-9:5"
+    },
+    {
+     "hanzi": "各执一份",
+     "pinyin": "gè zhí yī fèn",
+     "pos": "phr.",
+     "en": "each party keeps one copy",
+     "id": "dabu2-u1-9:6"
+    },
+    {
+     "hanzi": "之日",
+     "pinyin": "zhī rì",
+     "pos": "n.",
+     "en": "the day (written: 签字之日 the day of signing)",
+     "id": "dabu2-u1-9:7"
+    },
+    {
+     "hanzi": "遵守",
+     "pinyin": "zūn shǒu",
+     "pos": "v.",
+     "en": "to follow, keep to (rules)",
+     "id": "dabu2-u1-9:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u1-9c",
+   "title": "大步2 U1.9 · 租房记 A room with a tree · 3",
+   "words": [
+    {
+     "hanzi": "所在",
+     "pinyin": "suǒ zài",
+     "pos": "adj.",
+     "en": "where (something) is (所在弄堂 the lane it's in; written)",
+     "id": "dabu2-u1-9:9"
+    },
+    {
+     "hanzi": "现有",
+     "pinyin": "xiàn yǒu",
+     "pos": "adj.",
+     "en": "existing, present",
+     "id": "dabu2-u1-9:10"
+    },
+    {
+     "hanzi": "清单",
+     "pinyin": "qīng dān",
+     "pos": "n.",
+     "en": "list, inventory",
+     "id": "dabu2-u1-9:11"
+    },
+    {
+     "hanzi": "生效",
+     "pinyin": "shēng xiào",
+     "pos": "v.",
+     "en": "to take effect",
+     "id": "dabu2-u1-9:12"
+    },
+    {
+     "hanzi": "签字",
+     "pinyin": "qiān zì",
+     "pos": "v.",
+     "en": "to sign (your name)",
+     "id": "dabu2-u1-9:13"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-1a",
+   "title": "大步2 U2.1 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "袋",
+     "pinyin": "dài",
+     "pos": "m./n.",
+     "en": "bag (一袋垃圾 a bag of rubbish)",
+     "id": "dabu2-u2-1:0"
+    },
+    {
+     "hanzi": "剩",
+     "pinyin": "shèng",
+     "pos": "v.",
+     "en": "to be left over (吃剩的 leftovers)",
+     "id": "dabu2-u2-1:1"
+    },
+    {
+     "hanzi": "普通",
+     "pinyin": "pǔ tōng",
+     "pos": "adj.",
+     "en": "ordinary, common (普通人 ordinary people)",
+     "id": "dabu2-u2-1:2"
+    },
+    {
+     "hanzi": "湿垃圾",
+     "pinyin": "shī lā jī",
+     "pos": "n.",
+     "en": "wet rubbish, food waste (Shanghai's term)",
+     "id": "dabu2-u2-1:3",
+     "parts": [
+      "湿",
+      "垃圾"
+     ]
+    },
+    {
+     "hanzi": "干垃圾",
+     "pinyin": "gān lā jī",
+     "pos": "n.",
+     "en": "dry rubbish, general waste (Shanghai's term)",
+     "id": "dabu2-u2-1:4",
+     "parts": [
+      "干",
+      "垃圾"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-1b",
+   "title": "大步2 U2.1 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "否则",
+     "pinyin": "fǒu zé",
+     "pos": "conj.",
+     "en": "otherwise, or else",
+     "id": "dabu2-u2-1:5"
+    },
+    {
+     "hanzi": "志愿者",
+     "pinyin": "zhì yuàn zhě",
+     "pos": "n.",
+     "en": "volunteer",
+     "id": "dabu2-u2-1:6"
+    },
+    {
+     "hanzi": "白",
+     "pinyin": "bái",
+     "pos": "adv.",
+     "en": "in vain, for nothing (白当了 all for nothing) (new meaning)",
+     "id": "dabu2-u2-1:7"
+    },
+    {
+     "hanzi": "回收",
+     "pinyin": "huí shōu",
+     "pos": "v.",
+     "en": "to recycle, collect for recycling",
+     "id": "dabu2-u2-1:8"
+    },
+    {
+     "hanzi": "纸盒",
+     "pinyin": "zhǐ hé",
+     "pos": "n.",
+     "en": "cardboard box, carton",
+     "id": "dabu2-u2-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-2a",
+   "title": "大步2 U2.2 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "报纸",
+     "pinyin": "bào zhǐ",
+     "pos": "n.",
+     "en": "newspaper",
+     "id": "dabu2-u2-1:10"
+    },
+    {
+     "hanzi": "可回收物",
+     "pinyin": "kě huí shōu wù",
+     "pos": "n.",
+     "en": "recyclables",
+     "id": "dabu2-u2-1:11"
+    },
+    {
+     "hanzi": "复杂",
+     "pinyin": "fù zá",
+     "pos": "adj.",
+     "en": "complicated",
+     "id": "dabu2-u2-2:0"
+    },
+    {
+     "hanzi": "塑料",
+     "pinyin": "sù liào",
+     "pos": "n.",
+     "en": "plastic",
+     "id": "dabu2-u2-2:2"
+    },
+    {
+     "hanzi": "塑料袋",
+     "pinyin": "sù liào dài",
+     "pos": "n.",
+     "en": "plastic bag",
+     "id": "dabu2-u2-2:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-2b",
+   "title": "大步2 U2.2 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "破袋",
+     "pinyin": "pò dài",
+     "pos": "v.",
+     "en": "to open the bag and empty it (for wet rubbish)",
+     "id": "dabu2-u2-2:3",
+     "parts": [
+      "破",
+      "袋"
+     ]
+    },
+    {
+     "hanzi": "袋子",
+     "pinyin": "dài zi",
+     "pos": "n.",
+     "en": "bag",
+     "id": "dabu2-u2-2:4"
+    },
+    {
+     "hanzi": "倒",
+     "pinyin": "dào",
+     "pos": "v.",
+     "en": "to pour, tip out (倒掉 pour away) (new meaning)",
+     "id": "dabu2-u2-2:5"
+    },
+    {
+     "hanzi": "进",
+     "pinyin": "jìn",
+     "pos": "v.",
+     "en": "to enter, go into (倒进 tip into; 扔进 throw into)",
+     "id": "dabu2-u2-2:6"
+    },
+    {
+     "hanzi": "桶",
+     "pinyin": "tǒng",
+     "pos": "n.",
+     "en": "bin, bucket",
+     "id": "dabu2-u2-2:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-2c",
+   "title": "大步2 U2.2 · 垃圾分类 Which bin? · 3",
+   "words": [
+    {
+     "hanzi": "垃圾桶",
+     "pinyin": "lā jī tǒng",
+     "pos": "n.",
+     "en": "rubbish bin",
+     "id": "dabu2-u2-2:7"
+    },
+    {
+     "hanzi": "盖子",
+     "pinyin": "gài zi",
+     "pos": "n.",
+     "en": "lid",
+     "id": "dabu2-u2-2:9"
+    },
+    {
+     "hanzi": "糊涂",
+     "pinyin": "hú tu",
+     "pos": "adj.",
+     "en": "confused, muddled",
+     "id": "dabu2-u2-2:10"
+    },
+    {
+     "hanzi": "口诀",
+     "pinyin": "kǒu jué",
+     "pos": "n.",
+     "en": "rhyme or saying to help you remember",
+     "id": "dabu2-u2-2:11"
+    },
+    {
+     "hanzi": "猪",
+     "pinyin": "zhū",
+     "pos": "n.",
+     "en": "pig",
+     "id": "dabu2-u2-3:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-3a",
+   "title": "大步2 U2.3 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "有害",
+     "pinyin": "yǒu hài",
+     "pos": "adj.",
+     "en": "harmful",
+     "id": "dabu2-u2-3:2"
+    },
+    {
+     "hanzi": "好记",
+     "pinyin": "hǎo jì",
+     "pos": "adj.",
+     "en": "easy to remember",
+     "id": "dabu2-u2-3:3",
+     "parts": [
+      "好",
+      "记"
+     ]
+    },
+    {
+     "hanzi": "骨头",
+     "pinyin": "gǔ tou",
+     "pos": "n.",
+     "en": "bone",
+     "id": "dabu2-u2-3:4"
+    },
+    {
+     "hanzi": "硬",
+     "pinyin": "yìng",
+     "pos": "adj.",
+     "en": "hard",
+     "id": "dabu2-u2-3:5"
+    },
+    {
+     "hanzi": "万能",
+     "pinyin": "wàn néng",
+     "pos": "adj.",
+     "en": "all-purpose, able to do anything",
+     "id": "dabu2-u2-3:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-3b",
+   "title": "大步2 U2.3 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "有害垃圾",
+     "pinyin": "yǒu hài lā jī",
+     "pos": "n.",
+     "en": "hazardous waste",
+     "id": "dabu2-u2-3:1",
+     "parts": [
+      "有害",
+      "垃圾"
+     ]
+    },
+    {
+     "hanzi": "搞",
+     "pinyin": "gǎo",
+     "pos": "v.",
+     "en": "to do, get (informal: 搞不清楚 can't work out)",
+     "id": "dabu2-u2-3:8"
+    },
+    {
+     "hanzi": "研究",
+     "pinyin": "yán jiū",
+     "pos": "v./n.",
+     "en": "to study, look into; research",
+     "id": "dabu2-u2-3:9"
+    },
+    {
+     "hanzi": "嫌",
+     "pinyin": "xián",
+     "pos": "v.",
+     "en": "to find (something) annoying, mind (嫌麻烦 find it a hassle)",
+     "id": "dabu2-u2-3:10"
+    },
+    {
+     "hanzi": "产生",
+     "pinyin": "chǎn shēng",
+     "pos": "v.",
+     "en": "to produce, give rise to",
+     "id": "dabu2-u2-3:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-4a",
+   "title": "大步2 U2.4 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "由于",
+     "pinyin": "yóu yú",
+     "pos": "conj./prep.",
+     "en": "because of, owing to (written)",
+     "id": "dabu2-u2-4:0"
+    },
+    {
+     "hanzi": "埋",
+     "pinyin": "mái",
+     "pos": "v.",
+     "en": "to bury",
+     "id": "dabu2-u2-4:1"
+    },
+    {
+     "hanzi": "肥料",
+     "pinyin": "féi liào",
+     "pos": "n.",
+     "en": "fertiliser, compost",
+     "id": "dabu2-u2-4:2"
+    },
+    {
+     "hanzi": "利用",
+     "pinyin": "lì yòng",
+     "pos": "v.",
+     "en": "to use, make use of (再利用 reuse)",
+     "id": "dabu2-u2-4:3"
+    },
+    {
+     "hanzi": "压扁",
+     "pinyin": "yā biǎn",
+     "pos": "v.",
+     "en": "to flatten, squash flat",
+     "id": "dabu2-u2-4:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-4b",
+   "title": "大步2 U2.4 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "不然",
+     "pinyin": "bù rán",
+     "pos": "conj.",
+     "en": "otherwise, or else (spoken)",
+     "id": "dabu2-u2-4:5"
+    },
+    {
+     "hanzi": "红马甲",
+     "pinyin": "hóng mǎ jiǎ",
+     "pos": "n.",
+     "en": "red waistcoat (worn by volunteers)",
+     "id": "dabu2-u2-4:6"
+    },
+    {
+     "hanzi": "环保",
+     "pinyin": "huán bǎo",
+     "pos": "n./adj.",
+     "en": "environmental protection; eco-friendly",
+     "id": "dabu2-u2-4:7"
+    },
+    {
+     "hanzi": "快递",
+     "pinyin": "kuài dì",
+     "pos": "n.",
+     "en": "parcel delivery, a parcel",
+     "id": "dabu2-u2-4:8"
+    },
+    {
+     "hanzi": "不必",
+     "pinyin": "bù bì",
+     "pos": "adv.",
+     "en": "needn't, don't have to",
+     "id": "dabu2-u2-4:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-5a",
+   "title": "大步2 U2.5 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "过期",
+     "pinyin": "guò qī",
+     "pos": "v.",
+     "en": "to expire, go out of date",
+     "id": "dabu2-u2-4:10"
+    },
+    {
+     "hanzi": "生活垃圾",
+     "pinyin": "shēng huó lā jī",
+     "pos": "n.",
+     "en": "household waste",
+     "id": "dabu2-u2-5:0",
+     "parts": [
+      "生活",
+      "垃圾"
+     ]
+    },
+    {
+     "hanzi": "管理",
+     "pinyin": "guǎn lǐ",
+     "pos": "v./n.",
+     "en": "to manage, run; management",
+     "id": "dabu2-u2-5:1"
+    },
+    {
+     "hanzi": "条例",
+     "pinyin": "tiáo lì",
+     "pos": "n.",
+     "en": "regulations",
+     "id": "dabu2-u2-5:2"
+    },
+    {
+     "hanzi": "实施",
+     "pinyin": "shí shī",
+     "pos": "v.",
+     "en": "to put into effect, implement",
+     "id": "dabu2-u2-5:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-5b",
+   "title": "大步2 U2.5 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "成为",
+     "pinyin": "chéng wéi",
+     "pos": "v.",
+     "en": "to become",
+     "id": "dabu2-u2-5:4"
+    },
+    {
+     "hanzi": "全国",
+     "pinyin": "quán guó",
+     "pos": "n.",
+     "en": "the whole country, nationwide",
+     "id": "dabu2-u2-5:5"
+    },
+    {
+     "hanzi": "强制",
+     "pinyin": "qiáng zhì",
+     "pos": "v./adj.",
+     "en": "to force; compulsory",
+     "id": "dabu2-u2-5:6"
+    },
+    {
+     "hanzi": "实行",
+     "pinyin": "shí xíng",
+     "pos": "v.",
+     "en": "to put into practice, carry out",
+     "id": "dabu2-u2-5:7"
+    },
+    {
+     "hanzi": "日常",
+     "pinyin": "rì cháng",
+     "pos": "adj.",
+     "en": "everyday, daily",
+     "id": "dabu2-u2-5:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-5c",
+   "title": "大步2 U2.5 · 垃圾分类 Which bin? · 3",
+   "words": [
+    {
+     "hanzi": "分为",
+     "pinyin": "fēn wéi",
+     "pos": "v.",
+     "en": "to divide into",
+     "id": "dabu2-u2-5:9"
+    },
+    {
+     "hanzi": "类",
+     "pinyin": "lèi",
+     "pos": "m./n.",
+     "en": "kind, type, category",
+     "id": "dabu2-u2-5:10"
+    },
+    {
+     "hanzi": "分类",
+     "pinyin": "fēn lèi",
+     "pos": "v./n.",
+     "en": "to sort, classify; sorting",
+     "id": "dabu2-u2-3:7"
+    },
+    {
+     "hanzi": "居民",
+     "pinyin": "jū mín",
+     "pos": "n.",
+     "en": "resident",
+     "id": "dabu2-u2-5:11"
+    },
+    {
+     "hanzi": "投放",
+     "pinyin": "tóu fàng",
+     "pos": "v.",
+     "en": "to put in, drop off (rubbish; formal)",
+     "id": "dabu2-u2-6:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-6a",
+   "title": "大步2 U2.6 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "处理",
+     "pinyin": "chǔ lǐ",
+     "pos": "v.",
+     "en": "to deal with, process, handle",
+     "id": "dabu2-u2-6:1"
+    },
+    {
+     "hanzi": "每家每户",
+     "pinyin": "měi jiā měi hù",
+     "pos": "phr.",
+     "en": "every household",
+     "id": "dabu2-u2-6:2"
+    },
+    {
+     "hanzi": "一度",
+     "pinyin": "yī dù",
+     "pos": "adv.",
+     "en": "for a time, at one point",
+     "id": "dabu2-u2-6:3"
+    },
+    {
+     "hanzi": "下载",
+     "pinyin": "xià zài",
+     "pos": "v.",
+     "en": "to download",
+     "id": "dabu2-u2-6:4"
+    },
+    {
+     "hanzi": "垃圾箱房",
+     "pinyin": "lā jī xiāng fáng",
+     "pos": "n.",
+     "en": "bin store, the rubbish point for a lane or estate",
+     "id": "dabu2-u2-6:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-6b",
+   "title": "大步2 U2.6 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "解释",
+     "pinyin": "jiě shì",
+     "pos": "v./n.",
+     "en": "to explain; explanation",
+     "id": "dabu2-u2-6:7"
+    },
+    {
+     "hanzi": "运",
+     "pinyin": "yùn",
+     "pos": "v.",
+     "en": "to transport, carry",
+     "id": "dabu2-u2-6:8"
+    },
+    {
+     "hanzi": "工厂",
+     "pinyin": "gōng chǎng",
+     "pos": "n.",
+     "en": "factory, plant",
+     "id": "dabu2-u2-6:9"
+    },
+    {
+     "hanzi": "能源",
+     "pinyin": "néng yuán",
+     "pos": "n.",
+     "en": "energy, power",
+     "id": "dabu2-u2-6:10"
+    },
+    {
+     "hanzi": "加工",
+     "pinyin": "jiā gōng",
+     "pos": "v.",
+     "en": "to process",
+     "id": "dabu2-u2-6:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-7a",
+   "title": "大步2 U2.7 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "填埋",
+     "pinyin": "tián mái",
+     "pos": "v.",
+     "en": "to put in landfill",
+     "id": "dabu2-u2-7:0"
+    },
+    {
+     "hanzi": "大大",
+     "pinyin": "dà dà",
+     "pos": "adv.",
+     "en": "greatly, a great deal",
+     "id": "dabu2-u2-7:1"
+    },
+    {
+     "hanzi": "减少",
+     "pinyin": "jiǎn shǎo",
+     "pos": "v.",
+     "en": "to reduce, cut down",
+     "id": "dabu2-u2-7:2"
+    },
+    {
+     "hanzi": "街道",
+     "pinyin": "jiē dào",
+     "pos": "n.",
+     "en": "street, streets",
+     "id": "dabu2-u2-7:3"
+    },
+    {
+     "hanzi": "思考",
+     "pinyin": "sī kǎo",
+     "pos": "v.",
+     "en": "to think, reflect",
+     "id": "dabu2-u2-7:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-7b",
+   "title": "大步2 U2.7 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "一次性",
+     "pinyin": "yī cì xìng",
+     "pos": "adj.",
+     "en": "disposable, single-use",
+     "id": "dabu2-u2-7:5"
+    },
+    {
+     "hanzi": "饭盒",
+     "pinyin": "fàn hé",
+     "pos": "n.",
+     "en": "food box, lunch box",
+     "id": "dabu2-u2-7:6"
+    },
+    {
+     "hanzi": "纸箱",
+     "pinyin": "zhǐ xiāng",
+     "pos": "n.",
+     "en": "cardboard box",
+     "id": "dabu2-u2-7:7"
+    },
+    {
+     "hanzi": "增加",
+     "pinyin": "zēng jiā",
+     "pos": "v.",
+     "en": "to increase, grow",
+     "id": "dabu2-u2-7:8"
+    },
+    {
+     "hanzi": "源头",
+     "pinyin": "yuán tóu",
+     "pos": "n.",
+     "en": "source (从源头上 at the source)",
+     "id": "dabu2-u2-7:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-8a",
+   "title": "大步2 U2.8 · 垃圾分类 Which bin? · 1",
+   "words": [
+    {
+     "hanzi": "关键",
+     "pinyin": "guān jiàn",
+     "pos": "n./adj.",
+     "en": "key, crux; crucial",
+     "id": "dabu2-u2-7:10"
+    },
+    {
+     "hanzi": "以便",
+     "pinyin": "yǐ biàn",
+     "pos": "conj.",
+     "en": "so that, in order to (written)",
+     "id": "dabu2-u2-7:11"
+    },
+    {
+     "hanzi": "用品",
+     "pinyin": "yòng pǐn",
+     "pos": "n.",
+     "en": "articles, things for use (一次性用品 disposables)",
+     "id": "dabu2-u2-8:0"
+    },
+    {
+     "hanzi": "餐具",
+     "pinyin": "cān jù",
+     "pos": "n.",
+     "en": "cutlery, tableware",
+     "id": "dabu2-u2-8:1"
+    },
+    {
+     "hanzi": "时",
+     "pinyin": "shí",
+     "pos": "n.",
+     "en": "when, time (written 的时候: 点外卖时 when ordering takeaway)",
+     "id": "dabu2-u2-8:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-8b",
+   "title": "大步2 U2.8 · 垃圾分类 Which bin? · 2",
+   "words": [
+    {
+     "hanzi": "定时定点",
+     "pinyin": "dìng shí dìng diǎn",
+     "pos": "phr.",
+     "en": "at set times and places",
+     "id": "dabu2-u2-6:5"
+    },
+    {
+     "hanzi": "步",
+     "pinyin": "bù",
+     "pos": "n.",
+     "en": "step (第一步 the first step)",
+     "id": "dabu2-u2-8:3"
+    },
+    {
+     "hanzi": "节省",
+     "pinyin": "jié shěng",
+     "pos": "v.",
+     "en": "to save (space, money, time)",
+     "id": "dabu2-u2-8:4"
+    },
+    {
+     "hanzi": "不只",
+     "pinyin": "bù zhǐ",
+     "pos": "conj.",
+     "en": "not only",
+     "id": "dabu2-u2-8:5",
+     "parts": [
+      "不",
+      "只"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u2-8c",
+   "title": "大步2 U2.8 · 垃圾分类 Which bin? · 3",
+   "words": [
+    {
+     "hanzi": "资源",
+     "pinyin": "zī yuán",
+     "pos": "n.",
+     "en": "resources",
+     "id": "dabu2-u2-8:6"
+    },
+    {
+     "hanzi": "浪费",
+     "pinyin": "làng fèi",
+     "pos": "v./n.",
+     "en": "to waste; waste",
+     "id": "dabu2-u2-8:7"
+    },
+    {
+     "hanzi": "污染",
+     "pinyin": "wū rǎn",
+     "pos": "v./n.",
+     "en": "to pollute; pollution",
+     "id": "dabu2-u2-8:8"
+    },
+    {
+     "hanzi": "环境",
+     "pinyin": "huán jìng",
+     "pos": "n.",
+     "en": "environment",
+     "id": "dabu2-u2-8:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-1a",
+   "title": "大步2 U3.1 · 城市和乡村 The village in the bamboo · 1",
+   "words": [
+    {
+     "hanzi": "乡村",
+     "pinyin": "xiāng cūn",
+     "pos": "n.",
+     "en": "the countryside, rural areas",
+     "id": "dabu2-u3-1:0"
+    },
+    {
+     "hanzi": "说来听听",
+     "pinyin": "shuō lái tīng ting",
+     "pos": "phr.",
+     "en": "let's hear it, tell us",
+     "id": "dabu2-u3-1:1"
+    },
+    {
+     "hanzi": "村子",
+     "pinyin": "cūn zi",
+     "pos": "n.",
+     "en": "village",
+     "id": "dabu2-u3-1:2"
+    },
+    {
+     "hanzi": "村",
+     "pinyin": "cūn",
+     "pos": "n.",
+     "en": "village (村里 in the village)",
+     "id": "dabu2-u3-1:3"
+    },
+    {
+     "hanzi": "编",
+     "pinyin": "biān",
+     "pos": "v.",
+     "en": "to weave, plait",
+     "id": "dabu2-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-1b",
+   "title": "大步2 U3.1 · 城市和乡村 The village in the bamboo · 2",
+   "words": [
+    {
+     "hanzi": "篮子",
+     "pinyin": "lán zi",
+     "pos": "n.",
+     "en": "basket",
+     "id": "dabu2-u3-1:5"
+    },
+    {
+     "hanzi": "辛辛苦苦",
+     "pinyin": "xīn xīn kǔ kǔ",
+     "pos": "adv.",
+     "en": "painstakingly, with great effort",
+     "id": "dabu2-u3-1:6"
+    },
+    {
+     "hanzi": "打工",
+     "pinyin": "dǎ gōng",
+     "pos": "v.",
+     "en": "to work (away from home, often in a factory or for wages)",
+     "id": "dabu2-u3-1:7"
+    },
+    {
+     "hanzi": "门",
+     "pinyin": "mén",
+     "pos": "m.",
+     "en": "for crafts, skills and subjects (一门手艺 a craft) (new meaning)",
+     "id": "dabu2-u3-1:8"
+    },
+    {
+     "hanzi": "手艺",
+     "pinyin": "shǒu yì",
+     "pos": "n.",
+     "en": "craft, craftsmanship",
+     "id": "dabu2-u3-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-1c",
+   "title": "大步2 U3.1 · 城市和乡村 The village in the bamboo · 3",
+   "words": [
+    {
+     "hanzi": "合作社",
+     "pinyin": "hé zuò shè",
+     "pos": "n.",
+     "en": "co-operative",
+     "id": "dabu2-u3-1:10"
+    },
+    {
+     "hanzi": "竹编",
+     "pinyin": "zhú biān",
+     "pos": "n.",
+     "en": "bamboo weaving; woven bamboo ware",
+     "id": "dabu2-u3-1:11"
+    },
+    {
+     "hanzi": "预算",
+     "pinyin": "yù suàn",
+     "pos": "n.",
+     "en": "budget",
+     "id": "dabu2-u3-1:12"
+    },
+    {
+     "hanzi": "赚",
+     "pinyin": "zhuàn",
+     "pos": "v.",
+     "en": "to earn, make (money)",
+     "id": "dabu2-u3-2:0"
+    },
+    {
+     "hanzi": "赚钱",
+     "pinyin": "zhuàn qián",
+     "pos": "v.",
+     "en": "to make money",
+     "id": "dabu2-u3-2:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-2a",
+   "title": "大步2 U3.2 · 城市和乡村 The village in the bamboo · 1",
+   "words": [
+    {
+     "hanzi": "跟上",
+     "pinyin": "gēn shàng",
+     "pos": "v.",
+     "en": "to keep up with",
+     "id": "dabu2-u3-2:2"
+    },
+    {
+     "hanzi": "活路",
+     "pinyin": "huó lù",
+     "pos": "n.",
+     "en": "a way to survive, a way out",
+     "id": "dabu2-u3-2:3"
+    },
+    {
+     "hanzi": "好事",
+     "pinyin": "hǎo shì",
+     "pos": "n.",
+     "en": "good thing, good deed",
+     "id": "dabu2-u3-2:4"
+    },
+    {
+     "hanzi": "留守",
+     "pinyin": "liú shǒu",
+     "pos": "v.",
+     "en": "to stay behind",
+     "id": "dabu2-u3-2:6"
+    },
+    {
+     "hanzi": "难受",
+     "pinyin": "nán shòu",
+     "pos": "adj.",
+     "en": "hard to bear, upset, unwell",
+     "id": "dabu2-u3-2:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-2b",
+   "title": "大步2 U3.2 · 城市和乡村 The village in the bamboo · 2",
+   "words": [
+    {
+     "hanzi": "留守儿童",
+     "pinyin": "liú shǒu ér tóng",
+     "pos": "n.",
+     "en": "'left-behind child', raised at home while parents work far away",
+     "id": "dabu2-u3-2:5",
+     "parts": [
+      "留守",
+      "儿童"
+     ]
+    },
+    {
+     "hanzi": "确实",
+     "pinyin": "què shí",
+     "pos": "adv.",
+     "en": "really, indeed",
+     "id": "dabu2-u3-2:8"
+    },
+    {
+     "hanzi": "躲",
+     "pinyin": "duǒ",
+     "pos": "v.",
+     "en": "to hide",
+     "id": "dabu2-u3-2:9"
+    },
+    {
+     "hanzi": "身后",
+     "pinyin": "shēn hòu",
+     "pos": "n.",
+     "en": "behind (someone)",
+     "id": "dabu2-u3-2:10"
+    },
+    {
+     "hanzi": "农村",
+     "pinyin": "nóng cūn",
+     "pos": "n.",
+     "en": "the countryside, village (as opposed to the city)",
+     "id": "dabu2-u3-2:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-3a",
+   "title": "大步2 U3.3 · 城市和乡村 The village in the bamboo · 1",
+   "words": [
+    {
+     "hanzi": "随着",
+     "pinyin": "suí zhe",
+     "pos": "prep.",
+     "en": "along with, as (things change)",
+     "id": "dabu2-u3-2:12"
+    },
+    {
+     "hanzi": "直播",
+     "pinyin": "zhí bō",
+     "pos": "v./n.",
+     "en": "to livestream; livestream",
+     "id": "dabu2-u3-3:0"
+    },
+    {
+     "hanzi": "有些",
+     "pinyin": "yǒu xiē",
+     "pos": "pron.",
+     "en": "some",
+     "id": "dabu2-u3-3:1"
+    },
+    {
+     "hanzi": "表弟",
+     "pinyin": "biǎo dì",
+     "pos": "n.",
+     "en": "(younger male) cousin (son of your mother's sibling or your father's sister)",
+     "id": "dabu2-u3-3:2"
+    },
+    {
+     "hanzi": "高兴坏了",
+     "pinyin": "gāo xìng huài le",
+     "pos": "phr.",
+     "en": "over the moon, thrilled",
+     "id": "dabu2-u3-3:3",
+     "parts": [
+      "高兴",
+      "坏",
+      "了"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-3b",
+   "title": "大步2 U3.3 · 城市和乡村 The village in the bamboo · 2",
+   "words": [
+    {
+     "hanzi": "进城",
+     "pinyin": "jìn chéng",
+     "pos": "v.",
+     "en": "to go to town, go into the city",
+     "id": "dabu2-u3-3:4"
+    },
+    {
+     "hanzi": "城市化",
+     "pinyin": "chéng shì huà",
+     "pos": "n.",
+     "en": "urbanisation",
+     "id": "dabu2-u3-3:5"
+    },
+    {
+     "hanzi": "农民工",
+     "pinyin": "nóng mín gōng",
+     "pos": "n.",
+     "en": "migrant worker (from the countryside)",
+     "id": "dabu2-u3-3:6"
+    },
+    {
+     "hanzi": "农民",
+     "pinyin": "nóng mín",
+     "pos": "n.",
+     "en": "farmer, peasant",
+     "id": "dabu2-u3-3:7"
+    },
+    {
+     "hanzi": "种地",
+     "pinyin": "zhòng dì",
+     "pos": "v.",
+     "en": "to farm, work the land",
+     "id": "dabu2-u3-3:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-3c",
+   "title": "大步2 U3.3 · 城市和乡村 The village in the bamboo · 3",
+   "words": [
+    {
+     "hanzi": "回乡",
+     "pinyin": "huí xiāng",
+     "pos": "v.",
+     "en": "to return to your home village",
+     "id": "dabu2-u3-3:9"
+    },
+    {
+     "hanzi": "失去",
+     "pinyin": "shī qù",
+     "pos": "v.",
+     "en": "to lose",
+     "id": "dabu2-u3-3:10"
+    },
+    {
+     "hanzi": "长途汽车",
+     "pinyin": "cháng tú qì chē",
+     "pos": "n.",
+     "en": "long-distance bus, coach",
+     "id": "dabu2-u3-3:11"
+    },
+    {
+     "hanzi": "西部",
+     "pinyin": "xī bù",
+     "pos": "n.",
+     "en": "the west, western part",
+     "id": "dabu2-u3-4:0"
+    },
+    {
+     "hanzi": "四周",
+     "pinyin": "sì zhōu",
+     "pos": "n.",
+     "en": "all around",
+     "id": "dabu2-u3-4:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-4a",
+   "title": "大步2 U3.4 · 城市和乡村 The village in the bamboo · 1",
+   "words": [
+    {
+     "hanzi": "竹林",
+     "pinyin": "zhú lín",
+     "pos": "n.",
+     "en": "bamboo grove, bamboo forest",
+     "id": "dabu2-u3-4:2"
+    },
+    {
+     "hanzi": "竹叶",
+     "pinyin": "zhú yè",
+     "pos": "n.",
+     "en": "bamboo leaves",
+     "id": "dabu2-u3-4:3"
+    },
+    {
+     "hanzi": "沙沙",
+     "pinyin": "shā shā",
+     "pos": "phr.",
+     "en": "(the sound of) rustling",
+     "id": "dabu2-u3-4:4"
+    },
+    {
+     "hanzi": "竹篮",
+     "pinyin": "zhú lán",
+     "pos": "n.",
+     "en": "bamboo basket",
+     "id": "dabu2-u3-4:5"
+    },
+    {
+     "hanzi": "砍",
+     "pinyin": "kǎn",
+     "pos": "v.",
+     "en": "to cut, chop",
+     "id": "dabu2-u3-4:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-4b",
+   "title": "大步2 U3.4 · 城市和乡村 The village in the bamboo · 2",
+   "words": [
+    {
+     "hanzi": "板凳",
+     "pinyin": "bǎn dèng",
+     "pos": "n.",
+     "en": "wooden stool, bench",
+     "id": "dabu2-u3-4:7"
+    },
+    {
+     "hanzi": "竹条",
+     "pinyin": "zhú tiáo",
+     "pos": "n.",
+     "en": "strip of bamboo",
+     "id": "dabu2-u3-4:8"
+    },
+    {
+     "hanzi": "零食",
+     "pinyin": "líng shí",
+     "pos": "n.",
+     "en": "snacks",
+     "id": "dabu2-u3-4:9"
+    },
+    {
+     "hanzi": "叫作",
+     "pinyin": "jiào zuò",
+     "pos": "v.",
+     "en": "to be called, call (A 叫作 B)",
+     "id": "dabu2-u3-4:10"
+    },
+    {
+     "hanzi": "考上",
+     "pinyin": "kǎo shàng",
+     "pos": "v.",
+     "en": "to get into (a school, by passing the exam)",
+     "id": "dabu2-u3-4:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-5a",
+   "title": "大步2 U3.5 · 城市和乡村 The village in the bamboo · 1",
+   "words": [
+    {
+     "hanzi": "县",
+     "pinyin": "xiàn",
+     "pos": "n.",
+     "en": "county",
+     "id": "dabu2-u3-4:12"
+    },
+    {
+     "hanzi": "中学",
+     "pinyin": "zhōng xué",
+     "pos": "n.",
+     "en": "secondary school",
+     "id": "dabu2-u3-4:13"
+    },
+    {
+     "hanzi": "一",
+     "pinyin": "yī",
+     "pos": "phr.",
+     "en": "once … it's (a long time, a lot) (一…就是…)",
+     "id": "dabu2-u3-5:0"
+    },
+    {
+     "hanzi": "小学",
+     "pinyin": "xiǎo xué",
+     "pos": "n.",
+     "en": "primary school",
+     "id": "dabu2-u3-5:1"
+    },
+    {
+     "hanzi": "剩下",
+     "pinyin": "shèng xià",
+     "pos": "v.",
+     "en": "to be left, remain",
+     "id": "dabu2-u3-5:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-5b",
+   "title": "大步2 U3.5 · 城市和乡村 The village in the bamboo · 2",
+   "words": [
+    {
+     "hanzi": "寻找",
+     "pinyin": "xún zhǎo",
+     "pos": "v.",
+     "en": "to look for, seek",
+     "id": "dabu2-u3-5:3"
+    },
+    {
+     "hanzi": "家庭",
+     "pinyin": "jiā tíng",
+     "pos": "n.",
+     "en": "family, household",
+     "id": "dabu2-u3-5:4"
+    },
+    {
+     "hanzi": "过上",
+     "pinyin": "guò shàng",
+     "pos": "v.",
+     "en": "to come to lead (a life) (过上好日子 have a better life)",
+     "id": "dabu2-u3-5:5",
+     "parts": [
+      "过",
+      "上"
+     ]
+    },
+    {
+     "hanzi": "错",
+     "pinyin": "cuò",
+     "pos": "n.",
+     "en": "fault, mistake (这不是谁的错 it's nobody's fault) (new meaning)",
+     "id": "dabu2-u3-5:6"
+    },
+    {
+     "hanzi": "组织",
+     "pinyin": "zǔ zhī",
+     "pos": "v./n.",
+     "en": "to organise; organisation",
+     "id": "dabu2-u3-5:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u3-5c",
+   "title": "大步2 U3.5 · 城市和乡村 The village in the bamboo · 3",
+   "words": [
+    {
+     "hanzi": "统一",
+     "pinyin": "tǒng yī",
+     "pos": "adj./v.",
+     "en": "unified, all together; to unify",
+     "id": "dabu2-u3-5:8"
+    },
+    {
+     "hanzi": "收购",
+     "pinyin": "shōu gòu",
+     "pos": "v.",
+     "en": "to buy up, purchase (from producers)",
+     "id": "dabu2-u3-5:9"
+    },
+    {
+     "hanzi": "销售",
+     "pinyin": "xiāo shòu",
+     "pos": "v./n.",
+     "en": "to sell; sales",
+     "id": "dabu2-u3-5:10"
+    },
+    {
+     "hanzi": "合不拢嘴",
+     "pinyin": "hé bu lǒng zuǐ",
+     "pos": "phr.",
+     "en": "(smiling) from ear to ear, can't stop smiling",
+     "id": "dabu2-u3-5:11"
+    },
+    {
+     "hanzi": "提",
+     "pinyin": "tí",
+     "pos": "v.",
+     "en": "to carry, pick up (by a handle) (new meaning)",
+     "id": "dabu2-u3-5:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-1a",
+   "title": "大步2 U4.1 · 我的上海 My Shanghai · 1",
+   "words": [
+    {
+     "hanzi": "晓得",
+     "pinyin": "xiǎo de",
+     "pos": "v.",
+     "en": "to know (southern and Shanghainese: 侬晓得伐？ did you know?)",
+     "id": "dabu2-u4-1:0"
+    },
+    {
+     "hanzi": "伐",
+     "pinyin": "fá",
+     "pos": "part.",
+     "en": "(Shanghainese) question particle, like 吗",
+     "id": "dabu2-u4-1:1"
+    },
+    {
+     "hanzi": "摊子",
+     "pinyin": "tān zi",
+     "pos": "n.",
+     "en": "stall",
+     "id": "dabu2-u4-1:2"
+    },
+    {
+     "hanzi": "摊",
+     "pinyin": "tān",
+     "pos": "n.",
+     "en": "stall, stand (早饭摊 breakfast stall)",
+     "id": "dabu2-u4-1:3"
+    },
+    {
+     "hanzi": "大饼",
+     "pinyin": "dà bǐng",
+     "pos": "n.",
+     "en": "sesame flatbread",
+     "id": "dabu2-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-1b",
+   "title": "大步2 U4.1 · 我的上海 My Shanghai · 2",
+   "words": [
+    {
+     "hanzi": "粢饭",
+     "pinyin": "cí fàn",
+     "pos": "n.",
+     "en": "sticky rice roll, often wrapped round a fried dough stick",
+     "id": "dabu2-u4-1:5"
+    },
+    {
+     "hanzi": "四大金刚",
+     "pinyin": "sì dà jīn gāng",
+     "pos": "phr.",
+     "en": "'the Four Guardians': the four classic items of a Shanghai breakfast",
+     "id": "dabu2-u4-1:6"
+    },
+    {
+     "hanzi": "办",
+     "pinyin": "bàn",
+     "pos": "v.",
+     "en": "to run, hold, organise (办比赛 hold a competition)",
+     "id": "dabu2-u4-1:8"
+    },
+    {
+     "hanzi": "征文",
+     "pinyin": "zhēng wén",
+     "pos": "n./v.",
+     "en": "essay competition; to invite essays",
+     "id": "dabu2-u4-1:9"
+    },
+    {
+     "hanzi": "题目",
+     "pinyin": "tí mù",
+     "pos": "n.",
+     "en": "title, topic",
+     "id": "dabu2-u4-1:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-2a",
+   "title": "大步2 U4.2 · 我的上海 My Shanghai · 1",
+   "words": [
+    {
+     "hanzi": "晾",
+     "pinyin": "liàng",
+     "pos": "v.",
+     "en": "to hang out to dry",
+     "id": "dabu2-u4-1:11"
+    },
+    {
+     "hanzi": "排",
+     "pinyin": "pái",
+     "pos": "m.",
+     "en": "row, line (一整排衣服 a whole row of clothes)",
+     "id": "dabu2-u4-1:12"
+    },
+    {
+     "hanzi": "不禁",
+     "pinyin": "bù jīn",
+     "pos": "adv.",
+     "en": "can't help (doing), find yourself (doing)",
+     "id": "dabu2-u4-2:0"
+    },
+    {
+     "hanzi": "仿佛",
+     "pinyin": "fǎng fú",
+     "pos": "adv.",
+     "en": "as if, seemingly (written 好像)",
+     "id": "dabu2-u4-2:1"
+    },
+    {
+     "hanzi": "法国梧桐",
+     "pinyin": "Fǎ guó wú tóng",
+     "pos": "n.",
+     "en": "'French plane tree', the plane trees of Shanghai (in English, the London plane)",
+     "id": "dabu2-u4-2:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-2b",
+   "title": "大步2 U4.2 · 我的上海 My Shanghai · 2",
+   "words": [
+    {
+     "hanzi": "写不出",
+     "pinyin": "xiě bu chū",
+     "pos": "phr.",
+     "en": "can't put into writing",
+     "id": "dabu2-u4-2:3",
+     "parts": [
+      "写",
+      "不",
+      "出"
+     ]
+    },
+    {
+     "hanzi": "文章",
+     "pinyin": "wén zhāng",
+     "pos": "n.",
+     "en": "essay, article, piece of writing",
+     "id": "dabu2-u4-2:4"
+    },
+    {
+     "hanzi": "漂亮话",
+     "pinyin": "piào liang huà",
+     "pos": "n.",
+     "en": "fine words, fancy phrases",
+     "id": "dabu2-u4-2:5"
+    },
+    {
+     "hanzi": "真正",
+     "pinyin": "zhēn zhèng",
+     "pos": "adj./adv.",
+     "en": "real, true; truly",
+     "id": "dabu2-u4-2:6"
+    },
+    {
+     "hanzi": "大闸蟹",
+     "pinyin": "dà zhá xiè",
+     "pos": "n.",
+     "en": "hairy crab (an autumn delicacy)",
+     "id": "dabu2-u4-2:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-2c",
+   "title": "大步2 U4.2 · 我的上海 My Shanghai · 3",
+   "words": [
+    {
+     "hanzi": "上海人",
+     "pinyin": "Shàng hǎi rén",
+     "pos": "n.",
+     "en": "Shanghai person, Shanghainese",
+     "id": "dabu2-u4-2:8"
+    },
+    {
+     "hanzi": "海派",
+     "pinyin": "hǎi pài",
+     "pos": "n./adj.",
+     "en": "Shanghai style (of culture, cooking and taste)",
+     "id": "dabu2-u4-2:9"
+    },
+    {
+     "hanzi": "嗲",
+     "pinyin": "diǎ",
+     "pos": "adj.",
+     "en": "(Shanghainese) lovely, charming; coy",
+     "id": "dabu2-u4-2:10"
+    },
+    {
+     "hanzi": "描写",
+     "pinyin": "miáo xiě",
+     "pos": "v./n.",
+     "en": "to describe; description (in writing)",
+     "id": "dabu2-u4-2:11"
+    },
+    {
+     "hanzi": "一条条",
+     "pinyin": "yī tiáo tiáo",
+     "pos": "phr.",
+     "en": "one after another (of lanes, streets)",
+     "id": "dabu2-u4-3:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-3a",
+   "title": "大步2 U4.3 · 我的上海 My Shanghai · 1",
+   "words": [
+    {
+     "hanzi": "铃声",
+     "pinyin": "líng shēng",
+     "pos": "n.",
+     "en": "ring, bell (自行车的铃声 bicycle bells)",
+     "id": "dabu2-u4-3:1"
+    },
+    {
+     "hanzi": "炒菜",
+     "pinyin": "chǎo cài",
+     "pos": "v.",
+     "en": "to stir-fry, cook",
+     "id": "dabu2-u4-3:2"
+    },
+    {
+     "hanzi": "涌",
+     "pinyin": "yǒng",
+     "pos": "v.",
+     "en": "to pour, surge (涌进来 pour in)",
+     "id": "dabu2-u4-3:3"
+    },
+    {
+     "hanzi": "软",
+     "pinyin": "ruǎn",
+     "pos": "adj.",
+     "en": "soft",
+     "id": "dabu2-u4-3:4"
+    },
+    {
+     "hanzi": "谢谢侬",
+     "pinyin": "xiè xie nóng",
+     "pos": "phr.",
+     "en": "thank you (Shanghainese)",
+     "id": "dabu2-u4-3:5",
+     "parts": [
+      "谢谢",
+      "侬"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-3b",
+   "title": "大步2 U4.3 · 我的上海 My Shanghai · 2",
+   "words": [
+    {
+     "hanzi": "管家",
+     "pinyin": "guǎn jiā",
+     "pos": "n.",
+     "en": "housekeeper, steward (the one who runs things)",
+     "id": "dabu2-u4-3:6"
+    },
+    {
+     "hanzi": "拦",
+     "pinyin": "lán",
+     "pos": "v.",
+     "en": "to stop, block (someone)",
+     "id": "dabu2-u4-3:7"
+    },
+    {
+     "hanzi": "端",
+     "pinyin": "duān",
+     "pos": "v.",
+     "en": "to carry (level, with both hands)",
+     "id": "dabu2-u4-3:8"
+    },
+    {
+     "hanzi": "热乎乎",
+     "pinyin": "rè hū hū",
+     "pos": "adj.",
+     "en": "nice and hot, steaming",
+     "id": "dabu2-u4-3:9"
+    },
+    {
+     "hanzi": "鸡汤",
+     "pinyin": "jī tāng",
+     "pos": "n.",
+     "en": "chicken soup",
+     "id": "dabu2-u4-4:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-4a",
+   "title": "大步2 U4.4 · 我的上海 My Shanghai · 1",
+   "words": [
+    {
+     "hanzi": "面前",
+     "pinyin": "miàn qián",
+     "pos": "n.",
+     "en": "in front of, in someone's presence",
+     "id": "dabu2-u4-4:1"
+    },
+    {
+     "hanzi": "孙子",
+     "pinyin": "sūn zi",
+     "pos": "n.",
+     "en": "grandson",
+     "id": "dabu2-u4-4:2"
+    },
+    {
+     "hanzi": "片",
+     "pinyin": "piàn",
+     "pos": "m.",
+     "en": "for leaves (一片一片 leaf by leaf) (new meaning)",
+     "id": "dabu2-u4-4:3"
+    },
+    {
+     "hanzi": "落",
+     "pinyin": "luò",
+     "pos": "v.",
+     "en": "to fall, drop",
+     "id": "dabu2-u4-4:4"
+    },
+    {
+     "hanzi": "种",
+     "pinyin": "zhòng",
+     "pos": "v.",
+     "en": "to plant (种满了树 lined with trees) (new meaning)",
+     "id": "dabu2-u4-4:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-4b",
+   "title": "大步2 U4.4 · 我的上海 My Shanghai · 2",
+   "words": [
+    {
+     "hanzi": "同样",
+     "pinyin": "tóng yàng",
+     "pos": "adj.",
+     "en": "the same",
+     "id": "dabu2-u4-4:6"
+    },
+    {
+     "hanzi": "连",
+     "pinyin": "lián",
+     "pos": "v.",
+     "en": "to join, link (连在一起 join together) (new meaning)",
+     "id": "dabu2-u4-4:7"
+    },
+    {
+     "hanzi": "闷",
+     "pinyin": "mēn",
+     "pos": "adj.",
+     "en": "stuffy, muggy",
+     "id": "dabu2-u4-4:8"
+    },
+    {
+     "hanzi": "动不了",
+     "pinyin": "dòng bu liǎo",
+     "pos": "phr.",
+     "en": "can't move",
+     "id": "dabu2-u4-4:9"
+    },
+    {
+     "hanzi": "心疼",
+     "pinyin": "xīn téng",
+     "pos": "v./adj.",
+     "en": "to feel the pinch, hate to part with; to feel for (someone)",
+     "id": "dabu2-u4-5:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-5a",
+   "title": "大步2 U4.5 · 我的上海 My Shanghai · 1",
+   "words": [
+    {
+     "hanzi": "每当",
+     "pinyin": "měi dāng",
+     "pos": "conj.",
+     "en": "whenever, every time (written)",
+     "id": "dabu2-u4-5:1"
+    },
+    {
+     "hanzi": "一切",
+     "pinyin": "yī qiè",
+     "pos": "pron.",
+     "en": "everything, all",
+     "id": "dabu2-u4-5:2"
+    },
+    {
+     "hanzi": "陌生",
+     "pinyin": "mò shēng",
+     "pos": "adj.",
+     "en": "unfamiliar, strange",
+     "id": "dabu2-u4-5:3"
+    },
+    {
+     "hanzi": "无论",
+     "pinyin": "wú lùn",
+     "pos": "conj.",
+     "en": "no matter (what, where), whatever",
+     "id": "dabu2-u4-5:4"
+    },
+    {
+     "hanzi": "但",
+     "pinyin": "dàn",
+     "pos": "conj.",
+     "en": "but (written 但是)",
+     "id": "dabu2-u4-5:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu2-u4-5b",
+   "title": "大步2 U4.5 · 我的上海 My Shanghai · 2",
+   "words": [
+    {
+     "hanzi": "忍不住",
+     "pinyin": "rěn bu zhù",
+     "pos": "phr.",
+     "en": "can't help (doing), can't resist",
+     "id": "dabu2-u4-5:6"
+    },
+    {
+     "hanzi": "季节",
+     "pinyin": "jì jié",
+     "pos": "n.",
+     "en": "season",
+     "id": "dabu2-u4-5:7"
+    },
+    {
+     "hanzi": "熟悉",
+     "pinyin": "shú xī",
+     "pos": "adj./v.",
+     "en": "familiar; to know well",
+     "id": "dabu2-u4-5:8"
+    },
+    {
+     "hanzi": "鲜肉月饼",
+     "pinyin": "xiān ròu yuè bing",
+     "pos": "",
+     "en": "Shanghai-style mooncake filled with fresh pork, eaten hot",
+     "id": "dabu2-u4-5:9"
+    },
+    {
+     "hanzi": "栗子",
+     "pinyin": "lì zi",
+     "pos": "",
+     "en": "chestnut",
+     "id": "dabu2-u4-5:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-1a",
+   "title": "大步3 U1.1 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "刷",
+     "pinyin": "shuā",
+     "pos": "v.",
+     "en": "to scroll, swipe (刷手机 scroll through your phone; 刷视频 scroll videos)",
+     "id": "dabu3-u2-1:0"
+    },
+    {
+     "hanzi": "菜场",
+     "pinyin": "cài chǎng",
+     "pos": "n.",
+     "en": "food market, wet market (Shanghai; also 菜市场)",
+     "id": "dabu3-u1-1:1"
+    },
+    {
+     "hanzi": "菜市场",
+     "pinyin": "cài shì chǎng",
+     "pos": "n.",
+     "en": "food market, wet market",
+     "id": "dabu3-u1-1:2"
+    },
+    {
+     "hanzi": "馄饨",
+     "pinyin": "hún tun",
+     "pos": "n.",
+     "en": "wonton",
+     "id": "dabu3-u1-1:3"
+    },
+    {
+     "hanzi": "摊主",
+     "pinyin": "tān zhǔ",
+     "pos": "n.",
+     "en": "stallholder",
+     "id": "dabu3-u1-1:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-1b",
+   "title": "大步3 U1.1 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "刷手机",
+     "pinyin": "shuā shǒu jī",
+     "pos": "v.",
+     "en": "to scroll through your phone",
+     "id": "dabu3-u1-1:0",
+     "parts": [
+      "刷",
+      "手机"
+     ]
+    },
+    {
+     "hanzi": "馄饨皮",
+     "pinyin": "hún tun pí",
+     "pos": "n.",
+     "en": "wonton wrappers",
+     "id": "dabu3-u1-1:4",
+     "parts": [
+      "馄饨",
+      "皮"
+     ]
+    },
+    {
+     "hanzi": "小馄饨",
+     "pinyin": "xiǎo hún tun",
+     "pos": "n.",
+     "en": "little wontons in broth (a Shanghai breakfast and snack)",
+     "id": "dabu3-u1-1:5",
+     "parts": [
+      "小",
+      "馄饨"
+     ]
+    },
+    {
+     "hanzi": "斤",
+     "pinyin": "jīn",
+     "pos": "m.",
+     "en": "jin, half a kilo (一斤 a jin; 半斤 half a jin)",
+     "id": "dabu3-u1-1:7"
+    },
+    {
+     "hanzi": "荠菜",
+     "pinyin": "jì cài",
+     "pos": "n.",
+     "en": "shepherd's purse (a wild green, a classic wonton filling)",
+     "id": "dabu3-u1-1:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-1c",
+   "title": "大步3 U1.1 · 没有现金的生活 Life without cash · 3",
+   "words": [
+    {
+     "hanzi": "黑屏",
+     "pinyin": "hēi píng",
+     "pos": "v./n.",
+     "en": "(of a screen) to go black; black screen",
+     "id": "dabu3-u1-1:9"
+    },
+    {
+     "hanzi": "糟糕",
+     "pinyin": "zāo gāo",
+     "pos": "adj.",
+     "en": "oh no; terrible, a mess",
+     "id": "dabu3-u1-1:10"
+    },
+    {
+     "hanzi": "没电",
+     "pinyin": "méi diàn",
+     "pos": "phr.",
+     "en": "(of a battery) flat, dead",
+     "id": "dabu3-u1-1:11",
+     "parts": [
+      "没",
+      "电"
+     ]
+    },
+    {
+     "hanzi": "身上",
+     "pinyin": "shēn shang",
+     "pos": "n.",
+     "en": "on you, on your person (身上带现金 have cash on you)",
+     "id": "dabu3-u1-1:12"
+    },
+    {
+     "hanzi": "零钱",
+     "pinyin": "líng qián",
+     "pos": "n.",
+     "en": "small change",
+     "id": "dabu3-u1-2:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-2a",
+   "title": "大步3 U1.2 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "找",
+     "pinyin": "zhǎo",
+     "pos": "v.",
+     "en": "to give change (找我两块 give me two back) (new meaning)",
+     "id": "dabu3-u1-2:1"
+    },
+    {
+     "hanzi": "转",
+     "pinyin": "zhuǎn",
+     "pos": "v.",
+     "en": "to transfer (money) (转给您 transfer it to you)",
+     "id": "dabu3-u1-2:2"
+    },
+    {
+     "hanzi": "靠",
+     "pinyin": "kào",
+     "pos": "v.",
+     "en": "to rely on, depend on; by means of (new meaning)",
+     "id": "dabu3-u1-2:3"
+    },
+    {
+     "hanzi": "全靠",
+     "pinyin": "quán kào",
+     "pos": "phr.",
+     "en": "to depend entirely on",
+     "id": "dabu3-u1-2:4",
+     "parts": [
+      "全",
+      "靠"
+     ]
+    },
+    {
+     "hanzi": "寸步难行",
+     "pinyin": "cùn bù nán xíng",
+     "pos": "phr.",
+     "en": "can't move a step, be stuck (a 成语)",
+     "id": "dabu3-u1-2:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-2b",
+   "title": "大步3 U1.2 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "开通",
+     "pinyin": "kāi tōng",
+     "pos": "v.",
+     "en": "to activate, set up (a service or account)",
+     "id": "dabu3-u1-2:6"
+    },
+    {
+     "hanzi": "肯",
+     "pinyin": "kěn",
+     "pos": "v.",
+     "en": "to be willing to (不肯 refuse to)",
+     "id": "dabu3-u1-2:7"
+    },
+    {
+     "hanzi": "绑",
+     "pinyin": "bǎng",
+     "pos": "v.",
+     "en": "to tie; to link (a bank card to an app)",
+     "id": "dabu3-u1-2:8"
+    },
+    {
+     "hanzi": "隔壁",
+     "pinyin": "gé bì",
+     "pos": "n.",
+     "en": "next door",
+     "id": "dabu3-u1-2:9"
+    },
+    {
+     "hanzi": "账户",
+     "pinyin": "zhàng hù",
+     "pos": "n.",
+     "en": "(bank) account",
+     "id": "dabu3-u1-2:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-3a",
+   "title": "大步3 U1.3 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "验证码",
+     "pinyin": "yàn zhèng mǎ",
+     "pos": "n.",
+     "en": "verification code (sent by text)",
+     "id": "dabu3-u1-2:11"
+    },
+    {
+     "hanzi": "可怕",
+     "pinyin": "kě pà",
+     "pos": "adj.",
+     "en": "frightening, terrible",
+     "id": "dabu3-u1-2:12"
+    },
+    {
+     "hanzi": "轻松",
+     "pinyin": "qīng sōng",
+     "pos": "adj.",
+     "en": "easy, relaxed (讲得轻松 easy for you to say)",
+     "id": "dabu3-u1-3:0"
+    },
+    {
+     "hanzi": "按",
+     "pinyin": "àn",
+     "pos": "v.",
+     "en": "to press (a button) (按错 press the wrong one) (new meaning)",
+     "id": "dabu3-u1-3:1"
+    },
+    {
+     "hanzi": "一不小心",
+     "pinyin": "yī bù xiǎo xīn",
+     "pos": "phr.",
+     "en": "one slip, if you're not careful",
+     "id": "dabu3-u1-3:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-3b",
+   "title": "大步3 U1.3 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "看得见摸得着",
+     "pinyin": "kàn de jiàn mō de zháo",
+     "pos": "phr.",
+     "en": "you can see it and touch it; tangible",
+     "id": "dabu3-u1-3:3"
+    },
+    {
+     "hanzi": "一天到晚",
+     "pinyin": "yī tiān dào wǎn",
+     "pos": "phr.",
+     "en": "from morning to night, all day long",
+     "id": "dabu3-u1-3:4"
+    },
+    {
+     "hanzi": "算账",
+     "pinyin": "suàn zhàng",
+     "pos": "v.",
+     "en": "to do the accounts, add up the money",
+     "id": "dabu3-u1-3:5"
+    },
+    {
+     "hanzi": "心眼",
+     "pinyin": "xīn yǎn",
+     "pos": "n.",
+     "en": "mind, wits (留个心眼 keep your wits about you)",
+     "id": "dabu3-u1-3:6"
+    },
+    {
+     "hanzi": "同时",
+     "pinyin": "tóng shí",
+     "pos": "n./conj.",
+     "en": "the same time; at the same time, meanwhile",
+     "id": "dabu3-u1-3:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-3c",
+   "title": "大步3 U1.3 · 没有现金的生活 Life without cash · 3",
+   "words": [
+    {
+     "hanzi": "的同时",
+     "pinyin": "de tóng shí",
+     "pos": "phr.",
+     "en": "while, at the same time as (方便的同时 for all the convenience)",
+     "id": "dabu3-u1-3:7",
+     "parts": [
+      "的",
+      "同时"
+     ]
+    },
+    {
+     "hanzi": "收款码",
+     "pinyin": "shōu kuǎn mǎ",
+     "pos": "n.",
+     "en": "payment QR code (the one a shop shows you)",
+     "id": "dabu3-u1-3:9"
+    },
+    {
+     "hanzi": "转账",
+     "pinyin": "zhuǎn zhàng",
+     "pos": "v.",
+     "en": "to transfer money",
+     "id": "dabu3-u1-3:10"
+    },
+    {
+     "hanzi": "刷脸",
+     "pinyin": "shuā liǎn",
+     "pos": "v.",
+     "en": "to pay or pass by face scan",
+     "id": "dabu3-u1-3:11",
+     "parts": [
+      "刷",
+      "脸"
+     ]
+    },
+    {
+     "hanzi": "取款机",
+     "pinyin": "qǔ kuǎn jī",
+     "pos": "n.",
+     "en": "cash machine, ATM",
+     "id": "dabu3-u1-3:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-4a",
+   "title": "大步3 U1.4 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "余额",
+     "pinyin": "yú é",
+     "pos": "n.",
+     "en": "balance (of an account)",
+     "id": "dabu3-u1-4:0"
+    },
+    {
+     "hanzi": "诈骗",
+     "pinyin": "zhà piàn",
+     "pos": "v./n.",
+     "en": "to defraud; fraud, scam",
+     "id": "dabu3-u1-4:1"
+    },
+    {
+     "hanzi": "骗子",
+     "pinyin": "piàn zi",
+     "pos": "n.",
+     "en": "swindler, con artist",
+     "id": "dabu3-u1-4:2"
+    },
+    {
+     "hanzi": "老年人",
+     "pinyin": "lǎo nián rén",
+     "pos": "n.",
+     "en": "older people, the elderly",
+     "id": "dabu3-u1-4:3"
+    },
+    {
+     "hanzi": "付款码",
+     "pinyin": "fù kuǎn mǎ",
+     "pos": "n.",
+     "en": "payment code (the one on your phone that the till scans)",
+     "id": "dabu3-u1-4:4",
+     "parts": [
+      "付款",
+      "码"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-4b",
+   "title": "大步3 U1.4 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "手续费",
+     "pinyin": "shǒu xù fèi",
+     "pos": "n.",
+     "en": "handling fee, service charge",
+     "id": "dabu3-u1-4:5"
+    },
+    {
+     "hanzi": "账单",
+     "pinyin": "zhàng dān",
+     "pos": "n.",
+     "en": "bill, statement",
+     "id": "dabu3-u1-4:6"
+    },
+    {
+     "hanzi": "纸币",
+     "pinyin": "zhǐ bì",
+     "pos": "n.",
+     "en": "banknote",
+     "id": "dabu3-u1-4:7"
+    },
+    {
+     "hanzi": "找零",
+     "pinyin": "zhǎo líng",
+     "pos": "v.",
+     "en": "to give change (written)",
+     "id": "dabu3-u1-4:8"
+    },
+    {
+     "hanzi": "充电宝",
+     "pinyin": "chōng diàn bǎo",
+     "pos": "n.",
+     "en": "power bank, portable charger",
+     "id": "dabu3-u1-4:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-5a",
+   "title": "大步3 U1.5 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "隐私",
+     "pinyin": "yǐn sī",
+     "pos": "n.",
+     "en": "privacy",
+     "id": "dabu3-u1-4:10"
+    },
+    {
+     "hanzi": "窗口",
+     "pinyin": "chuāng kǒu",
+     "pos": "n.",
+     "en": "window; counter (at a bank, hospital or station)",
+     "id": "dabu3-u1-5:0"
+    },
+    {
+     "hanzi": "老爷爷",
+     "pinyin": "lǎo yé ye",
+     "pos": "n.",
+     "en": "grandpa, old man (polite, for any old man)",
+     "id": "dabu3-u1-5:1"
+    },
+    {
+     "hanzi": "门诊",
+     "pinyin": "mén zhěn",
+     "pos": "n.",
+     "en": "outpatients' department",
+     "id": "dabu3-u1-5:2"
+    },
+    {
+     "hanzi": "病人",
+     "pinyin": "bìng rén",
+     "pos": "n.",
+     "en": "patient",
+     "id": "dabu3-u1-5:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-5b",
+   "title": "大步3 U1.5 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "大厅",
+     "pinyin": "dà tīng",
+     "pos": "n.",
+     "en": "hall, lobby",
+     "id": "dabu3-u1-5:4"
+    },
+    {
+     "hanzi": "挤满",
+     "pinyin": "jǐ mǎn",
+     "pos": "v.",
+     "en": "to be packed with, crowded with",
+     "id": "dabu3-u1-5:5"
+    },
+    {
+     "hanzi": "信封",
+     "pinyin": "xìn fēng",
+     "pos": "n.",
+     "en": "envelope",
+     "id": "dabu3-u1-5:6"
+    },
+    {
+     "hanzi": "自助机",
+     "pinyin": "zì zhù jī",
+     "pos": "n.",
+     "en": "self-service machine",
+     "id": "dabu3-u1-5:7"
+    },
+    {
+     "hanzi": "叠",
+     "pinyin": "dié",
+     "pos": "m./v.",
+     "en": "a stack, a pile (of paper or notes); to fold",
+     "id": "dabu3-u1-5:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-5c",
+   "title": "大步3 U1.5 · 没有现金的生活 Life without cash · 3",
+   "words": [
+    {
+     "hanzi": "整整齐齐",
+     "pinyin": "zhěng zhěng qí qí",
+     "pos": "adj.",
+     "en": "neat and tidy, in good order",
+     "id": "dabu3-u1-5:9"
+    },
+    {
+     "hanzi": "纸条",
+     "pinyin": "zhǐ tiáo",
+     "pos": "n.",
+     "en": "slip of paper, note",
+     "id": "dabu3-u1-5:10"
+    },
+    {
+     "hanzi": "挂号",
+     "pinyin": "guà hào",
+     "pos": "v.",
+     "en": "to register (at a hospital)",
+     "id": "dabu3-u1-5:11"
+    },
+    {
+     "hanzi": "老人机",
+     "pinyin": "lǎo rén jī",
+     "pos": "n.",
+     "en": "phone for the elderly (big buttons, no apps)",
+     "id": "dabu3-u1-6:0",
+     "parts": [
+      "老人",
+      "机"
+     ]
+    },
+    {
+     "hanzi": "根本",
+     "pinyin": "gēn běn",
+     "pos": "adv.",
+     "en": "at all, simply (before a negative)",
+     "id": "dabu3-u1-6:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-6a",
+   "title": "大步3 U1.6 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "人工",
+     "pinyin": "rén gōng",
+     "pos": "adj./n.",
+     "en": "manual, staffed by people; artificial; labour",
+     "id": "dabu3-u1-6:3"
+    },
+    {
+     "hanzi": "数",
+     "pinyin": "shǔ",
+     "pos": "v.",
+     "en": "to count",
+     "id": "dabu3-u1-6:4"
+    },
+    {
+     "hanzi": "添麻烦",
+     "pinyin": "tiān má fan",
+     "pos": "phr.",
+     "en": "to cause (someone) trouble",
+     "id": "dabu3-u1-6:5"
+    },
+    {
+     "hanzi": "跟不上",
+     "pinyin": "gēn bu shàng",
+     "pos": "phr.",
+     "en": "can't keep up",
+     "id": "dabu3-u1-6:6"
+    },
+    {
+     "hanzi": "不是滋味",
+     "pinyin": "bù shì zī wèi",
+     "pos": "phr.",
+     "en": "to feel bad, feel upset",
+     "id": "dabu3-u1-6:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-6b",
+   "title": "大步3 U1.6 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "移动",
+     "pinyin": "yí dòng",
+     "pos": "v./adj.",
+     "en": "to move; mobile",
+     "id": "dabu3-u1-6:9"
+    },
+    {
+     "hanzi": "巨大",
+     "pinyin": "jù dà",
+     "pos": "adj.",
+     "en": "huge, enormous",
+     "id": "dabu3-u1-6:10"
+    },
+    {
+     "hanzi": "享受",
+     "pinyin": "xiǎng shòu",
+     "pos": "v./n.",
+     "en": "to enjoy; enjoyment",
+     "id": "dabu3-u1-6:11"
+    },
+    {
+     "hanzi": "甩",
+     "pinyin": "shuǎi",
+     "pos": "v.",
+     "en": "to fling, throw off (甩在后面 leave behind)",
+     "id": "dabu3-u1-7:0"
+    },
+    {
+     "hanzi": "超过",
+     "pinyin": "chāo guò",
+     "pos": "v.",
+     "en": "to exceed, be more than",
+     "id": "dabu3-u1-7:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-7a",
+   "title": "大步3 U1.7 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "移动支付",
+     "pinyin": "yí dòng zhī fù",
+     "pos": "n.",
+     "en": "mobile payment",
+     "id": "dabu3-u1-6:8",
+     "parts": [
+      "移动",
+      "支付"
+     ]
+    },
+    {
+     "hanzi": "亿",
+     "pinyin": "yì",
+     "pos": "num.",
+     "en": "a hundred million (三亿 three hundred million)",
+     "id": "dabu3-u1-7:2"
+    },
+    {
+     "hanzi": "其中",
+     "pinyin": "qí zhōng",
+     "pos": "pron.",
+     "en": "among them, of which",
+     "id": "dabu3-u1-7:3"
+    },
+    {
+     "hanzi": "智能",
+     "pinyin": "zhì néng",
+     "pos": "adj./n.",
+     "en": "smart, intelligent; intelligence",
+     "id": "dabu3-u1-7:5"
+    },
+    {
+     "hanzi": "智能手机",
+     "pinyin": "zhì néng shǒu jī",
+     "pos": "n.",
+     "en": "smartphone",
+     "id": "dabu3-u1-7:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-7b",
+   "title": "大步3 U1.7 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "小小",
+     "pinyin": "xiǎo xiǎo",
+     "pos": "adj.",
+     "en": "little, tiny",
+     "id": "dabu3-u1-7:6"
+    },
+    {
+     "hanzi": "道",
+     "pinyin": "dào",
+     "pos": "m.",
+     "en": "for barriers, doors and walls (一道门槛 a barrier)",
+     "id": "dabu3-u1-7:7"
+    },
+    {
+     "hanzi": "门槛",
+     "pinyin": "mén kǎn",
+     "pos": "n.",
+     "en": "threshold, barrier",
+     "id": "dabu3-u1-7:8"
+    },
+    {
+     "hanzi": "先进",
+     "pinyin": "xiān jìn",
+     "pos": "adj.",
+     "en": "advanced",
+     "id": "dabu3-u1-7:9"
+    },
+    {
+     "hanzi": "技术",
+     "pinyin": "jì shù",
+     "pos": "n.",
+     "en": "technology, technique",
+     "id": "dabu3-u1-7:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-8a",
+   "title": "大步3 U1.8 · 没有现金的生活 Life without cash · 1",
+   "words": [
+    {
+     "hanzi": "好在",
+     "pinyin": "hǎo zài",
+     "pos": "adv.",
+     "en": "luckily, fortunately",
+     "id": "dabu3-u1-7:11",
+     "parts": [
+      "好",
+      "在"
+     ]
+    },
+    {
+     "hanzi": "商家",
+     "pinyin": "shāng jiā",
+     "pos": "n.",
+     "en": "shops, businesses, merchants",
+     "id": "dabu3-u1-8:0"
+    },
+    {
+     "hanzi": "拒收",
+     "pinyin": "jù shōu",
+     "pos": "v.",
+     "en": "to refuse (to accept)",
+     "id": "dabu3-u1-8:1"
+    },
+    {
+     "hanzi": "保留",
+     "pinyin": "bǎo liú",
+     "pos": "v.",
+     "en": "to keep, retain",
+     "id": "dabu3-u1-8:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-8b",
+   "title": "大步3 U1.8 · 没有现金的生活 Life without cash · 2",
+   "words": [
+    {
+     "hanzi": "姑娘",
+     "pinyin": "gū niang",
+     "pos": "n.",
+     "en": "girl, young woman",
+     "id": "dabu3-u1-8:3"
+    },
+    {
+     "hanzi": "未必",
+     "pinyin": "wèi bì",
+     "pos": "adv.",
+     "en": "not necessarily (written)",
+     "id": "dabu3-u1-8:4"
+    },
+    {
+     "hanzi": "离不开",
+     "pinyin": "lí bu kāi",
+     "pos": "phr.",
+     "en": "can't do without",
+     "id": "dabu3-u1-8:5"
+    },
+    {
+     "hanzi": "依赖",
+     "pinyin": "yī lài",
+     "pos": "v./n.",
+     "en": "to depend on; dependence (formal)",
+     "id": "dabu3-u1-8:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u1-8c",
+   "title": "大步3 U1.8 · 没有现金的生活 Life without cash · 3",
+   "words": [
+    {
+     "hanzi": "严重",
+     "pinyin": "yán zhòng",
+     "pos": "adj.",
+     "en": "serious, severe",
+     "id": "dabu3-u1-8:7"
+    },
+    {
+     "hanzi": "便利",
+     "pinyin": "biàn lì",
+     "pos": "adj./n.",
+     "en": "convenient; convenience (written)",
+     "id": "dabu3-u1-8:8"
+    },
+    {
+     "hanzi": "数字人民币",
+     "pinyin": "shù zì rén mín bì",
+     "pos": "n.",
+     "en": "digital renminbi",
+     "id": "dabu3-u1-8:9",
+     "parts": [
+      "数字",
+      "人民币"
+     ]
+    },
+    {
+     "hanzi": "普及",
+     "pinyin": "pǔ jí",
+     "pos": "v./adj.",
+     "en": "to spread, become common; widespread",
+     "id": "dabu3-u1-8:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-1a",
+   "title": "大步3 U2.1 · 刷手机 Just one more video · 1",
+   "words": [
+    {
+     "hanzi": "在线",
+     "pinyin": "zài xiàn",
+     "pos": "adj./v.",
+     "en": "online (在线的人 people watching live)",
+     "id": "dabu3-u2-1:1"
+    },
+    {
+     "hanzi": "短视频",
+     "pinyin": "duǎn shì pín",
+     "pos": "n.",
+     "en": "short video",
+     "id": "dabu3-u2-1:2",
+     "parts": [
+      "短",
+      "视频"
+     ]
+    },
+    {
+     "hanzi": "火",
+     "pinyin": "huǒ",
+     "pos": "adj.",
+     "en": "popular, a hit (一下子就火了 took off overnight) (new meaning)",
+     "id": "dabu3-u2-1:3"
+    },
+    {
+     "hanzi": "播放",
+     "pinyin": "bō fàng",
+     "pos": "v.",
+     "en": "to play (a video); to broadcast",
+     "id": "dabu3-u2-1:5"
+    },
+    {
+     "hanzi": "网红",
+     "pinyin": "wǎng hóng",
+     "pos": "n.",
+     "en": "internet celebrity, influencer",
+     "id": "dabu3-u2-1:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-1b",
+   "title": "大步3 U2.1 · 刷手机 Just one more video · 2",
+   "words": [
+    {
+     "hanzi": "播放量",
+     "pinyin": "bō fàng liàng",
+     "pos": "n.",
+     "en": "number of views, plays",
+     "id": "dabu3-u2-1:4",
+     "parts": [
+      "播放",
+      "量"
+     ]
+    },
+    {
+     "hanzi": "流量",
+     "pinyin": "liú liàng",
+     "pos": "n.",
+     "en": "(web) traffic, views; mobile data",
+     "id": "dabu3-u2-1:7"
+    },
+    {
+     "hanzi": "订单",
+     "pinyin": "dìng dān",
+     "pos": "n.",
+     "en": "order (for goods)",
+     "id": "dabu3-u2-1:8"
+    },
+    {
+     "hanzi": "忙不过来",
+     "pinyin": "máng bu guò lái",
+     "pos": "phr.",
+     "en": "to have more than you can handle",
+     "id": "dabu3-u2-1:9"
+    },
+    {
+     "hanzi": "平均",
+     "pinyin": "píng jūn",
+     "pos": "adj./adv.",
+     "en": "average; on average",
+     "id": "dabu3-u2-1:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-2a",
+   "title": "大步3 U2.2 · 刷手机 Just one more video · 1",
+   "words": [
+    {
+     "hanzi": "抬头",
+     "pinyin": "tái tóu",
+     "pos": "v.",
+     "en": "to look up, raise your head",
+     "id": "dabu3-u2-2:0"
+    },
+    {
+     "hanzi": "午休",
+     "pinyin": "wǔ xiū",
+     "pos": "n./v.",
+     "en": "lunch break; to have a midday rest",
+     "id": "dabu3-u2-2:1"
+    },
+    {
+     "hanzi": "声",
+     "pinyin": "shēng",
+     "pos": "n./m.",
+     "en": "sound, voice (笑出了声 laughed out loud; 几声 a few bangs)",
+     "id": "dabu3-u2-2:2"
+    },
+    {
+     "hanzi": "推",
+     "pinyin": "tuī",
+     "pos": "v.",
+     "en": "to push; to recommend, show (an app shows you content) (new meaning)",
+     "id": "dabu3-u2-2:3"
+    },
+    {
+     "hanzi": "算法",
+     "pinyin": "suàn fǎ",
+     "pos": "n.",
+     "en": "algorithm",
+     "id": "dabu3-u2-2:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-2b",
+   "title": "大步3 U2.2 · 刷手机 Just one more video · 2",
+   "words": [
+    {
+     "hanzi": "停不下来",
+     "pinyin": "tíng bu xià lái",
+     "pos": "phr.",
+     "en": "can't stop",
+     "id": "dabu3-u2-2:5"
+    },
+    {
+     "hanzi": "即使",
+     "pinyin": "jí shǐ",
+     "pos": "phr.",
+     "en": "even if … still … (即使…也…)",
+     "id": "dabu3-u2-2:6"
+    },
+    {
+     "hanzi": "即使",
+     "pinyin": "jí shǐ",
+     "pos": "conj.",
+     "en": "even if",
+     "id": "dabu3-u2-2:7"
+    },
+    {
+     "hanzi": "上瘾",
+     "pinyin": "shàng yǐn",
+     "pos": "v.",
+     "en": "to get hooked, be addicted",
+     "id": "dabu3-u2-2:8"
+    },
+    {
+     "hanzi": "行",
+     "pinyin": "háng",
+     "pos": "m.",
+     "en": "line (of text) (三行 three lines) (new meaning)",
+     "id": "dabu3-u2-2:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-3a",
+   "title": "大步3 U2.3 · 刷手机 Just one more video · 1",
+   "words": [
+    {
+     "hanzi": "碎片",
+     "pinyin": "suì piàn",
+     "pos": "n.",
+     "en": "fragment, scrap, bits",
+     "id": "dabu3-u2-2:10"
+    },
+    {
+     "hanzi": "所谓",
+     "pinyin": "suǒ wèi",
+     "pos": "adj.",
+     "en": "so-called, what's known as",
+     "id": "dabu3-u2-3:0"
+    },
+    {
+     "hanzi": "戒",
+     "pinyin": "jiè",
+     "pos": "v.",
+     "en": "to give up, quit (a habit)",
+     "id": "dabu3-u2-3:2"
+    },
+    {
+     "hanzi": "赌",
+     "pinyin": "dǔ",
+     "pos": "v.",
+     "en": "to bet, gamble (赌就赌 you're on)",
+     "id": "dabu3-u2-3:4"
+    },
+    {
+     "hanzi": "打赌",
+     "pinyin": "dǎ dǔ",
+     "pos": "v.",
+     "en": "to bet, make a bet",
+     "id": "dabu3-u2-3:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-3b",
+   "title": "大步3 U2.3 · 刷手机 Just one more video · 2",
+   "words": [
+    {
+     "hanzi": "碎片化",
+     "pinyin": "suì piàn huà",
+     "pos": "n./adj.",
+     "en": "fragmentation; fragmented",
+     "id": "dabu3-u2-3:1",
+     "parts": [
+      "碎片",
+      "化"
+     ]
+    },
+    {
+     "hanzi": "粉丝",
+     "pinyin": "fěn sī",
+     "pos": "n.",
+     "en": "fans, followers",
+     "id": "dabu3-u2-3:5"
+    },
+    {
+     "hanzi": "主播",
+     "pinyin": "zhǔ bō",
+     "pos": "n.",
+     "en": "(livestream) host, streamer",
+     "id": "dabu3-u2-3:6"
+    },
+    {
+     "hanzi": "带货",
+     "pinyin": "dài huò",
+     "pos": "v.",
+     "en": "to sell products (on a livestream or video)",
+     "id": "dabu3-u2-3:7"
+    },
+    {
+     "hanzi": "博主",
+     "pinyin": "bó zhǔ",
+     "pos": "n.",
+     "en": "blogger, content creator",
+     "id": "dabu3-u2-3:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-4a",
+   "title": "大步3 U2.4 · 刷手机 Just one more video · 1",
+   "words": [
+    {
+     "hanzi": "刷屏",
+     "pinyin": "shuā píng",
+     "pos": "v.",
+     "en": "to flood everyone's feed",
+     "id": "dabu3-u2-3:9"
+    },
+    {
+     "hanzi": "刷到",
+     "pinyin": "shuā dào",
+     "pos": "v.",
+     "en": "to come across (while scrolling)",
+     "id": "dabu3-u2-3:10",
+     "parts": [
+      "刷",
+      "到"
+     ]
+    },
+    {
+     "hanzi": "点击",
+     "pinyin": "diǎn jī",
+     "pos": "v./n.",
+     "en": "to click; click",
+     "id": "dabu3-u2-4:0"
+    },
+    {
+     "hanzi": "种草",
+     "pinyin": "zhòng cǎo",
+     "pos": "v.",
+     "en": "to make someone want to buy something (by recommending it online)",
+     "id": "dabu3-u2-4:1"
+    },
+    {
+     "hanzi": "爆款",
+     "pinyin": "bào kuǎn",
+     "pos": "n.",
+     "en": "a hit product, bestseller",
+     "id": "dabu3-u2-4:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-4b",
+   "title": "大步3 U2.4 · 刷手机 Just one more video · 2",
+   "words": [
+    {
+     "hanzi": "弹幕",
+     "pinyin": "dàn mù",
+     "pos": "n.",
+     "en": "'bullet comments' that fly across a video",
+     "id": "dabu3-u2-4:3"
+    },
+    {
+     "hanzi": "表情包",
+     "pinyin": "biǎo qíng bāo",
+     "pos": "n.",
+     "en": "stickers, memes (in chats)",
+     "id": "dabu3-u2-4:4"
+    },
+    {
+     "hanzi": "私信",
+     "pinyin": "sī xìn",
+     "pos": "n./v.",
+     "en": "private message, DM; to message privately",
+     "id": "dabu3-u2-4:5"
+    },
+    {
+     "hanzi": "视频通话",
+     "pinyin": "shì pín tōng huà",
+     "pos": "n.",
+     "en": "video call",
+     "id": "dabu3-u2-4:6"
+    },
+    {
+     "hanzi": "语音",
+     "pinyin": "yǔ yīn",
+     "pos": "n.",
+     "en": "voice message; voice",
+     "id": "dabu3-u2-4:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-4c",
+   "title": "大步3 U2.4 · 刷手机 Just one more video · 3",
+   "words": [
+    {
+     "hanzi": "平台",
+     "pinyin": "píng tái",
+     "pos": "n.",
+     "en": "platform (online)",
+     "id": "dabu3-u2-4:8"
+    },
+    {
+     "hanzi": "用户",
+     "pinyin": "yòng hù",
+     "pos": "n.",
+     "en": "user (of an app or service)",
+     "id": "dabu3-u2-4:9"
+    },
+    {
+     "hanzi": "沉迷",
+     "pinyin": "chén mí",
+     "pos": "v.",
+     "en": "to be hooked on, lose yourself in (written)",
+     "id": "dabu3-u2-4:10"
+    },
+    {
+     "hanzi": "整整",
+     "pinyin": "zhěng zhěng",
+     "pos": "adv.",
+     "en": "a whole, fully (整整三十天 a whole thirty days)",
+     "id": "dabu3-u2-5:0"
+    },
+    {
+     "hanzi": "起因",
+     "pinyin": "qǐ yīn",
+     "pos": "n.",
+     "en": "cause, how something started",
+     "id": "dabu3-u2-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-5a",
+   "title": "大步3 U2.5 · 刷手机 Just one more video · 1",
+   "words": [
+    {
+     "hanzi": "宣布",
+     "pinyin": "xuān bù",
+     "pos": "v.",
+     "en": "to announce",
+     "id": "dabu3-u2-5:2"
+    },
+    {
+     "hanzi": "难熬",
+     "pinyin": "nán áo",
+     "pos": "adj.",
+     "en": "hard to get through, hard to bear",
+     "id": "dabu3-u2-5:3"
+    },
+    {
+     "hanzi": "删",
+     "pinyin": "shān",
+     "pos": "v.",
+     "en": "to delete",
+     "id": "dabu3-u2-5:4"
+    },
+    {
+     "hanzi": "解锁",
+     "pinyin": "jiě suǒ",
+     "pos": "v.",
+     "en": "to unlock",
+     "id": "dabu3-u2-5:5"
+    },
+    {
+     "hanzi": "发呆",
+     "pinyin": "fā dāi",
+     "pos": "v.",
+     "en": "to stare blankly, be in a daze",
+     "id": "dabu3-u2-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-5b",
+   "title": "大步3 U2.5 · 刷手机 Just one more video · 2",
+   "words": [
+    {
+     "hanzi": "意识到",
+     "pinyin": "yì shi dào",
+     "pos": "v.",
+     "en": "to realise, become aware",
+     "id": "dabu3-u2-5:7"
+    },
+    {
+     "hanzi": "睡着",
+     "pinyin": "shuì zháo",
+     "pos": "v.",
+     "en": "to fall asleep",
+     "id": "dabu3-u2-5:8"
+    },
+    {
+     "hanzi": "代价",
+     "pinyin": "dài jià",
+     "pos": "n.",
+     "en": "price, cost (of doing something)",
+     "id": "dabu3-u2-5:9"
+    },
+    {
+     "hanzi": "插不上话",
+     "pinyin": "chā bu shàng huà",
+     "pos": "phr.",
+     "en": "can't get a word in, can't join in",
+     "id": "dabu3-u2-5:10"
+    },
+    {
+     "hanzi": "何况",
+     "pinyin": "hé kuàng",
+     "pos": "conj.",
+     "en": "besides, moreover; let alone",
+     "id": "dabu3-u2-5:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-6a",
+   "title": "大步3 U2.6 · 刷手机 Just one more video · 1",
+   "words": [
+    {
+     "hanzi": "在于",
+     "pinyin": "zài yú",
+     "pos": "v.",
+     "en": "to lie in, rest on (written)",
+     "id": "dabu3-u2-6:0"
+    },
+    {
+     "hanzi": "控制",
+     "pinyin": "kòng zhì",
+     "pos": "v./n.",
+     "en": "to control; control",
+     "id": "dabu3-u2-6:2"
+    },
+    {
+     "hanzi": "重新",
+     "pinyin": "chóng xīn",
+     "pos": "adv.",
+     "en": "again, anew",
+     "id": "dabu3-u2-6:3"
+    },
+    {
+     "hanzi": "斗",
+     "pinyin": "dòu",
+     "pos": "v.",
+     "en": "to fight, struggle with",
+     "id": "dabu3-u2-6:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-6b",
+   "title": "大步3 U2.6 · 刷手机 Just one more video · 2",
+   "words": [
+    {
+     "hanzi": "不在于",
+     "pinyin": "bù zài yú",
+     "pos": "phr.",
+     "en": "it's not a question of … but of … (不在于…而在于…)",
+     "id": "dabu3-u2-6:1",
+     "parts": [
+      "不",
+      "在于"
+     ]
+    },
+    {
+     "hanzi": "条件",
+     "pinyin": "tiáo jiàn",
+     "pos": "n.",
+     "en": "condition, terms (讲好条件 agree terms)",
+     "id": "dabu3-u2-6:5"
+    },
+    {
+     "hanzi": "说白了",
+     "pinyin": "shuō bái le",
+     "pos": "phr.",
+     "en": "to put it plainly, in plain words",
+     "id": "dabu3-u2-6:6"
+    },
+    {
+     "hanzi": "焦虑",
+     "pinyin": "jiāo lǜ",
+     "pos": "adj./n.",
+     "en": "anxious; anxiety",
+     "id": "dabu3-u2-6:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u2-6c",
+   "title": "大步3 U2.6 · 刷手机 Just one more video · 3",
+   "words": [
+    {
+     "hanzi": "注意力",
+     "pinyin": "zhù yì lì",
+     "pos": "n.",
+     "en": "attention, concentration",
+     "id": "dabu3-u2-6:8"
+    },
+    {
+     "hanzi": "专注",
+     "pinyin": "zhuān zhù",
+     "pos": "adj./v.",
+     "en": "focused; to concentrate",
+     "id": "dabu3-u2-6:9"
+    },
+    {
+     "hanzi": "自拍",
+     "pinyin": "zì pāi",
+     "pos": "v./n.",
+     "en": "to take a selfie; selfie",
+     "id": "dabu3-u2-6:10",
+     "parts": [
+      "自",
+      "拍"
+     ]
+    },
+    {
+     "hanzi": "滤镜",
+     "pinyin": "lǜ jìng",
+     "pos": "n.",
+     "en": "(photo) filter",
+     "id": "dabu3-u2-6:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-1a",
+   "title": "大步3 U3.1 · 人工智能会取代我们吗？ Will AI replace us? · 1",
+   "words": [
+    {
+     "hanzi": "人工智能",
+     "pinyin": "rén gōng zhì néng",
+     "pos": "n.",
+     "en": "artificial intelligence, AI",
+     "id": "dabu3-u3-1:0"
+    },
+    {
+     "hanzi": "取代",
+     "pinyin": "qǔ dài",
+     "pos": "v.",
+     "en": "to replace, take the place of",
+     "id": "dabu3-u3-1:1"
+    },
+    {
+     "hanzi": "上百",
+     "pinyin": "shàng bǎi",
+     "pos": "phr.",
+     "en": "a hundred or more",
+     "id": "dabu3-u3-1:2"
+    },
+    {
+     "hanzi": "初稿",
+     "pinyin": "chū gǎo",
+     "pos": "n.",
+     "en": "first draft",
+     "id": "dabu3-u3-1:3"
+    },
+    {
+     "hanzi": "生成",
+     "pinyin": "shēng chéng",
+     "pos": "v.",
+     "en": "to generate, produce",
+     "id": "dabu3-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-1b",
+   "title": "大步3 U3.1 · 人工智能会取代我们吗？ Will AI replace us? · 2",
+   "words": [
+    {
+     "hanzi": "挑",
+     "pinyin": "tiāo",
+     "pos": "v.",
+     "en": "to pick, choose",
+     "id": "dabu3-u3-1:5"
+    },
+    {
+     "hanzi": "入行",
+     "pinyin": "rù háng",
+     "pos": "v.",
+     "en": "to enter a profession, start out",
+     "id": "dabu3-u3-1:6"
+    },
+    {
+     "hanzi": "基础",
+     "pinyin": "jī chǔ",
+     "pos": "n./adj.",
+     "en": "foundation, basics; basic",
+     "id": "dabu3-u3-1:7"
+    },
+    {
+     "hanzi": "草图",
+     "pinyin": "cǎo tú",
+     "pos": "n.",
+     "en": "sketch, rough drawing",
+     "id": "dabu3-u3-1:8"
+    },
+    {
+     "hanzi": "照相机",
+     "pinyin": "zhào xiàng jī",
+     "pos": "n.",
+     "en": "camera",
+     "id": "dabu3-u3-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-2a",
+   "title": "大步3 U3.2 · 人工智能会取代我们吗？ Will AI replace us? · 1",
+   "words": [
+    {
+     "hanzi": "发明",
+     "pinyin": "fā míng",
+     "pos": "v./n.",
+     "en": "to invent; invention",
+     "id": "dabu3-u3-1:10"
+    },
+    {
+     "hanzi": "失业",
+     "pinyin": "shī yè",
+     "pos": "v.",
+     "en": "to lose your job, be unemployed",
+     "id": "dabu3-u3-2:0"
+    },
+    {
+     "hanzi": "消失",
+     "pinyin": "xiāo shī",
+     "pos": "v.",
+     "en": "to disappear",
+     "id": "dabu3-u3-2:1"
+    },
+    {
+     "hanzi": "摄影师",
+     "pinyin": "shè yǐng shī",
+     "pos": "n.",
+     "en": "photographer",
+     "id": "dabu3-u3-2:2"
+    },
+    {
+     "hanzi": "话虽如此",
+     "pinyin": "huà suī rú cǐ",
+     "pos": "phr.",
+     "en": "that may be so, but…; that said",
+     "id": "dabu3-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-2b",
+   "title": "大步3 U3.2 · 人工智能会取代我们吗？ Will AI replace us? · 2",
+   "words": [
+    {
+     "hanzi": "成千上万",
+     "pinyin": "chéng qiān shàng wàn",
+     "pos": "phr.",
+     "en": "thousands upon thousands",
+     "id": "dabu3-u3-2:4"
+    },
+    {
+     "hanzi": "版权",
+     "pinyin": "bǎn quán",
+     "pos": "n.",
+     "en": "copyright",
+     "id": "dabu3-u3-2:5"
+    },
+    {
+     "hanzi": "对错",
+     "pinyin": "duì cuò",
+     "pos": "n.",
+     "en": "right and wrong",
+     "id": "dabu3-u3-2:6"
+    },
+    {
+     "hanzi": "反过来说",
+     "pinyin": "fǎn guò lái shuō",
+     "pos": "phr.",
+     "en": "conversely, looked at the other way round",
+     "id": "dabu3-u3-2:7"
+    },
+    {
+     "hanzi": "交给",
+     "pinyin": "jiāo gěi",
+     "pos": "v.",
+     "en": "to hand over to, leave to",
+     "id": "dabu3-u3-2:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-3a",
+   "title": "大步3 U3.3 · 人工智能会取代我们吗？ Will AI replace us? · 1",
+   "words": [
+    {
+     "hanzi": "当年",
+     "pinyin": "dāng nián",
+     "pos": "n.",
+     "en": "back then, in those days",
+     "id": "dabu3-u3-2:9"
+    },
+    {
+     "hanzi": "捷径",
+     "pinyin": "jié jìng",
+     "pos": "n.",
+     "en": "shortcut",
+     "id": "dabu3-u3-2:10"
+    },
+    {
+     "hanzi": "归根结底",
+     "pinyin": "guī gēn jié dǐ",
+     "pos": "phr.",
+     "en": "in the final analysis, when all's said and done",
+     "id": "dabu3-u3-3:0"
+    },
+    {
+     "hanzi": "缺少",
+     "pinyin": "quē shǎo",
+     "pos": "v.",
+     "en": "to lack, be short of",
+     "id": "dabu3-u3-3:1"
+    },
+    {
+     "hanzi": "温度",
+     "pinyin": "wēn dù",
+     "pos": "n.",
+     "en": "temperature; warmth, human feeling",
+     "id": "dabu3-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-3b",
+   "title": "大步3 U3.3 · 人工智能会取代我们吗？ Will AI replace us? · 2",
+   "words": [
+    {
+     "hanzi": "速度",
+     "pinyin": "sù dù",
+     "pos": "n.",
+     "en": "speed",
+     "id": "dabu3-u3-3:3"
+    },
+    {
+     "hanzi": "纯",
+     "pinyin": "chún",
+     "pos": "adj.",
+     "en": "pure, entirely (纯手工 entirely by hand)",
+     "id": "dabu3-u3-3:4"
+    },
+    {
+     "hanzi": "辅助",
+     "pinyin": "fǔ zhù",
+     "pos": "v.",
+     "en": "to assist, help (用AI辅助 with AI's help)",
+     "id": "dabu3-u3-3:5"
+    },
+    {
+     "hanzi": "票",
+     "pinyin": "piào",
+     "pos": "n.",
+     "en": "vote (new meaning)",
+     "id": "dabu3-u3-3:6"
+    },
+    {
+     "hanzi": "投",
+     "pinyin": "tóu",
+     "pos": "v.",
+     "en": "to cast (a vote); to throw",
+     "id": "dabu3-u3-3:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-3c",
+   "title": "大步3 U3.3 · 人工智能会取代我们吗？ Will AI replace us? · 3",
+   "words": [
+    {
+     "hanzi": "投票",
+     "pinyin": "tóu piào",
+     "pos": "v.",
+     "en": "to vote",
+     "id": "dabu3-u3-3:8"
+    },
+    {
+     "hanzi": "机器人",
+     "pinyin": "jī qì rén",
+     "pos": "n.",
+     "en": "robot",
+     "id": "dabu3-u3-3:9"
+    },
+    {
+     "hanzi": "辩论",
+     "pinyin": "biàn lùn",
+     "pos": "v./n.",
+     "en": "to debate; debate",
+     "id": "dabu3-u3-3:10"
+    },
+    {
+     "hanzi": "观点",
+     "pinyin": "guān diǎn",
+     "pos": "n.",
+     "en": "point of view",
+     "id": "dabu3-u3-4:0"
+    },
+    {
+     "hanzi": "代替",
+     "pinyin": "dài tì",
+     "pos": "v.",
+     "en": "to replace, stand in for",
+     "id": "dabu3-u3-4:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-4a",
+   "title": "大步3 U3.4 · 人工智能会取代我们吗？ Will AI replace us? · 1",
+   "words": [
+    {
+     "hanzi": "替代",
+     "pinyin": "tì dài",
+     "pos": "v.",
+     "en": "to substitute, replace (written)",
+     "id": "dabu3-u3-4:2"
+    },
+    {
+     "hanzi": "大模型",
+     "pinyin": "dà mó xíng",
+     "pos": "n.",
+     "en": "large (AI) model",
+     "id": "dabu3-u3-4:3"
+    },
+    {
+     "hanzi": "数据",
+     "pinyin": "shù jù",
+     "pos": "n.",
+     "en": "data",
+     "id": "dabu3-u3-4:4"
+    },
+    {
+     "hanzi": "插画师",
+     "pinyin": "chā huà shī",
+     "pos": "n.",
+     "en": "illustrator",
+     "id": "dabu3-u3-4:5"
+    },
+    {
+     "hanzi": "程序员",
+     "pinyin": "chéng xù yuán",
+     "pos": "n.",
+     "en": "programmer",
+     "id": "dabu3-u3-4:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-4b",
+   "title": "大步3 U3.4 · 人工智能会取代我们吗？ Will AI replace us? · 2",
+   "words": [
+    {
+     "hanzi": "原创",
+     "pinyin": "yuán chuàng",
+     "pos": "adj./n.",
+     "en": "original; original work",
+     "id": "dabu3-u3-4:7"
+    },
+    {
+     "hanzi": "正方",
+     "pinyin": "zhèng fāng",
+     "pos": "n.",
+     "en": "the side for the motion (in a debate)",
+     "id": "dabu3-u3-4:8"
+    },
+    {
+     "hanzi": "反方",
+     "pinyin": "fǎn fāng",
+     "pos": "n.",
+     "en": "the side against the motion (in a debate)",
+     "id": "dabu3-u3-4:9"
+    },
+    {
+     "hanzi": "论坛",
+     "pinyin": "lùn tán",
+     "pos": "n.",
+     "en": "forum",
+     "id": "dabu3-u3-5:0"
+    },
+    {
+     "hanzi": "同行",
+     "pinyin": "tóng háng",
+     "pos": "n.",
+     "en": "people in the same profession, colleagues",
+     "id": "dabu3-u3-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-5a",
+   "title": "大步3 U3.5 · 人工智能会取代我们吗？ Will AI replace us? · 1",
+   "words": [
+    {
+     "hanzi": "意味着",
+     "pinyin": "yì wèi zhe",
+     "pos": "v.",
+     "en": "to mean, signify",
+     "id": "dabu3-u3-5:2"
+    },
+    {
+     "hanzi": "事实",
+     "pinyin": "shì shí",
+     "pos": "n.",
+     "en": "fact",
+     "id": "dabu3-u3-5:3"
+    },
+    {
+     "hanzi": "前所未有",
+     "pinyin": "qián suǒ wèi yǒu",
+     "pos": "phr.",
+     "en": "unprecedented, never seen before",
+     "id": "dabu3-u3-5:4"
+    },
+    {
+     "hanzi": "压力",
+     "pinyin": "yā lì",
+     "pos": "n.",
+     "en": "pressure",
+     "id": "dabu3-u3-5:5"
+    },
+    {
+     "hanzi": "打字员",
+     "pinyin": "dǎ zì yuán",
+     "pos": "n.",
+     "en": "typist",
+     "id": "dabu3-u3-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-5b",
+   "title": "大步3 U3.5 · 人工智能会取代我们吗？ Will AI replace us? · 2",
+   "words": [
+    {
+     "hanzi": "淘汰",
+     "pinyin": "táo tài",
+     "pos": "v.",
+     "en": "to eliminate, phase out, do away with",
+     "id": "dabu3-u3-5:7"
+    },
+    {
+     "hanzi": "创造",
+     "pinyin": "chuàng zào",
+     "pos": "v.",
+     "en": "to create",
+     "id": "dabu3-u3-5:8"
+    },
+    {
+     "hanzi": "假装",
+     "pinyin": "jiǎ zhuāng",
+     "pos": "v.",
+     "en": "to pretend",
+     "id": "dabu3-u3-5:9"
+    },
+    {
+     "hanzi": "发生",
+     "pinyin": "fā shēng",
+     "pos": "v.",
+     "en": "to happen",
+     "id": "dabu3-u3-5:10"
+    },
+    {
+     "hanzi": "往往",
+     "pinyin": "wǎng wǎng",
+     "pos": "adv.",
+     "en": "often, tend to",
+     "id": "dabu3-u3-5:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-6a",
+   "title": "大步3 U3.6 · 人工智能会取代我们吗？ Will AI replace us? · 1",
+   "words": [
+    {
+     "hanzi": "擅长",
+     "pinyin": "shàn cháng",
+     "pos": "v.",
+     "en": "to be good at",
+     "id": "dabu3-u3-5:12"
+    },
+    {
+     "hanzi": "恰恰",
+     "pinyin": "qià qià",
+     "pos": "adv.",
+     "en": "precisely, exactly",
+     "id": "dabu3-u3-6:0"
+    },
+    {
+     "hanzi": "重复性",
+     "pinyin": "chóng fù xìng",
+     "pos": "adj.",
+     "en": "repetitive",
+     "id": "dabu3-u3-6:1"
+    },
+    {
+     "hanzi": "提问",
+     "pinyin": "tí wèn",
+     "pos": "v.",
+     "en": "to ask a question",
+     "id": "dabu3-u3-6:2"
+    },
+    {
+     "hanzi": "判断",
+     "pinyin": "pàn duàn",
+     "pos": "v./n.",
+     "en": "to judge; judgement",
+     "id": "dabu3-u3-6:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-6b",
+   "title": "大步3 U3.6 · 人工智能会取代我们吗？ Will AI replace us? · 2",
+   "words": [
+    {
+     "hanzi": "责任",
+     "pinyin": "zé rèn",
+     "pos": "n.",
+     "en": "responsibility, duty",
+     "id": "dabu3-u3-6:4"
+    },
+    {
+     "hanzi": "练手",
+     "pinyin": "liàn shǒu",
+     "pos": "v.",
+     "en": "to practise, get your hand in",
+     "id": "dabu3-u3-6:5"
+    },
+    {
+     "hanzi": "得到",
+     "pinyin": "dé dào",
+     "pos": "v.",
+     "en": "to get, receive",
+     "id": "dabu3-u3-6:6"
+    },
+    {
+     "hanzi": "回答",
+     "pinyin": "huí dá",
+     "pos": "v./n.",
+     "en": "to answer; answer",
+     "id": "dabu3-u3-6:7"
+    },
+    {
+     "hanzi": "强大",
+     "pinyin": "qiáng dà",
+     "pos": "adj.",
+     "en": "powerful, strong",
+     "id": "dabu3-u3-6:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u3-6c",
+   "title": "大步3 U3.6 · 人工智能会取代我们吗？ Will AI replace us? · 3",
+   "words": [
+    {
+     "hanzi": "演讲",
+     "pinyin": "yǎn jiǎng",
+     "pos": "n./v.",
+     "en": "speech, talk; to give a speech",
+     "id": "dabu3-u3-6:9"
+    },
+    {
+     "hanzi": "各位",
+     "pinyin": "gè wèi",
+     "pos": "pron.",
+     "en": "everyone (in a speech: 各位同行 colleagues)",
+     "id": "dabu3-u3-6:10"
+    },
+    {
+     "hanzi": "其次",
+     "pinyin": "qí cì",
+     "pos": "adv.",
+     "en": "secondly, next",
+     "id": "dabu3-u3-6:11"
+    },
+    {
+     "hanzi": "争论",
+     "pinyin": "zhēng lùn",
+     "pos": "v./n.",
+     "en": "to argue, dispute; argument",
+     "id": "dabu3-u3-6:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-1a",
+   "title": "大步3 U4.1 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "全市",
+     "pinyin": "quán shì",
+     "pos": "n.",
+     "en": "the whole city",
+     "id": "dabu3-u4-1:0"
+    },
+    {
+     "hanzi": "商店",
+     "pinyin": "shāng diàn",
+     "pos": "n.",
+     "en": "shop",
+     "id": "dabu3-u4-1:1"
+    },
+    {
+     "hanzi": "一律",
+     "pinyin": "yī lǜ",
+     "pos": "adv.",
+     "en": "all, without exception",
+     "id": "dabu3-u4-1:2"
+    },
+    {
+     "hanzi": "收",
+     "pinyin": "shōu",
+     "pos": "v.",
+     "en": "to accept, take (不收现金 don't take cash)",
+     "id": "dabu3-u4-1:3"
+    },
+    {
+     "hanzi": "发布",
+     "pinyin": "fā bù",
+     "pos": "v.",
+     "en": "to issue, publish, post",
+     "id": "dabu3-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-1b",
+   "title": "大步3 U4.1 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "感叹号",
+     "pinyin": "gǎn tàn hào",
+     "pos": "n.",
+     "en": "exclamation mark",
+     "id": "dabu3-u4-1:5"
+    },
+    {
+     "hanzi": "越是",
+     "pinyin": "yuè shì",
+     "pos": "phr.",
+     "en": "the more … the more … (越是…越…)",
+     "id": "dabu3-u4-1:6"
+    },
+    {
+     "hanzi": "搜",
+     "pinyin": "sōu",
+     "pos": "v.",
+     "en": "to search (online)",
+     "id": "dabu3-u4-1:7"
+    },
+    {
+     "hanzi": "官方",
+     "pinyin": "guān fāng",
+     "pos": "n./adj.",
+     "en": "the authorities; official",
+     "id": "dabu3-u4-1:8"
+    },
+    {
+     "hanzi": "辟谣",
+     "pinyin": "pì yáo",
+     "pos": "v./n.",
+     "en": "to refute a rumour; a rebuttal",
+     "id": "dabu3-u4-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-2a",
+   "title": "大步3 U4.2 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "据",
+     "pinyin": "jù",
+     "pos": "prep.",
+     "en": "according to (written)",
+     "id": "dabu3-u4-1:10"
+    },
+    {
+     "hanzi": "报道",
+     "pinyin": "bào dào",
+     "pos": "n./v.",
+     "en": "(news) report; to report",
+     "id": "dabu3-u4-2:0"
+    },
+    {
+     "hanzi": "表示",
+     "pinyin": "biǎo shì",
+     "pos": "v.",
+     "en": "to state, say (formally) (new meaning)",
+     "id": "dabu3-u4-2:2"
+    },
+    {
+     "hanzi": "谣言",
+     "pinyin": "yáo yán",
+     "pos": "n.",
+     "en": "rumour",
+     "id": "dabu3-u4-2:3"
+    },
+    {
+     "hanzi": "违规",
+     "pinyin": "wéi guī",
+     "pos": "v.",
+     "en": "to break the rules",
+     "id": "dabu3-u4-2:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-2b",
+   "title": "大步3 U4.2 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "据报道",
+     "pinyin": "jù bào dào",
+     "pos": "phr.",
+     "en": "according to reports, it is reported that",
+     "id": "dabu3-u4-1:11",
+     "parts": [
+      "据",
+      "报道"
+     ]
+    },
+    {
+     "hanzi": "吓",
+     "pinyin": "xià",
+     "pos": "v.",
+     "en": "to frighten (吓得… so frightened that…)",
+     "id": "dabu3-u4-2:5"
+    },
+    {
+     "hanzi": "取",
+     "pinyin": "qǔ",
+     "pos": "v.",
+     "en": "to take out, withdraw (取钱 withdraw money)",
+     "id": "dabu3-u4-2:6"
+    },
+    {
+     "hanzi": "来源",
+     "pinyin": "lái yuán",
+     "pos": "n.",
+     "en": "source",
+     "id": "dabu3-u4-2:7"
+    },
+    {
+     "hanzi": "正规",
+     "pinyin": "zhèng guī",
+     "pos": "adj.",
+     "en": "proper, official, regular",
+     "id": "dabu3-u4-2:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-2c",
+   "title": "大步3 U4.2 · 新闻怎么读 Reading the news · 3",
+   "words": [
+    {
+     "hanzi": "媒体",
+     "pinyin": "méi tǐ",
+     "pos": "n.",
+     "en": "the media",
+     "id": "dabu3-u4-2:9"
+    },
+    {
+     "hanzi": "标题",
+     "pinyin": "biāo tí",
+     "pos": "n.",
+     "en": "headline, title",
+     "id": "dabu3-u4-2:10"
+    },
+    {
+     "hanzi": "传",
+     "pinyin": "chuán",
+     "pos": "v.",
+     "en": "to pass on, spread",
+     "id": "dabu3-u4-2:11"
+    },
+    {
+     "hanzi": "流传",
+     "pinyin": "liú chuán",
+     "pos": "v.",
+     "en": "to circulate, go round",
+     "id": "dabu3-u4-2:1"
+    },
+    {
+     "hanzi": "急",
+     "pinyin": "jí",
+     "pos": "adj.",
+     "en": "anxious, in a hurry (别急 don't panic; 急着 in a hurry to)",
+     "id": "dabu3-u4-3:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-3a",
+   "title": "大步3 U4.3 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "正事",
+     "pinyin": "zhèng shì",
+     "pos": "n.",
+     "en": "the matter in hand, business",
+     "id": "dabu3-u4-3:1"
+    },
+    {
+     "hanzi": "揭晓",
+     "pinyin": "jiē xiǎo",
+     "pos": "v.",
+     "en": "to announce (results)",
+     "id": "dabu3-u4-3:2"
+    },
+    {
+     "hanzi": "据悉",
+     "pinyin": "jù xī",
+     "pos": "phr.",
+     "en": "it is understood that, it is learned that (written)",
+     "id": "dabu3-u4-3:3"
+    },
+    {
+     "hanzi": "来稿",
+     "pinyin": "lái gǎo",
+     "pos": "n.",
+     "en": "submissions, entries (to a paper or competition)",
+     "id": "dabu3-u4-3:4"
+    },
+    {
+     "hanzi": "余",
+     "pinyin": "yú",
+     "pos": "num.",
+     "en": "more than, odd (after a number: 一千二百余篇 1,200-odd; written)",
+     "id": "dabu3-u4-3:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-3b",
+   "title": "大步3 U4.3 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "外籍",
+     "pinyin": "wài jí",
+     "pos": "adj.",
+     "en": "foreign (of nationality) (外籍居民 foreign resident)",
+     "id": "dabu3-u4-3:6"
+    },
+    {
+     "hanzi": "获",
+     "pinyin": "huò",
+     "pos": "v.",
+     "en": "to win, obtain (written 得到)",
+     "id": "dabu3-u4-3:7"
+    },
+    {
+     "hanzi": "奖",
+     "pinyin": "jiǎng",
+     "pos": "n.",
+     "en": "prize, award",
+     "id": "dabu3-u4-3:8"
+    },
+    {
+     "hanzi": "二等奖",
+     "pinyin": "èr děng jiǎng",
+     "pos": "n.",
+     "en": "second prize",
+     "id": "dabu3-u4-3:9"
+    },
+    {
+     "hanzi": "获奖",
+     "pinyin": "huò jiǎng",
+     "pos": "v.",
+     "en": "to win a prize",
+     "id": "dabu3-u4-3:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-4a",
+   "title": "大步3 U4.4 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "评委",
+     "pinyin": "píng wěi",
+     "pos": "n.",
+     "en": "judge (on a panel), jury member",
+     "id": "dabu3-u4-3:11"
+    },
+    {
+     "hanzi": "称",
+     "pinyin": "chēng",
+     "pos": "v.",
+     "en": "to say, state, claim (written)",
+     "id": "dabu3-u4-4:0"
+    },
+    {
+     "hanzi": "过季",
+     "pinyin": "guò jì",
+     "pos": "v.",
+     "en": "to be out of season",
+     "id": "dabu3-u4-4:1"
+    },
+    {
+     "hanzi": "八宝饭",
+     "pinyin": "bā bǎo fàn",
+     "pos": "n.",
+     "en": "eight-treasure rice (a sweet sticky-rice pudding for New Year)",
+     "id": "dabu3-u4-4:2"
+    },
+    {
+     "hanzi": "假新闻",
+     "pinyin": "jiǎ xīn wén",
+     "pos": "n.",
+     "en": "fake news",
+     "id": "dabu3-u4-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-4b",
+   "title": "大步3 U4.4 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "自媒体",
+     "pinyin": "zì méi tǐ",
+     "pos": "n.",
+     "en": "'self-media', independent online accounts",
+     "id": "dabu3-u4-4:4",
+     "parts": [
+      "自",
+      "媒体"
+     ]
+    },
+    {
+     "hanzi": "标题党",
+     "pinyin": "biāo tí dǎng",
+     "pos": "n.",
+     "en": "clickbait; people who write clickbait headlines",
+     "id": "dabu3-u4-4:5"
+    },
+    {
+     "hanzi": "截",
+     "pinyin": "jié",
+     "pos": "v.",
+     "en": "to cut off; to capture (截个图 take a screenshot)",
+     "id": "dabu3-u4-4:6"
+    },
+    {
+     "hanzi": "截图",
+     "pinyin": "jié tú",
+     "pos": "v./n.",
+     "en": "to take a screenshot; screenshot",
+     "id": "dabu3-u4-4:7"
+    },
+    {
+     "hanzi": "核实",
+     "pinyin": "hé shí",
+     "pos": "v.",
+     "en": "to verify, check",
+     "id": "dabu3-u4-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-4c",
+   "title": "大步3 U4.4 · 新闻怎么读 Reading the news · 3",
+   "words": [
+    {
+     "hanzi": "转载",
+     "pinyin": "zhuǎn zǎi",
+     "pos": "v.",
+     "en": "to repost, reprint (an article)",
+     "id": "dabu3-u4-4:9"
+    },
+    {
+     "hanzi": "官方媒体",
+     "pinyin": "guān fāng méi tǐ",
+     "pos": "n.",
+     "en": "official media",
+     "id": "dabu3-u4-4:10",
+     "parts": [
+      "官方",
+      "媒体"
+     ]
+    },
+    {
+     "hanzi": "信息",
+     "pinyin": "xìn xī",
+     "pos": "n.",
+     "en": "information; message",
+     "id": "dabu3-u4-4:11"
+    },
+    {
+     "hanzi": "走俏",
+     "pinyin": "zǒu qiào",
+     "pos": "v.",
+     "en": "to sell well, be in demand (news)",
+     "id": "dabu3-u4-5:0"
+    },
+    {
+     "hanzi": "山村",
+     "pinyin": "shān cūn",
+     "pos": "n.",
+     "en": "mountain village",
+     "id": "dabu3-u4-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-5a",
+   "title": "大步3 U4.5 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "本报讯",
+     "pinyin": "běn bào xùn",
+     "pos": "phr.",
+     "en": "'this paper reports' (the opening of a news report)",
+     "id": "dabu3-u4-5:2"
+    },
+    {
+     "hanzi": "年关",
+     "pinyin": "nián guān",
+     "pos": "n.",
+     "en": "the end of the (lunar) year",
+     "id": "dabu3-u4-5:3"
+    },
+    {
+     "hanzi": "将近",
+     "pinyin": "jiāng jìn",
+     "pos": "v./adv.",
+     "en": "to be approaching; nearly",
+     "id": "dabu3-u4-5:4"
+    },
+    {
+     "hanzi": "山区",
+     "pinyin": "shān qū",
+     "pos": "n.",
+     "en": "hilly area, mountains",
+     "id": "dabu3-u4-5:5"
+    },
+    {
+     "hanzi": "往年",
+     "pinyin": "wǎng nián",
+     "pos": "n.",
+     "en": "previous years, other years",
+     "id": "dabu3-u4-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-5b",
+   "title": "大步3 U4.5 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "截至",
+     "pinyin": "jié zhì",
+     "pos": "prep.",
+     "en": "as of, up to (a date)",
+     "id": "dabu3-u4-5:7"
+    },
+    {
+     "hanzi": "近",
+     "pinyin": "jìn",
+     "pos": "adv.",
+     "en": "nearly, almost (written: 近一个月 nearly a month) (new meaning)",
+     "id": "dabu3-u4-5:8"
+    },
+    {
+     "hanzi": "网络",
+     "pinyin": "wǎng luò",
+     "pos": "n.",
+     "en": "the internet, network, online",
+     "id": "dabu3-u4-5:9"
+    },
+    {
+     "hanzi": "果盘",
+     "pinyin": "guǒ pán",
+     "pos": "n.",
+     "en": "fruit tray, fruit bowl",
+     "id": "dabu3-u4-5:10"
+    },
+    {
+     "hanzi": "产品",
+     "pinyin": "chǎn pǐn",
+     "pos": "n.",
+     "en": "product",
+     "id": "dabu3-u4-5:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-6a",
+   "title": "大步3 U4.6 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "销售额",
+     "pinyin": "xiāo shòu é",
+     "pos": "n.",
+     "en": "sales (figure), turnover",
+     "id": "dabu3-u4-5:12"
+    },
+    {
+     "hanzi": "同期",
+     "pinyin": "tóng qī",
+     "pos": "n.",
+     "en": "the same period (去年同期 this time last year)",
+     "id": "dabu3-u4-5:13"
+    },
+    {
+     "hanzi": "倍",
+     "pinyin": "bèi",
+     "pos": "m.",
+     "en": "times, -fold (五倍 five times)",
+     "id": "dabu3-u4-6:0"
+    },
+    {
+     "hanzi": "村民",
+     "pinyin": "cūn mín",
+     "pos": "n.",
+     "en": "villager",
+     "id": "dabu3-u4-6:1"
+    },
+    {
+     "hanzi": "外出",
+     "pinyin": "wài chū",
+     "pos": "v.",
+     "en": "to go out; to go away (for work)",
+     "id": "dabu3-u4-6:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-6b",
+   "title": "大步3 U4.6 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "面临",
+     "pinyin": "miàn lín",
+     "pos": "v.",
+     "en": "to face, be faced with",
+     "id": "dabu3-u4-6:3"
+    },
+    {
+     "hanzi": "失传",
+     "pinyin": "shī chuán",
+     "pos": "v.",
+     "en": "to be lost, die out (of a craft or skill)",
+     "id": "dabu3-u4-6:4"
+    },
+    {
+     "hanzi": "转机",
+     "pinyin": "zhuǎn jī",
+     "pos": "n.",
+     "en": "turning point, a turn for the better",
+     "id": "dabu3-u4-6:5"
+    },
+    {
+     "hanzi": "外婆",
+     "pinyin": "wài pó",
+     "pos": "n.",
+     "en": "grandma (mum's mother)",
+     "id": "dabu3-u4-6:6"
+    },
+    {
+     "hanzi": "月初",
+     "pinyin": "yuè chū",
+     "pos": "n.",
+     "en": "the beginning of the month",
+     "id": "dabu3-u4-6:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-6c",
+   "title": "大步3 U4.6 · 新闻怎么读 Reading the news · 3",
+   "words": [
+    {
+     "hanzi": "迅速",
+     "pinyin": "xùn sù",
+     "pos": "adv./adj.",
+     "en": "rapidly; rapid",
+     "id": "dabu3-u4-6:8"
+    },
+    {
+     "hanzi": "突破",
+     "pinyin": "tū pò",
+     "pos": "v.",
+     "en": "to break through, pass (a figure)",
+     "id": "dabu3-u4-6:9"
+    },
+    {
+     "hanzi": "据了解",
+     "pinyin": "jù liǎo jiě",
+     "pos": "phr.",
+     "en": "it is understood that, we understand that",
+     "id": "dabu3-u4-6:10",
+     "parts": [
+      "据",
+      "了解"
+     ]
+    },
+    {
+     "hanzi": "大增",
+     "pinyin": "dà zēng",
+     "pos": "v.",
+     "en": "to rise sharply, surge",
+     "id": "dabu3-u4-6:11"
+    },
+    {
+     "hanzi": "发货",
+     "pinyin": "fā huò",
+     "pos": "v.",
+     "en": "to ship, send out (goods)",
+     "id": "dabu3-u4-6:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-7a",
+   "title": "大步3 U4.7 · 新闻怎么读 Reading the news · 1",
+   "words": [
+    {
+     "hanzi": "负责人",
+     "pinyin": "fù zé rén",
+     "pos": "n.",
+     "en": "person in charge, head",
+     "id": "dabu3-u4-6:13"
+    },
+    {
+     "hanzi": "目前",
+     "pinyin": "mù qián",
+     "pos": "n.",
+     "en": "at present, so far",
+     "id": "dabu3-u4-7:0"
+    },
+    {
+     "hanzi": "长久",
+     "pinyin": "cháng jiǔ",
+     "pos": "adj.",
+     "en": "lasting, long-term",
+     "id": "dabu3-u4-7:1"
+    },
+    {
+     "hanzi": "开设",
+     "pinyin": "kāi shè",
+     "pos": "v.",
+     "en": "to open, set up (a course, a service)",
+     "id": "dabu3-u4-7:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-7b",
+   "title": "大步3 U4.7 · 新闻怎么读 Reading the news · 2",
+   "words": [
+    {
+     "hanzi": "体验",
+     "pinyin": "tǐ yàn",
+     "pos": "v./n.",
+     "en": "to experience, try out; experience",
+     "id": "dabu3-u4-7:3"
+    },
+    {
+     "hanzi": "前来",
+     "pinyin": "qián lái",
+     "pos": "v.",
+     "en": "to come (written)",
+     "id": "dabu3-u4-7:4"
+    },
+    {
+     "hanzi": "头条",
+     "pinyin": "tóu tiáo",
+     "pos": "n.",
+     "en": "headline story, top story",
+     "id": "dabu3-u4-7:5"
+    },
+    {
+     "hanzi": "热搜",
+     "pinyin": "rè sōu",
+     "pos": "n.",
+     "en": "trending searches, trending topics",
+     "id": "dabu3-u4-7:6",
+     "parts": [
+      "热",
+      "搜"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-7c",
+   "title": "大步3 U4.7 · 新闻怎么读 Reading the news · 3",
+   "words": [
+    {
+     "hanzi": "采访",
+     "pinyin": "cǎi fǎng",
+     "pos": "v./n.",
+     "en": "to interview (as a reporter); interview",
+     "id": "dabu3-u4-7:7"
+    },
+    {
+     "hanzi": "编辑",
+     "pinyin": "biān jí",
+     "pos": "n./v.",
+     "en": "editor; to edit",
+     "id": "dabu3-u4-7:8"
+    },
+    {
+     "hanzi": "报社",
+     "pinyin": "bào shè",
+     "pos": "n.",
+     "en": "newspaper office",
+     "id": "dabu3-u4-7:9"
+    },
+    {
+     "hanzi": "副标题",
+     "pinyin": "fù biāo tí",
+     "pos": "n.",
+     "en": "subtitle, subheading",
+     "id": "dabu3-u4-7:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu3-u4-7d",
+   "title": "大步3 U4.7 · 新闻怎么读 Reading the news · 4",
+   "words": [
+    {
+     "hanzi": "高铁",
+     "pinyin": "gāo tiě",
+     "pos": "n.",
+     "en": "high-speed train",
+     "id": "dabu3-u4-7:11"
+    },
+    {
+     "hanzi": "熏鱼",
+     "pinyin": "xūn yú",
+     "pos": "",
+     "en": "Shanghai 'smoked' fish: fried, then soaked in a sweet soy sauce",
+     "id": "dabu3-u4-7:12"
+    },
+    {
+     "hanzi": "蛋饺",
+     "pinyin": "dàn jiǎo",
+     "pos": "",
+     "en": "egg dumplings, a thin omelette folded round pork",
+     "id": "dabu3-u4-7:13"
+    },
+    {
+     "hanzi": "崭新",
+     "pinyin": "zhǎn xīn",
+     "pos": "",
+     "en": "brand new",
+     "id": "dabu3-u4-7:14"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-1a",
+   "title": "大步4 U1.1 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "失眠",
+     "pinyin": "shī mián",
+     "pos": "v./n.",
+     "en": "to be unable to sleep; insomnia",
+     "id": "dabu4-u1-1:0"
+    },
+    {
+     "hanzi": "催婚",
+     "pinyin": "cuī hūn",
+     "pos": "v.",
+     "en": "to pressure someone to get married",
+     "id": "dabu4-u1-1:1"
+    },
+    {
+     "hanzi": "催",
+     "pinyin": "cuī",
+     "pos": "v.",
+     "en": "to hurry, urge, press (someone to do something)",
+     "id": "dabu4-u1-1:2"
+    },
+    {
+     "hanzi": "相亲",
+     "pinyin": "xiāng qīn",
+     "pos": "v./n.",
+     "en": "to go on an arranged date (with a view to marriage); a blind date",
+     "id": "dabu4-u1-1:3"
+    },
+    {
+     "hanzi": "战友",
+     "pinyin": "zhàn yǒu",
+     "pos": "n.",
+     "en": "comrade-in-arms, old army friend",
+     "id": "dabu4-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-1b",
+   "title": "大步4 U1.1 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "侄子",
+     "pinyin": "zhí zi",
+     "pos": "n.",
+     "en": "nephew (a brother's son)",
+     "id": "dabu4-u1-1:5"
+    },
+    {
+     "hanzi": "小姨",
+     "pinyin": "xiǎo yí",
+     "pos": "n.",
+     "en": "aunt (your mother's younger sister)",
+     "id": "dabu4-u1-1:6"
+    },
+    {
+     "hanzi": "角",
+     "pinyin": "jiǎo",
+     "pos": "n.",
+     "en": "corner",
+     "id": "dabu4-u1-1:8"
+    },
+    {
+     "hanzi": "抓紧",
+     "pinyin": "zhuā jǐn",
+     "pos": "v.",
+     "en": "to hurry up, make the most of (time)",
+     "id": "dabu4-u1-1:9"
+    },
+    {
+     "hanzi": "年龄",
+     "pinyin": "nián líng",
+     "pos": "n.",
+     "en": "age",
+     "id": "dabu4-u1-1:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-1c",
+   "title": "大步4 U1.1 · 催婚 So when are you getting married? · 3",
+   "words": [
+    {
+     "hanzi": "相亲角",
+     "pinyin": "xiāng qīn jiǎo",
+     "pos": "n.",
+     "en": "'matchmaking corner' (in a park, where parents advertise their children)",
+     "id": "dabu4-u1-1:7",
+     "parts": [
+      "相亲",
+      "角"
+     ]
+    },
+    {
+     "hanzi": "身高",
+     "pinyin": "shēn gāo",
+     "pos": "n.",
+     "en": "height (of a person)",
+     "id": "dabu4-u1-1:11"
+    },
+    {
+     "hanzi": "表姐",
+     "pinyin": "biǎo jiě",
+     "pos": "n.",
+     "en": "(older female) cousin",
+     "id": "dabu4-u1-1:12"
+    },
+    {
+     "hanzi": "背后",
+     "pinyin": "bèi hòu",
+     "pos": "n.",
+     "en": "behind (someone's back)",
+     "id": "dabu4-u1-2:0"
+    },
+    {
+     "hanzi": "剩女",
+     "pinyin": "shèng nǚ",
+     "pos": "n.",
+     "en": "'leftover woman' (a contested label for an unmarried woman over about 27)",
+     "id": "dabu4-u1-2:1",
+     "parts": [
+      "剩",
+      "女"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-2a",
+   "title": "大步4 U1.2 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "讨厌",
+     "pinyin": "tǎo yàn",
+     "pos": "v./adj.",
+     "en": "to hate, dislike; annoying",
+     "id": "dabu4-u1-2:2"
+    },
+    {
+     "hanzi": "难道",
+     "pinyin": "nán dào",
+     "pos": "adv.",
+     "en": "surely not, do you mean to say (in a rhetorical question)",
+     "id": "dabu4-u1-2:3"
+    },
+    {
+     "hanzi": "话说回来",
+     "pinyin": "huà shuō huí lái",
+     "pos": "phr.",
+     "en": "that said, mind you, then again",
+     "id": "dabu4-u1-2:4"
+    },
+    {
+     "hanzi": "说到底",
+     "pinyin": "shuō dào dǐ",
+     "pos": "phr.",
+     "en": "when it comes down to it, in the end",
+     "id": "dabu4-u1-2:5"
+    },
+    {
+     "hanzi": "为了",
+     "pinyin": "wèi le",
+     "pos": "phr.",
+     "en": "to (do something) for the sake of … (为了…而…)",
+     "id": "dabu4-u1-2:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-2b",
+   "title": "大步4 U1.2 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "何必",
+     "pinyin": "hé bì",
+     "pos": "adv.",
+     "en": "why bother, there's no need (in a rhetorical question)",
+     "id": "dabu4-u1-2:7"
+    },
+    {
+     "hanzi": "人生",
+     "pinyin": "rén shēng",
+     "pos": "n.",
+     "en": "life (a person's life as a whole)",
+     "id": "dabu4-u1-2:8"
+    },
+    {
+     "hanzi": "任务",
+     "pinyin": "rèn wu",
+     "pos": "n.",
+     "en": "task, job, mission",
+     "id": "dabu4-u1-2:9"
+    },
+    {
+     "hanzi": "事业",
+     "pinyin": "shì yè",
+     "pos": "n.",
+     "en": "career, life's work",
+     "id": "dabu4-u1-2:10"
+    },
+    {
+     "hanzi": "上升期",
+     "pinyin": "shàng shēng qī",
+     "pos": "n.",
+     "en": "a rising phase (事业上升期 when your career is taking off)",
+     "id": "dabu4-u1-2:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-3a",
+   "title": "大步4 U1.3 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "毕竟",
+     "pinyin": "bì jìng",
+     "pos": "adv.",
+     "en": "after all",
+     "id": "dabu4-u1-2:12"
+    },
+    {
+     "hanzi": "两代人",
+     "pinyin": "liǎng dài rén",
+     "pos": "phr.",
+     "en": "two generations",
+     "id": "dabu4-u1-3:0"
+    },
+    {
+     "hanzi": "父母",
+     "pinyin": "fù mǔ",
+     "pos": "n.",
+     "en": "parents",
+     "id": "dabu4-u1-3:1"
+    },
+    {
+     "hanzi": "对象",
+     "pinyin": "duì xiàng",
+     "pos": "n.",
+     "en": "partner, boyfriend or girlfriend (with a view to marriage) (有对象了吗？ seeing anyone?)",
+     "id": "dabu4-u1-3:2"
+    },
+    {
+     "hanzi": "单身",
+     "pinyin": "dān shēn",
+     "pos": "adj./n.",
+     "en": "single, unmarried",
+     "id": "dabu4-u1-3:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-3b",
+   "title": "大步4 U1.3 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "婚姻",
+     "pinyin": "hūn yīn",
+     "pos": "n.",
+     "en": "marriage",
+     "id": "dabu4-u1-3:4"
+    },
+    {
+     "hanzi": "恋爱",
+     "pinyin": "liàn ài",
+     "pos": "n./v.",
+     "en": "romantic love; to be in love",
+     "id": "dabu4-u1-3:5"
+    },
+    {
+     "hanzi": "谈恋爱",
+     "pinyin": "tán liàn ài",
+     "pos": "v.",
+     "en": "to be going out with someone, date",
+     "id": "dabu4-u1-3:6"
+    },
+    {
+     "hanzi": "离婚",
+     "pinyin": "lí hūn",
+     "pos": "v.",
+     "en": "to divorce",
+     "id": "dabu4-u1-3:7"
+    },
+    {
+     "hanzi": "彩礼",
+     "pinyin": "cǎi lǐ",
+     "pos": "n.",
+     "en": "betrothal gift (money from the groom's family to the bride's)",
+     "id": "dabu4-u1-3:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-3c",
+   "title": "大步4 U1.3 · 催婚 So when are you getting married? · 3",
+   "words": [
+    {
+     "hanzi": "大龄",
+     "pinyin": "dà líng",
+     "pos": "adj.",
+     "en": "older (than usual for marrying) (大龄青年 older single people)",
+     "id": "dabu4-u1-3:9"
+    },
+    {
+     "hanzi": "青年",
+     "pinyin": "qīng nián",
+     "pos": "n.",
+     "en": "young people, youth",
+     "id": "dabu4-u1-3:10"
+    },
+    {
+     "hanzi": "缘分",
+     "pinyin": "yuán fèn",
+     "pos": "n.",
+     "en": "fate that brings people together (有缘分 meant to be)",
+     "id": "dabu4-u1-3:11"
+    },
+    {
+     "hanzi": "幸福",
+     "pinyin": "xìng fú",
+     "pos": "adj./n.",
+     "en": "happy (of a life); happiness",
+     "id": "dabu4-u1-3:12"
+    },
+    {
+     "hanzi": "管",
+     "pinyin": "guǎn",
+     "pos": "v.",
+     "en": "to interfere, concern yourself with (不怎么管 don't really interfere)",
+     "id": "dabu4-u1-4:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-4a",
+   "title": "大步4 U1.4 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "怪",
+     "pinyin": "guài",
+     "pos": "v.",
+     "en": "to blame",
+     "id": "dabu4-u1-4:1"
+    },
+    {
+     "hanzi": "原因",
+     "pinyin": "yuán yīn",
+     "pos": "n.",
+     "en": "reason, cause",
+     "id": "dabu4-u1-4:2"
+    },
+    {
+     "hanzi": "伴侣",
+     "pinyin": "bàn lǚ",
+     "pos": "n.",
+     "en": "partner, companion (formal)",
+     "id": "dabu4-u1-4:3"
+    },
+    {
+     "hanzi": "红娘",
+     "pinyin": "hóng niáng",
+     "pos": "n.",
+     "en": "matchmaker (after a character in a classic play)",
+     "id": "dabu4-u1-4:4"
+    },
+    {
+     "hanzi": "领证",
+     "pinyin": "lǐng zhèng",
+     "pos": "v.",
+     "en": "to get your marriage certificate, marry officially",
+     "id": "dabu4-u1-4:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-4b",
+   "title": "大步4 U1.4 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "结婚证",
+     "pinyin": "jié hūn zhèng",
+     "pos": "n.",
+     "en": "marriage certificate",
+     "id": "dabu4-u1-4:6"
+    },
+    {
+     "hanzi": "安全感",
+     "pinyin": "ān quán gǎn",
+     "pos": "n.",
+     "en": "sense of security",
+     "id": "dabu4-u1-4:7"
+    },
+    {
+     "hanzi": "独立",
+     "pinyin": "dú lì",
+     "pos": "adj./v.",
+     "en": "independent; to stand on your own feet",
+     "id": "dabu4-u1-4:8"
+    },
+    {
+     "hanzi": "尊重",
+     "pinyin": "zūn zhòng",
+     "pos": "v./n.",
+     "en": "to respect; respect",
+     "id": "dabu4-u1-4:9"
+    },
+    {
+     "hanzi": "观念",
+     "pinyin": "guān niàn",
+     "pos": "n.",
+     "en": "ideas, values, way of thinking",
+     "id": "dabu4-u1-4:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-5a",
+   "title": "大步4 U1.5 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "心里话",
+     "pinyin": "xīn lǐ huà",
+     "pos": "n.",
+     "en": "what's in your heart, your true feelings",
+     "id": "dabu4-u1-5:0"
+    },
+    {
+     "hanzi": "说不出口",
+     "pinyin": "shuō bu chū kǒu",
+     "pos": "phr.",
+     "en": "can't bring yourself to say",
+     "id": "dabu4-u1-5:1"
+    },
+    {
+     "hanzi": "心急",
+     "pinyin": "xīn jí",
+     "pos": "adj.",
+     "en": "impatient, in too much of a hurry",
+     "id": "dabu4-u1-5:2"
+    },
+    {
+     "hanzi": "换了谁",
+     "pinyin": "huàn le shéi",
+     "pos": "phr.",
+     "en": "whoever it was, anyone (换了谁都受不了 anyone would have had enough)",
+     "id": "dabu4-u1-5:3",
+     "parts": [
+      "换",
+      "了",
+      "谁"
+     ]
+    },
+    {
+     "hanzi": "思想",
+     "pinyin": "sī xiǎng",
+     "pos": "n.",
+     "en": "thinking, ideas, outlook (思想老 old-fashioned)",
+     "id": "dabu4-u1-5:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-5b",
+   "title": "大步4 U1.5 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "厂",
+     "pinyin": "chǎng",
+     "pos": "n.",
+     "en": "factory, works (厂里 at the factory)",
+     "id": "dabu4-u1-5:5"
+    },
+    {
+     "hanzi": "会计",
+     "pinyin": "kuài jì",
+     "pos": "n.",
+     "en": "accountant; accounting",
+     "id": "dabu4-u1-5:6"
+    },
+    {
+     "hanzi": "年代",
+     "pinyin": "nián dài",
+     "pos": "n.",
+     "en": "era, time; decade (六十年代 the sixties)",
+     "id": "dabu4-u1-5:7"
+    },
+    {
+     "hanzi": "一辈子",
+     "pinyin": "yī bèi zi",
+     "pos": "n.",
+     "en": "all your life, a lifetime",
+     "id": "dabu4-u1-5:8"
+    },
+    {
+     "hanzi": "吵架",
+     "pinyin": "chǎo jià",
+     "pos": "v.",
+     "en": "to quarrel, have a row (吵过不少架 had plenty of rows)",
+     "id": "dabu4-u1-5:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-6a",
+   "title": "大步4 U1.6 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "回头",
+     "pinyin": "huí tóu",
+     "pos": "v.",
+     "en": "to look back (回头看 looking back)",
+     "id": "dabu4-u1-6:0"
+    },
+    {
+     "hanzi": "踏实",
+     "pinyin": "tā shi",
+     "pos": "adj.",
+     "en": "at ease, secure; steady, down-to-earth",
+     "id": "dabu4-u1-6:1"
+    },
+    {
+     "hanzi": "睡不着",
+     "pinyin": "shuì bu zháo",
+     "pos": "phr.",
+     "en": "can't get to sleep",
+     "id": "dabu4-u1-6:2"
+    },
+    {
+     "hanzi": "打拼",
+     "pinyin": "dǎ pīn",
+     "pos": "v.",
+     "en": "to work hard to make your way, strive",
+     "id": "dabu4-u1-6:3"
+    },
+    {
+     "hanzi": "本事",
+     "pinyin": "běn shi",
+     "pos": "n.",
+     "en": "ability, skill (靠自己的本事 by your own efforts)",
+     "id": "dabu4-u1-6:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-6b",
+   "title": "大步4 U1.6 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "不在",
+     "pinyin": "bù zài",
+     "pos": "v.",
+     "en": "to be gone, have passed away (euphemism) (new meaning)",
+     "id": "dabu4-u1-6:5",
+     "parts": [
+      "不",
+      "在"
+     ]
+    },
+    {
+     "hanzi": "逼",
+     "pinyin": "bī",
+     "pos": "v.",
+     "en": "to force, pressure, push",
+     "id": "dabu4-u1-6:6"
+    },
+    {
+     "hanzi": "嫁",
+     "pinyin": "jià",
+     "pos": "v.",
+     "en": "(of a woman) to marry",
+     "id": "dabu4-u1-6:7"
+    },
+    {
+     "hanzi": "娶",
+     "pinyin": "qǔ",
+     "pos": "v.",
+     "en": "(of a man) to marry, take a wife",
+     "id": "dabu4-u1-6:8"
+    },
+    {
+     "hanzi": "晚婚",
+     "pinyin": "wǎn hūn",
+     "pos": "n./v.",
+     "en": "late marriage; to marry late",
+     "id": "dabu4-u1-6:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-7a",
+   "title": "大步4 U1.7 · 催婚 So when are you getting married? · 1",
+   "words": [
+    {
+     "hanzi": "夫妻",
+     "pinyin": "fū qī",
+     "pos": "n.",
+     "en": "husband and wife, married couple",
+     "id": "dabu4-u1-7:0"
+    },
+    {
+     "hanzi": "丈夫",
+     "pinyin": "zhàng fu",
+     "pos": "n.",
+     "en": "husband",
+     "id": "dabu4-u1-7:1"
+    },
+    {
+     "hanzi": "妻子",
+     "pinyin": "qī zi",
+     "pos": "n.",
+     "en": "wife",
+     "id": "dabu4-u1-7:2"
+    },
+    {
+     "hanzi": "门当户对",
+     "pinyin": "mén dāng hù duì",
+     "pos": "phr.",
+     "en": "well matched in family background (a 成语)",
+     "id": "dabu4-u1-7:3"
+    },
+    {
+     "hanzi": "孤单",
+     "pinyin": "gū dān",
+     "pos": "adj.",
+     "en": "lonely, on your own",
+     "id": "dabu4-u1-7:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u1-7b",
+   "title": "大步4 U1.7 · 催婚 So when are you getting married? · 2",
+   "words": [
+    {
+     "hanzi": "孤独",
+     "pinyin": "gū dú",
+     "pos": "adj./n.",
+     "en": "lonely; loneliness",
+     "id": "dabu4-u1-7:5"
+    },
+    {
+     "hanzi": "唠叨",
+     "pinyin": "láo dao",
+     "pos": "v./adj.",
+     "en": "to nag, go on and on; nagging",
+     "id": "dabu4-u1-7:6"
+    },
+    {
+     "hanzi": "牵挂",
+     "pinyin": "qiān guà",
+     "pos": "v.",
+     "en": "to worry about, keep (someone) in your thoughts",
+     "id": "dabu4-u1-7:7"
+    },
+    {
+     "hanzi": "自由",
+     "pinyin": "zì yóu",
+     "pos": "n./adj.",
+     "en": "freedom; free",
+     "id": "dabu4-u1-7:8"
+    },
+    {
+     "hanzi": "平等",
+     "pinyin": "píng děng",
+     "pos": "adj./n.",
+     "en": "equal; equality",
+     "id": "dabu4-u1-7:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-1a",
+   "title": "大步4 U2.1 · 高考 The race to the exam · 1",
+   "words": [
+    {
+     "hanzi": "高考",
+     "pinyin": "gāo kǎo",
+     "pos": "n.",
+     "en": "the gaokao, the national university entrance exam",
+     "id": "dabu4-u2-1:0"
+    },
+    {
+     "hanzi": "生煎",
+     "pinyin": "shēng jiān",
+     "pos": "n.",
+     "en": "pan-fried pork bun (a Shanghai breakfast)",
+     "id": "dabu4-u2-1:1"
+    },
+    {
+     "hanzi": "奥数",
+     "pinyin": "ào shù",
+     "pos": "n.",
+     "en": "Olympiad maths (competition maths classes for children)",
+     "id": "dabu4-u2-1:2"
+    },
+    {
+     "hanzi": "作文",
+     "pinyin": "zuò wén",
+     "pos": "n.",
+     "en": "composition, essay (at school)",
+     "id": "dabu4-u2-1:3"
+    },
+    {
+     "hanzi": "节",
+     "pinyin": "jié",
+     "pos": "m.",
+     "en": "for lessons and classes (四节课 four classes) (new meaning)",
+     "id": "dabu4-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-1b",
+   "title": "大步4 U2.1 · 高考 The race to the exam · 2",
+   "words": [
+    {
+     "hanzi": "同桌",
+     "pinyin": "tóng zhuō",
+     "pos": "n.",
+     "en": "desk-mate (the classmate who shares your desk)",
+     "id": "dabu4-u2-1:5"
+    },
+    {
+     "hanzi": "编程",
+     "pinyin": "biān chéng",
+     "pos": "n./v.",
+     "en": "programming, coding; to code",
+     "id": "dabu4-u2-1:6"
+    },
+    {
+     "hanzi": "动画片",
+     "pinyin": "dòng huà piàn",
+     "pos": "n.",
+     "en": "cartoon, animated film",
+     "id": "dabu4-u2-1:7"
+    },
+    {
+     "hanzi": "疯",
+     "pinyin": "fēng",
+     "pos": "adj.",
+     "en": "mad, wild (疯跑 run about wildly)",
+     "id": "dabu4-u2-1:8"
+    },
+    {
+     "hanzi": "鸡娃",
+     "pinyin": "jī wá",
+     "pos": "v./n.",
+     "en": "to push your child hard ('inject the child with chicken blood'); a pushed child",
+     "id": "dabu4-u2-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-1c",
+   "title": "大步4 U2.1 · 高考 The race to the exam · 3",
+   "words": [
+    {
+     "hanzi": "依我看",
+     "pinyin": "yī wǒ kàn",
+     "pos": "phr.",
+     "en": "the way I see it, in my view",
+     "id": "dabu4-u2-1:10"
+    },
+    {
+     "hanzi": "要紧",
+     "pinyin": "yào jǐn",
+     "pos": "adj.",
+     "en": "important, what matters (身体最要紧 health comes first)",
+     "id": "dabu4-u2-1:11"
+    },
+    {
+     "hanzi": "小升初",
+     "pinyin": "xiǎo shēng chū",
+     "pos": "n.",
+     "en": "the move from primary to junior secondary school",
+     "id": "dabu4-u2-1:12"
+    },
+    {
+     "hanzi": "初中",
+     "pinyin": "chū zhōng",
+     "pos": "n.",
+     "en": "junior secondary school (ages 12 to 15)",
+     "id": "dabu4-u2-1:13"
+    },
+    {
+     "hanzi": "不得不",
+     "pinyin": "bù dé bù",
+     "pos": "phr.",
+     "en": "to have no choice but to, have to",
+     "id": "dabu4-u2-2:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-2a",
+   "title": "大步4 U2.2 · 高考 The race to the exam · 1",
+   "words": [
+    {
+     "hanzi": "高三",
+     "pinyin": "gāo sān",
+     "pos": "n.",
+     "en": "the final year of senior secondary school",
+     "id": "dabu4-u2-2:1"
+    },
+    {
+     "hanzi": "做题",
+     "pinyin": "zuò tí",
+     "pos": "v.",
+     "en": "to do exercises, practice questions",
+     "id": "dabu4-u2-2:2",
+     "parts": [
+      "做",
+      "题"
+     ]
+    },
+    {
+     "hanzi": "教室",
+     "pinyin": "jiào shì",
+     "pos": "n.",
+     "en": "classroom",
+     "id": "dabu4-u2-2:3"
+    },
+    {
+     "hanzi": "黑板",
+     "pinyin": "hēi bǎn",
+     "pos": "n.",
+     "en": "blackboard",
+     "id": "dabu4-u2-2:4"
+    },
+    {
+     "hanzi": "非",
+     "pinyin": "fēi",
+     "pos": "phr.",
+     "en": "must, simply have to (非…不可)",
+     "id": "dabu4-u2-2:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-2b",
+   "title": "大步4 U2.2 · 高考 The race to the exam · 2",
+   "words": [
+    {
+     "hanzi": "打基础",
+     "pinyin": "dǎ jī chǔ",
+     "pos": "phr.",
+     "en": "to lay the foundations",
+     "id": "dabu4-u2-2:6"
+    },
+    {
+     "hanzi": "步步",
+     "pinyin": "bù bù",
+     "pos": "adv.",
+     "en": "at every step, step by step",
+     "id": "dabu4-u2-2:7"
+    },
+    {
+     "hanzi": "算分",
+     "pinyin": "suàn fēn",
+     "pos": "v.",
+     "en": "to count towards your marks",
+     "id": "dabu4-u2-2:8",
+     "parts": [
+      "算",
+      "分"
+     ]
+    },
+    {
+     "hanzi": "补习班",
+     "pinyin": "bǔ xí bān",
+     "pos": "n.",
+     "en": "cram class, after-school tutoring class",
+     "id": "dabu4-u2-2:9"
+    },
+    {
+     "hanzi": "占满",
+     "pinyin": "zhàn mǎn",
+     "pos": "v.",
+     "en": "to fill up completely, take up all of",
+     "id": "dabu4-u2-2:10",
+     "parts": [
+      "占",
+      "满"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-2c",
+   "title": "大步4 U2.2 · 高考 The race to the exam · 3",
+   "words": [
+    {
+     "hanzi": "当妈的",
+     "pinyin": "dāng mā de",
+     "pos": "phr.",
+     "en": "a mother, someone who's a mum",
+     "id": "dabu4-u2-2:11",
+     "parts": [
+      "当",
+      "妈",
+      "的"
+     ]
+    },
+    {
+     "hanzi": "教育",
+     "pinyin": "jiào yù",
+     "pos": "n./v.",
+     "en": "education; to educate",
+     "id": "dabu4-u2-2:12"
+    },
+    {
+     "hanzi": "数学",
+     "pinyin": "shù xué",
+     "pos": "n.",
+     "en": "mathematics",
+     "id": "dabu4-u2-2:13"
+    },
+    {
+     "hanzi": "家长",
+     "pinyin": "jiā zhǎng",
+     "pos": "n.",
+     "en": "parent (of a pupil)",
+     "id": "dabu4-u2-3:0"
+    },
+    {
+     "hanzi": "高中",
+     "pinyin": "gāo zhōng",
+     "pos": "n.",
+     "en": "senior secondary school (ages 15 to 18)",
+     "id": "dabu4-u2-3:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-3a",
+   "title": "大步4 U2.3 · 高考 The race to the exam · 1",
+   "words": [
+    {
+     "hanzi": "中考",
+     "pinyin": "zhōng kǎo",
+     "pos": "n.",
+     "en": "the exam for entry to senior secondary school",
+     "id": "dabu4-u2-3:2"
+    },
+    {
+     "hanzi": "学区房",
+     "pinyin": "xué qū fáng",
+     "pos": "n.",
+     "en": "a flat bought to get into a good school's catchment area",
+     "id": "dabu4-u2-3:3"
+    },
+    {
+     "hanzi": "辅导",
+     "pinyin": "fǔ dǎo",
+     "pos": "v.",
+     "en": "to tutor, coach",
+     "id": "dabu4-u2-3:4"
+    },
+    {
+     "hanzi": "兴趣班",
+     "pinyin": "xìng qù bān",
+     "pos": "n.",
+     "en": "hobby class (music, art, sport)",
+     "id": "dabu4-u2-3:5"
+    },
+    {
+     "hanzi": "起跑线",
+     "pinyin": "qǐ pǎo xiàn",
+     "pos": "n.",
+     "en": "starting line (输在起跑线上 lose at the starting line)",
+     "id": "dabu4-u2-3:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-3b",
+   "title": "大步4 U2.3 · 高考 The race to the exam · 2",
+   "words": [
+    {
+     "hanzi": "攀比",
+     "pinyin": "pān bǐ",
+     "pos": "v.",
+     "en": "to compete with others, keep up with the Joneses",
+     "id": "dabu4-u2-3:7"
+    },
+    {
+     "hanzi": "班主任",
+     "pinyin": "bān zhǔ rèn",
+     "pos": "n.",
+     "en": "form teacher (in charge of a class)",
+     "id": "dabu4-u2-3:8"
+    },
+    {
+     "hanzi": "课外",
+     "pinyin": "kè wài",
+     "pos": "adj.",
+     "en": "extracurricular, after-school",
+     "id": "dabu4-u2-3:9"
+    },
+    {
+     "hanzi": "名校",
+     "pinyin": "míng xiào",
+     "pos": "n.",
+     "en": "top school, famous university",
+     "id": "dabu4-u2-3:10"
+    },
+    {
+     "hanzi": "学霸",
+     "pinyin": "xué bà",
+     "pos": "n.",
+     "en": "star student, top of the class",
+     "id": "dabu4-u2-3:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-4a",
+   "title": "大步4 U2.4 · 高考 The race to the exam · 1",
+   "words": [
+    {
+     "hanzi": "童年",
+     "pinyin": "tóng nián",
+     "pos": "n.",
+     "en": "childhood",
+     "id": "dabu4-u2-3:12"
+    },
+    {
+     "hanzi": "桥",
+     "pinyin": "qiáo",
+     "pos": "n.",
+     "en": "bridge",
+     "id": "dabu4-u2-4:0"
+    },
+    {
+     "hanzi": "县城",
+     "pinyin": "xiàn chéng",
+     "pos": "n.",
+     "en": "county town",
+     "id": "dabu4-u2-4:1"
+    },
+    {
+     "hanzi": "透明",
+     "pinyin": "tòu míng",
+     "pos": "adj.",
+     "en": "transparent, clear",
+     "id": "dabu4-u2-4:2"
+    },
+    {
+     "hanzi": "文件袋",
+     "pinyin": "wén jiàn dài",
+     "pos": "n.",
+     "en": "document folder, document wallet",
+     "id": "dabu4-u2-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-4b",
+   "title": "大步4 U2.4 · 高考 The race to the exam · 2",
+   "words": [
+    {
+     "hanzi": "准考证",
+     "pinyin": "zhǔn kǎo zhèng",
+     "pos": "n.",
+     "en": "exam admission ticket",
+     "id": "dabu4-u2-4:4"
+    },
+    {
+     "hanzi": "头",
+     "pinyin": "tóu",
+     "pos": "n.",
+     "en": "end (of a bridge, road or line) (这一头 this end) (new meaning)",
+     "id": "dabu4-u2-4:5"
+    },
+    {
+     "hanzi": "家教",
+     "pinyin": "jiā jiào",
+     "pos": "n.",
+     "en": "private tutor; home tutoring",
+     "id": "dabu4-u2-4:6"
+    },
+    {
+     "hanzi": "凭",
+     "pinyin": "píng",
+     "pos": "prep./v.",
+     "en": "by virtue of, on the strength of; to rely on",
+     "id": "dabu4-u2-4:7"
+    },
+    {
+     "hanzi": "公平",
+     "pinyin": "gōng píng",
+     "pos": "adj.",
+     "en": "fair",
+     "id": "dabu4-u2-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-4c",
+   "title": "大步4 U2.4 · 高考 The race to the exam · 3",
+   "words": [
+    {
+     "hanzi": "卷子",
+     "pinyin": "juàn zi",
+     "pos": "n.",
+     "en": "exam paper",
+     "id": "dabu4-u2-4:9"
+    },
+    {
+     "hanzi": "熄灯",
+     "pinyin": "xī dēng",
+     "pos": "v.",
+     "en": "to put the lights out (lights out)",
+     "id": "dabu4-u2-4:10"
+    },
+    {
+     "hanzi": "倒计时",
+     "pinyin": "dào jì shí",
+     "pos": "n./v.",
+     "en": "countdown; to count down",
+     "id": "dabu4-u2-4:11"
+    },
+    {
+     "hanzi": "分",
+     "pinyin": "fēn",
+     "pos": "m.",
+     "en": "a bit, a degree (压力就多一分 a little more pressure) (new meaning)",
+     "id": "dabu4-u2-4:12"
+    },
+    {
+     "hanzi": "整夜",
+     "pinyin": "zhěng yè",
+     "pos": "n.",
+     "en": "all night, the whole night",
+     "id": "dabu4-u2-5:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-5a",
+   "title": "大步4 U2.5 · 高考 The race to the exam · 1",
+   "words": [
+    {
+     "hanzi": "病倒",
+     "pinyin": "bìng dǎo",
+     "pos": "v.",
+     "en": "to fall ill, be laid low",
+     "id": "dabu4-u2-5:1"
+    },
+    {
+     "hanzi": "拼命",
+     "pinyin": "pīn mìng",
+     "pos": "adv./v.",
+     "en": "as hard as you can, desperately",
+     "id": "dabu4-u2-5:2"
+    },
+    {
+     "hanzi": "出台",
+     "pinyin": "chū tái",
+     "pos": "v.",
+     "en": "to bring in, introduce (a policy)",
+     "id": "dabu4-u2-5:3"
+    },
+    {
+     "hanzi": "双减",
+     "pinyin": "shuāng jiǎn",
+     "pos": "n.",
+     "en": "'double reduction' (the 2021 policy cutting homework and tutoring)",
+     "id": "dabu4-u2-5:4"
+    },
+    {
+     "hanzi": "政策",
+     "pinyin": "zhèng cè",
+     "pos": "n.",
+     "en": "policy",
+     "id": "dabu4-u2-5:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-5b",
+   "title": "大步4 U2.5 · 高考 The race to the exam · 2",
+   "words": [
+    {
+     "hanzi": "校外",
+     "pinyin": "xiào wài",
+     "pos": "adj.",
+     "en": "outside school",
+     "id": "dabu4-u2-5:6"
+    },
+    {
+     "hanzi": "培训",
+     "pinyin": "péi xùn",
+     "pos": "v./n.",
+     "en": "to train; training, tutoring",
+     "id": "dabu4-u2-5:7"
+    },
+    {
+     "hanzi": "升学",
+     "pinyin": "shēng xué",
+     "pos": "v.",
+     "en": "to go on to a higher school",
+     "id": "dabu4-u2-5:8"
+    },
+    {
+     "hanzi": "大山",
+     "pinyin": "dà shān",
+     "pos": "n.",
+     "en": "the mountains, the hills",
+     "id": "dabu4-u2-5:9"
+    },
+    {
+     "hanzi": "唯一",
+     "pinyin": "wéi yī",
+     "pos": "adj.",
+     "en": "only, sole",
+     "id": "dabu4-u2-5:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-6a",
+   "title": "大步4 U2.6 · 高考 The race to the exam · 1",
+   "words": [
+    {
+     "hanzi": "尽力",
+     "pinyin": "jìn lì",
+     "pos": "v.",
+     "en": "to do your best",
+     "id": "dabu4-u2-5:11"
+    },
+    {
+     "hanzi": "尽管",
+     "pinyin": "jǐn guǎn",
+     "pos": "conj.",
+     "en": "although, even though (written)",
+     "id": "dabu4-u2-5:12"
+    },
+    {
+     "hanzi": "志愿",
+     "pinyin": "zhì yuàn",
+     "pos": "n.",
+     "en": "wish; choice of universities (填志愿 fill in your choices)",
+     "id": "dabu4-u2-6:0"
+    },
+    {
+     "hanzi": "录取",
+     "pinyin": "lù qǔ",
+     "pos": "v.",
+     "en": "to admit, accept (a student)",
+     "id": "dabu4-u2-6:1"
+    },
+    {
+     "hanzi": "应试教育",
+     "pinyin": "yìng shì jiào yù",
+     "pos": "n.",
+     "en": "exam-oriented education, teaching to the test",
+     "id": "dabu4-u2-6:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-6b",
+   "title": "大步4 U2.6 · 高考 The race to the exam · 2",
+   "words": [
+    {
+     "hanzi": "素质教育",
+     "pinyin": "sù zhì jiào yù",
+     "pos": "n.",
+     "en": "all-round education",
+     "id": "dabu4-u2-6:3"
+    },
+    {
+     "hanzi": "命运",
+     "pinyin": "mìng yùn",
+     "pos": "n.",
+     "en": "fate, destiny",
+     "id": "dabu4-u2-6:4"
+    },
+    {
+     "hanzi": "落后",
+     "pinyin": "luò hòu",
+     "pos": "v./adj.",
+     "en": "to fall behind; backward",
+     "id": "dabu4-u2-6:5"
+    },
+    {
+     "hanzi": "支",
+     "pinyin": "zhī",
+     "pos": "m.",
+     "en": "for pens and pencils (两支笔 two pens)",
+     "id": "dabu4-u2-6:6"
+    },
+    {
+     "hanzi": "女生",
+     "pinyin": "nǚ shēng",
+     "pos": "n.",
+     "en": "girl (at school), female student",
+     "id": "dabu4-u2-6:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u2-6c",
+   "title": "大步4 U2.6 · 高考 The race to the exam · 3",
+   "words": [
+    {
+     "hanzi": "分数线",
+     "pinyin": "fēn shù xiàn",
+     "pos": "n.",
+     "en": "cut-off score",
+     "id": "dabu4-u2-6:8"
+    },
+    {
+     "hanzi": "复读",
+     "pinyin": "fù dú",
+     "pos": "v.",
+     "en": "to repeat a year (to resit the gaokao)",
+     "id": "dabu4-u2-6:9"
+    },
+    {
+     "hanzi": "状元",
+     "pinyin": "zhuàng yuan",
+     "pos": "n.",
+     "en": "top scorer (in the gaokao)",
+     "id": "dabu4-u2-6:10"
+    },
+    {
+     "hanzi": "心态",
+     "pinyin": "xīn tài",
+     "pos": "n.",
+     "en": "state of mind, attitude",
+     "id": "dabu4-u2-6:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-1a",
+   "title": "大步4 U3.1 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "乱",
+     "pinyin": "luàn",
+     "pos": "adj.",
+     "en": "in a mess, confused (心里乱 all over the place)",
+     "id": "dabu4-u3-1:0"
+    },
+    {
+     "hanzi": "姨父",
+     "pinyin": "yí fu",
+     "pos": "n.",
+     "en": "uncle (your mother's sister's husband)",
+     "id": "dabu4-u3-1:1"
+    },
+    {
+     "hanzi": "姨妈",
+     "pinyin": "yí mā",
+     "pos": "n.",
+     "en": "aunt (your mother's sister)",
+     "id": "dabu4-u3-1:2"
+    },
+    {
+     "hanzi": "跤",
+     "pinyin": "jiāo",
+     "pos": "n.",
+     "en": "a fall (摔跤 to fall over)",
+     "id": "dabu4-u3-1:3"
+    },
+    {
+     "hanzi": "肿",
+     "pinyin": "zhǒng",
+     "pos": "adj./v.",
+     "en": "swollen; to swell",
+     "id": "dabu4-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-1b",
+   "title": "大步4 U3.1 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "磨",
+     "pinyin": "mó",
+     "pos": "v.",
+     "en": "to wear down, grind",
+     "id": "dabu4-u3-1:5"
+    },
+    {
+     "hanzi": "尽快",
+     "pinyin": "jǐn kuài",
+     "pos": "adv.",
+     "en": "as soon as possible",
+     "id": "dabu4-u3-1:6"
+    },
+    {
+     "hanzi": "关节",
+     "pinyin": "guān jié",
+     "pos": "n.",
+     "en": "joint (换关节 have a joint replaced)",
+     "id": "dabu4-u3-1:7"
+    },
+    {
+     "hanzi": "手术",
+     "pinyin": "shǒu shù",
+     "pos": "n.",
+     "en": "operation, surgery (做手术 have an operation)",
+     "id": "dabu4-u3-1:8"
+    },
+    {
+     "hanzi": "挨",
+     "pinyin": "ái",
+     "pos": "v.",
+     "en": "to suffer, endure (挨一刀 go under the knife)",
+     "id": "dabu4-u3-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-2a",
+   "title": "大步4 U3.2 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "住院",
+     "pinyin": "zhù yuàn",
+     "pos": "v.",
+     "en": "to be in hospital, be admitted",
+     "id": "dabu4-u3-1:10"
+    },
+    {
+     "hanzi": "扛",
+     "pinyin": "káng",
+     "pos": "v.",
+     "en": "to carry on your shoulder; to shoulder, cope alone",
+     "id": "dabu4-u3-2:0"
+    },
+    {
+     "hanzi": "撑不住",
+     "pinyin": "chēng bu zhù",
+     "pos": "phr.",
+     "en": "can't hold out, be close to breaking point",
+     "id": "dabu4-u3-2:1"
+    },
+    {
+     "hanzi": "扶",
+     "pinyin": "fú",
+     "pos": "v.",
+     "en": "to support with your hand, help (someone) walk",
+     "id": "dabu4-u3-2:2"
+    },
+    {
+     "hanzi": "腰",
+     "pinyin": "yāo",
+     "pos": "n.",
+     "en": "the small of the back, waist (腰不好 a bad back)",
+     "id": "dabu4-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-2b",
+   "title": "大步4 U3.2 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "独生子",
+     "pinyin": "dú shēng zǐ",
+     "pos": "n.",
+     "en": "only son, only child",
+     "id": "dabu4-u3-2:4"
+    },
+    {
+     "hanzi": "独生子女",
+     "pinyin": "dú shēng zǐ nǚ",
+     "pos": "n.",
+     "en": "only child (the one-child generation)",
+     "id": "dabu4-u3-2:5"
+    },
+    {
+     "hanzi": "师傅",
+     "pinyin": "shī fu",
+     "pos": "n.",
+     "en": "master, skilled worker (here: the chefs)",
+     "id": "dabu4-u3-2:6"
+    },
+    {
+     "hanzi": "总不能",
+     "pinyin": "zǒng bù néng",
+     "pos": "phr.",
+     "en": "can hardly, can't very well",
+     "id": "dabu4-u3-2:7"
+    },
+    {
+     "hanzi": "护工",
+     "pinyin": "hù gōng",
+     "pos": "n.",
+     "en": "care worker, carer",
+     "id": "dabu4-u3-2:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-3a",
+   "title": "大步4 U3.3 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "养老院",
+     "pinyin": "yǎng lǎo yuàn",
+     "pos": "n.",
+     "en": "care home, old people's home",
+     "id": "dabu4-u3-2:9"
+    },
+    {
+     "hanzi": "康复",
+     "pinyin": "kāng fù",
+     "pos": "v./n.",
+     "en": "to recover; rehabilitation",
+     "id": "dabu4-u3-2:10"
+    },
+    {
+     "hanzi": "当场",
+     "pinyin": "dāng chǎng",
+     "pos": "adv.",
+     "en": "on the spot, there and then",
+     "id": "dabu4-u3-3:0"
+    },
+    {
+     "hanzi": "火",
+     "pinyin": "huǒ",
+     "pos": "v.",
+     "en": "to flare up, get angry (new meaning)",
+     "id": "dabu4-u3-3:1"
+    },
+    {
+     "hanzi": "人家",
+     "pinyin": "rén jia",
+     "pos": "pron.",
+     "en": "other people, people",
+     "id": "dabu4-u3-3:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-3b",
+   "title": "大步4 U3.3 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "孝顺",
+     "pinyin": "xiào shùn",
+     "pos": "adj./v.",
+     "en": "dutiful to your parents; to be a good son or daughter",
+     "id": "dabu4-u3-3:3"
+    },
+    {
+     "hanzi": "儿女",
+     "pinyin": "ér nǚ",
+     "pos": "n.",
+     "en": "sons and daughters, children",
+     "id": "dabu4-u3-3:4"
+    },
+    {
+     "hanzi": "与其说",
+     "pinyin": "yǔ qí shuō",
+     "pos": "phr.",
+     "en": "it's not so much … as … (与其说…不如说…)",
+     "id": "dabu4-u3-3:5"
+    },
+    {
+     "hanzi": "退休",
+     "pinyin": "tuì xiū",
+     "pos": "v.",
+     "en": "to retire",
+     "id": "dabu4-u3-3:6"
+    },
+    {
+     "hanzi": "养老",
+     "pinyin": "yǎng lǎo",
+     "pos": "v./n.",
+     "en": "to live in retirement, be cared for in old age; elder care",
+     "id": "dabu4-u3-3:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-3c",
+   "title": "大步4 U3.3 · 养老 Who looks after Mum and Dad? · 3",
+   "words": [
+    {
+     "hanzi": "孝",
+     "pinyin": "xiào",
+     "pos": "n.",
+     "en": "filial piety, duty to your parents",
+     "id": "dabu4-u3-3:8"
+    },
+    {
+     "hanzi": "不孝",
+     "pinyin": "bù xiào",
+     "pos": "adj.",
+     "en": "unfilial, failing in your duty to your parents",
+     "id": "dabu4-u3-3:9"
+    },
+    {
+     "hanzi": "拐杖",
+     "pinyin": "guǎi zhàng",
+     "pos": "n.",
+     "en": "walking stick",
+     "id": "dabu4-u3-3:10"
+    },
+    {
+     "hanzi": "轮椅",
+     "pinyin": "lún yǐ",
+     "pos": "n.",
+     "en": "wheelchair",
+     "id": "dabu4-u3-4:0"
+    },
+    {
+     "hanzi": "出院",
+     "pinyin": "chū yuàn",
+     "pos": "v.",
+     "en": "to leave hospital, be discharged",
+     "id": "dabu4-u3-4:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-4a",
+   "title": "大步4 U3.4 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "保姆",
+     "pinyin": "bǎo mǔ",
+     "pos": "n.",
+     "en": "live-in helper, nanny",
+     "id": "dabu4-u3-4:2"
+    },
+    {
+     "hanzi": "养老金",
+     "pinyin": "yǎng lǎo jīn",
+     "pos": "n.",
+     "en": "pension",
+     "id": "dabu4-u3-4:3"
+    },
+    {
+     "hanzi": "该",
+     "pinyin": "gāi",
+     "pos": "v.",
+     "en": "should, ought to; be due (也该轮到你了 it's your turn now)",
+     "id": "dabu4-u3-4:4"
+    },
+    {
+     "hanzi": "愿意",
+     "pinyin": "yuàn yì",
+     "pos": "v.",
+     "en": "to be willing, want to",
+     "id": "dabu4-u3-4:5"
+    },
+    {
+     "hanzi": "负担",
+     "pinyin": "fù dān",
+     "pos": "n./v.",
+     "en": "burden; to bear (a cost)",
+     "id": "dabu4-u3-4:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-4b",
+   "title": "大步4 U3.4 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "体检",
+     "pinyin": "tǐ jiǎn",
+     "pos": "n./v.",
+     "en": "health check, medical",
+     "id": "dabu4-u3-4:7"
+    },
+    {
+     "hanzi": "看病",
+     "pinyin": "kàn bìng",
+     "pos": "v.",
+     "en": "to see a doctor",
+     "id": "dabu4-u3-4:8"
+    },
+    {
+     "hanzi": "医药费",
+     "pinyin": "yī yào fèi",
+     "pos": "n.",
+     "en": "medical bills",
+     "id": "dabu4-u3-4:9"
+    },
+    {
+     "hanzi": "病房",
+     "pinyin": "bìng fáng",
+     "pos": "n.",
+     "en": "ward (in a hospital)",
+     "id": "dabu4-u3-5:0"
+    },
+    {
+     "hanzi": "骨科",
+     "pinyin": "gǔ kē",
+     "pos": "n.",
+     "en": "orthopaedics (骨科病房 orthopaedic ward)",
+     "id": "dabu4-u3-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-5a",
+   "title": "大步4 U3.5 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "各种各样",
+     "pinyin": "gè zhǒng gè yàng",
+     "pos": "phr.",
+     "en": "all kinds of, every sort of",
+     "id": "dabu4-u3-5:2"
+    },
+    {
+     "hanzi": "长假",
+     "pinyin": "cháng jià",
+     "pos": "n.",
+     "en": "long leave, extended time off",
+     "id": "dabu4-u3-5:3"
+    },
+    {
+     "hanzi": "病床",
+     "pinyin": "bìng chuáng",
+     "pos": "n.",
+     "en": "hospital bed",
+     "id": "dabu4-u3-5:4"
+    },
+    {
+     "hanzi": "折叠椅",
+     "pinyin": "zhé dié yǐ",
+     "pos": "n.",
+     "en": "folding chair",
+     "id": "dabu4-u3-5:5"
+    },
+    {
+     "hanzi": "母亲",
+     "pinyin": "mǔ qīn",
+     "pos": "n.",
+     "en": "mother (formal)",
+     "id": "dabu4-u3-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-5b",
+   "title": "大步4 U3.5 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "降压药",
+     "pinyin": "jiàng yā yào",
+     "pos": "n.",
+     "en": "blood-pressure pills",
+     "id": "dabu4-u3-5:7"
+    },
+    {
+     "hanzi": "步入",
+     "pinyin": "bù rù",
+     "pos": "v.",
+     "en": "to step into, enter (a stage of life) (written)",
+     "id": "dabu4-u3-5:8"
+    },
+    {
+     "hanzi": "中年",
+     "pinyin": "zhōng nián",
+     "pos": "n.",
+     "en": "middle age",
+     "id": "dabu4-u3-5:9"
+    },
+    {
+     "hanzi": "上有老下有小",
+     "pinyin": "shàng yǒu lǎo xià yǒu xiǎo",
+     "pos": "phr.",
+     "en": "with old parents above and young children below (the sandwich generation)",
+     "id": "dabu4-u3-5:10"
+    },
+    {
+     "hanzi": "讲究",
+     "pinyin": "jiǎng jiu",
+     "pos": "v.",
+     "en": "to set great store by, believe in (new meaning)",
+     "id": "dabu4-u3-6:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-6a",
+   "title": "大步4 U3.6 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "养儿防老",
+     "pinyin": "yǎng ér fáng lǎo",
+     "pos": "phr.",
+     "en": "raise children to provide for your old age",
+     "id": "dabu4-u3-6:1"
+    },
+    {
+     "hanzi": "守",
+     "pinyin": "shǒu",
+     "pos": "v.",
+     "en": "to stay by, keep watch over",
+     "id": "dabu4-u3-6:2"
+    },
+    {
+     "hanzi": "外地",
+     "pinyin": "wài dì",
+     "pos": "n.",
+     "en": "another part of the country, somewhere else",
+     "id": "dabu4-u3-6:3"
+    },
+    {
+     "hanzi": "于是",
+     "pinyin": "yú shì",
+     "pos": "conj.",
+     "en": "so, and so, as a result",
+     "id": "dabu4-u3-6:4"
+    },
+    {
+     "hanzi": "空巢老人",
+     "pinyin": "kōng cháo lǎo rén",
+     "pos": "n.",
+     "en": "'empty-nest elderly', older people whose children have left",
+     "id": "dabu4-u3-6:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-6b",
+   "title": "大步4 U3.6 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "老两口",
+     "pinyin": "lǎo liǎng kǒu",
+     "pos": "n.",
+     "en": "an old couple",
+     "id": "dabu4-u3-6:6"
+    },
+    {
+     "hanzi": "坎",
+     "pinyin": "kǎn",
+     "pos": "n.",
+     "en": "hurdle, sticking point (过不了这道坎 can't get over it)",
+     "id": "dabu4-u3-6:7"
+    },
+    {
+     "hanzi": "护理",
+     "pinyin": "hù lǐ",
+     "pos": "v./n.",
+     "en": "to nurse, care for; nursing",
+     "id": "dabu4-u3-6:8"
+    },
+    {
+     "hanzi": "固然",
+     "pinyin": "gù rán",
+     "pos": "conj.",
+     "en": "admittedly, it's true that (written)",
+     "id": "dabu4-u3-6:9"
+    },
+    {
+     "hanzi": "累垮",
+     "pinyin": "lèi kuǎ",
+     "pos": "v.",
+     "en": "to wear yourself out, collapse from exhaustion",
+     "id": "dabu4-u3-6:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-7a",
+   "title": "大步4 U3.7 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "街道",
+     "pinyin": "jiē dào",
+     "pos": "n.",
+     "en": "neighbourhood, sub-district (the local authority) (new meaning)",
+     "id": "dabu4-u3-7:0"
+    },
+    {
+     "hanzi": "居家养老",
+     "pinyin": "jū jiā yǎng lǎo",
+     "pos": "n.",
+     "en": "care at home (for older people)",
+     "id": "dabu4-u3-7:1"
+    },
+    {
+     "hanzi": "社区",
+     "pinyin": "shè qū",
+     "pos": "n.",
+     "en": "community, neighbourhood",
+     "id": "dabu4-u3-7:2"
+    },
+    {
+     "hanzi": "送餐",
+     "pinyin": "sòng cān",
+     "pos": "v.",
+     "en": "to deliver meals",
+     "id": "dabu4-u3-7:3"
+    },
+    {
+     "hanzi": "上门",
+     "pinyin": "shàng mén",
+     "pos": "v.",
+     "en": "to come to your home (上门护理 home nursing)",
+     "id": "dabu4-u3-7:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-7b",
+   "title": "大步4 U3.7 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "照料",
+     "pinyin": "zhào liào",
+     "pos": "v.",
+     "en": "to take care of (written)",
+     "id": "dabu4-u3-7:6"
+    },
+    {
+     "hanzi": "日间照料",
+     "pinyin": "rì jiān zhào liào",
+     "pos": "n.",
+     "en": "day care (for older people)",
+     "id": "dabu4-u3-7:5"
+    },
+    {
+     "hanzi": "长者食堂",
+     "pinyin": "zhǎng zhě shí táng",
+     "pos": "n.",
+     "en": "community canteen for older people",
+     "id": "dabu4-u3-7:7"
+    },
+    {
+     "hanzi": "长者",
+     "pinyin": "zhǎng zhě",
+     "pos": "n.",
+     "en": "older person, senior (respectful)",
+     "id": "dabu4-u3-7:8"
+    },
+    {
+     "hanzi": "折中",
+     "pinyin": "zhé zhōng",
+     "pos": "adj./v.",
+     "en": "compromise, middle-way; to meet halfway",
+     "id": "dabu4-u3-7:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-8a",
+   "title": "大步4 U3.8 · 养老 Who looks after Mum and Dad? · 1",
+   "words": [
+    {
+     "hanzi": "小姑",
+     "pinyin": "xiǎo gū",
+     "pos": "n.",
+     "en": "aunt (your father's younger sister)",
+     "id": "dabu4-u3-7:10"
+    },
+    {
+     "hanzi": "护士站",
+     "pinyin": "hù shi zhàn",
+     "pos": "n.",
+     "en": "nurses' station",
+     "id": "dabu4-u3-8:0",
+     "parts": [
+      "护士",
+      "站"
+     ]
+    },
+    {
+     "hanzi": "标准答案",
+     "pinyin": "biāo zhǔn dá àn",
+     "pos": "n.",
+     "en": "model answer, the right answer",
+     "id": "dabu4-u3-8:1"
+    },
+    {
+     "hanzi": "哪怕",
+     "pinyin": "nǎ pà",
+     "pos": "conj.",
+     "en": "even if",
+     "id": "dabu4-u3-8:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-8b",
+   "title": "大步4 U3.8 · 养老 Who looks after Mum and Dad? · 2",
+   "words": [
+    {
+     "hanzi": "社会",
+     "pinyin": "shè huì",
+     "pos": "n.",
+     "en": "society",
+     "id": "dabu4-u3-8:3"
+    },
+    {
+     "hanzi": "老龄化",
+     "pinyin": "lǎo líng huà",
+     "pos": "n.",
+     "en": "population ageing",
+     "id": "dabu4-u3-8:4"
+    },
+    {
+     "hanzi": "独居",
+     "pinyin": "dú jū",
+     "pos": "v.",
+     "en": "to live alone",
+     "id": "dabu4-u3-8:5"
+    },
+    {
+     "hanzi": "看望",
+     "pinyin": "kàn wàng",
+     "pos": "v.",
+     "en": "to visit (someone old or ill)",
+     "id": "dabu4-u3-8:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u3-8c",
+   "title": "大步4 U3.8 · 养老 Who looks after Mum and Dad? · 3",
+   "words": [
+    {
+     "hanzi": "医保",
+     "pinyin": "yī bǎo",
+     "pos": "n.",
+     "en": "medical insurance",
+     "id": "dabu4-u3-8:7"
+    },
+    {
+     "hanzi": "陪护",
+     "pinyin": "péi hù",
+     "pos": "v./n.",
+     "en": "to stay with and look after (a patient); hospital carer",
+     "id": "dabu4-u3-8:8"
+    },
+    {
+     "hanzi": "赡养",
+     "pinyin": "shàn yǎng",
+     "pos": "v.",
+     "en": "to support (your parents) (a legal duty)",
+     "id": "dabu4-u3-8:9"
+    },
+    {
+     "hanzi": "年迈",
+     "pinyin": "nián mài",
+     "pos": "adj.",
+     "en": "aged, elderly (written)",
+     "id": "dabu4-u3-8:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-1a",
+   "title": "大步4 U4.1 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "录音笔",
+     "pinyin": "lù yīn bǐ",
+     "pos": "n.",
+     "en": "voice recorder, digital recorder",
+     "id": "dabu4-u4-1:0"
+    },
+    {
+     "hanzi": "想到哪儿说到哪儿",
+     "pinyin": "xiǎng dào nǎ r shuō dào nǎ r",
+     "pos": "phr.",
+     "en": "to say whatever comes to mind",
+     "id": "dabu4-u4-1:1",
+     "parts": [
+      "哪儿",
+      "说",
+      "到"
+     ]
+    },
+    {
+     "hanzi": "不许",
+     "pinyin": "bù xǔ",
+     "pos": "v.",
+     "en": "not allowed to, mustn't",
+     "id": "dabu4-u4-1:2"
+    },
+    {
+     "hanzi": "幢",
+     "pinyin": "zhuàng",
+     "pos": "m.",
+     "en": "for buildings (一幢房子 a house)",
+     "id": "dabu4-u4-1:3"
+    },
+    {
+     "hanzi": "户",
+     "pinyin": "hù",
+     "pos": "m./n.",
+     "en": "household (五户人家 five households)",
+     "id": "dabu4-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-1b",
+   "title": "大步4 U4.1 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "人家",
+     "pinyin": "rén jiā",
+     "pos": "n.",
+     "en": "household, family (new meaning)",
+     "id": "dabu4-u4-1:5"
+    },
+    {
+     "hanzi": "煤炉",
+     "pinyin": "méi lú",
+     "pos": "n.",
+     "en": "coal stove",
+     "id": "dabu4-u4-1:6"
+    },
+    {
+     "hanzi": "家家户户",
+     "pinyin": "jiā jiā hù hù",
+     "pos": "phr.",
+     "en": "every household, every family",
+     "id": "dabu4-u4-1:7"
+    },
+    {
+     "hanzi": "炉子",
+     "pinyin": "lú zi",
+     "pos": "n.",
+     "en": "stove",
+     "id": "dabu4-u4-1:9"
+    },
+    {
+     "hanzi": "烟",
+     "pinyin": "yān",
+     "pos": "n.",
+     "en": "smoke",
+     "id": "dabu4-u4-1:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-2a",
+   "title": "大步4 U4.2 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "粮票",
+     "pinyin": "liáng piào",
+     "pos": "n.",
+     "en": "grain coupon (ration coupon for rice and flour)",
+     "id": "dabu4-u4-2:0"
+    },
+    {
+     "hanzi": "肉票",
+     "pinyin": "ròu piào",
+     "pos": "n.",
+     "en": "meat coupon",
+     "id": "dabu4-u4-2:1"
+    },
+    {
+     "hanzi": "吃上",
+     "pinyin": "chī shàng",
+     "pos": "v.",
+     "en": "to get to eat, manage to have (a meal)",
+     "id": "dabu4-u4-2:2",
+     "parts": [
+      "吃",
+      "上"
+     ]
+    },
+    {
+     "hanzi": "竹椅子",
+     "pinyin": "zhú yǐ zi",
+     "pos": "n.",
+     "en": "bamboo chair",
+     "id": "dabu4-u4-2:3"
+    },
+    {
+     "hanzi": "乘凉",
+     "pinyin": "chéng liáng",
+     "pos": "v.",
+     "en": "to sit out in the cool",
+     "id": "dabu4-u4-2:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-2b",
+   "title": "大步4 U4.2 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "回想起来",
+     "pinyin": "huí xiǎng qǐ lái",
+     "pos": "phr.",
+     "en": "looking back, in hindsight",
+     "id": "dabu4-u4-2:5"
+    },
+    {
+     "hanzi": "马桶",
+     "pinyin": "mǎ tǒng",
+     "pos": "n.",
+     "en": "chamber pot; toilet (倒马桶 empty the chamber pot)",
+     "id": "dabu4-u4-2:6"
+    },
+    {
+     "hanzi": "人和人",
+     "pinyin": "rén hé rén",
+     "pos": "phr.",
+     "en": "people, people and each other",
+     "id": "dabu4-u4-2:7",
+     "parts": [
+      "人",
+      "和"
+     ]
+    },
+    {
+     "hanzi": "纺织",
+     "pinyin": "fǎng zhī",
+     "pos": "n./v.",
+     "en": "textiles; spinning and weaving",
+     "id": "dabu4-u4-2:9"
+    },
+    {
+     "hanzi": "纺织厂",
+     "pinyin": "fǎng zhī chǎng",
+     "pos": "n.",
+     "en": "textile mill",
+     "id": "dabu4-u4-2:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-3a",
+   "title": "大步4 U4.3 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "三班倒",
+     "pinyin": "sān bān dǎo",
+     "pos": "phr.",
+     "en": "to work three rotating shifts round the clock",
+     "id": "dabu4-u4-2:10"
+    },
+    {
+     "hanzi": "厂子",
+     "pinyin": "chǎng zi",
+     "pos": "n.",
+     "en": "factory, mill (spoken)",
+     "id": "dabu4-u4-3:0"
+    },
+    {
+     "hanzi": "下岗",
+     "pinyin": "xià gǎng",
+     "pos": "v.",
+     "en": "to be laid off (from a state enterprise)",
+     "id": "dabu4-u4-3:1"
+    },
+    {
+     "hanzi": "天塌下来",
+     "pinyin": "tiān tā xià lái",
+     "pos": "phr.",
+     "en": "the sky falls in",
+     "id": "dabu4-u4-3:2"
+    },
+    {
+     "hanzi": "摆摊",
+     "pinyin": "bǎi tān",
+     "pos": "v.",
+     "en": "to run a stall",
+     "id": "dabu4-u4-3:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-3b",
+   "title": "大步4 U4.3 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "收银员",
+     "pinyin": "shōu yín yuán",
+     "pos": "n.",
+     "en": "cashier, checkout assistant",
+     "id": "dabu4-u4-3:4"
+    },
+    {
+     "hanzi": "力气",
+     "pinyin": "lì qi",
+     "pos": "n.",
+     "en": "strength, energy",
+     "id": "dabu4-u4-3:5"
+    },
+    {
+     "hanzi": "父亲",
+     "pinyin": "fù qīn",
+     "pos": "n.",
+     "en": "father (formal)",
+     "id": "dabu4-u4-3:6"
+    },
+    {
+     "hanzi": "发愁",
+     "pinyin": "fā chóu",
+     "pos": "v.",
+     "en": "to worry, fret",
+     "id": "dabu4-u4-3:7"
+    },
+    {
+     "hanzi": "缺",
+     "pinyin": "quē",
+     "pos": "v.",
+     "en": "to lack, be short of",
+     "id": "dabu4-u4-3:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-4a",
+   "title": "大步4 U4.4 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "礼拜",
+     "pinyin": "lǐ bài",
+     "pos": "n.",
+     "en": "week (spoken, southern: 下个礼拜三 next Wednesday)",
+     "id": "dabu4-u4-3:9"
+    },
+    {
+     "hanzi": "端午节",
+     "pinyin": "Duān wǔ jié",
+     "pos": "n.",
+     "en": "the Dragon Boat Festival (5th day of the 5th lunar month)",
+     "id": "dabu4-u4-3:10"
+    },
+    {
+     "hanzi": "粽子",
+     "pinyin": "zòng zi",
+     "pos": "n.",
+     "en": "zongzi (sticky rice wrapped in leaves)",
+     "id": "dabu4-u4-4:0"
+    },
+    {
+     "hanzi": "老照片",
+     "pinyin": "lǎo zhào piàn",
+     "pos": "n.",
+     "en": "old photograph",
+     "id": "dabu4-u4-4:1"
+    },
+    {
+     "hanzi": "口述",
+     "pinyin": "kǒu shù",
+     "pos": "v.",
+     "en": "to give an oral account",
+     "id": "dabu4-u4-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-4b",
+   "title": "大步4 U4.4 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "口述历史",
+     "pinyin": "kǒu shù lì shǐ",
+     "pos": "n.",
+     "en": "oral history",
+     "id": "dabu4-u4-4:2",
+     "parts": [
+      "口述",
+      "历史"
+     ]
+    },
+    {
+     "hanzi": "知青",
+     "pinyin": "zhī qīng",
+     "pos": "n.",
+     "en": "'educated youth' (sent to the countryside, 1960s–70s)",
+     "id": "dabu4-u4-4:4"
+    },
+    {
+     "hanzi": "上山下乡",
+     "pinyin": "shàng shān xià xiāng",
+     "pos": "phr.",
+     "en": "being sent to the countryside (1960s–70s)",
+     "id": "dabu4-u4-4:5"
+    },
+    {
+     "hanzi": "布票",
+     "pinyin": "bù piào",
+     "pos": "n.",
+     "en": "cloth coupon",
+     "id": "dabu4-u4-4:6"
+    },
+    {
+     "hanzi": "邻里",
+     "pinyin": "lín lǐ",
+     "pos": "n.",
+     "en": "neighbours, the neighbourhood",
+     "id": "dabu4-u4-4:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-4c",
+   "title": "大步4 U4.4 · 两代人 Two generations · 3",
+   "words": [
+    {
+     "hanzi": "生",
+     "pinyin": "shēng",
+     "pos": "v.",
+     "en": "to be born; give birth (在…生的 was born in …)",
+     "id": "dabu4-u4-4:8"
+    },
+    {
+     "hanzi": "石库门",
+     "pinyin": "shí kù mén",
+     "pos": "n.",
+     "en": "shikumen, Shanghai's stone-gated lane houses",
+     "id": "dabu4-u4-4:9"
+    },
+    {
+     "hanzi": "拆迁",
+     "pinyin": "chāi qiān",
+     "pos": "v.",
+     "en": "to demolish and rehouse",
+     "id": "dabu4-u4-4:10"
+    },
+    {
+     "hanzi": "旁",
+     "pinyin": "páng",
+     "pos": "n.",
+     "en": "side (written 旁边: 愚园路旁 off Yuyuan Road)",
+     "id": "dabu4-u4-5:0"
+    },
+    {
+     "hanzi": "恰好",
+     "pinyin": "qià hǎo",
+     "pos": "adv.",
+     "en": "as it happens, just, exactly",
+     "id": "dabu4-u4-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-5a",
+   "title": "大步4 U4.5 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "生炉子",
+     "pinyin": "shēng lú zi",
+     "pos": "phr.",
+     "en": "to light a stove",
+     "id": "dabu4-u4-1:8",
+     "parts": [
+      "生",
+      "炉子"
+     ]
+    },
+    {
+     "hanzi": "据",
+     "pinyin": "jù",
+     "pos": "phr.",
+     "en": "as (someone) remembers it, according to (someone's) memories (据…回忆)",
+     "id": "dabu4-u4-5:2"
+    },
+    {
+     "hanzi": "小楼",
+     "pinyin": "xiǎo lóu",
+     "pos": "n.",
+     "en": "small house (of two or three storeys)",
+     "id": "dabu4-u4-5:3"
+    },
+    {
+     "hanzi": "口",
+     "pinyin": "kǒu",
+     "pos": "m.",
+     "en": "for people in a household (二十多口人 over twenty people) (new meaning)",
+     "id": "dabu4-u4-5:4"
+    },
+    {
+     "hanzi": "记忆",
+     "pinyin": "jì yì",
+     "pos": "n.",
+     "en": "memory",
+     "id": "dabu4-u4-5:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-5b",
+   "title": "大步4 U4.5 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "竹椅",
+     "pinyin": "zhú yǐ",
+     "pos": "n.",
+     "en": "bamboo chair",
+     "id": "dabu4-u4-5:6"
+    },
+    {
+     "hanzi": "用",
+     "pinyin": "yòng",
+     "pos": "phr.",
+     "en": "in (someone's) words (用…的话说)",
+     "id": "dabu4-u4-5:7"
+    },
+    {
+     "hanzi": "与此同时",
+     "pinyin": "yǔ cǐ tóng shí",
+     "pos": "phr.",
+     "en": "meanwhile, at the same time (written)",
+     "id": "dabu4-u4-5:8"
+    },
+    {
+     "hanzi": "改革开放",
+     "pinyin": "gǎi gé kāi fàng",
+     "pos": "n.",
+     "en": "reform and opening up (from 1978)",
+     "id": "dabu4-u4-5:9"
+    },
+    {
+     "hanzi": "开发",
+     "pinyin": "kāi fā",
+     "pos": "v./n.",
+     "en": "to develop (land, a region); development",
+     "id": "dabu4-u4-6:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-6a",
+   "title": "大步4 U4.6 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "接",
+     "pinyin": "jiē",
+     "pos": "v.",
+     "en": "to follow on (一幢接一幢 one after another) (new meaning)",
+     "id": "dabu4-u4-6:1"
+    },
+    {
+     "hanzi": "盖",
+     "pinyin": "gài",
+     "pos": "v.",
+     "en": "to build, put up (a building)",
+     "id": "dabu4-u4-6:2"
+    },
+    {
+     "hanzi": "停产",
+     "pinyin": "tíng chǎn",
+     "pos": "v.",
+     "en": "to stop production",
+     "id": "dabu4-u4-6:3"
+    },
+    {
+     "hanzi": "提起",
+     "pinyin": "tí qǐ",
+     "pos": "v.",
+     "en": "to mention, bring up",
+     "id": "dabu4-u4-6:4"
+    },
+    {
+     "hanzi": "摆手",
+     "pinyin": "bǎi shǒu",
+     "pos": "v.",
+     "en": "to wave your hand (to say no, or never mind)",
+     "id": "dabu4-u4-6:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-6b",
+   "title": "大步4 U4.6 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "姐妹",
+     "pinyin": "jiě mèi",
+     "pos": "n.",
+     "en": "sisters; (among women) friends, fellow workers",
+     "id": "dabu4-u4-6:6"
+    },
+    {
+     "hanzi": "如今",
+     "pinyin": "rú jīn",
+     "pos": "n.",
+     "en": "nowadays, today (written)",
+     "id": "dabu4-u4-6:7"
+    },
+    {
+     "hanzi": "起身",
+     "pinyin": "qǐ shēn",
+     "pos": "v.",
+     "en": "to get up, rise",
+     "id": "dabu4-u4-6:8"
+    },
+    {
+     "hanzi": "原处",
+     "pinyin": "yuán chù",
+     "pos": "n.",
+     "en": "the original place, where it was",
+     "id": "dabu4-u4-6:9"
+    },
+    {
+     "hanzi": "不由得",
+     "pinyin": "bù yóu de",
+     "pos": "adv.",
+     "en": "can't help (doing)",
+     "id": "dabu4-u4-7:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-7a",
+   "title": "大步4 U4.7 · 两代人 Two generations · 1",
+   "words": [
+    {
+     "hanzi": "盏",
+     "pinyin": "zhǎn",
+     "pos": "m.",
+     "en": "for lamps (一盏灯 a lamp)",
+     "id": "dabu4-u4-7:1"
+    },
+    {
+     "hanzi": "采访者",
+     "pinyin": "cǎi fǎng zhě",
+     "pos": "n.",
+     "en": "interviewer",
+     "id": "dabu4-u4-7:2"
+    },
+    {
+     "hanzi": "受访者",
+     "pinyin": "shòu fǎng zhě",
+     "pos": "n.",
+     "en": "interviewee",
+     "id": "dabu4-u4-7:3"
+    },
+    {
+     "hanzi": "专访",
+     "pinyin": "zhuān fǎng",
+     "pos": "n.",
+     "en": "exclusive interview, profile (人物专访 a profile)",
+     "id": "dabu4-u4-7:4"
+    },
+    {
+     "hanzi": "老伴",
+     "pinyin": "lǎo bàn",
+     "pos": "n.",
+     "en": "(of an old couple) husband or wife, other half",
+     "id": "dabu4-u4-7:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-7b",
+   "title": "大步4 U4.7 · 两代人 Two generations · 2",
+   "words": [
+    {
+     "hanzi": "回忆录",
+     "pinyin": "huí yì lù",
+     "pos": "n.",
+     "en": "memoir",
+     "id": "dabu4-u4-7:6"
+    },
+    {
+     "hanzi": "岁月",
+     "pinyin": "suì yuè",
+     "pos": "n.",
+     "en": "years, time (literary)",
+     "id": "dabu4-u4-7:7"
+    },
+    {
+     "hanzi": "时光",
+     "pinyin": "shí guāng",
+     "pos": "n.",
+     "en": "time, days (literary)",
+     "id": "dabu4-u4-7:8"
+    },
+    {
+     "hanzi": "感慨",
+     "pinyin": "gǎn kǎi",
+     "pos": "v./n.",
+     "en": "to reflect with feeling; mixed feelings",
+     "id": "dabu4-u4-7:9"
+    },
+    {
+     "hanzi": "糯米",
+     "pinyin": "nuò mǐ",
+     "pos": "",
+     "en": "sticky rice, glutinous rice",
+     "id": "dabu4-u4-7:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu4-u4-7c",
+   "title": "大步4 U4.7 · 两代人 Two generations · 3",
+   "words": [
+    {
+     "hanzi": "粽叶",
+     "pinyin": "zòng yè",
+     "pos": "",
+     "en": "bamboo leaves for wrapping zongzi",
+     "id": "dabu4-u4-7:11"
+    },
+    {
+     "hanzi": "龙舟",
+     "pinyin": "lóng zhōu",
+     "pos": "",
+     "en": "dragon boat",
+     "id": "dabu4-u4-7:12"
+    },
+    {
+     "hanzi": "粥",
+     "pinyin": "zhōu",
+     "pos": "",
+     "en": "rice porridge, congee",
+     "id": "dabu4-u4-7:13"
+    },
+    {
+     "hanzi": "解开",
+     "pinyin": "jiě kāi",
+     "pos": "",
+     "en": "to untie, undo",
+     "id": "dabu4-u4-7:14"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-1a",
+   "title": "大步5 U1.1 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "三伏天",
+     "pinyin": "sān fú tiān",
+     "pos": "n.",
+     "en": "the dog days, the hottest weeks of summer",
+     "id": "dabu5-u1-1:0"
+    },
+    {
+     "hanzi": "入伏",
+     "pinyin": "rù fú",
+     "pos": "v.",
+     "en": "to enter the dog days (the first day of 三伏天)",
+     "id": "dabu5-u1-1:1"
+    },
+    {
+     "hanzi": "绿豆",
+     "pinyin": "lǜ dòu",
+     "pos": "n.",
+     "en": "mung bean",
+     "id": "dabu5-u1-1:2"
+    },
+    {
+     "hanzi": "绿豆汤",
+     "pinyin": "lǜ dòu tāng",
+     "pos": "n.",
+     "en": "mung bean soup (a summer cooler)",
+     "id": "dabu5-u1-1:3"
+    },
+    {
+     "hanzi": "消",
+     "pinyin": "xiāo",
+     "pos": "v.",
+     "en": "to dispel, get rid of",
+     "id": "dabu5-u1-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-1b",
+   "title": "大步5 U1.1 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "消暑",
+     "pinyin": "xiāo shǔ",
+     "pos": "v.",
+     "en": "to beat the heat, cool down (消消暑 cool down a bit)",
+     "id": "dabu5-u1-1:5"
+    },
+    {
+     "hanzi": "伤",
+     "pinyin": "shāng",
+     "pos": "v./n.",
+     "en": "to harm, be bad for (伤胃 bad for the stomach); injury",
+     "id": "dabu5-u1-1:6"
+    },
+    {
+     "hanzi": "胃",
+     "pinyin": "wèi",
+     "pos": "n.",
+     "en": "stomach",
+     "id": "dabu5-u1-1:7"
+    },
+    {
+     "hanzi": "炖",
+     "pinyin": "dùn",
+     "pos": "v.",
+     "en": "to stew, simmer",
+     "id": "dabu5-u1-1:8"
+    },
+    {
+     "hanzi": "骨头汤",
+     "pinyin": "gǔ tou tāng",
+     "pos": "n.",
+     "en": "bone broth, bone soup",
+     "id": "dabu5-u1-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-1c",
+   "title": "大步5 U1.1 · 健康生活 Keeping well in the dog days · 3",
+   "words": [
+    {
+     "hanzi": "吃什么补什么",
+     "pinyin": "chī shén me bǔ shén me",
+     "pos": "phr.",
+     "en": "'eat a part to build up the same part' (a folk belief)",
+     "id": "dabu5-u1-1:11",
+     "parts": [
+      "吃",
+      "什么",
+      "补"
+     ]
+    },
+    {
+     "hanzi": "伤筋动骨",
+     "pinyin": "shāng jīn dòng gǔ",
+     "pos": "phr.",
+     "en": "to injure bones and sinews (伤筋动骨一百天 a broken bone takes a hundred days)",
+     "id": "dabu5-u1-1:12"
+    },
+    {
+     "hanzi": "说句实话",
+     "pinyin": "shuō jù shí huà",
+     "pos": "phr.",
+     "en": "to be honest, to tell you the truth",
+     "id": "dabu5-u1-1:13"
+    },
+    {
+     "hanzi": "尽早",
+     "pinyin": "jǐn zǎo",
+     "pos": "adv.",
+     "en": "as early as possible",
+     "id": "dabu5-u1-2:0"
+    },
+    {
+     "hanzi": "下地",
+     "pinyin": "xià dì",
+     "pos": "v.",
+     "en": "to get out of bed (after illness), be up and about",
+     "id": "dabu5-u1-2:1",
+     "parts": [
+      "下",
+      "地"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-2a",
+   "title": "大步5 U1.2 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "训练",
+     "pinyin": "xùn liàn",
+     "pos": "v./n.",
+     "en": "to train; training",
+     "id": "dabu5-u1-2:3"
+    },
+    {
+     "hanzi": "康复训练",
+     "pinyin": "kāng fù xùn liàn",
+     "pos": "n.",
+     "en": "rehabilitation exercises, rehab",
+     "id": "dabu5-u1-2:2"
+    },
+    {
+     "hanzi": "僵",
+     "pinyin": "jiāng",
+     "pos": "adj.",
+     "en": "stiff (关节僵了 the joint has stiffened)",
+     "id": "dabu5-u1-2:5"
+    },
+    {
+     "hanzi": "僵硬",
+     "pinyin": "jiāng yìng",
+     "pos": "adj.",
+     "en": "stiff, rigid",
+     "id": "dabu5-u1-2:4"
+    },
+    {
+     "hanzi": "静养",
+     "pinyin": "jìng yǎng",
+     "pos": "v.",
+     "en": "to rest quietly, convalesce",
+     "id": "dabu5-u1-2:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-2b",
+   "title": "大步5 U1.2 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "钙",
+     "pinyin": "gài",
+     "pos": "n.",
+     "en": "calcium",
+     "id": "dabu5-u1-2:8"
+    },
+    {
+     "hanzi": "补钙",
+     "pinyin": "bǔ gài",
+     "pos": "v.",
+     "en": "to take calcium, build up calcium",
+     "id": "dabu5-u1-2:7"
+    },
+    {
+     "hanzi": "可怜",
+     "pinyin": "kě lián",
+     "pos": "adj.",
+     "en": "pitiful (少得可怜 pitifully little)",
+     "id": "dabu5-u1-2:9"
+    },
+    {
+     "hanzi": "靠谱",
+     "pinyin": "kào pǔ",
+     "pos": "adj.",
+     "en": "reliable, sensible, trustworthy (spoken)",
+     "id": "dabu5-u1-2:10"
+    },
+    {
+     "hanzi": "空调病",
+     "pinyin": "kōng tiáo bìng",
+     "pos": "n.",
+     "en": "'air-con sickness' (colds and aches blamed on air conditioning)",
+     "id": "dabu5-u1-2:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-3a",
+   "title": "大步5 U1.3 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "寒气",
+     "pinyin": "hán qì",
+     "pos": "n.",
+     "en": "cold, chill (in traditional medicine, cold that gets into the body)",
+     "id": "dabu5-u1-2:12"
+    },
+    {
+     "hanzi": "三伏贴",
+     "pinyin": "sān fú tiē",
+     "pos": "n.",
+     "en": "dog-day plaster (a herbal plaster put on in the dog days)",
+     "id": "dabu5-u1-2:13"
+    },
+    {
+     "hanzi": "冬病夏治",
+     "pinyin": "dōng bìng xià zhì",
+     "pos": "phr.",
+     "en": "to treat winter illnesses in summer (a TCM idea)",
+     "id": "dabu5-u1-3:0"
+    },
+    {
+     "hanzi": "屋",
+     "pinyin": "wū",
+     "pos": "n.",
+     "en": "room, house (屋里 indoors)",
+     "id": "dabu5-u1-3:1"
+    },
+    {
+     "hanzi": "西瓜",
+     "pinyin": "xī guā",
+     "pos": "n.",
+     "en": "watermelon",
+     "id": "dabu5-u1-3:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-3b",
+   "title": "大步5 U1.3 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "汗",
+     "pinyin": "hàn",
+     "pos": "n.",
+     "en": "sweat (出了一身汗 covered in sweat)",
+     "id": "dabu5-u1-3:3"
+    },
+    {
+     "hanzi": "中暑",
+     "pinyin": "zhòng shǔ",
+     "pos": "v./n.",
+     "en": "to get heatstroke; heatstroke",
+     "id": "dabu5-u1-3:4"
+    },
+    {
+     "hanzi": "开窗",
+     "pinyin": "kāi chuāng",
+     "pos": "v.",
+     "en": "to open the window",
+     "id": "dabu5-u1-3:5"
+    },
+    {
+     "hanzi": "通风",
+     "pinyin": "tōng fēng",
+     "pos": "v.",
+     "en": "to air, let air through, ventilate",
+     "id": "dabu5-u1-3:6"
+    },
+    {
+     "hanzi": "电费",
+     "pinyin": "diàn fèi",
+     "pos": "n.",
+     "en": "electricity bill",
+     "id": "dabu5-u1-3:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-3c",
+   "title": "大步5 U1.3 · 健康生活 Keeping well in the dog days · 3",
+   "words": [
+    {
+     "hanzi": "养生",
+     "pinyin": "yǎng shēng",
+     "pos": "v./n.",
+     "en": "to look after your health; staying healthy, 'nourishing life'",
+     "id": "dabu5-u1-3:8"
+    },
+    {
+     "hanzi": "老话",
+     "pinyin": "lǎo huà",
+     "pos": "n.",
+     "en": "old saying (老话说 as the old saying goes)",
+     "id": "dabu5-u1-3:9"
+    },
+    {
+     "hanzi": "早睡早起",
+     "pinyin": "zǎo shuì zǎo qǐ",
+     "pos": "phr.",
+     "en": "early to bed and early to rise",
+     "id": "dabu5-u1-3:10"
+    },
+    {
+     "hanzi": "七分饱",
+     "pinyin": "qī fēn bǎo",
+     "pos": "phr.",
+     "en": "seventy per cent full (stopping before you're full)",
+     "id": "dabu5-u1-3:11"
+    },
+    {
+     "hanzi": "证据",
+     "pinyin": "zhèng jù",
+     "pos": "n.",
+     "en": "evidence",
+     "id": "dabu5-u1-3:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-4a",
+   "title": "大步5 U1.4 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "圈",
+     "pinyin": "quān",
+     "pos": "m./n.",
+     "en": "lap, circle (走两圈 do two laps)",
+     "id": "dabu5-u1-3:13"
+    },
+    {
+     "hanzi": "中医",
+     "pinyin": "zhōng yī",
+     "pos": "n.",
+     "en": "traditional Chinese medicine (TCM); a TCM doctor",
+     "id": "dabu5-u1-4:0"
+    },
+    {
+     "hanzi": "西医",
+     "pinyin": "xī yī",
+     "pos": "n.",
+     "en": "Western medicine; a doctor of Western medicine",
+     "id": "dabu5-u1-4:1"
+    },
+    {
+     "hanzi": "针灸",
+     "pinyin": "zhēn jiǔ",
+     "pos": "n.",
+     "en": "acupuncture",
+     "id": "dabu5-u1-4:2"
+    },
+    {
+     "hanzi": "偏方",
+     "pinyin": "piān fāng",
+     "pos": "n.",
+     "en": "folk remedy, home remedy",
+     "id": "dabu5-u1-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-4b",
+   "title": "大步5 U1.4 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "保健",
+     "pinyin": "bǎo jiàn",
+     "pos": "n./v.",
+     "en": "health care; to keep fit and well",
+     "id": "dabu5-u1-4:4"
+    },
+    {
+     "hanzi": "营养",
+     "pinyin": "yíng yǎng",
+     "pos": "n.",
+     "en": "nutrition, nourishment",
+     "id": "dabu5-u1-4:5"
+    },
+    {
+     "hanzi": "体温",
+     "pinyin": "tǐ wēn",
+     "pos": "n.",
+     "en": "body temperature",
+     "id": "dabu5-u1-4:6"
+    },
+    {
+     "hanzi": "闷热",
+     "pinyin": "mēn rè",
+     "pos": "adj.",
+     "en": "hot and humid, muggy",
+     "id": "dabu5-u1-4:7"
+    },
+    {
+     "hanzi": "降温",
+     "pinyin": "jiàng wēn",
+     "pos": "v.",
+     "en": "to cool down; (of weather) to get cooler",
+     "id": "dabu5-u1-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-4c",
+   "title": "大步5 U1.4 · 健康生活 Keeping well in the dog days · 3",
+   "words": [
+    {
+     "hanzi": "防晒",
+     "pinyin": "fáng shài",
+     "pos": "v.",
+     "en": "to protect against the sun (防晒霜 sunscreen)",
+     "id": "dabu5-u1-4:9"
+    },
+    {
+     "hanzi": "冰镇",
+     "pinyin": "bīng zhèn",
+     "pos": "adj.",
+     "en": "iced, chilled",
+     "id": "dabu5-u1-4:10"
+    },
+    {
+     "hanzi": "桑拿天",
+     "pinyin": "sāng ná tiān",
+     "pos": "n.",
+     "en": "'sauna weather', hot and humid days",
+     "id": "dabu5-u1-4:11"
+    },
+    {
+     "hanzi": "热射病",
+     "pinyin": "rè shè bìng",
+     "pos": "n.",
+     "en": "severe heatstroke",
+     "id": "dabu5-u1-4:12"
+    },
+    {
+     "hanzi": "血管",
+     "pinyin": "xuè guǎn",
+     "pos": "n.",
+     "en": "blood vessel",
+     "id": "dabu5-u1-5:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-5a",
+   "title": "大步5 U1.5 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "中毒",
+     "pinyin": "zhòng dú",
+     "pos": "v.",
+     "en": "to be poisoned",
+     "id": "dabu5-u1-5:1"
+    },
+    {
+     "hanzi": "泡",
+     "pinyin": "pào",
+     "pos": "v.",
+     "en": "to soak, steep (泡枸杞 soak goji berries)",
+     "id": "dabu5-u1-5:2"
+    },
+    {
+     "hanzi": "枸杞",
+     "pinyin": "gǒu qǐ",
+     "pos": "n.",
+     "en": "goji berry, wolfberry",
+     "id": "dabu5-u1-5:3"
+    },
+    {
+     "hanzi": "朋克养生",
+     "pinyin": "péng kè yǎng shēng",
+     "pos": "n.",
+     "en": "'punk wellness' (healthy habits on top of unhealthy ones)",
+     "id": "dabu5-u1-5:4"
+    },
+    {
+     "hanzi": "重视",
+     "pinyin": "zhòng shì",
+     "pos": "v.",
+     "en": "to take seriously, attach importance to",
+     "id": "dabu5-u1-5:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-5b",
+   "title": "大步5 U1.5 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "害",
+     "pinyin": "hài",
+     "pos": "v.",
+     "en": "to harm, do harm to (害人 harm people)",
+     "id": "dabu5-u1-5:6"
+    },
+    {
+     "hanzi": "血脂",
+     "pinyin": "xuè zhī",
+     "pos": "n.",
+     "en": "blood fat, blood lipids",
+     "id": "dabu5-u1-5:7"
+    },
+    {
+     "hanzi": "反而",
+     "pinyin": "fǎn ér",
+     "pos": "adv.",
+     "en": "on the contrary, instead",
+     "id": "dabu5-u1-5:8"
+    },
+    {
+     "hanzi": "恢复",
+     "pinyin": "huī fù",
+     "pos": "v.",
+     "en": "to recover, get back",
+     "id": "dabu5-u1-5:9"
+    },
+    {
+     "hanzi": "事实上",
+     "pinyin": "shì shí shàng",
+     "pos": "phr.",
+     "en": "in fact, actually",
+     "id": "dabu5-u1-5:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-6a",
+   "title": "大步5 U1.6 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "大量",
+     "pinyin": "dà liàng",
+     "pos": "adj.",
+     "en": "a great deal of, large numbers of",
+     "id": "dabu5-u1-5:11"
+    },
+    {
+     "hanzi": "表明",
+     "pinyin": "biǎo míng",
+     "pos": "v.",
+     "en": "to show, make clear",
+     "id": "dabu5-u1-6:1"
+    },
+    {
+     "hanzi": "并非",
+     "pinyin": "bìng fēi",
+     "pos": "v.",
+     "en": "is not at all, is by no means (written)",
+     "id": "dabu5-u1-6:2"
+    },
+    {
+     "hanzi": "如此",
+     "pinyin": "rú cǐ",
+     "pos": "pron.",
+     "en": "so, like this (written) (并非如此 that isn't so)",
+     "id": "dabu5-u1-6:3"
+    },
+    {
+     "hanzi": "医学",
+     "pinyin": "yī xué",
+     "pos": "n.",
+     "en": "medicine (the science)",
+     "id": "dabu5-u1-6:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-6b",
+   "title": "大步5 U1.6 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "研究表明",
+     "pinyin": "yán jiū biǎo míng",
+     "pos": "phr.",
+     "en": "research shows",
+     "id": "dabu5-u1-6:0",
+     "parts": [
+      "研究",
+      "表明"
+     ]
+    },
+    {
+     "hanzi": "证明",
+     "pinyin": "zhèng míng",
+     "pos": "v./n.",
+     "en": "to prove, show; proof, certificate",
+     "id": "dabu5-u1-6:5"
+    },
+    {
+     "hanzi": "有效",
+     "pinyin": "yǒu xiào",
+     "pos": "adj.",
+     "en": "effective",
+     "id": "dabu5-u1-6:6"
+    },
+    {
+     "hanzi": "充分",
+     "pinyin": "chōng fèn",
+     "pos": "adj.",
+     "en": "full, sufficient, ample",
+     "id": "dabu5-u1-6:7"
+    },
+    {
+     "hanzi": "因人而异",
+     "pinyin": "yīn rén ér yì",
+     "pos": "phr.",
+     "en": "to vary from person to person",
+     "id": "dabu5-u1-6:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-6c",
+   "title": "大步5 U1.6 · 健康生活 Keeping well in the dog days · 3",
+   "words": [
+    {
+     "hanzi": "态度",
+     "pinyin": "tài du",
+     "pos": "n.",
+     "en": "attitude",
+     "id": "dabu5-u1-6:9"
+    },
+    {
+     "hanzi": "盲目",
+     "pinyin": "máng mù",
+     "pos": "adj.",
+     "en": "blind, blindly",
+     "id": "dabu5-u1-6:10"
+    },
+    {
+     "hanzi": "相信",
+     "pinyin": "xiāng xìn",
+     "pos": "v.",
+     "en": "to believe, trust",
+     "id": "dabu5-u1-6:11"
+    },
+    {
+     "hanzi": "一概",
+     "pinyin": "yī gài",
+     "pos": "adv.",
+     "en": "all, without exception (一概否定 dismiss out of hand)",
+     "id": "dabu5-u1-7:0"
+    },
+    {
+     "hanzi": "否定",
+     "pinyin": "fǒu dìng",
+     "pos": "v.",
+     "en": "to deny, reject, dismiss",
+     "id": "dabu5-u1-7:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-7a",
+   "title": "大步5 U1.7 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "绝对",
+     "pinyin": "jué duì",
+     "pos": "adj./adv.",
+     "en": "absolute; absolutely",
+     "id": "dabu5-u1-7:2"
+    },
+    {
+     "hanzi": "包治百病",
+     "pinyin": "bāo zhì bǎi bìng",
+     "pos": "phr.",
+     "en": "to cure every illness",
+     "id": "dabu5-u1-7:3"
+    },
+    {
+     "hanzi": "高温",
+     "pinyin": "gāo wēn",
+     "pos": "n.",
+     "en": "high temperatures, heat",
+     "id": "dabu5-u1-7:4"
+    },
+    {
+     "hanzi": "慢性病",
+     "pinyin": "màn xìng bìng",
+     "pos": "n.",
+     "en": "chronic illness, long-term illness",
+     "id": "dabu5-u1-7:5"
+    },
+    {
+     "hanzi": "秘方",
+     "pinyin": "mì fāng",
+     "pos": "n.",
+     "en": "secret recipe, secret remedy",
+     "id": "dabu5-u1-7:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-7b",
+   "title": "大步5 U1.7 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "适量",
+     "pinyin": "shì liàng",
+     "pos": "adj.",
+     "en": "in moderation, a moderate amount",
+     "id": "dabu5-u1-7:8"
+    },
+    {
+     "hanzi": "饮食",
+     "pinyin": "yǐn shí",
+     "pos": "n.",
+     "en": "diet, food and drink",
+     "id": "dabu5-u1-7:9"
+    },
+    {
+     "hanzi": "心情",
+     "pinyin": "xīn qíng",
+     "pos": "n.",
+     "en": "mood, state of mind",
+     "id": "dabu5-u1-7:10"
+    },
+    {
+     "hanzi": "显示",
+     "pinyin": "xiǎn shì",
+     "pos": "v.",
+     "en": "to show, display (数据显示 the data show)",
+     "id": "dabu5-u1-7:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-8a",
+   "title": "大步5 U1.8 · 健康生活 Keeping well in the dog days · 1",
+   "words": [
+    {
+     "hanzi": "保健品",
+     "pinyin": "bǎo jiàn pǐn",
+     "pos": "n.",
+     "en": "health supplement",
+     "id": "dabu5-u1-8:0"
+    },
+    {
+     "hanzi": "过度",
+     "pinyin": "guò dù",
+     "pos": "adj./adv.",
+     "en": "excessive; too much",
+     "id": "dabu5-u1-8:1"
+    },
+    {
+     "hanzi": "劳累",
+     "pinyin": "láo lèi",
+     "pos": "adj.",
+     "en": "overworked, worn out",
+     "id": "dabu5-u1-8:2"
+    },
+    {
+     "hanzi": "睡眠",
+     "pinyin": "shuì mián",
+     "pos": "n.",
+     "en": "sleep",
+     "id": "dabu5-u1-8:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u1-8b",
+   "title": "大步5 U1.8 · 健康生活 Keeping well in the dog days · 2",
+   "words": [
+    {
+     "hanzi": "清淡",
+     "pinyin": "qīng dàn",
+     "pos": "adj.",
+     "en": "light (of food), not rich or spicy",
+     "id": "dabu5-u1-8:4"
     },
     {
      "hanzi": "以",
      "pinyin": "yǐ",
      "pos": "phr.",
-     "en": "at the cost of (以…为代价)"
+     "en": "to consist mainly of, be mostly (以…为主)",
+     "id": "dabu5-u1-8:5"
+    },
+    {
+     "hanzi": "迷信",
+     "pinyin": "mí xìn",
+     "pos": "n./v.",
+     "en": "superstition; to have blind faith in",
+     "id": "dabu5-u1-8:6"
+    },
+    {
+     "hanzi": "常识",
+     "pinyin": "cháng shí",
+     "pos": "n.",
+     "en": "common sense; general knowledge",
+     "id": "dabu5-u1-8:7"
     }
    ]
   },
   {
-   "id": "dabu5-u3-7",
-   "title": "大步5 U3.7 · 全球化 A basket for the world",
+   "id": "dabu5-u1-8c",
+   "title": "大步5 U1.8 · 健康生活 Keeping well in the dog days · 3",
    "words": [
+    {
+     "hanzi": "免疫力",
+     "pinyin": "miǎn yì lì",
+     "pos": "n.",
+     "en": "immunity, resistance to illness",
+     "id": "dabu5-u1-8:8"
+    },
+    {
+     "hanzi": "体质",
+     "pinyin": "tǐ zhì",
+     "pos": "n.",
+     "en": "constitution, physique",
+     "id": "dabu5-u1-8:9"
+    },
+    {
+     "hanzi": "血压",
+     "pinyin": "xuè yā",
+     "pos": "n.",
+     "en": "blood pressure",
+     "id": "dabu5-u1-8:10"
+    },
+    {
+     "hanzi": "减肥",
+     "pinyin": "jiǎn féi",
+     "pos": "v.",
+     "en": "to lose weight, go on a diet",
+     "id": "dabu5-u1-8:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-1a",
+   "title": "大步5 U2.1 · 旅行的意义 What travel is for · 1",
+   "words": [
+    {
+     "hanzi": "冷漠",
+     "pinyin": "lěng mò",
+     "pos": "adj.",
+     "en": "cold, indifferent, aloof",
+     "id": "dabu5-u2-1:0"
+    },
+    {
+     "hanzi": "之前",
+     "pinyin": "zhī qián",
+     "pos": "n.",
+     "en": "before, previously",
+     "id": "dabu5-u2-1:1"
+    },
+    {
+     "hanzi": "洞",
+     "pinyin": "dòng",
+     "pos": "n.",
+     "en": "cave, hole",
+     "id": "dabu5-u2-1:2"
+    },
+    {
+     "hanzi": "壁画",
+     "pinyin": "bì huà",
+     "pos": "n.",
+     "en": "mural, wall painting",
+     "id": "dabu5-u2-1:3"
+    },
+    {
+     "hanzi": "脑子",
+     "pinyin": "nǎo zi",
+     "pos": "n.",
+     "en": "brain, head, mind",
+     "id": "dabu5-u2-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-1b",
+   "title": "大步5 U2.1 · 旅行的意义 What travel is for · 2",
+   "words": [
+    {
+     "hanzi": "研究生",
+     "pinyin": "yán jiū shēng",
+     "pos": "n.",
+     "en": "postgraduate student (读研究生 do a master's)",
+     "id": "dabu5-u2-1:5"
+    },
+    {
+     "hanzi": "表面",
+     "pinyin": "biǎo miàn",
+     "pos": "n.",
+     "en": "surface",
+     "id": "dabu5-u2-1:7"
+    },
+    {
+     "hanzi": "交朋友",
+     "pinyin": "jiāo péng you",
+     "pos": "v.",
+     "en": "to make friends",
+     "id": "dabu5-u2-1:8"
+    },
+    {
+     "hanzi": "没法",
+     "pinyin": "méi fǎ",
+     "pos": "phr.",
+     "en": "can't, there's no way to (spoken)",
+     "id": "dabu5-u2-1:9"
+    },
+    {
+     "hanzi": "反驳",
+     "pinyin": "fǎn bó",
+     "pos": "v.",
+     "en": "to argue against, refute",
+     "id": "dabu5-u2-1:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-2a",
+   "title": "大步5 U2.2 · 旅行的意义 What travel is for · 1",
+   "words": [
+    {
+     "hanzi": "表面上",
+     "pinyin": "biǎo miàn shang",
+     "pos": "phr.",
+     "en": "on the surface, outwardly",
+     "id": "dabu5-u2-1:6",
+     "parts": [
+      "表面",
+      "上"
+     ]
+    },
+    {
+     "hanzi": "以偏概全",
+     "pinyin": "yǐ piān gài quán",
+     "pos": "phr.",
+     "en": "to take a part for the whole, generalise from too little (a 成语)",
+     "id": "dabu5-u2-1:11"
+    },
+    {
+     "hanzi": "严肃",
+     "pinyin": "yán sù",
+     "pos": "adj.",
+     "en": "serious, solemn",
+     "id": "dabu5-u2-2:0"
+    },
+    {
+     "hanzi": "刻板",
+     "pinyin": "kè bǎn",
+     "pos": "adj.",
+     "en": "rigid, stereotyped",
+     "id": "dabu5-u2-2:2"
+    },
+    {
+     "hanzi": "酸酸甜甜",
+     "pinyin": "suān suān tián tián",
+     "pos": "adj.",
+     "en": "sweet and sour",
+     "id": "dabu5-u2-2:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-2b",
+   "title": "大步5 U2.2 · 旅行的意义 What travel is for · 2",
+   "words": [
+    {
+     "hanzi": "刻板印象",
+     "pinyin": "kè bǎn yìn xiàng",
+     "pos": "n.",
+     "en": "stereotype",
+     "id": "dabu5-u2-2:1",
+     "parts": [
+      "刻板",
+      "印象"
+     ]
+    },
+    {
+     "hanzi": "中餐馆",
+     "pinyin": "zhōng cān guǎn",
+     "pos": "n.",
+     "en": "Chinese restaurant",
+     "id": "dabu5-u2-2:4"
+    },
+    {
+     "hanzi": "那样",
+     "pinyin": "nà yàng",
+     "pos": "pron.",
+     "en": "like that, that way",
+     "id": "dabu5-u2-2:5"
+    },
+    {
+     "hanzi": "下午茶",
+     "pinyin": "xià wǔ chá",
+     "pos": "n.",
+     "en": "afternoon tea",
+     "id": "dabu5-u2-2:6"
+    },
+    {
+     "hanzi": "三明治",
+     "pinyin": "sān míng zhì",
+     "pos": "n.",
+     "en": "sandwich",
+     "id": "dabu5-u2-2:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-2c",
+   "title": "大步5 U2.2 · 旅行的意义 What travel is for · 3",
+   "words": [
+    {
+     "hanzi": "标签",
+     "pinyin": "biāo qiān",
+     "pos": "n.",
+     "en": "label, tag",
+     "id": "dabu5-u2-2:8"
+    },
+    {
+     "hanzi": "而言",
+     "pinyin": "ér yán",
+     "pos": "part.",
+     "en": "as far as … goes (对…而言 for …)",
+     "id": "dabu5-u2-2:9"
+    },
+    {
+     "hanzi": "对",
+     "pinyin": "duì",
+     "pos": "phr.",
+     "en": "for, as far as … is concerned (written) (对…而言)",
+     "id": "dabu5-u2-2:10"
+    },
+    {
+     "hanzi": "撕",
+     "pinyin": "sī",
+     "pos": "v.",
+     "en": "to tear, peel off",
+     "id": "dabu5-u2-2:11"
+    },
+    {
+     "hanzi": "前提",
+     "pinyin": "qián tí",
+     "pos": "n.",
+     "en": "precondition (前提是… as long as …)",
+     "id": "dabu5-u2-3:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-3a",
+   "title": "大步5 U2.3 · 旅行的意义 What travel is for · 1",
+   "words": [
+    {
+     "hanzi": "当地",
+     "pinyin": "dāng dì",
+     "pos": "n.",
+     "en": "local, the place in question",
+     "id": "dabu5-u2-3:1"
+    },
+    {
+     "hanzi": "当地人",
+     "pinyin": "dāng dì rén",
+     "pos": "n.",
+     "en": "local people, locals",
+     "id": "dabu5-u2-3:2"
+    },
+    {
+     "hanzi": "聊不起来",
+     "pinyin": "liáo bu qǐ lái",
+     "pos": "phr.",
+     "en": "can't get a conversation going",
+     "id": "dabu5-u2-3:3",
+     "parts": [
+      "聊",
+      "不",
+      "起来"
+     ]
+    },
+    {
+     "hanzi": "顺便",
+     "pinyin": "shùn biàn",
+     "pos": "adv.",
+     "en": "while you're at it, on the way",
+     "id": "dabu5-u2-3:4"
+    },
+    {
+     "hanzi": "留学",
+     "pinyin": "liú xué",
+     "pos": "v.",
+     "en": "to study abroad",
+     "id": "dabu5-u2-3:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-3b",
+   "title": "大步5 U2.3 · 旅行的意义 What travel is for · 2",
+   "words": [
+    {
+     "hanzi": "留学生",
+     "pinyin": "liú xué shēng",
+     "pos": "n.",
+     "en": "overseas student, international student",
+     "id": "dabu5-u2-3:6"
+    },
+    {
+     "hanzi": "沙漠",
+     "pinyin": "shā mò",
+     "pos": "n.",
+     "en": "desert",
+     "id": "dabu5-u2-3:7"
+    },
+    {
+     "hanzi": "骆驼",
+     "pinyin": "luò tuo",
+     "pos": "n.",
+     "en": "camel",
+     "id": "dabu5-u2-3:8"
+    },
+    {
+     "hanzi": "眼界",
+     "pinyin": "yǎn jiè",
+     "pos": "n.",
+     "en": "horizons, outlook (开阔眼界 broaden your horizons)",
+     "id": "dabu5-u2-3:9"
+    },
+    {
+     "hanzi": "一概而论",
+     "pinyin": "yī gài ér lùn",
+     "pos": "phr.",
+     "en": "to lump everything together (不能一概而论 you can't generalise)",
+     "id": "dabu5-u2-3:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-4a",
+   "title": "大步5 U2.4 · 旅行的意义 What travel is for · 1",
+   "words": [
+    {
+     "hanzi": "结论",
+     "pinyin": "jié lùn",
+     "pos": "n.",
+     "en": "conclusion",
+     "id": "dabu5-u2-3:11"
+    },
+    {
+     "hanzi": "下结论",
+     "pinyin": "xià jié lùn",
+     "pos": "phr.",
+     "en": "to draw a conclusion",
+     "id": "dabu5-u2-4:0"
+    },
+    {
+     "hanzi": "南方",
+     "pinyin": "nán fāng",
+     "pos": "n.",
+     "en": "the south",
+     "id": "dabu5-u2-4:1"
+    },
+    {
+     "hanzi": "北方",
+     "pinyin": "běi fāng",
+     "pos": "n.",
+     "en": "the north",
+     "id": "dabu5-u2-4:2"
+    },
+    {
+     "hanzi": "口味",
+     "pinyin": "kǒu wèi",
+     "pos": "n.",
+     "en": "taste, flavour, what you like to eat",
+     "id": "dabu5-u2-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-4b",
+   "title": "大步5 U2.4 · 旅行的意义 What travel is for · 2",
+   "words": [
+    {
+     "hanzi": "韩国",
+     "pinyin": "Hán guó",
+     "pos": "n.",
+     "en": "South Korea",
+     "id": "dabu5-u2-4:4"
+    },
+    {
+     "hanzi": "偏见",
+     "pinyin": "piān jiàn",
+     "pos": "n.",
+     "en": "prejudice, bias",
+     "id": "dabu5-u2-4:5"
+    },
+    {
+     "hanzi": "误会",
+     "pinyin": "wù huì",
+     "pos": "v./n.",
+     "en": "to misunderstand; misunderstanding",
+     "id": "dabu5-u2-4:6"
+    },
+    {
+     "hanzi": "陌生人",
+     "pinyin": "mò shēng rén",
+     "pos": "n.",
+     "en": "stranger",
+     "id": "dabu5-u2-4:7"
+    },
+    {
+     "hanzi": "个人",
+     "pinyin": "gè rén",
+     "pos": "n.",
+     "en": "individual; personal (我个人的看法 my own view)",
+     "id": "dabu5-u2-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-4c",
+   "title": "大步5 U2.4 · 旅行的意义 What travel is for · 3",
+   "words": [
+    {
+     "hanzi": "开眼界",
+     "pinyin": "kāi yǎn jiè",
+     "pos": "v.",
+     "en": "to broaden your horizons, see something new (开开眼界 see a bit of the world)",
+     "id": "dabu5-u2-4:9"
+    },
+    {
+     "hanzi": "文化冲击",
+     "pinyin": "wén huà chōng jī",
+     "pos": "n.",
+     "en": "culture shock",
+     "id": "dabu5-u2-4:10"
+    },
+    {
+     "hanzi": "背包客",
+     "pinyin": "bēi bāo kè",
+     "pos": "n.",
+     "en": "backpacker",
+     "id": "dabu5-u2-4:11"
+    },
+    {
+     "hanzi": "几乎",
+     "pinyin": "jī hū",
+     "pos": "adv.",
+     "en": "almost, nearly",
+     "id": "dabu5-u2-5:0"
+    },
+    {
+     "hanzi": "甜酸肉",
+     "pinyin": "tián suān ròu",
+     "pos": "n.",
+     "en": "sweet and sour pork",
+     "id": "dabu5-u2-5:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-5a",
+   "title": "大步5 U2.5 · 旅行的意义 What travel is for · 1",
+   "words": [
+    {
+     "hanzi": "一路",
+     "pinyin": "yī lù",
+     "pos": "n.",
+     "en": "the whole way, all along the road",
+     "id": "dabu5-u2-5:2"
+    },
+    {
+     "hanzi": "胡子",
+     "pinyin": "hú zi",
+     "pos": "n.",
+     "en": "beard, moustache",
+     "id": "dabu5-u2-5:3"
+    },
+    {
+     "hanzi": "尖",
+     "pinyin": "jiān",
+     "pos": "adj.",
+     "en": "pointed, sharp",
+     "id": "dabu5-u2-5:4"
+    },
+    {
+     "hanzi": "商人",
+     "pinyin": "shāng rén",
+     "pos": "n.",
+     "en": "merchant, trader, businessman",
+     "id": "dabu5-u2-5:5"
+    },
+    {
+     "hanzi": "飞天",
+     "pinyin": "fēi tiān",
+     "pos": "n.",
+     "en": "flying spirit (in Buddhist art, as at Dunhuang)",
+     "id": "dabu5-u2-5:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-5b",
+   "title": "大步5 U2.5 · 旅行的意义 What travel is for · 2",
+   "words": [
+    {
+     "hanzi": "丝绸之路",
+     "pinyin": "Sī chóu zhī lù",
+     "pos": "n.",
+     "en": "the Silk Road",
+     "id": "dabu5-u2-5:7"
+    },
+    {
+     "hanzi": "宗教",
+     "pinyin": "zōng jiào",
+     "pos": "n.",
+     "en": "religion",
+     "id": "dabu5-u2-5:8"
+    },
+    {
+     "hanzi": "交流",
+     "pinyin": "jiāo liú",
+     "pos": "v./n.",
+     "en": "to exchange, communicate; exchange",
+     "id": "dabu5-u2-5:10"
+    },
+    {
+     "hanzi": "文化交流",
+     "pinyin": "wén huà jiāo liú",
+     "pos": "n.",
+     "en": "cultural exchange",
+     "id": "dabu5-u2-5:9"
+    },
+    {
+     "hanzi": "制造",
+     "pinyin": "zhì zào",
+     "pos": "v.",
+     "en": "to make, manufacture, create",
+     "id": "dabu5-u2-5:11"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-6a",
+   "title": "大步5 U2.6 · 旅行的意义 What travel is for · 1",
+   "words": [
+    {
+     "hanzi": "犯",
+     "pinyin": "fàn",
+     "pos": "v.",
+     "en": "to make (a mistake), commit (犯错误 make a mistake)",
+     "id": "dabu5-u2-5:12"
+    },
+    {
+     "hanzi": "错误",
+     "pinyin": "cuò wù",
+     "pos": "n./adj.",
+     "en": "mistake, error; wrong",
+     "id": "dabu5-u2-6:0"
+    },
+    {
+     "hanzi": "开阔",
+     "pinyin": "kāi kuò",
+     "pos": "adj./v.",
+     "en": "wide, open; to widen (开阔眼界 broaden your horizons)",
+     "id": "dabu5-u2-6:1"
+    },
+    {
+     "hanzi": "读万卷书",
+     "pinyin": "dú wàn juàn shū",
+     "pos": "phr.",
+     "en": "read ten thousand books (读万卷书，行万里路)",
+     "id": "dabu5-u2-6:2"
+    },
+    {
+     "hanzi": "行万里路",
+     "pinyin": "xíng wàn lǐ lù",
+     "pos": "phr.",
+     "en": "travel ten thousand miles (读万卷书，行万里路)",
+     "id": "dabu5-u2-6:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-6b",
+   "title": "大步5 U2.6 · 旅行的意义 What travel is for · 2",
+   "words": [
+    {
+     "hanzi": "而已",
+     "pinyin": "ér yǐ",
+     "pos": "part.",
+     "en": "that's all, merely (只是…而已 just …, that's all)",
+     "id": "dabu5-u2-6:4"
+    },
+    {
+     "hanzi": "视野",
+     "pinyin": "shì yě",
+     "pos": "n.",
+     "en": "field of vision, outlook",
+     "id": "dabu5-u2-6:5"
+    },
+    {
+     "hanzi": "入乡随俗",
+     "pinyin": "rù xiāng suí sú",
+     "pos": "phr.",
+     "en": "when in Rome, do as the Romans do (a 成语)",
+     "id": "dabu5-u2-6:6"
+    },
+    {
+     "hanzi": "百闻不如一见",
+     "pinyin": "bǎi wén bù rú yī jiàn",
+     "pos": "phr.",
+     "en": "seeing once is better than hearing a hundred times",
+     "id": "dabu5-u2-6:7"
+    },
+    {
+     "hanzi": "井底之蛙",
+     "pinyin": "jǐng dǐ zhī wā",
+     "pos": "phr.",
+     "en": "a frog at the bottom of a well, someone with a narrow view (a 成语)",
+     "id": "dabu5-u2-6:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u2-6c",
+   "title": "大步5 U2.6 · 旅行的意义 What travel is for · 3",
+   "words": [
+    {
+     "hanzi": "游记",
+     "pinyin": "yóu jì",
+     "pos": "n.",
+     "en": "travel writing, travel notes",
+     "id": "dabu5-u2-6:9"
+    },
+    {
+     "hanzi": "文明",
+     "pinyin": "wén míng",
+     "pos": "n./adj.",
+     "en": "civilisation; civilised",
+     "id": "dabu5-u2-6:10"
+    },
+    {
+     "hanzi": "出境游",
+     "pinyin": "chū jìng yóu",
+     "pos": "n.",
+     "en": "travel abroad, outbound tourism",
+     "id": "dabu5-u2-6:11"
+    },
+    {
+     "hanzi": "攻略",
+     "pinyin": "gōng lüè",
+     "pos": "n.",
+     "en": "guide, tips (旅游攻略 a travel guide)",
+     "id": "dabu5-u2-6:12"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-1a",
+   "title": "大步5 U3.1 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "北欧",
+     "pinyin": "Běi ōu",
+     "pos": "n.",
+     "en": "the Nordic countries, Scandinavia",
+     "id": "dabu5-u3-1:0"
+    },
+    {
+     "hanzi": "家居",
+     "pinyin": "jiā jū",
+     "pos": "n.",
+     "en": "home furnishings, homeware",
+     "id": "dabu5-u3-1:1"
+    },
+    {
+     "hanzi": "上市",
+     "pinyin": "shàng shì",
+     "pos": "v.",
+     "en": "to come on the market, go on sale",
+     "id": "dabu5-u3-1:2"
+    },
+    {
+     "hanzi": "产量",
+     "pinyin": "chǎn liàng",
+     "pos": "n.",
+     "en": "output, production",
+     "id": "dabu5-u3-1:3"
+    },
+    {
+     "hanzi": "国内",
+     "pinyin": "guó nèi",
+     "pos": "n.",
+     "en": "within the country, at home",
+     "id": "dabu5-u3-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-1b",
+   "title": "大步5 U3.1 · 全球化 A basket for the world · 2",
+   "words": [
+    {
+     "hanzi": "三成",
+     "pinyin": "sān chéng",
+     "pos": "phr.",
+     "en": "thirty per cent (成 ten per cent)",
+     "id": "dabu5-u3-1:5"
+    },
+    {
+     "hanzi": "贴牌",
+     "pinyin": "tiē pái",
+     "pos": "v./n.",
+     "en": "to make goods under another company's brand; OEM production",
+     "id": "dabu5-u3-1:6"
+    },
+    {
+     "hanzi": "出现",
+     "pinyin": "chū xiàn",
+     "pos": "v.",
+     "en": "to appear",
+     "id": "dabu5-u3-1:7"
+    },
+    {
+     "hanzi": "不可否认",
+     "pinyin": "bù kě fǒu rèn",
+     "pos": "phr.",
+     "en": "it can't be denied, there's no denying",
+     "id": "dabu5-u3-1:8"
+    },
+    {
+     "hanzi": "正是",
+     "pinyin": "zhèng shì",
+     "pos": "v.",
+     "en": "to be precisely, be exactly",
+     "id": "dabu5-u3-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-2a",
+   "title": "大步5 U3.2 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "要么",
+     "pinyin": "yào me",
+     "pos": "phr.",
+     "en": "either … or … (要么…要么…)",
+     "id": "dabu5-u3-1:10"
+    },
+    {
+     "hanzi": "脾气",
+     "pinyin": "pí qi",
+     "pos": "n.",
+     "en": "temper, temperament",
+     "id": "dabu5-u3-2:0"
+    },
+    {
+     "hanzi": "进入",
+     "pinyin": "jìn rù",
+     "pos": "v.",
+     "en": "to enter, get into",
+     "id": "dabu5-u3-2:1"
+    },
+    {
+     "hanzi": "生意",
+     "pinyin": "shēng yi",
+     "pos": "n.",
+     "en": "business, trade (做生意 do business)",
+     "id": "dabu5-u3-2:2"
+    },
+    {
+     "hanzi": "让步",
+     "pinyin": "ràng bù",
+     "pos": "v./n.",
+     "en": "to give way, make concessions; concession",
+     "id": "dabu5-u3-2:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-2b",
+   "title": "大步5 U3.2 · 全球化 A basket for the world · 2",
+   "words": [
+    {
+     "hanzi": "民族",
+     "pinyin": "mín zú",
+     "pos": "n.",
+     "en": "nation, ethnic group",
+     "id": "dabu5-u3-2:4"
+    },
+    {
+     "hanzi": "中国制造",
+     "pinyin": "Zhōng guó zhì zào",
+     "pos": "n.",
+     "en": "Made in China",
+     "id": "dabu5-u3-2:6",
+     "parts": [
+      "中国",
+      "制造"
+     ]
+    },
+    {
+     "hanzi": "好用",
+     "pinyin": "hǎo yòng",
+     "pos": "adj.",
+     "en": "easy to use, practical",
+     "id": "dabu5-u3-2:7",
+     "parts": [
+      "好",
+      "用"
+     ]
+    },
+    {
+     "hanzi": "顾客",
+     "pinyin": "gù kè",
+     "pos": "n.",
+     "en": "customer",
+     "id": "dabu5-u3-2:8"
+    },
+    {
+     "hanzi": "值钱",
+     "pinyin": "zhí qián",
+     "pos": "adj.",
+     "en": "valuable, worth a lot",
+     "id": "dabu5-u3-2:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-3a",
+   "title": "大步5 U3.3 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "思路",
+     "pinyin": "sī lù",
+     "pos": "n.",
+     "en": "way of thinking, line of thought (换个思路 look at it differently)",
+     "id": "dabu5-u3-2:10"
+    },
+    {
+     "hanzi": "联名",
+     "pinyin": "lián míng",
+     "pos": "adj./v.",
+     "en": "joint, co-branded; to co-brand",
+     "id": "dabu5-u3-3:0"
+    },
+    {
+     "hanzi": "数量",
+     "pinyin": "shù liàng",
+     "pos": "n.",
+     "en": "quantity, number",
+     "id": "dabu5-u3-3:1"
+    },
+    {
+     "hanzi": "批",
+     "pinyin": "pī",
+     "pos": "m.",
+     "en": "batch, lot (第一批 the first batch)",
+     "id": "dabu5-u3-3:2"
+    },
+    {
+     "hanzi": "低于",
+     "pinyin": "dī yú",
+     "pos": "v.",
+     "en": "to be lower than, below",
+     "id": "dabu5-u3-3:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-3b",
+   "title": "大步5 U3.3 · 全球化 A basket for the world · 2",
+   "words": [
+    {
+     "hanzi": "越是民族的越是世界的",
+     "pinyin": "yuè shì mín zú de yuè shì shì jiè de",
+     "pos": "phr.",
+     "en": "the more something is a nation's own, the more it belongs to the world",
+     "id": "dabu5-u3-2:5",
+     "parts": [
+      "越是",
+      "民族",
+      "的",
+      "世界"
+     ]
+    },
+    {
+     "hanzi": "接受",
+     "pinyin": "jiē shòu",
+     "pos": "v.",
+     "en": "to accept",
+     "id": "dabu5-u3-3:4"
+    },
+    {
+     "hanzi": "剪",
+     "pinyin": "jiǎn",
+     "pos": "v.",
+     "en": "to cut; to edit (a video)",
+     "id": "dabu5-u3-3:5"
+    },
+    {
+     "hanzi": "英文版",
+     "pinyin": "Yīng wén bǎn",
+     "pos": "n.",
+     "en": "English version",
+     "id": "dabu5-u3-3:6"
+    },
+    {
+     "hanzi": "识货",
+     "pinyin": "shí huò",
+     "pos": "v.",
+     "en": "to know quality, know a good thing when you see it",
+     "id": "dabu5-u3-3:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-3c",
+   "title": "大步5 U3.3 · 全球化 A basket for the world · 3",
+   "words": [
+    {
+     "hanzi": "进口",
+     "pinyin": "jìn kǒu",
+     "pos": "v./n.",
+     "en": "to import; imports",
+     "id": "dabu5-u3-3:8"
+    },
+    {
+     "hanzi": "海外",
+     "pinyin": "hǎi wài",
+     "pos": "n.",
+     "en": "overseas, abroad",
+     "id": "dabu5-u3-3:9"
+    },
+    {
+     "hanzi": "本土",
+     "pinyin": "běn tǔ",
+     "pos": "adj./n.",
+     "en": "local, home-grown; home soil",
+     "id": "dabu5-u3-3:10"
+    },
+    {
+     "hanzi": "外贸",
+     "pinyin": "wài mào",
+     "pos": "n.",
+     "en": "foreign trade",
+     "id": "dabu5-u3-4:0"
+    },
+    {
+     "hanzi": "关税",
+     "pinyin": "guān shuì",
+     "pos": "n.",
+     "en": "tariff, customs duty",
+     "id": "dabu5-u3-4:1"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-4a",
+   "title": "大步5 U3.4 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "物流",
+     "pinyin": "wù liú",
+     "pos": "n.",
+     "en": "logistics, delivery",
+     "id": "dabu5-u3-4:2"
+    },
+    {
+     "hanzi": "汇率",
+     "pinyin": "huì lǜ",
+     "pos": "n.",
+     "en": "exchange rate",
+     "id": "dabu5-u3-4:3"
+    },
+    {
+     "hanzi": "供应链",
+     "pinyin": "gōng yìng liàn",
+     "pos": "n.",
+     "en": "supply chain",
+     "id": "dabu5-u3-4:4"
+    },
+    {
+     "hanzi": "双赢",
+     "pinyin": "shuāng yíng",
+     "pos": "adj./n.",
+     "en": "win-win",
+     "id": "dabu5-u3-4:5"
+    },
+    {
+     "hanzi": "电商",
+     "pinyin": "diàn shāng",
+     "pos": "n.",
+     "en": "e-commerce, online retail",
+     "id": "dabu5-u3-4:6"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-4b",
+   "title": "大步5 U3.4 · 全球化 A basket for the world · 2",
+   "words": [
+    {
+     "hanzi": "跨境电商",
+     "pinyin": "kuà jìng diàn shāng",
+     "pos": "n.",
+     "en": "cross-border e-commerce",
+     "id": "dabu5-u3-4:7"
+    },
+    {
+     "hanzi": "压价",
+     "pinyin": "yā jià",
+     "pos": "v.",
+     "en": "to force the price down",
+     "id": "dabu5-u3-4:8"
+    },
+    {
+     "hanzi": "谈判",
+     "pinyin": "tán pàn",
+     "pos": "v./n.",
+     "en": "to negotiate; negotiations",
+     "id": "dabu5-u3-4:9"
+    },
+    {
+     "hanzi": "性价比",
+     "pinyin": "xìng jià bǐ",
+     "pos": "n.",
+     "en": "value for money",
+     "id": "dabu5-u3-4:10"
+    },
+    {
+     "hanzi": "连锁",
+     "pinyin": "lián suǒ",
+     "pos": "adj.",
+     "en": "chain (连锁咖啡店 a coffee chain)",
+     "id": "dabu5-u3-5:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-5a",
+   "title": "大步5 U3.5 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "连锁店",
+     "pinyin": "lián suǒ diàn",
+     "pos": "n.",
+     "en": "chain store",
+     "id": "dabu5-u3-5:1"
+    },
+    {
+     "hanzi": "底料",
+     "pinyin": "dǐ liào",
+     "pos": "n.",
+     "en": "base (火锅底料 hotpot soup base)",
+     "id": "dabu5-u3-5:2"
+    },
+    {
+     "hanzi": "经济",
+     "pinyin": "jīng jì",
+     "pos": "n./adj.",
+     "en": "economy; economic",
+     "id": "dabu5-u3-5:3"
+    },
+    {
+     "hanzi": "显而易见",
+     "pinyin": "xiǎn ér yì jiàn",
+     "pos": "phr.",
+     "en": "obvious, plain to see",
+     "id": "dabu5-u3-5:4"
+    },
+    {
+     "hanzi": "贸易",
+     "pinyin": "mào yì",
+     "pos": "n.",
+     "en": "trade",
+     "id": "dabu5-u3-5:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-5b",
+   "title": "大步5 U3.5 · 全球化 A basket for the world · 2",
+   "words": [
+    {
+     "hanzi": "商品",
+     "pinyin": "shāng pǐn",
+     "pos": "n.",
+     "en": "goods, commodities",
+     "id": "dabu5-u3-5:6"
+    },
+    {
+     "hanzi": "地区",
+     "pinyin": "dì qū",
+     "pos": "n.",
+     "en": "region, area",
+     "id": "dabu5-u3-5:7"
+    },
+    {
+     "hanzi": "就业",
+     "pinyin": "jiù yè",
+     "pos": "v./n.",
+     "en": "to find work; employment (就业机会 job opportunities)",
+     "id": "dabu5-u3-5:8"
+    },
+    {
+     "hanzi": "知识",
+     "pinyin": "zhī shi",
+     "pos": "n.",
+     "en": "knowledge",
+     "id": "dabu5-u3-5:9"
+    },
+    {
+     "hanzi": "流动",
+     "pinyin": "liú dòng",
+     "pos": "v./n.",
+     "en": "to flow, circulate; flow",
+     "id": "dabu5-u3-5:10"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-6a",
+   "title": "大步5 U3.6 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "后来者",
+     "pinyin": "hòu lái zhě",
+     "pos": "n.",
+     "en": "latecomer",
+     "id": "dabu5-u3-5:11"
+    },
+    {
+     "hanzi": "赶上",
+     "pinyin": "gǎn shàng",
+     "pos": "v.",
+     "en": "to catch up with",
+     "id": "dabu5-u3-6:0"
+    },
+    {
+     "hanzi": "然而",
+     "pinyin": "rán ér",
+     "pos": "conj.",
+     "en": "however (written)",
+     "id": "dabu5-u3-6:1"
+    },
+    {
+     "hanzi": "全球",
+     "pinyin": "quán qiú",
+     "pos": "n.",
+     "en": "the whole world, global",
+     "id": "dabu5-u3-6:2"
+    },
+    {
+     "hanzi": "买方",
+     "pinyin": "mǎi fāng",
+     "pos": "n.",
+     "en": "the buyer",
+     "id": "dabu5-u3-6:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-6b",
+   "title": "大步5 U3.6 · 全球化 A basket for the world · 2",
+   "words": [
+    {
+     "hanzi": "卖方",
+     "pinyin": "mài fāng",
+     "pos": "n.",
+     "en": "the seller",
+     "id": "dabu5-u3-6:4"
+    },
+    {
+     "hanzi": "生产者",
+     "pinyin": "shēng chǎn zhě",
+     "pos": "n.",
+     "en": "producer",
+     "id": "dabu5-u3-6:5"
+    },
+    {
+     "hanzi": "讨价还价",
+     "pinyin": "tǎo jià huán jià",
+     "pos": "phr.",
+     "en": "to haggle, bargain",
+     "id": "dabu5-u3-6:6"
+    },
+    {
+     "hanzi": "降低",
+     "pinyin": "jiàng dī",
+     "pos": "v.",
+     "en": "to lower, reduce",
+     "id": "dabu5-u3-6:7"
+    },
+    {
+     "hanzi": "牺牲",
+     "pinyin": "xī shēng",
+     "pos": "v./n.",
+     "en": "to sacrifice; sacrifice",
+     "id": "dabu5-u3-6:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-7a",
+   "title": "大步5 U3.7 · 全球化 A basket for the world · 1",
+   "words": [
+    {
+     "hanzi": "利益",
+     "pinyin": "lì yì",
+     "pos": "n.",
+     "en": "interests, benefit",
+     "id": "dabu5-u3-6:10"
+    },
+    {
+     "hanzi": "以",
+     "pinyin": "yǐ",
+     "pos": "phr.",
+     "en": "at the cost of (以…为代价)",
+     "id": "dabu5-u3-6:11"
+    },
     {
      "hanzi": "换取",
      "pinyin": "huàn qǔ",
      "pos": "v.",
-     "en": "to get in exchange, win (in return)"
+     "en": "to get in exchange, win (in return)",
+     "id": "dabu5-u3-7:0"
     },
     {
      "hanzi": "一旦",
      "pinyin": "yī dàn",
      "pos": "conj.",
-     "en": "once, if ever"
+     "en": "once, if ever",
+     "id": "dabu5-u3-7:1"
     },
     {
      "hanzi": "形势",
      "pinyin": "xíng shì",
      "pos": "n.",
-     "en": "situation, circumstances"
-    },
+     "en": "situation, circumstances",
+     "id": "dabu5-u3-7:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-7b",
+   "title": "大步5 U3.7 · 全球化 A basket for the world · 2",
+   "words": [
     {
      "hanzi": "受伤",
      "pinyin": "shòu shāng",
      "pos": "v.",
-     "en": "to be hurt, be injured"
+     "en": "to be hurt, be injured",
+     "id": "dabu5-u3-7:3"
     },
     {
      "hanzi": "弱小",
      "pinyin": "ruò xiǎo",
      "pos": "adj.",
-     "en": "small and weak, vulnerable"
+     "en": "small and weak, vulnerable",
+     "id": "dabu5-u3-7:4"
     },
     {
      "hanzi": "流行歌曲",
      "pinyin": "liú xíng gē qǔ",
      "pos": "n.",
-     "en": "pop song"
+     "en": "pop song",
+     "id": "dabu5-u3-7:5"
     },
     {
      "hanzi": "同化",
      "pinyin": "tóng huà",
      "pos": "v.",
-     "en": "to assimilate"
+     "en": "to assimilate",
+     "id": "dabu5-u3-7:6"
     },
     {
      "hanzi": "由此可见",
      "pinyin": "yóu cǐ kě jiàn",
      "pos": "phr.",
-     "en": "from this it can be seen, it follows that"
-    },
+     "en": "from this it can be seen, it follows that",
+     "id": "dabu5-u3-7:7"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-7c",
+   "title": "大步5 U3.7 · 全球化 A basket for the world · 3",
+   "words": [
     {
      "hanzi": "可见",
      "pinyin": "kě jiàn",
      "pos": "conj.",
-     "en": "so it's clear that, which shows"
+     "en": "so it's clear that, which shows",
+     "id": "dabu5-u3-7:8"
     },
     {
      "hanzi": "开放",
      "pinyin": "kāi fàng",
      "pos": "v./adj.",
-     "en": "to open up; open"
+     "en": "to open up; open",
+     "id": "dabu5-u3-7:9"
     },
     {
      "hanzi": "特色",
      "pinyin": "tè sè",
      "pos": "n.",
-     "en": "distinctive feature, character"
+     "en": "distinctive feature, character",
+     "id": "dabu5-u3-7:10"
     },
     {
      "hanzi": "亚洲",
      "pinyin": "Yà zhōu",
      "pos": "n.",
-     "en": "Asia"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u3-8",
-   "title": "大步5 U3.8 · 全球化 A basket for the world",
-   "words": [
+     "en": "Asia",
+     "id": "dabu5-u3-7:11"
+    },
     {
      "hanzi": "工作室",
      "pinyin": "gōng zuò shì",
      "pos": "n.",
-     "en": "studio"
-    },
+     "en": "studio",
+     "id": "dabu5-u3-8:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-8a",
+   "title": "大步5 U3.8 · 全球化 A basket for the world · 1",
+   "words": [
     {
      "hanzi": "体会",
      "pinyin": "tǐ huì",
      "pos": "n./v.",
-     "en": "what you learn from experience; to come to understand"
+     "en": "what you learn from experience; to come to understand",
+     "id": "dabu5-u3-8:1"
     },
     {
      "hanzi": "总而言之",
      "pinyin": "zǒng ér yán zhī",
      "pos": "phr.",
-     "en": "in short, to sum up"
+     "en": "in short, to sum up",
+     "id": "dabu5-u3-8:2"
     },
     {
      "hanzi": "总之",
      "pinyin": "zǒng zhī",
      "pos": "conj.",
-     "en": "in short, anyway"
+     "en": "in short, anyway",
+     "id": "dabu5-u3-8:3"
     },
     {
      "hanzi": "灵丹妙药",
      "pinyin": "líng dān miào yào",
      "pos": "phr.",
-     "en": "a miracle cure, cure-all (a 成语)"
+     "en": "a miracle cure, cure-all (a 成语)",
+     "id": "dabu5-u3-8:4"
     },
     {
      "hanzi": "洪水猛兽",
      "pinyin": "hóng shuǐ měng shòu",
      "pos": "phr.",
-     "en": "floods and wild beasts, a terrible menace (a 成语)"
-    },
+     "en": "floods and wild beasts, a terrible menace (a 成语)",
+     "id": "dabu5-u3-8:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u3-8b",
+   "title": "大步5 U3.8 · 全球化 A basket for the world · 2",
+   "words": [
     {
      "hanzi": "岸",
      "pinyin": "àn",
      "pos": "n.",
-     "en": "bank, shore"
+     "en": "bank, shore",
+     "id": "dabu5-u3-8:6"
     },
     {
      "hanzi": "抱怨",
      "pinyin": "bào yuàn",
      "pos": "v.",
-     "en": "to complain"
+     "en": "to complain",
+     "id": "dabu5-u3-8:7"
     },
     {
      "hanzi": "风险",
      "pinyin": "fēng xiǎn",
      "pos": "n.",
-     "en": "risk"
+     "en": "risk",
+     "id": "dabu5-u3-8:8"
     },
     {
      "hanzi": "国潮",
      "pinyin": "guó cháo",
      "pos": "n.",
-     "en": "'national trend' (design that mixes Chinese tradition with modern style)"
+     "en": "'national trend' (design that mixes Chinese tradition with modern style)",
+     "id": "dabu5-u3-8:9"
     },
     {
      "hanzi": "多元",
      "pinyin": "duō yuán",
      "pos": "adj.",
-     "en": "diverse, plural"
+     "en": "diverse, plural",
+     "id": "dabu5-u3-8:10"
     }
    ]
   },
   {
-   "id": "dabu5-u4-1",
-   "title": "大步5 U4.1 · 回到起点 Back where it started",
+   "id": "dabu5-u4-1a",
+   "title": "大步5 U4.1 · 回到起点 Back where it started · 1",
    "words": [
     {
      "hanzi": "卖关子",
      "pinyin": "mài guān zi",
      "pos": "v.",
-     "en": "to keep people in suspense"
+     "en": "to keep people in suspense",
+     "id": "dabu5-u4-1:0"
     },
     {
      "hanzi": "包场",
      "pinyin": "bāo chǎng",
      "pos": "v.",
-     "en": "to book a whole venue; (of a restaurant) to close for a private party"
+     "en": "to book a whole venue; (of a restaurant) to close for a private party",
+     "id": "dabu5-u4-1:1"
     },
     {
      "hanzi": "手心",
      "pinyin": "shǒu xīn",
      "pos": "n.",
-     "en": "palm (of the hand) (手心出汗 sweaty palms)"
+     "en": "palm (of the hand) (手心出汗 sweaty palms)",
+     "id": "dabu5-u4-1:2"
     },
     {
      "hanzi": "第一排",
      "pinyin": "dì yī pái",
      "pos": "n.",
-     "en": "the front row"
+     "en": "the front row",
+     "id": "dabu5-u4-1:3"
     },
     {
      "hanzi": "错过",
      "pinyin": "cuò guò",
      "pos": "v.",
-     "en": "to miss (a chance, a train, an event)"
-    },
+     "en": "to miss (a chance, a train, an event)",
+     "id": "dabu5-u4-1:4"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-1b",
+   "title": "大步5 U4.1 · 回到起点 Back where it started · 2",
+   "words": [
     {
      "hanzi": "接下来",
      "pinyin": "jiē xià lái",
      "pos": "phr.",
-     "en": "next, after that"
+     "en": "next, after that",
+     "id": "dabu5-u4-1:5"
     },
     {
      "hanzi": "男生",
      "pinyin": "nán shēng",
      "pos": "n.",
-     "en": "young man, boy (at school or college)"
+     "en": "young man, boy (at school or college)",
+     "id": "dabu5-u4-1:6"
     },
     {
      "hanzi": "周年",
      "pinyin": "zhōu nián",
      "pos": "n.",
-     "en": "anniversary (十周年 tenth anniversary)"
+     "en": "anniversary (十周年 tenth anniversary)",
+     "id": "dabu5-u4-1:7"
     },
     {
      "hanzi": "上台",
      "pinyin": "shàng tái",
      "pos": "v.",
-     "en": "to go up on stage"
+     "en": "to go up on stage",
+     "id": "dabu5-u4-1:8"
     },
     {
      "hanzi": "台下",
      "pinyin": "tái xià",
      "pos": "n.",
-     "en": "the audience (below the stage)"
-    },
+     "en": "the audience (below the stage)",
+     "id": "dabu5-u4-1:9"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-1c",
+   "title": "大步5 U4.1 · 回到起点 Back where it started · 3",
+   "words": [
     {
      "hanzi": "稿子",
      "pinyin": "gǎo zi",
      "pos": "n.",
-     "en": "draft, script (of a speech or article)"
+     "en": "draft, script (of a speech or article)",
+     "id": "dabu5-u4-1:10"
     },
     {
      "hanzi": "演讲稿",
      "pinyin": "yǎn jiǎng gǎo",
      "pos": "n.",
-     "en": "the text of a speech"
+     "en": "the text of a speech",
+     "id": "dabu5-u4-1:11"
     },
     {
      "hanzi": "话筒",
      "pinyin": "huà tǒng",
      "pos": "n.",
-     "en": "microphone"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u4-2",
-   "title": "大步5 U4.2 · 回到起点 Back where it started",
-   "words": [
-    {
-     "hanzi": "亲爱",
-     "pinyin": "qīn ài",
-     "pos": "adj.",
-     "en": "dear (亲爱的朋友们 dear friends)"
+     "en": "microphone",
+     "id": "dabu5-u4-1:12"
     },
     {
      "hanzi": "扇",
      "pinyin": "shàn",
      "pos": "m.",
-     "en": "for doors and windows (那扇门 that door)"
+     "en": "for doors and windows (那扇门 that door)",
+     "id": "dabu5-u4-2:1"
     },
     {
      "hanzi": "女孩",
      "pinyin": "nǚ hái",
      "pos": "n.",
-     "en": "girl, young woman"
+     "en": "girl, young woman",
+     "id": "dabu5-u4-2:2"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-2a",
+   "title": "大步5 U4.2 · 回到起点 Back where it started · 1",
+   "words": [
+    {
+     "hanzi": "闹",
+     "pinyin": "nào",
+     "pos": "v.",
+     "en": "to make (a scene, a fuss); to be noisy",
+     "id": "dabu5-u4-2:4"
     },
     {
      "hanzi": "闹笑话",
      "pinyin": "nào xiào hua",
      "pos": "v.",
-     "en": "to make a fool of yourself, make a silly mistake"
-    },
-    {
-     "hanzi": "闹",
-     "pinyin": "nào",
-     "pos": "v.",
-     "en": "to make (a scene, a fuss); to be noisy"
+     "en": "to make a fool of yourself, make a silly mistake",
+     "id": "dabu5-u4-2:3"
     },
     {
      "hanzi": "千里之行",
      "pinyin": "qiān lǐ zhī xíng",
      "pos": "phr.",
-     "en": "a journey of a thousand miles (千里之行，始于足下)"
+     "en": "a journey of a thousand miles (千里之行，始于足下)",
+     "id": "dabu5-u4-2:5"
     },
     {
      "hanzi": "始于足下",
      "pinyin": "shǐ yú zú xià",
      "pos": "phr.",
-     "en": "begins beneath your feet, begins with a single step"
-    },
-    {
-     "hanzi": "一步一个脚印",
-     "pinyin": "yī bù yī gè jiǎo yìn",
-     "pos": "phr.",
-     "en": "one step, one footprint: steady, solid progress"
+     "en": "begins beneath your feet, begins with a single step",
+     "id": "dabu5-u4-2:6"
     },
     {
      "hanzi": "脚印",
      "pinyin": "jiǎo yìn",
      "pos": "n.",
-     "en": "footprint"
+     "en": "footprint",
+     "id": "dabu5-u4-2:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-2b",
+   "title": "大步5 U4.2 · 回到起点 Back where it started · 2",
+   "words": [
+    {
+     "hanzi": "一步一个脚印",
+     "pinyin": "yī bù yī gè jiǎo yìn",
+     "pos": "phr.",
+     "en": "one step, one footprint: steady, solid progress",
+     "id": "dabu5-u4-2:7"
     },
     {
      "hanzi": "同一",
      "pinyin": "tóng yī",
      "pos": "adj.",
-     "en": "the same (同一个月亮 the same moon)"
+     "en": "the same (同一个月亮 the same moon)",
+     "id": "dabu5-u4-2:9"
     },
     {
      "hanzi": "门外",
      "pinyin": "mén wài",
      "pos": "n.",
-     "en": "outside the door"
+     "en": "outside the door",
+     "id": "dabu5-u4-2:10"
     },
     {
      "hanzi": "算数",
      "pinyin": "suàn shù",
      "pos": "v.",
-     "en": "to count, matter (每一步都算数 every step counts)"
-    }
-   ]
-  },
-  {
-   "id": "dabu5-u4-3",
-   "title": "大步5 U4.3 · 回到起点 Back where it started",
-   "words": [
+     "en": "to count, matter (每一步都算数 every step counts)",
+     "id": "dabu5-u4-2:11"
+    },
     {
      "hanzi": "有朋自远方来",
      "pinyin": "yǒu péng zì yuǎn fāng lái",
      "pos": "phr.",
-     "en": "to have friends come from afar (from the Analects)"
-    },
+     "en": "to have friends come from afar (from the Analects)",
+     "id": "dabu5-u4-3:0"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-3a",
+   "title": "大步5 U4.3 · 回到起点 Back where it started · 1",
+   "words": [
     {
      "hanzi": "不亦乐乎",
      "pinyin": "bù yì lè hū",
      "pos": "phr.",
-     "en": "is it not a joy? (from the Analects; today also 'no end, like mad')"
+     "en": "is it not a joy? (from the Analects; today also 'no end, like mad')",
+     "id": "dabu5-u4-3:1"
     },
     {
      "hanzi": "学无止境",
      "pinyin": "xué wú zhǐ jìng",
      "pos": "phr.",
-     "en": "there's no end to learning"
+     "en": "there's no end to learning",
+     "id": "dabu5-u4-3:2"
     },
     {
      "hanzi": "害怕",
      "pinyin": "hài pà",
      "pos": "v.",
-     "en": "to be afraid"
+     "en": "to be afraid",
+     "id": "dabu5-u4-3:3"
     },
     {
      "hanzi": "如果说",
      "pinyin": "rú guǒ shuō",
      "pos": "phr.",
-     "en": "if A, then B (setting two things side by side) (如果说…那么…)"
+     "en": "if A, then B (setting two things side by side) (如果说…那么…)",
+     "id": "dabu5-u4-3:4"
     },
     {
      "hanzi": "各个",
      "pinyin": "gè gè",
      "pos": "pron.",
-     "en": "every, each (各个角落 every corner)"
-    },
+     "en": "every, each (各个角落 every corner)",
+     "id": "dabu5-u4-3:5"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-3b",
+   "title": "大步5 U4.3 · 回到起点 Back where it started · 2",
+   "words": [
     {
      "hanzi": "角落",
      "pinyin": "jiǎo luò",
      "pos": "n.",
-     "en": "corner"
+     "en": "corner",
+     "id": "dabu5-u4-3:6"
     },
     {
      "hanzi": "来宾",
      "pinyin": "lái bīn",
      "pos": "n.",
-     "en": "guest (at an event)"
+     "en": "guest (at an event)",
+     "id": "dabu5-u4-3:7"
     },
     {
      "hanzi": "致辞",
      "pinyin": "zhì cí",
      "pos": "v./n.",
-     "en": "to make a speech (at a ceremony); address"
+     "en": "to make a speech (at a ceremony); address",
+     "id": "dabu5-u4-3:8"
     },
     {
      "hanzi": "开场白",
      "pinyin": "kāi chǎng bái",
      "pos": "n.",
-     "en": "opening remarks"
+     "en": "opening remarks",
+     "id": "dabu5-u4-3:9"
     },
     {
      "hanzi": "结束语",
      "pinyin": "jié shù yǔ",
      "pos": "n.",
-     "en": "closing remarks"
-    },
-    {
-     "hanzi": "祝愿",
-     "pinyin": "zhù yuàn",
-     "pos": "v./n.",
-     "en": "to wish; good wishes"
+     "en": "closing remarks",
+     "id": "dabu5-u4-3:10"
     }
    ]
   },
   {
-   "id": "dabu5-u4-4",
-   "title": "大步5 U4.4 · 回到起点 Back where it started",
+   "id": "dabu5-u4-4a",
+   "title": "大步5 U4.4 · 回到起点 Back where it started · 1",
    "words": [
+    {
+     "hanzi": "祝愿",
+     "pinyin": "zhù yuàn",
+     "pos": "v./n.",
+     "en": "to wish; good wishes",
+     "id": "dabu5-u4-3:11"
+    },
     {
      "hanzi": "论语",
      "pinyin": "Lún yǔ",
      "pos": "n.",
-     "en": "the Analects (of Confucius)"
+     "en": "the Analects (of Confucius)",
+     "id": "dabu5-u4-4:0"
     },
     {
      "hanzi": "温故知新",
      "pinyin": "wēn gù zhī xīn",
      "pos": "phr.",
-     "en": "review the old to learn the new (a 成语)"
+     "en": "review the old to learn the new (a 成语)",
+     "id": "dabu5-u4-4:1"
     },
     {
      "hanzi": "熟能生巧",
      "pinyin": "shú néng shēng qiǎo",
      "pos": "phr.",
-     "en": "practice makes perfect (a 成语)"
+     "en": "practice makes perfect (a 成语)",
+     "id": "dabu5-u4-4:2"
     },
     {
      "hanzi": "持之以恒",
      "pinyin": "chí zhī yǐ héng",
      "pos": "phr.",
-     "en": "to keep at it, persevere (a 成语)"
-    },
+     "en": "to keep at it, persevere (a 成语)",
+     "id": "dabu5-u4-4:3"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-4b",
+   "title": "大步5 U4.4 · 回到起点 Back where it started · 2",
+   "words": [
     {
      "hanzi": "功夫不负有心人",
      "pinyin": "gōng fu bù fù yǒu xīn rén",
      "pos": "phr.",
-     "en": "hard work always pays off"
+     "en": "hard work always pays off",
+     "id": "dabu5-u4-4:4"
     },
     {
      "hanzi": "起点",
      "pinyin": "qǐ diǎn",
      "pos": "n.",
-     "en": "starting point"
+     "en": "starting point",
+     "id": "dabu5-u4-4:5"
     },
     {
      "hanzi": "终点",
      "pinyin": "zhōng diǎn",
      "pos": "n.",
-     "en": "end point, finish"
+     "en": "end point, finish",
+     "id": "dabu5-u4-4:6"
     },
     {
      "hanzi": "回顾",
      "pinyin": "huí gù",
      "pos": "v./n.",
-     "en": "to look back on, review; retrospective"
+     "en": "to look back on, review; retrospective",
+     "id": "dabu5-u4-4:7"
     },
     {
      "hanzi": "感言",
      "pinyin": "gǎn yán",
      "pos": "n.",
-     "en": "remarks, a few words (of thanks) (获奖感言 acceptance speech)"
-    },
+     "en": "remarks, a few words (of thanks) (获奖感言 acceptance speech)",
+     "id": "dabu5-u4-4:8"
+    }
+   ]
+  },
+  {
+   "id": "dabu5-u4-4c",
+   "title": "大步5 U4.4 · 回到起点 Back where it started · 3",
+   "words": [
     {
      "hanzi": "举",
      "pinyin": "jǔ",
      "pos": "v.",
-     "en": "to raise, lift (举杯 raise your glass)"
+     "en": "to raise, lift (举杯 raise your glass)",
+     "id": "dabu5-u4-4:9"
     },
     {
      "hanzi": "蜡烛",
      "pinyin": "là zhú",
      "pos": "",
-     "en": "candle"
+     "en": "candle",
+     "id": "dabu5-u4-4:10"
     },
     {
      "hanzi": "叉子",
      "pinyin": "chā zi",
      "pos": "",
-     "en": "fork"
+     "en": "fork",
+     "id": "dabu5-u4-4:11"
     },
     {
      "hanzi": "欢呼",
      "pinyin": "huān hū",
      "pos": "",
-     "en": "to cheer"
+     "en": "to cheer",
+     "id": "dabu5-u4-4:12"
     },
     {
      "hanzi": "屋顶",
      "pinyin": "wū dǐng",
      "pos": "",
-     "en": "roof"
+     "en": "roof",
+     "id": "dabu5-u4-4:13"
     }
    ]
   }
