@@ -473,8 +473,9 @@
     const row = $("#studyBuns"); if (!row) return;
     const n = buns(), earning = !bunMode && (reviewMode || mistakesMode) && n < BUNS_MAX;
     row.classList.toggle("hidden", !(bunMode || earning));
-    if (n === Infinity) { row.innerHTML = `${bunImg()}<b>∞</b>`; return; }
-    row.innerHTML = Array.from({ length: BUNS_MAX }, (_, i) => bunImg(i < n ? "" : "gone")).join("");
+    // one bun and the count, as Duolingo shows its hearts; red when it's down to one
+    row.classList.toggle("low", n <= 1);
+    row.innerHTML = n === Infinity ? `${bunImg()}<b>∞</b>` : `${bunImg(n ? "" : "gone")}<b>×${n}</b>`;
   }
   // A mistake in a lesson: the bitten bun pops up, then flies into the row.
   function munchBun() {
@@ -490,8 +491,8 @@
   // A bun earned back in a review: the row shows it arriving.
   function bumpBunRow() {
     const row = $("#studyBuns"); if (!row) return;
-    const imgs = row.querySelectorAll(".bun-ico:not(.gone)"), last = imgs[imgs.length - 1];
-    if (last) { last.classList.remove("got"); void last.offsetWidth; last.classList.add("got"); }
+    const b = row.querySelector(".bun-ico");
+    if (b) { b.classList.remove("got"); void b.offsetWidth; b.classList.add("got"); }
   }
 
   // Out of buns, or a look at them from the top bar.

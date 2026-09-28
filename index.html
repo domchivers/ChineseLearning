@@ -1393,7 +1393,9 @@
   .study-sub .link { font-size: .8rem; }
   .bun-row { display: inline-flex; align-items: center; gap: 1px; margin: -6px 0; }
   .bun-row .bun-ico { width: 21px; }
-  .bun-row b { font-weight: 900; color: #b98540; margin-left: 3px; }
+  .bun-row b { font-weight: 900; color: #b98540; margin-left: 4px; font-size: 16px; font-variant-numeric: tabular-nums; }
+  .bun-row.low b { color: var(--again); }
+  .bun-row .bun-ico { width: 24px; }
   .munch { position: fixed; left: 50%; top: 42%; width: 130px; z-index: 150; pointer-events: none; text-align: center;
     animation: munch 1.6s cubic-bezier(.3,1.4,.5,1) forwards; }
   .munch img { width: 100%; display: block; }
@@ -2464,8 +2466,8 @@ body[data-view="avatar"] .wrap{padding-top:max(16px,env(safe-area-inset-top))}
         <span class="title" id="studyTitle">Study</span>
         <span class="combo-chip hidden"></span>
         <span class="boost-pill hidden"></span>
-        <span class="counter" id="studyCounter"></span>
-        <button class="link" id="studyShuffle" aria-label="Shuffle">shuffle</button>
+        <span class="counter hidden" id="studyCounter"></span>
+        <button class="link hidden" id="studyShuffle" aria-label="Shuffle">shuffle</button>
       </div>
     </div>
     <div class="card stage">
