@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=292";
+  const ASSET_V = "?v=293";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -5659,6 +5659,25 @@
   // at least once (reps ≥ 1) — this is what lets big lessons finish across batches
   // instead of on a single cleared round.
   const lessonCleared = id => CARDS.filter(c => c.lessonId === id).every(c => srs[c.id] && srs[c.id].reps >= 1);
+  /* A lesson with many new words comes in steps: its batches of at most
+     NEW_PER_SESSION, as buildStudyQueue makes them (7 words: 4 then 3). */
+  function lessonBatches(n) {
+    let k = 0;
+    while (n > 0) { n -= n > NEW_PER_SESSION ? Math.ceil(n / Math.ceil(n / NEW_PER_SESSION)) : n; k++; }
+    return k;
+  }
+  // The lesson's steps and the one you're on. A finished lesson is on its last; one
+  // whose words are all met but not all right yet has one step left, which clears them.
+  function lessonSteps(id) {
+    const cards = CARDS.filter(c => c.lessonId === id);
+    const total = Math.max(1, lessonBatches(cards.length));
+    if (doneLessons.has(id)) return { step: total, total };
+    const fresh = cards.filter(c => !srs[c.id]).length;
+    const unsure = cards.filter(c => srs[c.id] && !(srs[c.id].reps >= 1)).length;
+    const left = Math.max(1, lessonBatches(fresh) + (!fresh && unsure ? 1 : 0));
+    return { step: Math.min(total, Math.max(1, total - left + 1)), total };
+  }
+  let lessonStepAtStart = 0;
 
   /* ---- Review ------------------------------------------------------------
      The SRS was running but never surfaced: once a lesson was finished its
@@ -6260,6 +6279,11 @@
     hero.style.fontSize = (size * HERO.size / 74).toFixed(1) + "px";
     node.appendChild(hero);
     if (state === "now") node.appendChild(el("div", { className: "start" }, "START"));
+    // a lesson in steps: which one you're on, "1/2", tucked against the stone's edge
+    if (state === "now") {
+      const st = lessonSteps(lesson.id);
+      if (st.total > 1) node.appendChild(el("div", { className: "step-badge", title: `Step ${st.step} of ${st.total}` }, `${st.step}/${st.total}`));
+    }
     return node;
   }
 
@@ -6295,13 +6319,17 @@
       ])
     ]));
     const locked = !lessonDone(id) && id !== currentLessonId();
+    // a lesson with many new words comes in steps (its batches)
+    const steps = lessonSteps(id), inSteps = !lessonDone(id) && !locked && steps.total > 1;
+    if (inSteps) box.querySelector(".lmeta").appendChild(el("div", { className: "lsteps" }, [
+      el("b", {}, `STEP ${steps.step} OF ${steps.total}`), stepSegments(steps.step - 1, steps.total, true)]));
     const study = el("button", { className: "lstudy" });
     if (locked) {
       // A locked lesson can't be studied directly — offer to test out to reach it.
       study.innerHTML = `<svg class="licon licon-sm"><use href="#i-target"/></svg> Take the skip test<small>pass to unlock this — and everything before it</small>`;
       study.addEventListener("click", () => { closeLessonSheet(); startPlacement(id); });
     } else {
-      study.innerHTML = (studied ? "Study" : "Start studying") + "<small>mixed skills · spaced repetition</small>";
+      study.innerHTML = (inSteps ? `Start step ${steps.step} of ${steps.total}` : studied ? "Study" : "Start studying") + "<small>mixed skills · spaced repetition</small>";
       study.addEventListener("click", () => { closeLessonSheet(); launchLesson(id, null); });
     }
     box.appendChild(study);
@@ -6454,6 +6482,59 @@
   const enWords = s => s.replace(/[.!?,;:]+/g, "").split(/\s+/).filter(Boolean);
   const sentencesFor = card => SENTENCES.filter(s => s.hanzi.includes(card.hanzi));
 
+  /* ---- Sentences only from words you've met ---------------------------
+     A sentence exercise may use a sentence only when every word in it has been
+     met (it has a record, or was met earlier this session), apart from the
+     card's own word and the little particles. Short ones (≤ 8 words) are
+     preferred. With none, the card gets another kind of exercise. */
+  const TRIVIAL_WORDS = new Set(["了", "吗", "呢", "吧", "啊", "哇", "呀", "嘛", "啦", "哦"]);
+  const SHORT_SENTENCE = 8;
+  const hanOnly = w => [...w].filter(c => CJK_ONE.test(c)).join("");
+  let cardsByHanzi = null, cardsByChar = null;
+  function sentenceIndex() {
+    if (cardsByHanzi) return;
+    cardsByHanzi = new Map(); cardsByChar = new Map();
+    CARDS.forEach(c => {
+      const h = hanOnly(c.hanzi);
+      if (!cardsByHanzi.has(h)) cardsByHanzi.set(h, []);
+      cardsByHanzi.get(h).push(c);
+      new Set(h).forEach(ch => { if (!cardsByChar.has(ch)) cardsByChar.set(ch, []); cardsByChar.get(ch).push(c); });
+    });
+  }
+  let sessionMet = new Set();      // words met on screen this session (their record comes with the first answer)
+  const cardMet = id => !!srs[id] || sessionMet.has(id);
+  // a word of a sentence is met when a card for exactly that word is; a word that
+  // isn't one of the course's own (a name, a compound) when each character is in one
+  function isMetWord(w, met) {
+    sentenceIndex();
+    const h = hanOnly(w);
+    if (!h) return true;
+    if (cardsByHanzi.has(h)) return cardsByHanzi.get(h).some(c => met(c.id));
+    return [...h].every(ch => (cardsByChar.get(ch) || []).some(c => met(c.id)));
+  }
+  // the words of a sentence not met yet, leaving out the card's own word and the particles
+  function unmetWords(sent, card, met = cardMet) {
+    const own = hanOnly(card.hanzi), all = sent.words.map(w => w.hanzi).join("");
+    const lo = own ? [...all].join("").indexOf(own) : -1;
+    const ownLo = lo < 0 ? -1 : [...all.slice(0, lo)].length, ownHi = ownLo + [...own].length;
+    const out = [];
+    let at = 0;
+    sent.words.forEach(w => {
+      const n = [...w.hanzi].length, a = at; at += n;
+      if (ownLo >= 0 && a >= ownLo && a + n <= ownHi) return;   // a piece of the card's word (不 + 客气)
+      if (TRIVIAL_WORDS.has(w.hanzi) || isMetWord(w.hanzi, met)) return;
+      out.push(w.hanzi);
+    });
+    return out;
+  }
+  function usableSentences(card, met = cardMet) {
+    const ok = sentencesFor(card).filter(s => !unmetWords(s, card, met).length);
+    const short = ok.filter(s => s.words.length <= SHORT_SENTENCE);
+    if (short.length) return short;
+    const least = Math.min(...ok.map(s => s.words.length));
+    return ok.filter(s => s.words.length === least);
+  }
+
   function pickDirection(card) {
     const miss = mistakesMode && card && srs[card.id] && srs[card.id].miss;
     if (miss && !dirByCard[card.id] && missedDirPossible(card, miss.d)) { dirByCard[card.id] = miss.d; return (lastDir = miss.d); }
@@ -6461,8 +6542,8 @@
     let enabled = FOCUSES.filter(f => focusSet.has(f.key)).map(f => f.key);
     // "write" only makes sense when we have stroke data for the whole word.
     if (card && !(HW_OK && wordWritable(card.hanzi))) enabled = enabled.filter(k => k !== "write");
-    // "sentence" only when this word actually appears in a dialogue sentence.
-    if (card && !sentencesFor(card).length) enabled = enabled.filter(k => k !== "sentence");
+    // "sentence" only when this word appears in a sentence whose other words have all been met.
+    if (card && !usableSentences(card).length) enabled = enabled.filter(k => k !== "sentence");
     // The ladder, easy to hard, in a MIXED session. A word you have never got
     // right is recognised (meaning from the characters, or from the sound).
     // Once right, you produce it with support (pick the characters, the pinyin,
@@ -6493,7 +6574,7 @@
   let lastDir = null, sessionStart = 0, dirByCard = {};
   function missedDirPossible(card, d) {
     if (d === "write") return HW_OK && wordWritable(card.hanzi);
-    if (d === "sentence") return sentencesFor(card).length > 0;
+    if (d === "sentence") return usableSentences(card).length > 0;
     return FOCUSES.some(f => f.key === d);
   }
 
@@ -6502,7 +6583,7 @@
     let cards = activeCards();
     // A sentence-only session only makes sense for words that appear in one.
     if (focusSet.size === 1 && focusSet.has("sentence")) {
-      const withSent = cards.filter(c => sentencesFor(c).length);
+      const withSent = cards.filter(c => usableSentences(c).length);
       if (withSent.length) cards = withSent;
     }
     const due = cards.filter(c => { const s = srs[c.id]; return !s || s.due <= NOW(); });
@@ -6519,6 +6600,10 @@
       // review: this lesson's words that are due, then any due word from lessons
       // you have reached, then this lesson's words met in an earlier batch
       const reviews = [];
+      // the last step brings back every word not yet got right, however many, so
+      // finishing it finishes the lesson
+      if (picked.length === fresh.length)
+        cards.forEach(c => { if (!ids.has(c.id) && srs[c.id] && !(srs[c.id].reps >= 1)) reviews.push(c); });
       const addFrom = list => shuffle(list).forEach(c => { if (reviews.length < REVIEW_PER_SESSION && !ids.has(c.id) && !reviews.includes(c)) reviews.push(c); });
       addFrom(due.filter(c => srs[c.id]));
       if (!reviewMode) addFrom(dueReviewCards().filter(c => !scope.has(c.id)));
@@ -6551,7 +6636,9 @@
     queue = sessionOrder(cards);
     clearedIds = new Set(); stepsDone = 0;
     studyStats = { answered: 0, again: 0, learned: 0 };
-    sessionXP = 0; combo = 0; lastDir = null; dirByCard = {}; sessionStart = Date.now();
+    sessionXP = 0; combo = 0; lastDir = null; dirByCard = {}; sessionStart = Date.now(); sessionMet = new Set();
+    const stepLesson = (!reviewMode && !mistakesMode && scopeLessons && scopeLessons.size === 1) ? [...scopeLessons][0] : null;
+    lessonStepAtStart = stepLesson ? lessonSteps(stepLesson).step : 0;
     sessionTotal = queue.filter(x => !x.meet).length;
     $("#studyTitle").textContent = "Study";
     show("study");
@@ -6651,7 +6738,7 @@
     // out of buns part-way through a lesson
     if (bunMode && buns() < 1) { showBuns("mid", () => nextStudyCard()); return; }
     const item = queue.shift();
-    if (item && item.meet) { meetNewWords(item.meet, () => nextStudyCard(), item); return; }
+    if (item && item.meet) { item.meet.forEach(c => sessionMet.add(c.id)); meetNewWords(item.meet, () => nextStudyCard(), item); return; }
     curCard = item;
     curDir = pickDirection(curCard);
     studyAnswered = false;
@@ -6696,6 +6783,25 @@
     clearTimeout(boostTimer);
     if (on) boostTimer = setTimeout(renderBoost, 1000);
   }
+  // Under the done title after a step of a longer lesson: the steps as bars, and what's left.
+  function renderDoneStep(step, total) {
+    const box = $("#doneStep"); if (!box) return;
+    box.innerHTML = "";
+    box.classList.toggle("hidden", !step);
+    if (!step) return;
+    box.appendChild(stepSegments(step, total, false));
+    const more = total - step;
+    box.appendChild(el("div", { className: "muted done-step-sub" }, more === 1 ? "One more step finishes the lesson" : `${more} more steps finish the lesson`));
+  }
+  // A lesson's steps as short bars: finished ones filled, the one you're on (current) half.
+  function stepSegments(done, total, current) {
+    const row = el("div", { className: "step-segs" });
+    for (let i = 0; i < total; i++)
+      row.appendChild(el("i", { className: i < done ? "on" : current && i === done ? "cur" : "" }));
+    row.setAttribute("aria-label", `Step ${Math.min(done + (current ? 1 : 0), total)} of ${total}`);
+    return row;
+  }
+
   function renderDoneNotes(perfect, lesson) {
     const box = $("#doneNotes"); if (!box) return;
     box.innerHTML = "";
@@ -8079,7 +8185,7 @@
     } else if (curDir === "sentence") {
       // Tap word tiles to assemble the sentence; the button checks, then advances.
       choices.classList.remove("hidden");
-      const pool = devSentence ? [devSentence] : sentencesFor(c);
+      const pool = devSentence ? [devSentence] : usableSentences(c);
       buildSentenceExercise(face, choices, pool[Math.floor(Math.random() * pool.length)],
         $("#promptLabel"), correct => answerStudy(correct));
       $("#studyContinueWrap").classList.remove("hidden");
@@ -8342,9 +8448,13 @@
       ? CARDS.filter(c => c.lessonId === scopedId && !(srs[c.id] && srs[c.id].reps >= 1)).length
       : 0;
 
+    // a lesson comes in steps (its batches of new words): one done, more to go
+    const stepsTotal = scopedId ? lessonSteps(scopedId).total : 0;
+    const stepDone = remaining && lessonStepAtStart > 0 && lessonStepAtStart < stepsTotal;
     $("#doneTitle").textContent = mistakesMode ? "Mistakes practised" : reviewMode ? "Review complete"
-      : justFinished ? "Lesson complete"
-      : remaining ? "Batch done" : "Session complete";
+      : justFinished ? "Lesson complete!"
+      : stepDone ? `Step ${lessonStepAtStart} of ${stepsTotal} done` : "Session complete";
+    renderDoneStep(stepDone ? lessonStepAtStart : 0, stepsTotal);
     sfx("complete");
     earnXP(justFinished ? XP.lesson : XP.session);
     const perfect = studyStats.again === 0 && studyStats.answered >= 5;
@@ -8374,7 +8484,7 @@
       nextBtn.dataset.next = upNext;
       nextBtn.classList.remove("hidden");
     } else if (remaining) {
-      nextBtn.textContent = `Keep going — ${remaining} word${remaining === 1 ? "" : "s"} left →`;
+      nextBtn.textContent = "Next step →";       // the lesson's next batch, straight away
       nextBtn.dataset.next = scopedId;
       nextBtn.classList.remove("hidden");
     } else nextBtn.classList.add("hidden");
@@ -8497,6 +8607,7 @@
     scopeLessons = null; scopeFocuses = null;
     const reachedTarget = unlocked.includes(placeTarget);
     doneSimple();
+    renderDoneStep(0, 0);
     $("#doneTitle").textContent = !unlocked.length ? "Not yet"
       : reachedTarget ? "You tested out!" : "Skipped ahead";
     sfx(unlocked.length ? "complete" : "wrong");
@@ -8574,7 +8685,7 @@
     doneAction = null;
     const perfect = quizItems.length >= 5 && quizScore === quizItems.length;
     questEvent("session", true, { perfect });
-    $("#doneTitle").textContent = "Quiz complete";
+    $("#doneTitle").textContent = "Quiz complete"; renderDoneStep(0, 0);
     sfx("complete");
     earnXP(XP.session);
     if (perfect) earnXP(XP.perfect);
@@ -8791,7 +8902,7 @@
   }
   function finishMatch() {
     doneSimple();
-    $("#doneTitle").textContent = "Matching done";
+    $("#doneTitle").textContent = "Matching done"; renderDoneStep(0, 0);
     sfx("complete");
     $("#doneStats").innerHTML = "";
     $("#doneStats").append(statEl(matchTotal, matchTotal === 1 ? "pair matched" : "pairs matched"));
@@ -9574,7 +9685,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal, reviewMode, mistakesMode, bunMode, answered: studyAnswered }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, startPlacement, chapterLessons: () => CHAPTERS.map(c => c.lessons), placeState: () => ({ placeLo, placeHi, placeProbe, probes, placeAsked, quizIdx, n: quizItems.length, blocks: placeBlocks.length, card: quizItems[quizIdx] && quizItems[quizIdx].lessonId, hz: quizItems[quizIdx] && quizItems[quizIdx].hanzi, en: quizItems[quizIdx] && quizItems[quizIdx].en, ch: quizItems[quizIdx] && CHAPTERS.findIndex(c => c.lessons.includes(quizItems[quizIdx].lessonId)) }), coins, addCoins, buns, setBuns, showBuns, openShop, showPocket, showPlus, plus: on => { activity.plus = !!on; saveActivity(); renderHud(); renderBunRow(); return isPlus(); }, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal, reviewMode, mistakesMode, bunMode, answered: studyAnswered }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, startPlacement, chapterLessons: () => CHAPTERS.map(c => c.lessons), placeState: () => ({ placeLo, placeHi, placeProbe, probes, placeAsked, quizIdx, n: quizItems.length, blocks: placeBlocks.length, card: quizItems[quizIdx] && quizItems[quizIdx].lessonId, hz: quizItems[quizIdx] && quizItems[quizIdx].hanzi, en: quizItems[quizIdx] && quizItems[quizIdx].en, ch: quizItems[quizIdx] && CHAPTERS.findIndex(c => c.lessons.includes(quizItems[quizIdx].lessonId)) }), coins, addCoins, buns, setBuns, showBuns, openShop, showPocket, showPlus, plus: on => { activity.plus = !!on; saveActivity(); renderHud(); renderBunRow(); return isPlus(); }, answerXP, finishStudy, nextStudyCard, answerStudy, lessonSteps, usableSentences, unmetWords, doneLessons: () => [...doneLessons], currentLessonId,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
