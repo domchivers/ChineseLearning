@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=287";
+  const ASSET_V = "?v=288";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -246,7 +246,7 @@
     for (const m of EMBER_AT) {
       if (s < m || (activity.emberFor[m] && activity.emberFor[m] >= start)) continue;
       activity.emberFor[m] = todayStr();
-      if (embers() < 3) { activity.embers = embers() + 1; ember = true; }
+      if (embers() < emberCap()) { activity.embers = embers() + 1; ember = true; }
     }
     if (s > (activity.best || 0)) activity.best = s;
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
@@ -258,8 +258,8 @@
   /* ---- Daily quests ------------------------------------------------------
      Three small targets a day, drawn from a pool by the date so every device
      agrees on them: one XP quest, one about how you practised, one about a
-     skill you have turned on. Finishing all three opens a chest of bonus XP,
-     and every fifth chest holds an ember. Quests count toward a monthly
+     skill you have turned on. Finishing all three opens the jade pocket (吉)
+     of bonus XP, and every fifth one holds an ember. Quests count toward a monthly
      badge. Progress is read from the day's counters, so nothing is stored
      but the day's picks and what was already claimed. */
   const QUESTS = {
@@ -278,7 +278,7 @@
     sentence2: { title: "Build 2 sentences",              icon: "i-chat",       target: 2,  prog: () => qcToday().sentence || 0, dir: "sentence" }
   };
   const QUEST_SETS = [["xp30", "xp50"], ["combo5", "combo10", "review15", "review30", "lesson1", "session2", "perfect1"], ["listen5", "write3", "speak3", "sentence2"]];
-  const CHEST_XP = 20;
+  const CHEST_XP = 50;
   // today's counters: right-answer combo, sessions, lessons, perfect runs, and per-skill tallies
   function qcToday() {
     const t = todayStr();
@@ -333,7 +333,7 @@
     if (all && !q.chest) {
       q.chest = true;
       activity.chests = (activity.chests || 0) + 1;
-      if (activity.chests % 5 === 0 && embers() < 3) { activity.embers = embers() + 1; ember = true; }
+      if (activity.chests % 5 === 0 && embers() < emberCap()) { activity.embers = embers() + 1; ember = true; }
     }
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
     queueSync();
@@ -342,20 +342,7 @@
     if ($("#questRows")) renderQuests();
   }
   function celebrateChest(ember) {
-    const o = el("div", { className: "goal-burst chest-burst" });
-    o.innerHTML =
-      `<div class="gb-card">
-         <img src="images/panda-celebrate.png${ASSET_V}" alt="">
-         <div class="gb-title">All quests done!</div>
-         <div class="gb-sub">+${CHEST_XP} XP from the chest</div>
-         ${ember ? `<div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> and an ember</div>` : ""}
-       </div>`;
-    document.body.appendChild(o);
-    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
-    setTimeout(() => o.classList.add("show"), 20);
-    setTimeout(close, 3200);
-    o.addEventListener("click", close);
-    sfx("chest"); confetti(80);
+    showPocket("jade", CHEST_XP, "All 3 daily quests done!", ember ? "A lucky pocket, full of XP, and an ember" : "A lucky pocket, full of XP");
   }
   function renderQuests() {
     const rows = $("#questRows"); if (!rows) return;
@@ -379,9 +366,9 @@
   }
   function renderQuestsHeader(rows, q, done) {
     const chest = $("#qcChest");
-    chest.textContent = done === 3 ? (q.chest ? "Chest opened" : "3/3") : `${done}/3`;
+    chest.textContent = done === 3 ? (q.chest ? "Pocket opened" : "3/3") : `${done}/3`;
     chest.classList.toggle("full", done === 3);
-    // once the chest is open the card folds to its header line
+    // once the pocket is open the card folds to its header line
     const opened = done === 3 && q.chest;
     rows.closest(".quest-card").classList.toggle("opened", opened);
     rows.classList.toggle("hidden", opened);
@@ -396,10 +383,253 @@
     return { level: L, total, into: total - floor, span: ceil - floor, next: ceil - total };
   }
 
+  /* ---- Coins, buns and red pockets -----------------------------------------
+     Coins come in red pockets (福): one for the first lesson finished each day
+     (every lesson with Plus) and a fuller one at the end of a chapter. They buy
+     a fresh batch of buns, double XP and, with Plus, embers. The daily quests'
+     reward is the jade pocket (吉), full of XP.
+     Buns (包子) are a new lesson's lives: each mistake in one eats a bun, and
+     with none left a new lesson can't be started. One comes back every four
+     hours, one for each right answer in a review (up to five), or a batch from
+     the shop. Plus has no limit. Coins are kept as earned and spent per day,
+     so they merge across devices like XP does. */
+  const BUNS_MAX = 5, BUN_MS = 4 * 60 * 60 * 1000;
+  const COINS_START = 100;
+  const PRICE = { buns: 350, ember: 250, boost: 200 };
+  const POCKET = { lesson: [20, 35], chapter: 100 };
+  const isPlus = () => !!activity.plus;
+  const emberCap = () => (isPlus() ? 3 : 1);
+  const sumDays = o => Object.values(o || {}).reduce((s, n) => s + (n || 0), 0);
+  const coins = () => Math.max(0, COINS_START + sumDays(activity.coinsIn) - sumDays(activity.coinsOut));
+  function saveActivity() { localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity)); queueSync(); }
+  function addCoins(n) {
+    const t = todayStr();
+    activity.coinsIn = activity.coinsIn || {};
+    activity.coinsIn[t] = (activity.coinsIn[t] || 0) + n;
+    saveActivity(); renderHud();
+  }
+  function spendCoins(n) {
+    if (coins() < n) return false;
+    const t = todayStr();
+    activity.coinsOut = activity.coinsOut || {};
+    activity.coinsOut[t] = (activity.coinsOut[t] || 0) + n;
+    saveActivity(); renderHud();
+    return true;
+  }
+  // n buns as of `at`; one grows back every BUN_MS until there are five.
+  function bunState() {
+    const b = activity.buns;
+    if (!b || b.n >= BUNS_MAX) return { n: BUNS_MAX, next: 0 };
+    const k = Math.max(0, Math.floor((Date.now() - b.at) / BUN_MS));
+    const n = Math.min(BUNS_MAX, b.n + k);
+    return { n, next: n >= BUNS_MAX ? 0 : b.at + (k + 1) * BUN_MS - Date.now() };
+  }
+  const buns = () => (isPlus() ? Infinity : bunState().n);
+  function setBuns(n) {
+    const s = bunState(), now = Date.now();
+    n = Math.max(0, Math.min(BUNS_MAX, n));
+    // the time already grown toward the next bun is kept
+    const at = s.n >= BUNS_MAX || n >= BUNS_MAX ? now : now - (BUN_MS - s.next);
+    activity.buns = { n, at, t: now };
+    saveActivity(); renderHud(); renderBunRow();
+  }
+  function eatBun() { if (!isPlus()) setBuns(bunState().n - 1); }
+  function earnBun() {
+    if (isPlus() || bunState().n >= BUNS_MAX) return false;
+    setBuns(bunState().n + 1);
+    return true;
+  }
+  const fmtWait = ms => { const m = Math.ceil(ms / 60000), h = Math.floor(m / 60); return h ? `${h}h ${m % 60}m` : `${m}m`; };
+  const coinIco = (cls = "") => `<svg class="coin-ico ${cls}" aria-hidden="true"><use href="#i-coin"/></svg>`;
+  const bunImg = (cls = "") => `<img class="bun-ico ${cls}" src="images/rewards/bun.webp${ASSET_V}" alt="">`;
+
+  // The top bar on the path: streak, coins, buns.
+  function renderHud() {
+    const f = $("#pathStreakBtn"); if (!f) return;
+    $("#pathStreak").textContent = computeStreak();
+    f.classList.toggle("lit", litOn(todayStr()));
+    $("#pathCoins").textContent = coins();
+    const n = buns();
+    $("#pathBuns").textContent = n === Infinity ? "∞" : n;
+    $("#pathBunsBtn").classList.toggle("low", n <= 1);
+  }
+
+  // The five buns in a lesson's top bar. Shown in a lesson, and in a review
+  // while buns are being earned back.
+  let bunMode = false, nextIsLesson = false;
+  function renderBunRow() {
+    const row = $("#studyBuns"); if (!row) return;
+    const n = buns(), earning = !bunMode && (reviewMode || mistakesMode) && n < BUNS_MAX;
+    row.classList.toggle("hidden", !(bunMode || earning));
+    if (n === Infinity) { row.innerHTML = `${bunImg()}<b>∞</b>`; return; }
+    row.innerHTML = Array.from({ length: BUNS_MAX }, (_, i) => bunImg(i < n ? "" : "gone")).join("");
+  }
+  // A mistake in a lesson: the bitten bun pops up, then flies into the row.
+  function munchBun() {
+    eatBun();
+    const o = el("div", { className: "munch" });
+    o.innerHTML = `<img src="images/rewards/bun-bitten.webp${ASSET_V}" alt=""><span>−1 包子</span>`;
+    const row = $("#studyBuns"), r = row && row.getBoundingClientRect();
+    if (r && r.width) { o.style.setProperty("--tx", `${r.right - 14 - innerWidth / 2}px`); o.style.setProperty("--ty", `${r.top + r.height / 2 - innerHeight * 0.42}px`); }
+    document.body.appendChild(o);
+    setTimeout(() => o.remove(), 1700);
+  }
+
+  // A bun earned back in a review: the row shows it arriving.
+  function bumpBunRow() {
+    const row = $("#studyBuns"); if (!row) return;
+    const imgs = row.querySelectorAll(".bun-ico:not(.gone)"), last = imgs[imgs.length - 1];
+    if (last) { last.classList.remove("got"); void last.offsetWidth; last.classList.add("got"); }
+  }
+
+  // Out of buns, or a look at them from the top bar.
+  function showBuns(ctx = "hud", onRefill = null) {
+    const s = bunState(), n = buns(), empty = n < 1;
+    const o = el("div", { className: "goal-burst bun-burst" });
+    const title = isPlus() ? "Unlimited buns" : ctx === "mid" ? "Bùbù ate all your buns!" : empty ? "No buns left" : `${n} bun${n === 1 ? "" : "s"}`;
+    const sub = isPlus() ? "With Plus, mistakes never cost a bun."
+      : ctx === "mid" ? "Your progress in this lesson is saved. Here's how to get more:"
+      : empty ? "You need a bun to start a new lesson. Here's how to get more:"
+      : "Each mistake in a new lesson eats one. Reviews and practice never do.";
+    o.innerHTML =
+      `<div class="gb-card">
+         <img src="images/${empty && !isPlus() ? "panda-sad.png" : "sprite-baozi.png"}${ASSET_V}" alt="">
+         <div class="gb-title">${title}</div>
+         <div class="gb-sub">${sub}</div>
+         ${isPlus() ? "" : `<div class="bun-meter">${Array.from({ length: BUNS_MAX }, (_, i) => bunImg(i < s.n ? "" : "gone")).join("")}</div>
+         <div class="gb-actions shop-list">
+           <button class="shop-item" id="bnReview"><span class="si-ico">${svgUse("i-cards")}</span><span class="si-txt"><b>Review to earn buns</b><small>+1 for each right answer, up to ${BUNS_MAX}</small></span></button>
+           <button class="shop-item" id="bnBuy"${s.n >= BUNS_MAX ? " disabled" : ""}><span class="si-ico">${bunImg()}</span><span class="si-txt"><b>Steam a fresh batch</b><small>Refill all ${BUNS_MAX} buns</small></span><span class="si-price">${coinIco()}${PRICE.buns}</span></button>
+           <button class="shop-item plus" id="bnPlus"><span class="si-ico">∞</span><span class="si-txt"><b>Unlimited buns</b><small>With Bùbù Plus, never run out</small></span></button>
+         </div>
+         ${s.next ? `<div class="bun-wait">${s.n < BUNS_MAX ? `Next bun in ${fmtWait(s.next)}` : ""}</div>` : ""}`}
+         <div class="gb-actions"><button class="ghost" id="bnClose">${ctx === "mid" ? "End the lesson" : "Close"}</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    const on = (id, fn) => { const b = o.querySelector(id); if (b) b.addEventListener("click", fn); };
+    on("#bnClose", () => { close(); if (ctx === "mid") goBack(); });
+    on("#bnReview", () => {
+      close();
+      if (!dueReviewCards().length && !CARDS.some(c => srs[c.id])) { toast("Nothing to review yet."); if (ctx === "mid") goBack(); return; }
+      returnView = "path"; startReview();
+    });
+    on("#bnBuy", () => {
+      if (!spendCoins(PRICE.buns)) { toast(`You need ${PRICE.buns - coins()} more coins. Red pockets from lessons hold them.`); return; }
+      setBuns(BUNS_MAX); sfx("chest"); close();
+      toast("A fresh batch of buns!");
+      if (onRefill) onRefill();
+    });
+    on("#bnPlus", () => { close(); showPlus(); });
+  }
+
+  // Bùbù Plus isn't on sale yet: this says what it will be.
+  function showPlus() {
+    const o = el("div", { className: "goal-burst plus-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <img src="images/panda-celebrate.png${ASSET_V}" alt="">
+         <div class="gb-title">Bùbù Plus</div>
+         <ul class="plus-list">
+           <li><b>∞</b> Unlimited buns: mistakes never stop a lesson</li>
+           <li>${coinIco()} A red pocket for every lesson, not just the first each day</li>
+           <li>${svgUse("i-ember")} Hold up to 3 embers, and buy more in the shop</li>
+         </ul>
+         <div class="gb-note">Coming soon</div>
+         <div class="gb-actions"><button class="primary" id="plOk">OK</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    o.querySelector("#plOk").addEventListener("click", close);
+  }
+
+  // The shop: what coins buy.
+  function openShop() {
+    const s = bunState(), ne = embers();
+    const o = el("div", { className: "goal-burst shop-burst" });
+    o.innerHTML =
+      `<div class="gb-card">
+         <div class="shop-head"><div class="gb-title">Shop</div><div class="wallet">${coinIco()}<b>${coins()}</b></div></div>
+         <div class="shop-list">
+           <div class="shop-sec">Buns</div>
+           <button class="shop-item" data-buy="buns"${isPlus() || s.n >= BUNS_MAX ? " disabled" : ""}><span class="si-ico">${bunImg()}</span><span class="si-txt"><b>Fresh batch</b><small>${isPlus() ? "Unlimited with Plus" : s.n >= BUNS_MAX ? "Your buns are full" : `Refill to ${BUNS_MAX} buns · you have ${s.n}`}</small></span><span class="si-price">${coinIco()}${PRICE.buns}</span></button>
+           <div class="shop-sec">Streak</div>
+           <button class="shop-item" data-buy="ember"${isPlus() && ne >= emberCap() ? " disabled" : ""}><span class="si-ico ember">${svgUse("i-ember")}</span><span class="si-txt"><b>Ember <i class="plus-tag">PLUS</i></b><small>${isPlus() ? `Relights a missed day · you have ${ne} of ${emberCap()}` : "Relights a missed day. Plus members only"}</small></span><span class="si-price">${coinIco()}${PRICE.ember}</span></button>
+           <div class="shop-sec">Boosts</div>
+           <button class="shop-item" data-buy="boost"${boostOn() ? " disabled" : ""}><span class="si-ico two">2×</span><span class="si-txt"><b>Double XP</b><small>${boostOn() ? "Double XP is on now" : "For the next 15 minutes"}</small></span><span class="si-price">${coinIco()}${PRICE.boost}</span></button>
+           <div class="shop-sec">Wardrobe</div>
+           <div class="shop-item soon"><span class="si-ico">${svgUse("i-user")}</span><span class="si-txt"><b>Avatar items</b><small>Hats, bags and more, coming soon</small></span></div>
+           ${isPlus() ? "" : `<button class="shop-item plus" data-buy="plus"><span class="si-ico">∞</span><span class="si-txt"><b>Bùbù Plus</b><small>Unlimited buns, more pockets, embers</small></span></button>`}
+         </div>
+         <div class="gb-actions"><button class="ghost" id="shopClose">Close</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    o.querySelector("#shopClose").addEventListener("click", close);
+    o.querySelectorAll("[data-buy]").forEach(b => b.addEventListener("click", () => {
+      const what = b.dataset.buy;
+      if (what === "plus" || (what === "ember" && !isPlus())) { close(); showPlus(); return; }
+      if (!spendCoins(PRICE[what])) { toast(`You need ${PRICE[what] - coins()} more coins.`); return; }
+      if (what === "buns") { setBuns(BUNS_MAX); toast("A fresh batch of buns!"); }
+      else if (what === "ember") { activity.embers = embers() + 1; saveActivity(); toast("An ember, ready to relight a missed day."); }
+      else if (what === "boost") { startBoost(); toast("Double XP for 15 minutes!"); }
+      sfx("chest"); close();
+      if ($(".streak-card")) renderHomeTop();
+    }));
+  }
+
+  // A red pocket for a finished lesson: the first each day (every one with
+  // Plus), and a fuller one when it finishes a chapter. Returns the coins.
+  function lessonPocket(chapterEnd) {
+    const t = todayStr();
+    if (chapterEnd) return POCKET.chapter;
+    if (!isPlus() && activity.pocketDay === t) return 0;
+    activity.pocketDay = t;
+    const [lo, hi] = POCKET.lesson;
+    return lo + 5 * Math.floor(Math.random() * ((hi - lo) / 5 + 1));
+  }
+  // A pocket to tap open. The reward is already credited; this is the moment.
+  function showPocket(kind, reward, title, sub) {
+    const o = el("div", { className: `goal-burst pocket-burst ${kind}` });
+    const amt = kind === "red" ? `${coinIco("big")}+${reward}` : `+${reward} XP`;
+    o.innerHTML =
+      `<div class="gb-card">
+         <div class="gb-title">${title}</div>
+         <div class="gb-sub">${sub}</div>
+         <button class="pocket" aria-label="Open the pocket">
+           <img src="images/rewards/pocket-${kind}.webp${ASSET_V}" alt="">
+           <span class="pk-amt">${amt}</span>
+         </button>
+         <div class="pk-hint">Tap to open</div>
+         <div class="gb-actions pk-after"><button class="primary" id="pkOk">Nice</button></div>
+       </div>`;
+    document.body.appendChild(o);
+    const close = () => { o.classList.remove("show"); setTimeout(() => o.remove(), 350); };
+    setTimeout(() => o.classList.add("show"), 20);
+    const pocket = o.querySelector(".pocket");
+    const open = () => {
+      if (o.classList.contains("open")) return;
+      o.classList.add("open");
+      o.querySelector(".pk-hint").textContent = kind === "red" ? "coins" : "good luck!";
+      if (kind === "red") for (let i = 0; i < 10; i++) {
+        const c = el("span", { className: "pk-coin" }); c.innerHTML = coinIco();
+        const a = i / 10 * Math.PI * 2;
+        c.style.setProperty("--dx", `${Math.cos(a) * 120}px`); c.style.setProperty("--dy", `${Math.sin(a) * 120}px`);
+        pocket.appendChild(c);
+      }
+      sfx("chest"); buzz(true); confetti(60);
+    };
+    pocket.addEventListener("click", open);
+    o.querySelector("#pkOk").addEventListener("click", close);
+  }
+
   /* ---- Embers: relighting a streak that went out --------------------------
      Miss a day and the fire goes out. An ember relights it: the missed day is
      marked as covered and the streak carries on. You start with one, and earn
-     more at streak milestones (three at most). Only the most recent single
+     more at streak milestones: one held at a time, three with Plus. Only the most recent single
      missed day can be relit, and only until the end of the day after it. */
   const embers = () => (typeof activity.embers === "number" ? activity.embers : 1);
   const dayKeyOffset = n => { const d = new Date(); d.setDate(d.getDate() + n); return dateStr(d); };
@@ -1847,7 +2077,7 @@
     { id: "level-5", icon: "i-crown", tint: "gold", title: "Level 5", sub: "1,000 XP", test: () => levelInfo().level >= 5 },
     { id: "level-10", icon: "i-crown", tint: "gold", title: "Level 10", sub: "5,500 XP", test: () => levelInfo().level >= 10 },
     { id: "quests-20", icon: "i-target", tint: "teal", title: "Quest month", sub: "20 quests in a month", test: () => Object.values(activity.questMonths || {}).some(n => n >= 20) },
-    { id: "chests-10", icon: "i-target", tint: "gold", title: "Treasure hunter", sub: "10 chests opened", test: () => (activity.chests || 0) >= 10 },
+    { id: "chests-10", icon: "i-target", tint: "gold", title: "Lucky panda", sub: "10 lucky pockets opened", test: () => (activity.chests || 0) >= 10 },
     ...CHAPTERS.map((ch, i) => ({ id: "chapter-" + i, icon: "i-book", tint: "blue", title: `Chapter ${i + 1} complete`, sub: ch.title,
       test: () => ch.lessons.every(id => doneLessons.has(id)) }))
   ];
@@ -5520,14 +5750,7 @@
   let pathTries = 0;
 
   function renderPath() {
-    $("#pathStreak").textContent = computeStreak();
-    // Today's lesson in the HUD: an open ring until a session is finished, then a ✓.
-    const met = litOn(todayStr());
-    const arc = $("#pathGoalArc"), circ = 2 * Math.PI * 9;
-    arc.setAttribute("stroke-dasharray", circ.toFixed(1));
-    arc.setAttribute("stroke-dashoffset", (met ? 0 : circ).toFixed(1));
-    $("#pathGoal").classList.toggle("done", met);
-    $("#pathGoalTxt").textContent = met ? "✓ Today" : "Today";
+    renderHud();
     renderBackupNudge();
     // Review call-to-action: only shown when something has actually fallen due.
     const due = dueReviewCards().length, fab = $("#reviewFab");
@@ -6109,6 +6332,11 @@
     if (!lessonDone(id) && id !== currentLessonId()) return;   // locked — play in order
     reviewMode = false;
     scopeLessons = new Set([id]);
+    // a lesson not yet done is played on buns (a quiz or a browse isn't)
+    if (!lessonDone(id) && focus !== "quiz" && focus !== "browse") {
+      if (buns() < 1) { showBuns("start"); return; }
+      nextIsLesson = true;
+    }
     if (focus === "quiz") { scopeFocuses = null; startQuiz(); }
     else if (focus === "browse") { scopeFocuses = null; startBrowse(); }
     else if (focus) { scopeFocuses = new Set([focus]); startStudy(); }
@@ -6126,9 +6354,10 @@
       else if (nav === "progress") { renderDashboard(); show("progress"); }
     }));
   $("#reviewFab").addEventListener("click", () => { if (!$("#reviewFab").classList.contains("caughtup")) { returnView = "path"; startReview(); } });
-  $("#pathSettings").addEventListener("click", () => { syncSettings(); renderAccount(); openModal("settingsModal"); });
+  $("#pathCoinsBtn").addEventListener("click", openShop);
+  $("#pathBunsBtn").addEventListener("click", () => showBuns("hud"));
   // Tapping today's lesson marker jumps to Progress, where the calendar and streak live.
-  $("#pathGoal").addEventListener("click", () => { renderDashboard(); show("progress"); });
+  $("#pathStreakBtn").addEventListener("click", () => { renderDashboard(); show("progress"); });
 
   let queue = [];        // array of card objects
   let studyStats = { reviewed: 0, again: 0 };
@@ -6301,6 +6530,7 @@
   // Start (or restart) a study session over a given set of cards.
   function beginStudySession(cards, opts = {}) {
     mistakesMode = !!opts.mistakes; sessionMistakes = 0; sessionFixed = 0;
+    bunMode = nextIsLesson; nextIsLesson = false;
     studySource = cards.slice();
     queue = sessionOrder(cards);
     clearedIds = new Set(); stepsDone = 0;
@@ -6309,7 +6539,7 @@
     sessionTotal = queue.filter(x => !x.meet).length;
     $("#studyTitle").textContent = "Study";
     show("study");
-    renderCombo(); renderBoost();
+    renderCombo(); renderBoost(); renderBunRow();
     updateStudyProgress();
     nextStudyCard();
   }
@@ -6402,6 +6632,8 @@
 
   function nextStudyCard() {
     if (queue.length === 0) return finishStudy();
+    // out of buns part-way through a lesson
+    if (bunMode && buns() < 1) { showBuns("mid", () => nextStudyCard()); return; }
     const item = queue.shift();
     if (item && item.meet) { meetNewWords(item.meet, () => nextStudyCard(), item); return; }
     curCard = item;
@@ -6480,6 +6712,8 @@
     recordReview(1);
     answerXP(correct);
     questEvent(curDir, correct);
+    if (!correct && bunMode) munchBun();
+    else if (correct && !bunMode && (reviewMode || mistakesMode) && earnBun()) bumpBunRow();
     studyStats.answered += 1;
     if (correct) {
       stepsDone += 1;
@@ -8050,7 +8284,7 @@
     renderWeekStrip($("#doneWeek"));
     // stage three: the quests
     const q = todayQuests(), done = questRowsInto($("#doneQuests"), q);
-    $("#doneQuestSub").textContent = done === 3 ? "All three done. Chest opened!" : `${done} of 3 done today`;
+    $("#doneQuestSub").textContent = done === 3 ? "All three done. Lucky pocket opened!" : `${done} of 3 done today`;
     doneStageCount = 3;
     showDoneStage(0);
   }
@@ -8100,6 +8334,15 @@
     const perfect = studyStats.again === 0 && studyStats.answered >= 5;
     if (perfect) earnXP(XP.perfect);
     if (justFinished) startBoost();
+    if (justFinished) {
+      const ci = CHAPTERS.findIndex(ch => ch.lessons.includes(justFinished)), chapterEnd = chapterDone(ci);
+      const got = lessonPocket(chapterEnd);
+      if (got) {
+        addCoins(got);
+        setTimeout(() => showPocket("red", got, chapterEnd ? "Chapter complete!" : "Lesson complete!",
+          chapterEnd ? "A fuller pocket for a whole chapter" : "Bùbù has something for you."), 700);
+      }
+    }
     const acc = studyStats.answered ? Math.round((studyStats.answered - studyStats.again) / studyStats.answered * 100) : 100;
     const fire = lightFire();
     startDoneSequence([
@@ -8872,10 +9115,16 @@ This REPLACES the progress on this device.`)) return;
     const boostUntil = Math.max(aa.boostUntil || 0, ab.boostUntil || 0);
     const levelSeen = Math.max(aa.levelSeen || 0, ab.levelSeen || 0);
     const lit = Object.assign({}, ab.lit || {}, aa.lit || {});
+    const perDay = (x, y) => { const o = Object.assign({}, y || {}); for (const [d, n] of Object.entries(x || {})) o[d] = Math.max(n || 0, o[d] || 0); return o; };
+    const coinsIn = perDay(aa.coinsIn, ab.coinsIn), coinsOut = perDay(aa.coinsOut, ab.coinsOut);
+    // buns: whichever device changed them last
+    const bunsRec = ((aa.buns && aa.buns.t) || 0) >= ((ab.buns && ab.buns.t) || 0) ? aa.buns : ab.buns;
+    const pocketDay = [aa.pocketDay || "", ab.pocketDay || ""].sort().pop();
+    const plus = !!(aa.plus || ab.plus);
     // today's quests: keep whichever side has claimed more of them
     const qa = aa.quests, qb = ab.quests, nd = q => (q && q.done ? Object.keys(q.done).length : -1);
     const quests = (qa && qb && qa.date === qb.date) ? (nd(qa) >= nd(qb) ? qa : qb) : ((qa && qa.date) >= (qb && qb.date || "") ? qa : qb);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen, lit }));
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen, lit, coinsIn, coinsOut, buns: bunsRec, pocketDay, plus }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
@@ -9241,7 +9490,7 @@ This REPLACES the progress on this device.`)) return;
     else if (v === "avatar") { show("avatar"); renderAvatarBuilder(); }
   }
   // local development only: poke the streak moments from the console
-  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, answerXP, finishStudy, nextStudyCard,
+  if (location.hostname === "localhost") window.__dev = { enHints: () => SENTENCES.map(x => englishHints(x.en, x.words).map(t => t.word ? `[${t.text}=${t.word.hanzi}]` : t.text).join("")), lesson: id => { returnView = "path"; reviewMode = false; scopeLessons = new Set([id]); scopeFocuses = new Set(selectedFocuses); startStudy(); return queue.map(x => x.meet ? "[meet " + x.meet.map(c => c.hanzi).join(" ") + "]" : x.hanzi + (srs[x.id] ? "(r)" : "")); }, state: () => ({ curDir, card: curCard && curCard.hanzi, left: queue.length, stepsDone, sessionTotal, reviewMode, mistakesMode, bunMode, answered: studyAnswered }), card: (h, dir) => { curCard = CARDS.find(x => x.hanzi === h); curDir = dir; studyAnswered = false; queue = []; sessionTotal = 1; clearedIds = new Set(); stepsDone = 0; show("study"); renderStudyCard(); }, lookalikes: (h, n = 6) => { const c = CARDS.find(x => x.hanzi === h); return c ? lookalikes(c, n).map(x => x.hanzi + " " + wordSim(h, x.hanzi).toFixed(1)) : null; }, earnXP, lightFire, celebrateMilestone, askRelight, computeStreak, protectStreak, celebrateRelight, showFireOut, celebrateLevel, confetti, sfx, questEvent, todayQuests, celebrateChest, startBoost, coins, addCoins, buns, setBuns, showBuns, openShop, showPocket, showPlus, plus: on => { activity.plus = !!on; saveActivity(); renderHud(); renderBunRow(); return isPlus(); }, answerXP, finishStudy, nextStudyCard,
     // __dev.sentence("咖啡", true) opens the study card on that sentence, building the Chinese (true) or the English (false)
     sentence: (sub, en2cn = null) => { devSentence = SENTENCES.find(s => s.hanzi.includes(sub)) || null; devEn2cn = en2cn; curCard = CARDS.find(c => devSentence && devSentence.hanzi.includes(c.hanzi)) || CARDS[0]; curDir = "sentence"; studyAnswered = false; show("study"); renderStudyCard(); },
     longest: () => SENTENCES.slice().sort((a, b) => b.words.length - a.words.length).slice(0, 5).map(s => s.hanzi) };
