@@ -43,7 +43,7 @@
      Tabler icon font that was never bundled, so every icon rendered 0px wide.
      These use currentColor, so they inherit whatever colour they sit in.   */
   // Bumped with the app version so replaced artwork is never served stale.
-  const ASSET_V = "?v=288";
+  const ASSET_V = "?v=289";
   const APP_VERSION = ASSET_V.replace("?v=", "v");   // e.g. "v148" — shown in Settings
   const ICON_NS = "http://www.w3.org/2000/svg";
   const rotN = (inner, n) => Array.from({ length: n },
@@ -249,10 +249,18 @@
       if (embers() < emberCap()) { activity.embers = embers() + 1; ember = true; }
     }
     if (s > (activity.best || 0)) activity.best = s;
+    // milestone coins, once per streak (like the embers)
+    let coinsGot = 0;
+    activity.coinsFor = activity.coinsFor || {};
+    if (MILESTONE_COINS[s] && !(activity.coinsFor[s] && activity.coinsFor[s] >= start)) {
+      activity.coinsFor[s] = todayStr();
+      coinsGot = MILESTONE_COINS[s];
+    }
     localStorage.setItem(LS_ACTIVITY, JSON.stringify(activity));
     queueSync();
+    if (coinsGot) addCoins(coinsGot);
     if ($(".streak-card")) renderHomeTop();
-    return { streak: s, ember, milestone: MILESTONES.includes(s) };
+    return { streak: s, ember, coins: coinsGot, milestone: MILESTONES.includes(s) };
   }
 
   /* ---- Daily quests ------------------------------------------------------
@@ -397,6 +405,10 @@
   const COINS_START = 100;
   const PRICE = { buns: 350, ember: 250, boost: 200 };
   const POCKET = { lesson: [20, 35], chapter: 100 };
+  // coins at each streak milestone, once per streak
+  const MILESTONE_COINS = { 3: 20, 7: 50, 14: 75, 30: 150, 50: 200, 100: 300, 200: 400, 365: 500 };
+  // Plus can't be bought yet, so nothing offers it
+  const PLUS_FOR_SALE = false;
   const isPlus = () => !!activity.plus;
   const emberCap = () => (isPlus() ? 3 : 1);
   const sumDays = o => Object.values(o || {}).reduce((s, n) => s + (n || 0), 0);
@@ -500,7 +512,7 @@
          <div class="gb-actions shop-list">
            <button class="shop-item" id="bnReview"><span class="si-ico">${svgUse("i-cards")}</span><span class="si-txt"><b>Review to earn buns</b><small>+1 for each right answer, up to ${BUNS_MAX}</small></span></button>
            <button class="shop-item" id="bnBuy"${s.n >= BUNS_MAX ? " disabled" : ""}><span class="si-ico">${bunImg()}</span><span class="si-txt"><b>Steam a fresh batch</b><small>Refill all ${BUNS_MAX} buns</small></span><span class="si-price">${coinIco()}${PRICE.buns}</span></button>
-           <button class="shop-item plus" id="bnPlus"><span class="si-ico">∞</span><span class="si-txt"><b>Unlimited buns</b><small>With Bùbù Plus, never run out</small></span></button>
+           ${PLUS_FOR_SALE ? `<button class="shop-item plus" id="bnPlus"><span class="si-ico">∞</span><span class="si-txt"><b>Unlimited buns</b><small>With Bùbù Plus, never run out</small></span></button>` : ""}
          </div>
          ${s.next ? `<div class="bun-wait">${s.n < BUNS_MAX ? `Next bun in ${fmtWait(s.next)}` : ""}</div>` : ""}`}
          <div class="gb-actions"><button class="ghost" id="bnClose">${ctx === "mid" ? "End the lesson" : "Close"}</button></div>
@@ -556,12 +568,12 @@
            <div class="shop-sec">Buns</div>
            <button class="shop-item" data-buy="buns"${isPlus() || s.n >= BUNS_MAX ? " disabled" : ""}><span class="si-ico">${bunImg()}</span><span class="si-txt"><b>Fresh batch</b><small>${isPlus() ? "Unlimited with Plus" : s.n >= BUNS_MAX ? "Your buns are full" : `Refill to ${BUNS_MAX} buns · you have ${s.n}`}</small></span><span class="si-price">${coinIco()}${PRICE.buns}</span></button>
            <div class="shop-sec">Streak</div>
-           <button class="shop-item" data-buy="ember"${isPlus() && ne >= emberCap() ? " disabled" : ""}><span class="si-ico ember">${svgUse("i-ember")}</span><span class="si-txt"><b>Ember <i class="plus-tag">PLUS</i></b><small>${isPlus() ? `Relights a missed day · you have ${ne} of ${emberCap()}` : "Relights a missed day. Plus members only"}</small></span><span class="si-price">${coinIco()}${PRICE.ember}</span></button>
+           <button class="shop-item" data-buy="ember"${ne >= emberCap() ? " disabled" : ""}><span class="si-ico ember">${svgUse("i-ember")}</span><span class="si-txt"><b>Ember</b><small>Relights a missed day · you have ${ne} of ${emberCap()}</small></span><span class="si-price">${coinIco()}${PRICE.ember}</span></button>
            <div class="shop-sec">Boosts</div>
            <button class="shop-item" data-buy="boost"${boostOn() ? " disabled" : ""}><span class="si-ico two">2×</span><span class="si-txt"><b>Double XP</b><small>${boostOn() ? "Double XP is on now" : "For the next 15 minutes"}</small></span><span class="si-price">${coinIco()}${PRICE.boost}</span></button>
            <div class="shop-sec">Wardrobe</div>
            <div class="shop-item soon"><span class="si-ico">${svgUse("i-user")}</span><span class="si-txt"><b>Avatar items</b><small>Hats, bags and more, coming soon</small></span></div>
-           ${isPlus() ? "" : `<button class="shop-item plus" data-buy="plus"><span class="si-ico">∞</span><span class="si-txt"><b>Bùbù Plus</b><small>Unlimited buns, more pockets, embers</small></span></button>`}
+           ${isPlus() || !PLUS_FOR_SALE ? "" : `<button class="shop-item plus" data-buy="plus"><span class="si-ico">∞</span><span class="si-txt"><b>Bùbù Plus</b><small>Unlimited buns, more pockets, embers</small></span></button>`}
          </div>
          <div class="gb-actions"><button class="ghost" id="shopClose">Close</button></div>
        </div>`;
@@ -571,7 +583,7 @@
     o.querySelector("#shopClose").addEventListener("click", close);
     o.querySelectorAll("[data-buy]").forEach(b => b.addEventListener("click", () => {
       const what = b.dataset.buy;
-      if (what === "plus" || (what === "ember" && !isPlus())) { close(); showPlus(); return; }
+      if (what === "plus") { close(); showPlus(); return; }
       if (!spendCoins(PRICE[what])) { toast(`You need ${PRICE[what] - coins()} more coins.`); return; }
       if (what === "buns") { setBuns(BUNS_MAX); toast("A fresh batch of buns!"); }
       else if (what === "ember") { activity.embers = embers() + 1; saveActivity(); toast("An ember, ready to relight a missed day."); }
@@ -926,7 +938,7 @@
   // Full-screen moment at a streak milestone.
   const MILESTONE_WORDS = { 3: "Three days. It's a habit now.", 7: "A whole week on fire.", 14: "Two weeks. Unstoppable.", 30: "A month. Seriously impressive.",
     50: "Fifty days of Chinese.", 100: "One hundred days.", 200: "Two hundred days.", 365: "A full year. 太厉害了!" };
-  function celebrateMilestone(s, ember) {
+  function celebrateMilestone(s, ember, coinsGot = 0) {
     const o = el("div", { className: "goal-burst milestone-burst" });
     o.innerHTML =
       `<div class="gb-card">
@@ -935,6 +947,7 @@
          <div class="gb-title">day streak!</div>
          <div class="gb-sub">${MILESTONE_WORDS[s] || "Keep the fire lit."}</div>
          ${ember ? `<div class="gb-note"><svg class="licon licon-sm"><use href="#i-ember"/></svg> You earned an ember</div>` : ""}
+         ${coinsGot ? `<div class="gb-note">${coinIco()} +${coinsGot} coins</div>` : ""}
          <div class="gb-actions"><button class="primary" id="msOk">Keep going</button></div>
        </div>`;
     document.body.appendChild(o);
@@ -6530,7 +6543,9 @@
   // Start (or restart) a study session over a given set of cards.
   function beginStudySession(cards, opts = {}) {
     mistakesMode = !!opts.mistakes; sessionMistakes = 0; sessionFixed = 0;
-    bunMode = nextIsLesson; nextIsLesson = false;
+    // a session that teaches new words is played on buns, wherever it was started
+    bunMode = nextIsLesson || (!mistakesMode && !reviewMode && cards.some(c => !srs[c.id])); nextIsLesson = false;
+    if (bunMode && buns() < 1) { bunMode = false; showBuns("start"); return; }
     studySource = cards.slice();
     queue = sessionOrder(cards);
     clearedIds = new Set(); stepsDone = 0;
@@ -6712,7 +6727,7 @@
     recordReview(1);
     answerXP(correct);
     questEvent(curDir, correct);
-    if (!correct && bunMode) munchBun();
+    if (!correct && bunMode && !wasNew) munchBun();     // a new word's first try is free
     else if (correct && !bunMode && (reviewMode || mistakesMode) && earnBun()) bumpBunRow();
     studyStats.answered += 1;
     if (correct) {
@@ -8302,7 +8317,7 @@
     $("#doneContinue").classList.toggle("hidden", last);
     $(".done-final").classList.toggle("hidden", !last);
     if (i === 1) {
-      if (doneFire && doneFire.milestone) { sfx("milestone"); setTimeout(() => celebrateMilestone(doneFire.streak, doneFire.ember), 900); }
+      if (doneFire && doneFire.milestone) { sfx("milestone"); setTimeout(() => celebrateMilestone(doneFire.streak, doneFire.ember, doneFire.coins), 900); }
       else if (doneFire) { sfx("goal"); buzz(true); }
     }
   }
@@ -9108,6 +9123,7 @@ This REPLACES the progress on this device.`)) return;
     const relit = Object.assign({}, ab.relit || {}, aa.relit || {});
     const emb = Math.max(typeof aa.embers === "number" ? aa.embers : 1, typeof ab.embers === "number" ? ab.embers : 1);
     const emberFor = Object.assign({}, ab.emberFor || {}, aa.emberFor || {});
+    const coinsFor = Object.assign({}, ab.coinsFor || {}, aa.coinsFor || {});
     const best = Math.max(aa.best || 0, ab.best || 0);
     const questMonths = Object.assign({}, ab.questMonths || {});
     for (const [m, n] of Object.entries(aa.questMonths || {})) questMonths[m] = Math.max(n || 0, questMonths[m] || 0);
@@ -9124,7 +9140,7 @@ This REPLACES the progress on this device.`)) return;
     // today's quests: keep whichever side has claimed more of them
     const qa = aa.quests, qb = ab.quests, nd = q => (q && q.done ? Object.keys(q.done).length : -1);
     const quests = (qa && qb && qa.date === qb.date) ? (nd(qa) >= nd(qb) ? qa : qb) : ((qa && qa.date) >= (qb && qb.date || "") ? qa : qb);
-    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen, lit, coinsIn, coinsOut, buns: bunsRec, pocketDay, plus }));
+    out[LS_ACTIVITY] = JSON.stringify(Object.assign({}, ab, aa, { days, xpDays, relit, embers: emb, emberFor, best, questMonths, chests, quests, boostUntil, levelSeen, lit, coinsIn, coinsOut, buns: bunsRec, pocketDay, plus, coinsFor }));
 
     out[LS_PREFS] = JSON.stringify(Object.assign({}, P(remote[LS_PREFS], {}), P(local[LS_PREFS], {})));
     return out;
